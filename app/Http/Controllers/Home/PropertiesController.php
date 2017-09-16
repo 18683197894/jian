@@ -7,10 +7,14 @@ use App\Http\Controllers\Controller;
 
 class PropertiesController extends Controller
 {
-    function index(){
-    	return view('properties.index');
+    function zshx(){
+    	return view('properties.zshx',['title'=>'浙商临港新天地']);
     }
-    function cs(){
-    	return view('properties.cs');
+
+    function dfhx(){
+    	return view('properties.dfhx',['title'=>'德福庄园']);
+    }
+    function hfhx(){
+    	return view('properties.hfhx',['title'=>'华富御景庄园']);
     }
 }
