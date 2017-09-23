@@ -64,12 +64,27 @@ Route::get('/amount','Home\JsgwController@amount');
 //NEWS新闻
 Route::get('/news','Home\JsgwController@news');
 
+Route::get('/news/list/{id}','Home\JsgwController@newslist');
+
+//全包套餐
+Route::get('/package/allcse','Home\PackageController@allcse');
 
 
 Route::group(['middleware' => ['Login']], function () {
 
+//主页
 Route::get('/jslmadmin/index','Admin\IndexController@index');
-Route::get('/jslmext','Admin\LoginController@jslmext');    
+//退出
+Route::get('/jslmext','Admin\LoginController@jslmext');
+//新闻添加
+Route::get('jslmadmin/newsadd','Admin\NewsController@newsadd');    
+Route::post('jslmadmin/newsadds','Admin\NewsController@newsadds');
+//新闻列表
+Route::get('jslmadmin/newsindex','Admin\NewsController@newsindex');
+Route::get('jslmadmin/newsedit/{id}','Admin\NewsController@newsedit');
+Route::post('jslmadmin/newsedits','Admin\NewsController@newsedits');
+Route::post('jslmadmin/newsajaxshan','Admin\NewsController@newsajaxshan');
+Route::post('jslmadmin/newsajaxzhi','Admin\NewsController@newsajaxzhi');
 });
 
 Route::get('/jslmadmin/login','Admin\LoginController@login');

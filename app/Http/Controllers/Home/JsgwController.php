@@ -59,7 +59,22 @@ class JsgwController extends Controller
     }
     //news新闻
     public function news(){
-        return view('home.jsgw.news',['title'=>'新闻动态']);
+        $zhi = \DB::table('news')->where('zhi',1)->first();
+        $data = \DB::table('news')->orderBy('time')->paginate(12);
+        $xun = \DB::table('news')->orderby('click','desc')->skip(0)->take(10)->get();
+        $qi  = \DB::table('news')->where('lei',2)->orderby('time')->skip(0)->take(6)->get();
+        
+        return view('home.jsgw.news',['title'=>'新闻动态','data'=>$data,'zhi'=>$zhi,'xun'=>$xun,'qi'=>$qi]);
+    }
+    public function newslist($id){
+
+        $qi  = \DB::table('news')->where('lei',2)->orderby('time')->skip(0)->take(6)->get();
+        $xun = \DB::table('news')->orderby('click','desc')->skip(0)->take(10)->get();
+        $data = \DB::table('news')->where('id',$id)->first();
+
+        $num = $data->click + 1;
+        \DB::table('news')->where('id',$id)->update(['click'=>$num]);
+        return view('home.jsgw.newslist',['data'=>$data,'title'=>'新闻详情','qi'=>$qi,'xun'=>$xun]);
     }
 
 }

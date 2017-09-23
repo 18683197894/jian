@@ -12,10 +12,11 @@
 @if(!empty($title))
 	- {{$title}}
 @endif</title>
+@yield('css')
 </head>
 
 
-@yield('css')
+
 
 
 <body>

@@ -6,6 +6,8 @@
   <title>{{ config('app.name') }}  - {{ $title}}</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<meta name="csrf-token" content="{{ csrf_token() }}">
+  
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="{{ asset('Admin/adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
   <!-- Font Awesome -->
@@ -54,9 +56,10 @@
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
+        
       </a>
 
+      
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
@@ -300,14 +303,22 @@
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <i class="fa fa-dashboard"></i> <span>新闻管理</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+            <li 
+@if($title == "新闻添加")
+class="active"
+@endif
+            ><a href="{{ url('jslmadmin/newsadd') }}"><i class="fa fa-circle-o"></i>添加新闻</a></li>
+            <li 
+@if($title == "新闻列表")
+class="active"
+@endif
+            ><a href="{{ url('jslmadmin/newsindex') }}"><i class="fa fa-circle-o"></i>新闻列表</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -472,16 +483,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
-    </section>
+
 
 @yield('content')
   </div>
@@ -544,5 +546,6 @@
 <script src="{{ asset('Admin/adminlte/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('Admin/adminlte/dist/js/demo.js')}}"></script>
+@yield('js')
 </body>
 </html>
