@@ -73,7 +73,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="{{ asset('Admin/adminlte/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Support Team
@@ -86,7 +86,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="{{ asset('Admin/adminlte/dist/img/user3-128x128.jpg') }}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         AdminLTE Design Team
@@ -98,7 +98,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="{{ asset('Admin/adminlte/dist/img/user4-128x128.jpg') }}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Developers
@@ -301,7 +301,11 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
+        <li class="
+@if($title == "新闻添加" || $title == "新闻列表")
+active
+@endif
+         treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>新闻管理</span>
             <span class="pull-right-container">
@@ -321,72 +325,110 @@ class="active"
             ><a href="{{ url('jslmadmin/newsindex') }}"><i class="fa fa-circle-o"></i>新闻列表</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="
+@if($title == "时尚包" || $title == "质享包" || $title == "臻藏包")
+active
+@endif
+        treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
-            <span>Layout Options</span>
+            <span>软包套餐</span>
             <span class="pull-right-container">
-              <span class="label label-primary pull-right">4</span>
+            <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-            <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-            <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+            <li
+@if($title == "时尚包")
+class="active"
+@endif
+            ><a href="{{ url('/admin/package/ruan/fashion') }}"><i class="fa fa-circle-o"></i>时尚包</a></li>
+            <li
+@if($title == "质享包")
+class="active"
+@endif
+            ><a href="{{ url('/admin/package/ruan/joylity') }}"><i class="fa fa-circle-o"></i>质享包</a></li>
+            <li
+@if($title == "臻藏包")
+class="active"
+@endif
+            ><a href="{{ url('/admin/package/ruan/peghid') }}"><i class="fa fa-circle-o"></i>臻藏包</a></li>
           </ul>
         </li>
-        <li>
-          <a href="pages/widgets.html">
-            <i class="fa fa-th"></i> <span>Widgets</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
-            </span>
-          </a>
-        </li>
-        <li class="treeview">
+
+        <li class="
+@if($title == "添加工艺" || $title == "工艺列表")
+active
+@endif
+        treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
-            <span>Charts</span>
+            <span>装修工艺</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+            <li
+@if($title == "添加工艺")
+class="active"
+@endif
+            ><a href="{{ url('/admin/gongyi/lei/add') }}"><i class="fa fa-circle-o"></i>添加工艺</a></li>
+            <li
+@if($title == "工艺列表")
+class="active"
+@endif
+            ><a href="{{ url('/admin/gongyi/lei/list') }}"><i class="fa fa-circle-o"></i>工艺列表</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="
+@if($title == "添加板块" || $title == "板块管理")
+active
+@endif
+        treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
-            <span>UI Elements</span>
+            <span>知识学堂</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-            <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-            <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-            <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-            <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+            <li
+@if($title == "添加板块")
+class="active"
+@endif
+            ><a href="{{ url('admin/plate/add') }}"><i class="fa fa-circle-o"></i>添加板块</a></li>
+            <li
+@if($title == "板块管理")
+class="active"
+@endif
+            ><a href="{{ url('admin/plate/index') }}"><i class="fa fa-circle-o"></i> 板块管理</a></li>
+            
           </ul>
         </li>
-        <li class="treeview">
+        <li class="
+@if($title == "添加案例" || $title == "案例管理")
+active
+@endif
+        treeview">
           <a href="#">
-            <i class="fa fa-edit"></i> <span>Forms</span>
+            <i class="fa fa-edit"></i> <span>案例管理</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-            <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-            <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+            <li
+@if($title == "添加案例")
+class="active"
+@endif
+            ><a href="{{ url('admin/case/add') }}"><i class="fa fa-circle-o"></i>添加案例</a></li>
+            <li
+@if($title == "案例管理")
+class="active"
+@endif
+            ><a href="{{ url('admin/case/index') }}"><i class="fa fa-circle-o"></i>案例管理</a></li>
           </ul>
         </li>
         <li class="treeview">

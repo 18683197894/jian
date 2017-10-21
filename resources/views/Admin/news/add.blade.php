@@ -31,7 +31,7 @@
     </div>
 @endif
        @if (session('info'))
-        <div class="text-danger">
+        <div style="height:30px; line-height:30px;" class="alert-danger">
         {{ session('info') }}
         </div>
       @endif
@@ -62,9 +62,24 @@
                 
                 <div id="leicon" class="form-group">
                   <label>新闻简介</label>
-                  <textarea name="leicon" class="form-control" rows="1" placeholder="Enter ...">{{ old('leicon') }}</textarea>
+                  <textarea name="leicon" class="form-control" rows="2" placeholder="Enter ...">{{ old('leicon') }}</textarea>
                 </div>
-              
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">网页标题</label>
+                  <input type="text"  name="titles" value="{{ old('titles') }}" class="form-control" id="exampleInputEmail1" placeholder="网页标题">
+                </div>
+                
+                 <div class="form-group">
+                  <label for="exampleInputEmail1">网页关键字</label>
+                  <input type="text"  name="keyworlds" value="{{ old('keyworlds') }}" class="form-control" id="exampleInputEmail1" placeholder="网页关键字">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">网页内容描述</label>
+                  <input type="text"  name="description" value="{{ old('description') }}" class="form-control" id="exampleInputEmail1" placeholder="网页内容描述">
+                </div>
+
 
                 <div class="form-group">
                   <label for="exampleInputFile">新闻展示图片</label>

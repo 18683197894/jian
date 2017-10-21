@@ -650,26 +650,12 @@
 			width:296px;
 			height:260px;
 			display: block;
-			background: url(home/images/index/con7_span1.png) no-repeat center center;
 		}
-		.zcon7_span2{
-			width:296px;
-			height:260px;
-			display: block;
-			background: url(home/images/index/con7_span2.png) no-repeat center center;
+		.zcon7_span1 img{
+			width:100%;
+			height:100%;
 		}
-		.zcon7_span3{
-			width:296px;
-			height:260px;
-			display: block;
-			background: url(home/images/index/con7_span3.png) no-repeat center center;
-		}
-		.zcon7_span4{
-			width:296px;
-			height:260px;
-			display: block;
-			background: url(home/images/index/con7_span4.png) no-repeat center center;
-		}
+		
 		.zcon7_span_2{
 			width:200px;
 			height:75px;
@@ -679,13 +665,16 @@
 		}
 		.zcon7_span_2 font{
 			font-size: 18px;
+			width:200px;
 			font-weight: normal;
 			color:#666;
 			display: block;
 			float:left;
 			margin-top: 10px;
+			float:left;
 		}
 		.zcon7_span_2 span{
+			width:200px;
 			display: block;
 			font-size: 15px;
 			margin-top: 10px;
@@ -751,61 +740,18 @@
 			height:156px;
 			border-left:4px solid #fff;			
 		}
-		.zcon_7_img1{
+		.zcon_7_img{
 			width:95px;
 			height:95px;
 			margin-left:25.5px;
 			margin-top:8px;
-			background: url(home/images/index/con7_2_img1.png) no-repeat center center;
+			border-radius: 999px;
+			overflow: hidden;
+			
 		}
-		.zcon_7_img2{
-			width:95px;
-			height:95px;
-			margin-left:25.5px;
-			margin-top:8px;
-			background: url(home/images/index/con7_2_img2.png) no-repeat center center;
-		}
-		.zcon_7_img3{
-			width:95px;
-			height:95px;
-			margin-left:25.5px;
-			margin-top:8px;
-			background: url(home/images/index/con7_2_img3.png) no-repeat center center;
-		}
-		.zcon_7_img4{
-			width:95px;
-			height:95px;
-			margin-left:25.5px;
-			margin-top:8px;
-			background: url(home/images/index/con7_2_img4.png) no-repeat center center;
-		}
-		.zcon_7_img5{
-			width:95px;
-			height:95px;
-			margin-left:25.5px;
-			margin-top:8px;
-			background: url(home/images/index/con7_2_img5.png) no-repeat center center;
-		}
-		.zcon_7_img6{
-			width:95px;
-			height:95px;
-			margin-left:25.5px;
-			margin-top:8px;
-			background: url(home/images/index/con7_2_img6.png) no-repeat center center;
-		}
-		.zcon_7_img7{
-			width:95px;
-			height:95px;
-			margin-left:25.5px;
-			margin-top:8px;
-			background: url(home/images/index/con7_2_img7.png) no-repeat center center;
-		}
-		.zcon_7_img8{
-			width:95px;
-			height:95px;
-			margin-left:25.5px;
-			margin-top:8px;
-			background: url(home/images/index/con7_2_img7.png) no-repeat center center;
+		.zcon_7_img img{
+			width:100%;
+			height:100%;
 		}
 		.zcon_7_2_zi{
 			width:144px;
@@ -870,7 +816,7 @@
 		}		
 		.z-con_8{
 			width:100%;
-			height:850px;
+			/*height:850px;*/
 			margin:0 auto;
 			padding-top:50px;
 		}
@@ -884,37 +830,39 @@
 		
 		.zcon8_head{
 			width:1200px;
-			height:90px;
+			height:80px;
 			margin:0 auto;
 		}
 		.zcon8_head1{
 			width:268px;
 			height:25px;
-			border-bottom:2px solid #E12E32;
+			border-bottom:3px solid #E12E32;
 			margin:0 auto;
 		}
-		.zcon8_head2,.zcon8_head2 ul{
-			width:1187px;
+		.zcon8_head2{
+			width:1200px;
 			height:55px;
+			margin: 0 auto;
+			text-align: center;
+		}
+		.zcon8_head2 span{
+			height:55px;
+			/*width:1100px;*/
 			margin:0 auto;
-		}
-		.zcon8_head2 ul li a{
-			overflow:hidden;
-			display:block;
-			float:left;
+			line-height: 55px;
 			font-weight:600;
-			font-size:19px;
-			color:#4a4a4a;
-			/*color:#DF2F32;*/
-			display:block;
-			margin:25px 8px 5px 8px;
+			font-size:20px;
+			color:#3a3a3a;
+			font-family: 'NSimSun', 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
 		}
-		.zcon8_head2 ul li a:hover{
+		
+
+		.zcon8_head2 span a:hover{
 			color:#DF2F32;
 		}
 		.zcon8_centent{
 			width:1200px;
-			height:600px;
+			/*height:600px;*/
 			margin:0 auto;
 			margin-top: 8px;
 		}
@@ -933,40 +881,40 @@
 		}
 		.zcon8_centent_2{
 			width:1200px;
-			height:520px;
+			/*height:520px;*/
 			margin:0 auto;
 			margin-top: 5px;
 		}
 		.zcon8_img_1{
-		width:236px;
-		height:258px;
+		width:234px;
+		height:256px;
 		overflow:hidden;
 		float:left;
 		position:relative;
 		}
 		.zcon8_img_2,.zcon8_img_3,.zcon8_img_4,.zcon8_img_5{
-		width:236px;
-		height:258px;
+		width:234px;
+		height:256px;
 		overflow:hidden;
 		float:left;
-		margin-left:5px;
+		margin-left:7px;
 		position:relative;
-		margin-bottom:5px;
+		margin-bottom:7px;
 		}
 		.zcon8_img_6{
-		width:236px;
-		height:258px;
+		width:234px;
+		height:256px;
 		position:relative;
 		overflow:hidden;
 		float:left;
 		}
 		.zcon8_img_7,.zcon8_img_8,.zcon8_img_9,.zcon8_img_10{
-		width:236px;
-		height:258px;
+		width:234px;
+		height:256px;
 		position:relative;
 		overflow:hidden;
 		float:left;
-		margin-left:5px;
+		margin-left:7px;
 		/*margin-bottom:5px;*/
 		}
 		.zcon8_centent_2 ul li img{
@@ -986,6 +934,7 @@
 			font-style: normal;
 			color:#DF2F32;
 			/*position:absolute;*/
+			font-family: 'NSimSun', 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
 			font-size: 22px;
 		}
 
@@ -1254,56 +1203,35 @@
 			<b>真实案例</b>	
 			<p class="head_2">公司品质保障 &nbsp;放心服务 &nbsp;全程包忧</p>	
 		</div>
+		@if(count($case) > 0 )
 		<div class="zcon_7_1">
-			<ul>
-				<li class="zcon7_li">  <span class="zcon7_span1"></span>   <span class="zcon7_span_2"> <font>混搭美式</font><br> <span>三室两厅 140㎡ 全包120万</span> </span>   <span class="zcon7_span_3"></span></li>
-				<li class="zcon7_lil"> <span class="zcon7_span2"></span>   <span class="zcon7_span_2"> <font>混搭美式</font><br> <span>三室两厅 140㎡ 全包120万</span> </span>   <span class="zcon7_span_4"></span></li>
-				<li class="zcon7_lil"> <span class="zcon7_span3"></span>   <span class="zcon7_span_2"> <font>混搭美式</font><br> <span>三室两厅 140㎡ 全包120万</span> </span>   <span class="zcon7_span_5"></span></li>
-				<li class="zcon7_lil"> <span class="zcon7_span4"></span>   <span class="zcon7_span_2"> <font>混搭美式</font><br> <span>三室两厅 140㎡ 全包120万</span> </span>   <span class="zcon7_span_6"></span></li>
+			<ul>	
+				@foreach($case as $j => $h)
+				<li @if( $loop->first ) class="zcon7_li" @else class="zcon7_lil" @endif>  <span class="zcon7_span1"><a href="{{ url('home/case/index/play') }}/{{ $h->id }}" target="_blank"><img src="{{ asset('uploads/case/img/') }}/{{ $h->keting }}" alt=""></a></span>   <span class="zcon7_span_2"> <a href="{{ url('home/case/index/play') }}/{{ $h->id }}" target="_blank"><font>{{ $h->title }}</font></a><span>{{ $h->huxing }} {{ $h->fengge }} {{ $h->yusuan }}</span> </span>   <span class="zcon7_span_{{ $loop->index +3 }}"></span></li>
+				@endforeach
+						
 			</ul>
 		</div>
+		@endif
+		@if(count($case) > 0 )
 		<div class="zcon_7_2">
-			<div class="zcon_7_2_divl">
-				<div class="zcon_7_2_1">
-					<div class="zcon_7_img1"></div>
-					<div class="zcon_7_2_zi"><span>客厅</span></div>
+			@foreach($case as $l => $m)
+			<div @if($loop->first) class="zcon_7_2_divl" @else class="zcon_7_2_div" @endif>
+				@foreach($m->eff as $n => $o)
+				<div class="zcon_7_2_{{ $loop->index + 1 }}">
+					<div class="zcon_7_img"><a href="{{ url('home/case/index/play') }}/{{ $m->id }}" target="_blank"><img src="{{ asset('/uploads/case/img') }}/{{ $o }}" alt=""></a></div>
+					<div class="zcon_7_2_zi"><span>{{ $n }}</span></div>
 				</div>
-				<div class="zcon_7_2_2">
-					<div class="zcon_7_img2"></div>
+				@endforeach
+				<!-- <div class="zcon_7_2_2">
+					<div class="zcon_7_img"><img src="{{ asset('/home/images/index/con7_2_img1.png') }}" alt=""></div>
 					<div class="zcon_7_2_zi"><span>卧室</span></div>
-				</div>
+				</div> -->
 			</div>
-			<div class="zcon_7_2_div">
-				<div class="zcon_7_2_1">
-					<div class="zcon_7_img3"></div>
-					<div class="zcon_7_2_zi"><span>厨房</span></div>
-				</div>
-				<div class="zcon_7_2_2">
-					<div class="zcon_7_img4"></div>
-					<div class="zcon_7_2_zi"><span>卫生间</span></div>
-				</div>
-			</div>
-			<div class="zcon_7_2_div">
-				<div class="zcon_7_2_1">
-					<div class="zcon_7_img5"></div>
-					<div class="zcon_7_2_zi"><span>阳台</span></div>
-				</div>
-				<div class="zcon_7_2_2">
-					<div class="zcon_7_img6"></div>
-					<div class="zcon_7_2_zi"><span>榻榻米</span></div>
-				</div>
-			</div>
-			<div class="zcon_7_2_div">
-				<div class="zcon_7_2_1">
-					<div class="zcon_7_img7"></div>
-					<div class="zcon_7_2_zi"><span>书房</span></div>
-				</div>
-				<div class="zcon_7_2_2">
-					<div class="zcon_7_img8"></div>
-					<div class="zcon_7_2_zi"><span>儿童房</span></div>
-				</div>
-			</div>
+			@endforeach
+			
 		</div>
+		@endif
   	</div>
 
 	<div class="z-con_8"> <!-- 装修工艺 -->
@@ -1319,18 +1247,17 @@
 					
 				</div>
 				<div class="zcon8_head2">
-					<ul>
-						<li><a href="">工长俱乐部</a></li>
-						<li><a href="">墙地砖铺贴工艺</a></li>
-						<li><a href="">包装工艺</a></li>
-						<li><a href="">顶角线安装</a></li>
-						<li><a href="">电路施工工艺</a></li>
-						<li><a href="">墙面处理</a></li>
-						<li><a href="">水路施工工艺</a></li>
-						<li><a href="">集成吊顶安装</a></li>
-						<li><a href="">防水工艺</a></li>
-						<li><a href="">木地板铺贴工艺</a></li>
-					</ul>
+					@if( !empty($data) )
+					@foreach($data as $k => $v)
+						<span
+					    @if ($loop->first)
+					        
+					    @else
+							style="margin-left:8px;"
+					    @endif
+						><a href="{{ url('home/gongyi/list/') }}/{{ $v->id }}">{{ $v->title }}</a></span>
+					@endforeach
+					@endif					
 				</div>
 			</div>
 			<div class="zcon8_centent">
@@ -1341,16 +1268,11 @@
 				</div>
 				<div class="zcon8_centent_2">
 					<ul>
-						<li id="con8" class="zcon8_img_1"> <a href="" ><img src="{{ asset('home/images/index/con8_1.png') }}" alt=""> <div style="display:none"><span>工长俱乐部</span></div></a> </li>
-						<li id="con8" class="zcon8_img_2"> <a href="" ><img src="{{ asset('home/images/index/con8_2.png') }}" alt=""> <div style="display:none"><span>墙地砖铺贴工艺</span></div></a> </li>
-						<li id="con8" class="zcon8_img_3"> <a href="" ><img src="{{ asset('home/images/index/con8_3.png') }}" alt=""> <div style="display:none"><span>包装工艺</span> </div></a></li>
-						<li id="con8" class="zcon8_img_4"> <a href="" ><img src="{{ asset('home/images/index/con8_4.png') }}" alt=""> <div style="display:none"><span>顶角线安装</span> </div></a></li>
-						<li id="con8" class="zcon8_img_5"> <a href="" ><img src="{{ asset('home/images/index/con8_5.png') }}" alt=""> <div style="display:none"><span>电路施工工艺</span> </div></a></li>
-						<li id="con8" class="zcon8_img_6"> <a href="" ><img src="{{ asset('home/images/index/con8_6.png') }}" alt=""> <div style="display:none"><span>墙面处理</span> </div></a></li>
-						<li id="con8" class="zcon8_img_7"> <a href="" ><img src="{{ asset('home/images/index/con8_7.png') }}" alt=""> <div style="display:none"><span>水路施工工艺</span> </div></a></li>
-						<li id="con8" class="zcon8_img_8"> <a href="" ><img src="{{ asset('home/images/index/con8_8.png') }}" alt=""> <div style="display:none"><span>集成吊顶安装</span> </div></a></li>
-						<li id="con8" class="zcon8_img_9"> <a href="" ><img src="{{ asset('home/images/index/con8_9.png') }}" alt=""> <div style="display:none"><span>防水工艺</span> </div></a></li>
-						<li id="con8" class="zcon8_img_10"><a href=""><img src="{{ asset('home/images/index/con8_10.png') }}" alt=""> <div style="display:none"><span>木地板铺贴工艺</span> </div></a></li>
+					@if( !empty($data) )
+					@foreach($data as $kk => $vv)
+						<li id="con8" class="zcon8_img_{{ $kk + 1 }}"> <a href="{{ url('home/gongyi/list/') }}/{{ $vv->id }}" ><img src="{{ asset('uploads/gongyi/img/') }}/{{ $vv->img }}" alt=""> <div style="display:none"><span>{{ $vv->title }}</span></div></a> </li>
+					@endforeach
+					@endif	
 					</ul>
 				</div>
 			</div>
@@ -1395,35 +1317,27 @@ $("#con8 a").hover(
 	<div class="z-con3"><!--知识-->
 	    <div class="z-huoban-1"><p class="z-hb-1">Knowledge corner</p><b>知识学堂</b><p class="z-hb-2">零基础学装修&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;三分钟了解全屋装修</p></div>
 		<ul>
-			<li class="zcon3_lil">
-			<img src="{{ asset('/home/images/index/con3_1.png') }}" alt="">
-			<div>
-			<a href="#">什么是智能橱柜，智能橱柜有什么优势...</a>
-			<a href="#">那些你一定要知道的验房标准程序...</a>
-			<a href="#">实用二手房验收总结</a>
-			<a href="#">隐形门是如何做到隐形的？...</a>
-			</div>
-			</li>
+		@if( isset($plate) && !empty($plate))
+			@foreach($plate as $g => $h)
+				<li 
+				@if($loop->first)
+				class="zcon3_lil"
+				@else
+				class="zcon3_li"
+				@endif
+				>
+					<a href="{{ url('home/plate/list') }}/{{ $h->id }}"><img src="{{ asset('/uploads/plate/img') }}/{{ $h->img }}" alt=""></a>
+					<div>
+						@if(!empty($h->news))
+							@foreach($h->news as $gg => $hh)
+								<a href="{{ url('home/plate/play/') }}/{{ $hh->id }}">{{ $hh->title }}</a>
+							@endforeach
+						@endif
+					</div>
+				</li>
+			@endforeach
+		@endif
 
-			<li class="zcon3_li">
-			<img src="{{ asset('/home/images/index/con3_2.png') }}" alt="">
-			<div>
-			<a href="#">什么是智能橱柜，智能橱柜有什么优势...</a>
-			<a href="#">那些你一定要知道的验房标准程序...</a>
-			<a href="#">实用二手房验收总结</a>
-			<a href="#">隐形门是如何做到隐形的？...</a>
-			</div>
-			</li>
-
-			<li class="zcon3_li">
-			<img src="{{ asset('/home/images/index/con3_3.png') }}" alt="">
-			<div>
-			<a href="">什么是智能橱柜，智能橱柜有什么优势...</a>
-			<a href="">那些你一定要知道的验房标准程序...</a>
-			<a href="">实用二手房验收总结</a>
-			<a href="">隐形门是如何做到隐形的？...</a>
-			</div>
-			</li>
 		</ul>
 	</div>
 	

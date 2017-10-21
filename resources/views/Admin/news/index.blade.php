@@ -5,7 +5,7 @@
 @endsection('css')
 
 @section('content')
-    <section class="content-header">
+    <section class="content-header" style="text-align:center">
       <h1>
         新闻列表
         <!-- <small>Control panel</small> -->
@@ -20,12 +20,12 @@
   <div class="box">
             <div class="box-header">
        @if (session('info'))
-        <div class="text-danger">
+        <div style="height:40px;line-height:10px;" class="alert alert-danger">
         {{ session('info') }}
         </div>
       @else
-              <h3 class="box-title">Data Table With Full Features</h3>
-
+             <!--  <h3 class="box-title">Data Table With Full Features</h3>
+ -->
       @endif
             </div>
             <!-- /.box-header -->
@@ -69,14 +69,14 @@
               <div class="row"><div class="col-sm-12"><table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
                 <thead>
                 <tr role="row">
-                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" style="width: 100px;">ID</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 270px; text-align:center;">标题</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 180px; text-align:center;">来源</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 158px; text-align:center;">分类</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 200px; text-align:center;">展示图片</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 165px; text-align:center;">发表时间</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 175px; text-align:center;">点击率</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 180px; text-align:center;">操作</th>
+                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" style="width: 7%;">ID</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 15%; text-align:center;">标题</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 8%; text-align:center;">来源</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 7%; text-align:center;">分类</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 20%; text-align:center;">展示图片</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 18%; text-align:center;">发表时间</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 10%; text-align:center;">点击率</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 15%; text-align:center;">操作</th>
                 </tr>
                </thead>
 
@@ -100,7 +100,7 @@
                   </a>&nbsp;&nbsp;<a class="shan" href="#" onclick="return false;">删除
                   &nbsp;</a>&nbsp;&nbsp;<a class="zhi" href="#" 
                   @if($v->zhi ==1)
-                  index="hui" style="opacity: 0.6"
+                  index="2" style="opacity: 0.6"
                   @endif
                    onclick="return false;" >置顶</a></td>
                 </tr>
@@ -124,16 +124,16 @@
 @section('js')
 
        <script>
-       $(".zhi[index!='hui']").on('click',function(){
+       $(".zhi").on('click',function(){
         var css = $(this).attr('index');
     
-        if(css =="hui")
+        if(css =="2")
         {
           return false;
         }
         var id = $(this).parents('tr').find('td').eq(0).html();
         var zhi = $(this);
-        var yuan = $("a[index='hui']");
+        var yuan = $("a[index='2']");
 
          $.ajaxSetup({
           headers: {
@@ -148,10 +148,10 @@
             success:function(data){
               if(data ==1 ){
                 yuan.css('opacity','1');
-                yuan.attr('index','hhh');
+                yuan.attr('index','1');
                
                 zhi.css('opacity','0.6');
-                zhi.attr('index','hui');
+                zhi.attr('index','2');
               alert('置顶成功');
                
               }

@@ -27,11 +27,11 @@
 .z-news-con-r{width:450px;height:auto;float:right;display:inline;overflow:hidden;border-top:none;margin-top:50px;}
 .z-news-r-1{width:448px;height: auto;border-bottom:1px solid #f3f3f3;border:1px solid #f3f3f3;background:#fff;}
 .z-news-r-1 p{padding:0;margin:0;width:176px;height:40px;line-height:40px;color:#fff;background:#008CD6;text-align:center;display:block;font-size:18px;}
-.z-news-r-1 ul{padding:0;width:448px;height:491px;border-top:1px solid #f3f3f3;margin:0;display:block;}
+.z-news-r-1 ul{padding:0;width:448px;border-top:1px solid #f3f3f3;margin:0;display:block;}
 .z-news-r-1 ul li{width:420px;height:65px;margin-top:15px;margin-left:15px;}
 .z-news-r-1 ul li img{float:left;margin-right:10px;margin-top:5px;margin:0 auto;}
 .z-news-r-1 ul li b{width:290px;height:26px;font-size:14px;display:block;float:right;margin:0 auto;font-style:normal;font-weight:normal;color:#333;}
-.z-news-r-1 ul li span{width:290px;height:34px;font-size:12px;display:block;text-indent:25px;float:right;color:#999;}
+/*.z-news-r-1 ul li span{width:290px;height:34px;font-size:12px;display:block;text-indent:25px;float:right;color:#999;}*/
 
 .z-news-r-2{width:448px;height:auto;margin-top:16px;overflow:hidden;border:1px solid #f3f3f3;background:#fff;}
 .z-news-r-2 p{padding:0;margin:0;width:176px;height:40px;line-height:40px;color:#fff;background:#008CD6;text-align:center;display:block;font-size:18px;}

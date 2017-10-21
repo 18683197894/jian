@@ -71,10 +71,55 @@ class JsgwController extends Controller
         $qi  = \DB::table('news')->where('lei',2)->orderby('time')->skip(0)->take(6)->get();
         $xun = \DB::table('news')->orderby('click','desc')->skip(0)->take(10)->get();
         $data = \DB::table('news')->where('id',$id)->first();
-
+        if( $data ==null )
+        {
+            return redirect('news');
+        }
         $num = $data->click + 1;
         \DB::table('news')->where('id',$id)->update(['click'=>$num]);
-        return view('home.jsgw.newslist',['data'=>$data,'title'=>'新闻详情','qi'=>$qi,'xun'=>$xun]);
+       
+        return view('home.jsgw.newslist',['data'=>$data,'title'=>$data->titles,'qi'=>$qi,'xun'=>$xun,'keyworlds'=>$data->keyworlds,'description'=>$data->description]);
     }
 
+    public function franchise(){
+        return view('home.jsgw.franchise',['title'=>'合作伙伴招募','es' =>1]);
+    }
+
+    public function zmajax(Request $request)
+    {   
+        $data = $request->except('_token');
+        $data['time'] = time();
+        $name = \DB::table('framchise')->where('name',$data['name'])->first();
+
+        if($name)
+        {
+            if($data['name'] == $name->name && $data['email'] == $name->email && $data['phone'] == $name->phone)
+            {
+                return response()->json(3);
+            }else
+            {
+                \DB::table('framchise')->delete($name->id);
+            }
+        }
+
+        $res = \DB::table('framchise')->insert($data);
+        if($res)
+        {
+            return response()->json(1);
+        }else
+        {
+            return response()->json(2);
+
+        }
+    }
+    public function honest()
+    {
+        return view('home.jsgw.honest',['title'=>'廉洁规章','es' =>2]);
+    }
+
+    public function cgs()
+    {
+        return view('home.jsgw.cgs',['title'=>'采购商入驻','es' =>3]);
+
+    }
 }

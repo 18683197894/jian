@@ -11,21 +11,35 @@ class NewsController extends Controller
     	return view('Admin.news.add',['title'=>'新闻添加']);
     }
     public function newsadds(Request $request){
+        
     	$data = $request->except('_token');
 		$this->validate($request,[
-		    'title' => 'required|min:6|max:30',
+		    'title' => 'required|min:2|max:30',
 		    'yuan'	=> 'required',
-		    'leicon'=>'required|min10|max46',
+		    'leicon'=>'required|min:10|max:46',
 		    'titleimg'=>'required',
-		    'content' =>'required'
+		    'content' =>'required',
+            'titles' => 'required|min:2|max:10',
+            'keyworlds' => 'required|min:6|max:30',
+            'description' => 'required|min:10|max:120'
+
  		],[
 			'title.required'=>'标题不能为空',
-			'title.min'=>'标题最少6位最大30位',
-			'title.max'=>'标题最少6位最大30位',
+			'title.min'=>'标题最少2位最大30位',
+			'title.max'=>'标题最少2位最大30位',
+            'titles.required'=>'网页标题不能为空',
+            'titles.min'=>'网页标题最少2位最大10位',
+            'titles.max'=>'网页标题最少2位最大10位',
+            'keyworlds.required'=>'网页关键字不能为空',
+            'keyworlds.min'=>'网页关键字最少6位最大30位',
+            'keyworlds.max'=>'网页关键字最少6位最大30位',
+            'description.required'=>'网页内容描述不能为空',
+            'description.min'=>'网页内容描述最少10位最大120位',
+            'description.max'=>'网页内容描述最少10位最大120位',
 			'yuan.required'=>'来源不能为空',
             'leicon.required'=>'简介不能为空',
-            'leicon.min'=>'标题最少10位最大46位',
-			'leicon.max'=>'标题最少10位最大46位',
+            'leicon.min'=>'简介最少10位最大46位',
+			'leicon.max'=>'简介最少10位最大46位',
 			'titleimg.required'=>'未上传图片',
 			'content.required'=>'内容不能为空'
 		]);  
@@ -69,11 +83,11 @@ class NewsController extends Controller
     	$num = isset($request->num) ? $request->num : 0;
     	$key = isset($request->key) ? $request->key : '';
     	if($num == 0){
-    		$data = \DB::table('news')->where('title','like','%'.$key.'%')->orderBy('time')->paginate(10);
+    		$data = \DB::table('news')->where('title','like','%'.$key.'%')->orderBy('time','desc')->paginate(10);
     	}elseif($num==1){
-    		$data = \DB::table('news')->where('lei',$num)->where('title','like','%'.$key.'%')->orderBy('time')->paginate(10);
+    		$data = \DB::table('news')->where('lei',$num)->where('title','like','%'.$key.'%')->orderBy('time','desc')->paginate(10);
     	}elseif($num==2){
-    		$data = \DB::table('news')->where('lei',$num)->where('title','like','%'.$key.'%')->orderBy('time')->paginate(10);
+    		$data = \DB::table('news')->where('lei',$num)->where('title','like','%'.$key.'%')->orderBy('time','desc')->paginate(10);
     	}    	
     	return view('Admin.news.index',['title'=>'新闻列表','data'=>$data,'request'=>$request->all()]);
     }
@@ -85,17 +99,27 @@ class NewsController extends Controller
     public function newsedits(Request $request){
     	$data = $request->except('_token');
 		$this->validate($request,[
-		    'title' => 'required|min:6|max:30',
+		    'title' => 'required|min:2|max:30',
 		    'yuan'	=> 'required',
 		    'leicon'=>'required',
-		    'content' =>'required'
+		    'content' =>'required',
+            'titles' => 'required|min:2|max:10',
+            'keyworlds' => 'required|min:6|max:30',
+            'description' => 'required|min:10|max:120'
  		],[
 			'title.required'=>'标题不能为空',
-			'title.min'=>'标题最少6位最大30位',
-			'title.max'=>'标题最少6位最大30位',
+			'title.min'=>'标题最少2位最大30位',
+			'title.max'=>'标题最少2位最大30位',
 			'yuan.required'=>'来源不能为空',
 			'leicon.required'=>'简介不能为空',
-			
+			'titles.min'=>'网页标题最少2位最大10位',
+            'titles.max'=>'网页标题最少2位最大10位',
+            'keyworlds.required'=>'网页关键字不能为空',
+            'keyworlds.min'=>'网页关键字最少6位最大30位',
+            'keyworlds.max'=>'网页关键字最少6位最大30位',
+            'description.required'=>'网页内容描述不能为空',
+            'description.min'=>'网页内容描述最少10位最大120位',
+            'description.max'=>'网页内容描述最少10位最大120位',
 			'content.required'=>'内容不能为空'
 		]);
 
@@ -120,7 +144,7 @@ class NewsController extends Controller
     	if($res){
     		return redirect('jslmadmin/newsindex')->with('info','更新成功');
     	}else{
-    		return back()->with('info','更新失败');
+    		return back()->with('info','更新失败 内容未更改！');
     	}
     }
 

@@ -71,8 +71,8 @@ ul.nav-main >li>a:hover{
     position: absolute;
     display:none;
 	background:#fff;
-    top: 38px;
-    z-index:103;
+    top: 39px;
+    z-index:999;
 }
 #box-1 ul{
     width:233px;
@@ -134,8 +134,9 @@ ul.nav-main >li>a:hover{
     position: absolute;
     display:none;
     background:#fff;
-    top: 38px;
-    z-index:103;
+    top: 39px;
+    z-index:999;
+    
 }
 #box2_ul{
     width:233px;
@@ -151,7 +152,8 @@ ul.nav-main >li>a:hover{
     display:none;
     background:#fff;
     top: 38px;
-    z-index:103;
+    z-index:999;
+    
 }
 #box-3 ul{
     width:233px;
@@ -221,8 +223,9 @@ ul.nav-main >li>a:hover{
     position: absolute;
     display:none;
     background:#fff;
-    top: 38px;
-    z-index:103;
+    top: 39px;
+    z-index:999;
+    
 }
 #box-5{
     width: 233px;
@@ -232,8 +235,9 @@ ul.nav-main >li>a:hover{
     position: absolute;
     display:none;
     background:#fff;
-    top: 38px;
-    z-index:103;
+    top: 39px;
+    z-index:999;
+  
 }
 #box-6{
     width: 233px;
@@ -243,8 +247,9 @@ ul.nav-main >li>a:hover{
     position: absolute;
     display:none;
     background:#fff;
-    top: 38px;
-    z-index:103;
+    top: 39px;
+    z-index:999;
+    
 }
 #box-7{
     width: 320px;
@@ -254,8 +259,9 @@ ul.nav-main >li>a:hover{
     position: absolute;
     display:none;
     background:#fff;
-    top: 38px;
-    z-index:103;
+    top: 39px;
+    z-index:999;
+    
 }
 .hidden-loc-index{
     left: 119px;

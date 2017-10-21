@@ -8,7 +8,7 @@ $(document).ready(function(){
         var Obj = $(this).attr('id');
         num = Obj.substring(3, Obj.length);
         $('#li-'+num).css('color','red');
-        $('#li-'+num).css('border-bottom','2px solid #fff');
+        $('#li-'+num).css('border-bottom','3px solid #fff');
         $('#box-'+num).slideDown(300);
     },function(){
         // /*图标向下旋转*/
@@ -23,7 +23,7 @@ $(document).ready(function(){
         /*保持图标向上*/
         $('#li-'+num).children().removeClass().addClass('hover-up');
         $('#li-'+num).css('color','red');
-         $('#li-'+num).css('border-bottom','2px solid #fff');
+         $('#li-'+num).css('border-bottom','3px solid #fff');
         $(this).show();
 
     },function(){

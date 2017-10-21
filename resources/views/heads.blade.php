@@ -6,12 +6,11 @@
 <link href="{{ asset('home/images/images/heads.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('home/lunpo/index/main.css') }}" rel="stylesheet" type="text/css" />
 <meta name="csrf-token" content="{{ csrf_token() }}">
+<meta name="keywords"content="@if(empty($keyworlds))建设网@else{{ $keyworlds }}@endif"> 
+<meta name="description"content="@if(empty($description))建设网@else{{ $description }}@endif"> 
 	<script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
 
-	<title>{{ config('app.name') }}  
-@if(!empty($title))
-	- {{$title}}
-@endif</title>
+	<title>{{ config('app.name') }}@if(!empty($title))  - {{$title}}@endif</title>
 @yield('css')
 </head>
 
@@ -229,6 +228,6 @@
 </div>
 </body>
 	<script src="{{ asset('home/lunpo/index/main.js') }}"></script>
-
+@yield('js')
 </html>
 	

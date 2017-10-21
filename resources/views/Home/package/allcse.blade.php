@@ -705,11 +705,11 @@
 	<div class="allhead_1">
 		<div class="allhead_1_1">
 			<img src="{{ asset('home/images/allcse/4.png') }}" alt="">
-			<a href="#">全包套餐</a>
+			<a href="{{ asset('/package/allcse') }}">全包套餐</a>
 		</div>
 		<div class="allhead_1_2">
 			<img src="{{ asset('home/images/allcse/3.png') }}" alt="">
-			<a href="#">软包套餐</a>
+			<a href="{{ url('package/softroll') }}">软包套餐</a>
 		</div>
 	</div>
 </div>

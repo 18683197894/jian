@@ -1,0 +1,184 @@
+.all1{
+		width:100%;
+		height:500px;
+		background-image:url(/home/images/allcse/1.png);
+		background-repeat: no-repeat;
+		background-size: 100% 100%
+		filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/home/images/allcse/1.png',sizingMethod='scale');
+	}
+	.all1con{
+		width:673px;
+		height:500px;
+		display:block;
+		margin: 0 auto;
+		padding-top: 64px;
+	}
+	.all1conn{
+		width:673px;
+		height:366px;
+		background: rgba(255,255,255,0.7);
+		text-align: center;
+	}
+	.alldiv{
+		width:400px;
+		height:110px;
+		margin:0 auto;
+		padding-top: 48px;
+	}
+	.allspan1{
+		font-size: 90px;
+		display:block;
+		font-weight: 600;
+		float:left;
+		margin-left: 76px;
+		font-family:'Microsoft JhengHei';
+		color:#F4993C;letter-spacing:2px;
+	}
+	.allspan2{
+	    font-size: 40px;
+		font-weight: 600;
+		float:left;
+		color:#F4993C;
+		display:block;
+		margin-left: 5px;
+		margin-top: 53px;
+		font-family: "Times New Roman", Times, serif;
+		
+		letter-spacing:1px;
+
+	}
+	.allapan3{
+		display:block;
+		font-family: "Times New Roman", Times, serif;
+		color:#2F2E40;
+		font-size: 3.5em;
+		font-weight: 900;
+		font-style: normal;
+		margin-top:-2px;
+		letter-spacing:3px;
+		margin-left: 208px;
+		float:left;
+	}
+	.alldiv2{
+		float:left;
+		margin-left:157px;
+		width:372px;
+		height:44px;
+		margin-top: 10px;
+		background-color:#000;
+		text-align: center;
+	}
+	.alldiv2 span{
+		line-height: 44px;
+		color:#fff;
+		letter-spacing:4px;
+		font-size: 26px;
+	}
+	.allhead{
+		width:100%;
+		height:64px;
+		background-color:#f5f5f5;
+	}
+	.allhead_1{
+		width:406px;
+		height:64px;
+		margin:0 auto;
+	}
+	.allhead_1_1{
+		width:130px;
+		height:62px;
+		float:left;
+		
+	}
+	.allhead_1_2{
+		width:130px;
+		height:62px;border-bottom:2px solid #E12E32;
+		float:right;
+	}
+	.allhead_1_1 img{
+		float:left;
+		margin-top: 16px;
+	}
+	.allhead_1_2 img{
+		float:left;
+		margin-top: 15px;
+	}
+	.allhead_1_1 a{
+		line-height: 69px;
+		font-size: 20px;font-family:Arial,Helvetica,sans-serif;
+		color:#5B5B5B;
+		margin-left: 6px;
+	}
+	.allhead_1_2 a{
+		font-size: 20px;
+		line-height: 68px;
+		margin-left: 7px;font-family:Arial,Helvetica,sans-serif;
+		color:#E33A3D;
+
+	}	
+/*软包套餐*/
+.rb-con{width:100%;height:auto;overflow:hidden;margin:0 auto;}
+.rb-tit{width:1200px;height:94px;line-height:94px;text-align:center;font-size:22px;color:#333;margin:0 auto;}
+.rb-si{width:1200px;height:366px;margin:0 auto;}
+.rb-si ul{padding:0;margin:0;width:1200px;height:366px;}
+.rb-si ul li{padding:0;float:left;display:inline;width:300px;height:366px;background: url(rf-bk2.jpg) no-repeat top right;color:#989898;}
+.rb-si ul li b{padding:0;font-size:18px;width:292px;height:26px;line-height:26x;text-align:center;display:block;font-weight:normal;margin-top:16px;color:#727272;}
+.rb-si ul li p{padding:0;font-size:14px;width:220px;height:50px;text-align:center;display:block;margin:0 auto;margin-top:10px;}
+.rb-taocan{width:1200px;height:100%;margin:0 auto;}
+.rb-taocan-tit{width:1200px;height:88px;line-height:88px;text-align:center;text-align:center;font-size:22px;color:#333;margin:0 auto;}
+
+.ztabmenu7,,.ztabmenu8,.ztabmenu9{width:1200px;height:39px;line-height:39px;float:left;display:inline;margin:0 auto;}
+.ztabmenu7 ul,.ztabmenu8 ul,.ztabmenu9 ul{margin:0;padding:0;}
+.ztabmenu7 li,.ztabmenu8 li,.ztabmenu9 li{text-align:center; cursor:pointer;float:left;width:300px;height:39px;line-height:39px;overflow:hidden;display:inline;color:#666;font-size:16px;background:#f5f5f5;}
+.ztabmenu7 .zcli,.ztabmenu8 .zcli,.ztabmenu9 .zcli{text-align:center;float:left;width:300px;height:39px;line-height:39px;display:inline;background:#E12E32;color:#fff;}
+
+#ztabcontent1,#ztabcontent2,#ztabcontent3{width:1200px;height:100%;overflow:hidden;overflow:hidden;color:#004b4c;margin:0 auto;margin-top:10;}
+
+
+
+
+
+.rb-tc-img1{width:1200px;height:421px;margin:0 auto; position: relative;}
+.rb-tc-img1 img{position: absolute;top:0px;left:0px;width:100%;height:100%;}
+.rb-div{position: absolute;right:115px;top:0px;color:#555;padding:40px 40px 0px 40px;width:224px;height:381px;display:block;background:#fff;background: rgba(255,255,255,0.88);line-height:1.8em;font-size:15px;}
+.rb-tc-img1 span h2{font-size:18px;margin:0 auto;display:block;text-align:center;padding-bottom: 5px;color:#555}
+/*.rb-tc-img1-1{background:url(./home/images/softroll/taocan-5.png) no-repeat top left;}
+.rb-tc-img1-2{background:url(./home/images/softroll/taocan-6.png) no-repeat top left;}
+.rb-tc-img1-3{background:url(/home/images/softroll/taocan-7.png) no-repeat top left;}
+.rb-tc-img1-4{background:url(/home/images/softroll/taocan-5.png) no-repeat top left;}*/
+
+.taocannei{width:1200px;height:56px;margin:0 auto;text-align:center;}
+.taocannei span{width:100%;height:56px;text-align:center;margin:0 auto;}
+.taocannei span .menu1{
+	font-style: normal;
+	font-weight: normal;
+	font-size: 17px;
+	color:#333;
+	width:90px;
+	line-height: 56px;
+	padding:0 25px 0 25px;
+	border-left: 1px solid #ccc;
+}
+.taocannei span .menu2{
+	font-style: normal;
+	font-weight: normal;
+	font-size: 17px;
+	color:#333;
+	width:90px;
+	line-height: 56px;
+	padding:0 25px 0 25px;
+}
+
+#c0{display:block;margin:0 auto;width:1200px;}
+#c0 p{padding:0;width:1200px;height:36px;line-height:36px;display:block;}
+.c0-tit{width:1200px;height:36px;line-height:36px;background:#e1e1e1;color:#353535;font-size:16px;}
+.c0-tit-1{width:210px;height:36px;line-height:36px;display:block;margin-left:30px;float:left;}
+.c0-tit-2{width:329px;height:36px;line-height:36px;text-align:center;display:block;float:left;}
+.c0-tit-3{width:300px;height:36px;line-height:36px;text-align:center;display:block;float:left;}
+.c0-tit-4{width:226px;height:36px;line-height:36px;text-align:center;display:block;float:left;}
+
+.c0-con{width:1200px;height:auto;overflow: hidden;background:#f5f5f5;padding-bottom:15px;height:200px;}
+.c0-tit-51{width:210px;height:40px;line-height:40px;display:block;margin-left:30px;float:left;font-size:15px;color:#666;}
+.c0-tit-52{width:329px;height:40px;line-height:40px;text-align:center;display:block;float:left;font-size:15px;color:#666;}
+.c0-tit-53{width:300px;height:40px;line-height:40px;text-align:center;display:block;float:left;font-size:15px;color:#666;}
+.c0-tit-54{width:226px;height:40px;line-height:40px;text-align:center;display:block;float:left;font-size:15px;color:#666;}
