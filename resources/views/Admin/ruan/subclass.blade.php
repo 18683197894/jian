@@ -42,7 +42,7 @@
                   <th style="width: 7%; text-align:center;">ID</th>
                   <th style="width:12%; text-align:center;">标题</th>
                   <th style="width:13%; text-align:center;">规格</th>
-                  <th style="width:13%; text-align:center;">品牌</th>
+                  <th style="width:13%; text-align:center;">材质</th>
                   <th style="width:8%; text-align:center;">数量</th>
                   <th style="width:8%; text-align:center;">价格</th>
                   <th style="width:18%; text-align:center;">路径</th>
@@ -70,7 +70,7 @@
     @endforeach($data as $k => $v)
 @else
                 <tr>
-                  <td style="text-align: center;vertical-align: middle" colspan="8">未找到{{ $dd->title }}下的子类</td>
+                  <td style="text-align: center;vertical-align: middle" colspan="9">未找到{{ $dd->title }}下的子类</td>
                 </tr>
 @endif
 

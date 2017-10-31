@@ -9,7 +9,7 @@
   <div class="z-news">
        <div class="z-news1"></div>
 	   <div class="z-news-con">
-	       <div class="z-loc">当前位置：<a href="{{ url('/') }}">首页</a>&gt;&gt;<a href="{{ url('/news') }}">新闻动态</a>&gt;&gt;<a href="#" onclick="return false">新闻详情</a></div>
+	       <div class="z-loc">当前位置：<a href="{{ url('/') }}">首页</a>&gt;&gt;<a href="{{ url('/news/') }}/{{ $data->pid }}">{{ $tit->title }}</a>&gt;&gt;<a href="#" onclick="return false">新闻详情</a></div>
 	       <div class="z-news-con-ls">
 		       <div class="z-news-con-tit">{{ $data->title }}</div>
 			   <div class="z-news-con-titda"><span class="z-n-ps1">来源：{{ $data->yuan }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日期：{{ date('Y年m月d日',$data->time) }}</span><span class="z-n-ps2">{{ $data->click }}</span></div>
@@ -19,14 +19,14 @@
 		   </div>
 	       <div class="z-news-con-r">
 		      <div class="z-news-r-1">
-			     <p>企业新闻</p>
+			     <p>新闻板块推荐</p>
 			     <ul>
 			     @if(isset($qi) && count($qi) > 0)
 					@foreach($qi as $kkk => $vvv)
-				    <li><img src="{{ asset('uploads/news/titleimg/') }}/{{ $vvv->titleimg }}" width="120" height="60"/><a href="{{ url('news/list/') }}/{{ $vvv->id }}"><b>@php echo mb_substr($vvv->title,0,19,'utf8')."‥" @endphp</b></a><span>@php echo mb_substr($vvv->leicon,0,45,'utf8') @endphp</span></li>
+				    <li><img src="{{ asset('uploads/news/img/') }}/{{ $vvv->img }}" width="120" height="60"/><a href="{{ url('/news/') }}/{{ $vvv->id }}"><b>@php echo mb_substr($vvv->title,0,19,'utf8')."‥" @endphp</b></a><span></span></li>
 				 	@endforeach
 				 @else
-				    <li style="margin-left:190px;margin-top:30px">未找到新闻</li>
+				    <li style="margin-left:190px;margin-top:30px">未找到工艺</li>
 				
 				 @endif
 				 </ul>
@@ -37,7 +37,7 @@
 				  <ul>
 				  	@if(isset($xun) && count($xun)>0)
 				  	@foreach($xun as $kk => $vv)
-				     <li><a href="{{ url('news/list/') }}/{{ $vv->id }}">@php echo mb_substr($vv->title,0,26,'utf8')."‥" @endphp</a></li> 
+				     <li><a href="{{ url('/news/list/') }}/{{ $vv->id }}">@php echo mb_substr($vv->title,0,26,'utf8')."‥" @endphp</a></li> 
 					@endforeach
 				  	@endif
 				  </ul>

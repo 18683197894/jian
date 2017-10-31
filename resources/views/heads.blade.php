@@ -58,123 +58,109 @@
 		<li id="li-5">设计风格</li>
 		<li id="li-6">招商采购</li>
 		<li><a href="http://www.jianshanglianmeng.com">建商商城</a></li>
-		<li id="li-7">联系我们</li>
+		<li><a href="{{ url('/jsgw/contact') }}">联系我们</a></li>
 	</ul>
 	<!--隐藏盒子-->
 	<div id="box-1" class="hidden-box hidden-loc-index">
-		<ul>
-			<li id="box1_li1"><span>关于建商</span></li>
-			<li id="box1_li2"> <a href="{{ url('/jsgw/aboutus') }}"><img src="{{ asset('home/images/haed/bs1.jpg') }}" alt="" /></a> </li>
-			<li id="box1_li3">
-				<span id="box1_span1"><img style="width:10px;height:10px" src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="{{ url('/jsgw/aboutus') }}">关于建商</a></span>
-				<span id="box1_span1"><img style="width:10px;height:10px" src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="{{ url('/jsgw/tuandui') }}">运营团队</a></span>
-				<span id="box1_span1"><img style="width:10px;height:10px" src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="{{ url('jsgw/zhanlui') }}">发展战略</a></span>
-				<span id="box1_span1"><img style="width:10px;height:10px" src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">组织构架</a></span>
-				<span id="box1_span1"><img style="width:10px;height:10px" src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">建商文化</a></span>
-				<span id="box1_span1"><img style="width:10px;height:10px" src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="{{ url('jsgw/contact') }}">联系方式</a></span>
-			</li>
-		</ul>
-		<ul id="box1_ul2">
-            <li id="box1_li1"><span>建商产业</span></li>
-			<li id="box1_li2"><a href="{{ url('jsgw/ls') }}"><img src="{{ asset('home/images/haed/bs2.jpg') }}" alt="" /></a></li>
-			<li id="box1_li3">
-				<span id="box1_span1"><img style="width:10px;height:10px" src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="{{ url('jsgw/ls') }}">新零售平台</a></span>
-				<span id="box1_span1"><img style="width:10px;height:10px" src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="{{ url('jsgw/jzf') }}">精装房</a></span>
-				<span id="box1_span1"><img style="width:10px;height:10px" src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="{{ url('jsgw/tyg') }}">线下体验馆</a></span>
-			</li>
-		</ul>
-		<ul id="box1_ul3">
-            <li id="box1_li1"><span>建商招聘</span></li>
-			<li id="box1_li2"><a href="{{ url('jsgw/job1') }}"><img src="{{ asset('home/images/haed/bs3.jpg') }}" alt="" /></a> </li>
-			<li id="box1_li3">
-				<span id="box1_span1"><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="{{ url('jsgw/job1') }}">用人理念</a></span>
-				<span id="box1_span1"><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="{{ url('jsgw/job5') }}">招聘职位</a></span>
-			</li>
-		</ul>
-
+		<div id="div1">
+			<span>关于建商 ></span>
+			<ul>
+				<li><a href="{{ url('/jsgw/aboutus') }}">关于建设</a></li>
+				<li><a href="{{ url('/jsgw/tuandui') }}">运营团队</a></li>
+				<li><a href="{{ url('/jsgw/zhanlui') }}">发展战略</a></li>
+				<li><a href="{{ url('') }}">组织构架</a></li>
+				<li><a href="{{ url('/jsgw/contact') }}">联系方式</a></li>
+				
+			</ul>
+		</div>
+		<div id="div2">
+			<span>建设产业 ></span>
+			<ul>
+				<li><a href="{{ url('/jsgw/ls') }}">新零售平台</a></li>
+				<li><a href="{{ url('/jsgw/jzf') }}">精装房项目</a></li>
+				<li><a href="{{ url('/jsgw/tyg') }}">线下体验馆</a></li>
+			</ul>
+		</div>
+		<div id="div3">
+			<span>建设招聘 ></span>
+			<ul>
+				<li><a href="{{ url('/jsgw/job1') }}">用人理念</a></li>
+				<li><a href="{{ url('/jsgw/job5') }}">建设招聘</a></li>
+			</ul>
+		</div>
+	
 	</div>
 	<div id="box-2" class="hidden-box hidden-loc-us">
-		<ul id="box2_ul">
-            <li id="box1_li1"><span>新闻动态</span></li>
-			<li id="box1_li2"><img src="{{ asset('home/images/haed/bs3.jpg') }}" alt="" /></li>
-			<li id="box1_li3">
-				<span id="box1_span1"><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">公司公告</a></span>
-				<span id="box1_span1"><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">公司动态</a></span>
-				<span id="box1_span1"><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">行业动态</a></span>
-			</li>
-		</ul>
+		<div id="div2">
+			<span>新闻动态 ></span>
+			<ul>
+				<li><a href="{{ url('/news/1') }}">公司公告</a></li>
+				<li><a href="{{ url('/news/2') }}">公司新闻</a></li>
+				<li><a href="{{ url('/news/6') }}">行业动态</a></li>
+			</ul>
+		</div>
 	</div>
 	<div id="box-3" class="hidden-box hidden-loc-info">
-		<ul>
-			<li id="box3_li1">套餐推荐</li>
-			<li id="box3_li2"><img src="{{ asset('home/images/haed/bs3.jpg') }}" alt="" /></li>
-			<li id="box3_li3">
-				<span ><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">套餐一</a></span>
-				<span ><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">套餐二</a></span>
-				<span ><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">套餐三</a></span>
-				<span ><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">套餐四</a></span>
-				<span ><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">套餐五</a></span>
-			</li>
-		</ul>	
-		<ul>
-			<li id="box3_li1">商城大类</li>
-			<li id="box3_li2"><img src="{{ asset('home/images/haed/bs3.jpg') }}" alt="" /></li>
-			<li id="box3_li33">
-				<span ><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">类一</a></span>
-				<span ><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">类一</a></span>
-				<span ><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">类一</a></span>
-				<span ><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">类一</a></span>
-				<span ><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">类一</a></span>
-				<span ><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">类一</a></span>
-				<span ><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">类一</a></span>
-				<span ><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">类一</a></span>
-				<span ><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">类一</a></span>
-				<span ><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">类一</a></span>
-
-		</ul>
-		<ul>
-			<li id="box3_li1">楼盘推荐</li>
-			<li id="box3_li2"><img src="{{ asset('home/images/haed/bs3.jpg') }}" alt="" /></li>
-			<li id="box3_li3">
-				<span ><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="{{ url('propertieszshx') }}">浙商.临港新天地</a></span>
-				<span ><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="{{ url('propertiesdfhx') }}">德福公元</a></span>
-				<span ><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="{{ url('propertieshfhx') }}">华富.御景庄园</a></span>
-			</li>
-		</ul>
+		<div id="div1">
+			<span>全包套餐 ></span>
+			<ul>
+				<li><a href="{{ url('/jsgw/aboutus') }}">套餐一</a></li>
+				<li><a href="{{ url('/jsgw/tuandui') }}">套餐二</a></li>
+				<li><a href="{{ url('/jsgw/zhanlui') }}">套餐三</a></li>
+				
+			</ul>
+		</div>
+		<div id="div2">
+			<span>软包套餐 ></span>
+			<ul>
+				<li><a href="{{ url('/package/houseroom') }}">装修报价</a></li>
+				<li><a href="{{ url('/package/softroll') }}">软包套餐</a></li>
+			</ul>
+		</div>
+		<div id="div3">
+			<span>楼盘推荐 ></span>
+			<ul>
+				<li><a href="{{ url('/jsgw/job1') }}">浙商新天地</a></li>
+				<li><a href="{{ url('/jsgw/job5') }}">德福公元</a></li>
+				<li style="width:100px"><a href="{{ url('/jsgw/job5') }}">华富御景庄园</a></li>
+			</ul>
+		</div>
 	</div>
     <div id="box-4" class="hidden-box  box04">
-		<ul id="box2_ul">
-            <li id="box1_li1"><span>建商案例</span></li>
-			<li id="box1_li2"><img src="{{ asset('home/images/haed/bs3.jpg') }}" alt="" /></li>
-			<li id="box1_li3">
-				<span id="box1_span1"><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">工程案例</a></span>
-				<span id="box1_span1"><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">精装案例</a></span>
-				<span id="box1_span1"><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">精装房</a></span>
-			</li>
-		</ul>
+		<div id="div3">
+			<span>建设案例 ></span>
+			<ul>
+				<li><a href="{{ url('/home/case/index') }}">完整案例</a></li>
+				<li><a href="{{ url('/home/case/zaiindex') }}">在建案例</a></li>
+			</ul>
+		</div>
 	</div>
     <div id="box-5" class="hidden-box  box05">
-		<ul id="box2_ul">
-            <li id="box1_li1"><span>设计风格</span></li>
-			<li id="box1_li2"><img src="{{ asset('home/images/haed/bs3.jpg') }}" alt="" /></li>
-			<li id="box1_li3">
-				<span id="box1_span1"><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">设计风格一</a></span>
-				<span id="box1_span1"><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">设计风格二</a></span>
-				<span id="box1_span1"><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">设计风格三</a></span>
-				<span id="box1_span1"><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">设计风格四</a></span>
-			</li>
-		</ul>
+		<div id="div3">
+			<span>设计风格 ></span>
+			<ul>
+				<li><a href="{{ url('/amount') }}">设计量房</a></li>
+				<li><a href="{{ url('/design') }}">设计风格</a></li>
+			</ul>
+		</div>
 	</div>
     <div id="box-6" class="hidden-box box06">
-		<ul id="box2_ul">
-            <li id="box1_li1"><span>招商采购</span></li>
-			<li id="box1_li2"><img src="{{ asset('home/images/haed/bs3.jpg') }}" alt="" /></li>
-			<li id="box1_li3">
-				<span id="box1_span1"><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">设计风格一</a></span>
-				<span id="box1_span1"><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">设计风格二</a></span>
-				<span id="box1_span1"><img  src="{{ asset('home/images/haed/sanjiao.jpg') }}" alt="" /><a href="">设计风格三</a></span>
-			</li>
-		</ul>
+		<div id="div3">
+			<span>招商采购 ></span>
+			<ul>
+				<li><a href="{{ url('/amount') }}">招商采购</a></li>
+				<li><a href="{{ url('/jsgw/supply') }}">产品供应</a></li>
+				<li><a href="{{ url('/jsgw/cgs') }}">采购商入驻</a></li>
+				
+			</ul>
+		</div>
+		<div id="div2">
+			<span>&nbsp;</span>
+			<ul>
+				<li style="width:100px"><a href="{{ url('jsgw/franchise') }}">合作伙伴招募</a></li>
+				<li><a href="{{ url('jsgw/honest') }}">廉洁规章</a></li>
+			</ul>
+		</div>
 	</div>
     <div id="box-7" class="hidden-box  box07">
 	<!-- ********** -->

@@ -8,13 +8,16 @@ use App\Http\Controllers\Controller;
 class PropertiesController extends Controller
 {
     function zshx(){
-    	return view('properties.zshx',['title'=>'浙商临港新天地']);
+        $key = \DB::table('webpage')->where('id',2)->first();
+    	return view('properties.zshx',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]);
     }
 
     function dfhx(){
-    	return view('properties.dfhx',['title'=>'德福庄园']);
+        $key = \DB::table('webpage')->where('id',3)->first();
+    	return view('properties.dfhx',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]);
     }
     function hfhx(){
-    	return view('properties.hfhx',['title'=>'华富御景庄园']);
+        $key = \DB::table('webpage')->where('id',4)->first();
+    	return view('properties.hfhx',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]);
     }
 }

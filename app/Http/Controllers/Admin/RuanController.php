@@ -338,22 +338,22 @@ class RuanController extends Controller
     public function subclassadds(Request $request){
     	$data = $request->except('_token');
     	$this->validate($request,[
-		    'title' => 'required|min:2|max:30',
-		    'specations'	=> 'required|min:4|max:15',
-		    'brand'=>'required|min:2|max:30',
-		    'num'=>'required|min:1|integer',
+		    'title' => 'required|min:1|max:10',
+		    'specations'=>'nullable|min:1|max:30',
+		    'brand'=>'nullable|min:1|max:20',
+		    'num'=>'required|min:1|max:5',
 		    'jia'=>'required|numeric'
  		],[
 			'title.required'=>'标题不能为空',
-			'title.min'=>'标题最少2位最大30位',
-			'title.max'=>'标题最少2位最大30位',
-			'specations.required'=>'规格不能为空',
-			'brand.required'=>'品牌不能为空',
-			'brand.min'=>'品牌最少2位最大30位',
-			'brand.max'=>'品牌最少2位最大30位',
+			'title.min'=>'标题最少1位最大10位',
+			'title.max'=>'标题最少1位最大10位',
+            'specations.min'=>'规格最少1位最大30位',
+			'specations.max'=>'规格最少1位最大30位',
+			'brand.min'=>'材质最少1位最大30位',
+			'brand.max'=>'材质最少1位最大30位',
 			'num.required'=>'数量不能为空',
 			'num.min'=>'数量最小1位',
-			'num.integer'=>'请输入整型的数量',
+			'num.max'=>'数量最大5位',
 			'jia.required'=>'请填写价格',
 			'jia.numeric'=>'价格输入错误（最多保留2位小数点）'
 
@@ -383,24 +383,24 @@ class RuanController extends Controller
     	$id = $request->id;
     	$data = $request->except('_token','id');
     	$this->validate($request,[
-		    'title' => 'required|min:2|max:30',
-		    'specations'	=> 'required|min:4|max:15',
-		    'brand'=>'required|min:2|max:30',
-		    'num'=>'required|min:1|integer',
-		    'jia'=>'required|numeric'
+		    'title' => 'required|min:1|max:10',
+            'specations'    => 'nullable|min:1|max:30',
+            'brand'=>'nullable|min:1|max:30',
+            'num'=>'required|min:1|max:5',
+            'jia'=>'required|numeric'
  		],[
 			'title.required'=>'标题不能为空',
-			'title.min'=>'标题最少2位最大30位',
-			'title.max'=>'标题最少2位最大30位',
-			'specations.required'=>'规格不能为空',
-			'brand.required'=>'品牌不能为空',
-			'brand.min'=>'品牌最少2位最大30位',
-			'brand.max'=>'品牌最少2位最大30位',
-			'num.required'=>'数量不能为空',
-			'num.min'=>'数量最小1位',
-			'num.integer'=>'请输入整型的数量',
-			'jia.required'=>'请填写价格',
-			'jia.numeric'=>'价格输入错误（最多保留2位小数点）'
+            'title.min'=>'标题最少1位最大30位',
+            'title.max'=>'标题最少1位最大30位',
+            'specations.min'=>'规格最少1位最大30位',
+            'specations.max'=>'规格最少1位最大30位',
+            'brand.min'=>'材质最少1位最大30位',
+            'brand.max'=>'材质最少1位最大30位',
+            'num.required'=>'数量不能为空',
+            'num.min'=>'数量最小1位',
+            'num.max'=>'数量最大5位',
+            'jia.required'=>'请填写价格',
+            'jia.numeric'=>'价格输入错误（最多保留2位小数点）'
 
 		]);
 

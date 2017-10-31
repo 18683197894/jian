@@ -54,7 +54,7 @@ class CaseController extends Controller
     {
     	$key = isset($request->key) ? $request->key : '';
     	
-    	$data = \DB::table('case')->where('title','like','%'.$key.'%')->select('id','title','huxing','fengge','yusuan','or','time')->orderBy('time','desc')->paginate(10);
+    	$data = \DB::table('case')->where('title','like','%'.$key.'%')->select('id','title','huxing','fengge','yusuan','or','time')->orderBy('time','desc')->paginate(13);
     	
     	return view('Admin.case.index',['title'=>'案例管理','data'=>$data,'request'=>$request->all()]);
     }

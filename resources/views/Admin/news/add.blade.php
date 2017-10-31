@@ -12,7 +12,7 @@
 
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{ url('jslmadmin/newsindex') }}"><i class="fa fa-dashboard"></i>新闻列表</a></li>
+        <li><a href="{{ url('jslmadmin/newslei/newsindex/') }}/{{ $pid }}"><i class="fa fa-dashboard"></i>新闻列表</a></li>
         <li class="active">添加新闻</li>
       </ol>
     </section>
@@ -38,7 +38,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="{{ url('jslmadmin/newsadds') }}" method="post" enctype="multipart/form-data">
+            <form role="form" action="{{ url('jslmadmin/newslei/newsadds') }}" method="post" enctype="multipart/form-data">
 				{{ csrf_field() }}
               <div class="box-body">
                
@@ -52,13 +52,7 @@
                   <input type="text" name="yuan" value="{{ old('yuan') }}" class="form-control" id="exampleInputPassword1" placeholder="新闻来源">
                 </div>
                 
-                <div class="form-group">
-                  <label id="lei">所属分类</label>
-                  <select name="lei" class="form-control">
-                    <option value="1">普通新闻</option>
-                    <option  value="2">企业新闻</option>
-                  </select>
-                </div>
+                <input type="hidden" name="pid" value="{{ $pid }}">
                 
                 <div id="leicon" class="form-group">
                   <label>新闻简介</label>

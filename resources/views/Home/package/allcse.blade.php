@@ -204,12 +204,57 @@
 		width:1200px;
 		height:465px;
 		margin:0 auto;
+		position:relative;
 	}
 	.allcon1divul{
 		width:1200px;
 		height:397px;
 		overflow: hidden;
 		display: block;
+		position: absolute;
+		top:0px;
+		left:0px;
+	}
+	.allcon1divnone{
+		position: absolute;
+		width:1200px;
+		height:395px;
+		top:0px;
+		left:0px;
+		overflow: hidden;
+		display: none;
+		background:rgba(0,0,0,0.8);
+	}
+	.allcon1divnonediv{
+		
+		height:395px;
+		margin:0 auto;
+		overflow:hidden; 
+			
+	}
+	.allcon1divnonediv ul{
+		width:100px;
+		height:375px;
+		float:left;
+
+	}
+	.allcon1divnonediv ul title{
+		width:100px;
+		height:30px;
+		color:#fff;
+		display:block;
+		font-size: 16px;
+		padding-top: 15px;
+		text-align: center;
+		float:left;
+	}
+	.allcon1divnonediv ul li{
+		display: block;
+		width:100px;
+		height:20px;text-align: center;
+		color:#fff;
+		font-size: 14px;
+		float:left;
 	}
 	.allcon1divli{
 		width:394px;
@@ -217,6 +262,7 @@
 		overflow: hidden;
 		float:left;
 		background-color:#F5F5F5;
+		position:relative;
 		display: block;
 	}
 	.allcon1divli1{
@@ -226,7 +272,42 @@
 		margin-left:8px;
 		background-color:#F5F5F5;
 		overflow: hidden;
+		position:relative;
 		display: block;
+	}
+	.allcon1divuldiv1{
+		position: absolute;
+		top:0;
+		left:0;
+		width:394px;
+		height:397px;
+		cursor: pointer;
+	}
+	.allcon1divuldiv2{
+		position: absolute;
+		width:270px;
+		height:235px;
+		top:50px;
+		left:62px;
+		display:none;cursor: pointer;
+		background:rgba(0,0,0,0.6);
+	}
+	.allcon1divuldiv2 span{
+		display: block;
+		width:240px;
+		height:205px;
+		margin: 0 auto;
+		margin-top: 15px;
+		
+		border:1px solid #BDA95F;
+
+	}
+	.allcon1divuldiv2 span p{
+		font-weight: normal;
+		font-style: normal;
+		font-size: 16px;
+		color:#fff;
+		padding:10px 20px 10px 20px;
 	}
 	.allcon1divspan1{
 		margin-left: 15px;
@@ -235,25 +316,43 @@
 		width:120px;
 		height:20px;
 		font-size: 19px;
-		color:#676767;
-		letter-spacing:3px;
+		color:#482819;
+		font-weight: 600;
+		letter-spacing:2px;
 
 	}
 	.allcon1divspan2{
 		margin-left: 15px;
-		margin-top: 8px;
+		margin-top: 10px;
 		display:block;
-		width:200px;
+		width:220px;
 		font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 		height:20px;
 		font-weight: normal;
 		font-style: normal;
 		letter-spacing:3px;
-		font-size: 14px;
-		color:#676767;
+		font-size: 16px;
+		color:#482819;
+		float:left;
 
 	}
+	.allcon1divspan3{
+		padding-left: 10px;
+		margin-top:-10px;
+		display:block;
+		width:120px;
+		height:40px;
+		font-weight: normal;
+		font-style: normal;
+		font-size: 23px;
+		color:#E12E32;
+		float:right;
+		display: block;
+	}
 	.allcon1divdiv{
+		position:absolute;
+		bottom:0px;
+		left:454px;
 		width:290px;
 		height:67px;
 		border:1px solid #fff;
@@ -278,7 +377,8 @@
 	.allcon1divdiv a:hover {text-decoration:underline;padding-bottom: 2px} 
 	.allcon2{
 		width:100%;
-		height:1412px;
+		padding-bottom: 40px;
+		overflow: hidden;
 		background-color:#f5f5f5;
 	}
 	.allcon2_head{
@@ -298,6 +398,7 @@
 		width:1200px;
 		height:410px;
 		margin:0 auto;
+		overflow: hidden;
 	}
 	.allcon2_1_1{
 		width:904px;
@@ -315,61 +416,66 @@
 		height:410px;
 		float:right;
 	}
-	.allcon_1_2_1_a{
+	.allcon_1_2_1_0_0{
 		width:270;
 		float:right;
 		height:73px;
 		background:url(/home/images/allcse/a.png) no-repeat center center;
 	}
-	.allcon_1_2_1_b{
+	.allcon_1_2_1_0_1{
 		width:270;
 		float:right;
 		height:73px;
 		background:url(/home/images/allcse/b.png) no-repeat center center;
 	}
-	.allcon_1_2_1_c{
+	.allcon_1_2_1_0_2{
 		width:270;
 		float:right;
 		height:73px;
 		background:url(/home/images/allcse/c.png) no-repeat center center;
 	}
-	.allcon_1_2_1_a span,.allcon_1_2_1_b span,.allcon_1_2_1_c span{
+	.allcon_1_2_1_0_0 span,.allcon_1_2_1_0_1 span,.allcon_1_2_1_0_2 span{
 		display: block;
-		font-weight: normal;
+		font-weight: 600;
 		font-style: normal;
-		font-size: 19px;
+		font-size: 20px;
 		width:150px;
 		height:20px;
 		margin-left: 6px;
-		margin-top: 46px;
-		color:#333;
+		margin-top: 40px;
+		color:#666;
 	}
 	.allcon_1_2_1_2{
 		width:265px;
 		float:right;
-		margin-top: 60px;
-		height:60px;
+		margin-top: 20px;
+		height:200px;
 	}
 	.allcon_1_2_1_2span1{
 		display: block;
 		font-weight: normal;
 		font-style: normal;
-		font-size: 19px;
-		color:#323232;
+		font-size: 16px;
+		color:#5C5C5C;
+		width:215px;
+		float:left;
+		margin-top: 20px;
 	}
 	.allcon_1_2_1_2span2{
 		display: block;
+		width:240px;
+		float:left;
 		font-weight: normal;
 		font-style: normal;
-		font-size: 18px;
-		color:#E12E32;
-		margin-top: 2px;
+		font-size: 17px;
+		color:#DF2F31;
+		
 	}
 	.allcon_1_2_1_3{
 		width:265px;
 		height:50px;
 		float:right;
-		margin-top: 70px;
+		margin-top: 15px;
 	}
 	.allcon_1_2_1_3span1{
 		margin-top: 18px;
@@ -390,18 +496,18 @@
 		color:#E22D34;
 	}
 
-.win_2,.win_1,.win{
+.win_2,.win_1,.win_0{
 	
 	width:904px;height:410px;margin:0px auto;position:relative;
 	overflow: hidden;
 }
-.box_2,.box_1,.box{
+.box_2,.box_1,.box_0{
 	width:100%;height:100%;position: relative;
 }
-.box_2 div,.box_1 div,.box div{
+.box_2 div,.box_1 div,.box_0 div{
 	width:100%;height: 100%;position: absolute;left:-100%;font-size: 70px;text-align: center;line-height: 300px;top:0;color:#fff;
 }
-.rightB_2,.rightB_1,.rightB{
+.rightB_2,.rightB_1,.rightB_0{
 		-moz-user-select:none;/*火狐*/
     	-webkit-user-select:none;/*webkit浏览器*/
     	-ms-user-select:none;/*IE10*/
@@ -409,7 +515,7 @@
       	user-select:none;
 	width:40px;height:40px;font-size: 30px;color:#fff;background: rgba(0,0,0,0.5);position: absolute;right:0;top:45%;line-height:40px;text-align: center;cursor: pointer;display: block;font-family: "宋体";
 }
-.leftB_2,.leftB_1,.leftB{
+.leftB_2,.leftB_1,.leftB_0{
 		-moz-user-select:none;/*火狐*/
     	-webkit-user-select:none;/*webkit浏览器*/
     	-ms-user-select:none;/*IE10*/
@@ -420,6 +526,8 @@
 	.allcon3{
 		width:100%;
 		height:376px;
+		overflow: hidden;
+
 		background-color: #fff;
 	}
 	.allcon3ul{
@@ -462,7 +570,7 @@
 		text-align: center;
 		background: rgba(0,0,0,0.5);
 	}
-	.allcon3ul li div a{
+	.allcon3ul li div {
 		font-weight: normal;
 		font-style: normal;
 		font-size: 22px;
@@ -718,177 +826,112 @@
 		<div class="allcon1head">
 			<span class="allcon1span1">基准包 + 厨房包 + 卫浴包</span>
 			<span class="allcon1span2">选择合适你的套餐厨房卫浴搭配</span>
-			<ul class="allcon1ul">
-				<li class="allcon1li">基准包</li>
-				<li class="allcon1li1">厨房包</li>
-				<li class="allcon1li1">卫浴包</li>
+			<ul class="allcon1ul" index="0">
+				@if( isset($all) and count($all) >0 )
+				@foreach( $all as $k => $v )
+				<li @if( $loop->first ) class="allcon1li" @else class="allcon1li1" @endif>{{ $v->title }}</li>
+				@endforeach
+				@endif
+				<!-- <li >厨房包</li>
+				<li class="allcon1li1">卫浴包</li> -->
 			</ul>
 		</div>
-		<div  id="allcon1_0" class="allcon1div">
+		@if( isset($all) and count($all) >0 )
+		@foreach( $all as $kk => $vv )
+		<div  id="allcon1_{{ $kk }}" class="allcon1div" @if( $loop->first )  @else style="display:none" @endif >
+			
 			<ul class="allcon1divul">
-				<li class="allcon1divli" >
-				<img src="{{ asset('home/images/allcse/7.png') }}" alt="" width="100%" height="333px">
-				<span class="allcon1divspan1">舒适包</span>
+				@if( isset($vv->zi) and count($vv->zi) >0 )
+				@foreach( $vv->zi as $kkk => $vvv )
+				<li  @if( $loop->first ) class="allcon1divli" @else class="allcon1divli1" @endif>
+
+				<div class="allcon1divuldiv1">
+
+				<img src="{{ asset('uploads/all/img') }}/{{ $vvv->img }}" alt="" width="100%" height="333px">
+				<span class="allcon1divspan1">{{ $vvv->title }}</span>
 				<span class="allcon1divspan2">Comfortable package</span>
+				<span class="allcon1divspan3">{{ $vvv->jia }}元</span>
+				
+				</div>
+					<div class="allcon1divuldiv2">
+						<span><p>{{ $vvv->con }}</p></span>
+					</div>
 				</li>
-				<li class="allcon1divli1">
-				<img src="{{ asset('home/images/allcse/8.png') }}" alt="" width="100%" height="333px">
-				<span class="allcon1divspan1">品质包</span>
-				<span class="allcon1divspan2">Quality pack</span>
-				</li>
-				<li class="allcon1divli1">
-				<img src="{{ asset('home/images/allcse/9.png') }}" alt="" width="100%" height="333px">
-				<span class="allcon1divspan1">尊享包</span>
-				<span class="allcon1divspan2">Respeck package</span>
-				</li>
+				@endforeach
+				@endif
 			</ul>
+			<div class="allcon1divnone"  style="display:none">
+				<div class="allcon1divnonediv" style="width:{{ $vv->width }}">
+					@foreach($vv->pack as $c => $s)
+					<ul>
+						<title>{{$s->title}}</title>
+						@foreach($s->pei as $l => $m)
+						<li>{{$m->title}}</li>
+						@endforeach
+					</ul>
+					@endforeach
+
+					
+				</div>
+			</div>
 			<div class="allcon1divdiv">
-				<a href="">查看整装内容</a>
+				<a href="javascript:void(0);">查看整装内容</a>
 			</div>
 		</div>
-		<div id="allcon1_1" class="allcon1div" style="display:none">
-			<ul class="allcon1divul">
-				<li class="allcon1divli" >
-				<img src="{{ asset('home/images/allcse/7.png') }}" alt="" width="100%" height="333px">
-				<span class="allcon1divspan1">舒适包</span>
-				<span class="allcon1divspan2">Comfortable package</span>
-				</li>
-				<li class="allcon1divli1">
-				<img src="{{ asset('home/images/allcse/8.png') }}" alt="" width="100%" height="333px">
-				<span class="allcon1divspan1">品质包</span>
-				<span class="allcon1divspan2">Quality pack</span>
-				</li>
-				<li class="allcon1divli1">
-				<img src="{{ asset('home/images/allcse/9.png') }}" alt="" width="100%" height="333px">
-				<span class="allcon1divspan1">尊享包</span>
-				<span class="allcon1divspan2">Respeck package</span>
-				</li>
-			</ul>
-			<div class="allcon1divdiv">
-				<a href="">查看整装内容</a>
-			</div>
-		</div>
-		<div id="allcon1_2" class="allcon1div" style="display:none">
-			<ul class="allcon1divul">
-				<li class="allcon1divli" >
-				<img src="{{ asset('home/images/allcse/7.png') }}" alt="" width="100%" height="333px">
-				<span class="allcon1divspan1">舒适包</span>
-				<span class="allcon1divspan2">Comfortable package</span>
-				</li>
-				<li class="allcon1divli1">
-				<img src="{{ asset('home/images/allcse/8.png') }}" alt="" width="100%" height="333px">
-				<span class="allcon1divspan1">品质包</span>
-				<span class="allcon1divspan2">Quality pack</span>
-				</li>
-				<li class="allcon1divli1">
-				<img src="{{ asset('home/images/allcse/9.png') }}" alt="" width="100%" height="333px">
-				<span class="allcon1divspan1">尊享包</span>
-				<span class="allcon1divspan2">Respeck package</span>
-				</li>
-			</ul>
-			<div class="allcon1divdiv">
-				<a href="">查看整装内容</a>
-			</div>
-		</div>
+		@endforeach
+		@endif
+
+	
 	</div>
 </div>
 <div class="allcon2">
 	<div class="allcon2_head"><span>经典套餐推荐</span></div>
-	<div class="allcon2_1">
+	
+	@if( isset($age) and count($age) >0 )
+	@foreach( $age as $i => $j )
+	<div class="allcon2_1" @if( $loop->first )  @else style="margin-top:20px;"  @endif>
 		<div class="allcon2_1_1">
-			<div class="win">
-				<div class="box">
-					<div class="color1" style="left:0"><img src="{{ asset('home/images/allcse/10.png') }}" alt=""></div>
-					<div class="color2"><img src="{{ asset('home/images/allcse/11.png') }}" alt=""></div>
-					<div class="color3"><img src="{{ asset('home/images/allcse/12.png') }}" alt=""></div>
+			<div class="win_{{ $loop->index }}">
+				<div class="box_{{ $loop->index }}">
+					@foreach( $j->img as $m => $f )
+					<div class="color{{ $loop->index + 1 }}" @if( $loop->first ) style="left:0" @endif ><img src="{{ asset('uploads/all/pack/') }}/{{ $f }}" width="100%" height="100%" alt=""></div>
+					@endforeach
+	<!-- 				<div class="color{{ $loop->index + 1 }}"><img src="{{ asset('home/images/allcse/11.png') }}" alt=""></div>
+					<div class="color{{ $loop->index + 1 }}"><img src="{{ asset('home/images/allcse/12.png') }}" alt=""></div> -->
 				</div>
-				<div class="leftB">&lt;</div>
-				<div class="rightB">&gt;</div>
+				<div class="leftB_{{ $loop->index }}">&lt;</div>
+				<div class="rightB_{{ $loop->index }}">&gt;</div>
 			</div>
 		</div>
 		<div class="allcon2_1_2">
 			<div class="allcon_1_2_1">
-				<div class="allcon_1_2_1_a">
-					<span>Package A</span>
+				<div class="allcon_1_2_1_0_{{ $loop->index }}">
+					<span>{{ $j->title }}</span>
 				</div>
 				<div class="allcon_1_2_1_2">
-					<span class="allcon_1_2_1_2span1">更省装修预算</span>
-					<span class="allcon_1_2_1_2span2">舒适包 + 厨房包A + 卫浴包A</span>
+					<span class="allcon_1_2_1_2span2">{{ $j->path }}</span>
+					<span class="allcon_1_2_1_2span1">{{ $j->con }}sda啊实打实大声道阿萨飒飒的啊实打实大声道啊实打实大声道啊啊啊大大</span>
 				</div>
 				<div class="allcon_1_2_1_3">
 					<span class="allcon_1_2_1_3span1">¥</span>
-					<span class="allcon_1_2_1_3span2"> ? 6888</span>
+					<span class="allcon_1_2_1_3span2">{{ $j->jia }}元</span>
 				</div>
 			</div>
 		</div>
 		
 	</div>
-	<div class="allcon2_1" style="margin-top:20px;">
-		<div class="allcon2_1_1">
-			<div class="win_1">
-				<div class="box_1">
-					<div class="color1_1" style="left:0"><img src="{{ asset('home/images/allcse/10.png') }}" alt=""></div>
-					<div class="color2_1"><img src="{{ asset('home/images/allcse/11.png') }}" alt=""></div>
-					<div class="color3_1"><img src="{{ asset('home/images/allcse/12.png') }}" alt=""></div>
-				</div>
-				<div class="leftB_1">&lt;</div>
-				<div class="rightB_1">&gt;</div>
-			</div>	
-		</div>
-		<div class="allcon2_1_2">
-			<div class="allcon_1_2_1">
-				<div class="allcon_1_2_1_b">
-					<span>Package B</span>
-				</div>
-				<div class="allcon_1_2_1_2">
-					<span class="allcon_1_2_1_2span1">更高性价比</span>
-					<span class="allcon_1_2_1_2span2">品质包 + 厨房包B + 卫浴包C</span>
-				</div>
-				<div class="allcon_1_2_1_3">
-					<span class="allcon_1_2_1_3span1">¥</span>
-					<span class="allcon_1_2_1_3span2"> ? 6888</span>
-				</div>
-			</div>
-		</div>
-		
-	</div>
-	<div class="allcon2_1" style="margin-top:20px;">
-		<div class="allcon2_1_1">
-			<div class="win_2">
-				<div class="box_2">
-					<div class="color1_2" style="left:0"><img src="{{ asset('home/images/allcse/10.png') }}" alt=""></div>
-					<div class="color2_2"><img src="{{ asset('home/images/allcse/11.png') }}" alt=""></div>
-					<div class="color3_2"><img src="{{ asset('home/images/allcse/12.png') }}" alt=""></div>
-				</div>
-				<div class="leftB_2">&lt;</div>
-				<div class="rightB_2">&gt;</div>
-			</div>	
-		</div>
-		<div class="allcon2_1_2">
-			<div class="allcon_1_2_1">
-				<div class="allcon_1_2_1_c">
-					<span>Package C</span>
-				</div>
-				<div class="allcon_1_2_1_2">
-					<span class="allcon_1_2_1_2span1">更奢华享受</span>
-					<span class="allcon_1_2_1_2span2">尊享包 + 厨房包C + 卫浴包H</span>
-				</div>
-				<div class="allcon_1_2_1_3">
-					<span class="allcon_1_2_1_3span1">¥</span>
-					<span class="allcon_1_2_1_3span2"> ? 6888</span>
-				</div>
-			</div>
-		</div>
-		
-	</div>
+	@endforeach
+	@endif
+	
+
 </div>
 <div class="allcon3">
 	<div class="allcon2_head"><span>装修风格</span></div>
 	<ul class="allcon3ul">
-		<li class="allconli1"><img src="{{ asset('home/images/allcse/13.png') }}" alt=""><div style="display:none"><a href="#">现代</a></div></li>
-		<li class="allconli2"><img src="{{ asset('home/images/allcse/14.png') }}" alt=""><div style="display:none"><a href="#">中式</a></div></li>
-		<li class="allconli2"><img src="{{ asset('home/images/allcse/15.png') }}" alt=""><div style="display:none"><a href="#">美式</a></div></li>
-		<li class="allconli2"><img src="{{ asset('home/images/allcse/16.png') }}" alt=""><div style="display:none"><a href="#">地中海</a></div></li>
+		<li class="allconli1"><img src="{{ asset('home/images/allcse/13.png') }}" alt=""><a href="{{ url('/design/0') }}"><div style="display:none">简欧</div></a></li>
+		<li class="allconli2"><img src="{{ asset('home/images/allcse/14.png') }}" alt=""><a href="{{ url('/design/1') }}"><div style="display:none">现代</div></a></li>
+		<li class="allconli2"><img src="{{ asset('home/images/allcse/15.png') }}" alt=""><a href="{{ url('/design/2') }}"><div style="display:none">地中海</div></a></li>
+		<li class="allconli2"><img src="{{ asset('home/images/allcse/16.png') }}" alt=""><a href="{{ url('/design/3') }}"><div style="display:none">中式</div></a></li>
 	</ul>
 </div>
 
@@ -1107,25 +1150,13 @@
 	},function(){
 		$(this).find("div").css('display','none');
 	})
-	$('.allcon1ul > li').on('click',function(){
-		$('.allcon1ul > li').css('color','#666');
-		$('.allcon1ul > li').css('background-color','#fff');
-		$('.allcon1ul > li').css('border','1px solid #666');
-		$(this).css('color','#fff');
-		$(this).css('background-color','#E12E32');
-		$(this).css('border','1px solid #E12E32');
-
-		var index = $(this).index();
-		$(".allcon1div").css('display','none');
-		$("#allcon1_"+index).css('display','block');
-
-	});
+	
 $(function(){
-	var win=$(".win");
-	var divs=$(".box div");
+	var win=$(".win_0");
+	var divs=$(".box_0 div");
 	var num1=0;  //ǰݵ±
 	var num2=0;
-	$(".rightB").click(function(){
+	$(".rightB_0").click(function(){
 
 		divs.stop(true,true);
 		var temp=num1;
@@ -1136,7 +1167,7 @@ $(function(){
 		divs.eq(num1).css("left",904).animate({left:0});
 		divs.eq(temp).animate({left:-904});
 	});
-	$(".leftB").click(function(){
+	$(".leftB_0").click(function(){
 	
 		divs.stop(true,true);
 		// divs.finish();
@@ -1215,5 +1246,53 @@ $("#ul1 > li").on('clcik',function(){
 	//设置当前元素显示
 	$(this).find("a").css('display','block');
 })
+
+$('.allcon1ul > li').on('click',function(){
+			var index = $('.allcon1ul').attr('index');
+			if( index ==1 )
+			{
+				$('.allcon1divnone').css('display','block');
+			}
+			if( index ==0 )
+			{
+				$('.allcon1divnone').css('display','none');
+
+			}
+			$('.allcon1ul > li').css('color','#666');
+			$('.allcon1ul > li').css('background-color','#fff');
+			$('.allcon1ul > li').css('border','1px solid #666');
+			$(this).css('color','#fff');
+			$(this).css('background-color','#E12E32');
+			$(this).css('border','1px solid #E12E32');
+
+			var index = $(this).index();
+			$(".allcon1div").css('display','none');
+			$("#allcon1_"+index).css('display','block');
+
+		});
+			$(".allcon1divul li").hover(
+				function () {
+
+					$(this).find('.allcon1divuldiv2').css('display','block');
+				},
+				function () {
+					$(this).find('.allcon1divuldiv2').css('display','none');
+				}
+			);
+
+			$(".allcon1divdiv a").on('click',function(){
+				var css = $(this).parents('.allcon1div').find('.allcon1divnone').css('display');
+
+				$(this).parents('.allcon1div').find('.allcon1divnone').slideToggle(300);
+				if( css == 'none' )
+				{
+					$('.allcon1ul').attr('index',1);
+				}
+				if( css == 'block' )
+				{
+					$('.allcon1ul').attr('index',0);
+				}
+				
+			})
 </script>
 @endsection('content')

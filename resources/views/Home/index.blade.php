@@ -985,9 +985,9 @@
 				<div id="table_1">
 					<label id="lblSelect">
 					<select id="selectPointOfInterest" class="select" title="选择楼盘">
-					<option value="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浙商.临港新天地</option>
-					<option value="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;德福公元</option>
-					<option value="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;华富.御景庄团</option>
+					<option value="浙商临港新天地">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浙商.临港新天地</option>
+					<option value="德福公元">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;德福公元</option>
+					<option value="华富御景庄团">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;华富御景庄团</option>
 					</select>
 					</label>
 				</div>
@@ -1044,10 +1044,10 @@
 	       		success:function(data){
 	       			if(data ==1 ){
 	       				$('.form_input').eq(0).val('');
-	       				alert('预约成功！稍后工作人员与您联系');
+	       				alert('预约成功！工作人员会尽快与您联系');
 	       			}
 	       			if(data ==2){
-	       				alert('预约失败！你已经预约过了 工作人员马上会与您联系');
+	       				alert('预约失败！你已经预约过了');
 	       			}
 	       			if(data ==3){
 	       				alert('预约失败！请稍后再试');
@@ -1090,10 +1090,10 @@
 	       		success:function(data){
 	       			if(data ==1 ){
 	       				$('.form_input').eq(1).val('');
-	       				alert('预约成功！稍后工作人员与您联系');
+	       				alert('预约成功！工作人员会尽快与您联系');
 	       			}
 	       			if(data ==2){
-	       				alert('预约失败！你已经预约过了 工作人员马上会与您联系');
+	       				alert('预约失败！你已经预约过了');
 	       			}
 	       			if(data ==3){
 	       				alert('预约失败！请稍后再试');

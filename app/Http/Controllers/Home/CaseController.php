@@ -64,11 +64,12 @@ class CaseController extends Controller
     		$vv->effect2 = explode(',',$vv->effect2)[0];
     	}
     	}
-    	// dd($tui);
+    	$key = \DB::table('webpage')->where('id',24)->first();
+
     	$arr1 = array('全部','小户型','二室','三室','四室','公寓','别墅','复式','自建');
     	$arr2 = array('全部','地中海','中式','美式','欧式','混搭','田园','现代','新古典','东南亚','日式','宜家','北欧','简欧','简约','韩式','法式','工业风','新中式','其他');
     	$arr3 = array('全部','5万以下','5万-8万','8万-12万','12万-18万','18万-30万','30万-50万','50万以上');
-    	return view('home.case.index',['title'=>'装修案例','data'=>$data,'arr1'=>$arr1,'arr2'=>$arr2,'arr3'=>$arr3,'ip1'=>$ip1,'ip2'=>$ip2,'ip3'=>$ip3,'tui'=>$tui,'count'=>$count]);
+    	return view('home.case.index',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description,'data'=>$data,'arr1'=>$arr1,'arr2'=>$arr2,'arr3'=>$arr3,'ip1'=>$ip1,'ip2'=>$ip2,'ip3'=>$ip3,'tui'=>$tui,'count'=>$count]);
     }
 
     public function tiaoajax(Request $request)
@@ -167,7 +168,7 @@ class CaseController extends Controller
 		   	->where('or','!=',5)
 		    ->orderBy(\DB::raw('RAND()'))
 		    ->take(5)
-		    ->get();;
+		    ->get();
 		    foreach ($tui as $kk => $vv) {
     			if($vv->or == 1)
 	    		{
@@ -187,11 +188,12 @@ class CaseController extends Controller
 	    		}
     	}
     	}
+        $key = \DB::table('webpage')->where('id',25)->first();
     	
     	$arr1 = array('全部','小户型','二室','三室','四室','公寓','别墅','复式','自建');
     	$arr2 = array('全部','地中海','中式','美式','欧式','混搭','田园','现代','新古典','东南亚','日式','宜家','北欧','简欧','简约','韩式','法式','工业风','新中式','其他');
     	$arr3 = array('全部','5万以下','5万-8万','8万-12万','12万-18万','18万-30万','30万-50万','50万以上');
-    	return view('home.case.zaiindex',['title'=>'装修案例','data'=>$data,'arr1'=>$arr1,'arr2'=>$arr2,'arr3'=>$arr3,'ip1'=>$ip1,'ip2'=>$ip2,'ip3'=>$ip3,'tui'=>$tui,'count'=>$count]);
+    	return view('home.case.zaiindex',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description,'data'=>$data,'arr1'=>$arr1,'arr2'=>$arr2,'arr3'=>$arr3,'ip1'=>$ip1,'ip2'=>$ip2,'ip3'=>$ip3,'tui'=>$tui,'count'=>$count]);
     }
     public function zaiajax(Request $request)
     {	
@@ -334,6 +336,7 @@ class CaseController extends Controller
     			return response()->json(2);
     		}
     	}
+
     	$data2 = \DB::table('caseplay')->select('id','uid','name','name')->orwhere('phone',$phone)->where('status',0)->first();
     	if( count($data2) >=1 )
     	{
@@ -350,6 +353,17 @@ class CaseController extends Controller
     			return response()->json(2);
     		}
     	}
+
+        $arr = $request->except("_token");
+        $arr['time'] = time();
+        $res = \DB::table('caseplay')->insert($arr);
+        if($res)
+            {
+                return response()->json(1);
+            }else
+            {
+                return response()->json(2);
+            }
     }
 
     public function indexurl(Request $request)

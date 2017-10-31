@@ -18,9 +18,7 @@ $(function(){
 		var dt1 = $(".dt1").html();
 		var dt2 = $(".dt2").html();
 		var dt3 = $(".dt3").html();
-		alert(dt1);
-		alert(dt2);
-		alert(dt3);
+		
 		var textreg =/^\d{1,3}$/;
 		if (!textreg.test(text.val())) {
 		$(".text").attr('placeholder','');

@@ -39,31 +39,26 @@
 		@foreach($dess as $k => $v)
 			<li index="{{ $loop->index }}" class="{{ $loop->index == $id?"color":"" }}">{{ $v }}</li>
 		@endforeach
-<!--  			<li index="0" {{ $id ==0 ? "class=color":"" }} >简欧设计</li>
-			<li index="1" {{ $id ==1 ? "class=color":"" }} >现代设计</li>
-			<li index="2" {{ $id ==2 ? "class=color":"" }} >地中海设计</li>
-			<li index="3" {{ $id ==3 ? "class=color":"" }} >中式设计</li>
-			<li index="4" {{ $id ==4 ? "class=color":"" }} >美式设计</li>
-			<li index="5" {{ $id ==5 ? "class=color":"" }} >田园设计</li> -->
+
 		</ul>
 	</div>
 	<div id="dessj0" class="des3con" style=" {{ $id ==0 ? "display:block":"display:none" }}" >
 		<ul>
-			<div class="conli1"><img src="{{ asset('home/images/design/7.png') }}" alt=""></div>
-			<li class="conli2"><img src="{{ asset('home/images/design/8.png') }}" alt=""><span>111</span><div></div></li>
-			<li class="conli2"><img src="{{ asset('home/images/design/9.png') }}" alt=""><span>洗手间</span><div></div></li>
-			<li class="conli2"><img src="{{ asset('home/images/design/10.png') }}" alt=""><span>客厅</span><div></div></li>
-			<li class="conli3"><img src="{{ asset('home/images/design/11.png') }}" alt=""><span>阳台</span><div></div></li>
-			<li class="conli3"><img src="{{ asset('home/images/design/12.png') }}" alt=""><span>书房</span><div></div></li>
-			<li class="conli3"><img src="{{ asset('home/images/design/13.png') }}" alt=""><span>婴儿房</span><div></div></li>
+			<div class="conli1"><img src="{{ asset('home/images/design/jian_7.jpg') }}" alt=""></div>
+			<li class="conli2"><img src="{{ asset('home/images/design/jian_2.jpg') }}" alt=""><span>餐厅</span><div></div></li>
+			<li class="conli2"><img src="{{ asset('home/images/design/jian_3.jpg') }}" alt=""><span>卧室</span><div></div></li>
+			<li class="conli2"><img src="{{ asset('home/images/design/jian_1.jpg') }}" alt=""><span>卧室</span><div></div></li>
+			<li class="conli3"><img src="{{ asset('home/images/design/jian_4.jpg') }}" alt=""><span>浴室</span><div></div></li>
+			<li class="conli3"><img src="{{ asset('home/images/design/jian_5.jpg') }}" alt=""><span>儿童房</span><div></div></li>
+			<li class="conli3"><img src="{{ asset('home/images/design/jian_6.jpg') }}" alt=""><span>电视机墙</span><div></div></li>
 		</ul>
 	</div>
 	<div id="dessj1" class="des3con" style=" {{ $id ==1 ? "display:block":"display:none" }}">
 		<ul>
-			<div class="conli1"><img src="{{ asset('home/images/design/7.png') }}" alt=""></div>
-			<li class="conli2"><img src="{{ asset('home/images/design/8.png') }}" alt=""><span>厨22房</span><div></div></li>
-			<li class="conli2"><img src="{{ asset('home/images/design/9.png') }}" alt=""><span>洗手间</span><div></div></li>
-			<li class="conli2"><img src="{{ asset('home/images/design/10.png') }}" alt=""><span>客厅</span><div></div></li>
+			<div class="conli1"><img src="{{ asset('home/images/design/xian_4.jpg') }}" alt=""></div>
+			<li class="conli2"><img src="{{ asset('home/images/design/xian_1.jpg') }}" alt=""><span>客厅</span><div></div></li>
+			<li class="conli2"><img src="{{ asset('home/images/design/xian_2.jpg') }}" alt=""><span>厨房</span><div></div></li>
+			<li class="conli2"><img src="{{ asset('home/images/design/xian_3.jpg') }}" alt=""><span>餐厅</span><div></div></li>
 			<li class="conli3"><img src="{{ asset('home/images/design/11.png') }}" alt=""><span>阳台</span><div></div></li>
 			<li class="conli3"><img src="{{ asset('home/images/design/12.png') }}" alt=""><span>书房</span><div></div></li>
 			<li class="conli3"><img src="{{ asset('home/images/design/13.png') }}" alt=""><span>婴儿房+</span><div></div></li>

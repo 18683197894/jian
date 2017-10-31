@@ -8,7 +8,59 @@ use App\Http\Controllers\Controller;
 class PackageController extends Controller
 {
     public function allcse(){
-    	return view('Home.package.allcse');
+        $key = \DB::table('webpage')->where('id',18)->first();
+        $all = \DB::table('all')->select('id','title','con','img')->get();
+        $zi =\DB::table('zi')->select('id','title','con','img','pid','jia')->get();
+        $pack = \DB::table('pei')->select('id','title','pid')->where('sid',0)->get();
+        $sub = \DB::table('pei')->select('id','title','sid')->where('sid','!=',0)->get();
+        $age = \DB::table('pack')->select('id','title','con','img','path','jia')->get();
+
+        foreach($age as $r => $z)
+        {
+            $z->img = explode(',',$z->img);
+        }
+
+        foreach ($all as $k => $v) {
+            $v->zi = [];
+            foreach($zi as $kk => $vv)
+            {   
+                
+                if($v->id == $vv->pid)
+                {   
+
+                    $v->zi[$kk] = $vv;
+                }
+            }
+        }
+        
+        foreach ($all as $e => $a) {
+            $a->pack = array();
+            foreach ($pack as $s => $u) {
+                if($a->id == $u->pid)
+                {
+                    $a->pack[$s] = $u;
+                }
+            }
+        }
+         
+        foreach($all as $kkkk => $vvvv){
+            foreach ($vvvv->pack as $j => $c) {
+                $c->pei = [];
+                foreach ($sub as $l => $o) {
+                    if($o->sid == $c->id)
+                    {
+                        $c->pei[$l] = $o;
+                    }
+                }
+               
+            }
+        }
+        foreach( $all as $i => $j )
+        {
+            $j->width = (count($j->pack) * 100).'px';
+        }
+        
+    	return view('Home.package.allcse',['all'=>$all,'age'=>$age,'title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]);
     }
 
     public function softroll(){
@@ -50,12 +102,15 @@ class PackageController extends Controller
     			array_push($arr3,$u);
     		}
     	}
+        $key = \DB::table('webpage')->where('id',19)->first();
     	
-    	return view('home.package.softroll',['title'=>'软包套餐','arr1'=>$arr1,'arr2'=>$arr2,'arr3'=>$arr3]);
+    	return view('home.package.softroll',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description,'arr1'=>$arr1,'arr2'=>$arr2,'arr3'=>$arr3]);
     }
 
     public function houseroom(){
-    	return view('home.package.houseroom'); 
+        $key = \DB::table('webpage')->where('id',20)->first();
+
+    	return view('home.package.houseroom',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]); 
     }
     public function ajax(Request $request)
     {

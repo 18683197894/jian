@@ -42,7 +42,7 @@ Route::get('/jsgw/ls','Home\JsgwController@ls');
 //精装房项目
 Route::get('/jsgw/jzf','Home\JsgwController@jzf');
 
-//精装房项目
+//线下体验馆
 Route::get('/jsgw/tyg','Home\JsgwController@tyg');
 
 //招聘职位
@@ -53,7 +53,7 @@ Route::get('/jsgw/job6','Home\JsgwController@job6');
 Route::post('/home/loupanajax','Home\LiuyanController@loupanajax');
 
 //首页装修预约
-Route::post('/home/zhaungxiuajax','Home\LiuyanController@zhaungxiuajax');
+Route::post('/home/zhuangxiuajax','Home\LiuyanController@zhaungxiuajax');
 
 //设计风格
 Route::get('/design/{id?}','Home\JsgwController@design');
@@ -62,7 +62,7 @@ Route::get('/design/{id?}','Home\JsgwController@design');
 Route::get('/amount','Home\JsgwController@amount');
 
 //NEWS新闻
-Route::get('/news','Home\JsgwController@news');
+Route::get('/news/{id}','Home\JsgwController@news');
 
 Route::get('/news/list/{id}','Home\JsgwController@newslist');
 
@@ -71,15 +71,18 @@ Route::get('/package/allcse','Home\PackageController@allcse');
 //软包套餐
 Route::get('/package/softroll','Home\PackageController@softroll');
 Route::get('/home/package/subclass/ajax/','Home\PackageController@ajax');
-//设计量房
+//装修报价
 Route::get('/package/houseroom','Home\PackageController@houseroom');
 
 //合作加盟
-Route::get('jsgw/franchise','home\JsgwController@franchise');
+Route::get('/jsgw/franchise','home\JsgwController@franchise');
 Route::post('/jsgw/franchise/zmajax','Home\JsgwController@zmajax');
 
+//产品供应
+Route::get('/jsgw/supply','Home\JsgwController@supply');
+
 //廉洁规章
-Route::get('jsgw/honest','home\JsgwController@honest');
+Route::get('/jsgw/honest','home\JsgwController@honest');
 
 //采购商入驻
 Route::get('/jsgw/cgs','Home\JsgwController@cgs');
@@ -89,22 +92,22 @@ Route::get('/home/gongyi/list/{id}','Home\GongyiController@index');
 Route::get('/home/gongyi/play/{id}','Home\GongyiController@play');
 
 //知识学堂
-Route::get('home/plate/list/{id}','Home\PlateController@list');
+Route::get('/home/plate/list/{id}','Home\PlateController@list');
 Route::get('/home/plate/play/{id}','Home\PlateController@play');
 
 //装修案例
 Route::get('home/case/index','Home\CaseController@index');
 Route::get('/home/case/tiaoajax/','Home\CaseController@tiaoajax');
 Route::get('/home/case/zaiajax/','Home\CaseController@zaiajax');
-Route::get('home/case/zaiindex','Home\CaseController@zaiindex');
+Route::get('/home/case/zaiindex','Home\CaseController@zaiindex');
 Route::post('/home/case/jiaajax','Home\CaseController@jiaajax');
 
 Route::get('/home/case/index/play/{id}','Home\CaseController@play');
 Route::post('/home/case/play/ajax','Home\CaseController@playajax');
-Route::get('home/case/indexurl','Home\CaseController@indexurl');
+Route::get('/home/case/indexurl','Home\CaseController@indexurl');
 
-Route::get('home/case/zaiindex/play/{id}','Home\CaseController@zaiplay');
-Route::get('home/case/zaiplay/zaiurl','Home\CaseController@zaiurl');
+Route::get('/home/case/zaiindex/play/{id}','Home\CaseController@zaiplay');
+Route::get('/home/case/zaiplay/zaiurl','Home\CaseController@zaiurl');
 
 Route::group(['middleware' => ['Login']], function () {
 
@@ -112,15 +115,23 @@ Route::group(['middleware' => ['Login']], function () {
 Route::get('/jslmadmin/index','Admin\IndexController@index');
 //退出
 Route::get('/jslmext','Admin\LoginController@jslmext');
-//新闻添加
-Route::get('jslmadmin/newsadd','Admin\NewsController@newsadd');    
-Route::post('jslmadmin/newsadds','Admin\NewsController@newsadds');
-//新闻列表
-Route::get('jslmadmin/newsindex','Admin\NewsController@newsindex');
-Route::get('jslmadmin/newsedit/{id}','Admin\NewsController@newsedit');
-Route::post('jslmadmin/newsedits','Admin\NewsController@newsedits');
-Route::post('jslmadmin/newsajaxshan','Admin\NewsController@newsajaxshan');
-Route::post('jslmadmin/newsajaxzhi','Admin\NewsController@newsajaxzhi');
+
+//新闻动态
+Route::get('jslmadmin/newsleiadd','Admin\NewsController@newsleiadd');
+Route::post('jslmadmin/newsleiadds','Admin\NewsController@newsleiadds');
+Route::get('/jslmadmin/newsleiindex','Admin\NewsController@newsleiindex');
+Route::get('/jslmadmin/newsleiedit/{id}','Admin\NewsController@newsleiedit');
+Route::post('jslmadmin/newsleiedits','Admin\NewsController@newsleiedits');
+Route::post('/jslmadmin/newsleidel','Admin\NewsController@newsleidel');
+
+Route::get('jslmadmin/newslei/newsindex/{id}','Admin\NewsController@newsindex');
+Route::get('jslmadmin/newslei/newsadd/{id}','Admin\NewsController@newsadd');
+Route::post('jslmadmin/newslei/newsadds','Admin\NewsController@newsadds');
+Route::get('jslmadmin/newslei/newsedit/{id}','Admin\NewsController@newsedit');
+Route::post('jslmadmin/newslei/newsedits','Admin\NewsController@newsedits');
+Route::post('/jslmadmin/newslei/newszhi','Admin\NewsController@newszhi');
+Route::post('/jslmadmin/newslei/newsdel','Admin\NewsController@newsdel');
+
 
 //软包
 Route::get('admin/package/ruan/fashion','Admin\RuanController@fashion');
@@ -156,6 +167,40 @@ Route::post('admin/package/ruan/fg/column/subclassadds','Admin\RuanController@su
 Route::get('admin/package/ruan/fg/column/subclassedit/{id}','Admin\RuanController@subclassedit');
 Route::post('admin/package/ruan/fg/column/subclassedits','Admin\RuanController@subclassedits');
 Route::post('admin/package/ruan/fg/column/subclassajax','Admin\RuanController@subclassajax');
+
+
+//全包套餐
+Route::get('admin/package/all','Admin\AllController@all');
+Route::get('admin/package/alladd','Admin\AllController@alladd');
+Route::post('admin/package/alladds','Admin\AllController@alladds');
+Route::get('admin/package/alledit/{id}','Admin\AllController@alledit');
+Route::post('admin/package/alledits','Admin\AllController@alledits');
+
+Route::get('/admin/package/all/pei/{id}','Admin\AllController@pei');
+Route::get('admin/package/all/peiadd/{id}','Admin\AllController@peiadd');
+Route::post('admin/package/all/peiadds','Admin\AllController@peiadds');
+Route::get('admin/package/all/peiedit/{id}','Admin\AllController@peiedit');
+Route::post('admin/package/all/peiedits','Admin\AllController@peiedits');
+Route::post('/admin/package/all/peidel','Admin\AllController@peidel');
+
+Route::get('admin/package/all/pei/sub/{id}','Admin\AllController@sub');
+Route::get('admin/package/all/pei/subadd/{id}','Admin\AllController@subadd');
+Route::post('admin/package/all/pei/subadds','Admin\AllController@subadds');
+Route::get('admin/package/all/pei/subedit/{id}','Admin\AllController@subedit');
+Route::post('admin/package/all/pei/subedits','Admin\AllController@subedits');
+Route::post('/admin/package/all/pei/subdel','Admin\AllController@subdel');
+
+Route::get('/admin/package/all/zi/{id}','Admin\AllController@zi');
+Route::get('/admin/package/all/ziadd/{id}','Admin\AllController@ziadd');
+Route::post('/admin/package/all/ziadds','Admin\AllController@ziadds');
+Route::get('/admin/package/all/ziedit/{id}','Admin\AllController@ziedit');
+Route::post('/admin/package/all/ziedits','Admin\AllController@ziedits');
+Route::post('/admin/package/all/zidel','Admin\AllController@zidel');
+
+Route::get('/admin/package/all/pack','Admin\AllController@pack');
+Route::get('/admin/package/all/packadd','Admin\AllController@packadd');
+Route::post('/admin/package/all/packadds','Admin\AllController@packadds');
+Route::post('/admin/package/all/packdel','Admin\AllController@packdel');
 
 //装修工艺
 Route::get('admin/gongyi/lei/list','Admin\GongyiController@index');
@@ -198,6 +243,32 @@ Route::get('admin/case/edit/{id}','Admin\CaseController@edit');
 Route::post('admin/case/edits','Admin\CaseController@edits');
 Route::post('admin/case/upds','Admin\CaseController@upds');
 Route::post('admin/case/del','Admin\CaseController@del');
+
+//首页楼盘预约
+Route::get('admin/indexpropermake','Admin\MakeController@indexpropermake');
+Route::post('admin/indexpropermakeajax','Admin\MakeController@indexpropermakeajax');
+Route::post('admin/indexpropermakedel','Admin\MakeController@indexpropermakedel');
+
+//首页装修报价预约
+Route::get('admin/indexationmake','Admin\MakeController@indexationmake');
+Route::post('/admin/indexationmakeajax','Admin\MakeController@indexationmakeajax');
+Route::post('/admin/indexactionmakedel','Admin\MakeController@indexactionmakedel');
+
+//合作伙伴招募
+Route::get('admin/franchisezm','Admin\MakeController@franchisezm');
+Route::post('/admin/franchisezmajax','Admin\MakeController@franchisezmajax');
+Route::post('/admin/franchisezmdel','Admin\MakeController@franchisezmdel');
+
+//案例页装修设计预约
+Route::get('admin/caseplay','Admin\MakeController@caseplay');
+Route::post('/admin/caseplayajax','Admin\MakeController@caseplayajax');
+Route::post('/admin/caseplaydel','Admin\MakeController@caseplaydeldel');
+
+//网页关键字
+Route::get('admin/config/webpage','Admin\ConfigController@webpage');
+Route::get('admin/config/webpage/edit/{id}','Admin\ConfigController@webpageedit');
+Route::post('admin/config/webpage/edits','Admin\ConfigController@webpageedits');
+
 //数据填充
 Route::get('admin/add','Admin\RuanController@subclassajax@add');
 

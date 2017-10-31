@@ -54,34 +54,34 @@
 		</div>
 		<div class="am4_right">
 			<ul id="am4_index0" style="display:block">
-				<li class="am4_right_li1"><img src="{{ asset('home/images/amount/9.png') }}" alt=""><div><span>110㎡清爽现代客厅装修1</span></div></li>
-				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/10.png') }}" alt=""><div><span>110㎡清爽现代客厅电视墙装修</span></div></li>
-				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/11.png') }}" alt=""><div><span>110㎡时尚现代客厅装修</span></div></li>
+				<li class="am4_right_li1"><img src="{{ asset('home/images/amount/9.png') }}" alt=""><div><span>清爽现代客厅装修图</span></div></li>
+				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/10.png') }}" alt=""><div><span>清爽现代客厅电视墙装修图</span></div></li>
+				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/11.png') }}" alt=""><div><span>时尚现代客厅装修图</span></div></li>
 			</ul>
 			<ul id="am4_index1" style="display:none">
-				<li class="am4_right_li1"><img src="{{ asset('home/images/amount/9.png') }}" alt=""><div><span>110㎡清爽现代客厅装修2</span></div></li>
-				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/10.png') }}" alt=""><div><span>110㎡清爽现代客厅电视墙装修</span></div></li>
-				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/11.png') }}" alt=""><div><span>110㎡时尚现代客厅装修</span></div></li>
+				<li class="am4_right_li1"><img src="{{ asset('home/images/amount/11.jpg') }}" alt=""><div><span>地中海风格客厅墙壁装修图</span></div></li>
+				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/12.jpg') }}" alt=""><div><span>地中海风格餐厅装修图</span></div></li>
+				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/13.jpg') }}" alt=""><div><span>地中海风格儿童房装修图</span></div></li>
 			</ul>
 			<ul id="am4_index2" style="display:none">
-				<li class="am4_right_li1"><img src="{{ asset('home/images/amount/9.png') }}" alt=""><div><span>110㎡清爽现代客厅装修3</span></div></li>
-				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/10.png') }}" alt=""><div><span>110㎡清爽现代客厅电视墙装修</span></div></li>
-				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/11.png') }}" alt=""><div><span>110㎡时尚现代客厅装修</span></div></li>
+				<li class="am4_right_li1"><img src="{{ asset('home/images/amount/14.jpg') }}" alt=""><div><span>新中式风格客厅电视墙装修图</span></div></li>
+				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/15.jpg') }}" alt=""><div><span>新中式风格卧室床装修图</span></div></li>
+				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/16.jpg') }}" alt=""><div><span>新中式风格餐厅装修图</span></div></li>
 			</ul>
 			<ul id="am4_index3" style="display:none">
-				<li class="am4_right_li1"><img src="{{ asset('home/images/amount/9.png') }}" alt=""><div><span>110㎡清爽现代客厅装修4</span></div></li>
-				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/10.png') }}" alt=""><div><span>110㎡清爽现代客厅电视墙装修</span></div></li>
-				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/11.png') }}" alt=""><div><span>110㎡时尚现代客厅装修</span></div></li>
+				<li class="am4_right_li1"><img src="{{ asset('home/images/amount/17.jpg') }}" alt=""><div><span>美式风格客厅装修图</span></div></li>
+				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/18.jpg') }}" alt=""><div><span>美式风格客厅电视墙装修图</span></div></li>
+				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/19.jpg') }}" alt=""><div><span>美式风格餐厅装修图</span></div></li>
 			</ul>
 			<ul id="am4_index4" style="display:none">
-				<li class="am4_right_li1"><img src="{{ asset('home/images/amount/9.png') }}" alt=""><div><span>110㎡清爽现代客厅装修5</span></div></li>
-				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/10.png') }}" alt=""><div><span>110㎡清爽现代客厅电视墙装修</span></div></li>
-				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/11.png') }}" alt=""><div><span>110㎡时尚现代客厅装修</span></div></li>
+				<li class="am4_right_li1"><img src="{{ asset('home/images/amount/20.jpg') }}" alt=""><div><span>港式风格卧室装修图</span></div></li>
+				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/21.jpg') }}" alt=""><div><span>港式风格客厅沙发装修图</span></div></li>
+				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/22.jpg') }}" alt=""><div><span>港式风格餐厅装修图</span></div></li>
 			</ul>
 			<ul id="am4_index5" style="display:none">
-				<li class="am4_right_li1"><img src="{{ asset('home/images/amount/9.png') }}" alt=""><div><span>110㎡清爽现代客厅装修6</div></li>
-				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/10.png') }}" alt=""><div><span>110㎡清爽现代客厅电视墙装修</span></div></li>
-				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/11.png') }}" alt=""><div><span>110㎡时尚现代客厅装修</span></div></li>
+				<li class="am4_right_li1"><img src="{{ asset('home/images/amount/23.jpg') }}" alt=""><div><span>北欧简约卧室床装修图</div></li>
+				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/24.jpg') }}" alt=""><div><span>北欧简约餐厅装修图</span></div></li>
+				<li class="am4_right_li2"><img src="{{ asset('home/images/amount/25.jpg') }}" alt=""><div><span>北欧简约客厅装修图</span></div></li>
 			</ul>
 		</div>
 	</div>
@@ -89,7 +89,7 @@
 	<div class="am5">
 		<div class="am5_con">
 			<ul>
-				<li class="am5_li1"><img src="{{ asset('home/images/amount/12.png') }}" alt=""><span class="am5_span1">我家装修多少钱？</span><span class="am5_span2">20秒快速报价</span><a href="#"><button>快速报价</button></a></li>
+				<li class="am5_li1"><img src="{{ asset('home/images/amount/12.png') }}" alt=""><span class="am5_span1">我家装修多少钱？</span><span class="am5_span2">20秒快速报价</span><a href="{{ url('/package/houseroom') }}"><button>快速报价</button></a></li>
 				<li class="am5_li2"><img src="{{ asset('home/images/amount/13.png') }}" alt=""><span class="am5_span1">全国直营店查询</span><span class="am5_span2">坚持直营 传承品质</span><a href="#"><button>查直营店</button></a></li>
 				<li class="am5_li2"><img src="{{ asset('home/images/amount/14.png') }}" alt=""><span class="am5_span1">预约到店体验</span><span class="am5_span2">先体现在装修很重要</span><a href="#"><button>快速预约</button></a></li>
 			</ul>

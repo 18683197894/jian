@@ -56,7 +56,8 @@ class AdminController extends Controller
     		$plate[$k]->news = \DB::table('platenews')->where('pid',$v->id)->offset(0)->limit(4)->orderBy('time','desc')->get();
     	}
     	
-    	return view('home.index',['data'=>$data,'plate'=>$plate,'case'=>$case]);
+        $key = \DB::table('webpage')->where('id',1)->first();
+    	return view('home.index',['data'=>$data,'plate'=>$plate,'case'=>$case,'keyworlds'=>$key->keyworlds,'description'=>$key->description]);
     }
 
     

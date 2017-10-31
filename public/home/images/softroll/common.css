@@ -124,13 +124,13 @@
 .rb-si ul li{padding:0;float:left;display:inline;width:300px;height:366px;background: url(rf-bk2.jpg) no-repeat top right;color:#989898;}
 .rb-si ul li b{padding:0;font-size:18px;width:292px;height:26px;line-height:26x;text-align:center;display:block;font-weight:normal;margin-top:16px;color:#727272;}
 .rb-si ul li p{padding:0;font-size:14px;width:220px;height:50px;text-align:center;display:block;margin:0 auto;margin-top:10px;}
-.rb-taocan{width:1200px;height:100%;margin:0 auto;}
+.rb-taocan{width:1200px;height:100%;margin:0 auto;padding-bottom: 40px;}
 .rb-taocan-tit{width:1200px;height:88px;line-height:88px;text-align:center;text-align:center;font-size:22px;color:#333;margin:0 auto;}
 
-.ztabmenu7,,.ztabmenu8,.ztabmenu9{width:1200px;height:39px;line-height:39px;float:left;display:inline;margin:0 auto;}
+.ztabmenu7,.ztabmenu8,.ztabmenu9{width:1200px;height:39px;line-height:39px;float:left;display:inline;margin:0 auto;}
 .ztabmenu7 ul,.ztabmenu8 ul,.ztabmenu9 ul{margin:0;padding:0;}
-.ztabmenu7 li,.ztabmenu8 li,.ztabmenu9 li{text-align:center; cursor:pointer;float:left;width:300px;height:39px;line-height:39px;overflow:hidden;display:inline;color:#666;font-size:16px;background:#f5f5f5;}
-.ztabmenu7 .zcli,.ztabmenu8 .zcli,.ztabmenu9 .zcli{text-align:center;float:left;width:300px;height:39px;line-height:39px;display:inline;background:#E12E32;color:#fff;}
+.ztabmenu7 li,.ztabmenu8 li,.ztabmenu9 li{text-align:center; cursor:pointer;float:left;width:400px;height:39px;line-height:39px;overflow:hidden;display:inline;color:#666;font-size:16px;background:#f5f5f5;}
+.ztabmenu7 .zcli,.ztabmenu8 .zcli,.ztabmenu9 .zcli{text-align:center;float:left;width:400px;height:39px;line-height:39px;display:inline;background:#E12E32;color:#fff;}
 
 #ztabcontent1,#ztabcontent2,#ztabcontent3{width:1200px;height:100%;overflow:hidden;overflow:hidden;color:#004b4c;margin:0 auto;margin-top:10;}
 
@@ -140,7 +140,7 @@
 
 .rb-tc-img1{width:1200px;height:421px;margin:0 auto; position: relative;}
 .rb-tc-img1 img{position: absolute;top:0px;left:0px;width:100%;height:100%;}
-.rb-div{position: absolute;right:115px;top:0px;color:#555;padding:40px 40px 0px 40px;width:224px;height:381px;display:block;background:#fff;background: rgba(255,255,255,0.88);line-height:1.8em;font-size:15px;}
+.rb-div{position: absolute;right:96px;top:0px;color:#555;padding:40px 40px 0px 40px;width:224px;height:381px;display:block;background:#fff;background: rgba(255,255,255,0.88);line-height:1.8em;font-size:15px;}
 .rb-tc-img1 span h2{font-size:18px;margin:0 auto;display:block;text-align:center;padding-bottom: 5px;color:#555}
 /*.rb-tc-img1-1{background:url(./home/images/softroll/taocan-5.png) no-repeat top left;}
 .rb-tc-img1-2{background:url(./home/images/softroll/taocan-6.png) no-repeat top left;}
@@ -177,7 +177,7 @@
 .c0-tit-3{width:300px;height:36px;line-height:36px;text-align:center;display:block;float:left;}
 .c0-tit-4{width:226px;height:36px;line-height:36px;text-align:center;display:block;float:left;}
 
-.c0-con{width:1200px;height:auto;overflow: hidden;background:#f5f5f5;padding-bottom:15px;height:200px;}
+.c0-con{width:1200px;height:auto;overflow: hidden;background:#f5f5f5;padding-bottom:15px;height:100%;}
 .c0-tit-51{width:210px;height:40px;line-height:40px;display:block;margin-left:30px;float:left;font-size:15px;color:#666;}
 .c0-tit-52{width:329px;height:40px;line-height:40px;text-align:center;display:block;float:left;font-size:15px;color:#666;}
 .c0-tit-53{width:300px;height:40px;line-height:40px;text-align:center;display:block;float:left;font-size:15px;color:#666;}

@@ -229,7 +229,7 @@
 		margin-left: 18px;
 		display: block;
 	}
-	.am4_right_li2 img{
+	.am4_right_li2 img,.am4_right_li1 img{
 		width:310px;
 		height:482px;
 		float:left;	

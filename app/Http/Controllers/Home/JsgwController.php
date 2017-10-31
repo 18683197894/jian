@@ -9,80 +9,95 @@ class JsgwController extends Controller
 {
     //关于建商
     public function aboutus(){
-    	return view('home.jsgw.aboutus',['title'=>'企业简介']);
+        $key = \DB::table('webpage')->where('id',5)->first();
+    	return view('home.jsgw.aboutus',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]);
     }
     //运营团队
     public function tuandui(){
-    	return view('home.jsgw.tuandui',['title'=>'运营团队']);
+        $key = \DB::table('webpage')->where('id',6)->first();
+    	return view('home.jsgw.tuandui',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]);
     }
     //发展战略
     public function zhanlui(){
-    	return view('home.jsgw.zhanlui',['title'=>'发展战略']);
+        $key = \DB::table('webpage')->where('id',7)->first();
+    	return view('home.jsgw.zhanlui',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]);
     }
     //联系方式
     public function contact(){
-    	return view('home.jsgw.contact',['title'=>'联系方式']);
+        $key = \DB::table('webpage')->where('id',8)->first();
+    	return view('home.jsgw.contact',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]);
     }
     //用人理念
     public function job1(){
-    	return view('home.jsgw.job1',['title'=>'用人理念']);
+        $key = \DB::table('webpage')->where('id',9)->first();
+    	return view('home.jsgw.job1',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]);
     }
     //新零售平台
     public function ls(){
-    	return view('home.jsgw.ls',['title'=>'新零售平台']);
+        $key = \DB::table('webpage')->where('id',10)->first();
+    	return view('home.jsgw.ls',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]);
     }
     //精装房项目
     public function jzf(){
-    	return view('home.jsgw.jzf',['title'=>'精装房项目']);
+        $key = \DB::table('webpage')->where('id',11)->first();
+    	return view('home.jsgw.jzf',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]);
     }
     //线下体验馆
     public function tyg(){
-    	return view('home.jsgw.tyg',['title'=>'线下体验馆']);
+        $key = \DB::table('webpage')->where('id',12)->first();
+    	return view('home.jsgw.tyg',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]);
     }
     //招聘职位 
     public function job5(){
-    	return view('home.jsgw.job5',['title'=>'招聘职位']);
+        $key = \DB::table('webpage')->where('id',13)->first();
+    	return view('home.jsgw.job5',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]);
     }
     public function job6(){
-    	return view('home.jsgw.job6',['title'=>'招聘职位']);
+        $key = \DB::table('webpage')->where('id',14)->first();
+    	return view('home.jsgw.job6',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]);
     }
 
     //设计风格
     public function design($id=0){
         $dess = ['简欧设计','现代设计','地中海设计','中式设计','美式设计','田园设计'];
-
-        return view('home.jsgw.design',['title'=>'设计风格','id'=>$id,'dess'=>$dess]);
+        $key = \DB::table('webpage')->where('id',15)->first();
+        return view('home.jsgw.design',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description,'id'=>$id,'dess'=>$dess]);
     }
     //设计量房
     public function amount(){
-        return view('home.jsgw.amount',['title'=>'设计风格']);
+        $key = \DB::table('webpage')->where('id',16)->first();
+        return view('home.jsgw.amount',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]);
     }
     //news新闻
-    public function news(){
-        $zhi = \DB::table('news')->where('zhi',1)->first();
-        $data = \DB::table('news')->orderBy('time')->paginate(12);
+    public function news($id){
+        $zhi = \DB::table('news')->where('pid',$id)->where('zhi',1)->first();
+        $data = \DB::table('news')->where('pid',$id)->orderBy('time')->paginate(12);
         $xun = \DB::table('news')->orderby('click','desc')->skip(0)->take(10)->get();
-        $qi  = \DB::table('news')->where('lei',2)->orderby('time')->skip(0)->take(6)->get();
+        $qi  = \DB::table('newslei')
+            ->where('id','!=',$id)
+            ->get();
+        $tit = \DB::table('newslei')->where('id',$id)->first();
         
-        return view('home.jsgw.news',['title'=>'新闻动态','data'=>$data,'zhi'=>$zhi,'xun'=>$xun,'qi'=>$qi]);
+        return view('home.jsgw.news',['title'=>$tit->titles,'keyworlds'=>$tit->keyworlds,'description'=>$tit->description,'data'=>$data,'zhi'=>$zhi,'xun'=>$xun,'qi'=>$qi,'tit'=>$tit]);
     }
     public function newslist($id){
 
-        $qi  = \DB::table('news')->where('lei',2)->orderby('time')->skip(0)->take(6)->get();
+        $qi  = \DB::table('newslei')->orderby('time','desc')->get();
         $xun = \DB::table('news')->orderby('click','desc')->skip(0)->take(10)->get();
         $data = \DB::table('news')->where('id',$id)->first();
         if( $data ==null )
-        {
-            return redirect('news');
+        {   
+            return back();
         }
         $num = $data->click + 1;
         \DB::table('news')->where('id',$id)->update(['click'=>$num]);
-       
-        return view('home.jsgw.newslist',['data'=>$data,'title'=>$data->titles,'qi'=>$qi,'xun'=>$xun,'keyworlds'=>$data->keyworlds,'description'=>$data->description]);
+        $tit = \DB::table('newslei')->where('id',$data->pid)->first();
+        return view('home.jsgw.newslist',['data'=>$data,'title'=>$data->titles,'keyworlds'=>$data->keyworlds,'description'=>$data->description,'qi'=>$qi,'xun'=>$xun,'tit'=>$tit]);
     }
 
     public function franchise(){
-        return view('home.jsgw.franchise',['title'=>'合作伙伴招募','es' =>1]);
+        $key = \DB::table('webpage')->where('id',21)->first();
+        return view('home.jsgw.franchise',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description,'es' =>1]);
     }
 
     public function zmajax(Request $request)
@@ -114,12 +129,21 @@ class JsgwController extends Controller
     }
     public function honest()
     {
-        return view('home.jsgw.honest',['title'=>'廉洁规章','es' =>2]);
+        $key = \DB::table('webpage')->where('id',22)->first();
+        return view('home.jsgw.honest',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description,'es' =>2]);
     }
 
     public function cgs()
     {
-        return view('home.jsgw.cgs',['title'=>'采购商入驻','es' =>3]);
+        $key = \DB::table('webpage')->where('id',23)->first();
+        return view('home.jsgw.cgs',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description,'es' =>3]);
+
+    }
+
+    public function supply()
+    {
+        $key = \DB::table('webpage')->where('id',26)->first();
+        return view('home.jsgw.supply',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description,'es' =>4]);
 
     }
 }

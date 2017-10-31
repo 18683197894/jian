@@ -103,7 +103,7 @@ style="display:none"
 							  </div>
 						   </li>
 						   					<div id="C0">
-					 <div class="c0-tit"><span class="c0-tit-1">{{ $vv->tit }}包含项目</span><span class="c0-tit-2">规格</span><span class="c0-tit-3">品牌</span><span class="c0-tit-4">数量</span></div>
+					 <div class="c0-tit"><span class="c0-tit-1">{{ $vv->tit }}包含项目</span><span class="c0-tit-2">规格</span><span class="c0-tit-3">材质</span><span class="c0-tit-4">数量</span></div>
 				    <div class="c0-con">
 				    @foreach($vv->ss as $i =>$j)
 					<p><span class="c0-tit-51">{{ $j->title }}</span><span class="c0-tit-52">{{ $j->specations }}</span><span class="c0-tit-53">{{ $j->brand }}</span><span class="c0-tit-54">{{ $j->num }}</span></p>
@@ -178,8 +178,8 @@ style="display:none"
 								 		  			  
 							  </div>
 						   </li>
-						   					<div id="C0">
-					 <div class="c0-tit"><span class="c0-tit-1">{{ $vv->tit }}包含项目</span><span class="c0-tit-2">规格</span><span class="c0-tit-3">品牌</span><span class="c0-tit-4">数量</span></div>
+					<div id="C0">
+					 <div class="c0-tit"><span class="c0-tit-1">{{ $vv->tit }}包含项目</span><span class="c0-tit-2">规格</span><span class="c0-tit-3">材质</span><span class="c0-tit-4">数量</span></div>
 				    <div class="c0-con">
 				    @foreach($vv->ss as $i =>$j)
 					<p><span class="c0-tit-51">{{ $j->title }}</span><span class="c0-tit-52">{{ $j->specations }}</span><span class="c0-tit-53">{{ $j->brand }}</span><span class="c0-tit-54">{{ $j->num }}</span></p>
@@ -256,7 +256,7 @@ style="display:none"
 							  </div>
 						   </li>
 					<div id="C0" style="padding-bottom:60px;">
-					 <div class="c0-tit"><span class="c0-tit-1">{{ $vv->tit }}包含项目</span><span class="c0-tit-2">规格</span><span class="c0-tit-3">品牌</span><span class="c0-tit-4">数量</span></div>
+					 <div class="c0-tit"><span class="c0-tit-1">{{ $vv->tit }}包含项目</span><span class="c0-tit-2">规格</span><span class="c0-tit-3">材质</span><span class="c0-tit-4">数量</span></div>
 				    <div class="c0-con">
 				    @foreach($vv->ss as $i =>$j)
 					<p><span class="c0-tit-51">{{ $j->title }}</span><span class="c0-tit-52">{{ $j->specations }}</span><span class="c0-tit-53">{{ $j->brand }}</span><span class="c0-tit-54">{{ $j->num }}</span></p>

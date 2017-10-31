@@ -89,7 +89,13 @@
                     @endif
                     </a>&nbsp;&nbsp;
                   	<a href="#" class="del">删除</a>&nbsp;&nbsp;
-                  	<a href="{{ url('admin/gongyi/lei/newslist/') }}/{{ $v->id }}">预览</a>
+                    @if( $v->or >=1 & $v->or < 5 )
+                    <a href="{{ url('home/case/zaiindex/play') }}/{{ $v->id }}" target="_blank">预览</a>
+                      
+                    @elseif( $v->or == 5 )
+                    <a href="{{ url('home/case/index/play') }}/{{ $v->id }}" target="_blank">预览</a>
+                    
+                    @endif
                   </td>
                 </tr>
     @endforeach($data as $k => $v)

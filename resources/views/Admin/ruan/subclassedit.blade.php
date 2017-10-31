@@ -54,8 +54,8 @@
                   <input type="text" name="specations" value="{{ $data->specations }}" class="form-control" id="exampleInputPassword1" placeholder="规格">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">品牌</label>
-                  <input type="text" name="brand" value="{{ $data->brand }}" class="form-control" id="exampleInputPassword1" placeholder="品牌">
+                  <label for="exampleInputPassword1">材质</label>
+                  <input type="text" name="brand" value="{{ $data->brand }}" class="form-control" id="exampleInputPassword1" placeholder="材质">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">数量</label>

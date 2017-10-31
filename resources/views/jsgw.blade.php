@@ -4,6 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="{{ asset('home/images/images/common.css') }}" rel="stylesheet" type="text/css" />
 <meta name="csrf-token" content="{{ csrf_token() }}">
+<meta name="keywords"content="@if(empty($keyworlds))建设网@else{{ $keyworlds }}@endif"> 
+<meta name="description"content="@if(empty($description))建设网@else{{ $description }}@endif"> 
 	<script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
 
 	<title>{{ config('app.name') }}  
@@ -26,23 +28,23 @@
 			<img src="{{ asset('home/images/logo.png') }}" alt="" />
 		</div>
 		<ul>
-			<a href="{{ asset('/') }}"><li >首页</li></a>
-			<a href="{{ asset('/') }}"><li
-			@if($title == '产品供应')
+			<a href="{{ url('/') }}"><li >首页</li></a>
+			<a href="{{ url('/jsgw/supply') }}"><li
+			@if($title == '4')
 			style="color:#E12E32;border-bottom:3px solid #E12E32;"
 			@endif
 			>产品供应</li></a>
-			<a href="{{ asset('/jsgw/cgs') }}"><li
+			<a href="{{ url('/jsgw/cgs') }}"><li
 			@if($es == 3)
 			style="color:#E12E32;border-bottom:3px solid #E12E32;"
 			@endif
 			>采购商入驻</li></a>
-			<a href="{{ asset('/jsgw/franchise') }}"><li
+			<a href="{{ url('/jsgw/franchise') }}"><li
 			@if($es == 1)
 			style="color:#E12E32;border-bottom:3px solid #E12E32;"
 			@endif
 			>合作伙伴招募</li></a>
-			<a href="{{ asset('/jsgw/honest') }}"><li
+			<a href="{{ url('/jsgw/honest') }}"><li
 			@if($es == 2)
 			style="color:#E12E32;border-bottom:3px solid #E12E32;"
 			@endif

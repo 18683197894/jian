@@ -281,7 +281,7 @@ class PlateController extends Controller
     }
     public function newszhi(Request $request)
     {
-		$res = \DB::table('platenews')->where('zhi',1)->first();
+		$res = \DB::table('platenews')->where('zhi',1)->where('pid',$request->pid)->first();
 
     	if($res)
     	{

@@ -14,10 +14,7 @@ class PlateController extends Controller
         $xun = \DB::table('platenews')->orderby('click','desc')->skip(0)->take(10)->get();
         $qi  = \DB::table('plate')->where('id','!=',$id)->orderby('time','desc')->skip(0)->take(6)->get();
         $tit = \DB::table('plate')->where('id',$id)->first();
-        if( count($data) <= 0 )
-        {   
-            return back();
-        }
+        
         return view('home.plate.index',['title'=>$tit->titles,'keyworlds'=>$tit->keyworlds,'description'=>$tit->description,'data'=>$data,'zhi'=>$zhi,'xun'=>$xun,'qi'=>$qi,'tit'=>$tit]);
     }
 

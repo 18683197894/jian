@@ -77,7 +77,7 @@
                   <td style="text-align: center;vertical-align: middle">{{ $v->click }}</td>
                   <td style="text-align: center;vertical-align: middle"><a href="{{ url('/admin/plate/newsedit') }}/{{ $v->id }}">编辑
                   </a>&nbsp;&nbsp;<a class="shan" href="#" onclick="return false;">删除
-                  &nbsp;</a>&nbsp;&nbsp;<a class="zhi" href="#" 
+                  &nbsp;</a>&nbsp;&nbsp;<a class="zhi" pid="{{ $v->pid }}" href="#" 
                   @if($v->zhi ==1)
                   index="2" style="opacity: 0.6"
                   @endif
@@ -105,6 +105,7 @@
        <script>
        $(".zhi").on('click',function(){
         var css = $(this).attr('index');
+        var pid = $(this).attr('pid');
     
         if(css =="2")
         {
@@ -123,7 +124,7 @@
 
          $.ajax('/admin/plate/newszhi',{
             type:'post',
-            data:{id:id},
+            data:{id:id,pid:pid},
             success:function(data){
               if(data ==1 ){
                 yuan.css('opacity','1');
