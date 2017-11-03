@@ -23,24 +23,24 @@ class GongyiController extends Controller
 		$this->validate($request,[
 		    'title' => 'required|min:2|max:10',
 		    'img'=>'required|image',
-            'titles' => 'required|min:2|max:10',
-            'keyworlds' => 'required|min:6|max:30',
-            'description' => 'required|min:10|max:120'
+            'titles' => 'required|min:2|max:20',
+            'keyworlds' => 'required|min:6|max:120',
+            'description' => 'required|min:10|max:255'
  		],[
 			'title.required'=>'标题不能为空',
-			'title.min'=>'标题最少2位最大10位',
-			'title.max'=>'标题最少2位最大10位',
+			'title.min'=>'标题最少2位',
+			'title.max'=>'标题最大10位',
 			'img.required'=>'未上传图片',
 			'img.image'=>'请上传图片类型的文件',
             'titles.required'=>'网页标题不能为空',
-            'titles.min'=>'网页标题最少2位最大10位',
-            'titles.max'=>'网页标题最少2位最大10位',
+            'titles.min'=>'网页标题最大10位',
+            'titles.max'=>'网页标题最大20位',
             'keyworlds.required'=>'网页关键字不能为空',
-            'keyworlds.min'=>'网页关键字最少6位最大30位',
-            'keyworlds.max'=>'网页关键字最少6位最大30位',
+            'keyworlds.min'=>'网页关键字最少6位',
+            'keyworlds.max'=>'网页关键字最大120位',
             'description.required'=>'网页内容描述不能为空',
-            'description.min'=>'网页内容描述最少10位最大120位',
-            'description.max'=>'网页内容描述最少10位最大120位'
+            'description.min'=>'网页内容描述最少10位',
+            'description.max'=>'网页内容描述最大255位'
 		]); 
 		$data['time']=time();
 		$data['status'] = 0;
@@ -87,23 +87,23 @@ class GongyiController extends Controller
 		$this->validate($request,[
 		    'title' => 'required|min:2|max:10',
 		    'img'   => 'image',
-            'titles' => 'required|min:2|max:10',
-            'keyworlds' => 'required|min:6|max:30',
-            'description' => 'required|min:10|max:120'
+            'titles' => 'required|min:2|max:20',
+            'keyworlds' => 'required|min:6|max:120',
+            'description' => 'required|min:10|max:255'
  		],[
 			'title.required'=>'标题不能为空',
-			'title.min'=>'标题最少2位最大10位',
-			'title.max'=>'标题最少2位最大10位',
+			'title.min'=>'标题最少2位',
+			'title.max'=>'标题最大10位',
 			'img.image'=>'请上传图片类型的文件',
             'titles.required'=>'网页标题不能为空',
-            'titles.min'=>'网页标题最少2位最大10位',
-            'titles.max'=>'网页标题最少2位最大10位',
+            'titles.min'=>'网页标题最少2位',
+            'titles.max'=>'网页标题最大20位',
             'keyworlds.required'=>'网页关键字不能为空',
-            'keyworlds.min'=>'网页关键字最少6位最大30位',
-            'keyworlds.max'=>'网页关键字最少6位最大30位',
+            'keyworlds.min'=>'网页关键字最少6位',
+            'keyworlds.max'=>'网页关键字最大120位',
             'description.required'=>'网页内容描述不能为空',
-            'description.min'=>'网页内容描述最少10位最大120位',
-            'description.max'=>'网页内容描述最少10位最大120位'
+            'description.min'=>'网页内容描述最少10位',
+            'description.max'=>'网页内容描述最大255位'
 		]);
 
     	$de = \DB::table('gongyi')->where('id',$id)->first();
@@ -153,7 +153,7 @@ class GongyiController extends Controller
     	$key = isset($request->key) ? $request->key : '';
     	
     	$data = \DB::table('gongyinews')->where('title','like','%'.$key.'%')->where('pid',$id)->orderBy('time','desc')->paginate(10);
-    	
+    	$data->appends(['key'=>$key]);
     	return view('Admin.gongyi.newslist',['title'=>'工艺文章管理','data'=>$data,'request'=>$request->all(),'pid'=>$id]);
     
     }
@@ -166,32 +166,33 @@ class GongyiController extends Controller
     {
     	$data = $request->except('_token');
 		$this->validate($request,[
-		    'title' => 'required|min:2|max:20',
-		    'leicon'=>'required|min:10|max:46',
+		    'title' => 'required|min:2|max:30',
+		    'leicon'=>'required|min:10|max:120',
 		    'titleimg'=>'required|image',
-		    'content' =>'required',
-            'titles' => 'required|min:2|max:10',
-            'keyworlds' => 'required|min:6|max:30',
-            'description' => 'required|min:10|max:120'
+		    'content' =>'required|max:6000',
+            'titles' => 'required|min:2|max:30',
+            'keyworlds' => 'required|min:6|max:120',
+            'description' => 'required|min:10|max:255'
  		],[
 			'title.required'=>'标题不能为空',
-			'title.min'=>'标题最少2位最大20位',
-			'title.max'=>'标题最少2位最大20位',
+			'title.min'=>'标题最少2位',
+			'title.max'=>'标题最大30位',
             'leicon.required'=>'简介不能为空',
-            'leicon.min'=>'简介最少10位最大46位',
-			'leicon.max'=>'简介最少10位最大46位',
+            'leicon.min'=>'简介最少10位',
+			'leicon.max'=>'简介最大120位',
 			'titleimg.required'=>'未上传图片',
 			'titleimg.image'=>'请上传图片类型的文件',
 			'content.required'=>'内容不能为空',
+            'content.max'=>'内容不能超过6000字',
             'titles.required'=>'网页标题不能为空',
-            'titles.min'=>'网页标题最少2位最大10位',
-            'titles.max'=>'网页标题最少2位最大10位',
+            'titles.min'=>'网页标题最少2位',
+            'titles.max'=>'网页标题最大30位',
             'keyworlds.required'=>'网页关键字不能为空',
-            'keyworlds.min'=>'网页关键字最少6位最大30位',
-            'keyworlds.max'=>'网页关键字最少6位最大30位',
+            'keyworlds.min'=>'网页关键字最少6位',
+            'keyworlds.max'=>'网页关键字最大120位',
             'description.required'=>'网页内容描述不能为空',
-            'description.min'=>'网页内容描述最少10位最大120位',
-            'description.max'=>'网页内容描述最少10位最大120位'
+            'description.min'=>'网页内容描述最少10位',
+            'description.max'=>'网页内容描述最大255位'
 		]);  
 
 		$data['time']=time();
@@ -240,29 +241,32 @@ class GongyiController extends Controller
  
     	$data = $request->except('_token');
 		$this->validate($request,[
-		    'title' => 'required|min:2|max:20',
-		    'leicon'=>'required',
+		    'title' => 'required|min:2|max:30',
+		    'leicon'=>'required|min:10|max:120',
 		    'titleimg'=>'image',
-		    'content' =>'required',
-            'titles' => 'required|min:2|max:10',
-            'keyworlds' => 'required|min:6|max:30',
-            'description' => 'required|min:10|max:120'
+		    'content' =>'required|max:20000',
+            'titles' => 'required|min:2|max:30',
+            'keyworlds' => 'required|min:6|max:120',
+            'description' => 'required|min:10|max:255'
  		],[
 			'title.required'=>'标题不能为空',
-			'title.min'=>'标题最少2位最大20位',
-			'title.max'=>'标题最少2位最大20位',
+			'title.min'=>'标题最少2位',
+			'title.max'=>'标题最大30位',
  			'leicon.required'=>'简介不能为空',
 			'titleimg.image'=>'请上传图片类型的文件',
-			'content.required'=>'内容不能为空',
+            'content.required'=>'内容不能为空',
+			'content.max'=>'内容不能超过20000字',
             'titles.required'=>'网页标题不能为空',
-            'titles.min'=>'网页标题最少2位最大10位',
-            'titles.max'=>'网页标题最少2位最大10位',
+            'titles.min'=>'网页标题最少2位',
+            'titles.max'=>'网页标题最大30位',
+            'leicon.min'=>'简介最少10位',
+            'leicon.max'=>'简介最大120位',
             'keyworlds.required'=>'网页关键字不能为空',
-            'keyworlds.min'=>'网页关键字最少6位最大30位',
-            'keyworlds.max'=>'网页关键字最少6位最大30位',
+            'keyworlds.min'=>'网页关键字最少6位',
+            'keyworlds.max'=>'网页关键字最大120位',
             'description.required'=>'网页内容描述不能为空',
-            'description.min'=>'网页内容描述最少10位最大120位',
-            'description.max'=>'网页内容描述最少10位最大120位'
+            'description.min'=>'网页内容描述最少10位',
+            'description.max'=>'网页内容描述最大255位'
 		]);
 
 		

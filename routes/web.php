@@ -109,6 +109,9 @@ Route::get('/home/case/indexurl','Home\CaseController@indexurl');
 Route::get('/home/case/zaiindex/play/{id}','Home\CaseController@zaiplay');
 Route::get('/home/case/zaiplay/zaiurl','Home\CaseController@zaiurl');
 
+//搜索
+Route::get('/home/sou','Home\AdminController@sou');
+
 Route::group(['middleware' => ['Login']], function () {
 
 //主页

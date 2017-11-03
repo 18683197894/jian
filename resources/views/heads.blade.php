@@ -38,7 +38,10 @@
 					</div>
 
 					<div id="hade_1_2_3">
-						
+						<form action="{{ url('home/sou') }}" method="GET">
+							<input type="text" name="con" value="@if( isset($request['con'])  ){{ trim($request['con'])}}@endif" />
+							<button>搜索</button>
+						</form>
 					</div>
 		
 										
@@ -57,7 +60,6 @@
 		<li id="li-4">建商案例</li>
 		<li id="li-5">设计风格</li>
 		<li id="li-6">招商采购</li>
-		<li><a href="http://www.jianshanglianmeng.com">建商商城</a></li>
 		<li><a href="{{ url('/jsgw/contact') }}">联系我们</a></li>
 	</ul>
 	<!--隐藏盒子-->
@@ -101,7 +103,7 @@
 		</div>
 	</div>
 	<div id="box-3" class="hidden-box hidden-loc-info">
-		<div id="div1">
+		<!-- <div id="div1">
 			<span>全包套餐 ></span>
 			<ul>
 				<li><a href="{{ url('/jsgw/aboutus') }}">套餐一</a></li>
@@ -109,7 +111,7 @@
 				<li><a href="{{ url('/jsgw/zhanlui') }}">套餐三</a></li>
 				
 			</ul>
-		</div>
+		</div> -->
 		<div id="div2">
 			<span>软包套餐 ></span>
 			<ul>

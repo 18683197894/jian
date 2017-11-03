@@ -12,6 +12,7 @@ $('.dian > .button1').on('click',function(){
 			url : '/home/case/jiaajax',
 			type : 'post',
 			dataType : 'json',
+			async : false,
 			data : {count:count,num:num,_token:$('meta[name="csrf-token"]').attr('content')},
 			success : function(data)
 			{
@@ -67,7 +68,7 @@ $('.dian > .button1').on('click',function(){
 			},
 			error : function(data)
 			{
-				alert('加载失败!');
+				// alert('加载失败!');
 			}
 			
 			

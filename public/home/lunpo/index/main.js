@@ -29,3 +29,12 @@ $(document).ready(function(){
          $('#li-'+num).css('color','#000');
     });
 });
+
+    $('#hade_1_2_3 > form > button').on('click',function(){
+        var con = $('#hade_1_2_3 > form > input').val();
+        var conn = $.trim(con);
+        if(conn == null || conn == '' )
+        {
+            return false;
+        }
+    })

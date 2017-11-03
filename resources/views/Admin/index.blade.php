@@ -514,7 +514,7 @@ active
 class="active"
 @endif
             ><a href="{{ url('admin/config/webpage') }}"><i class="fa fa-circle-o"></i>网页关键字</a></li>
-            <li
+           <!--  <li
 @if($title == "首页装修报价预约")
 class="active"
 @endif
@@ -528,12 +528,12 @@ class="active"
 @if($title == "合作伙伴招募")
 class="active"
 @endif
-            ><a href="{{ url('admin/caseplay') }}"><i class="fa fa-circle-o"></i>案例页装修设计预约</a></li>
+            ><a href="{{ url('admin/caseplay') }}"><i class="fa fa-circle-o"></i>案例页装修设计预约</a></li> -->
           </ul>
         </li>
         
 
-        <li>
+        <!-- <li>
           <a href="pages/calendar.html">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
             <span class="pull-right-container">
@@ -604,7 +604,7 @@ class="active"
             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
           </ul>
         </li>
-        <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+        <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li> -->
      
 
       </ul>

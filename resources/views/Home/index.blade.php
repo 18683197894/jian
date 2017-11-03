@@ -1013,6 +1013,216 @@
 		</div>
 	</div>
 	</div>
+
+		
+	</div>
+
+<!--中间内容-->
+<div class="z-con">
+    <div class="z-con1"><!--服务-->
+	   <div class="z-con1-1">
+	       <div class="z-con1-01"><b>省钱装修</b><p>全程6大免费服务</p></div>
+		   <div class="z-con1-02"><b>免费预算报价</b><p>预算看不懂，我帮你</p></div>
+		   <div class="z-con1-03"><b>全屋装修包</b><p>装修界的金点子</p></div>
+		   <div class="z-con1-04"><b>装修分期贷</b><p>轻松装修不再愁</p></div>
+	   </div>
+	</div>
+
+	<div class="z-con_4"> <!-- 楼盘推荐 -->
+		<div class="head">
+			<p class="head_1">Selling real estate</p>
+			<b>楼盘推荐</b>	
+			<p class="head_2">公司品质保障 &nbsp;放心服务 &nbsp;全程包忧</p>	
+		</div>
+		<ul>
+			<li class="z-con_4_lil"> <a href="{{ url('/propertieszshx') }}"> <img src="{{ asset('home/images/index/6.png') }}" alt=""> <span>浙商.临港新天地</span> </li></a>
+			<li class="z-con_4_li"> <a href="{{ url('/propertiesdfhx') }}"><img src="{{ asset('home/images/index/7.png') }}" alt=""> <span>德福公元</span> </li></a>
+			<li class="z-con_4_li"> <a href="{{ url('/propertieshfhx') }}"><img src="{{ asset('home/images/index/8.png') }}" alt=""> <span>华富.御景庄园</span> </li></a>
+		</ul>
+   	</div>
+   	<div class="z-con_5"> <!-- 德系工艺品质保障 -->
+   		<div class="head2">
+			<p class="head_1_1">Decoration service process</p>
+			<b>德系工艺品质保障</b>	
+			<p class="head_2_2">公司品质保障 &nbsp;放心服务 &nbsp;全程包忧</p>	
+		</div>
+		<ul class="z-con_5_1">
+			<li class="con_5_li1"><span class="con_5_span1"></span><span class="con_5_span_2">快速报价</span><span class="con_5_span_3"></span></li>
+			<li class="con_5_li2"><span class="con_5_span2"></span><span class="con_5_span_2">线下体验</span><span class="con_5_span_4"></span></li>
+			<li class="con_5_li3"><span class="con_5_span3"></span><span class="con_5_span_2">量房设计沟通</span><span class="con_5_span_6"></span></li>
+			<li class="con_5_li4"><span class="con_5_span4"></span><span class="con_5_span_2">对比方案</span></li>
+			<li class="con_5_li5"><span class="con_5_span5"></span><span class="con_5_span_2">签订合同</span><span class="con_5_span_3"></span></li>
+			<li class="con_5_li6"><span class="con_5_span6"></span><span class="con_5_span_2">标准化施工</span><span class="con_5_span_5"></span></li>
+			<li class="con_5_li7"><span class="con_5_span7"></span><span class="con_5_span_2">五星质检验收</span><span class="con_5_span_6"></span></li>
+			<li class="con_5_li8"><span class="con_5_span8"></span><span class="con_5_span_2">金牌质保 售后无忧</span></li>
+		</ul>
+   	</div>
+  	
+  	<div class="z-con_6"> <!-- 装修套餐 -->
+  		<div class="head">
+			<p class="head_1">Decoration course</p>
+			<b>装修软包</b>	
+			<p class="head_2">公司品质保障 &nbsp;放心服务 &nbsp;全程包忧</p>	
+		</div>
+		<div class="con6_1">
+			<a href="{{ url('/package/softroll') }}"><div class="con6_1_1"> <span>时尚包</span></div></a>
+		</div>
+		<div class="con6_2">
+			<div class="con6_2_1">
+				<a href="{{ url('/package/softroll') }}"><div> <span>新古典</span> </div></a>
+			</div>
+			<div class="con6_2_2"><a href="{{ url('/package/softroll') }}"><div> <span>现代</span> </div></a></div>
+			<div class="con6_2_3"><a href="{{ url('/package/softroll') }}"><div> <span>美式</span> </div></a></div>
+		</div>
+  	</div>
+
+  	<div class="z-con_7"> <!-- 真实案例 -->
+  		<div class="head">
+			<p class="head_1">Real case scen ario</p>
+			<b>真实案例</b>	
+			<p class="head_2">公司品质保障 &nbsp;放心服务 &nbsp;全程包忧</p>	
+		</div>
+		@if(count($case) > 0 )
+		<div class="zcon_7_1">
+			<ul>	
+				@foreach($case as $j => $h)
+				<li @if( $loop->first ) class="zcon7_li" @else class="zcon7_lil" @endif>  <span class="zcon7_span1"><a href="{{ url('home/case/index/play') }}/{{ $h->id }}" target="_blank"><img src="{{ asset('uploads/case/img/') }}/{{ $h->keting }}" alt=""></a></span>   <span class="zcon7_span_2"> <a href="{{ url('home/case/index/play') }}/{{ $h->id }}" target="_blank"><font>{{ $h->title }}</font></a><span>{{ $h->huxing }} {{ $h->fengge }} {{ $h->yusuan }}</span> </span>   <span class="zcon7_span_{{ $loop->index +3 }}"></span></li>
+				@endforeach
+						
+			</ul>
+		</div>
+		@endif
+		@if(count($case) > 0 )
+		<div class="zcon_7_2">
+			@foreach($case as $l => $m)
+			<div @if($loop->first) class="zcon_7_2_divl" @else class="zcon_7_2_div" @endif>
+				@foreach($m->eff as $n => $o)
+				<div class="zcon_7_2_{{ $loop->index + 1 }}">
+					<div class="zcon_7_img"><a href="{{ url('home/case/index/play') }}/{{ $m->id }}" target="_blank"><img src="{{ asset('/uploads/case/img') }}/{{ $o }}" alt=""></a></div>
+					<div class="zcon_7_2_zi"><span>{{ $n }}</span></div>
+				</div>
+				@endforeach
+				<!-- <div class="zcon_7_2_2">
+					<div class="zcon_7_img"><img src="{{ asset('/home/images/index/con7_2_img1.png') }}" alt=""></div>
+					<div class="zcon_7_2_zi"><span>卧室</span></div>
+				</div> -->
+			</div>
+			@endforeach
+			
+		</div>
+		@endif
+  	</div>
+
+	<div class="z-con_8"> <!-- 装修工艺 -->
+		 <div class="head">
+			<p class="head_1">Decoration process</p>
+			<b>装修工艺</b>	
+			<p class="head_2">公司品质保障 &nbsp;放心服务 &nbsp;全程包忧</p>	
+		</div>
+
+		<div class="zcon8_1">
+			<div class="zcon8_head">
+				<div class="zcon8_head1">
+					
+				</div>
+				<div class="zcon8_head2">
+					@if( !empty($data) )
+					@foreach($data as $k => $v)
+						<span
+					    @if ($loop->first)
+					        
+					    @else
+							style="margin-left:8px;"
+					    @endif
+						><a href="{{ url('home/gongyi/list/') }}/{{ $v->id }}">{{ $v->title }}</a></span>
+					@endforeach
+					@endif					
+				</div>
+			</div>
+			<div class="zcon8_centent">
+				<div class="zcon8_centent_1">
+					<span>统一着装形象,统一施工标准,严格执行公司施工规范。</span>
+					<span>休息时间,停止噪音施工,防止扰民,我们将为业主提供最贴心的建议和服务。</span>
+					<span>一切为了业主最完美的装修施工,并充分尊重业主意见。</span>
+				</div>
+				<div class="zcon8_centent_2">
+					<ul>
+					@if( !empty($data) )
+					@foreach($data as $kk => $vv)
+						<li id="con8" class="zcon8_img_{{ $kk + 1 }}"> <a href="{{ url('home/gongyi/list/') }}/{{ $vv->id }}" ><img src="{{ asset('uploads/gongyi/img/') }}/{{ $vv->img }}" alt=""> <div style="display:none"><span>{{ $vv->title }}</span></div></a> </li>
+					@endforeach
+					@endif	
+					</ul>
+				</div>
+			</div>
+		</div>	
+	</div> 
+
+
+
+
+
+	<div class="z-con2"><!---建材选购-->
+	    <div class="z-huoban-1"><p class="z-hb-1">Building materials</p><b>建材选购</b><p class="z-hb-2">国内外知名厂家直供&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;品质生活从心开始</p></div>
+		<ul>
+		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_1.png')}}" /></li>
+		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_2.png')}}" /></li>
+		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_3.png')}}" /></li>
+		   <li class="z-xg-lir"><img src="{{asset('home/images/index/con2_4.png')}}" /></li>
+		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_5.png')}}" /></li>
+		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_6.png')}}" /></li>
+		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_7.png')}}" /></li>
+		   <li class="z-xg-lir"><img src="{{asset('home/images/index/con2_8.png')}}" /></li>
+		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_9.png')}}" /></li>
+		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_10.png')}}" /></li>
+		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_11.png')}}" /></li>
+		   <li class="z-xg-lir"><img src="{{asset('home/images/index/con2_12.png')}}" /></li>
+		</ul> 
+	</div>
+	<div class="z-con3"><!--知识-->
+	    <div class="z-huoban-1"><p class="z-hb-1">Knowledge corner</p><b>知识学堂</b><p class="z-hb-2">零基础学装修&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;三分钟了解全屋装修</p></div>
+		<ul>
+		@if( isset($plate) && !empty($plate))
+			@foreach($plate as $g => $h)
+				<li 
+				@if($loop->first)
+				class="zcon3_lil"
+				@else
+				class="zcon3_li"
+				@endif
+				>
+					<a href="{{ url('home/plate/list') }}/{{ $h->id }}"><img src="{{ asset('/uploads/plate/img') }}/{{ $h->img }}" alt=""></a>
+					<div>
+						@if(!empty($h->news))
+							@foreach($h->news as $gg => $hh)
+								<a href="{{ url('home/plate/play/') }}/{{ $hh->id }}">{{ $hh->title }}</a>
+							@endforeach
+						@endif
+					</div>
+				</li>
+			@endforeach
+		@endif
+
+		</ul>
+	</div>
+	
+	<div class="z-huoban"><!--合作伙伴-->
+	    <div class="z-huoban-1"><p class="z-hb-1">Partner</p><b>合作伙伴</b><p class="z-hb-2">千家小区真实案例&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;装修心得随手粘来</p></div>
+		<ul>
+		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
+		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
+		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
+		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
+		   <li class="z-hb-lir"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
+		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
+		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
+		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
+		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
+		   <li class="z-hb-lir"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
+		</ul>
+	</div>
+	
+</div>
 	<script>
 		$("#button1").on('click',function(){
 			var hu = $('.select option:selected').val();
@@ -1134,151 +1344,6 @@
 	});
 	
 });
-	</script>
-		
-	</div>
-
-<!--中间内容-->
-<div class="z-con">
-    <div class="z-con1"><!--服务-->
-	   <div class="z-con1-1">
-	       <div class="z-con1-01"><b>省钱装修</b><p>全程6大免费服务</p></div>
-		   <div class="z-con1-02"><b>免费预算报价</b><p>预算看不懂，我帮你</p></div>
-		   <div class="z-con1-03"><b>全屋装修包</b><p>装修界的金点子</p></div>
-		   <div class="z-con1-04"><b>装修分期贷</b><p>轻松装修不再愁</p></div>
-	   </div>
-	</div>
-
-	<div class="z-con_4"> <!-- 楼盘推荐 -->
-		<div class="head">
-			<p class="head_1">Selling real estate</p>
-			<b>楼盘推荐</b>	
-			<p class="head_2">公司品质保障 &nbsp;放心服务 &nbsp;全程包忧</p>	
-		</div>
-		<ul>
-			<li class="z-con_4_lil"> <a href="{{ url('/propertieszshx') }}"> <img src="{{ asset('home/images/index/6.png') }}" alt=""> <span>浙商.临港新天地</span> </li></a>
-			<li class="z-con_4_li"> <a href="{{ url('/propertiesdfhx') }}"><img src="{{ asset('home/images/index/7.png') }}" alt=""> <span>德福公元</span> </li></a>
-			<li class="z-con_4_li"> <a href="{{ url('/propertieshfhx') }}"><img src="{{ asset('home/images/index/8.png') }}" alt=""> <span>华富.御景庄园</span> </li></a>
-		</ul>
-   	</div>
-   	<div class="z-con_5"> <!-- 德系工艺品质保障 -->
-   		<div class="head2">
-			<p class="head_1_1">Decoration service process</p>
-			<b>德系工艺品质保障</b>	
-			<p class="head_2_2">公司品质保障 &nbsp;放心服务 &nbsp;全程包忧</p>	
-		</div>
-		<ul class="z-con_5_1">
-			<li class="con_5_li1"><span class="con_5_span1"></span><span class="con_5_span_2">快速报价</span><span class="con_5_span_3"></span></li>
-			<li class="con_5_li2"><span class="con_5_span2"></span><span class="con_5_span_2">线下体验</span><span class="con_5_span_4"></span></li>
-			<li class="con_5_li3"><span class="con_5_span3"></span><span class="con_5_span_2">量房设计沟通</span><span class="con_5_span_6"></span></li>
-			<li class="con_5_li4"><span class="con_5_span4"></span><span class="con_5_span_2">对比方案</span></li>
-			<li class="con_5_li5"><span class="con_5_span5"></span><span class="con_5_span_2">签订合同</span><span class="con_5_span_3"></span></li>
-			<li class="con_5_li6"><span class="con_5_span6"></span><span class="con_5_span_2">标准化施工</span><span class="con_5_span_5"></span></li>
-			<li class="con_5_li7"><span class="con_5_span7"></span><span class="con_5_span_2">五星质检验收</span><span class="con_5_span_6"></span></li>
-			<li class="con_5_li8"><span class="con_5_span8"></span><span class="con_5_span_2">金牌质保 售后无忧</span></li>
-		</ul>
-   	</div>
-  	
-  	<div class="z-con_6"> <!-- 装修套餐 -->
-  		<div class="head">
-			<p class="head_1">Decoration course</p>
-			<b>装修套餐</b>	
-			<p class="head_2">公司品质保障 &nbsp;放心服务 &nbsp;全程包忧</p>	
-		</div>
-		<div class="con6_1">
-			<a href="#"><div class="con6_1_1"> <span>基装包</span></div></a>
-		</div>
-		<div class="con6_2">
-			<div class="con6_2_1">
-				<a href="#"><div> <span>主材包</span> </div></a>
-			</div>
-			<div class="con6_2_2"><a href="#"><div> <span>家电包</span> </div></a></div>
-			<div class="con6_2_3"><a href="#"><div> <span>家具包</span> </div></a></div>
-		</div>
-  	</div>
-
-  	<div class="z-con_7"> <!-- 真实案例 -->
-  		<div class="head">
-			<p class="head_1">Real case scen ario</p>
-			<b>真实案例</b>	
-			<p class="head_2">公司品质保障 &nbsp;放心服务 &nbsp;全程包忧</p>	
-		</div>
-		@if(count($case) > 0 )
-		<div class="zcon_7_1">
-			<ul>	
-				@foreach($case as $j => $h)
-				<li @if( $loop->first ) class="zcon7_li" @else class="zcon7_lil" @endif>  <span class="zcon7_span1"><a href="{{ url('home/case/index/play') }}/{{ $h->id }}" target="_blank"><img src="{{ asset('uploads/case/img/') }}/{{ $h->keting }}" alt=""></a></span>   <span class="zcon7_span_2"> <a href="{{ url('home/case/index/play') }}/{{ $h->id }}" target="_blank"><font>{{ $h->title }}</font></a><span>{{ $h->huxing }} {{ $h->fengge }} {{ $h->yusuan }}</span> </span>   <span class="zcon7_span_{{ $loop->index +3 }}"></span></li>
-				@endforeach
-						
-			</ul>
-		</div>
-		@endif
-		@if(count($case) > 0 )
-		<div class="zcon_7_2">
-			@foreach($case as $l => $m)
-			<div @if($loop->first) class="zcon_7_2_divl" @else class="zcon_7_2_div" @endif>
-				@foreach($m->eff as $n => $o)
-				<div class="zcon_7_2_{{ $loop->index + 1 }}">
-					<div class="zcon_7_img"><a href="{{ url('home/case/index/play') }}/{{ $m->id }}" target="_blank"><img src="{{ asset('/uploads/case/img') }}/{{ $o }}" alt=""></a></div>
-					<div class="zcon_7_2_zi"><span>{{ $n }}</span></div>
-				</div>
-				@endforeach
-				<!-- <div class="zcon_7_2_2">
-					<div class="zcon_7_img"><img src="{{ asset('/home/images/index/con7_2_img1.png') }}" alt=""></div>
-					<div class="zcon_7_2_zi"><span>卧室</span></div>
-				</div> -->
-			</div>
-			@endforeach
-			
-		</div>
-		@endif
-  	</div>
-
-	<div class="z-con_8"> <!-- 装修工艺 -->
-		 <div class="head">
-			<p class="head_1">Decoration process</p>
-			<b>装修工艺</b>	
-			<p class="head_2">公司品质保障 &nbsp;放心服务 &nbsp;全程包忧</p>	
-		</div>
-
-		<div class="zcon8_1">
-			<div class="zcon8_head">
-				<div class="zcon8_head1">
-					
-				</div>
-				<div class="zcon8_head2">
-					@if( !empty($data) )
-					@foreach($data as $k => $v)
-						<span
-					    @if ($loop->first)
-					        
-					    @else
-							style="margin-left:8px;"
-					    @endif
-						><a href="{{ url('home/gongyi/list/') }}/{{ $v->id }}">{{ $v->title }}</a></span>
-					@endforeach
-					@endif					
-				</div>
-			</div>
-			<div class="zcon8_centent">
-				<div class="zcon8_centent_1">
-					<span>统一着装形象,统一施工标准,严格执行公司施工规范。</span>
-					<span>休息时间,停止噪音施工,防止扰民,我们将为业主提供最贴心的建议和服务。</span>
-					<span>一切为了业主最完美的装修施工,并充分尊重业主意见。</span>
-				</div>
-				<div class="zcon8_centent_2">
-					<ul>
-					@if( !empty($data) )
-					@foreach($data as $kk => $vv)
-						<li id="con8" class="zcon8_img_{{ $kk + 1 }}"> <a href="{{ url('home/gongyi/list/') }}/{{ $vv->id }}" ><img src="{{ asset('uploads/gongyi/img/') }}/{{ $vv->img }}" alt=""> <div style="display:none"><span>{{ $vv->title }}</span></div></a> </li>
-					@endforeach
-					@endif	
-					</ul>
-				</div>
-			</div>
-		</div>	
-	</div> 
-<script>
 $("#con8 a").hover(
   function () {
     var img = $(this).find('img');
@@ -1294,68 +1359,5 @@ $("#con8 a").hover(
   }
 );
 
-
-</script>
-
-	<div class="z-con2"><!---建材选购-->
-	    <div class="z-huoban-1"><p class="z-hb-1">Building materials</p><b>建材选购</b><p class="z-hb-2">国内外知名厂家直供&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;品质生活从心开始</p></div>
-		<ul>
-		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_1.png')}}" /></li>
-		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_2.png')}}" /></li>
-		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_3.png')}}" /></li>
-		   <li class="z-xg-lir"><img src="{{asset('home/images/index/con2_4.png')}}" /></li>
-		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_5.png')}}" /></li>
-		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_6.png')}}" /></li>
-		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_7.png')}}" /></li>
-		   <li class="z-xg-lir"><img src="{{asset('home/images/index/con2_8.png')}}" /></li>
-		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_9.png')}}" /></li>
-		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_10.png')}}" /></li>
-		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_11.png')}}" /></li>
-		   <li class="z-xg-lir"><img src="{{asset('home/images/index/con2_12.png')}}" /></li>
-		</ul> 
-	</div>
-	<div class="z-con3"><!--知识-->
-	    <div class="z-huoban-1"><p class="z-hb-1">Knowledge corner</p><b>知识学堂</b><p class="z-hb-2">零基础学装修&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;三分钟了解全屋装修</p></div>
-		<ul>
-		@if( isset($plate) && !empty($plate))
-			@foreach($plate as $g => $h)
-				<li 
-				@if($loop->first)
-				class="zcon3_lil"
-				@else
-				class="zcon3_li"
-				@endif
-				>
-					<a href="{{ url('home/plate/list') }}/{{ $h->id }}"><img src="{{ asset('/uploads/plate/img') }}/{{ $h->img }}" alt=""></a>
-					<div>
-						@if(!empty($h->news))
-							@foreach($h->news as $gg => $hh)
-								<a href="{{ url('home/plate/play/') }}/{{ $hh->id }}">{{ $hh->title }}</a>
-							@endforeach
-						@endif
-					</div>
-				</li>
-			@endforeach
-		@endif
-
-		</ul>
-	</div>
-	
-	<div class="z-huoban"><!--合作伙伴-->
-	    <div class="z-huoban-1"><p class="z-hb-1">Partner</p><b>合作伙伴</b><p class="z-hb-2">千家小区真实案例&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;装修心得随手粘来</p></div>
-		<ul>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
-		   <li class="z-hb-lir"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
-		   <li class="z-hb-lir"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
-		</ul>
-	</div>
-	
-</div>
+	</script>
 @endsection('content')

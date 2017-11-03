@@ -12,6 +12,7 @@
 
 		$.ajax('/home/case/tiaoajax/',{
 			type : 'get',
+			async : false,
 			data:{ip:ip,value:value},
 			success : function(data)
 			{
@@ -26,7 +27,7 @@
 			},
 			error : function(data)
 			{
-				alert('条件查询失败！请重试');
+				// alert('条件查询失败！请重试');
 			},
 			dateType : 'json'
 		})

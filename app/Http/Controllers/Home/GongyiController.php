@@ -9,23 +9,24 @@ class GongyiController extends Controller
 {
     public function index($id)
     {	
-    	$zhi = \DB::table('gongyinews')->where('pid',$id)->where('zhi',1)->first();
-        $data = \DB::table('gongyinews')->where('pid',$id)->orderBy('time')->paginate(12);
-        $xun = \DB::table('gongyinews')->orderby('click','desc')->skip(0)->take(10)->get();
+    	$zhi = \DB::table('gongyinews')->select('id','time','click','title','titleimg','leicon')->where('pid',$id)->where('zhi',1)->first();
+        $data = \DB::table('gongyinews')->select('id','title','time')->where('pid',$id)->orderBy('time')->paginate(12);
+        $xun = \DB::table('gongyinews')->select('id','title','click')->orderby('click','desc')->skip(0)->take(10)->get();
         $qi  = \DB::table('gongyi')
+            ->select('id','title','img')
             ->where('id','!=',$id)
             ->orderBy(\DB::raw('RAND()'))
             ->take(5)
             ->get();
-        $tit = \DB::table('gongyi')->where('id',$id)->first();
+        $tit = \DB::table('gongyi')->select('id','titles','title','keyworlds','description')->where('id',$id)->first();
         
         return view('home.gongyi.index',['title'=>$tit->titles,'keyworlds'=>$tit->keyworlds,'description'=>$tit->description,'data'=>$data,'zhi'=>$zhi,'xun'=>$xun,'qi'=>$qi,'tit'=>$tit]);
     }
     public function play(Request $request,$id)
     {
-		$qi  = \DB::table('gongyi')->orderby('time','desc')->skip(0)->take(6)->get();
-        $xun = \DB::table('gongyinews')->orderby('click','desc')->skip(0)->take(10)->get();
-        $data = \DB::table('gongyinews')->where('id',$id)->first();
+		$qi  = \DB::table('gongyi')->select('id','title','img')->orderby('time','desc')->skip(0)->take(6)->get();
+        $xun = \DB::table('gongyinews')->select('id','title','click')->orderby('click','desc')->skip(0)->take(10)->get();
+        $data = \DB::table('gongyinews')->select('id','title','click','yuan','content','time','pid','titles','keyworlds','description')->where('id',$id)->first();
         if( $data ==null )
         {   
             return back();

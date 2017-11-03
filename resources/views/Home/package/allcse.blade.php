@@ -970,26 +970,13 @@
 				<span>绿色环保, 100%不含石棉、苯、甲醇等有害物质</span>
 				<span>食用级辅助粘贴, A级防火, 防潮防水自洁效果好</span>
 			</div>
-			<div class="con40_1_1_1" style="display:none">
-				<title>05</title>
-				<div></div>
-				<span>绿色环保, 100%不含石棉、苯、甲醇等有害物质</span>
-				<span>食用级辅助粘贴, A级防火, 防潮防水自洁效果好</span>
-			</div>
-			<div class="con40_1_1_1" style="display:none">
-				<title>06</title>
-				<div></div>
-				<span>绿色环保, 100%不含石棉、苯、甲醇等有害物质</span>
-				<span>食用级辅助粘贴, A级防火, 防潮防水自洁效果好</span>
-			</div>
+			
 			<div class="con40_1_1_2">
 				<ul>
 					<li class="con40li1">全系标配德国进口都芳漆</li>
 					<li class="con40li2">建商·定制除甲醇地板</li>
 					<li class="con40li2">建商·定制美缝</li>
-					<li id="con4index" class="con40li2">建商·定制科技石材+墙纸</li>
-					<li class="con40li2">建商·定制木踢脚线</li>
-					<li class="con40li2">3M进水器</li>
+					<li id="con4index" class="con40li2">建商·定制踢脚线</li>
 				</ul>
 			</div>
 		</div>
@@ -1022,26 +1009,14 @@
 				<span>绿色环保, 100%不含石棉、苯、甲醇等有害物质</span>
 				<span>食用级辅助粘贴, A级防火, 防潮防水自洁效果好</span>
 			</div>
-			<div class="con41_1_1_1" style="display:none">
-				<title>05</title>
-				<div></div>
-				<span>绿色环保, 100%不含石棉、苯、甲醇等有害物质</span>
-				<span>食用级辅助粘贴, A级防火, 防潮防水自洁效果好</span>
-			</div>
-			<div class="con41_1_1_1" style="display:none">
-				<title>06</title>
-				<div></div>
-				<span>绿色环保, 100%不含石棉、苯、甲醇等有害物质</span>
-				<span>食用级辅助粘贴, A级防火, 防潮防水自洁效果好</span>
-			</div>
+			
 			<div class="con41_1_1_2">
 				<ul>
-					<li class="con41li1">全系标配德国进口都芳漆</li>
-					<li class="con41li2">建商·定制除甲醇地板</li>
-					<li class="con41li2">建商·定制美缝</li>
-					<li id="con4index" class="con41li2">建商·定制科技石材+墙纸</li>
-					<li class="con41li2">建商·定制木踢脚线</li>
-					<li class="con41li2">3M进水器</li>
+					<li class="con41li1">感应灯</li>
+					<li class="con41li2">静音锁</li>
+					<li class="con41li2">小厨宝</li>
+					<li id="con4index" class="con41li2">3M进水器</li>
+					
 				</ul>
 			</div>
 		</div>
@@ -1080,20 +1055,14 @@
 				<span>绿色环保, 100%不含石棉、苯、甲醇等有害物质</span>
 				<span>食用级辅助粘贴, A级防火, 防潮防水自洁效果好</span>
 			</div>
-			<div class="con42_1_1_1" style="display:none">
-				<title>06</title>
-				<div></div>
-				<span>绿色环保, 100%不含石棉、苯、甲醇等有害物质</span>
-				<span>食用级辅助粘贴, A级防火, 防潮防水自洁效果好</span>
-			</div>
+			
 			<div class="con42_1_1_2">
 				<ul>
-					<li class="con42li1">全系标配德国进口都芳漆</li>
-					<li class="con42li2">建商·定制除甲醇地板</li>
-					<li class="con42li2">建商·定制美缝</li>
-					<li id="con4index" class="con42li2">建商·定制科技石材+墙纸</li>
-					<li class="con42li2">建商·定制木踢脚线</li>
-					<li class="con42li2">3M进水器</li>
+					<li class="con42li1">晾衣架</li>
+					<li class="con42li2">浴巾架</li>
+					<li class="con42li2">智能消毒柜</li>
+					<li id="con4index" class="con42li2">智能灶具</li>
+					<li class="con42li2">一体马桶</li>
 				</ul>
 			</div>
 		</div>

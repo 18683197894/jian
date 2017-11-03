@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 class PackageController extends Controller
 {
     public function allcse(){
-        $key = \DB::table('webpage')->where('id',18)->first();
+        $key = \DB::table('webpage')->select('titles','keyworlds','description')->where('id',18)->first();
         $all = \DB::table('all')->select('id','title','con','img')->get();
         $zi =\DB::table('zi')->select('id','title','con','img','pid','jia')->get();
         $pack = \DB::table('pei')->select('id','title','pid')->where('sid',0)->get();
@@ -73,42 +73,46 @@ class PackageController extends Controller
     	{
     		if($vv->pid == $soft1[$k]->id)
     		{	
-    			array_push($soft1[$k]->cc,$vv);
+    			$soft1[$k]->cc[$kk] = $vv;
     			
     		}
     	}
     	}
+
     	foreach($soft1 as $i=>$j)
     	{	
-    		$soft1[$i]->ss= \DB::table('subclass')->where('pid',$j->cc[0]->id)->get();
-    		$soft1[$i]->tit = $soft1[$i]->cc[0]->title;
+            $ee = reset($soft1[$i]->cc);
+            $soft1[$i]->tit = $ee->title;
+            $soft1[$i]->ss  = \DB::table('subclass')->where('pid',$ee->id)->get();
     	}
     	
     	$arr1 = [];
     	$arr2 = [];
     	$arr3 = [];
+
     	foreach($soft1 as $o => $u)
     	{
     		if($u->pid == 1)
     		{
-    			array_push($arr1,$u);
+    			$arr1[$o] = $u;
     		}
     		if($u->pid == 2)
     		{
-    			array_push($arr2,$u);
+    			$arr2[$o] = $u;
     		}
     		if($u->pid == 3)
     		{
-    			array_push($arr3,$u);
+    			$arr3[$o] = $u;
     		}
     	}
-        $key = \DB::table('webpage')->where('id',19)->first();
+        
+        $key = \DB::table('webpage')->select('titles','keyworlds','description')->where('id',19)->first();
     	
     	return view('home.package.softroll',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description,'arr1'=>$arr1,'arr2'=>$arr2,'arr3'=>$arr3]);
     }
 
     public function houseroom(){
-        $key = \DB::table('webpage')->where('id',20)->first();
+        $key = \DB::table('webpage')->select('titles','keyworlds','description')->where('id',20)->first();
 
     	return view('home.package.houseroom',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]); 
     }

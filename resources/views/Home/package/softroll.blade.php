@@ -25,13 +25,13 @@
 </div>
 <div class="allhead">
 	<div class="allhead_1">
-		<div class="allhead_1_1">
+		<!-- <div class="allhead_1_1">
 			<img src="{{ asset('home/images/allcse/2.png') }}" alt="">
 			<a href="{{ asset('/package/allcse') }}">全包套餐</a>
-		</div>
-		<div class="allhead_1_2">
+		</div> -->
+		<div class="allhead_1_2" style="margin-right:135px">
 			<img src="{{ asset('home/images/allcse/5.png') }}" alt="">
-			<a href="{{ url('package/softroll') }}">软包套餐</a>
+			<a href="javascript:return false" >软包套餐</a>
 		</div>
 	</div>
 </div>

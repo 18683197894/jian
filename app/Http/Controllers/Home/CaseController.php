@@ -138,7 +138,7 @@ class CaseController extends Controller
 
 		}
 		
-    	$data = \DB::table('case')->select('id','title','or','huxing','fengge','yusuan','img1','img2','img3','img4')->where('or','!=',0)->where('or','!=',5)->where('huxing',$wh1,$ip1)->where('fengge',$wh2,$ip2)->where('yusuan',$wh3,$ip3)->offset(0)->limit(5)->get();
+    	$data = \DB::table('case')->select('id','title','or','huxing','fengge','yusuan','img1','img2','img3','img4')->where('or','!=',0)->where('or','!=',5)->where('huxing',$wh1,$ip1)->where('fengge',$wh2,$ip2)->where('yusuan',$wh3,$ip3)->orderBy('time','desc')->offset(0)->limit(5)->get();
     	$count = \DB::table('case')->select('id','title','or','huxing','fengge','yusuan','img1','img2','img3','img4')->where('or','!=',0)->where('or','!=',5)->where('huxing',$wh1,$ip1)->where('fengge',$wh2,$ip2)->where('yusuan',$wh3,$ip3)->count();
 
     	foreach ($data as $k => $v) {
@@ -269,8 +269,9 @@ class CaseController extends Controller
     	{
     		return response()->json(2);
     	}
-    	$data = \DB::table('case')->where('or','!=',0)->where('or','!=',5)->where('huxing',$wh1,$ip1)->where('fengge',$wh2,$ip2)->where('yusuan',$wh3,$ip3)->offset($num)->limit(5)->get();
-    	foreach ($data as $k => $v) {
+    	$data = \DB::table('case')->select('time','id','effect2','img1','img2','img3','img4','or','title','fengge','yusuan','huxing')->where('or','!=',0)->where('or','!=',5)->where('huxing',$wh1,$ip1)->where('fengge',$wh2,$ip2)->where('yusuan',$wh3,$ip3)->orderBy('time','desc')->offset($num)->limit(5)->get();
+    	
+        foreach ($data as $k => $v) {
     		if($v->or == 1)
     		{
     			$v->effect2 = explode(',',$v->img1)[0];
