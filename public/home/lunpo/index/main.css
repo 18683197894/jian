@@ -51,7 +51,7 @@ ul.nav-main >li>a:hover{
 }
 /*隐藏盒子设置*/
 #box-1{
-    width: 730px;
+    width: 720px;
     height:140px;
     border-top: 0;
     position: absolute;
@@ -83,7 +83,7 @@ ul.nav-main >li>a:hover{
     font-size: 18px;
     font-weight: bold;
     display: block;
-    color:#000;
+    color:#323232;
     font-family: "宋体";
     padding-top: 20px;
 }
@@ -91,7 +91,10 @@ ul.nav-main >li>a:hover{
     width:90%;
     height:60px;
     margin-top: 20px;
-    border-right:2px dashed #999;
+}
+#solid{
+    border-right:2px dotted #999;
+    
 }
  #div1 ul li , #div3 ul li, #div2 ul li{
     float:left;
@@ -112,26 +115,26 @@ ul.nav-main >li>a:hover{
 }
 
 #box-2{
-    width: 250px;
+    width: 230px;
     height:140px;
     border-top: 0;
     position: absolute;
     display:none;
     background:rgba(255,255,255,0.9);
     top: 39px;
-    left:372px;
+    left:368px;
     z-index:999;
     
 }
 #box-2 #div2{
     width:220px;
-    margin-left: 15px;
+    margin-left: 20px;
     float:left;
     height:130px;
 }
 
 #box-3{
-    width: 380px;
+    width: 375px;
     height:140px;
     border-top: 0;
     position: absolute;
@@ -149,20 +152,20 @@ ul.nav-main >li>a:hover{
     margin-left: 15px;
 }
 #box-3 #div2{
-    width:130px;
+    width:120px;
     margin-left: 15px;
     float:left;
     height:130px;
 }
 #box-3 #div3{
-    width:220px;
+    width:200px;
     float:left;
-    margin-left: 15px;
+    margin-left: 38px;
     height:130px;
 }
 
 #box-4{
-    width: 250px;
+    width: 200px;
     height:140px;
     border-top: 0;
     position: absolute;
@@ -181,7 +184,7 @@ ul.nav-main >li>a:hover{
     height:130px;
 }
 #box-5{
-    width: 250px;
+    width: 200px;
     height:140px;
     border-top: 0;
     position: absolute;
@@ -199,7 +202,7 @@ ul.nav-main >li>a:hover{
     height:130px;
 }
 #box-6{
-    width: 450px;
+    width: 420px;
     height:140px;
     border-top: 0;
     position: absolute;
@@ -217,7 +220,7 @@ ul.nav-main >li>a:hover{
     height:130px;
 }
 #box-6 #div2{
-    width:153px;
+    width:130px;
     margin-left: 30px;
     float:left;
     height:130px;

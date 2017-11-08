@@ -17,23 +17,23 @@ class CaseController extends Controller
     {
     	$data = $request->except("_token");
     	$this->validate($request,[
-		    'title' => 'required|min:2|max:10',
-            'titles' => 'required|min:2|max:10',
-            'keyworlds' => 'required|min:6|max:30',
-            'description' => 'required|min:10|max:120'
+		    'title' => 'required|min:2|max:20',
+            'titles' => 'required|min:2|max:50',
+            'keyworlds' => 'required|min:6|max:120',
+            'description' => 'required|min:10|max:255'
  		],[
 			'title.required'=>'标题不能为空',
-			'title.min'=>'标题最少2位最大10位',
-			'title.max'=>'标题最少2位最大10位',
+			'title.min'=>'标题最少2位',
+			'title.max'=>'标题最大20位',
             'titles.required'=>'网页标题不能为空',
-            'titles.min'=>'网页标题最少2位最大10位',
-            'titles.max'=>'网页标题最少2位最大10位',
+            'titles.min'=>'网页标题最少2位',
+            'titles.max'=>'网页标题最大20位',
             'keyworlds.required'=>'网页关键字不能为空',
-            'keyworlds.min'=>'网页关键字最少6位最大30位',
-            'keyworlds.max'=>'网页关键字最少6位最大30位',
+            'keyworlds.min'=>'网页关键字最少6位',
+            'keyworlds.max'=>'网页关键字最大120位',
             'description.required'=>'网页内容描述不能为空',
-            'description.min'=>'网页内容描述最少10位最大120位',
-            'description.max'=>'网页内容描述最少10位最大120位'
+            'description.min'=>'网页内容描述最少10位',
+            'description.max'=>'网页内容描述最大255位'
 		]); 
 
 		$data['time'] = time();
@@ -177,8 +177,8 @@ class CaseController extends Controller
 			'woshi.image'=>'请上传图片类型的文件(卧室)',
 			'woshi.file'=>'上传失败（卧室）',
 			'cufang.required'=>'未上传图片(厨房)',
-			'cufang.image'=>'请上传图片类型的文件(厨房)',
-			'cufang.file'=>'上传失败（厨房）',
+			'cufang.image'=>'请上传图片类型的文件(厨房/餐厅)',
+			'cufang.file'=>'上传失败（厨房/餐厅）',
 			'xishou.required'=>'未上传图片(洗手间)',
 			'xishou.image'=>'请上传图片类型的文件(洗手间)',
 			'ciwo.file'=>'上传失败(次卧)',
@@ -242,7 +242,7 @@ class CaseController extends Controller
           //执行移动
     			$request->file('cufang')->move('./uploads/case/img/',$fileName);
           //添加数据
-    			$data['effect1'] .=',厨房';
+    			$data['effect1'] .=',厨房/餐厅';
                 $data['effect2'] .=','.$fileName;
     		}
     	}
@@ -295,7 +295,7 @@ class CaseController extends Controller
                 $data['effect1'] .=',阳台';
                 $data['effect2'] .=','.$fileName;
             }
-        }
+        } 
         if($request->hasFile('shufang'))
         {
             if($request->file('shufang')->isValid())

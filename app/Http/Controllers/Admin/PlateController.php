@@ -72,7 +72,7 @@ class PlateController extends Controller
 
     public function index()
     {
-    	$data = \DB::table('plate')->orderBy('time','desc')->paginate(10);
+    	$data = \DB::table('plate')->select('id','title','img','time')->orderBy('time','desc')->paginate(10);
     	return view('admin.plate.index',['title'=>'板块管理','data'=>$data]);  	
     }
 
@@ -151,10 +151,21 @@ class PlateController extends Controller
     public function newslist(Request $request,$id)
     {
 		$key = isset($request->key) ? $request->key : '';
-    	
-    	$data = \DB::table('platenews')->where('title','like','%'.$key.'%')->where('pid',$id)->orderBy('time','desc')->paginate(10);
+    	$plate = \DB::table('plate')->select('id','title')->get();
+    	$data = \DB::table('platenews')->select('id','title','titleimg','time','click','pid','zhi')->where('title','like','%'.$key.'%')->where('pid',$id)->orderBy('time','desc')->paginate(10);
+        foreach( $data as $k => $v )
+        {
+            foreach( $plate as $kk => $vv )
+            {
+                if( $v->pid == $vv->id )
+                {
+                    $v->yuan = $vv->title;
+                }
+            }
+        }
+        $tit = \DB::table('plate')->select('id','title')->where('id',$id)->first()->title;
     	$data->appends(['key'=>$key]);
-    	return view('Admin.plate.newslist',['title'=>'模块文章管理','data'=>$data,'request'=>$request->all(),'pid'=>$id]);
+    	return view('Admin.plate.newslist',['title'=>'模块文章管理','data'=>$data,'request'=>$request->all(),'pid'=>$id,'tit'=>$tit]);
     }
     public function newsadd($id)
     {
@@ -166,7 +177,7 @@ class PlateController extends Controller
 		$data = $request->except('_token');
 		$this->validate($request,[
 		    'title' => 'required|min:3|max:30',
-		    'leicon'=>'required|min:10|max:120',
+		    'leicon'=>'required|min:10|max:255',
 		    'titleimg'=>'required|image',
 		    'content' =>'required|max:20000',
             'titles' => 'required|min:2|max:30',
@@ -178,7 +189,7 @@ class PlateController extends Controller
 			'title.max'=>'标题最大30位',
             'leicon.required'=>'简介不能为空',
             'leicon.min'=>'简介最少10位',
-			'leicon.max'=>'简介最大120位',
+			'leicon.max'=>'简介最大255位',
 			'titleimg.required'=>'未上传图片',
 			'titleimg.image'=>'请上传图片类型的文件',
 			'content.required'=>'内容不能为空',
@@ -195,7 +206,7 @@ class PlateController extends Controller
 		]);  
 
 		$data['time']=time();
-		$data['yuan']=\DB::table('plate')->where('id',$data['pid'])->first()->title;
+		// $data['yuan']=\DB::table('plate')->where('id',$data['pid'])->first()->title;
 		$data['click'] = 0;
 		
     	if($request->hasFile('titleimg'))
@@ -240,7 +251,7 @@ class PlateController extends Controller
 		$data = $request->except('_token');
 		$this->validate($request,[
 		    'title' => 'required|min:2|max:30',
-		    'leicon'=>'required|min:10|max:120',
+		    'leicon'=>'required|min:10|max:255',
 		    'titleimg'=>'image',
 		    'content' =>'required|max:20000',
             'titles' => 'required|min:2|max:30',
@@ -252,7 +263,7 @@ class PlateController extends Controller
 			'title.max'=>'标题最大30位',
  			'leicon.required'=>'简介不能为空',
             'leicon.min'=>'简介最少10位',
-            'leicon.max'=>'简介最大120位',
+            'leicon.max'=>'简介最大255位',
 			'titleimg.image'=>'请上传图片类型的文件',
 			'content.required'=>'内容不能为空',
             'content.max'=>'内容不能超过20000字',
@@ -294,7 +305,7 @@ class PlateController extends Controller
     }
     public function newszhi(Request $request)
     {
-		$res = \DB::table('platenews')->where('zhi',1)->where('pid',$request->pid)->first();
+		$res = \DB::table('platenews')->select('id')->where('zhi',1)->where('pid',$request->pid)->first();
 
     	if($res)
     	{

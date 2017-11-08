@@ -151,10 +151,21 @@ class GongyiController extends Controller
     public function newslist(Request $request,$id)
     {	
     	$key = isset($request->key) ? $request->key : '';
-    	
-    	$data = \DB::table('gongyinews')->where('title','like','%'.$key.'%')->where('pid',$id)->orderBy('time','desc')->paginate(10);
-    	$data->appends(['key'=>$key]);
-    	return view('Admin.gongyi.newslist',['title'=>'工艺文章管理','data'=>$data,'request'=>$request->all(),'pid'=>$id]);
+    	$plate = \DB::table('gongyi')->select('id','title')->get();
+    	$data = \DB::table('gongyinews')->select('id','title','titleimg','time','click','pid','zhi')->where('title','like','%'.$key.'%')->where('pid',$id)->orderBy('time','desc')->paginate(10);
+    	foreach( $data as $k => $v )
+        {
+            foreach( $plate as $kk => $vv )
+            {
+                if( $v->pid == $vv->id )
+                {
+                    $v->yuan = $vv->title;
+                }
+            }
+        }
+        $tit = \DB::table('gongyi')->select('title','id')->where('id',$id)->first()->title;
+        $data->appends(['key'=>$key]);
+    	return view('Admin.gongyi.newslist',['title'=>'工艺文章管理','data'=>$data,'request'=>$request->all(),'pid'=>$id,'tit'=>$tit]);
     
     }
     public function gongyinewsadd($id)
@@ -167,9 +178,9 @@ class GongyiController extends Controller
     	$data = $request->except('_token');
 		$this->validate($request,[
 		    'title' => 'required|min:2|max:30',
-		    'leicon'=>'required|min:10|max:120',
+		    'leicon'=>'required|min:10|max:255',
 		    'titleimg'=>'required|image',
-		    'content' =>'required|max:6000',
+		    'content' =>'required|max:20000',
             'titles' => 'required|min:2|max:30',
             'keyworlds' => 'required|min:6|max:120',
             'description' => 'required|min:10|max:255'
@@ -179,11 +190,11 @@ class GongyiController extends Controller
 			'title.max'=>'标题最大30位',
             'leicon.required'=>'简介不能为空',
             'leicon.min'=>'简介最少10位',
-			'leicon.max'=>'简介最大120位',
+			'leicon.max'=>'简介最大255位',
 			'titleimg.required'=>'未上传图片',
 			'titleimg.image'=>'请上传图片类型的文件',
 			'content.required'=>'内容不能为空',
-            'content.max'=>'内容不能超过6000字',
+            'content.max'=>'内容不能超过20000字',
             'titles.required'=>'网页标题不能为空',
             'titles.min'=>'网页标题最少2位',
             'titles.max'=>'网页标题最大30位',
@@ -196,7 +207,7 @@ class GongyiController extends Controller
 		]);  
 
 		$data['time']=time();
-		$data['yuan']=\DB::table('gongyi')->where('id',$data['pid'])->first()->title;
+		// $data['yuan']=\DB::table('gongyi')->where('id',$data['pid'])->first()->title;
 		$data['click'] = 0;
 		
     	if($request->hasFile('titleimg'))
@@ -242,7 +253,7 @@ class GongyiController extends Controller
     	$data = $request->except('_token');
 		$this->validate($request,[
 		    'title' => 'required|min:2|max:30',
-		    'leicon'=>'required|min:10|max:120',
+		    'leicon'=>'required|min:10|max:255',
 		    'titleimg'=>'image',
 		    'content' =>'required|max:20000',
             'titles' => 'required|min:2|max:30',
@@ -260,7 +271,7 @@ class GongyiController extends Controller
             'titles.min'=>'网页标题最少2位',
             'titles.max'=>'网页标题最大30位',
             'leicon.min'=>'简介最少10位',
-            'leicon.max'=>'简介最大120位',
+            'leicon.max'=>'简介最大255位',
             'keyworlds.required'=>'网页关键字不能为空',
             'keyworlds.min'=>'网页关键字最少6位',
             'keyworlds.max'=>'网页关键字最大120位',
@@ -314,7 +325,7 @@ class GongyiController extends Controller
     public function newszhi(Request $request)
     {	
 
-    	$res = \DB::table('gongyinews')->where('zhi',1)->where('pid',$request->pid)->first();
+    	$res = \DB::table('gongyinews')->select('id')->where('zhi',1)->where('pid',$request->pid)->first();
 
     	if($res)
     	{

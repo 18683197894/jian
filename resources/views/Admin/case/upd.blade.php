@@ -52,7 +52,7 @@
                   <input type="file" name="woshi" id="exampleInputFile">
                 </div>
                  <div class="form-group">
-                  <label for="exampleInputFile">厨房效果图（必选）</label>
+                  <label for="exampleInputFile">厨房/餐厅效果图（必选）</label>
                   <input type="file" name="cufang" id="exampleInputFile">
                 </div>
                  <div class="form-group">

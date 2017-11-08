@@ -35,6 +35,9 @@ $(function(){
 				$('.label3span1').css('display','block');
             return false; 
        }
+       alert(dt1);
+       alert(dt2);
+       alert(dt3);
 
 	})
 	$('.label1span1').on('click',function(){

@@ -10,7 +10,7 @@ class GongyiController extends Controller
     public function index($id)
     {	
     	$zhi = \DB::table('gongyinews')->select('id','time','click','title','titleimg','leicon')->where('pid',$id)->where('zhi',1)->first();
-        $data = \DB::table('gongyinews')->select('id','title','time')->where('pid',$id)->orderBy('time')->paginate(12);
+        $data = \DB::table('gongyinews')->select('id','title','time')->where('pid',$id)->orderBy('time','desc')->paginate(12);
         $xun = \DB::table('gongyinews')->select('id','title','click')->orderby('click','desc')->skip(0)->take(10)->get();
         $qi  = \DB::table('gongyi')
             ->select('id','title','img')
@@ -26,13 +26,15 @@ class GongyiController extends Controller
     {
 		$qi  = \DB::table('gongyi')->select('id','title','img')->orderby('time','desc')->skip(0)->take(6)->get();
         $xun = \DB::table('gongyinews')->select('id','title','click')->orderby('click','desc')->skip(0)->take(10)->get();
-        $data = \DB::table('gongyinews')->select('id','title','click','yuan','content','time','pid','titles','keyworlds','description')->where('id',$id)->first();
+        $data = \DB::table('gongyinews')->select('id','title','click','content','time','pid','titles','keyworlds','description')->where('id',$id)->first();
         if( $data ==null )
         {   
             return back();
         }
+        $data->yuan = \DB::table('gongyi')->select('title')->where('id',$data->pid)->first()->title;
         $num = $data->click + 1;
         \DB::table('gongyinews')->where('id',$id)->update(['click'=>$num]);
         return view('home.gongyi.play',['data'=>$data,'title'=>$data->titles,'keyworlds'=>$data->keyworlds,'description'=>$data->description,'qi'=>$qi,'xun'=>$xun]);
     }
 }
+

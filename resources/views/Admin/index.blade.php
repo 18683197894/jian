@@ -357,7 +357,7 @@ class="active"
         </li>
 
         <li class="
-@if($title == "包管理" || $title == "套餐管理" || $title == "臻藏包1")
+@if($title == "包管理" || $title == "套餐管理")
 active
 @endif
         treeview">
@@ -379,11 +379,11 @@ class="active"
 class="active"
 @endif
             ><a href="{{ url('/admin/package/all/pack') }}"><i class="fa fa-circle-o"></i>套餐管理</a></li>
-            <li
+            <!-- <li
 @if($title == "臻藏包1")
 class="active"
 @endif
-            ><a href="{{ url('/admin/package/ruan/peghid') }}"><i class="fa fa-circle-o"></i>臻藏包</a></li>
+            ><a href="{{ url('/admin/package/ruan/peghid') }}"><i class="fa fa-circle-o"></i>臻藏包</a></li> -->
           </ul>
         </li>
 
@@ -478,12 +478,12 @@ active
 @if($title == "首页楼盘看房预约")
 class="active"
 @endif
-            ><a href="{{ url('admin/indexpropermake') }}"><i class="fa fa-circle-o"></i>首页楼盘看房预约</a></li>
+            ><a href="{{ url('admin/indexpropermake') }}"><i class="fa fa-circle-o"></i>首页装修报价预约</a></li>
             <li
 @if($title == "首页装修报价预约")
 class="active"
 @endif
-            ><a href="{{ url('admin/indexationmake') }}"><i class="fa fa-circle-o"></i>首页装修报价预约</a></li>
+            ><a href="{{ url('admin/indexationmake') }}"><i class="fa fa-circle-o"></i>首页楼盘看房预约</a></li>
             <li
 @if($title == "合作伙伴招募")
 class="active"

@@ -9,7 +9,7 @@ class AdminController extends Controller
 {
     function index(){
     	$data = \DB::table('gongyi')->select('id','img','title')->offset(0)->limit(10)->get();
-    	$plate = \DB::table('plate')->select('id','img','title')->offset(0)->limit(10)->get();
+    	$plate = \DB::table('plate')->select('id','img','title','time')->orderby('time','desc')->offset(0)->limit(10)->get();
         $case = \DB::table('case')
         ->select('id','title','effect1','effect2','huxing','fengge','yusuan')
         ->where('or',5)
@@ -63,9 +63,10 @@ class AdminController extends Controller
     public function sou(Request $request)
     {   
         $key = isset($request->con)?trim($request->con):'';
-
+        $data = array();
         $data = \DB::table('news')->select('id','title','time')->where('title','like','%'.$key.'%')->orderBy('time','desc')->paginate(18);
         $data->appends(['con'=>$key]);
+
         $xun = \DB::table('news')->select('id','title')->orderby('click','desc')->skip(0)->take(10)->get();
         $qi  = \DB::table('newslei')->select('id','title','img')->get();
         $other = [];

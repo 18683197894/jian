@@ -279,3 +279,8 @@ Route::get('admin/add','Admin\RuanController@subclassajax@add');
 
 Route::get('/jslmadmin/login','Admin\LoginController@login');
 Route::post('jslmindex/dologin','Admin\LoginController@dologin');
+
+//前台登录中间间
+Route::group(['middleware'=>['HomeLogin']],function(){
+
+});

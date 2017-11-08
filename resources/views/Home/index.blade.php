@@ -607,32 +607,32 @@
 		}
 		.z-con_7{
 			width:1200px;
-			height:629px;
+			height:550px;
 			margin:0 auto;
 			padding-top: 50px;
 		}
 		.zcon_7_1{
 			width:1200px;
-			height:340px;
+			height:270px;
 			margin-top: 15px;
 			background-color: #f5f5f5;
 		}
 		.zcon_7_2{
 			width:1200px;
 			height:156px;
-			margin-top: 25px;
+			margin-top: 12px;
 			background-color: #f5f5f5;
 		}
 		.zcon_7_1 ul{
 			width:1200px;
-			height:340px;
+			height:270px;
 			margin:0;
 			background-color:#FDFFFE;
 			padding:0;			
 		}
 		.zcon7_li{
 			overflow:hidden;
-			height:340px;
+			height:270px;
 			width:295px;
 			background-color:#f5f5f5;
 			float:left;
@@ -643,12 +643,12 @@
 			/*margin-left:6px;*/
 			background-color:#f5f5f5;
 			border-left:6px solid #fff;
-			height:340px;
+			height:270px;
 			float:left;
 		}
 		.zcon7_span1{
 			width:296px;
-			height:260px;
+			height:180px;
 			display: block;
 		}
 		.zcon7_span1 img{
@@ -661,6 +661,7 @@
 			height:75px;
 			display:block;
 			float:left;
+			margin-top:10px;
 			margin-left: 13px;
 		}
 		.zcon7_span_2 font{
@@ -688,7 +689,7 @@
 			display:block;
 			background:url(home/images/index/con7_span_1.png) no-repeat center center;
 			float:right;
-			margin-top:9px;
+			margin-top:19px;
 			margin-right: 10px;
 		}
 		.zcon7_span_4{
@@ -750,7 +751,7 @@
 			
 		}
 		.zcon_7_img img{
-			width:100%;
+			/*width:100%;*/
 			height:100%;
 		}
 		.zcon_7_2_zi{
@@ -790,7 +791,7 @@
 			overflow:hidden;
 		}
 		.z-con3 ul li img{
-			width:394px;
+			width:100%;
 			height:280px;
 			float:left;
 			display:block;
@@ -1080,7 +1081,7 @@
   		<div class="head">
 			<p class="head_1">Real case scen ario</p>
 			<b>真实案例</b>	
-			<p class="head_2">公司品质保障 &nbsp;放心服务 &nbsp;全程包忧</p>	
+			<p class="head_2">千家小区真实案例&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;装修心得随手粘来</p>	
 		</div>
 		@if(count($case) > 0 )
 		<div class="zcon_7_1">
@@ -1195,7 +1196,7 @@
 					<div>
 						@if(!empty($h->news))
 							@foreach($h->news as $gg => $hh)
-								<a href="{{ url('home/plate/play/') }}/{{ $hh->id }}">{{ $hh->title }}</a>
+								<a href="{{ url('home/plate/play/') }}/{{ $hh->id }}">{{ mb_substr($hh->title,0,22,'utf8') }}</a>
 							@endforeach
 						@endif
 					</div>
@@ -1207,12 +1208,12 @@
 	</div>
 	
 	<div class="z-huoban"><!--合作伙伴-->
-	    <div class="z-huoban-1"><p class="z-hb-1">Partner</p><b>合作伙伴</b><p class="z-hb-2">千家小区真实案例&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;装修心得随手粘来</p></div>
+	    <div class="z-huoban-1"><p class="z-hb-1">Partner</p><b>合作伙伴</b><p class="z-hb-2">公司品质保障 &nbsp;放心服务 &nbsp;全程包忧</p></div>
 		<ul>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
+		   <li class="z-hb-lil"><img src="{{asset('home/images/index/hb_2.jpg')}}" /></li>
+		   <li class="z-hb-lil"><img src="{{asset('home/images/index/hb_3.jpg')}}" /></li>
+		   <li class="z-hb-lil"><img src="{{asset('home/images/index/hb_4.jpg')}}" /></li>
+		   <li class="z-hb-lil"><img src="{{asset('home/images/index/hb_1.jpg')}}" /></li>
 		   <li class="z-hb-lir"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
 		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
 		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>

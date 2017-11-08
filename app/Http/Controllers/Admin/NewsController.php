@@ -73,13 +73,13 @@ class NewsController extends Controller
 
     public function newsleiindex()
     {
-        $data = \DB::table('newslei')->orderBy('time','desc')->paginate(10);
+        $data = \DB::table('newslei')->select('id','title','time','img')->orderBy('time','desc')->paginate(10);
         return view('admin.news.newsleiindex',['title'=>'板块列表','data'=>$data]);
     }
 
     public function newsleiedit($id)
     {
-        $data = \DB::table('newslei')->where('id',$id)->first();
+        $data = \DB::table('newslei')->select('id','title','time','img','titles','keyworlds','description')->where('id',$id)->first();
         return view('admin.news.leiedit',['title'=>'板块编辑','data'=>$data]);
     }
 
@@ -182,9 +182,10 @@ class NewsController extends Controller
     {
         $key = isset($request->key) ? $request->key : '';
         
-        $data = \DB::table('news')->where('title','like','%'.$key.'%')->where('pid',$id)->orderBy('time','desc')->paginate(10);
+        $data = \DB::table('news')->select('id','title','time','yuan','pid','click','titleimg','zhi')->where('title','like','%'.$key.'%')->where('pid',$id)->orderBy('time','desc')->paginate(10);
+        $tit = \DB::table('newslei')->select('id','title')->where('id',$id)->first()->title;
         $data->appends(['key'=>$key]);
-        return view('Admin.news.index',['title'=>'新闻文章管理','data'=>$data,'request'=>$request->all(),'pid'=>$id]);
+        return view('Admin.news.index',['title'=>'新闻文章管理','data'=>$data,'request'=>$request->all(),'pid'=>$id,'tit'=>$tit]);
     }
 
     public function newsadd($id){
@@ -197,7 +198,7 @@ class NewsController extends Controller
 		$this->validate($request,[
 		    'title' => 'required|min:2|max:30',
 		    'yuan'	=> 'required',
-		    'leicon'=>'required|min:10|max:120',
+		    'leicon'=>'required|min:10|max:255',
 		    'titleimg'=>'required|image',
 		    'content' =>'required|max:20000',
             'titles' => 'required|min:2|max:30',
@@ -220,7 +221,7 @@ class NewsController extends Controller
 			'yuan.required'=>'来源不能为空',
             'leicon.required'=>'简介不能为空',
             'leicon.min'=>'简介最少10位',
-			'leicon.max'=>'简介最大120位',
+			'leicon.max'=>'简介最大255位',
 			'titleimg.required'=>'未上传图片',
             'titleimg.image'=>'请上传图片类型的文件',
             'content.required'=>'内容不能为空',
@@ -274,7 +275,7 @@ class NewsController extends Controller
 		$this->validate($request,[
 		    'title' => 'required|min:2|max:30',
 		    'yuan'	=> 'required',
-		    'leicon'=>'required|min:10|max:120',
+		    'leicon'=>'required|min:10|max:255',
 		    'content' =>'required|max:20000',
             'titimg' => 'image',
             'titles' => 'required|min:2|max:30',
@@ -287,7 +288,7 @@ class NewsController extends Controller
 			'yuan.required'=>'来源不能为空',
 			'leicon.required'=>'简介不能为空',
             'leicon.min'=>'简介最少10位',
-            'leicon.max'=>'简介最大120位',
+            'leicon.max'=>'简介最大255位',
 			'titles.min'=>'网页标题最少2位',
             'titles.max'=>'网页标题最大30位',
             'keyworlds.required'=>'网页关键字不能为空',
@@ -345,7 +346,7 @@ class NewsController extends Controller
     }
 
     public function newszhi(Request $request){
-    	$res = \DB::table('news')->where('zhi',1)->where('pid',$request->pid)->first();
+    	$res = \DB::table('news')->select('id')->where('zhi',1)->where('pid',$request->pid)->first();
 
     	if($res)
     	{

@@ -45,8 +45,8 @@ class CaseController extends Controller
 
 		}
 		
-    	$data = \DB::table('case')->select('id','title','or','huxing','fengge','yusuan','effect2')->where('or','5')->where('huxing',$wh1,$ip1)->where('fengge',$wh2,$ip2)->where('yusuan',$wh3,$ip3)->paginate(12);
-    	$count = \DB::table('case')->select('id','title','or','huxing','fengge','yusuan','effect2')->where('or','5')->where('huxing',$wh1,$ip1)->where('fengge',$wh2,$ip2)->where('yusuan',$wh3,$ip3)->count();
+    	$data = \DB::table('case')->select('id','title','or','huxing','fengge','yusuan','effect2','time')->where('or','5')->where('huxing',$wh1,$ip1)->where('fengge',$wh2,$ip2)->where('yusuan',$wh3,$ip3)->orderBy('time','desc')->paginate(12);
+    	$count = \DB::table('case')->select('id')->where('or','5')->where('huxing',$wh1,$ip1)->where('fengge',$wh2,$ip2)->where('yusuan',$wh3,$ip3)->count();
     	foreach ($data as $k => $v) {
     		$v->effect2 = explode(',',$v->effect2)[0];
     	}
@@ -67,7 +67,7 @@ class CaseController extends Controller
     	$key = \DB::table('webpage')->where('id',24)->first();
 
     	$arr1 = array('全部','小户型','二室','三室','四室','公寓','别墅','复式','自建');
-    	$arr2 = array('全部','地中海','中式','美式','欧式','混搭','田园','现代','新古典','东南亚','日式','宜家','北欧','简欧','简约','韩式','法式','工业风','新中式','其他');
+    	$arr2 = array('全部','地中海','中式','港式','美式','欧式','混搭','田园','现代','新古典','东南亚','日式','宜家','北欧','简欧','简约','韩式','法式','工业风','新中式','其他');
     	$arr3 = array('全部','5万以下','5万-8万','8万-12万','12万-18万','18万-30万','30万-50万','50万以上');
     	return view('home.case.index',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description,'data'=>$data,'arr1'=>$arr1,'arr2'=>$arr2,'arr3'=>$arr3,'ip1'=>$ip1,'ip2'=>$ip2,'ip3'=>$ip3,'tui'=>$tui,'count'=>$count]);
     }
@@ -139,7 +139,7 @@ class CaseController extends Controller
 		}
 		
     	$data = \DB::table('case')->select('id','title','or','huxing','fengge','yusuan','img1','img2','img3','img4')->where('or','!=',0)->where('or','!=',5)->where('huxing',$wh1,$ip1)->where('fengge',$wh2,$ip2)->where('yusuan',$wh3,$ip3)->orderBy('time','desc')->offset(0)->limit(5)->get();
-    	$count = \DB::table('case')->select('id','title','or','huxing','fengge','yusuan','img1','img2','img3','img4')->where('or','!=',0)->where('or','!=',5)->where('huxing',$wh1,$ip1)->where('fengge',$wh2,$ip2)->where('yusuan',$wh3,$ip3)->count();
+    	$count = \DB::table('case')->select('id')->where('or','!=',0)->where('or','!=',5)->where('huxing',$wh1,$ip1)->where('fengge',$wh2,$ip2)->where('yusuan',$wh3,$ip3)->count();
 
     	foreach ($data as $k => $v) {
     		if($v->or == 1)
@@ -191,7 +191,7 @@ class CaseController extends Controller
         $key = \DB::table('webpage')->where('id',25)->first();
     	
     	$arr1 = array('全部','小户型','二室','三室','四室','公寓','别墅','复式','自建');
-    	$arr2 = array('全部','地中海','中式','美式','欧式','混搭','田园','现代','新古典','东南亚','日式','宜家','北欧','简欧','简约','韩式','法式','工业风','新中式','其他');
+    	$arr2 = array('全部','地中海','中式','港式','美式','欧式','混搭','田园','现代','新古典','东南亚','日式','宜家','北欧','简欧','简约','韩式','法式','工业风','新中式','其他');
     	$arr3 = array('全部','5万以下','5万-8万','8万-12万','12万-18万','18万-30万','30万-50万','50万以上');
     	return view('home.case.zaiindex',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description,'data'=>$data,'arr1'=>$arr1,'arr2'=>$arr2,'arr3'=>$arr3,'ip1'=>$ip1,'ip2'=>$ip2,'ip3'=>$ip3,'tui'=>$tui,'count'=>$count]);
     }

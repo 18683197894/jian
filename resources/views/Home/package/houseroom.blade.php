@@ -41,12 +41,12 @@
 
 <div class="demo">
 	<dl class="select" style="margin-left:12px">
-		<dt class="dt2">1厨</dt>
+		<dt class="dt2">1卧</dt>
 		<dd>
 			<ul>
-				<li><a href="#">1厨</a></li>
-				<li><a href="#">2厨</a></li>
-				<li><a href="#">3厨</a></li>
+				<li><a href="#">1卧</a></li>
+				<li><a href="#">2卧</a></li>
+				<li><a href="#">3卧</a></li>
 			</ul>
 		</dd>
 	</dl>	

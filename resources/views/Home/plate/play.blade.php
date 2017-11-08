@@ -23,7 +23,7 @@
 			     <ul>
 			     @if(isset($qi) && count($qi) > 0)
 					@foreach($qi as $kkk => $vvv)
-				    <li><img src="{{ asset('uploads/plate/img/') }}/{{ $vvv->img }}" width="120" height="60"/><a href="{{ url('/home/plate/list/') }}/{{ $vvv->id }}"><b>@php echo mb_substr($vvv->title,0,19,'utf8')."‥" @endphp</b></a><span></span></li>
+				    <li><img src="{{ asset('uploads/plate/img/') }}/{{ $vvv->img }}" width="120" height="60"/><a href="{{ url('/home/plate/list/') }}/{{ $vvv->id }}"><b>{{ $vvv->title }}</b></a><span></span></li>
 				 	@endforeach
 				 @else
 				    <li style="margin-left:190px;margin-top:30px">未找到板块</li>

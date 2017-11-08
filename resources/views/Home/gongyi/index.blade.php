@@ -14,7 +14,7 @@
 	       <div class="z-news-con-l">
 		       <ul>
 		       @if(isset($zhi) && count($zhi) > 0)
-			      <li class="z-n-li0"><b>{{ $zhi->title }}</b><p><span class="z-n-ps1">{{ date("Y年m月d日 H:i:s",$zhi->time) }}</span><span class="z-n-ps2">{{ $zhi->click }}</span></p><img src="{{ asset('/uploads/gongyi/newsimg/') }}/{{ $zhi->titleimg }}" width="640" height="250" /><span class="z-n-ps3">{{ $zhi->leicon }}</span><a href="{{ url('/home/gongyi/play/') }}/{{ $zhi->id }}">查看全文</a></li>
+			      <li class="z-n-li0"><b>{{ $zhi->title }}</b><p><span class="z-n-ps1">{{ date("Y年m月d日 H:i:s",$zhi->time) }}</span><span class="z-n-ps2">{{ $zhi->click }}</span></p><img src="{{ asset('/uploads/gongyi/newsimg/') }}/{{ $zhi->titleimg }}" width="640" height="250" /><span class="z-n-ps3">{{ mb_substr($zhi->leicon,0,127,'utf8').'…'  }}</span><a href="{{ url('/home/gongyi/play/') }}/{{ $zhi->id }}">查看全文</a></li>
 		       @endif
 				@if(isset($data) && count($data) > 0)	
 				@foreach($data as $k => $v)			  
@@ -32,7 +32,7 @@
 			     <ul>
 			     @if(isset($qi) && count($qi) > 0)
 					@foreach($qi as $kkk => $vvv)
-				    <li><img src="{{ asset('uploads/gongyi/img/') }}/{{ $vvv->img }}" width="120" height="60"/><a href="{{ url('/home/gongyi/list/') }}/{{ $vvv->id }}"><b>@php echo mb_substr($vvv->title,0,19,'utf8')."‥" @endphp</b></a><span></span></li>
+				    <li><img src="{{ asset('uploads/gongyi/img/') }}/{{ $vvv->img }}" width="120" height="60"/><a href="{{ url('/home/gongyi/list/') }}/{{ $vvv->id }}"><b>{{ $vvv->title }}</b></a><span></span></li>
 				 	@endforeach
 				 @else
 				    <li style="margin-left:190px;margin-top:30px">未找到</li>

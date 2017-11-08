@@ -66,6 +66,7 @@
                   <select name="fengge" class="form-control">
                     <option value="地中海">地中海</option>
                     <option  value="中式">中式</option>
+                    <option  value="港式">港式</option>
                     <option  value="美式">美式</option>
                     <option  value="欧式">欧式</option>
                     <option  value="混搭">混搭</option>

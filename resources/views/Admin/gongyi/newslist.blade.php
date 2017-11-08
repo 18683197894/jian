@@ -7,7 +7,7 @@
 @section('content')
     <section class="content-header" style="text-align:center">
       <h1>
-        工艺文章管理
+        {{ $tit }} - 文章管理
         <!-- <small>Control panel</small> -->
 
       </h1>

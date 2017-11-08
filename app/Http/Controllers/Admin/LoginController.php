@@ -46,4 +46,5 @@ class LoginController extends Controller
     	\session()->forget('admin');
     	return redirect('/jslmadmin/login');
     }
+
 }

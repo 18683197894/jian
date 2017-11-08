@@ -66,7 +66,7 @@
 	<div id="box-1" class="hidden-box hidden-loc-index">
 		<div id="div1">
 			<span>关于建商 ></span>
-			<ul>
+			<ul id="solid">
 				<li><a href="{{ url('/jsgw/aboutus') }}">关于建设</a></li>
 				<li><a href="{{ url('/jsgw/tuandui') }}">运营团队</a></li>
 				<li><a href="{{ url('/jsgw/zhanlui') }}">发展战略</a></li>
@@ -77,7 +77,7 @@
 		</div>
 		<div id="div2">
 			<span>建设产业 ></span>
-			<ul>
+			<ul id="solid">
 				<li><a href="{{ url('/jsgw/ls') }}">新零售平台</a></li>
 				<li><a href="{{ url('/jsgw/jzf') }}">精装房项目</a></li>
 				<li><a href="{{ url('/jsgw/tyg') }}">线下体验馆</a></li>
@@ -114,7 +114,7 @@
 		</div> -->
 		<div id="div2">
 			<span>软包套餐 ></span>
-			<ul>
+			<ul id="solid">
 				<li><a href="{{ url('/package/houseroom') }}">装修报价</a></li>
 				<li><a href="{{ url('/package/softroll') }}">软包套餐</a></li>
 			</ul>
@@ -122,9 +122,9 @@
 		<div id="div3">
 			<span>楼盘推荐 ></span>
 			<ul>
-				<li><a href="{{ url('/jsgw/job1') }}">浙商新天地</a></li>
-				<li><a href="{{ url('/jsgw/job5') }}">德福公元</a></li>
-				<li style="width:100px"><a href="{{ url('/jsgw/job5') }}">华富御景庄园</a></li>
+				<li><a href="{{ url('/propertieszshx') }}">浙商新天地</a></li>
+				<li><a href="{{ url('/propertiesdfhx') }}">德福公元</a></li>
+				<li style="width:100px"><a href="{{ url('/propertieshfhx') }}">华富御景庄园</a></li>
 			</ul>
 		</div>
 	</div>
@@ -149,7 +149,7 @@
     <div id="box-6" class="hidden-box box06">
 		<div id="div3">
 			<span>招商采购 ></span>
-			<ul>
+			<ul id="solid">
 				<li><a href="{{ url('/amount') }}">招商采购</a></li>
 				<li><a href="{{ url('/jsgw/supply') }}">产品供应</a></li>
 				<li><a href="{{ url('/jsgw/cgs') }}">采购商入驻</a></li>
@@ -182,25 +182,25 @@
     <div class="z-bot1">
 	    <ul>
 		    <li class="z-li2">关于建商</li>
-			<li><a href="">建商介绍</a></li>
-			<li><a href="">建商团队</a></li>
-			<li><a href="">建商文化</a></li>
-			<li><a href="">联系方式</a></li>
+			<li><a href="{{ url('/jsgw/aboutus') }}">建商介绍</a></li>
+			<li><a href="{{ url('/jsgw/tuandui') }}">建商团队</a></li>
+			<li><a href="{{ url('/jsgw/zhanlui') }}">发展战略</a></li>
+			<!-- <li><a href="">联系方式</a></li> -->
 		</ul>
 		<ul>
 		   <li class="z-li2">建商服务</li>
+		   <li><a href="{{ url('/jsgw/contact') }}">联系方式</a></li>
+		<!--    <li><a href="">联系方式</a></li>
 		   <li><a href="">联系方式</a></li>
 		   <li><a href="">联系方式</a></li>
-		   <li><a href="">联系方式</a></li>
-		   <li><a href="">联系方式</a></li>
-		   <li><a href="">联系方式</a></li>
+		   <li><a href="">联系方式</a></li> -->
 		</ul>
 		<ul>
 		   <li class="z-li2">建商标准</li>
+		 <!--   <li><a href="">客厅验收标准</a></li>
 		   <li><a href="">客厅验收标准</a></li>
 		   <li><a href="">客厅验收标准</a></li>
-		   <li><a href="">客厅验收标准</a></li>
-		   <li><a href="">客厅验收标准</a></li>
+		   <li><a href="">客厅验收标准</a></li> -->
 		</ul>
 		<div class="z-li3">
 		   <b>联系我们</b>
