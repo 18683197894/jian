@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="hon_1">
-	<img src="{{ asset('home/jsgw/honest/1.png') }}" width="100%" height="100%" alt="">
+	<img  data-original="{{ asset('home/jsgw/honest/1.png') }}" width="100%" height="100%" alt="">
 </div>
 <div class="hon_2">
 	<div class="hon2_head">
@@ -16,7 +16,7 @@
 		<div style="clear:both;"></div>
 	</div>
 	<div class="hon2_con1">
-		<img src="{{ asset('home/jsgw/honest/2.png') }}" alt="">
+		<img  data-original="{{ asset('home/jsgw/honest/2.png') }}" alt="">
 		<div class="hon2_condiv">
 			<div class="hon2_condiv_div" style="margin-left:50px;">
 				<title>廉洁有违行为</title><span></span>
@@ -61,7 +61,7 @@
 			</ul>
 			<span class="hon2_condiv_red">如有违反，按照签署的业务合作备忘录中廉洁合作协议处理。</span>
 		</div>
-		<img src="{{ asset('home/jsgw/honest/3.png') }}" alt="">
+		<img  data-original="{{ asset('home/jsgw/honest/3.png') }}" alt="">
 		<div style="clear:both;"></div>
 
 	</div>
@@ -84,5 +84,10 @@
 @endsection('content')
 
 @section('js')
-
+<script>
+			$(function() {
+      		$("img").lazyload({effect: "fadeIn"});
+     		 $("img").lazyload({ threshold :180});
+			});
+</script>
 @endsection('js')

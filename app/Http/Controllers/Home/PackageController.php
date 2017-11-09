@@ -13,12 +13,29 @@ class PackageController extends Controller
         $zi =\DB::table('zi')->select('id','title','con','img','pid','jia')->get();
         $pack = \DB::table('pei')->select('id','title','pid')->where('sid',0)->get();
         $sub = \DB::table('pei')->select('id','title','sid')->where('sid','!=',0)->get();
-        $age = \DB::table('pack')->select('id','title','con','img','path','jia')->get();
+        $age = \DB::table('pack')->select('id','title','con','img','paths')->get();
 
-        foreach($age as $r => $z)
-        {
-            $z->img = explode(',',$z->img);
+        foreach( $age as $q => $e )
+        {   
+            $e->path='';
+            $e->jia =0;
+            $e->img = explode(',',$e->img);
+            $e->paths = explode('+',$e->paths);
+            foreach( $e->paths as $aa => $bb)
+            {
+                foreach( $zi as $aaa => $bbb)
+                {
+                    if( $bb == $bbb->id )
+                    {
+                        $e->path .= '+'.$bbb->title;
+                        $e->jia += $bbb->jia;
+                    }
+                }
+            }
+            $e->path = trim($e->path,'+');
         }
+        // dd($age);
+       
 
         foreach ($all as $k => $v) {
             $v->zi = [];

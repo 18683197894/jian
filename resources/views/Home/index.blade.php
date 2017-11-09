@@ -1,7 +1,6 @@
 @extends('heads')
 @section('css')
 <script src="{{ asset('home/lunpo/index/banner.js') }}"></script>
-
 <style>
 	#index_1{
 		width:100%;
@@ -950,14 +949,14 @@
 					<div class="Homebanner">
 						<ul>
 							<li class="Load cur" style="z-index:99">
-								<img src="{{ asset('home/lunpo/index/1.png') }}" alt="">
+								<img width="100%" src="{{ asset('home/lunpo/index/1.png') }}" alt="">
 
 							</li>
 							<li class="Load">
-								<img src="{{ asset('home/lunpo/index/1.png') }}" alt="">
+								<img width="100%" src="{{ asset('home/lunpo/index/1.png') }}" alt="">
 
 							</li>
-							<li class="Load"><img src="{{ asset('home/lunpo/index/1.png') }}" alt="">
+							<li class="Load"><img width="100%" src="{{ asset('home/lunpo/index/1.png') }}" alt="">
 
 							</li>
 						</ul>
@@ -1036,9 +1035,9 @@
 			<p class="head_2">公司品质保障 &nbsp;放心服务 &nbsp;全程包忧</p>	
 		</div>
 		<ul>
-			<li class="z-con_4_lil"> <a href="{{ url('/propertieszshx') }}"> <img src="{{ asset('home/images/index/6.png') }}" alt=""> <span>浙商.临港新天地</span> </li></a>
-			<li class="z-con_4_li"> <a href="{{ url('/propertiesdfhx') }}"><img src="{{ asset('home/images/index/7.png') }}" alt=""> <span>德福公元</span> </li></a>
-			<li class="z-con_4_li"> <a href="{{ url('/propertieshfhx') }}"><img src="{{ asset('home/images/index/8.png') }}" alt=""> <span>华富.御景庄园</span> </li></a>
+			<li class="z-con_4_lil"> <a href="{{ url('/propertieszshx') }}"> <img  data-original="{{ asset('home/images/index/6.png') }}" alt=""> <span>浙商.临港新天地</span> </li></a>
+			<li class="z-con_4_li"> <a href="{{ url('/propertiesdfhx') }}"><img  data-original="{{ asset('home/images/index/7.png') }}" alt=""> <span>德福公元</span> </li></a>
+			<li class="z-con_4_li"> <a href="{{ url('/propertieshfhx') }}"><img  data-original="{{ asset('home/images/index/8.png') }}" alt=""> <span>华富.御景庄园</span> </li></a>
 		</ul>
    	</div>
    	<div class="z-con_5"> <!-- 德系工艺品质保障 -->
@@ -1087,7 +1086,7 @@
 		<div class="zcon_7_1">
 			<ul>	
 				@foreach($case as $j => $h)
-				<li @if( $loop->first ) class="zcon7_li" @else class="zcon7_lil" @endif>  <span class="zcon7_span1"><a href="{{ url('home/case/index/play') }}/{{ $h->id }}" target="_blank"><img src="{{ asset('uploads/case/img/') }}/{{ $h->keting }}" alt=""></a></span>   <span class="zcon7_span_2"> <a href="{{ url('home/case/index/play') }}/{{ $h->id }}" target="_blank"><font>{{ $h->title }}</font></a><span>{{ $h->huxing }} {{ $h->fengge }} {{ $h->yusuan }}</span> </span>   <span class="zcon7_span_{{ $loop->index +3 }}"></span></li>
+				<li @if( $loop->first ) class="zcon7_li" @else class="zcon7_lil" @endif>  <span class="zcon7_span1"><a href="{{ url('home/case/index/play') }}/{{ $h->id }}" target="_blank"><img  data-original="{{ asset('uploads/case/img/') }}/{{ $h->keting }}" alt=""></a></span>   <span class="zcon7_span_2"> <a href="{{ url('home/case/index/play') }}/{{ $h->id }}" target="_blank"><font>{{ $h->title }}</font></a><span>{{ $h->huxing }} {{ $h->fengge }} {{ $h->yusuan }}</span> </span>   <span class="zcon7_span_{{ $loop->index +3 }}"></span></li>
 				@endforeach
 						
 			</ul>
@@ -1099,7 +1098,7 @@
 			<div @if($loop->first) class="zcon_7_2_divl" @else class="zcon_7_2_div" @endif>
 				@foreach($m->eff as $n => $o)
 				<div class="zcon_7_2_{{ $loop->index + 1 }}">
-					<div class="zcon_7_img"><a href="{{ url('home/case/index/play') }}/{{ $m->id }}" target="_blank"><img src="{{ asset('/uploads/case/img') }}/{{ $o }}" alt=""></a></div>
+					<div class="zcon_7_img"><a href="{{ url('home/case/index/play') }}/{{ $m->id }}" target="_blank"><img  data-original="{{ asset('/uploads/case/img') }}/{{ $o }}" alt=""></a></div>
 					<div class="zcon_7_2_zi"><span>{{ $n }}</span></div>
 				</div>
 				@endforeach
@@ -1150,7 +1149,7 @@
 					<ul>
 					@if( !empty($data) )
 					@foreach($data as $kk => $vv)
-						<li id="con8" class="zcon8_img_{{ $kk + 1 }}"> <a href="{{ url('home/gongyi/list/') }}/{{ $vv->id }}" ><img src="{{ asset('uploads/gongyi/img/') }}/{{ $vv->img }}" alt=""> <div style="display:none"><span>{{ $vv->title }}</span></div></a> </li>
+						<li id="con8" class="zcon8_img_{{ $kk + 1 }}"> <a href="{{ url('home/gongyi/list/') }}/{{ $vv->id }}" ><img  data-original="{{ asset('uploads/gongyi/img/') }}/{{ $vv->img }}" alt=""> <div style="display:none"><span>{{ $vv->title }}</span></div></a> </li>
 					@endforeach
 					@endif	
 					</ul>
@@ -1166,18 +1165,18 @@
 	<div class="z-con2"><!---建材选购-->
 	    <div class="z-huoban-1"><p class="z-hb-1">Building materials</p><b>建材选购</b><p class="z-hb-2">国内外知名厂家直供&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;品质生活从心开始</p></div>
 		<ul>
-		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_1.png')}}" /></li>
-		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_2.png')}}" /></li>
-		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_3.png')}}" /></li>
-		   <li class="z-xg-lir"><img src="{{asset('home/images/index/con2_4.png')}}" /></li>
-		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_5.png')}}" /></li>
-		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_6.png')}}" /></li>
-		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_7.png')}}" /></li>
-		   <li class="z-xg-lir"><img src="{{asset('home/images/index/con2_8.png')}}" /></li>
-		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_9.png')}}" /></li>
-		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_10.png')}}" /></li>
-		   <li class="z-xg-lil"><img src="{{asset('home/images/index/con2_11.png')}}" /></li>
-		   <li class="z-xg-lir"><img src="{{asset('home/images/index/con2_12.png')}}" /></li>
+		   <li class="z-xg-lil"><img  data-original="{{asset('home/images/index/con2_1.png')}}" /></li>
+		   <li class="z-xg-lil"><img  data-original="{{asset('home/images/index/con2_2.png')}}" /></li>
+		   <li class="z-xg-lil"><img  data-original="{{asset('home/images/index/con2_3.png')}}" /></li>
+		   <li class="z-xg-lir"><img  data-original="{{asset('home/images/index/con2_4.png')}}" /></li>
+		   <li class="z-xg-lil"><img  data-original="{{asset('home/images/index/con2_5.png')}}" /></li>
+		   <li class="z-xg-lil"><img  data-original="{{asset('home/images/index/con2_6.png')}}" /></li>
+		   <li class="z-xg-lil"><img  data-original="{{asset('home/images/index/con2_7.png')}}" /></li>
+		   <li class="z-xg-lir"><img  data-original="{{asset('home/images/index/con2_8.png')}}" /></li>
+		   <li class="z-xg-lil"><img  data-original="{{asset('home/images/index/con2_9.png')}}" /></li>
+		   <li class="z-xg-lil"><img  data-original="{{asset('home/images/index/con2_10.png')}}" /></li>
+		   <li class="z-xg-lil"><img  data-original="{{asset('home/images/index/con2_11.png')}}" /></li>
+		   <li class="z-xg-lir"><img  data-original="{{asset('home/images/index/con2_12.png')}}" /></li>
 		</ul> 
 	</div>
 	<div class="z-con3"><!--知识-->
@@ -1192,7 +1191,7 @@
 				class="zcon3_li"
 				@endif
 				>
-					<a href="{{ url('home/plate/list') }}/{{ $h->id }}"><img src="{{ asset('/uploads/plate/img') }}/{{ $h->img }}" alt=""></a>
+					<a href="{{ url('home/plate/list') }}/{{ $h->id }}"><img    data-original="{{ asset('/uploads/plate/img') }}/{{ $h->img }}" alt=""></a>
 					<div>
 						@if(!empty($h->news))
 							@foreach($h->news as $gg => $hh)
@@ -1210,16 +1209,16 @@
 	<div class="z-huoban"><!--合作伙伴-->
 	    <div class="z-huoban-1"><p class="z-hb-1">Partner</p><b>合作伙伴</b><p class="z-hb-2">公司品质保障 &nbsp;放心服务 &nbsp;全程包忧</p></div>
 		<ul>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/hb_2.jpg')}}" /></li>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/hb_3.jpg')}}" /></li>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/hb_4.jpg')}}" /></li>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/hb_1.jpg')}}" /></li>
-		   <li class="z-hb-lir"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
-		   <li class="z-hb-lil"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
-		   <li class="z-hb-lir"><img src="{{asset('home/images/index/z-hb.jpg')}}" /></li>
+		   <li class="z-hb-lil"><img  data-original="{{asset('home/images/index/hb_2.jpg')}}" /></li>
+		   <li class="z-hb-lil"><img  data-original="{{asset('home/images/index/hb_3.jpg')}}" /></li>
+		   <li class="z-hb-lil"><img  data-original="{{asset('home/images/index/hb_4.jpg')}}" /></li>
+		   <li class="z-hb-lil"><img  data-original="{{asset('home/images/index/hb_1.jpg')}}" /></li>
+		   <li class="z-hb-lir"><img  data-original="{{asset('home/images/index/z-hb.jpg')}}" /></li>
+		   <li class="z-hb-lil"><img  data-original="{{asset('home/images/index/z-hb.jpg')}}" /></li>
+		   <li class="z-hb-lil"><img  data-original="{{asset('home/images/index/z-hb.jpg')}}" /></li>
+		   <li class="z-hb-lil"><img  data-original="{{asset('home/images/index/z-hb.jpg')}}" /></li>
+		   <li class="z-hb-lil"><img  data-original="{{asset('home/images/index/z-hb.jpg')}}" /></li>
+		   <li class="z-hb-lir"><img  data-original="{{asset('home/images/index/z-hb.jpg')}}" /></li>
 		</ul>
 	</div>
 	
@@ -1359,6 +1358,16 @@ $("#con8 a").hover(
     img.css('opacity','1');
   }
 );
+	
 
+		
+	  $(function() {
+
+      $("img").lazyload({effect: "fadeIn"});
+      $("img").lazyload({ threshold :180});
+
+  });
 	</script>
+
+<!-- <script src="{{ asset('home/lazyload/jquery.lazyload.js?v=1.9.1') }}"></script> -->
 @endsection('content')

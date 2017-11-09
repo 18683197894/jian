@@ -812,11 +812,11 @@
 <div class="allhead">
 	<div class="allhead_1">
 		<div class="allhead_1_1">
-			<img src="{{ asset('home/images/allcse/4.png') }}" alt="">
+			<img  data-original="{{ asset('home/images/allcse/4.png') }}" alt="">
 			<a href="{{ asset('/package/allcse') }}">全包套餐</a>
 		</div>
 		<div class="allhead_1_2">
-			<img src="{{ asset('home/images/allcse/3.png') }}" alt="">
+			<img  data-original="{{ asset('home/images/allcse/3.png') }}" alt="">
 			<a href="{{ url('package/softroll') }}">软包套餐</a>
 		</div>
 	</div>
@@ -847,7 +847,7 @@
 
 				<div class="allcon1divuldiv1">
 
-				<img src="{{ asset('uploads/all/img') }}/{{ $vvv->img }}" alt="" width="100%" height="333px">
+				<img  src="{{ asset('uploads/all/img') }}/{{ $vvv->img }}" alt="" width="100%" height="333px">
 				<span class="allcon1divspan1">{{ $vvv->title }}</span>
 				<span class="allcon1divspan2">Comfortable package</span>
 				<span class="allcon1divspan3">{{ $vvv->jia }}元</span>
@@ -894,10 +894,10 @@
 			<div class="win_{{ $loop->index }}">
 				<div class="box_{{ $loop->index }}">
 					@foreach( $j->img as $m => $f )
-					<div class="color{{ $loop->index + 1 }}" @if( $loop->first ) style="left:0" @endif ><img src="{{ asset('uploads/all/pack/') }}/{{ $f }}" width="100%" height="100%" alt=""></div>
+					<div class="color{{ $loop->index + 1 }}" @if( $loop->first ) style="left:0" @endif ><img  data-original="{{ asset('uploads/all/pack/') }}/{{ $f }}" width="100%" height="100%" alt=""></div>
 					@endforeach
-	<!-- 				<div class="color{{ $loop->index + 1 }}"><img src="{{ asset('home/images/allcse/11.png') }}" alt=""></div>
-					<div class="color{{ $loop->index + 1 }}"><img src="{{ asset('home/images/allcse/12.png') }}" alt=""></div> -->
+	<!-- 				<div class="color{{ $loop->index + 1 }}"><img  data-original="{{ asset('home/images/allcse/11.png') }}" alt=""></div>
+					<div class="color{{ $loop->index + 1 }}"><img  data-original="{{ asset('home/images/allcse/12.png') }}" alt=""></div> -->
 				</div>
 				<div class="leftB_{{ $loop->index }}">&lt;</div>
 				<div class="rightB_{{ $loop->index }}">&gt;</div>
@@ -928,10 +928,10 @@
 <div class="allcon3">
 	<div class="allcon2_head"><span>装修风格</span></div>
 	<ul class="allcon3ul">
-		<li class="allconli1"><img src="{{ asset('home/images/allcse/13.png') }}" alt=""><a href="{{ url('/design/0') }}"><div style="display:none">简欧</div></a></li>
-		<li class="allconli2"><img src="{{ asset('home/images/allcse/14.png') }}" alt=""><a href="{{ url('/design/1') }}"><div style="display:none">现代</div></a></li>
-		<li class="allconli2"><img src="{{ asset('home/images/allcse/15.png') }}" alt=""><a href="{{ url('/design/2') }}"><div style="display:none">地中海</div></a></li>
-		<li class="allconli2"><img src="{{ asset('home/images/allcse/16.png') }}" alt=""><a href="{{ url('/design/3') }}"><div style="display:none">中式</div></a></li>
+		<li class="allconli1"><img  data-original="{{ asset('home/images/allcse/13.png') }}" alt=""><a href="{{ url('/design/0') }}"><div style="display:none">简欧</div></a></li>
+		<li class="allconli2"><img  data-original="{{ asset('home/images/allcse/14.png') }}" alt=""><a href="{{ url('/design/1') }}"><div style="display:none">现代</div></a></li>
+		<li class="allconli2"><img  data-original="{{ asset('home/images/allcse/15.png') }}" alt=""><a href="{{ url('/design/2') }}"><div style="display:none">地中海</div></a></li>
+		<li class="allconli2"><img  data-original="{{ asset('home/images/allcse/16.png') }}" alt=""><a href="{{ url('/design/3') }}"><div style="display:none">中式</div></a></li>
 	</ul>
 </div>
 
@@ -1263,5 +1263,10 @@ $('.allcon1ul > li').on('click',function(){
 				}
 				
 			})
+			 $(function() {
+
+      		$("img").lazyload({effect: "fadeIn"});
+     		 $("img").lazyload({ threshold :180});
+			});
 </script>
 @endsection('content')

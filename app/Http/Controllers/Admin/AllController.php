@@ -458,29 +458,64 @@ class AllController extends Controller
 	{
 		$id = $request->id;
 
-		$img = \DB::table('zi')->where('id',$id)->first()->img;
-
-		if($img)
-		{
-			$res = \DB::table('zi')->delete($id);
+		$img = \DB::table('zi')->where('id',$id)->first();
+        $pack = \DB::table('pack')->select('id','paths')->get();
+        foreach( $pack as $k => $v )
+        {
+            $v->paths = explode('+',$v->paths);
+            foreach( $v->paths as $kk => $vv )
+            {
+                if( $vv == $img->id )
+                {
+                    return response()->json(3);
+                }
+            }
+        }
+        $res = \DB::table('zi')->delete($id);
+			
 			if($res)
 			{
-				if(file_exists('./uploads/all/img/'.$img))
+				if(file_exists('./uploads/all/img/'.$img->img))
 				{
-					unlink('./uploads/all/img/'.$img);
+					unlink('./uploads/all/img/'.$img->img);
 				}
 				return response()->json(1);
 			}else
 			{
 				return response()->json(2);
 			}
-		}
+		
 	}
 
 	public function pack()
-	{
-		$data = \DB::table('pack')->get();
+	{  
+        $bao = \DB::table('zi')->select('id','title','jia')->get();
 
+		$data = \DB::table('pack')->select('id','title','con','time','paths')->orderBy('time','desc')->get();
+        foreach( $data  as $k => $v)
+        {
+            $v->paths = explode('+',$v->paths);
+        }
+        foreach( $data as $kk => $vv )
+        {   
+            $vv->jia = 0;
+            $vv->path = '';
+            foreach( $vv->paths as $o => $u)
+            {
+                foreach( $bao as $a => $b )
+                {
+                    if( $u == $b->id )
+                    {   
+                        $vv->path.='+'.$b->title;
+                        $vv->jia += $b->jia;
+                    }
+                }
+            }
+
+            $vv->path = trim($vv->path,'+');
+            
+        }
+        // dd($data);
 		return view('admin.all.pack',['title'=>'套餐管理','data'=>$data]);
 	}
 
@@ -584,15 +619,15 @@ class AllController extends Controller
     	}else{
     		return back()->withInput()->with(['info'=>'图片3上传失败']);
     	}
-    	$ji = \DB::table('zi')->where('id',$request->ji)->first();
-    	$wei = \DB::table('zi')->where('id',$request->wei)->first();
-    	$chu = \DB::table('zi')->where('id',$request->chu)->first();
+    	$ji = \DB::table('zi')->select('id','jia')->where('id',$request->ji)->first();
+    	$wei = \DB::table('zi')->select('id','jia')->where('id',$request->wei)->first();
+    	$chu = \DB::table('zi')->select('id','jia')->where('id',$request->chu)->first();
     	
     	$data['paths'] = $ji->id.'+'.$chu->id.'+'.$wei->id;
-    	$data['path'] = $ji->title.'+'.$chu->title.'+'.$wei->title;
+    	// $data['path'] = $ji->title.'+'.$chu->title.'+'.$wei->title;
     	$data['time'] = time();
     	$data['status'] = 0;
-    	$data['jia'] = $ji->jia + $wei->jia + $chu->jia;
+    	// $data['jia'] = $ji->jia + $wei->jia + $chu->jia;
     	$data['img'] = $img1.','.$img2.','.$img3;
 
     	$res = \DB::table('pack')->insert($data);

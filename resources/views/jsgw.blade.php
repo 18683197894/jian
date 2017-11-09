@@ -97,5 +97,7 @@
 </div>
 </body>
 @yield('js')
+<script src="{{ asset('home/lazyload/jquery.lazyload.js?v=1.9.1') }}"></script>
+
 </html>
 	

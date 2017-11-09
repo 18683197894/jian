@@ -8,6 +8,9 @@ $('.content1').on('click',function(i,n){
 			$('.content_5').css('display','none');
 			$('.content_6').css('display','none');
 			$('.content_7').css('display','none');
+			var src = $(index).find('#content_2_3').find('img').attr('srcc');
+			$(index).find('#content_2_3').find('img').attr('src',src);
+			
 			$(index).css('display','block');
 
 		})

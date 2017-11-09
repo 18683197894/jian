@@ -233,7 +233,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" src="{{ asset('./home/images/zshx/hu_1.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/zshx/hu_1.png') }}" src="{{ asset('./home/images/zshx/hu_1.png') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">
@@ -303,7 +303,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" src="{{ asset('./home/images/zshx/hu_2.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/zshx/hu_2.png') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">
@@ -372,7 +372,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" src="{{ asset('./home/images/zshx/hu_3.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/zshx/hu_3.png') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">
@@ -441,7 +441,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" src="{{ asset('./home/images/zshx/hu_4.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/zshx/hu_4.png') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">
@@ -499,6 +499,6 @@
 
 
 	<script src="{{ asset('home/images/dfhx/common.js') }}"></script>
-
+	
 @endsection('content')
 

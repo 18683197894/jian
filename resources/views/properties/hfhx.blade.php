@@ -285,7 +285,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" src="{{ asset('./home/images/hfhx/x1.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/hfhx/x1.png') }}" src="{{ asset('./home/images/hfhx/x1.png') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">
@@ -355,7 +355,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" src="{{ asset('./home/images/hfhx/x2.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/hfhx/x2.png') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">
@@ -424,7 +424,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" src="{{ asset('./home/images/hfhx/x3.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/hfhx/x3.png') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">
@@ -493,7 +493,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" src="{{ asset('./home/images/hfhx/x4.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/hfhx/x4.png') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">
@@ -562,7 +562,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" src="{{ asset('./home/images/hfhx/x5.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/hfhx/x5.png') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">
@@ -631,7 +631,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" src="{{ asset('./home/images/hfhx/x6.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/hfhx/x6.png') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">
@@ -700,7 +700,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" src="{{ asset('./home/images/hfhx/x7.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/hfhx/x7.png') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">

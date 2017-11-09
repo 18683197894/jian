@@ -286,7 +286,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" src="{{ asset('./home/images/dfhx/a1d.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/dfhx/a1d.png') }}" src="{{ asset('./home/images/dfhx/a1d.png') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">
@@ -356,7 +356,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" src="{{ asset('./home/images/dfhx/a2d.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/dfhx/a2d.png') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">
@@ -425,7 +425,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" src="{{ asset('./home/images/dfhx/b1d.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/dfhx/b1d.png') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">
@@ -494,7 +494,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" src="{{ asset('./home/images/dfhx/b2d.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/dfhx/b2d.png') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">
@@ -563,7 +563,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" src="{{ asset('./home/images/dfhx/E1-1d.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/dfhx/E1-1d.png') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">
@@ -632,7 +632,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" src="{{ asset('./home/images/dfhx/E1-2d.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/dfhx/E1-2d.png') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">
@@ -701,7 +701,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" src="{{ asset('./home/images/dfhx/E1-3d.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/dfhx/E1-3d.png') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">

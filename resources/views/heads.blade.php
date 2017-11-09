@@ -8,9 +8,8 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta name="keywords"content="@if(empty($keyworlds))建设网@else{{ $keyworlds }}@endif"> 
 <meta name="description"content="@if(empty($description))建设网@else{{ $description }}@endif"> 
-	<script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
-
-	<title>{{ config('app.name') }}@if(!empty($title))  - {{$title}}@endif</title>
+<script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
+<title>{{ config('app.name') }}@if(!empty($title))  - {{$title}}@endif</title>
 @yield('css')
 </head>
 
@@ -150,7 +149,6 @@
 		<div id="div3">
 			<span>招商采购 ></span>
 			<ul id="solid">
-				<li><a href="{{ url('/amount') }}">招商采购</a></li>
 				<li><a href="{{ url('/jsgw/supply') }}">产品供应</a></li>
 				<li><a href="{{ url('/jsgw/cgs') }}">采购商入驻</a></li>
 				
@@ -214,8 +212,11 @@
 	    <div class="z-bot2-1">CopyRight 2017-2020建商联盟版权所有   ICP备案：蜀ICP备17010220号 </div>
 	</div>
 </div>
+<script src="{{ asset('home/lazyload/jquery.lazyload.js?v=1.9.1') }}"></script>
+<script src="{{ asset('home/lunpo/index/main.js') }}"></script>
 </body>
-	<script src="{{ asset('home/lunpo/index/main.js') }}"></script>
 @yield('js')
+
+
 </html>
 	

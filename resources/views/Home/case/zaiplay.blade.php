@@ -12,7 +12,7 @@
 		</div>
 		<div class="case3con">
 			<div class="casecon">
-				<img src="{{ asset('uploads/case/img/') }}/{{ $data->effect2 }}" alt="">
+				<img  data-original="{{ asset('uploads/case/img/') }}/{{ $data->effect2 }}" alt="">
 				<div class="conright">
 					<title>{{ $data->title }}</title>
 					<div class="con_span">
@@ -54,7 +54,7 @@
 						<em><span>准备开工</span></em>
 						<ul>
 							@foreach($data->img1 as $kkk => $vvv)
-							<li><a href="{{ asset('/uploads/case/img') }}/{{ $vvv }}" target="_blank"><img src="{{ asset('/uploads/case/img') }}/{{ $vvv }}" alt=""></a></li>
+							<li><a href="{{ asset('/uploads/case/img') }}/{{ $vvv }}" target="_blank"><img  data-original="{{ asset('/uploads/case/img') }}/{{ $vvv }}" alt=""></a></li>
 							@endforeach
 						</ul>
 						<div style="clear:both"></div>
@@ -65,7 +65,7 @@
 						<em><span>水电阶段</span></em>
 						<ul>
 							@foreach($data->img2 as $kkkk => $vvvv)
-							<li><a href="{{ asset('/uploads/case/img') }}/{{ $vvvv }}"  target="_blank"><img src="{{ asset('/uploads/case/img') }}/{{ $vvvv }}" alt=""></a></li>
+							<li><a href="{{ asset('/uploads/case/img') }}/{{ $vvvv }}"  target="_blank"><img  data-original="{{ asset('/uploads/case/img') }}/{{ $vvvv }}" alt=""></a></li>
 							@endforeach
 						</ul>
 						<div style="clear:both"></div>
@@ -76,7 +76,7 @@
 						<em><span>泥木阶段</span></em>
 						<ul>
 							@foreach($data->img3 as $j => $k)
-							<li><a href="{{ asset('/uploads/case/img') }}/{{ $k }}" target="_blank"><img src="{{ asset('/uploads/case/img') }}/{{ $k }}" alt=""></a></li>
+							<li><a href="{{ asset('/uploads/case/img') }}/{{ $k }}" target="_blank"><img  data-original="{{ asset('/uploads/case/img') }}/{{ $k }}" alt=""></a></li>
 							@endforeach
 						</ul>
 						<div style="clear:both"></div>
@@ -87,7 +87,7 @@
 						<em><span>油漆阶段</span></em>
 						<ul>
 							@foreach($data->img4 as $h => $l)
-							<li><a href="{{ asset('/uploads/case/img') }}/{{ $l }}" target="_blank"><img src="{{ asset('/uploads/case/img') }}/{{ $l }}" alt=""></a></li>
+							<li><a href="{{ asset('/uploads/case/img') }}/{{ $l }}" target="_blank"><img  data-original="{{ asset('/uploads/case/img') }}/{{ $l }}" alt=""></a></li>
 							@endforeach
 						</ul>
 						<div style="clear:both"></div>
@@ -98,5 +98,10 @@
 @endsection('content')
 
 @section('js')
-
+<script>
+			$(function() {
+      		$("img").lazyload({effect: "fadeIn"});
+     		 $("img").lazyload({ threshold :180});
+			});
+</script>
 @endsection('js')
