@@ -204,6 +204,8 @@ Route::get('/admin/package/all/pack','Admin\AllController@pack');
 Route::get('/admin/package/all/packadd','Admin\AllController@packadd');
 Route::post('/admin/package/all/packadds','Admin\AllController@packadds');
 Route::post('/admin/package/all/packdel','Admin\AllController@packdel');
+Route::get('/admin/package/all/packedit/{id}','Admin\AllController@packedit');
+Route::post('/admin/package/all/packedits','Admin\AllController@packedits');
 
 //装修工艺
 Route::get('admin/gongyi/lei/list','Admin\GongyiController@index');

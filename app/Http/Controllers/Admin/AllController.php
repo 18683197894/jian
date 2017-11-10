@@ -522,8 +522,8 @@ class AllController extends Controller
 	public function packadd()
 	{	
 		$ji = \DB::table('zi')->select('id','title')->where('pid',1)->get();
-		$wei = \DB::table('zi')->select('id','title')->where('pid',2)->get();
-		$chu = \DB::table('zi')->select('id','title')->where('pid',3)->get();
+		$chu = \DB::table('zi')->select('id','title')->where('pid',2)->get();
+		$wei = \DB::table('zi')->select('id','title')->where('pid',3)->get();
 		return view('admin.all.packadd',['title'=>'添加套餐','ji'=>$ji,'wei'=>$wei,'chu'=>$chu]);
 	}
 
@@ -619,11 +619,11 @@ class AllController extends Controller
     	}else{
     		return back()->withInput()->with(['info'=>'图片3上传失败']);
     	}
-    	$ji = \DB::table('zi')->select('id','jia')->where('id',$request->ji)->first();
-    	$wei = \DB::table('zi')->select('id','jia')->where('id',$request->wei)->first();
-    	$chu = \DB::table('zi')->select('id','jia')->where('id',$request->chu)->first();
+    	// $ji = \DB::table('zi')->select('id','jia')->where('id',$request->ji)->first();
+    	// $wei = \DB::table('zi')->select('id','jia')->where('id',$request->wei)->first();
+    	// $chu = \DB::table('zi')->select('id','jia')->where('id',$request->chu)->first();
     	
-    	$data['paths'] = $ji->id.'+'.$chu->id.'+'.$wei->id;
+    	$data['paths'] = $request->ji.'+'.$request->chu.'+'.$request->wei;
     	// $data['path'] = $ji->title.'+'.$chu->title.'+'.$wei->title;
     	$data['time'] = time();
     	$data['status'] = 0;
@@ -679,7 +679,165 @@ class AllController extends Controller
 			return response()->json(2);
 		}
 
-		
-
 	}
+
+    public function packedit($id)
+    {
+        $data = \DB::table('pack')->where('id',$id)->first();
+        $data->paths = explode('+',$data->paths);
+        
+        $or1 = \DB::table('zi')->where('pid',1)->get();
+        $or2 = \DB::table('zi')->where('pid',2)->get();
+        $or3 = \DB::table('zi')->where('pid',3)->get();
+
+        return view('admin.all.packedit',['title'=>'套餐编辑','data'=>$data,'or1'=>$or1,'or2'=>$or2,'or3'=>$or3]);
+    }
+
+    public function packedits(Request $request)
+    {
+        $data = $request->except('_token','ji','wei','chu','img1','img2','img3');
+        $this->validate($request,[
+            'title' => 'required|min:2|max:10',
+            'con'   => 'required|min:10|max:120',
+            'img1'=>'image|file',
+            'img2'=>'image|file',
+            'img3'=>'image|file',
+            'ji' =>'required',
+            'wei' =>'required',
+            'chu' =>'required'
+            
+
+        ],[
+            'title.required'=>'标题不能为空',
+            'title.min'=>'标题最少2位',
+            'title.max'=>'标题最大8位',
+            'con.required'=>'简介不能为空',
+            'con.min'=>'简介最少10位',
+            'con.max'=>'简介最大120位',
+            'img1.image'=>'请上传图片类型的文件',
+            'img1.file'=>'图片上传失败',
+            'img2.image'=>'请上传图片类型的文件',
+            'img2.file'=>'图片上传失败',
+            'img3.image'=>'请上传图片类型的文件',
+            'img3.file'=>'图片上传失败',
+
+        ]);
+
+        if($request->hasFile('img1'))
+        {
+            if($request->file('img1')->isValid())
+            { 
+          //获取后缀名
+                $ext=$request->file('img1')->extension();
+                
+          //获取新名
+                $img1=time().mt_rand(10000,99999).'.'.$ext;
+          //执行移动
+                $request->file('img1')->move('./uploads/all/pack/',$img1);
+          //添加数据
+                // $data['img']=$fileName;
+            }else{
+            return back()->withInput()->with(['info'=>'图片1上传失败']);
+
+            }
+        }else{
+            $img1 = false;
+        }
+
+        if($request->hasFile('img2'))
+        {
+            if($request->file('img2')->isValid())
+            { 
+          //获取后缀名
+                $ext=$request->file('img2')->extension();
+                
+          //获取新名
+                $img2=time().mt_rand(10000,99999).'.'.$ext;
+          //执行移动
+                $request->file('img2')->move('./uploads/all/pack/',$img2);
+          //添加数据
+                // $data['img2']=$fileName;
+            }else{
+            return back()->withInput()->with(['info'=>'图片2上传失败']);
+
+            }
+        }else{
+            $img2 = false;
+        }
+
+        if($request->hasFile('img3'))
+        {
+            if($request->file('img3')->isValid())
+            { 
+          //获取后缀名
+                $ext=$request->file('img3')->extension();
+                
+          //获取新名
+                $img3=time().mt_rand(10000,99999).'.'.$ext;
+          //执行移动
+                $request->file('img3')->move('./uploads/all/pack/',$img3);
+          //添加数据
+                // $data['img3']=$fileName;
+            }else{
+            return back()->withInput()->with(['info'=>'图片3上传失败']);
+
+            }
+        }else{
+            $img3 = false;
+        }
+
+        $data['paths'] = $request->ji.'+'.$request->chu.'+'.$request->wei;
+        $res = \DB::table('pack')->select('img')->where('id',$request->id)->first();
+        $img = explode(',',$res->img);
+        $im = $img;
+        if( $img1 != false )
+        {
+            $img[0] = $img1;
+        }
+        if( $img2 != false )
+        {
+            $img[1] = $img2;
+        }
+        if( $img3 != false )
+        {
+            $img[2] = $img3;
+        }
+        
+        $data['img'] = implode(',',$img);
+        
+        $result = \DB::table('pack')->where('id',$request->id)->update($data);
+        
+        if($result)
+        {
+            if( $img1 != false && file_exists('./uploads/all/pack/'.$im[0]))
+            {
+                @unlink('./uploads/all/pack/'.$im[0]);
+            }
+            if( $img2 != false && file_exists('./uploads/all/pack/'.$im[1]))
+            {
+                @unlink('./uploads/all/pack/'.$im[1]);
+            }
+            if( $img3 != false && file_exists('./uploads/all/pack/'.$im[2]))
+            {
+                @unlink('./uploads/all/pack/'.$im[2]);
+            }
+            return redirect('admin/package/all/pack')->with(['info'=>'更新成功']);
+        }else
+        {
+            if( $img3 != false && file_exists('./uploads/all/pack/'.$img1) )
+            {
+                @unlink('./uploads/all/pack/'.$img1);
+            }
+            if( $img3 != false && file_exists('./uploads/all/pack/'.$img2) )
+            {
+                @unlink('./uploads/all/pack/'.$img2);
+            }
+            if( $img3 != false && file_exists('./uploads/all/pack/'.$img3) )
+            {
+                @unlink('./uploads/all/pack/'.$img3);
+            }
+
+            return back()->with(['info'=>'更新失败!']);
+        }
+    }
 }

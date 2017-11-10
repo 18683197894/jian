@@ -35,8 +35,8 @@
 .bannerbox{width:100%;position:relative;overflow:hidden;}
 /*#888484*/
 .Homebanner{width:100%;position:relative;height:600px;overflow:hidden;}
-.Homebanner ul{width:100%;position:absolute;height:600px;}
-.Homebanner ul li{width:100%;height:600px;position:absolute;overflow:hidden;}
+.Homebanner ul{width:1900px;position:absolute;height:600px;}
+.Homebanner ul li{width:1900px;height:600px;position:absolute;overflow:hidden;}
 .Homebanner ul li img{width:1900px;position:absolute;left:50%;top:0px;display:block;margin-left:-950px;height:600px;}
 .Homeleft,.Homeright{background:rgba(136,132,132,0.8);;font-family:"宋体";width:50px;height:50px;line-height:50px;text-align:center;font-size:40px;color:#fff;position:absolute;top:45%;cursor:pointer;transition:all .2s ease;opacity:0;z-index:899999}
 .Homeleft{left:-60px;}
@@ -948,15 +948,15 @@
 
 					<div class="Homebanner">
 						<ul>
-							<li class="Load cur" style="z-index:99">
+							<li class="Load cur" style="z-index:99;width:100%">
 								<img width="100%" src="{{ asset('home/lunpo/index/1.png') }}" alt="">
 
 							</li>
-							<li class="Load">
+							<li class="Load" style="width:100%">
 								<img width="100%" src="{{ asset('home/lunpo/index/1.png') }}" alt="">
 
 							</li>
-							<li class="Load"><img width="100%" src="{{ asset('home/lunpo/index/1.png') }}" alt="">
+							<li class="Load" style="width:100%"><img width="100%" src="{{ asset('home/lunpo/index/1.png') }}" alt="">
 
 							</li>
 						</ul>
