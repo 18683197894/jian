@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 class AdminController extends Controller
 {
     function index(){
@@ -63,17 +64,95 @@ class AdminController extends Controller
     public function sou(Request $request)
     {   
         $key = isset($request->con)?trim($request->con):'';
-        $data = array();
-        $data = \DB::table('news')->select('id','title','time')->where('title','like','%'.$key.'%')->orderBy('time','desc')->paginate(18);
-        $data->appends(['con'=>$key]);
-
-        $xun = \DB::table('news')->select('id','title')->orderby('click','desc')->skip(0)->take(10)->get();
-        $qi  = \DB::table('newslei')->select('id','title','img')->get();
+        $arr = array();
+       
+        $plate = \DB::table('platenews')->select('id','title','time','pid','click')->where('title','like','%'.$key.'%')->orderby('time','desc')->get();
+        $gongyi = \DB::table('gongyinews')->select('id','title','time','zhi','click')->where('title','like','%'.$key.'%')->orderby('time','desc')->get();
+        $data = \DB::table('news')->select('id','title','time','yuan','click')->where('title','like','%'.$key.'%')->orderBy('time','desc')->get();
+        
+        $xun1 = \DB::table('news')->select('id','title','time','yuan','click')->get()->toArray();
+        $xun2 = \DB::table('gongyinews')->select('id','title','zhi','time','click')->get()->toArray();
+        $xun3 = \DB::table('platenews')->select('id','title','time','pid','click')->get()->toArray();
+        $xun = array_merge($xun1,$xun2,$xun3);
+       
         $other = [];
-        if( count($data) <= 0 )
+        $paginator = [];
+         function num($num1,$num2,$arr)
+            {
+                if(is_array($num1) && is_array($num2) && is_array($arr) )
+                {
+                     array_multisort($num1,SORT_NUMERIC,SORT_DESC,$num2,SORT_NUMERIC,SORT_DESC,$arr);
+                }
+                return $arr;
+            }
+        
+        $arr = array_merge($data->toArray(),$gongyi->toArray(),$plate->toArray());
+        
+        if( count($arr) > 0 )
         {
-            $other = \DB::table('news')->select('id','title','time')->orderby( \DB::raw('RAND()') )->take(12)->get();
+
+        foreach( $arr as $aa => $bb )
+        {
+            $num1[$aa] = $bb->click;
+            $num2[$aa] = $bb->time;
         }
-        return view('home.sou.sou',['other'=>$other,'title'=>$key,'data'=>$data,'request'=>$request->all(),'xun'=>$xun,'qi'=>$qi]);
+        $arr = num($num1,$num2,$arr);
+        
+        //分页显示条数
+        $perPage = 10;
+        //判断页面分页url是第几页
+        if( $request->has('page') )
+        {
+            $current_page = $request->input('page');
+            $current_page = $current_page <=0?1:$current_page;
+        }else
+        {
+            $current_page = 1;
+        }
+        //数组切片 获取当前页的数据
+        $item = array_slice($arr,($current_page - 1) * $perPage,$perPage);
+
+        //获取总数
+        $total = count($arr);
+
+        //手动创建分页 等同于 paginate() 
+        //传递数据到分页模型 ：当前页的数据，每页显示条数，第几页
+        $paginator = new LengthAwarePaginator($item,$total,$perPage,$current_page,[
+            'path' => Paginator::resolveCurrentPath(), //设置分页的地址
+            'pageName' => 'page',  //页面url第几页的标识 可无 默认page
+            ]);
+
+        //设置分页的地址
+        // $paginator ->setPath(Paginator::resolveCurrentPath());
+
+        //将搜索条件写入分页链接
+        $paginator->appends(['con'=>$key]);
+         
+        }else
+        {
+          
+            shuffle($xun);
+            $other = array_slice($xun,0,12);
+            foreach( $other as $key => $value )
+            {
+                $click[$key] = $value->click;
+                $time[$key] = $value->time; 
+            }
+            
+           
+            $other = num($click,$time,$other);
+            
+
+        }
+        // $xun = \DB::table('news')->select('id','title')->orderby('click','desc')->skip(0)->get();
+        foreach( $xun as $z => $v )
+        {
+            $cl[$z] = $v->click;
+            $ti[$z] = $v->time;
+        }
+        $xuns = num($cl,$ti,$xun);
+        $xuns  = array_slice($xuns,0,10);
+
+        return view('home.sou.sou',['other'=>$other,'title'=>$key,'data'=>$paginator,'request'=>$request->all(),'xun'=>$xuns]);
     }
 }

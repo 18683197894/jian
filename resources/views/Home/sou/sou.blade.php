@@ -159,15 +159,16 @@
 		      
 				@if(isset($data) && count($data) > 0)	
 				@foreach($data as $k => $v)			  
-				  <li class="z-n-li1"><a href="{{ url('/news/list/') }}/{{ $v->id }}">{{ $v->title }}</a><span>{{ date('Y-m-d',$v->time) }}</span></li>
+				  <li class="z-n-li1"><a href="@if( isset($v->yuan) ) {{ url('/news/list/') }}/{{ $v->id }} @endif @if( isset($v->zhi) ) {{ url('/home/gongyi/play/') }}/{{ $v->id }} @endif @if( isset($v->pid) ) {{ url('/home/plate/play/') }}/{{ $v->id }} @endif">{{ $v->title }}</a><span>{{ date('Y-m-d',$v->time) }}</span></li>
 				@endforeach
 				@else
-				<li style="margin-left:320px;margin-top:30px;font-size:15px">未搜索到文章</li>
+				<li style="margin-left:320px;margin-bottom:30px;font-size:15px">未搜索到文章</li>
 
 				@endif
 			   </ul><div style="clear:both;"></div>
-			   
+			   @if( count($data) > 0) 
 			   <div class="z-page" style="text-algin:center">{{ $data->links() }}</div>
+			   @endif
 		   </div>
 		   @if(isset($other) && count($other) > 0)	
 		   <div class="z-news-con-l">
@@ -175,7 +176,7 @@
 		       <ul>
 		
 				@foreach($other as $z => $s)			  
-				  <li class="z-n-li1"><a href="{{ url('/news/list/') }}/{{ $s->id }}">{{ $s->title }}</a><span>{{ date('Y-m-d',$s->time) }}</span></li>
+				  <li class="z-n-li1"><a href="@if( isset($s->yuan) ) {{ url('/news/list/') }}/{{ $s->id }} @endif @if( isset($s->zhi) ) {{ url('/home/gongyi/play/') }}/{{ $s->id }} @endif @if( isset($s->pid) ) {{ url('/home/plate/play/') }}/{{ $s->id }} @endif">{{ $s->title }}</a><span>{{ date('Y-m-d',$s->time) }}</span></li>
 				@endforeach
 
 				
@@ -186,19 +187,7 @@
 		   </div>
 
 	       <div class="z-news-con-r">
-		      <div class="z-news-r-1">
-			     <p>新闻板块推荐</p>
-			     <ul>
-			     @if(isset($qi) && count($qi) > 0)
-					@foreach($qi as $kkk => $vvv)
-				    <li><img src="{{ asset('uploads/news/img/') }}/{{ $vvv->img }}" width="120" height="60"/><a href="{{ url('/news/') }}/{{ $vvv->id }}"><b>@php echo mb_substr($vvv->title,0,19,'utf8')."‥" @endphp</b></a><span></span></li>
-				 	@endforeach
-				 @else
-				    <li style="margin-left:190px;margin-top:30px">未找到</li>
-				
-				 @endif
-				 </ul>
-			  </div>
+		   
 
 			  <div style="clear:both;"></div>		  
 			  <div class="z-news-r-2">
@@ -206,7 +195,7 @@
 				  <ul>
 				  	@if(isset($xun) && count($xun)>0)
 				  	@foreach($xun as $kk => $vv)
-				     <li><a href="{{ url('/news/list/') }}/{{ $vv->id }}">@php echo mb_substr($vv->title,0,26,'utf8')."‥" @endphp</a></li> 
+				     <li><a href="@if( isset($vv->yuan) ) {{ url('/news/list/') }}/{{ $vv->id }} @endif @if( isset($vv->zhi) ) {{ url('/home/gongyi/play/') }}/{{ $vv->id }} @endif @if( isset($vv->pid) ) {{ url('/home/plate/play/') }}/{{ $vv->id }} @endif">@php echo mb_substr($vv->title,0,26,'utf8')."‥" @endphp</a></li> 
 					@endforeach
 				  	@endif
 

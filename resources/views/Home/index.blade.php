@@ -987,7 +987,7 @@
 					<select id="selectPointOfInterest" class="select" title="选择楼盘">
 					<option value="浙商临港新天地">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浙商.临港新天地</option>
 					<option value="德福公元">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;德福公元</option>
-					<option value="华富御景庄团">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;华富御景庄团</option>
+					<option value="织经东方巴黎">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;织经东方巴黎</option>
 					</select>
 					</label>
 				</div>
@@ -1037,7 +1037,7 @@
 		<ul>
 			<li class="z-con_4_lil"> <a href="{{ url('/propertieszshx') }}"> <img  data-original="{{ asset('home/images/index/6.png') }}" alt=""> <span>浙商.临港新天地</span> </li></a>
 			<li class="z-con_4_li"> <a href="{{ url('/propertiesdfhx') }}"><img  data-original="{{ asset('home/images/index/7.png') }}" alt=""> <span>德福公元</span> </li></a>
-			<li class="z-con_4_li"> <a href="{{ url('/propertieshfhx') }}"><img  data-original="{{ asset('home/images/index/8.png') }}" alt=""> <span>华富.御景庄园</span> </li></a>
+			<li class="z-con_4_li"> <a href="{{ url('/propertieshfhx') }}"><img  data-original="{{ asset('home/images/index/zj.jpg') }}" alt=""> <span>织经东方巴黎</span> </li></a>
 		</ul>
    	</div>
    	<div class="z-con_5"> <!-- 德系工艺品质保障 -->

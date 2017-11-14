@@ -58,6 +58,7 @@
                     <option  value="别墅">别墅</option>
                     <option  value="复式">复式</option>
                     <option  value="自建">自建</option>
+                    <option  value="其他">其他</option>
                   </select>
                 </div>
   
@@ -97,6 +98,8 @@
                     <option  value="18万-30万">18万-30万</option>
                     <option  value="30万-50万">30万-50万</option>
                     <option  value="50万以上">50万以上</option>
+                    <option  value="其他">其他</option>
+                    
                     
                   </select>
                 </div>

@@ -90,7 +90,7 @@
 					<div style="padding-top:5px;position:relative">
 						<span style="font-size:16px;color:#848484">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						&nbsp;&nbsp;&nbsp;路与长翠路交叉口</span>
-						<a href=""><div style="position:absolute;left:208px;bottom:6px " class="pin icon"></div></a>
+						<!-- <a href=""><div style="position:absolute;left:208px;bottom:6px " class="pin icon"></div></a> -->
 					
 					
 					</div>
@@ -314,7 +314,7 @@
 							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:一房一厅</span>
 						</div>
 						<div id="xiang_1_3">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 62.0㎡</span>
+							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 51.0㎡</span>
 						</div>
 						<div id="xiang_1_4">
 							<span style="font-size:16px;background-color:red;color:#f6f6f6">待售</span>
@@ -383,7 +383,7 @@
 							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:一房一厅</span>
 						</div>
 						<div id="xiang_1_3">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 62.0㎡</span>
+							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 52.0㎡</span>
 						</div>
 						<div id="xiang_1_4">
 							<span style="font-size:16px;background-color:red;color:#f6f6f6">待售</span>
@@ -452,7 +452,7 @@
 							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:一房一厅</span>
 						</div>
 						<div id="xiang_1_3">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 62.0㎡</span>
+							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 54.0㎡</span>
 						</div>
 						<div id="xiang_1_4">
 							<span style="font-size:16px;background-color:red;color:#f6f6f6">待售</span>
