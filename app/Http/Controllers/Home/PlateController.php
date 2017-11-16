@@ -15,7 +15,7 @@ class PlateController extends Controller
         $qi  = \DB::table('plate')->select('id','title','img','time')->where('id','!=',$id)->orderby('time','desc')->skip(0)->take(6)->get();
         $tit = \DB::table('plate')->select('id','titles','title','keyworlds','description')->where('id',$id)->first();
         
-        return view('home.plate.index',['title'=>$tit->titles,'keyworlds'=>$tit->keyworlds,'description'=>$tit->description,'data'=>$data,'zhi'=>$zhi,'xun'=>$xun,'qi'=>$qi,'tit'=>$tit]);
+        return view('Home.plate.index',['title'=>$tit->titles,'keyworlds'=>$tit->keyworlds,'description'=>$tit->description,'data'=>$data,'zhi'=>$zhi,'xun'=>$xun,'qi'=>$qi,'tit'=>$tit]);
     }
 
     public function play($id)
@@ -30,6 +30,6 @@ class PlateController extends Controller
         $data->yuan = \DB::table('plate')->select('title')->where('id',$data->pid)->first()->title;
         $num = $data->click + 1;
         \DB::table('platenews')->where('id',$id)->update(['click'=>$num]);
-        return view('home.plate.play',['data'=>$data,'title'=>$data->titles,'keyworlds'=>$data->keyworlds,'description'=>$data->description,'qi'=>$qi,'xun'=>$xun]);
+        return view('Home.plate.play',['data'=>$data,'title'=>$data->titles,'keyworlds'=>$data->keyworlds,'description'=>$data->description,'qi'=>$qi,'xun'=>$xun]);
     }
 }

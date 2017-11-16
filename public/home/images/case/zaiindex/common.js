@@ -75,18 +75,22 @@ $('.dian > .button1').on('click',function(){
 			})
 	})
 
-	$('.right > ul li').on('click',function(){
+	$('.right > ul li').one('click',tiao);
+		
+	function tiao()
+	{	
+		var li = $(this);
 		var index = $(this).attr('index');
 		if( index == 1 )
 		{
 			return false;
 		}
-		
 		var value = $(this).html();
 		var ip = $(this).parent('ul').attr('index');
 
 		$.ajax('/home/case/zaiajax/',{
 			type : 'get',
+			async : false,
 			data:{ip:ip,value:value},
 			success : function(data)
 			{
@@ -95,15 +99,17 @@ $('.dian > .button1').on('click',function(){
 					
 					location.reload([true]);
 				}else
-				{
-					alert('条件查询失败！请重试');
+				{	
+					li.one('click',tiao);
+					// alert('条件查询失败！请重试');
 				}
 			},
 			error : function(data)
-			{
-				alert('条件查询失败！请重试');
-			},
-			dataType : 'json'
-		})
+			{	
+					li.one('click',tiao);
 
-	})
+				// alert('条件查询失败！请重试');
+			},
+			dateType : 'json'
+		})
+	}

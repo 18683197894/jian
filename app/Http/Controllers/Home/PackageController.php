@@ -125,13 +125,13 @@ class PackageController extends Controller
         
         $key = \DB::table('webpage')->select('titles','keyworlds','description')->where('id',19)->first();
     	
-    	return view('home.package.softroll',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description,'arr1'=>$arr1,'arr2'=>$arr2,'arr3'=>$arr3]);
+    	return view('Home.package.softroll',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description,'arr1'=>$arr1,'arr2'=>$arr2,'arr3'=>$arr3]);
     }
 
     public function houseroom(){
         $key = \DB::table('webpage')->select('titles','keyworlds','description')->where('id',20)->first();
 
-    	return view('home.package.houseroom',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]); 
+    	return view('Home.package.houseroom',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]); 
     }
     public function ajax(Request $request)
     {

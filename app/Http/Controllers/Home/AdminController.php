@@ -58,7 +58,7 @@ class AdminController extends Controller
     	}
     	
         $key = \DB::table('webpage')->select('titles','keyworlds','description')->where('id',1)->first();
-    	return view('home.index',['data'=>$data,'plate'=>$plate,'case'=>$case,'keyworlds'=>$key->keyworlds,'description'=>$key->description]);
+    	return view('Home.index',['data'=>$data,'plate'=>$plate,'case'=>$case,'keyworlds'=>$key->keyworlds,'description'=>$key->description]);
     }
 
     public function sou(Request $request)
@@ -153,6 +153,6 @@ class AdminController extends Controller
         $xuns = num($cl,$ti,$xun);
         $xuns  = array_slice($xuns,0,10);
 
-        return view('home.sou.sou',['other'=>$other,'title'=>$key,'data'=>$paginator,'request'=>$request->all(),'xun'=>$xuns]);
+        return view('Home.sou.sou',['other'=>$other,'title'=>$key,'data'=>$paginator,'request'=>$request->all(),'xun'=>$xuns]);
     }
 }

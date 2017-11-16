@@ -1,5 +1,9 @@
 
-	$('.right > ul li').on('click',function(){
+	$('.right > ul li').one('click',tiao);
+		
+	function tiao()
+	{	
+		var li = $(this);
 		var index = $(this).attr('index');
 		if( index == 1 )
 		{
@@ -7,8 +11,6 @@
 		}
 		var value = $(this).html();
 		var ip = $(this).parent('ul').attr('index');
-		
-		
 
 		$.ajax('/home/case/tiaoajax/',{
 			type : 'get',
@@ -21,16 +23,17 @@
 					
 					location.reload([true]);
 				}else
-				{
-					alert('条件查询失败！请重试');
+				{	
+					li.one('click',tiao);
+					// alert('条件查询失败！请重试');
 				}
 			},
 			error : function(data)
-			{
+			{	
+					li.one('click',tiao);
+
 				// alert('条件查询失败！请重试');
 			},
 			dateType : 'json'
 		})
-
-	})
-	
+	}

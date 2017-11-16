@@ -20,7 +20,7 @@ class GongyiController extends Controller
             ->get();
         $tit = \DB::table('gongyi')->select('id','titles','title','keyworlds','description')->where('id',$id)->first();
         
-        return view('home.gongyi.index',['title'=>$tit->titles,'keyworlds'=>$tit->keyworlds,'description'=>$tit->description,'data'=>$data,'zhi'=>$zhi,'xun'=>$xun,'qi'=>$qi,'tit'=>$tit]);
+        return view('Home.gongyi.index',['title'=>$tit->titles,'keyworlds'=>$tit->keyworlds,'description'=>$tit->description,'data'=>$data,'zhi'=>$zhi,'xun'=>$xun,'qi'=>$qi,'tit'=>$tit]);
     }
     public function play(Request $request,$id)
     {
@@ -34,7 +34,7 @@ class GongyiController extends Controller
         $data->yuan = \DB::table('gongyi')->select('title')->where('id',$data->pid)->first()->title;
         $num = $data->click + 1;
         \DB::table('gongyinews')->where('id',$id)->update(['click'=>$num]);
-        return view('home.gongyi.play',['data'=>$data,'title'=>$data->titles,'keyworlds'=>$data->keyworlds,'description'=>$data->description,'qi'=>$qi,'xun'=>$xun]);
+        return view('Home.gongyi.play',['data'=>$data,'title'=>$data->titles,'keyworlds'=>$data->keyworlds,'description'=>$data->description,'qi'=>$qi,'xun'=>$xun]);
     }
 }
 
