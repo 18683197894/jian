@@ -39,7 +39,7 @@
 				</div>
 				<div id="content_1_2">
 					<div id="content_1_2_1">
-						<p id="p1">织经.东方巴黎</p>
+						<p id="p1">织金.东方巴黎</p>
 						<p id="p2">贵州-毕节</p>
 					<div id="nve">
 					
@@ -65,7 +65,7 @@
 						<span style="font-size:16px;color:#848484">物业类型:&nbsp;商铺 住宅</span>
 					</div>
 					<div style="padding-top:12px;position: relative;">
-						<span style="font-size:16px;color:#848484">楼盘地址:&nbsp;贵州省毕节市织经县</span>
+						<span style="font-size:16px;color:#848484">楼盘地址:&nbsp;贵州省毕节市织金县</span>
 						<!-- <div style="position: absolute;right:25px;bottom:6px" class="pin icon"></div> -->
 					</div>
 	
@@ -216,7 +216,7 @@
 				<div id="content_2_4">
 					<div id="xiang_1">
 						<div id="xiang_1_1">
-							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织经东方巴黎A户型</span>
+							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织金东方巴黎A户型</span>
 						</div>
 						<div id="xiang_1_2">
 							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:两室一厅一卫</span>
@@ -286,7 +286,7 @@
 				<div id="content_2_4">
 					<div id="xiang_1">
 						<div id="xiang_1_1">
-							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织经东方巴黎B户型</span>
+							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织金东方巴黎B户型</span>
 						</div>
 						<div id="xiang_1_2">
 							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:两室一厅一卫</span>
@@ -355,7 +355,7 @@
 				<div id="content_2_4">
 					<div id="xiang_1">
 						<div id="xiang_1_1">
-							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织经东方巴黎C户型</span>
+							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织金东方巴黎C户型</span>
 						</div>
 						<div id="xiang_1_2">
 							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:两室一厅一卫</span>
@@ -424,7 +424,7 @@
 				<div id="content_2_4">
 					<div id="xiang_1">
 						<div id="xiang_1_1">
-							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织经东方巴黎D户型</span>
+							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织金东方巴黎D户型</span>
 						</div>
 						<div id="xiang_1_2">
 							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:三室一厅一卫</span>

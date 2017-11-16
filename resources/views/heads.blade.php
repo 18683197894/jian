@@ -123,7 +123,7 @@
 			<ul>
 				<li><a href="{{ url('/propertieszshx') }}">浙商新天地</a></li>
 				<li><a href="{{ url('/propertiesdfhx') }}">德福公元</a></li>
-				<li style="width:100px"><a href="{{ url('/propertieshfhx') }}">织经东方巴黎</a></li>
+				<li style="width:100px"><a href="{{ url('/propertieshfhx') }}">织金东方巴黎</a></li>
 			</ul>
 		</div>
 	</div>
