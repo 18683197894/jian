@@ -75,14 +75,14 @@ Route::get('/home/package/subclass/ajax/','Home\PackageController@ajax');
 Route::get('/package/houseroom','Home\PackageController@houseroom');
 
 //合作加盟
-Route::get('/jsgw/franchise','home\JsgwController@franchise');
+Route::get('/jsgw/franchise','Home\JsgwController@franchise');
 Route::post('/jsgw/franchise/zmajax','Home\JsgwController@zmajax');
 
 //产品供应
 Route::get('/jsgw/supply','Home\JsgwController@supply');
 
 //廉洁规章
-Route::get('/jsgw/honest','home\JsgwController@honest');
+Route::get('/jsgw/honest','Home\JsgwController@honest');
 
 //采购商入驻
 Route::get('/jsgw/cgs','Home\JsgwController@cgs');
