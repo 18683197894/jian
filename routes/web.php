@@ -32,7 +32,7 @@ Route::get('/jsgw/zhanlui','Home\JsgwController@zhanlui');
 
 //联系我们
 Route::get('/jsgw/contact','Home\JsgwController@contact');
-
+Route::get('/jsgw/goujia','Home\JsgwController@goujia');
 //用人理念
 Route::get('/jsgw/job1','Home\JsgwController@job1');
 

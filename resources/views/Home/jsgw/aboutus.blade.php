@@ -13,6 +13,8 @@
 		     <li class="jsliactive"><a href="{{ url('jsgw/aboutus') }}">企业简介</a></li>
 			 <li><a href="{{ url('jsgw/tuandui') }}">运营团队</a></li>
 			 <li><a href="{{ url('jsgw/zhanlui') }}">发展战略</a></li>
+			 <li><a href="{{ url('jsgw/goujia') }}">组织构架</a></li>
+			 <li ><a href="{{ url('jsgw/contact') }}">联系我们</a></li>
 		  </ul>
 	   </div><div style="clear:both;"></div>
        <div class="js-about-intr">

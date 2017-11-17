@@ -13,6 +13,8 @@
 		     <li><a href="{{ url('jsgw/aboutus') }}">企业简介</a></li>
 			 <li class="jsliactive"><a href="{{ url('jsgw/tuandui') }}">运营团队</a></li>
 			 <li><a href="{{ url('jsgw/zhanlui') }}">发展战略</a></li>
+			 <li><a href="{{ url('jsgw/goujia') }}">组织构架</a></li>
+			 <li ><a href="{{ url('jsgw/contact') }}">联系我们</a></li>
 		  </ul>
 	   </div>
        <div class="about-tuandui1"><h1>专业的运营团队</h1><p>建商联盟具有经验丰富的运营管理、市场推广、财务审核和后勤保障团队，精细化的数据分析和风险管控能力，确保业务正常运行。公司运营管理团队具有丰富的实践经验，对整个家居建材构成了科学的管理体系，是一批具有创新意识和强烈社会责任感，更注重为消费者和商家提供精细化服务，充分利用“互联网+”，整合资源，开拓家具建材新局面，打造全新生态圈。</p></div>

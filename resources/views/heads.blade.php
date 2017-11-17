@@ -69,7 +69,7 @@
 				<li><a href="{{ url('/jsgw/aboutus') }}">关于建商</a></li>
 				<li><a href="{{ url('/jsgw/tuandui') }}">运营团队</a></li>
 				<li><a href="{{ url('/jsgw/zhanlui') }}">发展战略</a></li>
-				<li><a href="{{ url('') }}">组织构架</a></li>
+				<li><a href="{{ url('/jsgw/goujia') }}">组织构架</a></li>
 				<li><a href="{{ url('/jsgw/contact') }}">联系方式</a></li>
 				
 			</ul>

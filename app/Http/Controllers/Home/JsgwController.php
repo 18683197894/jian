@@ -27,6 +27,11 @@ class JsgwController extends Controller
         $key = \DB::table('webpage')->select('titles','keyworlds','description')->where('id',8)->first();
     	return view('Home.jsgw.contact',['title'=>$key->titles,'keyworlds'=>$key->keyworlds,'description'=>$key->description]);
     }
+
+    public function goujia()
+    {
+        return view('home.jsgw.goujia');
+    }
     //用人理念
     public function job1(){
         $key = \DB::table('webpage')->select('titles','keyworlds','description')->where('id',9)->first();
