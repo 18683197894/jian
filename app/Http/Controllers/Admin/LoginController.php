@@ -9,7 +9,7 @@ class LoginController extends Controller
 {
     public function login(){
     	if(session('Admin')){
-    		return redirect('jslmAdmin/index');
+    		return redirect('/jslmadmin/index');
     	}
     	return view('Admin.login.index',['title'=>'登入']);
     }
@@ -27,7 +27,7 @@ class LoginController extends Controller
 
       $data = $request->except('_token'); 
 
-      $res = \DB::table('Admin_users')->where('name',$data['name'])->first();
+      $res = \DB::table('admin_users')->where('name',$data['name'])->first();
       if(!$res){
       	return back()->withInput()->with(['info'=>'用户名或密码错误']);
       }
