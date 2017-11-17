@@ -1037,7 +1037,7 @@
 		<ul>
 			<li class="z-con_4_lil"> <a href="{{ url('/propertieszshx') }}"> <img  data-original="{{ asset('home/images/index/6.png') }}" alt=""> <span>浙商.临港新天地</span> </li></a>
 			<li class="z-con_4_li"> <a href="{{ url('/propertiesdfhx') }}"><img  data-original="{{ asset('home/images/index/7.png') }}" alt=""> <span>德福公元</span> </li></a>
-			<li class="z-con_4_li"> <a href="{{ url('/propertieshfhx') }}"><img  data-original="{{ asset('home/images/index/zj.jpg') }}" alt=""> <span>织经东方巴黎</span> </li></a>
+			<li class="z-con_4_li"> <a href="{{ url('/propertieshfhx') }}"><img  data-original="{{ asset('home/images/index/zj.jpg') }}" alt=""> <span>织金东方巴黎</span> </li></a>
 		</ul>
    	</div>
    	<div class="z-con_5"> <!-- 德系工艺品质保障 -->
