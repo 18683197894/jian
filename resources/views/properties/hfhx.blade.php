@@ -50,7 +50,7 @@
 					</div>
 					<div style="padding-top:20px;">
 					<span style="color:#c6c6c6;font-size:13px;">楼盘均价</span>
-					<span style="font-size:24px;color:red;font-weight:600">6088/1平方</span>
+					<span style="font-size:24px;color:red;font-weight:600">6088/m²</span>
 					<span style="color:#c6c6c6;font-size:13px">(2016年参考价)</span>
 					</div>
 					</div>

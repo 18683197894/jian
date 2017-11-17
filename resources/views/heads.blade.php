@@ -75,7 +75,7 @@
 			</ul>
 		</div>
 		<div id="div2">
-			<span>建设产业 ></span>
+			<span>建商产业 ></span>
 			<ul id="solid">
 				<li><a href="{{ url('/jsgw/ls') }}">新零售平台</a></li>
 				<li><a href="{{ url('/jsgw/jzf') }}">精装房项目</a></li>
