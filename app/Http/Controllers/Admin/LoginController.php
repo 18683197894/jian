@@ -8,8 +8,8 @@ use App\Http\Controllers\Controller;
 class LoginController extends Controller
 {
     public function login(){
-    	if(session('admin')){
-    		return redirect('jslmadmin/index');
+    	if(session('Admin')){
+    		return redirect('jslmAdmin/index');
     	}
     	return view('Admin.login.index',['title'=>'登入']);
     }
@@ -27,7 +27,7 @@ class LoginController extends Controller
 
       $data = $request->except('_token'); 
 
-      $res = \DB::table('admin_users')->where('name',$data['name'])->first();
+      $res = \DB::table('Admin_users')->where('name',$data['name'])->first();
       if(!$res){
       	return back()->withInput()->with(['info'=>'用户名或密码错误']);
       }
@@ -37,14 +37,14 @@ class LoginController extends Controller
       	return back()->withInput()->with(['info'=>'用户名或密码错误']);
 		}else{
 		
-		\session(['admin'=>$res]);
-		return redirect('/jslmadmin/index')->with(['info'=>'登入成功！']);
+		\session(['Admin'=>$res]);
+		return redirect('/jslmAdmin/index')->with(['info'=>'登入成功！']);
 		}
         
     }
     public function jslmext(){
-    	\session()->forget('admin');
-    	return redirect('/jslmadmin/login');
+    	\session()->forget('Admin');
+    	return redirect('/jslmAdmin/login');
     }
 
 }

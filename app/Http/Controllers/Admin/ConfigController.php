@@ -10,13 +10,13 @@ class ConfigController extends Controller
     public function webpage()
     {	
     	$data = \DB::table('webpage')->paginate(13);
-    	return view('admin.config.webpage',['title'=>'网页关键字','data'=>$data]);
+    	return view('Admin.config.webpage',['title'=>'网页关键字','data'=>$data]);
     }
     
     public function webpageedit($id)
     {
     	$data = \DB::table('webpage')->where('id',$id)->first();
-    	return view('admin.config.webpageedit',['title'=>'网页关键字更新','data'=>$data]);
+    	return view('Admin.config.webpageedit',['title'=>'网页关键字更新','data'=>$data]);
     }
 
     public function webpageedits(Request $request)
@@ -42,7 +42,7 @@ class ConfigController extends Controller
 
 		if($res)
 		{
-			return redirect('/admin/config/webpage')->with('info','更新成功');
+			return redirect('/Admin/config/webpage')->with('info','更新成功');
 		}else
 		{
 			return back()->with('info','更新失败');

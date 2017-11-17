@@ -11,7 +11,7 @@ class MakeController extends Controller
     {	
     	$key = isset($request->key) ? $request->key : '';
     	$data = \DB::table('lpyy')->select('id','phone','content','time','loupan')->where('phone','like','%'.$key.'%')->orderBy('time','desc')->paginate(10);
-    	return view('admin.make.indexpropermake',['title'=>'首页楼盘看房预约','data'=>$data,'request'=>$request->all()]);
+    	return view('Admin.make.indexpropermake',['title'=>'首页楼盘看房预约','data'=>$data,'request'=>$request->all()]);
     }
 
     public function indexpropermakeajax(Request $request)
@@ -50,7 +50,7 @@ class MakeController extends Controller
     	$key = isset($request->key) ? $request->key : '';
     	$data = \DB::table('zxyy')->select('id','phone','content','time')->where('phone','like','%'.$key.'%')->orderBy('time','desc')->paginate(10);
 
-    	return view('admin.make.indexationmake',['title'=>'首页装修报价预约','data'=>$data,'request'=>$request->all()]);
+    	return view('Admin.make.indexationmake',['title'=>'首页装修报价预约','data'=>$data,'request'=>$request->all()]);
     }
 
     public function indexationmakeajax(Request $request)
@@ -95,7 +95,7 @@ class MakeController extends Controller
 
     	}
 
-    	return view('admin.make.franchisezm',['title'=>'合作伙伴招募','data'=>$data,'request'=>$request->all()]);
+    	return view('Admin.make.franchisezm',['title'=>'合作伙伴招募','data'=>$data,'request'=>$request->all()]);
     }
 
     public function franchisezmajax(Request $request)
@@ -149,7 +149,7 @@ class MakeController extends Controller
     	->orderBy('time','desc')->paginate(10);
     	}
 
-    	return view('admin.make.caseplay',['title'=>'案例页装修设计预约','data'=>$data,'request'=>$request->all()]);
+    	return view('Admin.make.caseplay',['title'=>'案例页装修设计预约','data'=>$data,'request'=>$request->all()]);
 
     }
 

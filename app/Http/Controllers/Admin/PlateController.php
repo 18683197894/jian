@@ -9,7 +9,7 @@ class PlateController extends Controller
 {
     public function add()
     {
-    	return view('admin.plate.add',['title'=>'添加板块']);
+    	return view('Admin.plate.add',['title'=>'添加板块']);
     }
     public function adds(Request $request)
     {
@@ -62,7 +62,7 @@ class PlateController extends Controller
     	$res = \DB::table('plate')->insert($data);
     	if($res)
     	{
-    		return redirect('/admin/plate/index')->with(['info'=>'添加成功']);
+    		return redirect('/Admin/plate/index')->with(['info'=>'添加成功']);
     	}else
     	{	
     		unlink('./uploads/plate/img/'.$data['img']);
@@ -73,13 +73,13 @@ class PlateController extends Controller
     public function index()
     {
     	$data = \DB::table('plate')->select('id','title','img','time')->orderBy('time','desc')->paginate(10);
-    	return view('admin.plate.index',['title'=>'板块管理','data'=>$data]);  	
+    	return view('Admin.plate.index',['title'=>'板块管理','data'=>$data]);  	
     }
 
     public function edit($id)
     {
     	$data = \DB::table('plate')->where('id',$id)->first();
-    	return view('admin.plate.edit',['title'=>'模块编辑','data'=>$data]);
+    	return view('Admin.plate.edit',['title'=>'模块编辑','data'=>$data]);
     }
     public function edits(Request $request)
     {
@@ -142,7 +142,7 @@ class PlateController extends Controller
 
        if($res)
        {
-       	return redirect('admin/plate/index')->with(['info'=>'更新成功']);
+       	return redirect('Admin/plate/index')->with(['info'=>'更新成功']);
        }else
        {
        	return back()->with(['info'=>'更新失败！数据未更改']);
@@ -169,7 +169,7 @@ class PlateController extends Controller
     }
     public function newsadd($id)
     {
-    	return view('admin.plate.newsadd',['title'=>'知识学堂文章添加','pid'=>$id]);
+    	return view('Admin.plate.newsadd',['title'=>'知识学堂文章添加','pid'=>$id]);
     }
 
     public function newsadds(Request $request)
@@ -232,7 +232,7 @@ class PlateController extends Controller
 		
     	$res = \DB::table('platenews')->insert($data);
     	if($res){
-    		return redirect('/admin/plate/newslist/'.$data['pid'])->with(['info'=>'添加成功！']);
+    		return redirect('/Admin/plate/newslist/'.$data['pid'])->with(['info'=>'添加成功！']);
     	}else{
     		@unlink('./uploads/gongyi/newsimg'.$fileName);
     		return back()->withInput()->with(['info'=>'添加失败！请重试']);
@@ -243,7 +243,7 @@ class PlateController extends Controller
     public function newsedit($id)
     {
     	$data = \DB::table('platenews')->where('id',$id)->first();
-    	return view('admin.plate.newsedit',['title'=>'知识学堂文章更新','data'=>$data]);
+    	return view('Admin.plate.newsedit',['title'=>'知识学堂文章更新','data'=>$data]);
     }
 
     public function newsedits(Request $request)
@@ -298,7 +298,7 @@ class PlateController extends Controller
     	$res = \DB::table('platenews')->where('id',$request->id)->update($data);
 
     	if($res){
-    		return redirect('/admin/plate/newslist/'.$data['pid'])->with('info','更新成功');
+    		return redirect('/Admin/plate/newslist/'.$data['pid'])->with('info','更新成功');
     	}else{
     		return back()->with('info','更新失败 内容未更改！');
     	}

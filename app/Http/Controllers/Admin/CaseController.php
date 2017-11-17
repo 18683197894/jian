@@ -9,7 +9,7 @@ class CaseController extends Controller
 {
     public function add()
     {
-    	return view('admin.case.add',['title'=>'添加案例']);
+    	return view('Admin.case.add',['title'=>'添加案例']);
 
     }
 
@@ -42,7 +42,7 @@ class CaseController extends Controller
 		$res = \DB::table('case')->insert($data);
     	if($res)
     	{
-    		return redirect('/admin/case/index')->with(['info'=>'添加成功']);
+    		return redirect('/Admin/case/index')->with(['info'=>'添加成功']);
     	}else
     	{	
     		
@@ -64,10 +64,10 @@ class CaseController extends Controller
     	$data = \DB::table('case')->where('id',$id)->first();
     	if($data->or == 4)
     	{
-    	return view('admin.case.upd',['title'=>'进度更新','data'=>$data]);
+    	return view('Admin.case.upd',['title'=>'进度更新','data'=>$data]);
 
     	}
-    	return view('admin.case.edit',['title'=>'进度更新','data'=>$data]);
+    	return view('Admin.case.edit',['title'=>'进度更新','data'=>$data]);
     }
     public function edits(Request $request)
     {
@@ -143,7 +143,7 @@ class CaseController extends Controller
 
        if($res)
        {
-       	return redirect('admin/case/index')->with(['info'=>'更新成功']);
+       	return redirect('Admin/case/index')->with(['info'=>'更新成功']);
        }else
        {
        	foreach ($img as $k => $v) 
@@ -353,7 +353,7 @@ class CaseController extends Controller
 
     	if($res)
        	{
-       		return redirect('admin/case/index')->with(['info'=>'更新成功']);
+       		return redirect('Admin/case/index')->with(['info'=>'更新成功']);
        	}else
        	{
  			if(file_exists('./uploads/case/img/'.$data['keting']))

@@ -10,7 +10,7 @@ class RuanController extends Controller
 
 
     public function fgadd($id){
-    	return view('admin.ruan.fgadd',['title'=>'风格添加','pid'=>$id]);
+    	return view('Admin.ruan.fgadd',['title'=>'风格添加','pid'=>$id]);
     }
     public function fgadds(Request $request){
     	$data = $request->except('_token');
@@ -54,11 +54,11 @@ class RuanController extends Controller
     	}
     	$url='';
     	if($data['pid'] ==1){
-    		$url = '/admin/package/ruan/fashion';
+    		$url = '/Admin/package/ruan/fashion';
     	}elseif($data['pid'] ==2){
-    		$url = '/admin/package/ruan/joylity';
+    		$url = '/Admin/package/ruan/joylity';
     	}elseif($data['pid'] ==3){
-    		$url = '/admin/package/ruan/peghid';
+    		$url = '/Admin/package/ruan/peghid';
     	}
 		$res = \DB::table('fengge')->insert($data);
     	if($res){
@@ -73,20 +73,20 @@ class RuanController extends Controller
 
     public function fashion(){
     	$data = \DB::table('fengge')->where('pid',1)->get();
-    	return view('admin.ruan.fashion',['title'=>'时尚包','data'=>$data,'pid'=>1]);
+    	return view('Admin.ruan.fashion',['title'=>'时尚包','data'=>$data,'pid'=>1]);
     }
     public function joylity(){
     	$data = \DB::table('fengge')->where('pid',2)->get();
-    	return view('admin.ruan.fashion',['title'=>'质享包','data'=>$data,'pid'=>2]);
+    	return view('Admin.ruan.fashion',['title'=>'质享包','data'=>$data,'pid'=>2]);
     }
     public function peghid(){
     	$data = \DB::table('fengge')->where('pid',3)->get();
-    	return view('admin.ruan.fashion',['title'=>'臻藏包','data'=>$data,'pid'=>3]);
+    	return view('Admin.ruan.fashion',['title'=>'臻藏包','data'=>$data,'pid'=>3]);
     }
 
     public function fenggeedit($id){
     	$data = \DB::table('fengge')->where('id',$id)->first();
-    	return view('admin.ruan.fenggeedit',['title'=>'风格编辑','data'=>$data]);
+    	return view('Admin.ruan.fenggeedit',['title'=>'风格编辑','data'=>$data]);
     }
     public function fenggeedits(Request $request,$id){
 
@@ -139,11 +139,11 @@ class RuanController extends Controller
        $res = \DB::table('fengge')->where('id',$id)->update($data);
     	$url='';
     	if($de->pid ==1){
-    		$url = '/admin/package/ruan/fashion';
+    		$url = '/Admin/package/ruan/fashion';
     	}elseif($de->pid  ==2){
-    		$url = '/admin/package/ruan/joylity';
+    		$url = '/Admin/package/ruan/joylity';
     	}elseif($de->pid  ==3){
-    		$url = '/admin/package/ruan/peghid';
+    		$url = '/Admin/package/ruan/peghid';
     	}
        if($res)
        {
@@ -228,11 +228,11 @@ class RuanController extends Controller
     	$res = \DB::table('fengge')->where('id',$id)->first();
     	$pid = $res->pid;
     	$tit = $res->title;
-    	return view('admin.ruan.column',['title'=>'风格栏目','pid'=>$pid,'tit'=>$tit,'id'=>$id,'data'=>$data]);
+    	return view('Admin.ruan.column',['title'=>'风格栏目','pid'=>$pid,'tit'=>$tit,'id'=>$id,'data'=>$data]);
     }
 
     public function columnadd($id){
-    	return view('admin.ruan.columnadd',['id'=>$id,'title'=>'栏目添加']);
+    	return view('Admin.ruan.columnadd',['id'=>$id,'title'=>'栏目添加']);
     }
 
     public function columnadds(Request $request){
@@ -267,7 +267,7 @@ class RuanController extends Controller
 
     	if($res)
     	{
-    		return redirect('admin/package/ruan/fg/column/'.$data['pid'])->with(['info'=>'添加成功']);
+    		return redirect('Admin/package/ruan/fg/column/'.$data['pid'])->with(['info'=>'添加成功']);
     	}else
     	{
     		return back()->with(['info'=>'添加失败']);
@@ -276,7 +276,7 @@ class RuanController extends Controller
 
     public function columnedit($id){
     	$data = \DB::table('column')->where('id',$id)->first();
-    	return view('admin.ruan.columnedit',['title'=>'栏目编辑','data'=>$data]);
+    	return view('Admin.ruan.columnedit',['title'=>'栏目编辑','data'=>$data]);
     }
     public function columnedits(Request $request,$id){
     	$pid = $request->pid;
@@ -296,7 +296,7 @@ class RuanController extends Controller
 
 		if($res)
 		{
-			return redirect('/admin/package/ruan/fg/column/'.$pid)->with(['info'=>'更新成功']);
+			return redirect('/Admin/package/ruan/fg/column/'.$pid)->with(['info'=>'更新成功']);
 		}else
 		{
 			return back()->with(['info'=>'更新失败 数据未作更改！!']);
@@ -328,11 +328,11 @@ class RuanController extends Controller
     	$dd = \DB::table('column')->where('id',$id)->first();
     	$fid = $dd->fid;
     	$data = \DB::table('subclass')->where('pid',$id)->get();
-    	return view('admin.ruan.subclass',['data'=>$data,'title'=>'栏目子类','fid'=>$fid,'dd'=>$dd]);
+    	return view('Admin.ruan.subclass',['data'=>$data,'title'=>'栏目子类','fid'=>$fid,'dd'=>$dd]);
     }
     public function subclassadd($id){
 
-    	return view('admin.ruan.subclassadd',['id'=>$id,'title'=>'子类添加']);
+    	return view('Admin.ruan.subclassadd',['id'=>$id,'title'=>'子类添加']);
     }
 
     public function subclassadds(Request $request){
@@ -368,7 +368,7 @@ class RuanController extends Controller
 
 		if($res)
 		{
-			return redirect('/admin/package/ruan/fg/column/subclass/'.$data['pid'])->with(['info'=>'添加成功']);
+			return redirect('/Admin/package/ruan/fg/column/subclass/'.$data['pid'])->with(['info'=>'添加成功']);
 		}else
 		{
 			return back()->with(['info'=>'添加失败 数据类型错误']);
@@ -377,7 +377,7 @@ class RuanController extends Controller
 
     public function subclassedit($id){
     	$data = \DB::table('subclass')->where('id',$id)->first();
-    	return view('admin.ruan.subclassedit',['title'=>'子类编辑','data'=>$data]);
+    	return view('Admin.ruan.subclassedit',['title'=>'子类编辑','data'=>$data]);
     }
     public function subclassedits(Request $request){
     	$id = $request->id;
@@ -414,7 +414,7 @@ class RuanController extends Controller
 		$res = \DB::table('subclass')->where('id',$id)->update($data);
 		if($res)
 		{
-			return redirect('admin/package/ruan/fg/column/subclass/'.$pp->pid)->with(['info'=>'更新成功!']);
+			return redirect('Admin/package/ruan/fg/column/subclass/'.$pp->pid)->with(['info'=>'更新成功!']);
 		}else{
 			return back()->with(['info'=>'更新失败 数据未作更改!']);
 		}

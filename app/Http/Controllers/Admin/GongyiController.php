@@ -10,11 +10,11 @@ class GongyiController extends Controller
     public function index()
     {
     	$data = \DB::table('gongyi')->orderBy('time','desc')->paginate(10);
-    	return view('admin.gongyi.index',['title'=>'工艺列表','data'=>$data]);
+    	return view('Admin.gongyi.index',['title'=>'工艺列表','data'=>$data]);
     }
     public function leiadd()
     {
-    	return view('admin.gongyi.leiadd',['title'=>'添加工艺']);
+    	return view('Admin.gongyi.leiadd',['title'=>'添加工艺']);
     }
 
     public function leiadds(Request $request)
@@ -68,7 +68,7 @@ class GongyiController extends Controller
     	$res = \DB::table('gongyi')->insert($data);
     	if($res)
     	{
-    		return redirect('/admin/gongyi/lei/list')->with(['info'=>'添加成功']);
+    		return redirect('/Admin/gongyi/lei/list')->with(['info'=>'添加成功']);
     	}else
     	{	
     		unlink('./uploads/gongyi/img/'.$data['img']);
@@ -78,7 +78,7 @@ class GongyiController extends Controller
     public function edit($id)
     {
     	$data = \DB::table('gongyi')->where('id',$id)->first();
-    	return view('admin.gongyi.edit',['title'=>'工艺编辑','data'=>$data]);
+    	return view('Admin.gongyi.edit',['title'=>'工艺编辑','data'=>$data]);
     }
     public function edits(Request $request)
     {	
@@ -141,7 +141,7 @@ class GongyiController extends Controller
 
        if($res)
        {
-       	return redirect('admin/gongyi/lei/list')->with(['info'=>'更新成功']);
+       	return redirect('Admin/gongyi/lei/list')->with(['info'=>'更新成功']);
        }else
        {
        	return back()->with(['info'=>'更新失败！数据未更改']);
@@ -170,7 +170,7 @@ class GongyiController extends Controller
     }
     public function gongyinewsadd($id)
     {           
-    	return view('admin.gongyi.gongyinewsadd',['title'=>'工艺文章添加','pid'=>$id]);
+    	return view('Admin.gongyi.gongyinewsadd',['title'=>'工艺文章添加','pid'=>$id]);
     }
 
     public function gongyinewsadds(Request $request)
@@ -233,7 +233,7 @@ class GongyiController extends Controller
 		
     	$res = \DB::table('gongyinews')->insert($data);
     	if($res){
-    		return redirect('/admin/gongyi/lei/newslist/'.$data['pid'])->with(['info'=>'添加成功！']);
+    		return redirect('/Admin/gongyi/lei/newslist/'.$data['pid'])->with(['info'=>'添加成功！']);
     	}else{
     		@unlink('./uploads/gongyi/newsimg'.$fileName);
     		return back()->withInput()->with(['info'=>'添加失败！请重试']);
@@ -244,7 +244,7 @@ class GongyiController extends Controller
     public function newsedit($id)
     {
     	$data = \DB::table('gongyinews')->where('id',$id)->first();
-    	return view('admin.gongyi.newsedit',['title'=>'工艺文章更新','data'=>$data]);
+    	return view('Admin.gongyi.newsedit',['title'=>'工艺文章更新','data'=>$data]);
     }
 
     public function newsedits(Request $request)
@@ -300,7 +300,7 @@ class GongyiController extends Controller
     	$res = \DB::table('gongyinews')->where('id',$request->id)->update($data);
 
     	if($res){
-    		return redirect('/admin/gongyi/lei/newslist/'.$data['pid'])->with('info','更新成功');
+    		return redirect('/Admin/gongyi/lei/newslist/'.$data['pid'])->with('info','更新成功');
     	}else{
     		return back()->with('info','更新失败 内容未更改！');
     	}
