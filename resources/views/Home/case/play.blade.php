@@ -55,13 +55,13 @@
 					
 					<title>在线客服 :</title>
 					<em></em>
-					<span>64460088</span>
+					<span>2022509729</span>
 				</label>
 				<label for="" class="label2">
 					
 					<title>咨询电话 :</title>
 					<em></em>
-					<span>40040012345</span>
+					<span>400-188-6585</span>
 				</label>
 			</div>
 		</div>

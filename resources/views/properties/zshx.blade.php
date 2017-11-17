@@ -76,7 +76,7 @@
 					</div>
 					<div id="content_1_2_2">
 					<div style="padding-top:20px">
-						<span style="font-size:16px;color:#848484">开盘时间:&nbsp;2015年2月7日</span>
+						<span style="font-size:15px;color:#848484">开盘时间:&nbsp;2015年2月7日</span>
 					</div>
 					<div style="padding-top:16px">
 						<span style="font-size:15px;color:#848484">入住时间:&nbsp;2017年7月1日</span>
@@ -88,8 +88,8 @@
 						<span style="font-size:15px;color:#848484">楼盘地址:&nbsp;宜宾市临港经济开发区护国</span>
 					</div>
 					<div style="padding-top:5px;position:relative">
-						<span style="font-size:16px;color:#848484">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						&nbsp;&nbsp;&nbsp;路与长翠路交叉口</span>
+						<span style="font-size:15px;color:#848484">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;路与长翠路交叉口</span>
 						<!-- <a href=""><div style="position:absolute;left:208px;bottom:6px " class="pin icon"></div></a> -->
 					
 					

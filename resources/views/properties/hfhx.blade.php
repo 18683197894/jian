@@ -56,16 +56,16 @@
 					</div>
 					<div id="content_1_2_2">
 					<div style="padding-top:20px">
-						<span style="font-size:16px;color:#848484">开盘时间:&nbsp;<!-- 2016年6月18日 --></span>
+						<span style="font-size:15px;color:#848484">开盘时间:&nbsp;<!-- 2016年6月18日 --></span>
 					</div>
 					<div style="padding-top:12px">
-						<span style="font-size:16px;color:#848484">入住时间:&nbsp;<!-- 2017年 --></span>
+						<span style="font-size:15px;color:#848484">入住时间:&nbsp;<!-- 2017年 --></span>
 					</div>
 					<div style="padding-top:12px">
-						<span style="font-size:16px;color:#848484">物业类型:&nbsp;商铺 住宅</span>
+						<span style="font-size:15px;color:#848484">物业类型:&nbsp;商铺 住宅</span>
 					</div>
 					<div style="padding-top:12px;position: relative;">
-						<span style="font-size:16px;color:#848484">楼盘地址:&nbsp;贵州省毕节市织金县</span>
+						<span style="font-size:15px;color:#848484">楼盘地址:&nbsp;贵州省毕节市织金县</span>
 						<!-- <div style="position: absolute;right:25px;bottom:6px" class="pin icon"></div> -->
 					</div>
 	

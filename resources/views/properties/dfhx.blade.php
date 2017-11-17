@@ -74,16 +74,16 @@
 					</div>
 					<div id="content_1_2_2">
 					<div style="padding-top:20px">
-						<span style="font-size:16px;color:#848484">开盘时间:&nbsp;</span>
+						<span style="font-size:15px;color:#848484">开盘时间:&nbsp;</span>
 					</div>
 					<div style="padding-top:12px">
-						<span style="font-size:16px;color:#848484">入住时间:&nbsp;</span>
+						<span style="font-size:15px;color:#848484">入住时间:&nbsp;</span>
 					</div>
 					<div style="padding-top:12px">
-						<span style="font-size:16px;color:#848484">物业类型:&nbsp;商铺 住宅</span>
+						<span style="font-size:15px;color:#848484">物业类型:&nbsp;商铺 住宅</span>
 					</div>
 					<div style="padding-top:12px;">
-						<span style="font-size:16px;color:#848484">楼盘地址:&nbsp;宜宾县城北新区君毅路德福公<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;元</span>
+						<span style="font-size:15px;color:#848484">楼盘地址:&nbsp;宜宾县城北新区君毅路德福公<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;元</span>
 						<!-- <div style="position:absolute;left:119px;bottom:175px " class="pin icon"></div> -->
 					</div>
 	
@@ -291,7 +291,7 @@
 				<div id="content_2_4">
 					<div id="xiang_1">
 						<div id="xiang_1_1">
-							<span style="font-size:24px;font-weight:600;color:#4c4c4c">浙商新天地A户型</span>
+							<span style="font-size:24px;font-weight:600;color:#4c4c4c">德福公元A1户型</span>
 						</div>
 						<div id="xiang_1_2">
 							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:两室一厅一卫</span>
@@ -361,7 +361,7 @@
 				<div id="content_2_4">
 					<div id="xiang_1">
 						<div id="xiang_1_1">
-							<span style="font-size:24px;font-weight:600;color:#4c4c4c">浙商新天地B户型</span>
+							<span style="font-size:24px;font-weight:600;color:#4c4c4c">德福公元A2户型</span>
 						</div>
 						<div id="xiang_1_2">
 							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:三室两厅一厨两卫</span>
@@ -430,7 +430,7 @@
 				<div id="content_2_4">
 					<div id="xiang_1">
 						<div id="xiang_1_1">
-							<span style="font-size:24px;font-weight:600;color:#4c4c4c">浙商新天地C户型</span>
+							<span style="font-size:24px;font-weight:600;color:#4c4c4c">德福公元B1户型</span>
 						</div>
 						<div id="xiang_1_2">
 							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:三室两厅一厨两卫</span>
@@ -499,7 +499,7 @@
 				<div id="content_2_4">
 					<div id="xiang_1">
 						<div id="xiang_1_1">
-							<span style="font-size:24px;font-weight:600;color:#4c4c4c">浙商新天地D户型</span>
+							<span style="font-size:24px;font-weight:600;color:#4c4c4c">德福公元B2户型</span>
 						</div>
 						<div id="xiang_1_2">
 							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:三室两厅一厨两卫</span>
@@ -568,7 +568,7 @@
 				<div id="content_2_4">
 					<div id="xiang_1">
 						<div id="xiang_1_1">
-							<span style="font-size:24px;font-weight:600;color:#4c4c4c">浙商新天地E户型</span>
+							<span style="font-size:24px;font-weight:600;color:#4c4c4c">德福公元E1-1户型</span>
 						</div>
 						<div id="xiang_1_2">
 							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:一室两厅两卫</span>
@@ -637,7 +637,7 @@
 				<div id="content_2_4">
 					<div id="xiang_1">
 						<div id="xiang_1_1">
-							<span style="font-size:24px;font-weight:600;color:#4c4c4c">浙商新天地F户型</span>
+							<span style="font-size:24px;font-weight:600;color:#4c4c4c">德福公元E1-2户型</span>
 						</div>
 						<div id="xiang_1_2">
 							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:两室两厅两卫</span>
@@ -706,7 +706,7 @@
 				<div id="content_2_4">
 					<div id="xiang_1">
 						<div id="xiang_1_1">
-							<span style="font-size:24px;font-weight:600;color:#4c4c4c">浙商新天地G户型</span>
+							<span style="font-size:24px;font-weight:600;color:#4c4c4c">德福公元E1-3户型</span>
 						</div>
 						<div id="xiang_1_2">
 							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:三室两厅两卫</span>
