@@ -63,25 +63,20 @@
     <div class="z-bot1">
 	    <ul>
 		    <li class="z-li2">关于建商</li>
-			<li><a href="">建商介绍</a></li>
-			<li><a href="">建商团队</a></li>
-			<li><a href="">建商文化</a></li>
-			<li><a href="">联系方式</a></li>
+			<li><a href="{{ url('/jsgw/aboutus') }}">建商介绍</a></li>
+			<li><a href="{{ url('/jsgw/tuandui') }}">建商团队</a></li>
+			<li><a href="{{ url('/jsgw/zhanlui') }}">发展战略</a></li>
 		</ul>
 		<ul>
 		   <li class="z-li2">建商服务</li>
-		   <li><a href="">联系方式</a></li>
-		   <li><a href="">联系方式</a></li>
-		   <li><a href="">联系方式</a></li>
-		   <li><a href="">联系方式</a></li>
-		   <li><a href="">联系方式</a></li>
+		  <li><a href="{{ url('/jsgw/contact') }}">联系方式</a></li>
 		</ul>
 		<ul>
 		   <li class="z-li2">建商标准</li>
+		  <!--  <li><a href="">客厅验收标准</a></li>
 		   <li><a href="">客厅验收标准</a></li>
 		   <li><a href="">客厅验收标准</a></li>
-		   <li><a href="">客厅验收标准</a></li>
-		   <li><a href="">客厅验收标准</a></li>
+		   <li><a href="">客厅验收标准</a></li> -->
 		</ul>
 		<div class="z-li3">
 		   <b>联系我们</b>
