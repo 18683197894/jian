@@ -54,11 +54,11 @@ class RuanController extends Controller
     	}
     	$url='';
     	if($data['pid'] ==1){
-    		$url = '/Admin/package/ruan/fashion';
+    		$url = '/admin/package/ruan/fashion';
     	}elseif($data['pid'] ==2){
-    		$url = '/Admin/package/ruan/joylity';
+    		$url = '/admin/package/ruan/joylity';
     	}elseif($data['pid'] ==3){
-    		$url = '/Admin/package/ruan/peghid';
+    		$url = '/admin/package/ruan/peghid';
     	}
 		$res = \DB::table('fengge')->insert($data);
     	if($res){
@@ -267,7 +267,7 @@ class RuanController extends Controller
 
     	if($res)
     	{
-    		return redirect('Admin/package/ruan/fg/column/'.$data['pid'])->with(['info'=>'添加成功']);
+    		return redirect('admin/package/ruan/fg/column/'.$data['pid'])->with(['info'=>'添加成功']);
     	}else
     	{
     		return back()->with(['info'=>'添加失败']);
@@ -296,7 +296,7 @@ class RuanController extends Controller
 
 		if($res)
 		{
-			return redirect('/Admin/package/ruan/fg/column/'.$pid)->with(['info'=>'更新成功']);
+			return redirect('/admin/package/ruan/fg/column/'.$pid)->with(['info'=>'更新成功']);
 		}else
 		{
 			return back()->with(['info'=>'更新失败 数据未作更改！!']);
@@ -368,7 +368,7 @@ class RuanController extends Controller
 
 		if($res)
 		{
-			return redirect('/Admin/package/ruan/fg/column/subclass/'.$data['pid'])->with(['info'=>'添加成功']);
+			return redirect('/admin/package/ruan/fg/column/subclass/'.$data['pid'])->with(['info'=>'添加成功']);
 		}else
 		{
 			return back()->with(['info'=>'添加失败 数据类型错误']);
@@ -414,7 +414,7 @@ class RuanController extends Controller
 		$res = \DB::table('subclass')->where('id',$id)->update($data);
 		if($res)
 		{
-			return redirect('Admin/package/ruan/fg/column/subclass/'.$pp->pid)->with(['info'=>'更新成功!']);
+			return redirect('admin/package/ruan/fg/column/subclass/'.$pp->pid)->with(['info'=>'更新成功!']);
 		}else{
 			return back()->with(['info'=>'更新失败 数据未作更改!']);
 		}

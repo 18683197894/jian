@@ -68,7 +68,7 @@ class GongyiController extends Controller
     	$res = \DB::table('gongyi')->insert($data);
     	if($res)
     	{
-    		return redirect('/Admin/gongyi/lei/list')->with(['info'=>'添加成功']);
+    		return redirect('/admin/gongyi/lei/list')->with(['info'=>'添加成功']);
     	}else
     	{	
     		unlink('./uploads/gongyi/img/'.$data['img']);
@@ -141,7 +141,7 @@ class GongyiController extends Controller
 
        if($res)
        {
-       	return redirect('Admin/gongyi/lei/list')->with(['info'=>'更新成功']);
+       	return redirect('admin/gongyi/lei/list')->with(['info'=>'更新成功']);
        }else
        {
        	return back()->with(['info'=>'更新失败！数据未更改']);
@@ -233,7 +233,7 @@ class GongyiController extends Controller
 		
     	$res = \DB::table('gongyinews')->insert($data);
     	if($res){
-    		return redirect('/Admin/gongyi/lei/newslist/'.$data['pid'])->with(['info'=>'添加成功！']);
+    		return redirect('/admin/gongyi/lei/newslist/'.$data['pid'])->with(['info'=>'添加成功！']);
     	}else{
     		@unlink('./uploads/gongyi/newsimg'.$fileName);
     		return back()->withInput()->with(['info'=>'添加失败！请重试']);
@@ -300,7 +300,7 @@ class GongyiController extends Controller
     	$res = \DB::table('gongyinews')->where('id',$request->id)->update($data);
 
     	if($res){
-    		return redirect('/Admin/gongyi/lei/newslist/'.$data['pid'])->with('info','更新成功');
+    		return redirect('/admin/gongyi/lei/newslist/'.$data['pid'])->with('info','更新成功');
     	}else{
     		return back()->with('info','更新失败 内容未更改！');
     	}

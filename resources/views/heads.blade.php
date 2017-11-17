@@ -6,8 +6,8 @@
 <link href="{{ asset('home/images/images/heads.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('home/lunpo/index/main.css') }}" rel="stylesheet" type="text/css" />
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<meta name="keywords"content="@if(empty($keyworlds))建设网@else{{ $keyworlds }}@endif"> 
-<meta name="description"content="@if(empty($description))建设网@else{{ $description }}@endif"> 
+<meta name="keywords"content="@if(empty($keyworlds))建商网@else{{ $keyworlds }}@endif"> 
+<meta name="description"content="@if(empty($description))建商网@else{{ $description }}@endif"> 
 <script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
 <title>{{ config('app.name') }}@if(!empty($title))  - {{$title}}@endif</title>
 @yield('css')
@@ -32,8 +32,8 @@
 					</div>
 
 					<div id="hade_1_2_2">
-					    <img  src="{{ asset('/home/images/hade_2.png') }}" alt="">
-						<span>免费量房与报价</span>	
+					    <img  src="{{ asset('/home/images/hade_1.png') }}" alt="">
+						<span>装修公司实力认证</span>	
 					</div>
 
 					<div id="hade_1_2_3">
@@ -83,7 +83,7 @@
 			</ul>
 		</div>
 		<div id="div3">
-			<span>建设招聘 ></span>
+			<span>建商招聘 ></span>
 			<ul>
 				<li><a href="{{ url('/jsgw/job1') }}">用人理念</a></li>
 				<li><a href="{{ url('/jsgw/job5') }}">建设招聘</a></li>
@@ -129,7 +129,7 @@
 	</div>
     <div id="box-4" class="hidden-box  box04">
 		<div id="div3">
-			<span>建设案例 ></span>
+			<span>建商案例 ></span>
 			<ul>
 				<li><a href="{{ url('/home/case/index') }}">完整案例</a></li>
 				<li><a href="{{ url('/home/case/zaiindex') }}">在建案例</a></li>

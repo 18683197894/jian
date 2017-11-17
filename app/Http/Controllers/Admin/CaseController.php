@@ -42,7 +42,7 @@ class CaseController extends Controller
 		$res = \DB::table('case')->insert($data);
     	if($res)
     	{
-    		return redirect('/Admin/case/index')->with(['info'=>'添加成功']);
+    		return redirect('/admin/case/index')->with(['info'=>'添加成功']);
     	}else
     	{	
     		
@@ -143,7 +143,7 @@ class CaseController extends Controller
 
        if($res)
        {
-       	return redirect('Admin/case/index')->with(['info'=>'更新成功']);
+       	return redirect('admin/case/index')->with(['info'=>'更新成功']);
        }else
        {
        	foreach ($img as $k => $v) 
@@ -353,7 +353,7 @@ class CaseController extends Controller
 
     	if($res)
        	{
-       		return redirect('Admin/case/index')->with(['info'=>'更新成功']);
+       		return redirect('admin/case/index')->with(['info'=>'更新成功']);
        	}else
        	{
  			if(file_exists('./uploads/case/img/'.$data['keting']))

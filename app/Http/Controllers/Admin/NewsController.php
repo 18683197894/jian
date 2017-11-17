@@ -62,7 +62,7 @@ class NewsController extends Controller
         $res = \DB::table('newslei')->insert($data);
         if($res)
         {
-            return redirect('/jslmAdmin/newsleiindex')->with(['info'=>'添加成功']);
+            return redirect('/jslmadmin/newsleiindex')->with(['info'=>'添加成功']);
         }else
         {   
             unlink('./uploads/news/img/'.$data['img']);
@@ -144,7 +144,7 @@ class NewsController extends Controller
 
        if($res)
        {
-        return redirect('jslmAdmin/newsleiindex')->with(['info'=>'更新成功']);
+        return redirect('jslmadmin/newsleiindex')->with(['info'=>'更新成功']);
        }else
        {
         return back()->with(['info'=>'更新失败！数据未更改']);
@@ -255,7 +255,7 @@ class NewsController extends Controller
 		
     	$res = \DB::table('news')->insert($data);
     	if($res){
-    		return redirect('/jslmAdmin/newslei/newsindex/'.$data['pid'])->with(['info'=>'添加成功']);
+    		return redirect('/jslmadmin/newslei/newsindex/'.$data['pid'])->with(['info'=>'添加成功']);
     	}else{
     		@unlink('./uploads/news/titleimg/'.$fileName);
     		return back()->withInput()->with(['info'=>'发表失败']);
@@ -321,7 +321,7 @@ class NewsController extends Controller
     	$res = \DB::table('news')->where('id',$request->id)->update($data);
 
     	if($res){
-    		return redirect('jslmAdmin/newslei/newsindex/'.$data['pid'])->with('info','更新成功');
+    		return redirect('jslmadmin/newslei/newsindex/'.$data['pid'])->with('info','更新成功');
     	}else{
     		return back()->with('info','更新失败 内容未更改！');
     	}

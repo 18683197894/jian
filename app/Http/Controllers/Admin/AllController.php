@@ -64,7 +64,7 @@ class AllController extends Controller
     	
 		$res = \DB::table('all')->insert($data);
     	if($res){
-    		return redirect('Admin/package/all')->with(['info'=>'添加成功']);
+    		return redirect('admin/package/all')->with(['info'=>'添加成功']);
     	}else{
     		@unlink('./uploads/all/img/'.$fileName);
     		return back()->withInput()->with(['info'=>'添加失败']);
@@ -130,7 +130,7 @@ class AllController extends Controller
        if($res)
        {
 
-       	return redirect('Admin/package/all')->with(['info'=>'更新成功']);
+       	return redirect('admin/package/all')->with(['info'=>'更新成功']);
        }
        else{
        	return back()->with(['info'=>'更新失败 数据未作更改！']);
@@ -170,7 +170,7 @@ class AllController extends Controller
 
     	if($res)
     	{
-    		return redirect('Admin/package/all/pei/'.$id)->with(['info'=>'添加成功']);
+    		return redirect('admin/package/all/pei/'.$id)->with(['info'=>'添加成功']);
     	}else
     	{
     		return back()->with(['info'=>'添加失败']);
@@ -197,7 +197,7 @@ class AllController extends Controller
     	$res = \DB::table('pei')->where('id',$data['id'])->update($data);
     	if($res)
     	{
-    		return redirect('Admin/package/all/pei/'.$data['pid'])->with(['info'=>'更新成功']);
+    		return redirect('admin/package/all/pei/'.$data['pid'])->with(['info'=>'更新成功']);
     	}else
     	{
     		return back()->with(['info'=>'更新失败!数据未作更改！']);
@@ -243,7 +243,7 @@ class AllController extends Controller
     	$res = \DB::table('pei')->insert($data);
     	if($res)
     	{
-    		return redirect('Admin/package/all/pei/sub/'.$data['sid'])->with(['info'=>'添加成功']);
+    		return redirect('admin/package/all/pei/sub/'.$data['sid'])->with(['info'=>'添加成功']);
     	}else
     	{
     		return back()->with(['info'=>'添加失败！']);
@@ -277,7 +277,7 @@ class AllController extends Controller
     	$res = \DB::table('pei')->where('id',$data['id'])->update($data);
     	if($res)
     	{
-    		return redirect('Admin/package/all/pei/sub/'.$data['sid'])->with(['info'=>'更新成功']);
+    		return redirect('admin/package/all/pei/sub/'.$data['sid'])->with(['info'=>'更新成功']);
     	}else
     	{
     		return back()->with(['info'=>'更新失败！数据未更改']);
@@ -381,7 +381,7 @@ class AllController extends Controller
 
     	if($res)
     	{
-    		return redirect('Admin/package/all/zi/'.$data['pid'])->with(['info'=>'添加成功']);
+    		return redirect('admin/package/all/zi/'.$data['pid'])->with(['info'=>'添加成功']);
     	}else
     	{
     		return back()->with(['info'=>'添加失败']);
@@ -446,7 +446,7 @@ class AllController extends Controller
 
         if($res)
         {
-        	return redirect('/Admin/package/all/zi/'.$data['pid'])->with(['info'=>'更新成功']);
+        	return redirect('/admin/package/all/zi/'.$data['pid'])->with(['info'=>'更新成功']);
         }else
         {
         	return back()->with(['info'=>'更新失败！数据未更改']);
@@ -633,7 +633,7 @@ class AllController extends Controller
     	$res = \DB::table('pack')->insert($data);
     	if($res)
     	{
-    		return redirect('/Admin/package/all/pack')->with(['info'=>'添加成功']);
+    		return redirect('/admin/package/all/pack')->with(['info'=>'添加成功']);
     	}else
     	{
     		if(file_exists('./uploads/all/pack/'.$img1))
@@ -821,7 +821,7 @@ class AllController extends Controller
             {
                 @unlink('./uploads/all/pack/'.$im[2]);
             }
-            return redirect('Admin/package/all/pack')->with(['info'=>'更新成功']);
+            return redirect('admin/package/all/pack')->with(['info'=>'更新成功']);
         }else
         {
             if( $img3 != false && file_exists('./uploads/all/pack/'.$img1) )

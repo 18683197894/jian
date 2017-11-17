@@ -38,13 +38,13 @@ class LoginController extends Controller
 		}else{
 		
 		\session(['Admin'=>$res]);
-		return redirect('/jslmAdmin/index')->with(['info'=>'登入成功！']);
+		return redirect('/jslmadmin/index')->with(['info'=>'登入成功！']);
 		}
         
     }
     public function jslmext(){
     	\session()->forget('Admin');
-    	return redirect('/jslmAdmin/login');
+    	return redirect('/jslmadmin/login');
     }
 
 }

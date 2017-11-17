@@ -987,7 +987,7 @@
 					<select id="selectPointOfInterest" class="select" title="选择楼盘">
 					<option value="浙商临港新天地">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浙商.临港新天地</option>
 					<option value="德福公元">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;德福公元</option>
-					<option value="织经东方巴黎">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;织经东方巴黎</option>
+					<option value="织金东方巴黎">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;织金东方巴黎</option>
 					</select>
 					</label>
 				</div>
