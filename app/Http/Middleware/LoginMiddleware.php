@@ -15,7 +15,7 @@ class LoginMiddleware
      */
     public function handle($request, Closure $next)
     {      
-        if(!session('admin')){
+        if(!session('Admin')){
            return redirect('/jslmadmin/login');
         }
         return $next($request);
