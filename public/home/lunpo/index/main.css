@@ -51,21 +51,21 @@ ul.nav-main >li>a:hover{
 }
 /*隐藏盒子设置*/
 #box-1{
-    width: 720px;
+    width: 716px;
     height:140px;
     border-top: 0;
     position: absolute;
     display:none;
 	background:rgba(255,255,255,0.9);
     top: 39px;
-    left:120px;
+    left:112px;
     z-index:999;
 }
 #box-1 #div1{
     width:315px;
     height:130px;
     float:left;
-    margin-left: 15px;
+    margin-left: 25px;
 }
 #box-1 #div2{
     width:230px;
@@ -74,7 +74,7 @@ ul.nav-main >li>a:hover{
     height:130px;
 }
 #box-1 #div3{
-    width:130px;
+    width:116px;
     float:left;
     margin-left: 15px;
     height:130px;
@@ -128,20 +128,20 @@ ul.nav-main >li>a:hover{
 }
 #box-2 #div2{
     width:220px;
-    margin-left: 20px;
+    margin-left: 25px;
     float:left;
     height:130px;
 }
 
 #box-3{
-    width: 375px;
+    width: 370px;
     height:140px;
     border-top: 0;
     position: absolute;
     display:none;
     background:rgba(255,255,255,0.9);
     top: 39px;
-    left:497px;
+    left:487px;
     z-index:999;
     
 }
@@ -149,18 +149,18 @@ ul.nav-main >li>a:hover{
     width:220px;
     height:130px;
     float:left;
-    margin-left: 15px;
+    margin-left: 25px;
 }
 #box-3 #div2{
-    width:120px;
-    margin-left: 15px;
+    width:140px;
+    margin-left: 25px;
     float:left;
     height:130px;
 }
 #box-3 #div3{
-    width:200px;
+    width:180px;
     float:left;
-    margin-left: 38px;
+    margin-left: 25px;
     height:130px;
 }
 
@@ -202,7 +202,7 @@ ul.nav-main >li>a:hover{
     height:130px;
 }
 #box-6{
-    width: 330px;
+    width: 315px;
     height:140px;
     border-top: 0;
     position: absolute;
@@ -214,13 +214,13 @@ ul.nav-main >li>a:hover{
     
 }
 #box-6 #div3{
-    width:130px;
-    margin-left: 30px;
+    width:140px;
+    margin-left: 25px;
     float:left;
     height:130px;
 }
 #box-6 #div2{
-    width:130px;
+    width:115px;
     margin-left: 30px;
     float:left;
     height:130px;
