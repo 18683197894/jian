@@ -949,14 +949,14 @@
 					<div class="Homebanner">
 						<ul>
 							<li class="Load cur" style="z-index:99;width:100%">
-								<img width="100%" src="{{ asset('home/lunpo/index/1.png') }}" alt="">
+								<img width="100%" src="{{ asset('home/lunpo/index/1-1.png') }}" alt="">
 
 							</li>
 							<li class="Load" style="width:100%">
-								<img width="100%" src="{{ asset('home/lunpo/index/1.png') }}" alt="">
+								<img width="100%" src="{{ asset('home/lunpo/index/1-1.png') }}" alt="">
 
 							</li>
-							<li class="Load" style="width:100%"><img width="100%" src="{{ asset('home/lunpo/index/1.png') }}" alt="">
+							<li class="Load" style="width:100%"><img width="100%" src="{{ asset('home/lunpo/index/1-1.png') }}" alt="">
 
 							</li>
 						</ul>
