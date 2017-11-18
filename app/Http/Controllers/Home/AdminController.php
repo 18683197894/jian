@@ -54,7 +54,7 @@ class AdminController extends Controller
        
     	foreach($plate as $k => $v)
     	{
-    		$plate[$k]->news = \DB::table('platenews')->select('id','title')->where('pid',$v->id)->offset(0)->limit(4)->orderBy('time','desc')->get();
+    		$plate[$k]->news = \DB::table('platenews')->select('id','title','time')->where('pid',$v->id)->offset(0)->limit(4)->orderBy('time','desc')->get();
     	}
     	
         $key = \DB::table('webpage')->select('titles','keyworlds','description')->where('id',1)->first();

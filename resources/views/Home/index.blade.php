@@ -800,16 +800,31 @@
 			width:392px;
 			height:150px;
 			display:block;
-			margin-top:8px;
+			margin-top:13px;
 		}
-		.z-con3 ul li a{
+		.z-con3 ul li div span{
+			width:392px;
+			height:35px;
+			display: block;
+			/*border:1px solid red;*/
+		}
+		.z-con3 ul li div span a{
 			display:block;
 			font-weight:normal;
 			font-style:normal;
 			font-size:16px;
 			color:#333;
-			margin-top:12px;
+			line-height: 35px;
+			float:left;
+			/*margin-top:12px;*/
 			margin-left:15px;
+		}
+		.z-con3 ul li div span img{
+			width:35px;
+			height:16px;
+			margin-left: 12px;
+			margin-top: 9px;
+			float:left;
 		}
 		.z-con3 ul li a:hover{
 			color:red;
@@ -1191,11 +1206,11 @@
 				class="zcon3_li"
 				@endif
 				>
-					<a href="{{ url('home/plate/list') }}/{{ $h->id }}"><img    data-original="{{ asset('/uploads/plate/img') }}/{{ $h->img }}" alt=""></a>
+					<a href="{{ url('home/plate/list') }}/{{ $h->id }}"><img  data-original="{{ asset('/uploads/plate/img') }}/{{ $h->img }}" alt=""></a>
 					<div>
 						@if(!empty($h->news))
 							@foreach($h->news as $gg => $hh)
-								<a href="{{ url('home/plate/play/') }}/{{ $hh->id }}">{{ mb_substr($hh->title,0,22,'utf8') }}</a>
+							 <span>	<a href="{{ url('home/plate/play/') }}/{{ $hh->id }}">{{ mb_substr($hh->title,0,20,'utf8') }}</a> @if( ( time() - $hh->time ) <= 259200 ) <img src="{{ asset('home/images/uu.gif') }}" alt=""> @endif </span>
 							@endforeach
 						@endif
 					</div>
