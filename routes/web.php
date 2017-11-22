@@ -102,7 +102,7 @@ Route::get('/home/case/zaiajax/','Home\CaseController@zaiajax');
 Route::get('/home/case/zaiindex','Home\CaseController@zaiindex');
 Route::post('/home/case/jiaajax','Home\CaseController@jiaajax');
 
-Route::get('/home/case/index/play/{id}','Home\CaseController@play');
+Route::get('/home/case/index/play/{id}/{es?}','Home\CaseController@play');
 Route::post('/home/case/play/ajax','Home\CaseController@playajax');
 Route::get('/home/case/indexurl','Home\CaseController@indexurl');
 

@@ -39,7 +39,7 @@
 				</div>
 				<div id="content_1_2">
 					<div id="content_1_2_1">
-						<p id="p1">织金.东方巴黎</p>
+						<p id="p1">织金.织金万都铭城</p>
 						<p id="p2">贵州-毕节</p>
 					<div id="nve">
 					
@@ -216,7 +216,7 @@
 				<div id="content_2_4">
 					<div id="xiang_1">
 						<div id="xiang_1_1">
-							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织金东方巴黎A户型</span>
+							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织金万都铭城A户型</span>
 						</div>
 						<div id="xiang_1_2">
 							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:两室一厅一卫</span>
@@ -286,7 +286,7 @@
 				<div id="content_2_4">
 					<div id="xiang_1">
 						<div id="xiang_1_1">
-							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织金东方巴黎B户型</span>
+							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织金万都铭城B户型</span>
 						</div>
 						<div id="xiang_1_2">
 							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:两室一厅一卫</span>
@@ -355,7 +355,7 @@
 				<div id="content_2_4">
 					<div id="xiang_1">
 						<div id="xiang_1_1">
-							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织金东方巴黎C户型</span>
+							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织金万都铭城C户型</span>
 						</div>
 						<div id="xiang_1_2">
 							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:两室一厅一卫</span>
@@ -424,7 +424,7 @@
 				<div id="content_2_4">
 					<div id="xiang_1">
 						<div id="xiang_1_1">
-							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织金东方巴黎D户型</span>
+							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织金万都铭城D户型</span>
 						</div>
 						<div id="xiang_1_2">
 							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:三室一厅一卫</span>

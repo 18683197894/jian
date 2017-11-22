@@ -292,21 +292,31 @@ class CaseController extends Controller
     	return response($data);
     }
 
-    public function play($id)
+    public function play($id,$es=null)
     {	
+
     	$data = \DB::table('case')->select('id','title','fengge','huxing','yusuan','img1','img2','img3','img4','effect1','effect2','titles','keyworlds','description')->where('or',5)->where('id',$id)->first();
     	if($data == null)
     	{
     		return redirect('/home/case/index');
     	}
-    	$data->effect1 = explode(',',$data->effect1);
-    	$data->effect2 = explode(',',$data->effect2);
+
+    	$effect1 = explode(',',$data->effect1);
+    	$effect2 = explode(',',$data->effect2);
     	$data->img1    = explode(',',$data->img1);
     	$data->img2    = explode(',',$data->img2);
     	$data->img3    = explode(',',$data->img3);
     	$data->img4    = explode(',',$data->img4);
-    	
-    	return view('Home.case.play',['title'=>$data->titles,'keyworlds'=>$data->keyworlds,'description'=>$data->description,'data'=>$data]);
+        $eff = array_combine($effect1,$effect2);
+       foreach( $effect1 as $k => $v )
+       {
+            $effect1[$k] = str_replace('/','',$v);
+       }
+       if(! in_array($es,$effect1))
+       {
+            $es = '客厅';
+       }
+    	return view('Home.case.play',['eff'=>$eff,'es'=>$es,'title'=>$data->titles,'keyworlds'=>$data->keyworlds,'description'=>$data->description,'data'=>$data]);
     }
     public function playajax(Request $request)
     {

@@ -1015,7 +1015,7 @@
 					<select id="selectPointOfInterest" class="select" title="选择楼盘">
 					<option value="浙商临港新天地">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浙商.临港新天地</option>
 					<option value="德福公元">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;德福公元</option>
-					<option value="织金东方巴黎">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;织金东方巴黎</option>
+					<option value="织金万都铭城">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;织金万都铭城</option>
 					</select>
 					</label>
 				</div>
@@ -1126,7 +1126,7 @@
 			<div @if($loop->first) class="zcon_7_2_divl" @else class="zcon_7_2_div" @endif>
 				@foreach($m->eff as $n => $o)
 				<div class="zcon_7_2_{{ $loop->index + 1 }}">
-					<div class="zcon_7_img"><a href="{{ url('home/case/index/play') }}/{{ $m->id }}" target="_blank"><img  data-original="{{ asset('/uploads/case/img') }}/{{ $o }}" alt=""></a></div>
+					<div class="zcon_7_img"><a href="{{ url('home/case/index/play') }}/{{ $m->id }}/{{ str_replace('/','',$n) }}" target="_blank"><img  data-original="{{ asset('/uploads/case/img') }}/{{ $o }}" alt=""></a></div>
 					<div class="zcon_7_2_zi"><span>{{ $n }}</span></div>
 				</div>
 				@endforeach

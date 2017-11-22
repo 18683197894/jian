@@ -20,17 +20,17 @@
 	<div class="play_con1">
 		<div class="con1_left">
 			
-				<div class="win" index="{{ count($data->effect2) }}" >
+				<div class="win" index="{{ count($eff) }}" >
 					<div class="box">
-						@foreach($data->effect2 as $k => $v)
-						<div @if( $loop->first ) style="left:0" @endif index="{{ $loop->index }}"><img  data-original="{{ asset('/uploads/case/img/') }}/{{ $v }}" alt=""></div>
+						@foreach($eff as $k => $v)
+						<div @if( $es == str_replace('/','',$k) ) style="left:0" class="num1" @endif  index="{{ $loop->index }}"><img  data-original="{{ asset('/uploads/case/img/') }}/{{ $v }}" alt=""></div>
 						@endforeach
 					</div>
 					<div class="leftB">&lt;</div>
 					<div class="rightB">&gt;</div>
 					<ul class="con1_leftul">
-						@foreach($data->effect1 as $kk => $vv)
-						<li id="index{{ $loop->index }}" @if( $loop->first ) style="display:block" @else  style="display:none" @endif>{{ $vv }}</li>
+						@foreach($eff as $kk => $vv)
+						<li id="index{{ $loop->index }}" @if($es == str_replace('/','',$kk) ) style="display:block" @else style="display:none" @endif) >{{ $kk }}</li>
 						@endforeach
 					</ul>
 				</div>
@@ -112,8 +112,48 @@
 @endsection('content')
 
 @section('js')
-	<script src="{{ asset('home/images/case/index/play.js') }}"></script>
+	<!-- // <script src="{{ asset('home/images/case/index/play.js') }}"></script> -->
+
 	<script>
+	$(function(){
+	var nu = $(".win").attr('index');
+	var win=$(".win");
+	var divs=$(".box div");
+	var num1=$('.num1').attr('index');  
+	var num2=0;
+
+	$(".leftB").click(function(){
+
+		divs.stop(true,true);
+		var temp=num1;
+		num1--;
+		if(num1==-1){
+			num1=nu -1 ;
+		}
+		var index = divs.eq(num1).attr('index')
+		
+		$('.con1_leftul > li').css('display','none');
+		$('#index'+index).css('display','block');
+		divs.eq(num1).css("left",904).animate({left:0});
+		divs.eq(temp).animate({left:-904});
+	});
+	$(".rightB").click(function(){
+	
+		divs.stop(true,true);
+		// divs.finish();
+		var temp=num1;
+		num1++;
+		if(num1==nu){
+			num1=0;
+		}
+		var index = divs.eq(num1).attr('index')
+		$('.con1_leftul > li').css('display','none');
+		$('#index'+index).css('display','block');
+		// alert(divs.eq(num1).attr('index'))
+		divs.eq(num1).css("left",-904).animate({left:0});
+		divs.eq(temp).animate({left:904});
+	});
+});
 			$(function() {
 
       		$("img").lazyload({effect: "fadeIn"});
