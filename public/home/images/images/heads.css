@@ -1,10 +1,51 @@
 
+		#hade-a{
+			width:100%;
+			height:36px;
+			background-color: #f5f5f5;
+		}
+		#hade-b{
+			width:1200px;
+			height:36px;
+			margin:0 auto;
+		}
+		#login{
+			width:294px;
+			height:36px;
+			float:right;
+
+		}
+		#login ul{
+			width:294px;
+			height:36px;
+			overflow: hidden;
+		}
+		#login ul li a{
+			color:#a6a6a6;
+
+		}
+		#loginli1{
+			font-size: 16px;
+			float:left;
+			line-height: 36px;
+			font-weight: normal;
+			color:#a6a6a6;
+			font-family: 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+			/*cursor:pointer;*/
+		}
+		#loginli2{
+			width:10px;
+			height:17px;
+			float:left;
+			margin-right: 10px;
+			margin-top: 10px;
+			border-right:1px solid #ccc;
+		}
+
 		#hades{
 			width:100%;
 			height:107px;
-			border-bottom:3px solid #000;
-			
-			
+			border-bottom:3px solid #000;	
 		}
 		
 		#hade_content{

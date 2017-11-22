@@ -14,11 +14,22 @@
 </head>
 
 
-
-
-
 <body>
+	<!-- <div id="hade-a"> 
+		<div id="hade-b">
+			<div id="login">
+				<ul>
+					<li id="loginli1"><a href="{{ asset('/home/login') }}">登入</a></li>
+					<li id="loginli2"></li>
+					<li id="loginli1"><a href="{{ asset('/home/register') }}">注册</a></li>
+					<li id="loginli2"></li>
+					<li id="loginli1">热线电话：400-188-6585</li>
+				</ul>
+			</div>
+		</div>
+	</div> -->
 	<div id="hades">
+
 		<div id="hade_content">
 			
 			<div id="hade_1">

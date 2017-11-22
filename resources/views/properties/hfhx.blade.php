@@ -77,7 +77,7 @@
 							<img style="margin-top:5px;margin-left:6px" src="{{ asset('/home/images/dian.gif') }}" alt="">
 						</div>
 						<div id="dian2">
-							<span style="font-size:16px;color:red;font-weight:600">0831-3560707&nbsp;&nbsp;咨询楼盘信息</span>
+							<span style="font-size:16px;color:red;font-weight:600">400-188-6585&nbsp;&nbsp;咨询楼盘信息</span>
 						</div>
 					</div>
 				</div>

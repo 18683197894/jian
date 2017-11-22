@@ -123,7 +123,7 @@
 		margin-top: 10px;
 	}
 	#index_1_1_3{
-		width:650px;
+		width:870px;
 		height:78px;
 		margin: 0 auto;
 		margin-top: 10px;
@@ -142,6 +142,13 @@
  		float:left;
  		margin-left: 10px;
 
+ 	}
+ 	#table_4{
+		width:550px;
+ 		height:70px;
+ 		margin-top: 5px;
+ 		float:left;
+ 		margin-left: 40px;
  	}
   	#table_3{
  		width:190px;
@@ -206,10 +213,16 @@
 	}
 		#input_control{
 		  width:415px;
-		  margin:0px auto;
+		  
 
 		}
-		#table_2 input[type="text"],#btn1,#btn2{
+		#input_control2{
+		  width:550px;
+		  
+
+		}
+
+		#table_2 input[type="text"],#btn1,#btn2,#table_4 input[type='text']{
 		  box-sizing: border-box;
 		  text-align:center;
 		  font-size:1.5em;
@@ -1016,8 +1029,8 @@
 				</div>
 			</div>
 			<div id="index_1_1_3" class="kuai1" style="display:none">
-				<div id="table_2">
-				    <div id="input_control">
+				<div id="table_4">
+				    <div id="input_control2">
 				        <input type="text" class="form_input" placeholder="填写手机号码快速装修"/>
 				    </div>
 				</div>
@@ -1269,6 +1282,10 @@
 	       		success:function(data){
 	       			if(data ==1 ){
 	       				$('.form_input').eq(0).val('');
+	       				$('#indexspan1').css('display','none')
+						$('#indexspan2').css('display','none')
+						$('#indexspan3').css('display','none')
+						$('#indexspan4').css('display','none')
 	       				alert('预约成功！工作人员会尽快与您联系');
 	       			}
 	       			if(data ==2){
@@ -1314,6 +1331,10 @@
 	       		data:{phone:phone},
 	       		success:function(data){
 	       			if(data ==1 ){
+	       				$('#indexspan1').css('display','none')
+						$('#indexspan2').css('display','none')
+						$('#indexspan3').css('display','none')
+						$('#indexspan4').css('display','none')
 	       				$('.form_input').eq(1).val('');
 	       				alert('预约成功！工作人员会尽快与您联系');
 	       			}
