@@ -86,7 +86,79 @@
 		</div>
 
 	</div>
-		<div id="content_2">
+		<div id="content_5" style="margin-top:65px">
+			<div id="content_5_1" >
+				<div id="content_2_1_1">
+					<div id="content_2_1_1_1">
+						<div id="content_2_1_1_1_1">
+							<div style="width:90px;height:20px;margin-top:10px">
+							<span style="font-size:19px;font-weight:600;color:#4b4b4b"> &nbsp;预览户型</span>	
+							</div>
+						</div>
+						<div id="content_2_1_1_1_2">
+							<div style="width:120px;height:20px;margin-top:11px">
+							<span style="font-size:18px;font-weight:550;color:#747474"> &nbsp;Real estate</span>			
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="content_5_1_2">
+					<ul>
+						<li id="content_5li1"><img src="{{ asset('/home/images/hfhx/a.png') }}" alt=""><em index="1"><span>点击360度预览</span></em></li>
+						<li id="content_5li2"><img src="{{ asset('/home/images/hfhx/b.png') }}" alt=""><em index="2"><span>点击360度预览</span></em></li>
+						<li id="content_5li2"><img src="{{ asset('/home/images/hfhx/c.jpg') }}" alt=""><em index="3"><span>点击360度预览</span></em></li>
+						<!-- <li id="content_5li2"><img src="" alt=""><em index="4"><span>点击360度预览</span></em></li> -->
+					</ul>
+				</div>
+			</div>
+			</div>
+			<div id="divv" style="margin:0 auto;width:1200px;height:700px;display:none;padding-top:30px;">
+				
+					<iframe id="ifrPage" index="1" name="ifrPage" src="http://720yun.com/t/185j5denun1?pano_id=7140817" style="margin:0 auto;width:1200px;height:700px;border:none;border:1px solid #666"></iframe>
+			</div>
+			<script>
+			$('#content_5_1_2 > ul > li > em').hover(function(){
+				$(this).css('border-bottom','1px solid #888');
+			},function(){
+				$(this).css('border-bottom','');
+				
+			});
+			$('#content_5_1_2 > ul > li > em').on('click',function(){
+				var index = $(this).attr('index');
+				var ind = $('#ifrPage').attr('index');
+				if( index == ind)
+				{
+					$('#divv').slideToggle(300);
+					return false;
+				}
+				if( index == 4 )
+				{	
+					alert('暂未开通!');
+					return false ;
+				}
+				var str;
+				if( index == 1 )
+				{
+					str = 'http://720yun.com/t/185j5denun1?pano_id=7140817';
+				}
+				if( index == 2 )
+				{
+					str = 'http://720yun.com/t/901j5d4Ouk1?pano_id=7266428';
+				}
+				if( index == 3 )
+				{
+					str = 'http://vr.justeasy.cn/view/982727.html';
+				}
+				if( $('#divv').css('display') == 'none' )
+				{
+					$('#divv').slideToggle(300);
+				}
+				$('#ifrPage').attr('src',str);
+				$('#ifrPage').attr('index',index);
+			})
+			</script>
+<!-- ******************************************************************************* -->
 			<div id="content_2_1">
 				<div id="content_2_1_1">
 					<div id="content_2_1_1_1">
@@ -102,22 +174,21 @@
 						</div>
 					</div>
 				</div>
-
 				<div id="content_2_1_2">
 					<div id="content_2_1_2_1">
 						<div index="1"  class="content1"  id="tu_1">
-							<img style="width:100%;height:100%" src="{{ asset('home/images/hfhx/hu1.png') }}" alt="">
+							<img style="width:100%;height:100%" src="{{ asset('home/images/hfhx/a_1.jpg') }}" alt="">
 						</div>
 						<div index="1"  class="content1"  id="tu_2">
 							<span style="font-size:18px;font-weight:500;color:#f6f6f6">A户型</span>
 						</div>
 						<div id="tu_3">
 							<div id="tu_3_1">
-								<span style="font-size:16px;font-weight:500;color:#666">2室1厅1卫</span>
+								<span style="font-size:16px;font-weight:500;color:#666">三室两厅两卫</span>
 								
 							</div>
 							<div id="tu_3_2">
-								<span style="font-size:16px;font-weight:500;color:#666">86.65㎡</span>
+								<span style="font-size:16px;font-weight:500;color:#666">126.6㎡</span>
 								
 							</div>
 						</div>
@@ -127,17 +198,17 @@
 					</div>
 					<div  id="content_2_1_2_2">
 						<div index="2" class="content1" id="tu_1">
-							<img style="width:100%;height:100%" src="{{ asset('home/images/hfhx/hu2.png') }}" alt="">			
+							<img style="width:100%;height:100%" src="{{ asset('home/images/hfhx/b_1.jpg') }}" alt="">			
 						</div>
 					    <div index="2" class="content1" id="tu_2">
 							<span style="font-size:18px;font-weight:500;color:#f6f6f6">B户型</span>
 						</div>
 						<div id="tu_3">
 							<div id="tu_3_1">
-								<span style="font-size:16px;font-weight:500;color:#666">2室1厅1卫</span>
+								<span style="font-size:16px;font-weight:500;color:#666">三室两厅两卫</span>
 							</div>
 							<div id="tu_3_2">
-								<span style="font-size:16px;font-weight:500;color:#666">88.67㎡</span>
+								<span style="font-size:16px;font-weight:500;color:#666">102.2㎡</span>
 							</div>
 						</div>
 						<div id="tu_4">
@@ -147,7 +218,7 @@
 					</div>
 					<div  id="content_2_1_2_3">
 						<div index="3" class="content1" id="tu_1">
-							<img style="width:100%;height:100%" src="{{ asset('home/images/hfhx/hu3.png') }}" alt="">
+							<img style="width:100%;height:100%" src="{{ asset('home/images/hfhx/c_1.jpg') }}" alt="">
 						</div>
 						<div index="3" class="content1" id="tu_2_1">
 							<span style="font-size:18px;font-weight:500;color:#f6f6f6">C户型</span>
@@ -167,28 +238,7 @@
 						</div>
 
 					</div>
-					<div id="content_2_1_2_4">
-						<div index="4" class="content1"  id="tu_1">
-							<img style="width:100%;height:100%" src="{{ asset('home/images/hfhx/hu4.png') }}" alt="">	
-						</div>
-						<div index="4" class="content1" id="tu_2">
-							<span style="font-size:18px;font-weight:500;color:#f6f6f6">D户型</span>
-						</div>
-						<div id="tu_3">
-							<div id="tu_3_1">
-								<span style="font-size:16px;font-weight:500;color:#666">3室1厅1卫</span>
-								
-							</div>
-							<div id="tu_3_2">
-								<span style="font-size:16px;font-weight:500;color:#666">105.55㎡</span>
-								
-							</div>
-						</div>
-						<div id="tu_4">
-							<span style="font-size:15px;color:#f6f6f6;font-weight:500">待售</span>
-						</div>
-
-					</div>
+				
 					
 				
 				
@@ -211,7 +261,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/hfhx/4.png') }}" src="{{ asset('./home/images/hfhx/4.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/hfhx/a_2.jpg') }}" src="{{ asset('./home/images/hfhx/a_2.jpg') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">
@@ -219,10 +269,10 @@
 							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织金万都铭城A户型</span>
 						</div>
 						<div id="xiang_1_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:两室一厅一卫</span>
+							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:三室两厅两卫</span>
 						</div>
 						<div id="xiang_1_3">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 86.65㎡</span>
+							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 126.6㎡</span>
 						</div>
 						<div id="xiang_1_4">
 							<span style="font-size:16px;background-color:red;color:#f6f6f6">待售</span>
@@ -281,7 +331,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/hfhx/7.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/hfhx/b_2.jpg') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">
@@ -289,10 +339,10 @@
 							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织金万都铭城B户型</span>
 						</div>
 						<div id="xiang_1_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:两室一厅一卫</span>
+							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:三室两厅两卫</span>
 						</div>
 						<div id="xiang_1_3">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 88.67㎡</span>
+							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积:102.2㎡</span>
 						</div>
 						<div id="xiang_1_4">
 							<span style="font-size:16px;background-color:red;color:#f6f6f6">待售</span>
@@ -350,7 +400,7 @@
 					</div>
 				</div>
 				<div id="content_2_3">
-					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/hfhx/6.png') }}" alt="">
+					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/hfhx/c_2.jpg') }}" alt="">
 				</div>
 				<div id="content_2_4">
 					<div id="xiang_1">
@@ -358,10 +408,10 @@
 							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织金万都铭城C户型</span>
 						</div>
 						<div id="xiang_1_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:两室一厅一卫</span>
+							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:三室两厅一卫</span>
 						</div>
 						<div id="xiang_1_3">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 86.55㎡</span>
+							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 95.8㎡</span>
 						</div>
 						<div id="xiang_1_4">
 							<span style="font-size:16px;background-color:red;color:#f6f6f6">待售</span>
@@ -403,75 +453,7 @@
 					</div>
 				</div>
 			</div>
-			<div style="display:none" class="content_4" id="content_2_2">
-				<div id="content_2_1_1">
-					<div id="content_2_1_1_1">
-						<div id="content_2_1_1_1_1">
-							<div style="width:87px;height:20px;margin-top:10px">
-							<span style="font-size:19px;font-weight:600;color:#4b4b4b"> &nbsp;户型详情</span>	
-							</div>
-						</div>
-						<div id="content_2_1_1_1_2">
-							<div style="width:120px;height:20px;margin-top:11px">
-							<span style="font-size:18px;font-weight:550;color:#747474"> &nbsp;Unit details</span>			
-							</div>
-						</div>
-					</div>
-				</div>
-				<div id="content_2_3">
-					<img style="width:100%;height:100%" srcc="{{ asset('./home/images/hfhx/5.png') }}" alt="">
-				</div>
-				<div id="content_2_4">
-					<div id="xiang_1">
-						<div id="xiang_1_1">
-							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织金万都铭城D户型</span>
-						</div>
-						<div id="xiang_1_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:三室一厅一卫</span>
-						</div>
-						<div id="xiang_1_3">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 105.55㎡</span>
-						</div>
-						<div id="xiang_1_4">
-							<span style="font-size:16px;background-color:red;color:#f6f6f6">待售</span>
-							<span style="margin-left:5px;font-size:16px;background-color:#C0AAD9;color:#f6f6f6">平层</span>
-							<span style="margin-left:5px;font-size:16px;background-color:#DF9FA0;color:#f6f6f6">高入户</span>
-							<span style="margin-left:5px;font-size:16px;background-color:#D4B97E;color:#f6f6f6">采光好</span>
-							<span style="margin-left:5px;font-size:16px;background-color:#9AC78C;color:#f6f6f6">精装</span>
-						</div>
-					</div>
-					<div id="xiang_2">
-						<div style="padding-top:18px" id="xiang_2_1"> <span style="font-size:17px;font-weight:500;color:#4c4c4c">参考均价：</span> </div>
-						<div style="margin-top:5px" id="xiang_2_2"> <span style="font-size:17px;font-weight:500;color:#4c4c4c">参考总价：</span> </div>
-					</div>
-					<div id="xiang_3">
-						<div id="xiang_3_1">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">户型分布：</span>
-						</div>
-						<div id="xiang_3_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">户型解读：</span>
-						</div>
-						<div id="xiang_3_3">
-						<div>
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">1, 360度°全落地玻璃幕墙采光, 光线充沛视野宽阔 ;</span><br>
-							
-						</div>
-						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">2, 3.6米豪宅层高设计, 使居住空间更宽敞 ;</span><br>
-							
-						</div>
-						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">3, 干湿分区, 宽绰餐厅与客厅, 简约实用空间, 居家功能集聚完善 ;</span><br>
-							
-						</div>						
-						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">4, 客厅、卧室、卫生间、厨房、书房等多种功能复合 ;</span><br>
-							
-						</div>							
-						</div>
-					</div>
-				</div>
-			</div>
+			
 		
 		
 		</div>

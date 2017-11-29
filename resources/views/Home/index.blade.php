@@ -123,7 +123,7 @@
 		margin-top: 10px;
 	}
 	#index_1_1_3{
-		width:870px;
+		width:905px;
 		height:78px;
 		margin: 0 auto;
 		margin-top: 10px;
@@ -144,7 +144,7 @@
 
  	}
  	#table_4{
-		width:550px;
+		width:665px;
  		height:70px;
  		margin-top: 5px;
  		float:left;
@@ -164,8 +164,6 @@
 	   height                   : 35pt;
 	   line-height              : 35pt;
 	   padding-right            : 20pt;
-	   /*text-indent              : 15vf
-	   pt;*/
 	   text-align               : left;
 	   vertical-align           : middle;
 	   border                   : 1px solid #fff;
@@ -175,10 +173,10 @@
 	   -webkit-appearance       : none;
 	   -moz-appearance          : none;
 	   appearance               : none;
-	   font-family              : Arial,  Calibri, Tahoma, Verdana;
-	   font-size                : 1.5em;
+	   font-family:'Microsoft Yahei', '微软雅黑', Helvetica, 'Hiragino Sans GB', Arial, sans-serif;
+	   font-size                : 18px;
 	   font-weight              : 500;
-	   color                    : #bababa;
+	   color                    : #999;
 	   cursor                   : pointer;
 	   outline                  : none;
 
@@ -186,8 +184,10 @@
 	select#selectPointOfInterest option
 	{
 	    padding             : 4px 10px 4px 10px;
-	    font-size           : 12pt;
+	    font-size           : 17px;
+	    font-family:'Microsoft Yahei', '微软雅黑', Helvetica, 'Hiragino Sans GB', Arial, sans-serif;
 	    font-weight         : normal;
+	    color               : #999;
 	}
 	select#selectPointOfInterest option[selected]{ font-weight:bold;}
 	select#selectPointOfInterest option:nth-child(even) { background-color:#f5f5f5;}
@@ -217,15 +217,16 @@
 
 		}
 		#input_control2{
-		  width:550px;
+		  width:665px;
 		  
 
 		}
 
 		#table_2 input[type="text"],#btn1,#btn2,#table_4 input[type='text']{
 		  box-sizing: border-box;
-		  text-align:center;
+		  /*text-align:center;*/
 		  font-size:1.5em;
+		  text-indent: 9px;
 		  height:46px;
 		  border-radius:6px;
 		  border:1px solid #fff;
@@ -241,21 +242,23 @@
 		  width:100%;
 		}
 
-		#table_2 ::-moz-placeholder { 
-		  color: #bababa;
-		  font-size: 14pt;
+		#table_2 input ::-moz-placeholder,#table_4 input ::-moz-placeholder { 
+		  color: #999;
+		
+		  font-size: 18px;    font-family:'Microsoft Yahei', '微软雅黑', Helvetica, 'Hiragino Sans GB', Arial, sans-serif;
 		}
-		#table_2 ::-moz-placeholder {
-		  color: #bababa;
-		  font-size: 14pt;
+		
+		#table_2 input::-webkit-placeholder,#table_4 input::-webkit-placeholder{
+		  color: #999;
+		  font-size: 18px;    font-family:'Microsoft Yahei', '微软雅黑', Helvetica, 'Hiragino Sans GB', Arial, sans-serif;
 
 		}
-		#table_2 input::-webkit-input-placeholder{
-		  color: #bababa;
-		  font-size: 14pt;
 
+		#table_4 input :-ms-placeholder,#table_2 input :-ms-placeholder { 
+		  color: #999;
+		  font-size: 18px;    font-family:'Microsoft Yahei', '微软雅黑', Helvetica, 'Hiragino Sans GB', Arial, sans-serif;
 		}
-		#table_3 button{
+			#table_3 button{
 			width:190px;
 			height:46px;
 			background-color: #F2AB2B;

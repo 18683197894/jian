@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>{{ config('app.name') }}@if(!empty($title))  - {{$title}}@endif</title>
 <link href="{{ asset('home/images/images/common.css') }}" rel="stylesheet" type="text/css" />
-
+<script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
 </head>
 	<style>
 	#hade-a{
@@ -159,11 +159,13 @@
 			border-radius: 3px 3px 3px 3px;
 		}
 		#label_4{
-			padding-top: 20px;
+			padding-top: 5px;
 		}
-		#label_4 button{
+		#label_4 span{
 			width:260px;
 			height:37px;
+			display: block;
+			line-height: 37px;
 			text-align:center;
 			background-color:#E12E32;
 			color:#fff;
@@ -173,7 +175,7 @@
 			font-size: 17px;
 			border:none;
 		}
-		#label_4 button:active{
+		#label_4 span:active{
 			background-color:#B71212;
 		}
 		#label_5{
@@ -190,6 +192,14 @@
 			font-size:14px;
 			color:#333;
 			float:right;
+		}
+		#lod{
+			color:red;
+			display: block;
+			font-size: 14px;
+			/*margin-top: 5px;*/
+			padding-bottom: 5px;
+			height: 10px;
 		}
 	</style>
 <body>
@@ -223,28 +233,53 @@
 				<img src="{{ asset('home/images/logo/1.png') }}" alt="">
 			</div>
 			<div id="con2-b">
+				<form action="{{ url('home/dologin') }}" method="post">
+				{{ csrf_field() }}
+
 				<div id="con2-b-1">
 				<label id="label_1" for="">
 					<span>账号登入</span>
 				</label>
 				<label id="label_2">
-					<input type="text" placeholder="用户名">
+					<input type="text" name="name" value="{{ old('name') }}" placeholder="用户名">
 				</label>
 				<label id="label_3">
-					<input type="password" placeholder="密码">
-					
+					<input type="password" name="password" placeholder="密码">
 				</label>
+				<span id="lod" >{{ \session('info') }}</span>
 				<label id="label_4">
-					<button>立即登入</button>
+					<span>立即登入</span>
 				</label>
 				<label id="label_5">
 					<a id="label_5_a1" href="{{ url('home/register') }}">还没有账号？ 注册</a>
 					<a id="label_5_a2" href="">忘记密码？</a>
 				</label>
 				</div>
+				</form>
 			</div>
 		</div>
 	</div>
+	<script>
+	$('#label_4 > span').on('click',function(){
+		var name = $('#label_2 > input').val();
+		var password = $('#label_3 > input').val();
+		$('#label_2 > input').css('border','1px solid #ccc');
+		$('#label_3 > input').css('border','1px solid #ccc');
+		
+		if( name == null || name == '')
+		{
+			$('#label_2 > input').css('border','1px solid red');
+		}
+
+		if(password == null || password == '')
+		{
+			$('#label_3 > input').css('border','1px solid red');
+			return false;
+		}
+
+		$('form').submit();
+	})
+	</script>
 <div class="z-bot">
     <div class="z-bot1">
 	    <ul>

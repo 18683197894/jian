@@ -35,6 +35,8 @@
 			<div id="hade_1">
 				<div id="hade_1_1">
 					<img id="hade_img_1" src="{{ asset('/home/images/logo.png') }}" alt="">
+					<em></em>
+					<span>房地产智慧产业服务提供商</span>
 				</div>
 				<div id="hade_1_2">
 					<div id="hade_1_2_1">
@@ -50,7 +52,7 @@
 					<div id="hade_1_2_3">
 						<form action="{{ url('home/sou') }}" method="GET">
 							<input type="text" name="con" value="@if( isset($request['con'])  ){{ trim($request['con'])}}@endif" />
-							<button>搜索</button>
+							<button></button>
 						</form>
 					</div>
 		

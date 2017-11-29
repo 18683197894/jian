@@ -285,7 +285,16 @@ Route::post('jslmindex/dologin','Admin\LoginController@dologin');
 
 //前台登入
 Route::get('/home/login','Home\LoginController@login');
+Route::post('/home/dologin','Home\LoginController@dologin');
+//注册
 Route::get('/home/register','Home\LoginController@register');
+Route::post('/home/register/nameajax','Home\LoginController@nameajax');
+Route::post('/home/register/phoneajax','Home\LoginController@phoneajax');
+Route::post('/home/register/zendcode','Home\LoginController@zendcode');
+Route::post('/home/register/yanajax','Home\LoginController@yanajax');
+Route::post('/home/register/doreg','Home\LoginController@doreg');
+
+
 //前台登录中间间
 Route::group(['middleware'=>['HomeLogin']],function(){
 

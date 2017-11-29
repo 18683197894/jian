@@ -104,7 +104,7 @@
 		</div>
 
 	</div>
-		<div id="content_2">
+		<div id="content_2" style="margin-top:65px">
 			<div id="content_2_1">
 				<div id="content_2_1_1">
 					<div id="content_2_1_1_1">

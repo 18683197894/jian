@@ -1,9 +1,10 @@
-$(function(){
+	$(function(){
 	var nu = $(".win").attr('index');
 	var win=$(".win");
 	var divs=$(".box div");
-	var num1=0;  //ǰݵ±
+	var num1=$('.num1').attr('index');  
 	var num2=0;
+
 	$(".leftB").click(function(){
 
 		divs.stop(true,true);
@@ -13,6 +14,7 @@ $(function(){
 			num1=nu -1 ;
 		}
 		var index = divs.eq(num1).attr('index')
+		
 		$('.con1_leftul > li').css('display','none');
 		$('#index'+index).css('display','block');
 		divs.eq(num1).css("left",904).animate({left:0});

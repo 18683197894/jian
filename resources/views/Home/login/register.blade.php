@@ -3,7 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>{{ config('app.name') }}@if(!empty($title))  - {{$title}}@endif</title>
+<script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
 <link href="{{ asset('home/images/images/common.css') }}" rel="stylesheet" type="text/css" />
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
 	<style>
@@ -132,6 +134,7 @@
 			height:50px;
 			display: block;
 			margin:0 auto;
+			position: relative;
 
 		}
 		#label_1{
@@ -145,23 +148,44 @@
 			font-size: 20px;
 			color:#E12E32;
 		}
-		#label_3{
+		#label_3,#label_4{
 			margin-top:4px;
 		}
-		#label_2 input,#label_3 input{
+
+		#label_2 input,#label_3 input,#label_4 input{
 			width:260px;
 			height:33px;
 			border:1px solid #ccc;
 			margin-top: 8px;
 			color:#333;
 			font-size: 16px;
+			position: relative;
 			text-indent: 10px;
 			border-radius: 3px 3px 3px 3px;
 		}
-		#label_4{
+		#label_2_1,#label_2_2{
+			/*display:none;*/
+			font-weight: normal;
+			font-size: 15px;
+			color:red;
+			left:150px;
+			top:15px;
+			display: none;
+			position:absolute;
+		}
+		#label_3_1,#label_4_1,#label_4_2{
+			font-weight: normal;
+			font-size: 15px;
+			color:red;
+			left:150px;
+			top:15px;
+			display: none;
+			position:absolute;
+		}
+		#label_6{
 			padding-top: 8px;
 		}
-		#label_6 input{
+		#label_5 input{
 			width:140px;
 			height:32px;
 			border:1px solid #ccc;
@@ -172,7 +196,7 @@
 			border-radius: 3px 3px 3px 3px;
 			float:left;
 		}
-		#label_6 button{
+		#label_5 #button1{
 			width:100px;
 			height:32px;
 			float:right;
@@ -184,14 +208,31 @@
 			margin-top: 9px;
 			font-weight: normal;
 			line-height: 34px;
-			font-size: 16px;
+			font-size: 15px;
 			border:none;
 		}
-		#label_6 button:active{
+		#label_5 #button3{
+			width:100px;
+			height:32px;
+			display:block;
+			float:right;
+			text-align:center;
+			border-radius: 3px 3px 3px 3px;
+			background-color:#ccc;
+			color:#fff;
+			display: none;
+			cursor:pointer;
+			margin-top: 9px;
+			font-weight: normal;
+			line-height: 34px;
+			font-size: 15px;
+			border:none;
+		}
+		#label_5 #button1:active{
 			background-color:#247652;
 
 		}
-		#label_4 button{
+		#label_6 button{
 			width:260px;
 			height:35px;
 			text-align:center;
@@ -203,10 +244,10 @@
 			font-size: 17px;
 			border:none;
 		}
-		#label_4 button:active{
+		#label_6 button:active{
 			background-color:#B71212;
 		}
-		#label_5 #label_5_a1{
+		#label_7 #label_7_a1{
 			font-weight: normal;
 			font-size:15px;
 			color:red;
@@ -214,7 +255,7 @@
 			margin-top: -4px;
 
 		}
-		#label_5 #label_5_a2{
+		#label_7 #label_7_a2{
 			font-weight: normal;
 			font-size:15px;
 			color:#333;
@@ -253,34 +294,555 @@
 			</div>
 			<div id="con2-b">
 				<div id="con2-b-1">
+				<form id="from" action="{{ url('/home/register/doreg') }}" method="POST">
+				{{ csrf_field() }}
 				<label id="label_1" for="">
 					<span>新用户注册</span>
 				</label>
 				<label id="label_2">
-					<input type="text" placeholder="用户名">
+					<input type="text" name="name" placeholder="用户名">
+					<span id="label_2_1">用户名格式错误</span>
+					<span id="label_2_2">该用户名已存在</span>
 				</label>
 				<label id="label_3">
-					<input type="password" placeholder="密码">
+					<input type="password" name="password" placeholder="密码">
+					<span id="label_3_1">密码格式错误</span>
 				</label>
 				
-				<label id="label_3">
-					<input type="text" placeholder="手机号">
-				</label>
-				<label id="label_6">
-					<input type="text" placeholder="验证码">
-					<button>获取验证码</button>
-				</label>
 				<label id="label_4">
-					<button>立即注册</button>
+					<input type="text" name="phone" placeholder="手机号">
+					<span id="label_4_1">手机号格式错误</span>
+					<span id="label_4_2">手机号已被注册</span>
 				</label>
 				<label id="label_5">
-					<a id="label_5_a1" href="{{ url('/home/login') }}">已有账号？ 登入</a>
+					<input type="text" name="yan" placeholder="验证码">
+					<button id="button1" onClick="return false;">获取验证码</button>
+					<button id="button3" onClick="return false;">获取验证码</button>
+				</label>
+				<label id="label_6">
+					<button id="button2" onClick="return false;">立即注册</button>
+				</label>
+				<label id="label_7">
+					<a id="label_7_a1" href="{{ url('/home/login') }}">已有账号？ 登入</a>
 					<!-- <a id="label_5_a2" href="">忘记密码？</a> -->
 				</label>
+				</form>
 				</div>
+				
 			</div>
 		</div>
 	</div>
+	<script>
+		init1 = null;
+		init2 = null;
+		init3 = null;
+		init4 = null;
+
+
+		$('#button2').on('click',function(){
+			
+			if( init4 == true )
+			{	
+				var name = $('#label_2 > input').val();
+				var password = $('#label_3 > input').val();
+				var phone = $('#label_4 > input').val();
+				var init5 = true;
+				var res1 = pern(name,/^[a-zA-z]\w{5,15}$/);
+				var res2 = pern(password,/^(\w){8,20}$/);
+				var res3 = pern(phone,/^[1][3,4,5,7,8][0-9]{9}$/);
+
+				if(res1 == false)
+				{
+					$('#label_2 > input').css('border','1px solid red');
+					$('#label_2_1').css('display','block');
+					$('#label_2_2').css('display','none');
+					init5 = false;
+				}else
+				{
+					$('#label_2 > input').css('border','1px solid #ccc');
+					$('#label_2_1').css('display','none');
+					$('#label_2_2').css('display','none');
+
+					var nameper = ajax('/home/register/nameajax',name);
+					if( !nameper )
+					{	
+						init5 = false;
+						$('#label_2 > input').css('border','1px solid red');
+						$('#label_2_2').css('display','block');
+					}
+
+				}
+
+				if( res2 == false )
+				{	
+						init5 = false;
+						$('#label_3_1').css('display','block');
+						$('#label_3 > input').css('border','1px solid red');
+				}else
+				{
+
+						$('#label_3_1').css('display','none');
+						$('#label_3 > input').css('border','1px solid #ccc');
+				}
+
+				if( res3 == false )
+				{	
+					init5 = false;
+					$('#label_4 > input').css('border','1px solid red');
+					$('#label_4_1').css('display','block');
+					$('#label_4_2').css('display','none');
+
+				}else
+				{
+					$('#label_4_1').css('display','none');
+					$('#label_4_2').css('display','none');
+					$('#label_4 > input').css('border','1px solid #ccc');
+				}
+
+				if( init5 == true )
+				{
+					var yan = $('#label_5 > input').val();
+					if( yan != null )
+					{	
+						$('#label_5 > input').css('border','1px solid #ccc');
+					
+						var res = yanajax(phone,yan);
+						if( res == 1)
+						{
+							$('#from').submit();
+						}else if( res ==2 )
+						{
+							alert('验证码有误!');
+						}else if( res == 3 )
+						{
+							alert('请先验证手机号');
+						}
+					}else if( yan == '' || yan == false )
+					{	
+						$('#label_5 > input').css('border','1px solid red');
+						return false;
+					}
+				}else
+				{
+					return false;
+				}
+
+			}else
+			{
+				$('#label_5 > input').css('border','1px solid red');
+				return false;
+			}
+		})
+	
+		function yanajax(phone,yan)
+		{	
+			var res = false;
+			$.ajax('/home/register/yanajax',{
+				type:'post',
+			    data:{phone:phone,yan:yan,_token:$('meta[name="csrf-token"]').attr('content')},
+			    async: false,
+			    success : function(data)
+			    {
+			    	res = data
+			    },
+			    error : function(data)
+			    {
+			    	res = false;
+			    }
+			})
+
+			return res;
+		}
+		function button1(){
+
+		}
+		$('#button1').on('click',function(){
+			$('#label_5 > input').css('border','1px solid #ccc');
+			var name = $('#label_2 > input').val();
+			var password = $('#label_3 > input').val();
+			var phone = $('#label_4 > input').val();
+			btn = $(this);
+			bon = $("#button3");
+			var inputname = $('#label_2 > input');
+			var inputpassword = $('#label_3 > input');
+			var inputphone = $('#label_4 > input');
+			var clock = '';
+			var nums = 60;
+
+			if(name == null || name == '')
+			{
+				inputname.css('border','1px solid red');
+				$('#label_2_1').css('display','none');
+				$('#label_2_2').css('display','none')
+				init1 = null;
+			}else
+			{
+				var per = pern(name,/^[a-zA-z]\w{5,15}$/);
+				if(per)
+				{
+				inputname.css('border','1px solid #ccc');
+				$('#label_2_1').css('display','none');
+
+				var res = ajax('/home/register/nameajax',name);
+				if(res)
+				{
+					inputname.css('border','1px solid #ccc');
+					$('#label_2_1').css('display','none');
+					$('#label_2_2').css('display','none')
+					init1 = true;
+				}else
+				{
+					inputname.css('border','1px solid red');
+					$('#label_2_2').css('display','block')
+					init1 = null;
+
+				}
+
+				}else
+				{
+					inputname.css('border','1px solid red');
+					$('#label_2_1').css('display','block');
+					$('#label_2_2').css('display','none');
+				init1 = null;
+				}
+			}
+				
+				if(password == null || password == '')
+				{	
+					init2 = null;
+					inputpassword.css('border','1px solid red');
+					$('#label_3_1').css('display','none');
+				}else
+				{
+					var per = pern(password,/^(\w){8,20}$/);
+					if(per)
+					{	
+						init2 = true;
+						$('#label_3_1').css('display','none');
+						inputpassword.css('border','1px solid #ccc');
+
+
+					}else
+					{
+						init2 = null;
+						$('#label_3_1').css('display','block');
+						inputpassword.css('border','1px solid red');
+
+					}
+				}
+
+				if( phone == null || phone == '' )
+				{	
+					init3 = null;
+					$('#label_4_1').css('display','none');
+					$('#label_4_2').css('display','none');
+					$('#label_4 > input').css('border','1px solid red');
+					return false;
+				}else
+				{
+					var per = pern(phone,/^[1][3,4,5,7,8][0-9]{9}$/);
+					if(per)
+					{	
+						$('#label_4_1').css('display','none');
+						var res = ajax('/home/register/phoneajax',phone);
+						if(res)
+						{	
+							inputphone.css('border','1px solid #ccc');
+							$('#label_4_2').css('display','none');
+							init3 = true;
+						}else
+						{
+
+							inputphone.css('border','1px solid red');
+							$('#label_4_2').css('display','block');
+							init3 = null;
+							return false;
+						}
+
+					}else
+					{
+						init3 = null;
+						inputphone.css('border','1px solid red');
+						$('#label_4_1').css('display','block');
+						$('#label_4_2').css('display','none');
+
+						return false;
+					}
+				}
+				if( init1 == true && init2 == true && init3 == true)
+				{
+				 	
+			     			btn.css('display','none');	
+				 			bon.css('display','block');
+			     			sendCode();
+			     			init4 = true;
+
+			     $.ajax('/home/register/zendcode',{
+			     	type:'post',
+			     	data:{phone:phone,_token:$('meta[name="csrf-token"]').attr('content')},
+			     	async: false,
+			     	success:function(data)
+			     	{	
+			     		if( data == 1 )
+			     		{
+			     			btn.css('display','none');	
+				 			bon.css('display','block');
+			     			sendCode();
+			     			init4 = true;
+			     		}else if( data == 2 )
+			     		{
+			     			alert('短信发送失败！');
+			     			init4 = null;
+			     		}else if( data == 3 )
+			     		{	
+			     			init4 = null;
+			     			alert('发送失败！请检查你的号码是否正确可用。');
+			     		}
+			     		
+			     		
+			     	},
+			     	error:function(data)
+			     	{	
+			     		init4 = null;
+			     		alert('发送失败!数据异常。');
+			     	},
+			     	dateType :'json'
+			     })
+
+			     // init4 = true;	  
+				}else
+				{	
+			     	init4 = false;
+					return false;
+				}
+
+				 function sendCode()
+				 { 
+				 
+				//  bon.disabled = true; //将按钮置为不可点击
+				 bon.html(nums+'秒后重试') ;
+				//  btn.css('background-color','#ccc');
+				 clock = setInterval(doLoop, 1000); //一秒执行一次
+				 }
+				 function doLoop()
+				 {
+				 nums--;
+				 if(nums > 0){
+				  bon.html(nums+'秒后重试');
+				 }else{
+				  clearInterval(clock); //清除js定时器
+				//   bon.disabled = false;
+				//   btn.css('background-color','#247652');
+				  btn.css('display','block');
+				  bon.css('display','none');
+				  nums = 10; //重置时间
+				  
+				 }
+				 }
+				
+		})
+		function pern(str,per)
+		{
+			var re = per;
+			  if(re.test(str))
+			  {
+			  	return true;
+			  }else
+			  {
+			  	return false;
+			  }
+		}
+
+		function ajax(url,str,){
+			var res = null
+			$.ajax(url,{
+		    	type : 'post',
+		    	async: false,
+		    	data:{str:str,_token:$('meta[name="csrf-token"]').attr('content')},
+		    	success:function(data)
+		    	{	
+		    		if(data == 1)
+		    		{
+						res = true;
+		    		}else if(data == 2)
+		    		{	
+		   				
+		    			// $(span).css('display','block');
+		    			res = false;
+		    		}else
+		    		{	
+		    			res = true;
+		    			alert('数据异常');
+		    		}
+		    		
+		    	},
+		    	error:function(data)
+		    	{	
+		    		res = false;
+		    		alert('数据异常');
+		    	}
+			})
+			return res;
+		}
+
+
+		// $('#label_4 > input').blur(function(){
+
+		// 	if( init1 == null  )
+		// 	{
+		// 		$('#label_2 > input').css('border','1px solid red');
+		// 	}
+		// 	if( init2 == null  )
+		// 	{
+		// 		$('#label_3 > input').css('border','1px solid red');
+		// 	}
+
+		// 	var phone = $(this).val();
+		// 	if( phone == '' || phone ==null)
+		// 	{	
+		// 		init3 = null;
+		// 		$('#label_4_1').css('display','none');
+		// 		$('#label_4_2').css('display','none');
+
+		// 		$(this).css('border','1px solid red')
+		// 		return false;
+		// 	}
+		// 	var myreg =  /^[1][3,4,5,7,8][0-9]{9}$/;  
+		// 	if (myreg.test(phone)) 
+		// 	{  
+		// 		var inputphone = $(this);  		
+		// 	  	$.ajax('/home/register/phoneajax',{
+		// 	    	type : 'post',
+		// 	    	// async: false,
+		// 	    	data:{phone:phone,_token:$('meta[name="csrf-token"]').attr('content')},
+		// 	    	success:function(data)
+		// 	    	{	
+		// 	    		if(data == 1)
+		// 	    		{
+			
+		// 	   				inputphone.css('border','1px solid #ccc')
+		// 	    			$('#label_4_1').css('display','none');
+		// 	    			$('#label_4_2').css('display','none');
+
+		// 	    		}else if(data == 2)
+		// 	    		{	
+		// 	    			init3 = null;
+		// 	   				inputphone.css('border','1px solid red')
+		// 	    			$('#label_4_1').css('display','none');
+		// 	    			$('#label_4_2').css('display','block');
+		// 	    		}else
+		// 	    		{	
+		// 	    			init3 = null;
+		// 	    			alert('数据异常');
+		// 	    		}
+			    		
+		// 	    	},
+		// 	    	error:function(data)
+		// 	    	{	
+		// 	    		init3 = null;
+		// 	    		alert('数据异常');
+		// 	    	}
+		// 	    })
+
+		// 	}else
+		// 	{  
+		// 		$(this).css('border','1px solid red')
+		// 		$('#label_4_1').css('display','block');
+		// 		$('#label_4_2').css('display','none');
+			     
+		// 	}  
+		// })
+
+		// $('#label_3 > input').blur(function(){
+
+		// 	if(init1 == null)
+		// 	{	
+		// 		$('#label_2 > input').css('border','1px solid red');
+		// 		// return false;
+		// 	}
+		// 	var password = $(this).val();
+		// 	if( password == '' || password ==null)
+		// 	{	
+		// 		init2 = null;
+		// 		$(this).css('border','1px solid red')
+		// 		return false;
+		// 	}
+			
+		// 	var reg = new RegExp(/^(\w){8,20}$/);
+			// }
+			// }
+			// }
+  // 		  	if (reg.test(password))
+  // 		  	{	
+  // 		  		init2 = true;
+		// 		$('#label_3_1').css('display','none');
+		// 		$('#label_3 > input').css('border','1px solid #ccc');
+  // 		  	}else
+		// 	{	
+		// 		init2 = null
+		// 		$('#label_3 > input').css('border','1px solid red');
+		// 		$('#label_3_1').css('display','block');
+		// 	}
+		// })
+
+
+
+		// $('#label_2 > input').blur(function(){
+		// 	var name = $(this).val();
+		// 	var inputname = $(this);
+		// 	$('#label_2_1').css('display','none');
+		// 	$('#label_2_2').css('display','none');
+		// 	if( name == '' || name ==null)
+		// 	{	
+		// 		init1 = null;
+		// 		$(this).css('border','1px solid red')
+		// 		return false;
+		// 	}
+		// 	  var re = /^[a-zA-z]\w{5,15}$/;
+		// 	  if(re.test(name)){
+			    
+
+		// 	     $.ajax('/home/register/nameajax',{
+		// 	    	type : 'post',
+		// 	    	// async: false,
+		// 	    	data:{name:name,_token:$('meta[name="csrf-token"]').attr('content')},
+		// 	    	success:function(data)
+		// 	    	{	
+		// 	    		if(data == 1)
+		// 	    		{
+		// 	    			init1 = true;
+		// 	   				inputname.css('border','1px solid #ccc')
+		// 	    			$('#label_2_1').css('display','none');
+		// 	    			$('#label_2_2').css('display','none');
+
+		// 	    		}else if(data == 2)
+		// 	    		{	
+		// 	    			init1 = null;
+		// 	   				inputname.css('border','1px solid red')
+		// 	    			$('#label_2_1').css('display','none');
+		// 	    			$('#label_2_2').css('display','block');
+		// 	    		}else
+		// 	    		{	
+		// 	    			init1 = null;
+		// 	    			alert('数据异常');
+		// 	    		}
+			    		
+		// 	    	},
+		// 	    	error:function(data)
+		// 	    	{	
+		// 	    		init1 = null;
+		// 	    		alert('数据异常');
+		// 	    	}
+		// 	    })
+		// 	  }else{
+		// 		$(this).css('border','1px solid red')
+		// 	    $('#label_2_1').css('display','block');
+		// 	    return false;
+		// 	  }  
+
+			
+		// })
+	</script>
 <div class="z-bot">
     <div class="z-bot1">
 	    <ul>
