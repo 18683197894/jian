@@ -453,10 +453,8 @@
 
 			return res;
 		}
-		function button1(){
-
-		}
-		$('#button1').on('click',function(){
+		$('#button1').one('click',aaa);
+		function aaa(){
 			$('#label_5 > input').css('border','1px solid #ccc');
 			var name = $('#label_2 > input').val();
 			var password = $('#label_3 > input').val();
@@ -537,6 +535,7 @@
 					$('#label_4_1').css('display','none');
 					$('#label_4_2').css('display','none');
 					$('#label_4 > input').css('border','1px solid red');
+					$('#button1').one('click',aaa);
 					return false;
 				}else
 				{
@@ -556,6 +555,7 @@
 							inputphone.css('border','1px solid red');
 							$('#label_4_2').css('display','block');
 							init3 = null;
+							$('#button1').one('click',aaa);
 							return false;
 						}
 
@@ -565,18 +565,13 @@
 						inputphone.css('border','1px solid red');
 						$('#label_4_1').css('display','block');
 						$('#label_4_2').css('display','none');
-
+						$('#button1').one('click',aaa);
 						return false;
 					}
 				}
 				if( init1 == true && init2 == true && init3 == true)
-				{
-				 	
-			     			btn.css('display','none');	
-				 			bon.css('display','block');
-			     			sendCode();
-			     			init4 = true;
-
+				{	
+					
 			     $.ajax('/home/register/zendcode',{
 			     	type:'post',
 			     	data:{phone:phone,_token:$('meta[name="csrf-token"]').attr('content')},
@@ -612,6 +607,7 @@
 			     // init4 = true;	  
 				}else
 				{	
+					$('#button1').one('click',aaa);
 			     	init4 = false;
 					return false;
 				}
@@ -635,12 +631,13 @@
 				//   btn.css('background-color','#247652');
 				  btn.css('display','block');
 				  bon.css('display','none');
+				  $('#button1').one('click',aaa);
 				  nums = 10; //重置时间
 				  
 				 }
 				 }
 				
-		})
+		}
 		function pern(str,per)
 		{
 			var re = per;

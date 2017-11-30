@@ -408,10 +408,10 @@
 							<span style="font-size:24px;font-weight:600;color:#4c4c4c">织金万都铭城C户型</span>
 						</div>
 						<div id="xiang_1_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:三室两厅一卫</span>
+							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:三室</span>
 						</div>
 						<div id="xiang_1_3">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 95.8㎡</span>
+							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 86.55㎡</span>
 						</div>
 						<div id="xiang_1_4">
 							<span style="font-size:16px;background-color:red;color:#f6f6f6">待售</span>

@@ -15,7 +15,7 @@
 
 
 <body>
-	<!-- <div id="hade-a"> 
+	<div id="hade-a"> 
 		<div id="hade-b">
 			<div id="login">
 				<ul>
@@ -27,7 +27,7 @@
 				</ul>
 			</div>
 		</div>
-	</div> -->
+	</div>
 	<div id="hades">
 
 		<div id="hade_content">
