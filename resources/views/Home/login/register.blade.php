@@ -587,10 +587,12 @@
 			     		}else if( data == 2 )
 			     		{
 			     			alert('短信发送失败！');
+			     			$('#button1').one('click',aaa);
 			     			init4 = null;
 			     		}else if( data == 3 )
 			     		{	
 			     			init4 = null;
+			     			$('#button1').one('click',aaa);
 			     			alert('发送失败！请检查你的号码是否正确可用。');
 			     		}
 			     		
@@ -599,6 +601,7 @@
 			     	error:function(data)
 			     	{	
 			     		init4 = null;
+			     		$('#button1').one('click',aaa);
 			     		alert('发送失败!数据异常。');
 			     	},
 			     	dateType :'json'

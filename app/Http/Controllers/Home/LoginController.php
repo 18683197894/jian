@@ -161,8 +161,9 @@ class LoginController extends Controller
 
 		$res = \DB::table('user_home')->insert($data);
 		if($res)
-		{
-			return redirect('/home/login')->with(['info'=>'注册成功！']);
+		{	
+			\session(['Home'=>$data]);
+			return redirect('/')->with(['info'=>'注册成功！']);
 		}else
 		{
 			return back()->with(['info'=>'注册失败！']);
