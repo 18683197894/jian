@@ -228,6 +228,19 @@ class RuanController extends Controller
     	$res = \DB::table('fengge')->where('id',$id)->first();
     	$pid = $res->pid;
     	$tit = $res->title;
+        $zi  = \DB::table('subclass')->get();
+        foreach( $data as $k => $v )
+        {
+            $v->jia = 0;
+            foreach( $zi as $kk => $vv )
+            {
+                if( $vv->pid == $v->id )
+                {
+                    $v->jia += $vv->jia;
+                }
+            }
+        }
+        
     	return view('Admin.ruan.column',['title'=>'风格栏目','pid'=>$pid,'tit'=>$tit,'id'=>$id,'data'=>$data]);
     }
 

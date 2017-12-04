@@ -21,8 +21,12 @@
         ],
         "psr-4": {
             "App\\": "app/"
-        }
+        },
+        "files":[
+            "app/Common/Function.php"
+        ]
     },
+  
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
@@ -49,4 +53,5 @@
         "sort-packages": true,
         "optimize-autoloader": true
     }
+
 }

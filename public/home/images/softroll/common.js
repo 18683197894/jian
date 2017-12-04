@@ -31,7 +31,8 @@
 		   		var p = $(this).parents('.ztb').find('.c0-con').find('p').eq(0);
 		   		var tit = $(this).html();
 		   		var da = "";
-		   		
+		   		var jia = $(this).parents('.ztb').find('.jia');
+		   		var iid = $(this).parents('.ztb').find('.c0-tit-1');
 		   		$(this).parents('.ztb').find('#C0').find(".c0-tit-1").html(tit+'包含项目');
 			    
 		   		
@@ -47,8 +48,10 @@
 			     		 div.append(da);
 			     		 return false;	
 			     		}
-			     		
+			     		jia.html(data[0]['jia']);
 			     		div.html('');
+			     	    jia.html(data[0]['jia']);
+			     	    iid.attr('index',data[0]['pid'])
 			     		$.each(data,function(i,n){
 
 			     			p.find('.c0-tit-51').html(n['title']);

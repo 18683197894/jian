@@ -15,6 +15,22 @@
 
 
 <body>
+	@if( \session('Home') )
+	<div id="hade-a"> 
+		<div id="hade-b">
+			<div id="login_1">
+				<ul>
+					<li id="loginli3">热线电话：400-188-6585</li>
+					<li id="loginli4"></li>
+					<li id="loginli3"><a href="#">购物车</a></li>
+					<li id="loginli4"></li>
+					<li id="loginli3"><a href="#">{{ \session('Home')->name }}</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	@else
 	<div id="hade-a"> 
 		<div id="hade-b">
 			<div id="login">
@@ -28,6 +44,7 @@
 			</div>
 		</div>
 	</div>
+	@endif
 	<div id="hades">
 
 		<div id="hade_content">

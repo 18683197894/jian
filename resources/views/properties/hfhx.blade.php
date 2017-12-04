@@ -105,16 +105,16 @@
 
 				<div id="content_5_1_2">
 					<ul>
-						<li id="content_5li1"><img src="{{ asset('/home/images/hfhx/a.png') }}" alt=""><em index="1"><span>点击360度预览</span></em></li>
-						<li id="content_5li2"><img src="{{ asset('/home/images/hfhx/b.png') }}" alt=""><em index="2"><span>点击360度预览</span></em></li>
-						<li id="content_5li2"><img src="{{ asset('/home/images/hfhx/c.jpg') }}" alt=""><em index="3"><span>点击360度预览</span></em></li>
+						<li id="content_5li1"><img class="em" src="{{ asset('/home/images/hfhx/a.png') }}" alt="" index="1"><em class="em" index="1"><span>点击360度预览</span></em></li>
+						<li id="content_5li2"><img class="em" src="{{ asset('/home/images/hfhx/b.png') }}" alt="" index="2"><em class="em" index="2"><span>点击360度预览</span></em></li>
+						<li id="content_5li2"><img class="em" src="{{ asset('/home/images/hfhx/c.jpg') }}" alt="" index="3"><em class="em" index="3"><span>点击360度预览</span></em></li>
 						<!-- <li id="content_5li2"><img src="" alt=""><em index="4"><span>点击360度预览</span></em></li> -->
 					</ul>
 				</div>
 			</div>
 			</div>
-			<div id="divv" style="margin:0 auto;width:1200px;height:700px;display:none;padding-top:30px;">
-				
+			<div id="divv" style="margin:0 auto;width:1200px;height:750px;display:none;">
+					<div class="ifhead" style="margin:0 auto;width:1200px;height:50px;text-align: center;line-height:50px;font-size:19px;color:#555;font-weight:600">万都铭城A户型</div>
 					<iframe id="ifrPage" index="1" name="ifrPage" src="http://720yun.com/t/185j5denun1?pano_id=7140817" style="margin:0 auto;width:1200px;height:700px;border:none;border:1px solid #666"></iframe>
 			</div>
 			<script>
@@ -124,7 +124,7 @@
 				$(this).css('border-bottom','');
 				
 			});
-			$('#content_5_1_2 > ul > li > em').on('click',function(){
+			$('.em').on('click',function(){
 				var index = $(this).attr('index');
 				var ind = $('#ifrPage').attr('index');
 				if( index == ind)
@@ -139,15 +139,18 @@
 				}
 				var str;
 				if( index == 1 )
-				{
+				{	
+					$('.ifhead').html('万都铭城A户型');
 					str = 'http://720yun.com/t/185j5denun1?pano_id=7140817';
 				}
 				if( index == 2 )
 				{
+					$('.ifhead').html('万都铭城B户型');
 					str = 'http://720yun.com/t/901j5d4Ouk1?pano_id=7266428';
 				}
 				if( index == 3 )
 				{
+					$('.ifhead').html('万都铭城C户型');
 					str = 'http://vr.justeasy.cn/view/982727.html';
 				}
 				if( $('#divv').css('display') == 'none' )

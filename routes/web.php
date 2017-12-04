@@ -119,6 +119,15 @@ Route::get('/jslmadmin/index','Admin\IndexController@index');
 //退出
 Route::get('/jslmext','Admin\LoginController@jslmext');
 
+//用户管理
+Route::get('/jslmadmin/userhome/index','Admin\HomeController@index');
+//用户的购物车
+Route::get('/jslmadmin/userhome/playgou/{id}','Admin\HomeController@playgou');
+
+Route::post('/jslmadmin/userhome/index/statusajax','Admin\HomeController@statusajax');
+
+
+
 //新闻动态
 Route::get('jslmadmin/newsleiadd','Admin\NewsController@newsleiadd');
 Route::post('jslmadmin/newsleiadds','Admin\NewsController@newsleiadds');
@@ -274,17 +283,18 @@ Route::get('admin/config/webpage','Admin\ConfigController@webpage');
 Route::get('admin/config/webpage/edit/{id}','Admin\ConfigController@webpageedit');
 Route::post('admin/config/webpage/edits','Admin\ConfigController@webpageedits');
 
-//数据填充
-Route::get('admin/add','Admin\RuanController@subclassajax@add');
 
 });
+
+//测试
+Route::get('home/cs','Home\HomeController@cs');
 
 //后台登入
 Route::get('/jslmadmin/login','Admin\LoginController@login');
 Route::post('jslmindex/dologin','Admin\LoginController@dologin');
 
 //前台登入
-Route::get('/home/login','Home\LoginController@login');
+Route::get('/home/login/{id?}','Home\LoginController@login');
 Route::post('/home/dologin','Home\LoginController@dologin');
 //注册
 Route::get('/home/register','Home\LoginController@register');
@@ -297,5 +307,10 @@ Route::post('/home/register/doreg','Home\LoginController@doreg');
 
 //前台登录中间间
 Route::group(['middleware'=>['HomeLogin']],function(){
+
+//购物车
+Route::get('/home/shoppingcart','Home\HomeController@shoppingcart');
+//软包加入购物车
+Route::post('/home/package/softroll/gouajax','Home\PackageController@gouajax');
 
 });

@@ -578,24 +578,18 @@
 			     	async: false,
 			     	success:function(data)
 			     	{	
-			     		if( data == 1 )
+			     		if( data == 'OK' )
 			     		{
-			     			btn.css('display','none');	
+							btn.css('display','none');	
 				 			bon.css('display','block');
 			     			sendCode();
 			     			init4 = true;
-			     		}else if( data == 2 )
+			     		}else
 			     		{
-			     			alert('短信发送失败！');
+			     			alert('短信发送失败！'+data);
 			     			$('#button1').one('click',aaa);
 			     			init4 = null;
-			     		}else if( data == 3 )
-			     		{	
-			     			init4 = null;
-			     			$('#button1').one('click',aaa);
-			     			alert('发送失败！请检查你的号码是否正确可用。');
 			     		}
-			     		
 			     		
 			     	},
 			     	error:function(data)
@@ -606,8 +600,6 @@
 			     	},
 			     	dateType :'json'
 			     })
-
-			     // init4 = true;	  
 				}else
 				{	
 					$('#button1').one('click',aaa);

@@ -102,19 +102,33 @@ style="display:none"
 								 		  			  
 							  </div>
 						   </li>
-						   					<div id="C0">
-					 <div class="c0-tit"><span class="c0-tit-1">{{ $vv->tit }}包含项目</span><span class="c0-tit-2">规格</span><span class="c0-tit-3">材质</span><span class="c0-tit-4">数量</span></div>
+				<div id="C0">
+					<div class="c0-tit">
+					<span class="c0-tit-1" index="{{ $vv->titid }}">{{ $vv->tit }}包含项目</span>
+					<span class="c0-tit-2">规格</span>
+					<span class="c0-tit-3">材质</span>
+					<span class="c0-tit-4">数量</span>
+					</div>
 				    <div class="c0-con">
-				    @foreach($vv->ss as $i =>$j)
-					<p><span class="c0-tit-51">{{ $j->title }}</span><span class="c0-tit-52">{{ $j->specations }}</span><span class="c0-tit-53">{{ $j->brand }}</span><span class="c0-tit-54">{{ $j->num }}</span></p>
-					@endforeach                             
+				   		 @foreach($vv->ss as $i =>$j)
+						<p><span class="c0-tit-51">{{ $j->title }}</span><span class="c0-tit-52">{{ $j->specations }}</span><span class="c0-tit-53">{{ $j->brand }}</span><span class="c0-tit-54">{{ $j->num }}</span></p>
+						@endforeach                             
 					</div>   
-					 </div>
-						
-						</ul>
+				</div>
+				<div class="zhifu">
+					<div class="zhifu_1">
+							<div class="zhifu_2">
+							<span>￥</span><span class="jia">{{ $vv->jia }}</span>
+
+							<a id="zhifubutton2" @if( !\session('Home') ) href="/home/login/19" @else class="playgou"  @endif >加入购物车</a>
+							<a id="zhifubutton1" @if( !\session('Home') ) href="/home/login/19" @endif >去支付</a>
+							</div>
+					</div>
+				</div>	
+		</ul>
 
 @endforeach()
-
+	
 
 					</div>
 		   						
@@ -122,6 +136,48 @@ style="display:none"
 		   </div> 				
 
 @endif
+
+<script>
+	$('.playgou').one('click',gou);
+	function gou(){
+		var id = $(this).parents('.ztb').find('.c0-tit-1').attr('index');
+		var res = gouajax(id);
+		if( res )
+		{	
+			$(this).one('click',gou);
+			alert('购物车加入成功！');
+		}else
+		{	
+			$(this).one('click',gou);
+			alert('加入购物车失败！');
+		}
+	}
+	function  gouajax(id){
+		
+		var init = false;
+		$.ajax('/home/package/softroll/gouajax',{
+			type : 'post',
+			async : false,
+			data : {id:id,_token:$("meta[name='csrf-token']").attr('content')},
+			success : function(data)
+			{	
+				if( data ==1 )
+				{
+					init = true;
+				}else
+				{
+					init = false;
+				}
+			},
+			error : function(data){
+				init = false;
+			}
+		})
+
+		return init;
+	}
+</script>
+
 <!-- **************** -->
 @if( !empty($arr2) and count($arr2) >0 )
 		   <div class="rb-taocan">

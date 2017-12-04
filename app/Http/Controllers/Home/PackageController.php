@@ -81,6 +81,7 @@ class PackageController extends Controller
     }
 
     public function softroll(){
+        
     	$soft1 = \DB::table('fengge')->where('status',1)->orderBy('time')->get();
     	$column = \DB::table('column')->orderBy('time')->get();
 
@@ -100,13 +101,17 @@ class PackageController extends Controller
     	{	
             $ee = reset($soft1[$i]->cc);
             $soft1[$i]->tit = $ee->title;
+            $soft1[$i]->titid = $ee->id;
             $soft1[$i]->ss  = \DB::table('subclass')->where('pid',$ee->id)->get();
+            $soft1[$i]->jia = 0;
+            foreach( $soft1[$i]->ss as $ee => $uu )
+            {
+                $soft1[$i]->jia += $uu->jia;
+            }
     	}
-    	
-    	$arr1 = [];
-    	$arr2 = [];
-    	$arr3 = [];
-
+        $arr1 = [];
+        $arr2 = [];
+        $arr3 = [];
     	foreach($soft1 as $o => $u)
     	{
     		if($u->pid == 1)
@@ -136,7 +141,14 @@ class PackageController extends Controller
     public function ajax(Request $request)
     {
     	$id = $request->id;
-    	$data = \DB::table('subclass')->select('title','specations','brand','num')->where('pid',$id)->get();
+    	$data = \DB::table('subclass')->select('title','specations','brand','num','jia')->where('pid',$id)->get();
+        $num = 0;
+        foreach( $data as $k => $v )
+        {
+            $num += $v->jia;
+        }
+        $data[0]->jia = $num;
+        $data[0]->pid = $id;
     	if($data)
     	{
     		return response()->json($data);
@@ -144,5 +156,45 @@ class PackageController extends Controller
     	{
     		return response()->json(1);
     	}
+    }
+
+    public function gouajax(Request $request)
+    {   
+        $data['uid'] = \session('Home')->id;
+        $data['pid'] = $request->id;
+
+        $play = \DB::table('playgou')->where('pid',$data['pid'])->where('uid',$data['uid'])->first();
+
+        if( $play )
+        {   
+            $num = $play->num + 1;
+            $res = \DB::table('playgou')->where('pid',$data['pid'])->where('uid',$data['uid'])->update(['num'=>$num]);
+
+            if( $res )
+            {
+                return response()->json(1);
+            }else
+            {
+                return response()->json(2);
+            }
+
+        }else
+        {
+            $data['status'] = 1;
+            $data['time'] = time();
+            $data['tus'] = '软包';
+            $data['num'] = 1;
+            $data['name'] = \DB::table('column')->where('id',$request->id)->first()->title;
+
+            $res = \DB::table('playgou')->insert($data);
+
+            if( $res )
+            {
+                return response()->json(1);
+            }else
+            {
+                return response()->json(2);
+            }
+        }
     }
 }

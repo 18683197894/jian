@@ -15,6 +15,10 @@ class HomeLoginMiddleware
      */
     public function handle($request, Closure $next)
     {   
+        if( !\session('Home') )
+        {
+            return redirect('/home/login')->with(['info'=>'未登入']);
+        }
         return $next($request);
     }
 }

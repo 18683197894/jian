@@ -15,14 +15,42 @@
 			float:right;
 
 		}
+		#login_1{
+			width:460px;
+			height:36px;
+			float:right;
+		}
+		#login_1 ul{
+			width:460px;
+			height:36px;
+			overflow: hidden;
+			
+		}
 		#login ul{
 			width:294px;
 			height:36px;
 			overflow: hidden;
 		}
-		#login ul li a{
+		#login ul li a,#login_1 ul li a{
 			color:#a6a6a6;
 
+		}
+
+		#loginli3{
+			float:right;
+			font-family: 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+			color:#a6a6a6;
+			font-size: 16px;
+			line-height: 36px;
+			font-weight: normal;
+		}
+		#loginli4{
+			float:right;
+			width:10px;
+			height:17px;
+			margin-right: 10px;
+			margin-top: 10px;
+			border-right:1px solid #ccc;
 		}
 		#loginli1{
 			font-size: 16px;

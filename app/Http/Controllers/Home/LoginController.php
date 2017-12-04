@@ -7,14 +7,14 @@ use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
 {
-    public function login()
-    {
-    	// if(session('Home'))
-    	// {
-    	// 	return redirect('/');
-    	// }
+    public function login(Request $request,$id=null)
+    {	
+    	if(session('Home'))
+    	{	
+    		\session()->forget('Home');
+    	}
 
-    	return view('Home.login.login',['title'=>'登入']);
+    	return view('Home.login.login',['title'=>'登入','id'=>$id]);
     }
 
     public function register(){
@@ -54,72 +54,18 @@ class LoginController extends Controller
     public function zendcode(Request $request)
     {	
 	 	$phone = $request->phone;
-	    // $postUrl= 'http://www.duanxin10086.com/sms.aspx?action=send&userid&account=jswlkj&password=jswl1688&mobile='.$phone.'&content=验证码:6582&sendTime=&taskName=注册验证码';
-		// date_default_timezone_set('PRC');//设置时区为东八区否则时间比北京时间早8小时
-		 $rand = rand(10000,99999);
-		 $url ='http://www.duanxin10086.com/sms.aspx';
-		 $mttime=date("YmdHis");
-		 $post_data['action']   = 'send';
-		 $post_data['userid']   = 15257;
-		 $post_data['account']  = 'jswlkj';
-		 $post_data['password'] = 'jswl1688';
-		 $post_data['mobile']   = $phone;
-		 $post_data['content']  = '注册验证码：'.$rand.' 有效时间30分钟。';
-		 $post_data['sendTime'] = '';
-		 $post_data['taskName']  = 'cs';
-		 $o = "";
-		 
+		$rand = rand(10000,99999);
+		$str = '注册验证码'.$rand.' 有效时间30分钟';
+		$res = zendcode($phone,$str);
 
-		foreach( $post_data as $k => $v )
-		  {
-		     $o.= "$k=" . urlencode( $v)."&";
-		  }
-		 $post_data = substr($o,0,-1);
-		
-		function request_post($url ='', $param = '') {
-		   if (empty($url) ||empty($param)) {
-		      return false;
-		   }
-		 
-		   $postUrl= $url;
-		   $curlPost= $param;
-		   $ch =curl_init();//初始化curl
-		   curl_setopt($ch,CURLOPT_URL,$postUrl);//抓取指定网页
-		   curl_setopt($ch,CURLOPT_HEADER, 0);//设置header
-		   curl_setopt($ch,CURLOPT_RETURNTRANSFER, 1);//要求结果为字符串且屏幕上
-		   curl_setopt($ch,CURLOPT_POST, 1);//post提交方式
-		   curl_setopt($ch,CURLOPT_POSTFIELDS, $curlPost);
-		   $data= curl_exec($ch);//运行curl
-		   curl_close($ch);
-		   return $data;
-		  }
-
-		  function xmlToArray($xml){ 
- 
-			 //禁止引用外部xml实体 
-			 
-			libxml_disable_entity_loader(true); 
-			 
-			$xmlstring = simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA); 
-			 
-			$val = json_decode(json_encode($xmlstring),true); 
-			 
-			return $val; 
-			 
-			}
-		$res =request_post($url, $post_data);
-		$arr = xmlToArray($res);
-
-		if($arr['returnstatus'] != 'Success'){
-			return response()->json(3);
-		}
-		if( $arr['message'] == 'ok' )
-		{	
+		if( $res == 'OK')
+		{
 			\Cache::put($phone,$rand,30);
-			return response()->json(1);
+			return response()->json($res);
+
 		}else
 		{
-			return response()->json(2);
+			return response()->json($res);
 		}
     	
 	}
@@ -151,6 +97,7 @@ class LoginController extends Controller
 		$data = $request->except('_token','yan');
 		
 		$data['time'] = time();
+		$data['uptime'] = $data['time'];
 		$data['status'] = 1;
 		$data['password'] = \Hash::make($data['password']);
 		$str="QWERTYUIOPASDFGHJKLZXCVBNM1234567890qwertyuiopasdfghjklzxcvbnm";
@@ -162,7 +109,8 @@ class LoginController extends Controller
 		$res = \DB::table('user_home')->insert($data);
 		if($res)
 		{	
-			\session(['Home'=>$data]);
+			$ress = \DB::table('user_home')->where('name',$data['name'])->first();
+			\session(['Home'=>$ress]);
 			return redirect('/')->with(['info'=>'注册成功！']);
 		}else
 		{
@@ -175,18 +123,31 @@ class LoginController extends Controller
 
 		$data = $request->except('_token');
 		$name = \DB::table('user_home')->where('name',$data['name'])->first();
+		if( $data['id'] != null)
+		{
+			$url = \DB::table('webpage')->where('id',$data['id'])->first()->url;
+		}else
+		{
+			$url = '/';
+		}
 
 		if(!$name)
 		{
-			return back()->withInput()->with(['info'=>'用户名或密码错误!']);
+			return back()->withInput()->with(['info'=>'用户名不存在!']);
 		}else
-		{
+		{	
+			if( $name->status == 0 )
+			{
+				return back()->withInput()->with(['info'=>'当前用户禁止登入！']);
+			}
+
 			$password_re = $name->password;
 
 			if( \Hash::check($data['password'],$password_re) )
 			{	
-				\session(['Home'=>$data]);
-				return redirect('/')->with(['info'=>'登录成功']);
+				\DB::table('user_home')->where('id',$name->id)->update(['uptime'=>time()]);
+				\session(['Home'=>$name]);
+				return redirect($url)->with(['info'=>'登录成功']);
 			}else
 			{
 				return back()->withInput()->with(['info'=>'用户名或密码错误！']);

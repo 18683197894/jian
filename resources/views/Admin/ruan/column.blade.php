@@ -49,7 +49,8 @@
                 <tr>
                   <th style="width:15%;text-align:center;">ID</th>
                   <th style="width:15%;text-align:center;">标题</th>
-                  <th style="width:30%;text-align:center;">路径</th>
+                  <th style="width:25%;text-align:center;">路径</th>
+                  <th style="width:10%;text-align:center;">总价</th>
                   <th style="width:20%;text-align:center;">创建时间</th>
                   <th style="width:20%;text-align:center;">操作</th>
                 </tr>
@@ -60,8 +61,9 @@
                 <tr>
                   <td class="id" style="width:15%;text-align: center;vertical-align: middle">{{ $v->id }}</td>
                   <td style="width:15%;text-align: center;vertical-align: middle">{{ $v->title }}</td>
-                  <td style="width:30%;text-align: center;vertical-align: middle">{{ $v->path }}</td>
-                  <td style="width:20%;text-align: center;vertical-align: middle">{{ date("Y年m月d日",$v->time) }}</td>
+                  <td style="width:25%;text-align: center;vertical-align: middle">{{ $v->path }}</td>
+                  <td style="width:10%;text-align: center;vertical-align: middle">{{ $v->jia }}</td>
+                  <td style="width:15%;text-align: center;vertical-align: middle">{{ date("Y年m月d日",$v->time) }}</td>
                   <td style="width:20%;text-align: center;vertical-align: middle">
                   	<a href="{{ url('admin/package/ruan/fg/columnedit') }}/{{ $v->id }}">编辑</a>&nbsp;&nbsp;
                   	<a href="#" class="del">删除</a>&nbsp;&nbsp;

@@ -235,7 +235,7 @@
 			<div id="con2-b">
 				<form action="{{ url('home/dologin') }}" method="post">
 				{{ csrf_field() }}
-
+				<input type="hidden" name="id" value="{{ $id }}">
 				<div id="con2-b-1">
 				<label id="label_1" for="">
 					<span>账号登入</span>
