@@ -56,9 +56,9 @@ class LoginController extends Controller
 	 	$phone = $request->phone;
 		$rand = rand(10000,99999);
 		$str = '注册验证码'.$rand.' 有效时间30分钟';
-		$res = zendcode($phone,$str);
+		$res = zend_code($phone,$str);
 
-		if( $res == 'OK')
+		if( $res == 'OK' || $res == 'ok')
 		{
 			\Cache::put($phone,$rand,30);
 			return response()->json($res);

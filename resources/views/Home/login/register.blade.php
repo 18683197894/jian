@@ -578,7 +578,7 @@
 			     	async: false,
 			     	success:function(data)
 			     	{	
-			     		if( data == 'OK' )
+			     		if( data == 'OK' || data == 'ok' )
 			     		{
 							btn.css('display','none');	
 				 			bon.css('display','block');

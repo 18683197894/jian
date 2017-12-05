@@ -114,7 +114,7 @@
 			</div>
 			</div>
 			<div id="divv" style="margin:0 auto;width:1200px;height:750px;display:none;">
-					<div class="ifhead" style="margin:0 auto;width:1200px;height:50px;text-align: center;line-height:50px;font-size:19px;color:#555;font-weight:600">万都铭城A户型</div>
+					<div class="ifhead" style="margin:0 auto;width:1200px;height:50px;text-align: center;line-height:50px;font-size:20px;color:#555;font-weight:600">万都铭城A户型</div>
 					<iframe id="ifrPage" index="1" name="ifrPage" src="http://720yun.com/t/185j5denun1?pano_id=7140817" style="margin:0 auto;width:1200px;height:700px;border:none;border:1px solid #666"></iframe>
 			</div>
 			<script>
