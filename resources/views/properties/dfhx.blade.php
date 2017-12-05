@@ -294,10 +294,10 @@
 							<span style="font-size:24px;font-weight:600;color:#4c4c4c">德福公元A1户型</span>
 						</div>
 						<div id="xiang_1_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:两室一厅一卫</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">居住情况:两室一厅一卫</span>
 						</div>
 						<div id="xiang_1_3">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 86.62㎡</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">建筑面积: 86.62㎡</span>
 						</div>
 						<div id="xiang_1_4">
 							<span style="font-size:16px;background-color:red;color:#f6f6f6">待售</span>
@@ -308,31 +308,31 @@
 						</div>
 					</div>
 					<div id="xiang_2">
-						<div style="padding-top:18px" id="xiang_2_1"> <span style="font-size:17px;font-weight:500;color:#4c4c4c">参考均价：</span> </div>
-						<div style="margin-top:5px" id="xiang_2_2"> <span style="font-size:17px;font-weight:500;color:#4c4c4c">参考总价：</span> </div>
+						<div style="padding-top:18px" id="xiang_2_1"> <span style="font-size:16px;font-weight:500;color:#4c4c4c">参考均价：</span> </div>
+						<div style="margin-top:5px" id="xiang_2_2"> <span style="font-size:16px;font-weight:500;color:#4c4c4c">参考总价：</span> </div>
 					</div>
 					<div id="xiang_3">
 						<div id="xiang_3_1">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">户型分布：</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">户型分布：</span>
 						</div>
 						<div id="xiang_3_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">户型解读：</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">户型解读：</span>
 						</div>
 						<div id="xiang_3_3">
 						<div>
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">1, 360度°全落地玻璃幕墙采光, 光线充沛视野宽阔 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">1、360度°全落地玻璃幕墙采光，光线充沛视野宽阔；</span><br>
 							
 						</div>
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">2, 3.6米豪宅层高设计, 使居住空间更宽敞 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">2、3.6米豪宅层高设计，使居住空间更宽敞；</span><br>
 							
 						</div>
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">3, 干湿分区, 宽绰餐厅与客厅, 简约实用空间, 居家功能集聚完善 ;</span><br>
-							
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">3、干湿分区，宽绰餐厅与客厅，简约实用空间，居家功能</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;集聚完善；</span><br>
 						</div>						
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">4, 客厅、卧室、卫生间、厨房、书房等多种功能复合 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">4、客厅、卧室、卫生间、厨房、书房等多种功能复合；</span><br>
 							
 						</div>							
 						</div>
@@ -364,10 +364,10 @@
 							<span style="font-size:24px;font-weight:600;color:#4c4c4c">德福公元A2户型</span>
 						</div>
 						<div id="xiang_1_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:三室两厅一厨两卫</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">居住情况:三室两厅一厨两卫</span>
 						</div>
 						<div id="xiang_1_3">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 130.10㎡</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">建筑面积: 130.10㎡</span>
 						</div>
 						<div id="xiang_1_4">
 							<span style="font-size:16px;background-color:red;color:#f6f6f6">待售</span>
@@ -378,31 +378,31 @@
 						</div>
 					</div>
 					<div id="xiang_2">
-						<div style="padding-top:18px" id="xiang_2_1"> <span style="font-size:17px;font-weight:500;color:#4c4c4c">参考均价：</span> </div>
-						<div style="margin-top:5px" id="xiang_2_2"> <span style="font-size:17px;font-weight:500;color:#4c4c4c">参考总价：</span> </div>
+						<div style="padding-top:18px" id="xiang_2_1"> <span style="font-size:16px;font-weight:500;color:#4c4c4c">参考均价：</span> </div>
+						<div style="margin-top:5px" id="xiang_2_2"> <span style="font-size:16px;font-weight:500;color:#4c4c4c">参考总价：</span> </div>
 					</div>
 					<div id="xiang_3">
 						<div id="xiang_3_1">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">户型分布：</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">户型分布：</span>
 						</div>
 						<div id="xiang_3_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">户型解读：</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">户型解读：</span>
 						</div>
 						<div id="xiang_3_3">
 						<div>
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">1, 360度°全落地玻璃幕墙采光, 光线充沛视野宽阔 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">1、360度°全落地玻璃幕墙采光，光线充沛视野宽阔；</span><br>
 							
 						</div>
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">2, 3.6米豪宅层高设计, 使居住空间更宽敞 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">2、3.6米豪宅层高设计，使居住空间更宽敞；</span><br>
 							
 						</div>
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">3, 干湿分区, 宽绰餐厅与客厅, 简约实用空间, 居家功能集聚完善 ;</span><br>
-							
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">3、干湿分区，宽绰餐厅与客厅，简约实用空间，居家功能</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;集聚完善；</span><br>
 						</div>						
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">4, 客厅、卧室、卫生间、厨房、书房等多种功能复合 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">4、客厅、卧室、卫生间、厨房、书房等多种功能复合；</span><br>
 							
 						</div>							
 						</div>
@@ -433,10 +433,10 @@
 							<span style="font-size:24px;font-weight:600;color:#4c4c4c">德福公元B1户型</span>
 						</div>
 						<div id="xiang_1_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:三室两厅一厨两卫</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">居住情况:三室两厅一厨两卫</span>
 						</div>
 						<div id="xiang_1_3">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 133.31㎡</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">建筑面积: 133.31㎡</span>
 						</div>
 						<div id="xiang_1_4">
 							<span style="font-size:16px;background-color:red;color:#f6f6f6">待售</span>
@@ -447,31 +447,31 @@
 						</div>
 					</div>
 					<div id="xiang_2">
-						<div style="padding-top:18px" id="xiang_2_1"> <span style="font-size:17px;font-weight:500;color:#4c4c4c">参考均价：</span> </div>
-						<div style="margin-top:5px" id="xiang_2_2"> <span style="font-size:17px;font-weight:500;color:#4c4c4c">参考总价：</span> </div>
+						<div style="padding-top:18px" id="xiang_2_1"> <span style="font-size:16px;font-weight:500;color:#4c4c4c">参考均价：</span> </div>
+						<div style="margin-top:5px" id="xiang_2_2"> <span style="font-size:16px;font-weight:500;color:#4c4c4c">参考总价：</span> </div>
 					</div>
 					<div id="xiang_3">
 						<div id="xiang_3_1">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">户型分布：</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">户型分布：</span>
 						</div>
 						<div id="xiang_3_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">户型解读：</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">户型解读：</span>
 						</div>
 						<div id="xiang_3_3">
 						<div>
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">1, 360度°全落地玻璃幕墙采光, 光线充沛视野宽阔 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">1、360度°全落地玻璃幕墙采光，光线充沛视野宽阔；</span><br>
 							
 						</div>
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">2, 3.6米豪宅层高设计, 使居住空间更宽敞 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">2、3.6米豪宅层高设计，使居住空间更宽敞；</span><br>
 							
 						</div>
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">3, 干湿分区, 宽绰餐厅与客厅, 简约实用空间, 居家功能集聚完善 ;</span><br>
-							
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">3、干湿分区，宽绰餐厅与客厅，简约实用空间，居家功能</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;集聚完善；</span><br>
 						</div>						
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">4, 客厅、卧室、卫生间、厨房、书房等多种功能复合 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">4、客厅、卧室、卫生间、厨房、书房等多种功能复合；</span><br>
 							
 						</div>							
 						</div>
@@ -502,10 +502,10 @@
 							<span style="font-size:24px;font-weight:600;color:#4c4c4c">德福公元B2户型</span>
 						</div>
 						<div id="xiang_1_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:三室两厅一厨两卫</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">居住情况:三室两厅一厨两卫</span>
 						</div>
 						<div id="xiang_1_3">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 130.23㎡</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">建筑面积: 130.23㎡</span>
 						</div>
 						<div id="xiang_1_4">
 							<span style="font-size:16px;background-color:red;color:#f6f6f6">待售</span>
@@ -516,31 +516,31 @@
 						</div>
 					</div>
 					<div id="xiang_2">
-						<div style="padding-top:18px" id="xiang_2_1"> <span style="font-size:17px;font-weight:500;color:#4c4c4c">参考均价：</span> </div>
-						<div style="margin-top:5px" id="xiang_2_2"> <span style="font-size:17px;font-weight:500;color:#4c4c4c">参考总价：</span> </div>
+						<div style="padding-top:18px" id="xiang_2_1"> <span style="font-size:16px;font-weight:500;color:#4c4c4c">参考均价：</span> </div>
+						<div style="margin-top:5px" id="xiang_2_2"> <span style="font-size:16px;font-weight:500;color:#4c4c4c">参考总价：</span> </div>
 					</div>
 					<div id="xiang_3">
 						<div id="xiang_3_1">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">户型分布：</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">户型分布：</span>
 						</div>
 						<div id="xiang_3_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">户型解读：</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">户型解读：</span>
 						</div>
 						<div id="xiang_3_3">
 						<div>
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">1, 360度°全落地玻璃幕墙采光, 光线充沛视野宽阔 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">1、360度°全落地玻璃幕墙采光，光线充沛视野宽阔；</span><br>
 							
 						</div>
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">2, 3.6米豪宅层高设计, 使居住空间更宽敞 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">2、3.6米豪宅层高设计，使居住空间更宽敞；</span><br>
 							
 						</div>
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">3, 干湿分区, 宽绰餐厅与客厅, 简约实用空间, 居家功能集聚完善 ;</span><br>
-							
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">3、干湿分区，宽绰餐厅与客厅，简约实用空间，居家功能</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;集聚完善；</span><br>
 						</div>						
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">4, 客厅、卧室、卫生间、厨房、书房等多种功能复合 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">4、客厅、卧室、卫生间、厨房、书房等多种功能复合；</span><br>
 							
 						</div>							
 						</div>
@@ -571,10 +571,10 @@
 							<span style="font-size:24px;font-weight:600;color:#4c4c4c">德福公元E1-1户型</span>
 						</div>
 						<div id="xiang_1_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:一室两厅两卫</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">居住情况:一室两厅两卫</span>
 						</div>
 						<div id="xiang_1_3">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 122.22㎡</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">建筑面积: 122.22㎡</span>
 						</div>
 						<div id="xiang_1_4">
 							<span style="font-size:16px;background-color:red;color:#f6f6f6">待售</span>
@@ -585,31 +585,31 @@
 						</div>
 					</div>
 					<div id="xiang_2">
-						<div style="padding-top:18px" id="xiang_2_1"> <span style="font-size:17px;font-weight:500;color:#4c4c4c">参考均价：</span> </div>
-						<div style="margin-top:5px" id="xiang_2_2"> <span style="font-size:17px;font-weight:500;color:#4c4c4c">参考总价：</span> </div>
+						<div style="padding-top:18px" id="xiang_2_1"> <span style="font-size:16px;font-weight:500;color:#4c4c4c">参考均价：</span> </div>
+						<div style="margin-top:5px" id="xiang_2_2"> <span style="font-size:16px;font-weight:500;color:#4c4c4c">参考总价：</span> </div>
 					</div>
 					<div id="xiang_3">
 						<div id="xiang_3_1">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">户型分布：</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">户型分布：</span>
 						</div>
 						<div id="xiang_3_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">户型解读：</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">户型解读：</span>
 						</div>
 						<div id="xiang_3_3">
 						<div>
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">1, 360度°全落地玻璃幕墙采光, 光线充沛视野宽阔 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">1、360度°全落地玻璃幕墙采光，光线充沛视野宽阔；</span><br>
 							
 						</div>
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">2, 3.6米豪宅层高设计, 使居住空间更宽敞 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">2、3.6米豪宅层高设计，使居住空间更宽敞；</span><br>
 							
 						</div>
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">3, 干湿分区, 宽绰餐厅与客厅, 简约实用空间, 居家功能集聚完善 ;</span><br>
-							
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">3、干湿分区，宽绰餐厅与客厅，简约实用空间，居家功能</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;集聚完善；</span><br>
 						</div>						
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">4, 客厅、卧室、卫生间、厨房、书房等多种功能复合 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">4、客厅、卧室、卫生间、厨房、书房等多种功能复合；</span><br>
 							
 						</div>							
 						</div>
@@ -640,10 +640,10 @@
 							<span style="font-size:24px;font-weight:600;color:#4c4c4c">德福公元E1-2户型</span>
 						</div>
 						<div id="xiang_1_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:两室两厅两卫</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">居住情况:两室两厅两卫</span>
 						</div>
 						<div id="xiang_1_3">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 121.2㎡</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">建筑面积: 121.2㎡</span>
 						</div>
 						<div id="xiang_1_4">
 							<span style="font-size:16px;background-color:red;color:#f6f6f6">待售</span>
@@ -654,31 +654,31 @@
 						</div>
 					</div>
 					<div id="xiang_2">
-						<div style="padding-top:18px" id="xiang_2_1"> <span style="font-size:17px;font-weight:500;color:#4c4c4c">参考均价：</span> </div>
-						<div style="margin-top:5px" id="xiang_2_2"> <span style="font-size:17px;font-weight:500;color:#4c4c4c">参考总价：</span> </div>
+						<div style="padding-top:18px" id="xiang_2_1"> <span style="font-size:16px;font-weight:500;color:#4c4c4c">参考均价：</span> </div>
+						<div style="margin-top:5px" id="xiang_2_2"> <span style="font-size:16px;font-weight:500;color:#4c4c4c">参考总价：</span> </div>
 					</div>
 					<div id="xiang_3">
 						<div id="xiang_3_1">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">户型分布：</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">户型分布：</span>
 						</div>
 						<div id="xiang_3_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">户型解读：</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">户型解读：</span>
 						</div>
 						<div id="xiang_3_3">
 						<div>
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">1, 360度°全落地玻璃幕墙采光, 光线充沛视野宽阔 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">1、360度°全落地玻璃幕墙采光，光线充沛视野宽阔；</span><br>
 							
 						</div>
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">2, 3.6米豪宅层高设计, 使居住空间更宽敞 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">2、3.6米豪宅层高设计，使居住空间更宽敞；</span><br>
 							
 						</div>
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">3, 干湿分区, 宽绰餐厅与客厅, 简约实用空间, 居家功能集聚完善 ;</span><br>
-							
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">3、干湿分区，宽绰餐厅与客厅，简约实用空间，居家功能</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;集聚完善；</span><br>
 						</div>						
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">4, 客厅、卧室、卫生间、厨房、书房等多种功能复合 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">4、客厅、卧室、卫生间、厨房、书房等多种功能复合；</span><br>
 							
 						</div>							
 						</div>
@@ -709,10 +709,10 @@
 							<span style="font-size:24px;font-weight:600;color:#4c4c4c">德福公元E1-3户型</span>
 						</div>
 						<div id="xiang_1_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">居住情况:三室两厅两卫</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">居住情况:三室两厅两卫</span>
 						</div>
 						<div id="xiang_1_3">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">建筑面积: 121.22㎡</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">建筑面积: 121.22㎡</span>
 						</div>
 						<div id="xiang_1_4">
 							<span style="font-size:16px;background-color:red;color:#f6f6f6">待售</span>
@@ -723,31 +723,31 @@
 						</div>
 					</div>
 					<div id="xiang_2">
-						<div style="padding-top:18px" id="xiang_2_1"> <span style="font-size:17px;font-weight:500;color:#4c4c4c">参考均价：</span> </div>
-						<div style="margin-top:5px" id="xiang_2_2"> <span style="font-size:17px;font-weight:500;color:#4c4c4c">参考总价：</span> </div>
+						<div style="padding-top:18px" id="xiang_2_1"> <span style="font-size:16px;font-weight:500;color:#4c4c4c">参考均价：</span> </div>
+						<div style="margin-top:5px" id="xiang_2_2"> <span style="font-size:16px;font-weight:500;color:#4c4c4c">参考总价：</span> </div>
 					</div>
 					<div id="xiang_3">
 						<div id="xiang_3_1">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">户型分布：</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">户型分布：</span>
 						</div>
 						<div id="xiang_3_2">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">户型解读：</span>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">户型解读：</span>
 						</div>
 						<div id="xiang_3_3">
 						<div>
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">1, 360度°全落地玻璃幕墙采光, 光线充沛视野宽阔 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">1、360度°全落地玻璃幕墙采光，光线充沛视野宽阔；</span><br>
 							
 						</div>
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">2, 3.6米豪宅层高设计, 使居住空间更宽敞 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">2、3.6米豪宅层高设计，使居住空间更宽敞；</span><br>
 							
 						</div>
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">3, 干湿分区, 宽绰餐厅与客厅, 简约实用空间, 居家功能集聚完善 ;</span><br>
-							
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">3、干湿分区，宽绰餐厅与客厅，简约实用空间，居家功能</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;集聚完善；</span><br>
 						</div>						
 						<div style="padding-top:10px;">
-							<span style="font-size:17px;font-weight:500;color:#4c4c4c">4, 客厅、卧室、卫生间、厨房、书房等多种功能复合 ;</span><br>
+							<span style="font-size:16px;font-weight:500;color:#4c4c4c">4、客厅、卧室、卫生间、厨房、书房等多种功能复合；</span><br>
 							
 						</div>							
 						</div>
