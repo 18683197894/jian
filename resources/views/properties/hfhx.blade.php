@@ -86,6 +86,27 @@
 		</div>
 
 	</div>
+	<!-- 	<div id="content_6" style="margin-top:65px">
+			<div id="content_6_1" >
+				<div id="content_2_1_1">
+					<div id="content_2_1_1_1">
+						<div id="content_2_1_1_1_1">
+							<div style="width:90px;height:20px;margin-top:10px">
+							<span style="font-size:19px;font-weight:600;color:#4b4b4b"> &nbsp;户型动态</span>	
+							</div>
+						</div>
+						<div id="content_2_1_1_1_2">
+							<div style="width:120px;height:20px;margin-top:11px">
+							<span style="font-size:18px;font-weight:550;color:#747474"> &nbsp;Real estate</span>			
+							</div>
+						</div>
+					</div>
+				</div>
+
+			
+			</div>
+			</div> -->
+
 		<div id="content_5" style="margin-top:65px">
 			<div id="content_5_1" >
 				<div id="content_2_1_1">
