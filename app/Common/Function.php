@@ -1,5 +1,6 @@
 <?php
 	
+					//电话号码   发送内容
 	function zend_code($phone,$str)
     {	
     	$per = '/^1[34587](\d){9}/';
@@ -7,7 +8,10 @@
     	{
     		return '电话格式错误';
     	}
+    	//短信接口地址
     	$url =ZENDCODEURL;
+
+    	//地址参数
 		$mttime=date("YmdHis");
 		$post_data['action']   = 'send';
 		$post_data['userid']   = USERID;
@@ -17,6 +21,7 @@
 		$post_data['content']  = $str;
 		$post_data['sendTime'] = '';
 		$post_data['taskName']  = '注册验证';
+		
 		$o = "";
 
 		foreach( $post_data as $k => $v )
@@ -27,6 +32,7 @@
 		$url_data = substr($o,0,-1);
 		// dd($url_data);
 
+		//发送短信的方法
 		function request_post($url ='', $param = '') {
 		   if (empty($url) ||empty($param)) {
 		      return false;
@@ -45,6 +51,7 @@
 		   return $data;
 		}
 
+		//将发送短信返回的信息XML 转化为数组
 		function xmlToArray($xml){ 
  
 			 //禁止引用外部xml实体 
@@ -58,7 +65,10 @@
 			return $val; 
 			 
 		}
+
 		$res = request_post($url,$url_data);
 		$resarr = xmlToArray($res);
+
+		//直接return 成功或错误的信息 
 		return urldecode($resarr['message']);
     }

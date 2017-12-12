@@ -20,6 +20,9 @@ Route::get('/','Home\AdminController@index');
 Route::get('/propertieszshx','Home\PropertiesController@zshx');
 Route::get('/propertiesdfhx','Home\PropertiesController@dfhx');
 Route::get('/propertieshfhx','Home\PropertiesController@hfhx');
+Route::get('/propertieshfhx/details/{id}','Home\PropertiesController@details');
+Route::get('/propertieshfhx/newslist','Home\PropertiesController@hfnewslist');
+Route::get('/propertieshfhx/newslist/play/{id}','Home\PropertiesController@hfnewsplay');
 
 //关于
 Route::get('/jsgw/aboutus','Home\JsgwController@aboutus');
@@ -284,6 +287,13 @@ Route::get('admin/config/webpage/edit/{id}','Admin\ConfigController@webpageedit'
 Route::post('admin/config/webpage/edits','Admin\ConfigController@webpageedits');
 
 
+//织金文章添加
+Route::get('admin/properties/detailsadd','Admin\PropertiesController@detailsadd');
+Route::post('admin/properties/detailsadds','Admin\PropertiesController@detailsadds');
+
+//织金新闻添加
+Route::get('admin/properties/hfnewsadd','Admin\PropertiesController@hfnewsadd');
+Route::post('admin/properties/hfnewsadds','Admin\PropertiesController@hfnewsadds');
 });
 
 //测试
