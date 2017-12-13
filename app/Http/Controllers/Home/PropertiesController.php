@@ -37,7 +37,7 @@ class PropertiesController extends Controller
     {   
         $data = \DB::table('hfnews')->select('id','title','time','click','leicon','pidname')->orderBy('time','desc')->paginate(8);
         
-        return view('properties.hfnewslist',['data'=>$data,'title'=>'织金新闻动态','keyworlds'=>'建商网,建商联盟,织金新闻动态,织金织金万都铭城,织金东方巴黎','description'=>'建商网,建商联盟,织金新闻动态,织金织金万都铭城,织金东方巴黎']);
+        return view('properties.hfnewslist',['data'=>$data,'title'=>'织金新闻动态','keyworlds'=>'建商网,建商联盟,织金新闻动态,织金万都铭城，织金万都时代广场，织金东方巴黎，织金智慧社区，织金智慧家居，织金智慧圈区','description'=>'建商网,建商联盟,织金新闻动态,织金万都铭城，织金万都时代广场，织金东方巴黎，织金智慧社区，织金智慧家居，织金智慧圈区']);
     }
 
     function hfnewsplay($id)

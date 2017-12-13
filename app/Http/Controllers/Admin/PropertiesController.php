@@ -18,7 +18,7 @@ class PropertiesController extends Controller
     	$this->validate($request, [
         'title' => 'required|max:20|min:2',
         'pidname' => 'required',
-        'titles' => 'required|max:30|min:2',
+        'titles' => 'required|max:60|min:2',
         'keyworlds' => 'required|max:120|min:10',
         'description' => 'required|max:255|min:10',
         'content' => 'required|max:20000'
@@ -27,7 +27,7 @@ class PropertiesController extends Controller
     	'title.max' => '标题长度最大20位',
     	'title.min' => '标题长度最小2位',
     	'titles.required' => '网页标题不能为空',
-    	'titles.max' => '网页标题长度最大30位',
+    	'titles.max' => '网页标题长度最大60位',
     	'titles.min' => '网页标题长度最小2位',
     	'pidname.required' => '所属父类不能为空',
     	'keyworlds.required' => '网页关键字不能为空',
@@ -61,7 +61,7 @@ class PropertiesController extends Controller
         $this->validate($request, [
         'title' => 'required|max:30|min:2',
         'pidname' => 'required',
-        'titles' => 'required|max:30|min:2',
+        'titles' => 'required|max:60|min:2',
         'keyworlds' => 'required|max:120|min:10',
         'description' => 'required|max:255|min:10',
         'content' => 'required|max:20000',
@@ -71,7 +71,7 @@ class PropertiesController extends Controller
         'title.max' => '标题长度最大30位',
         'title.min' => '标题长度最小2位',
         'titles.required' => '网页标题不能为空',
-        'titles.max' => '网页标题长度最大30位',
+        'titles.max' => '网页标题长度最大60位',
         'titles.min' => '网页标题长度最小2位',
         'pidname.required' => '所属父类不能为空',
         'keyworlds.required' => '网页关键字不能为空',
@@ -121,10 +121,10 @@ class PropertiesController extends Controller
         'content' => 'required|max:20000'
     ],[
         'title.required' => '标题不能为空',
-        'title.max' => '标题长度最大30位',
+        'title.max' => '标题长度最大60位',
         'title.min' => '标题长度最小2位',
         'titles.required' => '网页标题不能为空',
-        'titles.max' => '网页标题长度最大30位',
+        'titles.max' => '网页标题长度最大60位',
         'titles.min' => '网页标题长度最小2位',
         'pidname.required' => '所属父类不能为空',
         'keyworlds.required' => '网页关键字不能为空',
@@ -177,7 +177,7 @@ class PropertiesController extends Controller
         $this->validate($request, [
         'title' => 'required|max:30|min:2',
         'pidname' => 'required',
-        'titles' => 'required|max:30|min:2',
+        'titles' => 'required|max:60|min:2',
         'keyworlds' => 'required|max:120|min:10',
         'description' => 'required|max:255|min:10',
         'content' => 'required|max:20000',
@@ -187,7 +187,7 @@ class PropertiesController extends Controller
         'title.max' => '标题长度最大30位',
         'title.min' => '标题长度最小2位',
         'titles.required' => '网页标题不能为空',
-        'titles.max' => '网页标题长度最大30位',
+        'titles.max' => '网页标题长度最大60位',
         'titles.min' => '网页标题长度最小2位',
         'pidname.required' => '所属父类不能为空',
         'keyworlds.required' => '网页关键字不能为空',
