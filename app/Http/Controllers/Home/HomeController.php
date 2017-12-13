@@ -13,7 +13,20 @@ class HomeController extends Controller
 
     public function cs()
     {	
-    	return zend_code(18683197894,'注册验证码6470110 30分钟有效');
+    	$data = \DB::table('details')->get();
+    	$pre = '/www.zheng.com/';
+
+    	foreach( $data as $k => $v )
+    	{
+    		$v->content = preg_replace($pre,'www.jianshanglianmeng.com', $v->content);
+    	}
+    	// dd($data);
+    	foreach( $data as $kk => $vv )
+    	{
+    		$arr['content'] = $vv->content;
+    		\DB::table('details')->where('id',$vv->id)->update($arr);
+    	}
+    	return 'ok';
     	
     }
 }
