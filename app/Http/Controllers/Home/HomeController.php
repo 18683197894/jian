@@ -13,7 +13,7 @@ class HomeController extends Controller
 
     public function cs()
     {	
-    	$data = \DB::table('details')->get();
+    	$data = \DB::table('hfnews')->get();
     	$pre = '/www.zheng.com/';
 
     	foreach( $data as $k => $v )
@@ -24,7 +24,7 @@ class HomeController extends Controller
     	foreach( $data as $kk => $vv )
     	{
     		$arr['content'] = $vv->content;
-    		\DB::table('details')->where('id',$vv->id)->update($arr);
+    		\DB::table('hfnews')->where('id',$vv->id)->update($arr);
     	}
     	return 'ok';
     	
