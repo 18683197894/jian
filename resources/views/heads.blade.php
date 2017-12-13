@@ -9,7 +9,7 @@
 <meta name="keywords"content="@if(empty($keyworlds))建商网@else{{ $keyworlds }}@endif"> 
 <meta name="description"content="@if(empty($description))建商网@else{{ $description }}@endif"> 
 <script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
-<title>{{ config('app.name') }}@if(!empty($title))  - {{$title}}@endif</title>
+<title>@if(isset($title)){{$title}} @else建商联盟@endif</title>
 @yield('css')
 </head>
 

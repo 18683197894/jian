@@ -286,11 +286,20 @@ Route::get('admin/config/webpage','Admin\ConfigController@webpage');
 Route::get('admin/config/webpage/edit/{id}','Admin\ConfigController@webpageedit');
 Route::post('admin/config/webpage/edits','Admin\ConfigController@webpageedits');
 
-
+//织金楼盘动态管理
+Route::get('admin/properties/details','Admin\PropertiesController@details');
+Route::get('admin/properties/detailsedit/{id}','Admin\PropertiesController@detailsedit');
+Route::post('admin/properties/detailsedits','Admin\PropertiesController@detailsedits');
+Route::post('admin/properties/detailsdel','Admin\PropertiesController@detailsdel');
 //织金文章添加
 Route::get('admin/properties/detailsadd','Admin\PropertiesController@detailsadd');
 Route::post('admin/properties/detailsadds','Admin\PropertiesController@detailsadds');
 
+//织金新闻管理
+Route::get('admin/properties/hfnews','Admin\PropertiesController@hfnews');
+Route::get('/admin/properties/hfnewsedit/{id}','Admin\PropertiesController@hfnewsedit');
+Route::post('/admin/properties/hfnewsedits','Admin\PropertiesController@hfnewsedits');
+Route::post('/admin/properties/hfnewsdel','Admin\PropertiesController@hfnewsdel');
 //织金新闻添加
 Route::get('admin/properties/hfnewsadd','Admin\PropertiesController@hfnewsadd');
 Route::post('admin/properties/hfnewsadds','Admin\PropertiesController@hfnewsadds');

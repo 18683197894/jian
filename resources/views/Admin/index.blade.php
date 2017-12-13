@@ -557,6 +557,49 @@ class="active"
             ><a href="{{ url('admin/caseplay') }}"><i class="fa fa-circle-o"></i>案例页装修设计预约</a></li> -->
           </ul>
         </li>
+
+        <li class="
+@if($title == "楼盘动态管理" || $title == "新闻动态管理")
+active
+@endif
+        treeview">
+          <a href="#">
+            <i class="fa fa-calendar"></i> <span>织金万都铭城</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li
+@if($title == "织金楼盘动态管理")
+class="active"
+@endif
+            ><a href="{{ url('admin/properties/details') }}"><i class="fa fa-circle-o"></i>织金楼盘动态管理</a>
+            </li>
+
+            <li
+@if($title == "织金新闻动态管理")
+class="active"
+@endif
+            ><a href="{{ url('admin/properties/hfnews') }}"><i class="fa fa-circle-o"></i>织金新闻动态管理</a>
+            </li>
+           <!--  <li
+@if($title == "首页装修报价预约")
+class="active"
+@endif
+            ><a href="{{ url('admin/indexationmake') }}"><i class="fa fa-circle-o"></i>首页装修报价预约</a></li>
+            <li
+@if($title == "合作伙伴招募")
+class="active"
+@endif
+            ><a href="{{ url('admin/franchisezm') }}"><i class="fa fa-circle-o"></i>合作伙伴招募</a></li>
+            <li
+@if($title == "合作伙伴招募")
+class="active"
+@endif
+            ><a href="{{ url('admin/caseplay') }}"><i class="fa fa-circle-o"></i>案例页装修设计预约</a></li> -->
+          </ul>
+        </li>
         
 
         <!-- <li>
