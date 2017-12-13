@@ -116,7 +116,7 @@
 			<span>建商招聘 ></span>
 			<ul>
 				<li><a href="{{ url('/jsgw/job1') }}">用人理念</a></li>
-				<li><a href="{{ url('/jsgw/job5') }}">建设招聘</a></li>
+				<li><a href="{{ url('/jsgw/job5') }}">建商招聘</a></li>
 			</ul>
 		</div>
 	
@@ -153,7 +153,7 @@
 			<ul>
 				<li style="width:90px"><a  href="{{ url('/propertieszshx') }}">浙商新天地</a></li>
 				<li style="width:70px"><a  href="{{ url('/propertiesdfhx') }}">德福公元</a></li>
-				<li style="width:800px"><a href="{{ url('/propertieshfhx') }}">织金东方巴黎</a></li>
+				<li style="width:800px"><a href="{{ url('/propertieshfhx') }}">织金万都铭城</a></li>
 			</ul>
 		</div>
 	</div>

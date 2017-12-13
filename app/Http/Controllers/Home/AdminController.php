@@ -144,7 +144,6 @@ class AdminController extends Controller
             
 
         }
-        // $xun = \DB::table('news')->select('id','title')->orderby('click','desc')->skip(0)->get();
         foreach( $xun as $z => $v )
         {
             $cl[$z] = $v->click;

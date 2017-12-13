@@ -168,17 +168,19 @@
 			float:right;
 		}
 		#content_right_hader{
-			width:370px;
+			width:350px;
 			margin:0 auto;
-			background-color: #E13035;
-			height:45px;
+			margin-top: 12px;
+			background-color: #A2A0A0;
+			border-radius: 8px;
+			height:40px;
 			text-align: center;
 		}
 		#content_right_hader span{
-			font-size: 20px;
+			font-size: 19px;
 			color:#fff;
 			font-weight: 600;
-			line-height: 45px;
+			line-height: 40px;
 		}
 		#content_right_con{
 			width:370px;

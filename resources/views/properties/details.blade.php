@@ -116,9 +116,9 @@
 			background-color: #fff;height:950px;
 			margin-right: 25px;
 			float:right;">
-			<div id="content_right_hader">
-				<span>其他动态</span>
-			</div>
+			<a href="{{ url('/propertieshfhx/newslist') }}"><div id="content_right_hader">
+				<span>楼盘动态</span>
+			</div></a>
 			<div id="content_right_con">
 		
 				<ul>
