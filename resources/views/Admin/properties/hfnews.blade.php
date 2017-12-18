@@ -103,6 +103,7 @@
             type:'post',
             data:{id:id},
             success:function(data){
+              
               if(data ==1 ){
               alert('删除成功!');
                tr.empty();

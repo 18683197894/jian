@@ -162,12 +162,12 @@
 			margin-left:6px;
 		}
 		#hade_1_2_3{
-			width:225px;
+			width:220px;
 			height:26px;
 			float:right;
 			position:relative;
 			border:1px solid #999 ;
-			border-radius:4px 4px 4px 4px;
+			border-radius:4px 3px 3px 4px;
 			margin-top: 16px;
 
 		}
@@ -200,7 +200,6 @@
     		/*border-radius: 4px;*/
 			position:absolute;
 			top:0px;
-			border-radius:4px 4px 4px 4px;
 			right:-5px;
 			padding:0px;
    			/*background: -webkit-linear-gradient(top, #66B5E6, #2e88c0);
@@ -211,7 +210,7 @@
     		/*box-shadow: 0 1px 2px #B8DCF1 inset, 0 -1px 0 #316F96 inset;*/
     		color: #fff;
     		border:none;
-    		border-radius: 5px 5px 5px 5px;
+    		border-radius: 3px 4px 4px 3px;
     		background: url('/home/images/des.png');
     		/*text-shadow: 1px 1px 0.5px #22629B;*/
 		}

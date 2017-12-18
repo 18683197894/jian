@@ -22,7 +22,7 @@
 				<ul>
 					<li id="loginli3">热线电话：400-188-6585</li>
 					<li id="loginli4"></li>
-					<li id="loginli3"><a href="#">购物车</a></li>
+					<li id="loginli3"><a href="{{ url('/home/shoppingcart') }}">购物车</a></li>
 					<li id="loginli4"></li>
 					<li id="loginli3"><a href="#">{{ \session('Home')->name }}</a></li>
 				</ul>

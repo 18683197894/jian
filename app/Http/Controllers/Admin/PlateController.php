@@ -17,7 +17,7 @@ class PlateController extends Controller
 		$this->validate($request,[
 		    'title' => 'required|min:2|max:10',
 		    'img'=>'required|image',
-            'titles' => 'required|min:2|max:20',
+            'titles' => 'required|min:2|max:60',
             'keyworlds' => 'required|min:6|max:120',
             'description' => 'required|min:10|max:255'
  		],[
@@ -28,7 +28,7 @@ class PlateController extends Controller
 			'img.image'=>'请上传图片类型的文件',
             'titles.required'=>'网页标题不能为空',
             'titles.min'=>'网页标题最少2位',
-            'titles.max'=>'网页标题最大20位',
+            'titles.max'=>'网页标题最大60位',
             'keyworlds.required'=>'网页关键字不能为空',
             'keyworlds.min'=>'网页关键字最少6位',
             'keyworlds.max'=>'网页关键字最大120位',
@@ -88,7 +88,7 @@ class PlateController extends Controller
 		$this->validate($request,[
 		    'title' => 'required|min:2|max:10',
 		    'img'   => 'image',
-            'titles' => 'required|min:2|max:20',
+            'titles' => 'required|min:2|max:60',
             'keyworlds' => 'required|min:6|max:120',
             'description' => 'required|min:10|max:255'
  		],[
@@ -98,7 +98,7 @@ class PlateController extends Controller
 			'img.image'=>'请上传图片类型的文件',
             'titles.required'=>'网页标题不能为空',
             'titles.min'=>'网页标题最少2位',
-            'titles.max'=>'网页标题最大20位',
+            'titles.max'=>'网页标题最大60位',
             'keyworlds.required'=>'网页关键字不能为空',
             'keyworlds.min'=>'网页关键字最少6位',
             'keyworlds.max'=>'网页关键字最大120位',
@@ -180,7 +180,7 @@ class PlateController extends Controller
 		    'leicon'=>'required|min:10|max:255',
 		    'titleimg'=>'required|image',
 		    'content' =>'required|max:20000',
-            'titles' => 'required|min:2|max:30',
+            'titles' => 'required|min:2|max:60',
             'keyworlds' => 'required|min:6|max:120',
             'description' => 'required|min:10|max:255'
  		],[
@@ -196,7 +196,7 @@ class PlateController extends Controller
             'content.max'=>'内容不能超过20000字',
             'titles.required'=>'网页标题不能为空',
             'titles.min'=>'网页标题最少2位',
-            'titles.max'=>'网页标题最大30位',
+            'titles.max'=>'网页标题最大60位',
             'keyworlds.required'=>'网页关键字不能为空',
             'keyworlds.min'=>'网页关键字最少6位',
             'keyworlds.max'=>'网页关键字最大120位',
@@ -254,7 +254,7 @@ class PlateController extends Controller
 		    'leicon'=>'required|min:10|max:255',
 		    'titleimg'=>'image',
 		    'content' =>'required|max:20000',
-            'titles' => 'required|min:2|max:30',
+            'titles' => 'required|min:2|max:60',
             'keyworlds' => 'required|min:6|max:120',
             'description' => 'required|min:10|max:255'
  		],[
@@ -269,7 +269,7 @@ class PlateController extends Controller
             'content.max'=>'内容不能超过20000字',
             'titles.required'=>'网页标题不能为空',
             'titles.min'=>'网页标题最少2位',
-            'titles.max'=>'网页标题最大30位',
+            'titles.max'=>'网页标题最大60位',
             'keyworlds.required'=>'网页关键字不能为空',
             'keyworlds.min'=>'网页关键字最少6位',
             'keyworlds.max'=>'网页关键字最大120位',

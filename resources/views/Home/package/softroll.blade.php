@@ -120,8 +120,8 @@ style="display:none"
 							<div class="zhifu_2">
 							<span>￥</span><span class="jia">{{ $vv->jia }}</span>
 
-							<a id="zhifubutton2" @if( !\session('Home') ) href="/home/login/19" @else class="playgou"  @endif >加入购物车</a>
-							<a id="zhifubutton1" @if( !\session('Home') ) href="/home/login/19" @endif >去支付</a>
+							<a id="zhifubutton2" @if( !\session('Home') ) href="{{ asset('/home/login/19') }}" @else class="playgou"  @endif >加入购物车</a>
+							<a id="zhifubutton1" @if( !\session('Home') ) href="{{ asset('/home/login/19') }}" @else href="{{ asset('/home/payment') }}" @endif >去支付</a>
 							</div>
 					</div>
 				</div>	

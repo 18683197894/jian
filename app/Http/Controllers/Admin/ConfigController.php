@@ -23,12 +23,12 @@ class ConfigController extends Controller
     {
     	$data = $request->except('_token');
     	$this->validate($request,[
-            'titles' => 'required|min:2|max:15',
+            'titles' => 'required|min:2|max:60',
             'keyworlds' => 'required|min:6|max:30',
             'description' => 'required|min:10|max:120'
  		],[
             'titles.required'=>'网页标题不能为空',
-            'titles.min'=>'网页标题最少2位最大15位',
+            'titles.min'=>'网页标题最少2位最大60位',
             'titles.max'=>'网页标题最少2位最大15位',
             'keyworlds.required'=>'网页关键字不能为空',
             'keyworlds.min'=>'网页关键字最少6位最大30位',

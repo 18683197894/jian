@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>{{ config('app.name') }}@if(!empty($title))  - {{$title}}@endif</title>
 <link href="{{ asset('home/images/images/common.css') }}" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="{{ asset('home/images/login/common.css') }}">
+<link rel="stylesheet" href="{{ asset('/home/images/payment/shoppingcart/common.css') }}">
 <script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
 </head>
 <body>
@@ -12,11 +12,11 @@
 		<div id="hade-b">
 			<div id="login">
 				<ul>
-					<li id="loginli1"><a href="{{ asset('/home/login') }}">登入</a></li>
-					<li id="loginli2"></li>
-					<li id="loginli1"><a href="{{ asset('/home/register') }}">注册</a></li>
-					<li id="loginli2"></li>
 					<li id="loginli1">热线电话：400-188-6585</li>
+					<li id="loginli2"></li>
+					<li id="loginli1"><a href="{{ asset('/home/shoppingcart') }}">购物车</a></li>
+					<li id="loginli2"></li>
+					<li id="loginli1"><a href="{{ asset('/home/login') }}">{{ \session('Home')->name }}</a></li>
 				</ul>
 			</div>
 		</div>
@@ -30,39 +30,10 @@
 				<li id="con1li3"><img src="{{ asset('/home/images/hade_1.png') }}" alt=""></li>
 				<li id="con1li4">装修公司实力认证</li>
 				<li id="con1li5"> </li>
-				<li id="con1li6">欢迎登入</li>
+				<li id="con1li6">确认订单</li>
 			</ul>
 		</div>
-		<div id="con2">
-			<div id="con2-a">
-				<img src="{{ asset('home/images/logo/1.png') }}" alt="">
-			</div>
-			<div id="con2-b">
-				<form action="{{ url('home/dologin') }}" method="post">
-				{{ csrf_field() }}
-				<input type="hidden" name="id" value="{{ $id }}">
-				<div id="con2-b-1">
-				<label id="label_1" for="">
-					<span>账号登入</span>
-				</label>
-				<label id="label_2">
-					<input type="text" name="name" value="{{ old('name') }}" placeholder="用户名">
-				</label>
-				<label id="label_3">
-					<input type="password" name="password" placeholder="密码">
-				</label>
-				<span id="lod" >{{ \session('info') }}</span>
-				<label id="label_4">
-					<span>立即登入</span>
-				</label>
-				<label id="label_5">
-					<a id="label_5_a1" href="{{ url('home/register') }}">还没有账号？ 注册</a>
-					<a id="label_5_a2" href="">忘记密码？</a>
-				</label>
-				</div>
-				</form>
-			</div>
-		</div>
+		
 	</div>
 	
 <div class="z-bot">
@@ -97,5 +68,6 @@
 	</div>
 </div>
 </body>
-<script src="{{ asset('/home/images/login/common.js') }}"></script>
+<script src="{{ asset('/home/images/payment/shoppingcart/common.js') }}"></script>
 </html>
+

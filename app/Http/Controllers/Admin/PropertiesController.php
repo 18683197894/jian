@@ -215,7 +215,20 @@ class PropertiesController extends Controller
     }
 
     public function hfnewsdel(Request $request)
-    {
+    {   
+        // $content = \DB::table('hfnews')->select('content')->where('id',$request->id)->first()->content;
+
+        // preg_match_all('/\/uploads\/ueditor\/image\/\d*\.(png|jpeg|jpg)/',$content,$str);
+
+        // if( count($str) >0 )
+        // {
+        //     foreach( $str[0] as $k => $v )
+        //     {
+        //         @unlink('.'.$v);
+        //     }
+
+        // }
+
         $res = \DB::table('hfnews')->delete($request->id);
 
         if($res)
