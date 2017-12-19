@@ -80,14 +80,32 @@ class HomeController extends Controller
     }
 
 
-    public function payment()
-    {
+    public function payment(Request $request)
+    {   
+        $dataid = $request->data;
+        if( $dataid == '' || $dataid== null )
+        {
+            return back();
+        }
+        $dataid = trim($dataid,'_');
+        $dataid = explode('_',$dataid);
+        
         $title = '提交订单';
         $keyworlds = '建商网，建商联盟，购物车，提交订单';
         $description = '建商网，建商联盟，购物车，提交订单';
         return view('Home.payment.payment',['title'=>$title,'keyworlds'=>$keyworlds,'description'=>$description]);
     }
-
+    public function goudel(Request $request)
+    {   
+        $res = \DB::table('playgou')->delete($request->id);
+        if($res)
+        {
+            return response()->json(1);
+        }else
+        {
+            return response()->json(2);
+        }
+    }
     public function cs()
     {	
     	// $data = \DB::table('hfnews')->get();

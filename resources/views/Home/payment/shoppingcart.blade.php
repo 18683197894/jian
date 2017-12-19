@@ -45,8 +45,9 @@
 				<li class="shopping1_hader_li3">单价</li>
 				<li class="shopping1_hader_li4">数量</li>
 				<li class="shopping1_hader_li5">小计</li>
+				<li class="shopping1_hader_li6">操作</li>
 			</ul>
-			<ul class="shopping1_con">
+			<ul class="shopping1_con" style="z-index:111">
 				@foreach($data as $k => $v)
 				<li class="shopping1_con_li">
 					<input type="checkbox" name="checkbox" id="checkbox_a{{ $loop->index }}" class="chk_1" checked /><label for="checkbox_a{{ $loop->index }}"></label>
@@ -65,12 +66,13 @@
 						<button class="num2">+</button>
 					</div>
 					<span class="shopping1_con_litotai">{{ $v->jia }}元</span>
+					<button class="shopping1_con_libutton" title="删除">×</button>
 				</li>
 				@endforeach
 			</ul>
-			<ul class="shopping_tail">
+			<ul class="shopping_tail offset" style="z-index:999">
 				<li class="shopping_tailli1">共<em>{{ count($data) }}</em>件商品 已选择<em class="numnum">1</em>件</li>
-				<li class="shopping_tailli3"><a href="#"><button>去结算</button></a></li>
+				<li class="shopping_tailli3"><button>去结算</button></li>
 				<li class="shopping_tailli2">合计：<em>30000</em>元</li>
 			</ul>
 			

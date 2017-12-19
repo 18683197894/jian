@@ -33,6 +33,45 @@
 				<li id="con1li6">提交订单</li>
 			</ul>
 		</div>
+		<div class="payment_hader">
+			<title>选择收货地址</title>
+			<ul>
+				<li><div class="payment_hader_defult">
+
+					<title>四川宜宾 （郑伦森）</title>
+					<span>翠屏区临港开发经济区临港新天地润之宜5楼522室收</span>
+					<div>
+					<button name="edit" id="payment_hader_butl">编辑</button>
+					<button name="del" style="display:none" >删除</button>
+					</div>
+
+				</div> </li>
+				
+				<li><div>
+					<title>四川宜宾 （郑伦森）</title>
+					<span>翠屏区临港开发经济区临港新天地润之宜5楼522室收zzzsxdssssasas</span>
+					
+					<div class="payment_hader_but">
+					<button name="edit" id="payment_hader_butl">编辑</button>
+					<button name="del">删除</button>
+					</div>
+
+				</div></li>
+
+				<li><div>
+					<title>四川宜宾 （郑伦森）</title>
+					<span>翠屏区临港开发经济区临港新天地润之宜5楼522室收</span>
+					
+					<div>
+					<button name="edit" id="payment_hader_butl">编辑</button>
+					<button name="del">删除</button>
+					</div>
+
+				</div></li>
+			</ul>
+			<button class="payment_hader_new">使用新地址</button>
+		</div>
+
 		
 	</div>
 	
@@ -68,6 +107,6 @@
 	</div>
 </div>
 </body>
-<script src="{{ asset('/home/images/payment/shoppingcart/common.js') }}"></script>
+<script src="{{ asset('/home/images/payment/payment/common.js') }}"></script>
 </html>
 

@@ -330,10 +330,10 @@ Route::group(['middleware'=>['HomeLogin']],function(){
 //购物车
 Route::get('/home/shoppingcart','Home\HomeController@shoppingcart');
 Route::get('/home/shoppingcart/numajax','Home\HomeController@numajax');
-
+Route::post('/home/shoppingcart/del','Home\HomeController@goudel');
 
 //提交订单
-Route::get('/home/payment','Home\HomeController@payment');
+Route::get('/home/shoppingcart/payment','Home\HomeController@payment');
 //软包加入购物车
 Route::post('/home/package/softroll/gouajax','Home\PackageController@gouajax');
 

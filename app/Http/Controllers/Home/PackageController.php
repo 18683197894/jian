@@ -168,6 +168,11 @@ class PackageController extends Controller
         if( $play )
         {   
             $num = $play->num + 1;
+            if( $num > 10 )
+            {
+                return response()->json(3);
+
+            }
             $res = \DB::table('playgou')->where('pid',$data['pid'])->where('uid',$data['uid'])->update(['num'=>$num]);
 
             if( $res )

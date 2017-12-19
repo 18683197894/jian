@@ -72,3 +72,39 @@
 			     })
 		   	})
 		   })
+
+
+ $('.playgou').on('click',gou);
+	function gou(){
+		var id = $(this).parents('.ztb').find('.c0-tit-1').attr('index');
+		
+		
+		$.ajax('/home/package/softroll/gouajax',{
+			type : 'post',
+			async : false,
+			data : {id:id,_token:$("meta[name='csrf-token']").attr('content')},
+			success : function(data)
+			{	
+				if(data ==1 )
+				{
+					alert('加入购物车成功！');
+					return false;
+				}
+				if(data == 2)
+				{
+					alert('加入购物车失败！');
+					return false;
+				}
+				if(data == 3)
+				{
+					alert('物品超出上限！');
+					return false;
+				}
+			},
+			error : function(data){
+				alert('加入购物车失败！');
+				return false;
+			}
+		})
+
+	}

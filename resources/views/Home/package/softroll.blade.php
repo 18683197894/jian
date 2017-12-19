@@ -137,46 +137,7 @@ style="display:none"
 
 @endif
 
-<script>
-	$('.playgou').one('click',gou);
-	function gou(){
-		var id = $(this).parents('.ztb').find('.c0-tit-1').attr('index');
-		var res = gouajax(id);
-		if( res )
-		{	
-			$(this).one('click',gou);
-			alert('购物车加入成功！');
-		}else
-		{	
-			$(this).one('click',gou);
-			alert('加入购物车失败！');
-		}
-	}
-	function  gouajax(id){
-		
-		var init = false;
-		$.ajax('/home/package/softroll/gouajax',{
-			type : 'post',
-			async : false,
-			data : {id:id,_token:$("meta[name='csrf-token']").attr('content')},
-			success : function(data)
-			{	
-				if( data ==1 )
-				{
-					init = true;
-				}else
-				{
-					init = false;
-				}
-			},
-			error : function(data){
-				init = false;
-			}
-		})
 
-		return init;
-	}
-</script>
 
 <!-- **************** -->
 @if( !empty($arr2) and count($arr2) >0 )

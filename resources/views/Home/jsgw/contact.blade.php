@@ -25,7 +25,7 @@
 地址：四川省宜宾市临港经济开发区龙头山路199号2号楼西南互联网产业基地522<br />
 网址：www.jianshanglianmeng.com<br />
 投诉建议：0831 - 7916680<br />
-<img src="/xy_UpLoadFile/content/f_2017525_112515.jpg" width="416" height="233" alt="" /></p></div>
+</p></div>
 		   </div>
 		   
 	   </div>
