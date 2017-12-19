@@ -50,7 +50,7 @@
 		<div id="hade_content">
 			
 			<div id="hade_1">
-				<div id="hade_1_1">
+				<div id="hade_1_1" style="width:520px">
 					<img id="hade_img_1" src="{{ asset('/home/images/logo.png') }}" alt="">
 					<em></em>
 					<span>房地产智慧产业服务提供商</span>
