@@ -1,9 +1,7 @@
 @extends('heads')
-	<script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
-	<link href="{{ asset('/home/lunpo/css/style.css') }}" rel="stylesheet" />
-<script type="text/javascript" src="{{ asset('/home/lunpo/js/startMove.js') }}"></script>
 @section('css')
 	<link href="{{ asset('/home/images/dfhx/common.css') }}" rel="stylesheet" />
+	<link href="{{ asset('/home/lunpo/css/style.css') }}" rel="stylesheet" />
 	
 @endsection('css')
 @section('content')
@@ -760,6 +758,7 @@
 
 	<script src="{{ asset('home/images/dfhx/common.js') }}"></script>
 
+<script type="text/javascript" src="{{ asset('/home/lunpo/js/startMove.js') }}"></script>
 
 @endsection('content')
 

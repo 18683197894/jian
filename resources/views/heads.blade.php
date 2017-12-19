@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="{{ asset('home/images/images/common.css') }}" rel="stylesheet" type="text/css" />
-<meta name="renderer" content="ie-comp" />
+<meta name="renderer" content="ie-comp"/>
 <link href="{{ asset('home/images/images/heads.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('home/lunpo/index/main.css') }}" rel="stylesheet" type="text/css" />
 <meta name="csrf-token" content="{{ csrf_token() }}">

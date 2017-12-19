@@ -1,8 +1,6 @@
 @extends('heads')
-	<script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
-	<link href="{{ asset('/home/lunpo/css/style.css') }}" rel="stylesheet" />
-<script type="text/javascript" src="{{ asset('/home/lunpo/js/startMove.js') }}"></script>
 @section('css')
+	<link href="{{ asset('/home/lunpo/css/style.css') }}" rel="stylesheet" />
 	<link href="{{ asset('/home/images/hfhx/common.css') }}" rel="stylesheet" />
 
 @endsection('css')
@@ -756,4 +754,6 @@ function focusToSkypename(){
 
 
 </script>
+<script type="text/javascript" src="{{ asset('/home/lunpo/js/startMove.js') }}"></script>
+
 @endsection('content')
