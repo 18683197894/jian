@@ -2,10 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="{{ asset('home/images/images/common.css') }}" rel="stylesheet" type="text/css" />
 <meta name="renderer" content="ie-comp"/>
 <link href="{{ asset('home/images/images/heads.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('home/lunpo/index/main.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('home/images/images/common.css') }}" rel="stylesheet" type="text/css" />
+
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta name="keywords"content="@if(empty($keyworlds))建商网@else{{ $keyworlds }}@endif"> 
 <meta name="description"content="@if(empty($description))建商网@else{{ $description }}@endif"> 

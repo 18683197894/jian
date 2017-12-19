@@ -2,7 +2,8 @@
 @section('css')
 	<link href="{{ asset('/home/lunpo/css/style.css') }}" rel="stylesheet" />
 	<link href="{{ asset('/home/images/hfhx/common.css') }}" rel="stylesheet" />
-
+<link href="{{ asset('home/images/images/common.css') }}" rel="stylesheet" type="text/css" />
+	
 @endsection('css')
 @section('content')
 	<!-- *************** -->

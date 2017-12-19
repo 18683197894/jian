@@ -37,7 +37,7 @@
 	   <div class="js-about-bt1"></div>
 	   <div class="js-about-bt"><p>企业优势</p></div>
 	   <div class="js-about-bt2">
-	      <div class="about-bt2-1"><img src="{{ asset('home/jsgw/css/btt-1.jpg') }}" /><h1>全新消费模式</h1><p>消费即投资，投资即收益</p><p>打造全新“互联网+消费全返”的商业模式</p><p>消费者到消费商，参与商家的利益共享</p><p>把消费变成一种对企业的投资行为</p></div>
+	      <div class="about-bt2-1"><img src="{{ asset('home/jsgw/css/btt-1.jpg') }}" /><h1>智慧家居新时代</h1><p>以智慧全力守护你的家，更便捷、更智能、更节能</p><p>为你私人定制全屋智能解决方案，尽享惬意和舒适</p><p>以贴心服务为核心桥接家庭与社会</p><p>智能控制、智能照明、影音娱乐、智能安防，更出众</p></div>
 		  <div class="about-bt2-1"><img src="{{ asset('home/jsgw/css/btt-2.jpg') }}" /><h1>线上线下资源整合</h1><p>资源集结、有求必应</p><p>互联网渠道构建全国范围的销售与服务网上平台</p><p>家居建材全产业链资源整合融合、渠道融通</p><p>海量精准信息资源库，为消费者提供精准服务</p></div>
 		  <div class="about-bt2-1"><img src="{{ asset('home/jsgw/css/btt-3.jpg') }}" /><h1>构建全新产品生态圈</h1><p>绿色供应、利益共享</p><p>简化服务环节、清晰产品供应链</p><p>提供品类繁多且符合现代消费者需求的产品</p><p>保证出售产品均为厂商正品</p><p>启用行内专业评估机构把控产品质量</p></div>
 		  <div class="about-bt2-2"><img src="{{ asset('home/jsgw/css/btt-4.jpg') }}" /><h1>服务标准化</h1><p>一体化服务、个性体验</p><p>坚持“以消费者为核心，实现多方共赢”的理念</p><p>重构线上、线下、物流与服务</p><p>一站式消费体验</p><p>一体化解决方案</p></div>	   
@@ -48,8 +48,8 @@
 	   <div class="js-about-bt4"></div>
 	   <div class="js-about-bt5">
 	       <p>全面启动互联网+家居建材服务平台；</p>
-		   <p>以“新零售”的方式，为消费者提供全新优化的家居建材解决方案；</p>
-		   <p>以互联网思维颠覆传统家居建材行业，打造一个把消费转化成为投资行为的家居建材平台。</p>·
+		   <p>以互联网思维颠覆传统家居建材行业，打造一个把消费转化成为投资行为的家居建材平台；</p>
+		   <p>“智慧家”从建商联盟开始，你的家居整体解决方案服务商！</p>·
 	   </div>
    </div>
 <div style="clear:both;"></div>	
