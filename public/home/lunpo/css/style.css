@@ -1,5 +1,5 @@
 
-#box{width:750px;height:450px;position:relative;overflow:hidden;}
+#box{width:750px;height:500px;position:relative;overflow:hidden;}
 #pic_list{position:relative;z-index:1;}
 #pic_list li{position:absolute;left:0;top:0;opacity:0;fliter:alpha(opacity=0);z-index:1;}
 #ico_list{position:absolute;bottom:12px;left:12px;width:595px;overflow:hidden;height:50px;z-index:3;}

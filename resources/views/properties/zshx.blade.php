@@ -3,7 +3,6 @@
 @section('css')
 	<link href="{{ asset('/home/images/zshx/common.css') }}" rel="stylesheet" />
 	<link href="{{ asset('/home/lunpo/css/style.css') }}" rel="stylesheet" />
-<!-- <link href="{{ asset('home/images/images/common.css') }}" rel="stylesheet" type="text/css" /> -->
 
 @endsection('css')
 
