@@ -5,7 +5,7 @@
 <meta name="renderer" content="ie-comp"/>
 <link href="{{ asset('home/images/images/heads.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('home/lunpo/index/main.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset('home/images/images/common.css') }}" rel="stylesheet" type="text/css" />
+<!-- <link href="{{ asset('home/images/images/common.css') }}" rel="stylesheet" type="text/css" /> -->
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta name="keywords"content="@if(empty($keyworlds))建商网@else{{ $keyworlds }}@endif"> 

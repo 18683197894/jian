@@ -95,6 +95,15 @@ class HomeController extends Controller
         $description = '建商网，建商联盟，购物车，提交订单';
         return view('Home.payment.payment',['title'=>$title,'keyworlds'=>$keyworlds,'description'=>$description]);
     }
+
+    public function payments()
+    {   
+        $title = '提交订单';
+        $keyworlds = '建商网，建商联盟，购物车，提交订单';
+        $description = '建商网，建商联盟，购物车，提交订单';
+        return view('Home.payment/payments',['title'=>$title,'keyworlds'=>$keyworlds,'description'=>$description]);
+    }
+
     public function goudel(Request $request)
     {   
         $res = \DB::table('playgou')->delete($request->id);
