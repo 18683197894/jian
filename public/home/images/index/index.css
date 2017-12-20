@@ -175,6 +175,9 @@
 	   color                    : #999;
 	   cursor                   : pointer;
 	   outline                  : none;
+	   border: none;
+       outline: none;
+       -ms-appearance:none;
 
 	}
 	select#selectPointOfInterest option

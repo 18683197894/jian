@@ -1,16 +1,7 @@
-@charset "utf-8";
-*{margin:0;padding:0;list-style-type:none;}
-a,img{border:0;}
-body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
-/* box */
+
 #box{width:750px;height:450px;position:relative;overflow:hidden;}
 #pic_list{position:relative;z-index:1;}
 #pic_list li{position:absolute;left:0;top:0;opacity:0;fliter:alpha(opacity=0);z-index:1;}
-/*.mark{height:90px;width:660px;background:#000;position:absolute;left:0;bottom:0;opacity:0.3;filter:alpha(opacity=30);}*/
-/*#text_list{position:absolute;bottom:60px;left:50px;position:absolute;z-index:5;height:20px;overflow:hidden;}*/
-/*#text_list h2{display:none;}*/
-/*#text_list .show{display:block;}*/
-/*#text_list a{color:#FFFFFF;font-family:"Microsoft YaHei";font-size:18px;font-weight:normal;text-decoration:none;}*/
 #ico_list{position:absolute;bottom:12px;left:12px;width:595px;overflow:hidden;height:50px;z-index:3;}
 #ico_list ul{width:1050px;position:absolute;left:0;top:0;}
 #ico_list li{width:75px;float:left;}
