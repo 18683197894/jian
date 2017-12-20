@@ -1,7 +1,6 @@
 @extends('heads')
 @section('css')
 	<link href="{{ asset('/home/images/dfhx/common.css') }}" rel="stylesheet" />
-	<link href="{{ asset('/home/lunpo/css/style.css') }}" rel="stylesheet" />
 	
 @endsection('css')
 @section('content')
@@ -9,7 +8,7 @@
 	<div id="content">
 		<div id="content_img_1">
 			<div id="content_1">
-				<div id="box">
+				<div id="box_box">
 
 	<ul id="pic_list">
 		<li style="z-index:2;opacity:1;fliter:alpha(opacity=100);">
@@ -64,7 +63,7 @@
 						<div id="nve_3">商业区</div>		
 					
 					</div>
-					<div style="padding-top:20px;">
+					<div style="padding-top:5px;">
 					<span style="color:#c6c6c6;font-size:13px;">楼盘均价</span>
 					<span style="font-size:24px;color:red;font-weight:600">4100/m²</span>
 					<span style="color:#c6c6c6;font-size:13px">(2015年参考价)</span>
