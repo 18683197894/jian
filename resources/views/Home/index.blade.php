@@ -11,7 +11,7 @@
 					<div class="Homebanner">
 						<ul>
 							<li class="Load cur" style="z-index:99;width:100%">
-								<img width="100%" src="{{ asset('home/lunpo/index/1-1.png') }}" alt="">
+								<img width="100%" src="{{ asset('home/lunpo/index/1-2.png') }}" alt="">
 
 							</li>
 							<li class="Load" style="width:100%">
@@ -46,7 +46,7 @@
 			<div id="index_1_1_2" class="kuai0">
 				<div id="table_1">
 					<label id="lblSelect">
-					<select id="selectPointOfInterest" class="select" title="选择楼盘">
+					<select id="selectPointOfInterest" class="select"  style="appearance:none;-moz-appearance:none;-webkit-appearance:none;">
 					<option value="浙商临港新天地">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浙商.临港新天地</option>
 					<option value="德福公元">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;德福公元</option>
 					<option value="织金万都铭城">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;织金万都铭城</option>

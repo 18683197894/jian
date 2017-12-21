@@ -166,20 +166,19 @@
 	   -moz-border-radius       : 6px;
 	   -webkit-border-radius    : 6px;
 	   border-radius            : 6px;
-	   -webkit-appearance       : none;
-	   -moz-appearance          : none;
-	   appearance               : none;
+	    appearance:none;
+        -moz-appearance:none;
+        -webkit-appearance:none;
+        -ms-appearance:none;
 	   font-family:'Microsoft Yahei', '微软雅黑', Helvetica, 'Hiragino Sans GB', Arial, sans-serif;
 	   font-size                : 18px;
 	   font-weight              : 500;
 	   color                    : #999;
 	   cursor                   : pointer;
-	   outline                  : none;
-	   border: none;
-       outline: none;
-       -ms-appearance:none;
+	  
 
 	}
+	select::-ms-expand { display: none; }
 	select#selectPointOfInterest option
 	{
 	    padding             : 4px 10px 4px 10px;
@@ -449,7 +448,7 @@
 			height:60px;
 			float:left;
 			display:block;
-			background: url(home/images/index/9.png) no-repeat center center;
+			background: url(/home/images/index/9.png) no-repeat center center;
 
 		}
 		.con_5_span2{
@@ -458,7 +457,7 @@
 			height:60px;
 			float:left;
 			display:block;
-			background: url(home/images/index/10.png) no-repeat center center;
+			background: url(/home/images/index/10.png) no-repeat center center;
 
 		}
 		.con_5_span3{
@@ -467,7 +466,7 @@
 			height:60px;
 			float:left;
 			display:block;
-			background: url(home/images/index/11.png) no-repeat center center;
+			background: url(/home/images/index/11.png) no-repeat center center;
 
 		}
 		.con_5_span4{
@@ -476,7 +475,7 @@
 			height:60px;
 			float:left;
 			display:block;
-			background: url(home/images/index/12.png) no-repeat center center;
+			background: url(/home/images/index/12.png) no-repeat center center;
 
 		}
 		.con_5_span5{
@@ -485,7 +484,7 @@
 			height:60px;
 			float:left;
 			display:block;
-			background: url(home/images/index/13.png) no-repeat center center;
+			background: url(/home/images/index/13.png) no-repeat center center;
 
 		}
 		.con_5_span6{
@@ -494,7 +493,7 @@
 			height:60px;
 			float:left;
 			display:block;
-			background: url(home/images/index/14.png) no-repeat center center;
+			background: url(/home/images/index/14.png) no-repeat center center;
 
 		}
 		.con_5_span7{
@@ -503,7 +502,7 @@
 			height:60px;
 			float:left;
 			display:block;
-			background: url(home/images/index/15.png) no-repeat center center;
+			background: url(/home/images/index/15.png) no-repeat center center;
 
 		}
 		.con_5_span8{
@@ -512,7 +511,7 @@
 			height:60px;
 			float:left;
 			display:block;
-			background: url(home/images/index/16.png) no-repeat center center;
+			background: url(/home/images/index/16.png) no-repeat center center;
 
 		}
 		.con_5_span_2{
@@ -525,7 +524,7 @@
 		.con_5_span_4{
 			width:41px;
 			height:21px;
-			background:url(home/images/index/jian.png) no-repeat center center;
+			background:url(/home/images/index/jian.png) no-repeat center center;
 			float:right;
 			margin-right:30px;
 			margin-top: 33px;

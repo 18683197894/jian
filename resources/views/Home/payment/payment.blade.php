@@ -49,7 +49,8 @@
 				
 				<li><div>
 					<title>四川宜宾 （郑伦森）</title>
-					<span>翠屏区临港开发经济区临港新天地润之宜5楼522室收zzzsxdssssasas</span>
+					<span>翠屏区临港开发经济区临港新天地润之宜5楼522室收
+					</span>
 					
 					<div class="payment_hader_but">
 					<button name="edit" id="payment_hader_butl">编辑</button>
@@ -69,9 +70,46 @@
 
 				</div></li>
 			</ul>
-			<button class="payment_hader_new">使用新地址</button>
+			<button class="btn1">使用新地址</button>
+		</div>
+		
+		<div class="m-modal">
+			<div class="m-modal-dialog">
+				<div class="m-top">
+					<h3 class="m-modal-title">
+						添加收货地址
+					</h3>
+					<span class="m-modal-close">&times;</span>
+				</div>
+				<div class="m-middle">
+					<!--content-->
+					<label class="paymentfrom1_1" for="">
+						<input type="text" name="name">
+						<input type="text" name="phone">
+					</label>
+
+					<label class="paymentfrom1_1" for="">
+						
+					</label>
+					<label class="paymentfrom1_1" for="">
+						
+					</label>
+					<label class="paymentfrom1_1" for="">
+						
+					</label>
+
+					
+				</div>
+				<div class="m-bottom">
+					<button class="m-btn-sure">确定</button>
+					<button class="m-btn-cancel">取消</button>
+				</div>
+			</div>
 		</div>
 
+		<div class="payment_con" >
+			
+		</div>
 		
 	</div>
 	
