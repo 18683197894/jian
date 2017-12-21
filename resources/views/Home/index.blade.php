@@ -1,6 +1,9 @@
 @extends('heads')
 @section('css')
 <link rel="stylesheet" href="{{ asset('/home/images/index/index.css') }}">
+<style>
+	select::-ms-expand { display: none; }
+</style>
 @endsection('css')
 
 @section('content')

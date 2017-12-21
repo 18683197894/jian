@@ -167,7 +167,7 @@
 	   -webkit-border-radius    : 6px;
 	   border-radius            : 6px;
 	    appearance:none;
-        -moz-appearance:none;
+        -moz-appearance:none;background：transparent;
         -webkit-appearance:none;
         -ms-appearance:none;
 	   font-family:'Microsoft Yahei', '微软雅黑', Helvetica, 'Hiragino Sans GB', Arial, sans-serif;
@@ -178,7 +178,7 @@
 	  
 
 	}
-	select::-ms-expand { display: none; }
+	select#selectPointOfInterest::-ms-expand { display: none; }
 	select#selectPointOfInterest option
 	{
 	    padding             : 4px 10px 4px 10px;
