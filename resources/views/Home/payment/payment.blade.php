@@ -5,6 +5,7 @@
 	<title>{{ config('app.name') }}@if(!empty($title))  - {{$title}}@endif</title>
 <link href="{{ asset('home/images/images/common.css') }}" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="{{ asset('/home/images/payment/shoppingcart/common.css') }}">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
 </head>
 <body>
@@ -35,40 +36,36 @@
 		</div>
 		<div class="payment_hader">
 			<title>选择收货地址</title>
-			<ul>
-				<li><div class="payment_hader_defult">
+			<ul class="dizhiul">
+				<li class="dizhili" style="display:none">
+				<div>
 
-					<title>四川宜宾 （郑伦森）</title>
-					<span>翠屏区临港开发经济区临港新天地润之宜5楼522室收</span>
+					<title></title>
+					<span></span>
 					<div>
-					<button name="edit" id="payment_hader_butl">编辑</button>
-					<button name="del" style="display:none" >删除</button>
+					<button name="edit" style="margin-left:21px;" class="payment_hader_butl">编辑</button>
+					<button name="del"  class="payment_hader_butd"  style='display:block'>删除</button>
 					</div>
 
-				</div> </li>
+				</div>
+				</li>
+				@if(count($address) > 0)
+				@foreach($address as $z => $j)
+				<li index="{{ $j->id }}">
+				<div @if($j->status == 1) class="payment_hader_defult" @endif>
+
+					<title name="">{{ $j->shen.$j->shi }} （{{$j->name}}）</title>
+					<span>{{ $j->tails }}</span>
+					<div>
+					<button name="edit" style="margin-left:21px;" class="payment_hader_butl">编辑</button>
+					<button name="del"  class="payment_hader_butd" @if($j->status == 1) style='display:none' @endif >删除</button>
+					</div>
+
+				</div>
+				</li>
+				@endforeach
+				@endif
 				
-				<li><div>
-					<title>四川宜宾 （郑伦森）</title>
-					<span>翠屏区临港开发经济区临港新天地润之宜5楼522室收
-					</span>
-					
-					<div class="payment_hader_but">
-					<button name="edit" id="payment_hader_butl">编辑</button>
-					<button name="del">删除</button>
-					</div>
-
-				</div></li>
-
-				<li><div>
-					<title>四川宜宾 （郑伦森）</title>
-					<span>翠屏区临港开发经济区临港新天地润之宜5楼522室收</span>
-					
-					<div>
-					<button name="edit" id="payment_hader_butl">编辑</button>
-					<button name="del">删除</button>
-					</div>
-
-				</div></li>
 			</ul>
 			<button class="btn1">使用新地址</button>
 		</div>
@@ -83,25 +80,62 @@
 				</div>
 				<div class="m-middle">
 					<!--content-->
-					<label class="paymentfrom1_1" for="">
-						<input type="text" name="name">
-						<input type="text" name="phone">
+					<label class="paymentfrom1_1" for="" style="padding-top:7px;">
+						<input type="text" class="payment_input_name" name="name"  placeholder="姓名">
+						<input type="text" class="payment_input_phone" name="phone"  placeholder="手机号">
 					</label>
 
-					<label class="paymentfrom1_1" for="">
-						
+					<label class="paymentfrom1_1 paymentselect" for="" style="height:55px;margin-top:15px;" >
+<div class="demo">
+	<dl class="select">
+		<dt class="dt1" index="">选择省</dt>
+		<dd>
+			<ul class="paymentshens">
+				<li class="paymentshen"><a href="#" index="00" title="选择省">选择省</a></li>
+				@foreach( $shen as $k => $v )
+				<li class="paymentshen"><a href="#" index="{{ $v->id }}" title="{{ $v->name }}">{{ $v->name }}</a></li>
+				@endforeach
+			</ul>
+		</dd>
+	</dl>	
+</div>
+
+<div class="demo">
+	<dl class="select" style="margin-left:12px">
+		<dt class="dt2" index="">选择市</dt>
+		<dd>
+			<ul class="paymentshis">
+				<li class="paymentshi"><a href="#" index="">选择市</a></li>
+			</ul>
+		</dd>
+	</dl>	
+</div>
+<div class="demo">
+	<dl class="select" style="margin-left:12px">
+		<dt class="dt3" index="">选择区</dt>
+		<dd>
+			<ul class="paymentqus">
+				<li class="paymentqu"><a href="#" index="00">选择区</a></li>
+			</ul>
+		</dd>
+	</dl>	
+</div>
+					</label>
+					<label class="paymentfrom1_1" for="" style="height:47px;">
+						<div class="paymentdetailsdiv">
+						<textarea name="paymentdetails" id="" class="paymentdetails" placeholder="详细地址"></textarea>
+						</div>
 					</label>
 					<label class="paymentfrom1_1" for="">
-						
-					</label>
-					<label class="paymentfrom1_1" for="">
-						
+						<input type="text" class="payment_input_zipcode" name="zipcode"  placeholder="邮编">
+						<input type="text" class="payment_input_lebel" name="lebel"  placeholder="地址标签">
 					</label>
 
 					
 				</div>
 				<div class="m-bottom">
 					<button class="m-btn-sure">确定</button>
+					<button class="m-btn-edit" style="display:none">更新</button>
 					<button class="m-btn-cancel">取消</button>
 				</div>
 			</div>

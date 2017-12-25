@@ -437,6 +437,7 @@
 			margin:0 auto;
 			font-size: 15px;
 			color:#555;
+			overflow: hidden;
 			line-height: 50px;
 			border-bottom: 1px solid #ccc;
 		}
@@ -460,10 +461,9 @@
 			padding:0;
 			margin-left: 10px;
 			float:left;
+			cursor:pointer;
 		}
-		#payment_hader_butl{
-			margin-left: 21px;
-		}
+		
 		.payment_con{
 			width:1200px;
 			margin: 0 auto;
@@ -486,10 +486,10 @@
 .m-modal-dialog {
 	/*font-family: "microsoft yahei", "宋体";*/
 	position: relative;
-	margin: 0 auto;
+	margin: 0 auto; 
 	margin-top: -100%;
-	width: 650px;
-	height:450px;
+	width: 620px;
+	height:430px;
 	background-color: #ffffff;
 	border: 1px solid #eee;
 	border-radius: 5px;
@@ -534,7 +534,7 @@
 }
 
 .m-middle {
-	height:335px;
+	height:315px;
 	display:block
 }
 
@@ -571,7 +571,7 @@
 .m-bottom button:active {
 	color: #333;
 	background-color: #d4d4d4;
-	border-color: #8c8c8
+	border-color: #8c8c8c;
 }
 
 .m-bottom .m-btn-cancel {
@@ -581,6 +581,14 @@
 }
 
 .m-bottom .m-btn-sure {
+	color: #fff;
+	margin-right: 230px;
+	margin-top: 13px;
+	float:right;
+	background-color: #337ab7;
+	border-color: #2e6da4;
+}
+.m-bottom .m-btn-edit {
 	color: #fff;
 	margin-right: 230px;
 	margin-top: 13px;
@@ -603,7 +611,7 @@
 /***************/
 
 	.paymentfrom1_1{
-		width:575px;
+		width:545px;
 		height:82px;
 		display: block;
 		margin:0 auto;
@@ -612,4 +620,92 @@
 		border:none;
 		list-style: none;
 		background:none; outline:none;  
+	}
+
+::-webkit-input-placeholder { color:#666;font-size:16px; }
+::-moz-placeholder { color:#666; font-size:16px;} /* firefox 19+ */
+:-ms-input-placeholder { color:#666; font-size:16px;} /* ie */
+input:-moz-placeholder { color:#666; font-size:16px;}
+
+	.m-middle label input{
+		border:1px solid #EDEDED;
+		text-indent: 10px;
+		font-size: 15px;
+		color:#444;
+	}
+	input.payment_input_name{
+		width:261px;
+		height:38px;	
+		margin-top: 30px;
+		float:left;
+	}
+	input.payment_input_phone{
+		width:261px;
+		height:38px;	
+		margin-top: 30px;
+		float:right;
+	}
+	input.payment_input_zipcode{
+		width:261px;
+		height:38px;
+		margin-top: 30px;
+		float:left;
+	}
+	input.payment_input_lebel{
+		width:261px;
+		height:38px;
+		margin-top: 30px;
+		float:right;
+	}
+	/*下拉*/
+
+.select{position:relative;float:left;}
+.select dt{
+	height:38px;
+	display:inline-block;
+	line-height:38px;
+	font-weight:normal;
+	font-style: normal;
+	padding-right:15px; 
+	font-size: 15px;
+	border:1px solid #ededed;
+	color:#333;
+	text-indent: 10px;
+	cursor:pointer;
+  	background: url("/home/images/payment/payment/xiala.png") no-repeat scroll right center transparent;
+	border:1px solid #ededed;
+	margin-right:15px;
+	width:115px;
+	white-space:nowrap;
+	/*background: url(/home/images/houseroom/55.jpg);*/
+	/*border-radius: 5px 5px 0px 0px;*/
+	text-overflow:ellipsis;
+	overflow:hidden;position:
+	relative;z-index:99;}
+.select dd{position:absolute;left:0;top:38px;width:115px;background:#fff;display:none;background-color:#fff; border-radius:0px 0px 5px 5px;}
+.select dd ul{width:130px;max-height:200px;overflow:auto;border:1px solid #ededed;}
+.select dd ul li a{height:30px;line-height:30px;display:block;text-indent: 10px;overflow: hidden;	font-weight:normal;
+	font-style: normal;
+	font-size: 15px;}
+.select dd ul li a:hover{background:#f9f999;}
+
+
+	.paymentdetailsdiv{
+	width:545px;
+	height:45px;
+	border:1px solid #ededed;
+
+	}
+	.paymentdetailsdiv > .paymentdetails{
+		width:545px;
+		margin-top: 7px;
+		text-align: left;
+		text-indent: 8px;
+		resize:none;
+		height:30px;
+		line-height: 30px;
+		font-size: 15px;
+		border:none;
+		color:#444;
+		overflow: hidden;
 	}

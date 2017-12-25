@@ -239,7 +239,7 @@
 					
 			     $.ajax('/home/register/zendcode',{
 			     	type:'post',
-			     	data:{phone:phone,_token:$('meta[name="csrf-token"]').attr('content')},
+			     	data:{phone:phone,_token:$("meta[name='csrf_token']").attr('content')},
 			     	async: false,
 			     	success:function(data)
 			     	{	

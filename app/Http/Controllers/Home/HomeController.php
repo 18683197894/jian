@@ -89,11 +89,13 @@ class HomeController extends Controller
         }
         $dataid = trim($dataid,'_');
         $dataid = explode('_',$dataid);
+        $di = \DB::table('district')->select('id','name','level')->where('level',1)->get();
+        $address = \DB::table('address')->select('id','name','phone','shen','shi','qu','tails','zipcode','status','time')->where('uid',\session('Home')->id)->orderBy('time')->get();
         
         $title = '提交订单';
         $keyworlds = '建商网，建商联盟，购物车，提交订单';
         $description = '建商网，建商联盟，购物车，提交订单';
-        return view('Home.payment.payment',['title'=>$title,'keyworlds'=>$keyworlds,'description'=>$description]);
+        return view('Home.payment.payment',['address'=>$address,'shen'=>$di,'title'=>$title,'keyworlds'=>$keyworlds,'description'=>$description]);
     }
 
     public function payments()
@@ -109,6 +111,107 @@ class HomeController extends Controller
         $res = \DB::table('playgou')->delete($request->id);
         if($res)
         {
+            return response()->json(1);
+        }else
+        {
+            return response()->json(2);
+        }
+    }
+    public function dizhiajax(Request $request)
+    {
+        $id = $request->id;
+        $oer = $request->oer;
+        
+        $data = \DB::table('district')->select('id','name','level','upid')->where('level',$oer)->where('upid',$id)->get();
+        return response()->json($data);
+        
+    }
+
+    public function address(Request $request)
+    {   
+        $data = $request->except("_token");
+        $id = \session('Home')->id;
+        $data['uid'] = $id;
+        $data['status'] = 0;
+        $data['time'] = time();
+        $data['uptime'] = time();
+
+        
+        $addressnum = \DB::table('address')->select('id','uid','status')->where('uid',$id)->count();
+
+        if($addressnum <= 0)
+        {
+            $data['status'] = 1;
+        }
+        if($addressnum >=4)
+        {
+            return response()->json('errors');
+        }   
+            
+        $res = \DB::table('address')->insertGetId($data);
+        if($res)
+        {
+            return response()->json($res);
+        }else
+        {
+            return response()->json('error');
+        }
+    }
+
+    public function editaddress(Request $request)
+    {   
+        $data = \DB::table('address')->select('id','name','phone','shen','shi','qu','tails','zipcode','lebel','dizhis')->where('id',$request->id)->where('uid',\session('Home')->id)->first();
+        $arr = explode(',',$data->dizhis);
+        $data->shens = $arr['0'];
+        $data->shis = $arr['1'];
+        $data->qus = $arr['2'];
+        // $shi = \DB::table('details')->select('id','name','upid','level')->where('id',$data->shis)->first(); 
+        $data->shiss = \DB::table('district')->select('id','name','level','upid')->where('level',2)->where('upid',$data->shens)->get();
+        $data->quss = \DB::table('district')->select('id','name','level','upid')->where('level',3)->where('upid',$data->shis)->get();
+        
+        if($data)
+        {
+            return response()->json($data);
+        }else
+        {
+            return response()->json(2);
+        }
+    }
+
+    public function addressedit(Request $request)
+    {
+        $data = $request->except("_token");
+        $data['uptime'] = time();
+        $res = \DB::table('address')->where('id',$data['id'])->update($data);
+        if($res)
+        {
+            return response()->json(1);
+        }else
+        {
+            return response()->json(2);
+        }
+    }
+    public function addressdel(Request $request)
+    {   
+        $res = \DB::table('address')->delete($request->id);
+        if($res)
+        {
+            return response()->json(1);
+        }else
+        {
+            return response()->json(2);
+        }
+    }
+
+    public function addressstatus(Request $request)
+    {
+        $uid = \session('Home')->id;
+        $id = $request->id;
+        $res = \DB::table('address')->where('uid',$uid)->where('status',1)->update(['status'=>0]);
+
+        if($res)
+        {
+            \DB::table('address')->where('id',$id)->update(['status'=>1]);
             return response()->json(1);
         }else
         {

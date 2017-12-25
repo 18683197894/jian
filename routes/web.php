@@ -335,6 +335,12 @@ Route::post('/home/shoppingcart/del','Home\HomeController@goudel');
 //提交订单
 Route::get('/home/shoppingcart/payment','Home\HomeController@payment');
 Route::get('/home/shoppingcart/payments','Home\HomeController@payments');
+Route::get('/home/shoppingcart/payment/dizhiajax','Home\HomeController@dizhiajax');
+Route::post('/home/shoppingcart/payment/address','Home\HomeController@address');
+Route::get('/home/sohppingcart/payment/editaddress','Home\HomeController@editaddress');
+Route::post('/home/shoppingcart/payment/addressedit','Home\HomeController@addressedit');
+Route::post('/home/shoppingcart/payment/addressdel','Home\HomeController@addressdel');
+Route::get('/home/shoppingcart/payment/addressstatus','Home\HomeController@addressstatus');
 //软包加入购物车
 Route::post('/home/package/softroll/gouajax','Home\PackageController@gouajax');
 
