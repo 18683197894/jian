@@ -1,3 +1,7 @@
+<?php
+
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -57,7 +61,7 @@
 			<title>选择一下支付方式付款</title>
 			<span class="payments_2_span">支付平台</span>
 			<ul>
-				<li><img class="payments_2_img1" src="{{ asset('/home/images/payment/payments/2.png') }}" alt=""><img src="" class="payments_2_img2" alt=""></li>
+				<li><img class="payments_2_img1" src="{{ asset('/home/images/payment/payments/2.png') }}" alt=""><img src="http://paysdk.weixin.qq.com/example/qrcode.php?data={{ urlencode($url2) }}" class="payments_2_img2" alt=""></li>
 				<li><img class="payments_2_img1" src="{{ asset('/home/images/payment/payments/3.png') }}" alt=""><img src="" class="payments_2_img2" alt=""></li>
 			</ul>
 		</div>
