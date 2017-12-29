@@ -334,7 +334,7 @@ Route::post('/home/shoppingcart/del','Home\HomeController@goudel');
 
 //提交订单
 Route::get('/home/shoppingcart/payment','Home\HomeController@payment');
-Route::get('/home/shoppingcart/payments','Home\HomeController@payments');
+Route::post('/home/shoppingcart/payments','Home\HomeController@payments');
 Route::get('/home/shoppingcart/payment/dizhiajax','Home\HomeController@dizhiajax');
 Route::post('/home/shoppingcart/payment/address','Home\HomeController@address');
 Route::get('/home/sohppingcart/payment/editaddress','Home\HomeController@editaddress');

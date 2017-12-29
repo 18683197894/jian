@@ -8,6 +8,7 @@
 		}
 		var id = $(this).parent('li').attr('index');
 		var cla = $(this).attr('class');
+
 		if(cla == 'payment_hader_defult')
 		{
 			return false;
@@ -17,19 +18,18 @@
 			data : {id:id},
 			success : function(data)
 			{
-				if( data == 1 )
-				{
-					$('.payment_hader_defult').removeClass('payment_hader_defult');
-					div.attr('class','payment_hader_defult');
-					$("button[name='del']").css('display','block');
-					div.find("button[name='del']").css('display','none');
-					return false;
-				}
 				if( data == 2 )
 				{
 					alert('选中失败！');
 					return false;
 				}
+				$('.payment_hader_defult').removeClass('payment_hader_defult');
+				div.attr('class','payment_hader_defult');
+				$("button[name='del']").css('display','block');
+				div.find("button[name='del']").css('display','none');
+				$('.payment_buttom_sub_2 > div').html(data['tails']);
+				$('.payment_buttom_sub_3 > div').html(data['name']+' '+data['phone']);
+				return false;
 			},
 			error : function(data)
 			{
@@ -184,7 +184,7 @@
 						$('.dizhiul').append(dizhili);
 						$('.dizhili').attr('index',data);
 
-						// that.fn();
+						that.fn();
 						that.hide();
 					},
 					error : function(data)
@@ -300,6 +300,7 @@ function dizhidel()
 		$('.dt2').attr('index','');
 		$('.dt1').attr('index','');
 		$('.m-modal-title').attr('index','');
+		$("body").css('overflow','scroll');
 
 
 }
@@ -539,9 +540,80 @@ $('.payment_hader_butl').on("click", function() {
 
 		if( str.length > 12)
 		{
-			var res = str.substr(0,15);
+			var res = str.substr(0,12);
 			$(this).val(res);
 			// alert('字数超出限制');
 
 		}
 	})
+
+	$('.payment_buttom_li3ipt').keyup(function(){
+		var str = $(this).val();
+		if( str.length > 20 ){
+			var res = str.substr(0,20);
+			$(this).val(res);
+		}
+	})
+//////////////////////////////////////
+	//取消选中
+	$(function(){
+		$("input[type='checkbox']").attr('checked',false);
+		
+	})
+
+	//submit提交
+	$('.payment_submit').on('click',function(){
+		var did = $('.payment_hader_defult').parent('li').attr('index');
+		if( did == undefined )
+		{
+			alert('请先选择收货地址！');
+			return false;
+
+		}
+
+		// var res = orders();
+		// if(res == false)
+		// {
+		// 	return false;
+		// }
+
+		input = "<input type='hidden' name='dizhi' value='"+did+"'>";
+		$('form').append(input);
+		
+	})
+
+	function orders()
+	{	
+		var res = false;
+		$.ajax('/home/shoppingcart/payment/dizhiajax',{
+			type : 'post',
+			data : {_token:$("meta[name='csrf-token']").attr('content')},
+			async : false,
+			success : function(data)
+			{	
+				res = false;
+			},
+			error : function(data)
+			{	
+				res = false;
+				alert('数据异常！');
+			}
+		})
+		return res;
+	}
+
+	//运费险赋值
+	$('#checkbox2').on('click',function(){
+		if( $(this).attr('checked') == 'checked' )
+		{
+			var total = Number($('.yunfeixian').html()) + Number($('.payment_buttom_div > div').html());
+			$('.payment_buttom_div > div').html(total+'.00');
+			$('.payment_buttom_sub_1 > div').html(total+'.00');
+		}else
+		{
+			var total = Number($('.payment_buttom_div > div').html()) - Number($('.yunfeixian').html());
+			$('.payment_buttom_sub_1 > div').html(total+'.00');
+			$('.payment_buttom_div > div').html(total+'.00');
+		}
+	})
+	

@@ -30,10 +30,37 @@
 				<li id="con1li3"><img src="{{ asset('/home/images/hade_1.png') }}" alt=""></li>
 				<li id="con1li4">装修公司实力认证</li>
 				<li id="con1li5"> </li>
-				<li id="con1li6">确认订单</li>
+				<li id="con1li6">支付订单</li>
 			</ul>
 		</div>
 		
+	</div>
+	<div class="payments">
+		<div class="payments_1">
+			<img src="{{ asset('/home/images/payment/payments/1.png') }}" alt="">
+			<div>
+				<ul>
+					<li class="payments_1_ul1_1">订单提交成功</li>
+					<li class="payments_1_ul1_2">请于 <em style="color:#E63336">30分</em> 钟内完成支付 超时将取消订单</li>
+				</ul>
+				<span>应付金额：<em>{{ $data->total }} 元</em></span>
+			</div>
+			<ul class="payments_1ul2">
+				<li>订单号：&nbsp;&nbsp;<span style="color:#E63336">{{ $data->_token }}</span></li>
+				<li>收货信息：&nbsp;&nbsp;{{ $data->address }}</li>
+				<li>商品名称：&nbsp;&nbsp;</li>
+				<li>配送时间：&nbsp;&nbsp;不限收货时间</li>
+				<li>发票信息：&nbsp;&nbsp;@if( $data->invoice == 1 )纸质发票 个人 @else 无发票 @endif</li>
+			</ul>
+		</div>
+		<div class="payments_2">
+			<title>选择一下支付方式付款</title>
+			<span class="payments_2_span">支付平台</span>
+			<ul>
+				<li><img class="payments_2_img1" src="{{ asset('/home/images/payment/payments/2.png') }}" alt=""><img src="" class="payments_2_img2" alt=""></li>
+				<li><img class="payments_2_img1" src="{{ asset('/home/images/payment/payments/3.png') }}" alt=""><img src="" class="payments_2_img2" alt=""></li>
+			</ul>
+		</div>
 	</div>
 	
 <div class="z-bot">
@@ -68,6 +95,6 @@
 	</div>
 </div>
 </body>
-<script src="{{ asset('/home/images/payment/shoppingcart/common.js') }}"></script>
+<script src="{{ asset('/home/images/payment/payment/common.js') }}"></script>
 </html>
 

@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="{{ asset('/home/images/payment/shoppingcart/common.css') }}">
 <script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
 <meta name="csrf-token" content="{{ csrf_token() }}">
+<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
 </head>
 <body>
 	<div id="hade-a"> 
