@@ -155,8 +155,8 @@ class HomeController extends Controller
 
     public function payments(Request $request)
     {   
-date_default_timezone_set('Asia/Shanghai');
-        
+        date_default_timezone_set('Asia/Shanghai');
+
         if(!$request->dataid)
         {
             return back();
@@ -178,6 +178,8 @@ date_default_timezone_set('Asia/Shanghai');
                 $alipay_url = $alipay->index(['_token'=>$res->_token,'addtime'=>$res->addtime,'total'=>$total],'submitOrderInfo');
                 if( empty($wechat_url) || empty($alipay_url) )
                 {   
+                    $wechat = new payInterface_native\request_wechat();
+                    $wechat->index(['_token'=>$res->_token],'closeOrder');
 
                     \DB::table('orders')->delete($res->id);
                     \DB::table('detail')->where('orderid',$res->id)->delete();

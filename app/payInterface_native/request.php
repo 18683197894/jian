@@ -73,10 +73,10 @@ Class Request_wechat{
      * 提交订单信息
      */
     public function submitOrderInfo($res){
-        date_default_timezone_set('Asia/Shanghai');
-        $_POST['total_fee'] =$res['total'];
-        $_POST['time_start'] = date('YmdHms',time());
-        $_POST['time_expire'] = date('YmdHms',$res['addtime'] + 5000);
+            $_POST['total_fee'] =$res['total'];
+            
+        // $_POST['time_start'] = date('YmdHms',$res['addtime']);
+        // $_POST['time_expire'] = date('YmdHms',$res['addtime'] + 5000);
         $this->reqHandler->setReqParams($_POST,array('method'));
         $this->reqHandler->setParameter('service','pay.weixin.native');//接口类型
         $this->reqHandler->setParameter('mch_id',$this->cfg->C('mchId'));//必填项，商户号，由平台分配
