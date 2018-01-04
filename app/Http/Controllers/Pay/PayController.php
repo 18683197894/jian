@@ -11,13 +11,14 @@ use App\Http\Controllers\Controller;
 class PayController extends Controller
 {
     function wechatnotify(Request $request)
-    {
-    	$wechat = new payInterface_native\request_wechat();
-    	$wechat->callback();
+    {	
+date_default_timezone_set('Asia/Shanghai');
+    	
+    	dd(date('Y-m-d H:i:s',time()));
     }
     function alipaynotify(Request $request)
     {
-    	dd(1);
-    }
+    	dd(date('Y-m-d H:i:s',time()));
+    	    }
 
 }
