@@ -136,6 +136,13 @@
 							var idd =$(".dizhiul li[index="+id+"]");
 							idd.find('title').html(a['shen']+a['shi']+' '+'('+a['name']+')');
 							idd.find('span').html(a['tails']);
+							var classs = idd.find('div').attr('class');
+							if(	classs == 'payment_hader_defult')
+							{
+							$('.payment_buttom_sub_2 > div').html(a['tails']);
+							$('.payment_buttom_sub_3 > div').html(a['name']+' '+a['phone']);
+								
+							}
 							dizhidel();
 							that.hide();
 
@@ -571,27 +578,72 @@ $('.payment_hader_butl').on("click", function() {
 
 		}
 
-		// var res = orders();
-		// if(res == false)
-		// {
-		// 	return false;
-		// }
+		var res = orders();
+		if(res == false)
+		{
+			return false;
+		}
 
 		input = "<input type='hidden' name='dizhi' value='"+did+"'>";
 		$('form').append(input);
 		
 	})
 
+	function payment_pay()
+	{
+		$('form').submit();
+	}
+	function payment_paydel()
+	{
+		$.ajax('/home/shoppingcart/payment/ordersajax',{
+			type : 'get',
+			data : {del:1},
+			async : false,
+			success : function(data)
+			{	
+				if(data =='1-1')
+				{	
+					alert('订单取消成功！');
+					$('.payment_buttom_sub_5').css('display','none');
+				}else if(data == '2-2')
+				{	
+					alert('订单取消成功！');
+					$('.payment_buttom_sub_5').css('display','none');
+				}else if(data == '3-3')
+				{
+					alert('订单删除失败！');
+					return false;
+				}else
+				{
+					alert('订单删除失败！请在'+data+'秒后重试');
+					return false;
+				}
+			},
+			error : function(data)
+			{	
+				alert('数据异常！');
+				return false;
+
+			}
+		})
+	}
 	function orders()
 	{	
 		var res = false;
-		$.ajax('/home/shoppingcart/payment/dizhiajax',{
-			type : 'post',
+		$.ajax('/home/shoppingcart/payment/ordersajax',{
+			type : 'get',
 			data : {_token:$("meta[name='csrf-token']").attr('content')},
 			async : false,
 			success : function(data)
 			{	
-				res = false;
+				if(data =='1-1')
+				{
+					res = true;
+				}else
+				{	
+					$('.payment_buttom_sub_5').css('display','block');
+					// alert('有未支付的订单！');
+				}
 			},
 			error : function(data)
 			{	

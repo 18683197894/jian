@@ -1,0 +1,40 @@
+================关闭订单===================
+key: appid value: wx290ce4878c94369d
+key: charset value: UTF-8
+key: mch_id value: 102585335014
+key: nonce_str value: 1515067764
+key: result_code value: 0
+key: sign value: DF71E8E403C5161E05F53C3ECF88724B
+key: sign_type value: MD5
+key: status value: 0
+key: version value: 2.0
+================关闭订单===================
+key: appid value: wx290ce4878c94369d
+key: charset value: UTF-8
+key: mch_id value: 102585335014
+key: nonce_str value: 1515076775
+key: result_code value: 0
+key: sign value: 69AF5740D0C48CD037029EAB03E725BA
+key: sign_type value: MD5
+key: status value: 0
+key: version value: 2.0
+================关闭订单===================
+key: appid value: wx290ce4878c94369d
+key: charset value: UTF-8
+key: mch_id value: 102585335014
+key: nonce_str value: 1515058369
+key: result_code value: 0
+key: sign value: 01128F926651138F2CD106B6C9D0B243
+key: sign_type value: MD5
+key: status value: 0
+key: version value: 2.0
+================关闭订单===================
+key: appid value: wx290ce4878c94369d
+key: charset value: UTF-8
+key: mch_id value: 102585335014
+key: nonce_str value: 1515084865
+key: result_code value: 0
+key: sign value: 18930A0B89011FC920A86AF3D3F8FB4B
+key: sign_type value: MD5
+key: status value: 0
+key: version value: 2.0

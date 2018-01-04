@@ -1012,7 +1012,7 @@ input:-moz-placeholder { color:#666; font-size:16px;}
 		height:230px;
 		display: block;
 		margin:0 auto;
-		position: relative;
+		/*position: relative;*/
 	}
 	.payment_buttom_sub_1{
 		width:1000px;
@@ -1091,6 +1091,21 @@ input:-moz-placeholder { color:#666; font-size:16px;}
 		font-size: 15px;
 
 		background-color: #FE214D;
+	}
+	.payment_buttom_sub_5{
+		width:1000px;
+		float:right;
+		display: none;
+		text-align: right;
+		height:30px;
+		line-height: 40px;
+	}
+	.payment_buttom_sub_5 span{
+		font-size: 16px;
+		color:#555;
+	}
+	.payment_buttom_sub_5 span a{
+		color:#1F00FF;
 	}
 
 	/*支付订单页*/
@@ -1202,11 +1217,10 @@ input:-moz-placeholder { color:#666; font-size:16px;}
 	.payments_2_img1{
 		margin-left:60px;
 	}
-	.payments_2_img2{
+	.payments_2_img2_2,.payments_2_img2_1{
 		width:250px;
 		height:250px;
 		margin-left:25px;
 		display:block;
-		border:1px solid red;
 		margin-top: 20px;
 	}

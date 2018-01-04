@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 	<title>{{ config('app.name') }}@if(!empty($title))  - {{$title}}@endif</title>
 <link href="{{ asset('home/images/images/common.css') }}" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="{{ asset('/home/images/payment/shoppingcart/common.css') }}">
@@ -41,24 +42,24 @@
 			<div>
 				<ul>
 					<li class="payments_1_ul1_1">订单提交成功</li>
-					<li class="payments_1_ul1_2">请于 <em style="color:#E63336">30分</em> 钟内完成支付 超时将取消订单</li>
+					<li class="payments_1_ul1_2">请于 <em style="color:#E63336">{{round( ( 1800 - (time() - $res->addtime ) ) / 60 ) }}分</em> 钟内完成支付 超时将取消订单</li>
 				</ul>
-				<span>应付金额：<em>{{ $data->total }} 元</em></span>
+				<span>应付金额：<em>{{ $res->total}} 元</em></span>
 			</div>
-			<ul class="payments_1ul2">
-				<li>订单号：&nbsp;&nbsp;<span style="color:#E63336">{{ $data->_token }}</span></li>
-				<li>收货信息：&nbsp;&nbsp;{{ $data->address }}</li>
+			<ul class="payments_1ul2" index="{{ $res->id }}">
+				<li>订单号：&nbsp;&nbsp;<span style="color:#E63336">{{ $res->_token }}</span></li>
+				<li>收货信息：&nbsp;&nbsp;{{ $res->address }}</li>
 				<li>商品名称：&nbsp;&nbsp;</li>
 				<li>配送时间：&nbsp;&nbsp;不限收货时间</li>
-				<li>发票信息：&nbsp;&nbsp;@if( $data->invoice == 1 )纸质发票 个人 @else 无发票 @endif</li>
+				<li>发票信息：&nbsp;&nbsp;@if( $res->invoice == 1 )纸质发票 个人 @else 无发票 @endif</li>
 			</ul>
 		</div>
 		<div class="payments_2">
 			<title>选择一下支付方式付款</title>
 			<span class="payments_2_span">支付平台</span>
 			<ul>
-				<li><img class="payments_2_img1" src="{{ asset('/home/images/payment/payments/2.png') }}" alt=""><img src="" class="payments_2_img2" alt=""></li>
-				<li><img class="payments_2_img1" src="{{ asset('/home/images/payment/payments/3.png') }}" alt=""><img src="" class="payments_2_img2" alt=""></li>
+				<li><img class="payments_2_img1"  src="{{ asset('/home/images/payment/payments/2.png') }}" alt=""><img src="{{ $wechat_url['code_img_url'] }}" class="payments_2_img2_1" alt=""></li>
+				<li><img class="payments_2_img1"  src="{{ asset('/home/images/payment/payments/3.png') }}" alt=""><img src="{{ $alipay_url['code_img_url'] }}" class="payments_2_img2_2" alt=""></li>
 			</ul>
 		</div>
 	</div>
@@ -95,6 +96,6 @@
 	</div>
 </div>
 </body>
-<script src="{{ asset('/home/images/payment/payment/common.js') }}"></script>
+<script src="{{ asset('/home/images/payment/payments/common.js') }}"></script>
 </html>
 

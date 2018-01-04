@@ -1,8 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\Home;
+require('../app/payInterface_alipay/request.php');
+require('../app/payInterface_native/request.php');
+use payInterface_native;
+use payInterface_alipay;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+date_default_timezone_set('Asia/Shanghai');
 class HomeController extends Controller
 {
     public function shoppingcart()
@@ -149,21 +155,43 @@ class HomeController extends Controller
 
     public function payments(Request $request)
     {   
+        if(!$request->dataid)
+        {
+            return back();
+        }
+
         $res = \DB::table('orders')->where('status',0)->where('uid',\session('Home')->id)->first();
         if($res)
         {
-            if( time() - $res->addtime < 190000)
+            if( time() - $res->addtime < 1800)
             {   
+                $total = $res->total * 100;
+                $total = preg_replace('/\..*/','',$total);
+                $total = 1;
+                // dd($total);
+                $wechat = new payInterface_native\request_wechat();
+                $wechat_url = $wechat->index(['_token'=>$res->_token,'addtime'=>$res->addtime,'total'=>$total],'submitOrderInfo');
+                
+                $alipay = new payInterface_alipay\request_alipay();
+                $alipay_url = $alipay->index(['_token'=>$res->_token,'addtime'=>$res->addtime,'total'=>$total],'submitOrderInfo');
+                if( empty($wechat_url) || empty($alipay_url) )
+                {   
 
-
-        
-
+                    \DB::table('orders')->delete($res->id);
+                    \DB::table('detail')->where('orderid',$res->id)->delete();
+                    echo "<script> alert('订单创建失败！'); window.location.href='/home/shoppingcart' </script>";
+                    return false;
+                }
                 $title = '支付订单';
                 $keyworlds = '建商网，建商联盟，购物车，提交订单';
                 $description = '建商网，建商联盟，购物车，提交订单';
-                return view('Home.payment/payments',['data'=>$res,'title'=>$title,'keyworlds'=>$keyworlds,'description'=>$description]);
+                return view('Home.payment/payments',['alipay_url'=>$alipay_url,'wechat_url'=>$wechat_url,'res'=>$res,'title'=>$title,'keyworlds'=>$keyworlds,'description'=>$description]);
             }else
-            {
+            {   
+
+                $wechat = new payInterface_native\request_wechat();
+                $wechat->index(['_token'=>$res->_token],'closeOrder');
+                
                 $resss = \DB::table('orders')->delete($res->id);
                 $ress = \DB::table('detail')->where('orderid',$res->id)->delete();
                 if($ress && $resss)
@@ -210,10 +238,7 @@ class HomeController extends Controller
             }
             $total += $vv->jia;
         }
-        $token = '';
-        for($i=1;$i<=50;$i++){
-        $token .= chr(rand(97,122));
-        }
+        
         $dizhi = \DB::table('address')->select('shen','shi','qu','name','phone','tails','zipcode','lebel')->where('id',$request->dizhi)->first();
         $data['uid'] = \session('Home')->id;
         $data['linkman'] = $dizhi->name;
@@ -227,7 +252,7 @@ class HomeController extends Controller
         $data['addtime'] = time();
         $data['total'] = $total + $risk;
         $data['status'] = 0;
-        $data['_token'] = time().rand(1000000,9999999);
+        $data['_token'] = date('YmdHms',time()).rand(100000,999999);
        
         $ordersid = \DB::table('orders')->insertGetId($data);
 
@@ -249,12 +274,27 @@ class HomeController extends Controller
         {
             return back();
         }
+        $res = \DB::table('orders')->where('id',$ordersid)->first();
+        $total = $res->total * 100;
+        $total = preg_replace('/\..*/','',$total);
+        $total = 1;
+        $wechat = new payInterface_native\request_wechat();
+        $wechat_url = $wechat->index(['_token'=>$res->_token,'addtime'=>$res->addtime,'total'=>$total],'submitOrderInfo');
+                
+        $alipay = new payInterface_alipay\request_alipay();
+        $alipay_url = $alipay->index(['_token'=>$res->_token,'addtime'=>$res->addtime,'total'=>$total],'submitOrderInfo');
 
-        
+        if( empty($wechat_url) || empty($alipay_url) )
+        {   
+            \DB::table('orders')->delete($res->id);
+            \DB::table('detail')->where('orderid',$res->id)->delete();
+            echo "<script> alert('订单创建失败！'); window.location.href='/home/shoppingcart' </script>";
+            return false;
+        }
         $title = '支付订单';
         $keyworlds = '建商网，建商联盟，购物车，提交订单';
         $description = '建商网，建商联盟，购物车，提交订单';
-        return view('Home.payment/payments',['url2'=>$url2,'data'=>$data,'title'=>$title,'keyworlds'=>$keyworlds,'description'=>$description]);
+        return view('Home.payment/payments',['alipay_url'=>$alipay_url,'wechat_url'=>$wechat_url,'res'=>$res,'title'=>$title,'keyworlds'=>$keyworlds,'description'=>$description]);
     }
 
     public function goudel(Request $request)
@@ -371,6 +411,48 @@ class HomeController extends Controller
             return response()->json(2);
         }
     }
+
+    function ordersajax(Request $request)
+    {    
+        $res = \DB::table('orders')->where('uid',\session('Home')->id)->where('status',0)->first();
+        if($res)
+        {   
+
+            if(time() - $res->addtime > 1800 )
+            {   
+                $resss = \DB::table('orders')->delete($res->id);
+                $ress = \DB::table('detail')->where('orderid',$res->id)->delete();
+                if($ress && $resss)
+                {
+                    return response()->json('1-1');
+                }else
+                {
+                    return response()->json('3-3');
+                }
+            }else
+            {   
+                if( isset($request->del) && $request->del == 1 )
+                {   
+                    if( time() - $res->addtime < 300 )
+                    {
+                        return response()->json(300 - (time() - $res->addtime));
+                    }
+                    $wechat = new payInterface_native\request_wechat();
+                    $wechat->index(['_token'=>$res->_token],'closeOrder');
+                    \DB::table('orders')->delete($res->id);
+                    \DB::table('detail')->where('orderid',$res->id)->delete();
+    
+                }
+                return response()->json('2-2');
+            }
+
+        }else
+        {
+        return response()->json('1-1');
+
+        }
+    }
+
     public function cs()
     {	
     	// $data = \DB::table('hfnews')->get();

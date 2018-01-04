@@ -341,7 +341,12 @@ Route::get('/home/sohppingcart/payment/editaddress','Home\HomeController@editadd
 Route::post('/home/shoppingcart/payment/addressedit','Home\HomeController@addressedit');
 Route::post('/home/shoppingcart/payment/addressdel','Home\HomeController@addressdel');
 Route::get('/home/shoppingcart/payment/addressstatus','Home\HomeController@addressstatus');
+Route::get('/home/shoppingcart/payment/ordersajax','Home\HomeController@ordersajax');
+
 //软包加入购物车
 Route::post('/home/package/softroll/gouajax','Home\PackageController@gouajax');
 
 });
+
+Route::any('/payment/wechat/notify','Pay\PayController@wechatnotify');
+Route::any('/payment/alipay/notify','Pay\PayController@alipaynotify');

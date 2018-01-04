@@ -233,6 +233,9 @@
                                     <div>@if($default != null) {{ $default->name }} {{ $default->phone }}@else 请先添加地址！  @endif</div>
                                     <span>收货人：</span>
                                 </div>
+                                <div class="payment_buttom_sub_5">
+                                    <span>当前有未支付的订单 请先 <a href="#" Onclick="payment_pay()">支付</a> 或 <a href="#" Onclick="payment_paydel();return false;">取消订单</a> 后再创建新订单！</span>
+                                </div>
                                 <div class="payment_buttom_sub_4">
                                     <button class="payment_submit">提交订单</button>
                                 </div>
