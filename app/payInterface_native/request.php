@@ -73,6 +73,7 @@ Class Request_wechat{
      * 提交订单信息
      */
     public function submitOrderInfo($res){
+        date_default_timezone_set('Asia/Shanghai');
         $_POST['total_fee'] =$res['total'];
         $_POST['time_start'] = date('YmdHms',time());
         $_POST['time_expire'] = date('YmdHms',$res['addtime'] + 5000);
