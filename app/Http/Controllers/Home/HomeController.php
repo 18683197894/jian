@@ -178,6 +178,7 @@ class HomeController extends Controller
                 $alipay_url = $alipay->index(['_token'=>$res->_token,'addtime'=>$res->addtime,'total'=>$total],'submitOrderInfo');
                 if( empty($wechat_url) || empty($alipay_url) )
                 {   
+                    dd(1);
                     $wechat = new payInterface_native\request_wechat();
                     $wechat->index(['_token'=>$res->_token],'closeOrder');
 
