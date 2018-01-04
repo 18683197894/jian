@@ -101,7 +101,7 @@ Class Request_wechat{
         $data = $this->reqHandler->getAllParameters();
         // var_dump($data);
         $data = Utils_wechat::toXml($data);
-
+        sleep(1);
         $this->pay->setReqContent($this->reqHandler->getGateURL(),$data);
         if($this->pay->call()){
             $this->resHandler->setContent($this->pay->getResContent());

@@ -156,7 +156,7 @@ class HomeController extends Controller
     public function payments(Request $request)
     {   
         date_default_timezone_set('Asia/Shanghai');
-        sleep(1);
+        
         if(!$request->dataid)
         {
             return back();
