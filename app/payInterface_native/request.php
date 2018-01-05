@@ -341,12 +341,13 @@ Class Request_wechat{
                             $str = '感谢订购建商联盟产品，请记住你的订单号：'.$_token.'wechat';
 
                             $detail = \DB::table('detail')->select('id','orderid','pid')->where('orderid',$res->id)->get();
-                            zend_code($res->phone,$str);
                             
                             foreach( $detail as $k => $v )
                             {
                                 \DB::table('playgou')->where('pid',$v->pid)->delete();
                             }
+                            zend_code($res->phone,$str);
+                            
 
                             exit();
                         }else
