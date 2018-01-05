@@ -340,13 +340,15 @@ Class Request_wechat{
                             echo 'success';
                             file_put_contents('pay/wechat/2.txt',1);//如果生成2.txt,说明前一步的输出success是有执行
                             $str = '感谢订购建商联盟产品，请记住你的订单号：'.$_token.'wechat';
+
+                            $detail = \DB::table('detail')->select('id','orderid','pid')->where('orderid',$res->id)->get();
                             zend_code($res->phone,$str);
                             
-                            $detail = \DB::table('detail')->select('id','orderid','pid')->where('orderid',$res->id)->get();
                             foreach( $detail as $k => $v )
                             {
-                                \DB::table('playgou')->delete($v->pid);
+                                \DB::table('playgou')->where('pid',$v->pid)->delete();
                             }
+
                             exit();
                         }else
                         {   
