@@ -171,14 +171,12 @@ class HomeController extends Controller
                 $total = preg_replace('/\..*/','',$total);
                 $total = 1;
                 // dd($total);
-                $wechat = new payInterface_native\request_wechat();
-                $wechat_url = $wechat->index(['_token'=>$res->_token,'addtime'=>$res->addtime,'total'=>$total],'submitOrderInfo');
+                $wechat_url['code_img_url'] = \Cache::get($res->id.'wechat');
+                $alipay_url['code_img_url'] = \Cache::get($res->id.'alipay');
                 
-                $alipay = new payInterface_alipay\request_alipay();
-                $alipay_url = $alipay->index(['_token'=>$res->_token,'addtime'=>$res->addtime,'total'=>$total],'submitOrderInfo');
-                if( empty($wechat_url) || empty($alipay_url) )
+                if( empty($wechat_url['code_img_url']) || empty($alipay_url['code_img_url']) )
                 {   
-                    dd(1);
+                    
                     $wechat = new payInterface_native\request_wechat();
                     $wechat->index(['_token'=>$res->_token],'closeOrder');
 
@@ -289,6 +287,8 @@ class HomeController extends Controller
         $alipay = new payInterface_alipay\request_alipay();
         $alipay_url = $alipay->index(['_token'=>$res->_token,'addtime'=>$res->addtime,'total'=>$total],'submitOrderInfo');
 
+        \Cache::put($res->id.'wechat',$wechat_url['code_img_url'],30);
+        \Cache::put($res->id.'alipay',$alipay_url['code_img_url'],30);
         if( empty($wechat_url) || empty($alipay_url) )
         {   
             \DB::table('orders')->delete($res->id);
