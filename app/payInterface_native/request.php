@@ -150,7 +150,7 @@ Class Request_wechat{
             $this->resHandler->setKey($this->reqHandler->getKey());
             if($this->resHandler->isTenpaySign()){
                 $res = $this->resHandler->getAllParameters();
-                Utils_wechat_wechat::dataRecodes('查询订单',$res);
+                Utils_wechat::dataRecodes('查询订单',$res);
                 //支付成功会输出更多参数，详情请查看文档中的7.1.4返回结果
                 echo json_encode(array('status'=>200,'msg'=>'查询订单成功，请查看result.txt文件！','data'=>$res));
                 exit();
@@ -341,6 +341,12 @@ Class Request_wechat{
                             file_put_contents('pay/wechat/2.txt',1);//如果生成2.txt,说明前一步的输出success是有执行
                             $str = '感谢订购建商联盟产品，请记住你的订单号：'.$_token.'wechat';
                             zend_code($res->phone,$str);
+                            
+                            $detail = \DB::table('detail')->select('id','orderid','pid')->where('orderid',$res->id)->get();
+                            foreach( $detail as $k => $v )
+                            {
+                                \DB::table('playgou')->delete($v->pid);
+                            }
                             exit();
                         }else
                         {   
