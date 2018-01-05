@@ -20,15 +20,17 @@ class PayController extends Controller
     {
     	$alipay = new payInterface_alipay\request_alipay();
     	$_token = $alipay->index(null,'callback');
+    	
     	if(isset($_token) || !empty($_token))
     	{
-    		\DB::table('cs')->insert(['cs'=>'关闭'.$_token]);
+    		$wechat = new payInterface_native\request_wechat();
+    		$wechat->index(['_token'=>$_token],'closeOrder');
+
     	}else
     	{
     		exit;
     	}
-    	$wechat = new payInterface_native\request_wechat();
-    	$wechat->index(['_token'=>$_token],'closeOrder');
+    	
    	}
 
 }

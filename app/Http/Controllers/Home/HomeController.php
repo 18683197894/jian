@@ -225,6 +225,10 @@ class HomeController extends Controller
         {
             $pays[$k] = \DB::table('playgou')->select('id','pid','num','name')->where('id',$v)->first();
         }
+        if(empty($pays))
+        {
+            return redirect('/home/shoppingcart');
+        }
         foreach( $pays as $kk => $vv )
         {   
             $vv->jia = 0;
