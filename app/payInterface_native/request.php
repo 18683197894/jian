@@ -329,21 +329,24 @@ Class Request_wechat{
                 $total_fee = $this->resHandler->getParameter('total_fee');
 				//校验单号和金额是否一致，更改订单状态等业务处理
                 $cs = '_token-'.$_token.'total-'.$total.'total_fee-'.$total_fee.'create_id-'.$create_id;
-                \DB::table('cs')->insert(['cs'=>$cs]);
 				if($total_fee == $total)
                 {
-
-                    $re = \DB::table('orders')->where('id',$res->id)->update(['create_id'=>$create_id,'status',1]);
-                    if(!$re)
-                    {   
-                        exit;
-                    }else
-                    {
-                        Utils_wechat_wechat::dataRecodes('接口回调收到通知参数',$this->resHandler->getAllParameters());
-                        echo 'success';
-                        file_put_contents('pay/wechat/2.txt',1);//如果生成2.txt,说明前一步的输出success是有执行
+                     \DB::table('cs')->insert(['cs'=>$cs]);
+                     
+                     \DB::table('orders')->where('id',$res->id)->update(['create_id'=>$create_id,'status',1]);
+                        $status = \DB::table('orders')->where('id',$res->id)->first()->status;
+                        if($status ==1)
+                        {
+                            Utils_wechat_wechat::dataRecodes('接口回调收到通知参数',$this->resHandler->getAllParameters());
+                            echo 'success';
+                            file_put_contents('pay/wechat/2.txt',1);//如果生成2.txt,说明前一步的输出success是有执行
                         exit();
-                    }
+                        }else
+                        {
+                            exit;
+                        }
+                        
+                    
 
                 }else
                 {
