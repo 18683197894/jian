@@ -308,10 +308,12 @@ Class Request_wechat{
         $this->resHandler->setContent($xml);
 		
         $this->resHandler->setKey($this->cfg->C('key'));
-        if($this->resHandler->isTenpaySign()){
+        if($this->resHandler->isTenpaySign())
+        {
               
-            if($this->resHandler->getParameter('status') == 0 && $this->resHandler->getParameter('result_code') == 0){
-				//echo $this->resHandler->getParameter('status');
+            if($this->resHandler->getParameter('status') == 0 && $this->resHandler->getParameter('result_code') == 0)
+            {
+               
                 $_token = preg_replace('/wechat/','',$this->resHandler->getParameter('out_trade_no'));
 				$res = \DB::table('orders')->where('_token',$_token)->where('status',0)->first();
 
@@ -323,16 +325,17 @@ Class Request_wechat{
                 }
                 $total = $res->total * 100;
                 $total = preg_replace('/\..*/','',$total);
-                
-
+                $create_id = $this->resHandler->getParameter('transaction_id');
+                $total_fee = $this->resHandler->getParameter('total_fee');
 				//校验单号和金额是否一致，更改订单状态等业务处理
-				if($this->resHandler->getParameter('total_fee') == $total)
+                $cs = '_token-'.$_token.'total-'.$total.'total_fee-'.$total_fee.'create_id-'.$create_id;
+                \DB::table('cs')->insert(['cs'=>$cs]);
+				if($total_fee == $total)
                 {
 
-                    $re = \DB::table('orders')->where('id',$id)->update(['create_id'=>$this->resHandler->getParameter('transaction_id'),'status',1]);
+                    $re = \DB::table('orders')->where('id',$res->id)->update(['create_id'=>$create_id,'status',1]);
                     if(!$re)
                     {   
-                        \DB::table('cs')->insert(['cs'=>'+'$this->resHandler->getParameter('total_fee')]);
                         exit;
                     }else
                     {
@@ -344,8 +347,6 @@ Class Request_wechat{
 
                 }else
                 {
-                   \DB::table('cs')->insert(['cs'=>'++'$this->resHandler->getParameter('total_fee')]);
-
                    return false; 
                    exit;
                 }
