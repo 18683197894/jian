@@ -262,7 +262,6 @@ Class Request_alipay{
 
                 if(!$res)
                 {
-                   return false; 
                    exit;
                 }
                 $total = $res->total * 100;
@@ -313,6 +312,7 @@ Class Request_alipay{
             }
         }else{
             echo 'failure';
+            exit();
         }
     }
 }
