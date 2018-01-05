@@ -60,7 +60,7 @@ Class Request_alipay{
                 $this->queryRefund();
             break;
             case 'callback':
-                $this->callback();
+               return $this->callback();
             break;
         }
     }
@@ -290,9 +290,9 @@ Class Request_alipay{
                                 \DB::table('playgou')->where('pid',$v->pid)->delete();
                             }
                             zend_code($res->phone,$str);
+                            return $_token;
 
-
-                            exit();
+                            
                         }else
                         {   
                             exit;
@@ -302,7 +302,6 @@ Class Request_alipay{
 
                 }else
                 {
-                   return false; 
                    exit;
                 }
 				

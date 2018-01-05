@@ -347,9 +347,8 @@ Class Request_wechat{
                                 \DB::table('playgou')->where('pid',$v->pid)->delete();
                             }
                             zend_code($res->phone,$str);
-                            
 
-                            exit();
+
                         }else
                         {   
                             exit;
@@ -359,7 +358,6 @@ Class Request_wechat{
 
                 }else
                 {
-                   return false; 
                    exit;
                 }
 			
@@ -370,6 +368,7 @@ Class Request_wechat{
             }
         }else{
             echo 'failure2';
+            exit();
         }
     }
 }

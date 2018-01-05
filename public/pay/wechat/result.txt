@@ -48,3 +48,36 @@ key: sign value: A83D7112DF768E6EFDAC697D2051A5F4
 key: sign_type value: MD5
 key: status value: 0
 key: version value: 2.0
+================关闭订单===================
+key: charset value: UTF-8
+key: err_code value: Order not exists
+key: err_msg value: 订单不存在
+key: mch_id value: 102585335014
+key: nonce_str value: 1515154500
+key: result_code value: 1
+key: sign value: 3CAB0F74B260220FA5349E8D8DB8F7D9
+key: sign_type value: MD5
+key: status value: 0
+key: version value: 2.0
+================关闭订单===================
+key: charset value: UTF-8
+key: err_code value: Order not exists
+key: err_msg value: 订单不存在
+key: mch_id value: 102585335014
+key: nonce_str value: 1515146679
+key: result_code value: 1
+key: sign value: 76233223F375A3D59F1118622EA2CEA2
+key: sign_type value: MD5
+key: status value: 0
+key: version value: 2.0
+================关闭订单===================
+key: charset value: UTF-8
+key: err_code value: Order not exists
+key: err_msg value: 订单不存在
+key: mch_id value: 102585335014
+key: nonce_str value: 1515139954
+key: result_code value: 1
+key: sign value: E448A303D91F06DF43E034E4259BF81C
+key: sign_type value: MD5
+key: status value: 0
+key: version value: 2.0
