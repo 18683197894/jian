@@ -225,7 +225,7 @@ class HomeController extends Controller
         {
             $pays[$k] = \DB::table('playgou')->select('id','pid','num','name')->where('id',$v)->first();
         }
-        if(empty($pays) || count($pays) <= 0 )
+        if(empty($pays) || count($pays) <= 0 || $pays[0] == null)
         {
             return redirect('/home/shoppingcart');
         }
