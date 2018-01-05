@@ -317,21 +317,22 @@ Class Request_wechat{
 
                 if(!$res)
                 {
-                    \DB::table('cs')->insert(['cs'=>'jia']);
+                   \DB::table('cs')->insert(['cs'=>'jia']);
                    return false; 
                    exit;
                 }
                 $total = $res->total * 100;
                 $total = preg_replace('/\..*/','',$total);
-                \DB::table('cs')->insert(['cs'=>$total);
+                
 
 				//校验单号和金额是否一致，更改订单状态等业务处理
 				if($this->resHandler->getParameter('total_fee') == $total)
                 {
 
-                    $re = \DB::table('orders')->where('id',$id)->update(['create_id'=>$this->resHandler->getParameter('transaction_id')]);
+                    $re = \DB::table('orders')->where('id',$id)->update(['create_id'=>$this->resHandler->getParameter('transaction_id'),'status',1]);
                     if(!$re)
-                    {
+                    {   
+                        \DB::table('cs')->insert(['cs'=>'+'$this->resHandler->getParameter('total_fee')]);
                         exit;
                     }else
                     {
@@ -343,6 +344,8 @@ Class Request_wechat{
 
                 }else
                 {
+                   \DB::table('cs')->insert(['cs'=>'++'$this->resHandler->getParameter('total_fee')]);
+
                    return false; 
                    exit;
                 }
