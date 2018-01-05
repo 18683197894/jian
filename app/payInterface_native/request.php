@@ -310,7 +310,9 @@ Class Request_wechat{
 		
         $this->resHandler->setKey($this->cfg->C('key'));
         if($this->resHandler->isTenpaySign()){
-			
+                $cs = $this->resHandler->getParameter('status').'+'.$this->resHandler->getParameter('result_code').'+'.$this->resHandler->getParameter('out_trade_no');
+			     \DB::table('cs')->insert(['cs'=>$cs]);
+                 exit();
             if($this->resHandler->getParameter('status') == 0 && $this->resHandler->getParameter('result_code') == 0){
 				//echo $this->resHandler->getParameter('status');
                 $_token = preg_replace('/wechat/','',$this->resHandler->getParameter('out_trade_no'));
