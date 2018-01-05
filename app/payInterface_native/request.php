@@ -327,7 +327,6 @@ Class Request_wechat{
                 $create_id = $this->resHandler->getParameter('transaction_id');
                 $total_fee = $this->resHandler->getParameter('total_fee');
 				//校验单号和金额是否一致，更改订单状态等业务处理
-                $cs = '_token-'.$_token.'total-'.$total.'total_fee-'.$total_fee.'create_id-'.$create_id;
 				if($total_fee == $total)
                 {
                      

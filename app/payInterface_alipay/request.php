@@ -257,11 +257,56 @@ Class Request_alipay{
             if($this->resHandler->getParameter('status') == 0 && $this->resHandler->getParameter('result_code') == 0){
 				//echo $this->resHandler->getParameter('status');
 				//此处可以在添加相关处理业务，校验通知参数中的商户订单号out_trade_no和金额total_fee是否和商户业务系统的单号和金额是否一致，一致后方可更新数据库表中的记录。
+				$_token = preg_replace('/alipay/','',$this->resHandler->getParameter('out_trade_no'));
+                $res = \DB::table('orders')->where('_token',$_token)->where('status',0)->first();
+
+                if(!$res)
+                {
+                   return false; 
+                   exit;
+                }
+                $total = $res->total * 100;
+                $total = preg_replace('/\..*/','',$total);
+                $create_id = $this->resHandler->getParameter('transaction_id');
+                $total_fee = $this->resHandler->getParameter('total_fee');
+                //校验单号和金额是否一致，更改订单状态等业务处理
+                if($total_fee == $total)
+                {
+                     
+                        \DB::table('orders')->where('id',$res->id)->update(['create_id'=>$create_id,'status'=>1]);
+                        $status = \DB::table('orders')->where('id',$res->id)->first()->status;
+                        if($status ==1)
+                        {   
+
+                           Utils_alipay::dataRecodes('接口回调,返回通知参数',$this->resHandler->getAllParameters());
+                           echo 'success';
+                           exit();
+                            $str = '感谢订购建商联盟产品，请记住你的订单号：'.$_token.'alipay';
+
+                            $detail = \DB::table('detail')->select('id','orderid','pid')->where('orderid',$res->id)->get();
+                            zend_code($res->phone,$str);
+                            
+                            foreach( $detail as $k => $v )
+                            {
+                                \DB::table('playgou')->where('pid',$v->pid)->delete();
+                            }
+
+                            exit();
+                        }else
+                        {   
+                            exit;
+                        }
+                        
+                    
+
+                }else
+                {
+                   return false; 
+                   exit;
+                }
 				
-				
-                Utils_alipay::dataRecodes('接口回调,返回通知参数',$this->resHandler->getAllParameters());
-                echo 'success';
-                exit();
+                
+
             }else{
                 echo 'failure';
                 exit();

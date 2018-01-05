@@ -18,7 +18,8 @@ class PayController extends Controller
     }
     function alipaynotify(Request $request)
     {
-
+    	$alipay = new payInterface_alipay\request_alipay();
+    	$alipay->index(null,'callback');
    	}
 
 }
