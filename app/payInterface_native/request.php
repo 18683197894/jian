@@ -330,7 +330,6 @@ Class Request_wechat{
                 $cs = '_token-'.$_token.'total-'.$total.'total_fee-'.$total_fee.'create_id-'.$create_id;
 				if($total_fee == $total)
                 {
-                     \DB::table('cs')->insert(['cs'=>$res->id.'-'$create_id]);
                      
                         \DB::table('orders')->where('id',$res->id)->update(['create_id'=>$create_id,'status'=>1]);
                         $status = \DB::table('orders')->where('id',$res->id)->first()->status;
@@ -340,7 +339,7 @@ Class Request_wechat{
                             Utils_wechat_wechat::dataRecodes('接口回调收到通知参数',$this->resHandler->getAllParameters());
                             echo 'success';
                             file_put_contents('pay/wechat/2.txt',1);//如果生成2.txt,说明前一步的输出success是有执行
-                        exit();
+                            exit();
                         }else
                         {   
                             exit;
