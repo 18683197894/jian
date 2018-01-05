@@ -13,8 +13,6 @@ class PayController extends Controller
 {
     function wechatnotify(Request $request)
     {	
-			     \DB::table('cs')->insert(['cs'=>'con']);
-
     	$wechat = new payInterface_native\request_wechat();
     	$wechat->index(null,'callback');
     }

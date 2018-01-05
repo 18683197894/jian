@@ -304,15 +304,12 @@ Class Request_wechat{
     public function callback(){
         		
         $xml = file_get_contents('php://input');
-		\DB::table('cs')->insert(['cs'=>$xml]);
 		file_put_contents('pay/wechat/1.txt',$xml);//检测是否执行callback方法，如果执行，会生成1.txt文件，且文件中的内容就是通知参数
         $this->resHandler->setContent($xml);
 		
         $this->resHandler->setKey($this->cfg->C('key'));
         if($this->resHandler->isTenpaySign()){
-        //         $cs = $this->resHandler->getParameter('status').'+'.$this->resHandler->getParameter('result_code').'+'.$this->resHandler->getParameter('out_trade_no');
-			     // \DB::table('cs')->insert(['cs'=>$xml]);
-                 // exit();
+              
             if($this->resHandler->getParameter('status') == 0 && $this->resHandler->getParameter('result_code') == 0){
 				//echo $this->resHandler->getParameter('status');
                 $_token = preg_replace('/wechat/','',$this->resHandler->getParameter('out_trade_no'));
@@ -320,11 +317,13 @@ Class Request_wechat{
 
                 if(!$res)
                 {
+                    \DB::table('cs')->insert(['cs'=>'jia']);
                    return false; 
                    exit;
                 }
                 $total = $res->total * 100;
                 $total = preg_replace('/\..*/','',$total);
+                \DB::table('cs')->insert(['cs'=>$total);
 
 				//校验单号和金额是否一致，更改订单状态等业务处理
 				if($this->resHandler->getParameter('total_fee') == $total)
