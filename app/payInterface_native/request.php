@@ -304,14 +304,14 @@ Class Request_wechat{
     public function callback(){
         		
         $xml = file_get_contents('php://input');
-		
+		\DB::table('cs')->insert(['cs'=>$xml]);
 		file_put_contents('pay/wechat/1.txt',$xml);//检测是否执行callback方法，如果执行，会生成1.txt文件，且文件中的内容就是通知参数
         $this->resHandler->setContent($xml);
 		
         $this->resHandler->setKey($this->cfg->C('key'));
         if($this->resHandler->isTenpaySign()){
-                $cs = $this->resHandler->getParameter('status').'+'.$this->resHandler->getParameter('result_code').'+'.$this->resHandler->getParameter('out_trade_no');
-			     \DB::table('cs')->insert(['cs'=>$cs]);
+        //         $cs = $this->resHandler->getParameter('status').'+'.$this->resHandler->getParameter('result_code').'+'.$this->resHandler->getParameter('out_trade_no');
+			     // \DB::table('cs')->insert(['cs'=>$xml]);
                  // exit();
             if($this->resHandler->getParameter('status') == 0 && $this->resHandler->getParameter('result_code') == 0){
 				//echo $this->resHandler->getParameter('status');

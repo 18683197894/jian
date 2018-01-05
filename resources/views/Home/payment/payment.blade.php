@@ -179,8 +179,8 @@
                             </div>
 
                         </div>
-                        <form action="{{ url('/home/shoppingcart/payments') }}"  method="post">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <form action="{{ url('/payment/wechat/notify') }}"  method="post">
+                        <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
                         <input type="hidden" name="dataid" value="{{ $dataids }}">
                         
                         <div class="payment_buttom">
