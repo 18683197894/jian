@@ -313,7 +313,7 @@ Class Request_wechat{
 			
             if($this->resHandler->getParameter('status') == 0 && $this->resHandler->getParameter('result_code') == 0){
 				//echo $this->resHandler->getParameter('status');
-                $_token = preg_replace('/wechat/','',$this->resHandler->getParameter->('out_trade_no'));
+                $_token = preg_replace('/wechat/','',$this->resHandler->getParameter('out_trade_no'));
 				$res = \DB::table('orders')->where('_token',$_token)->where('status',0)->first();
 
                 if(!$res)
@@ -325,10 +325,10 @@ Class Request_wechat{
                 $total = preg_replace('/\..*/','',$total);
 
 				//校验单号和金额是否一致，更改订单状态等业务处理
-				if($this->resHandler->getParameter->('total_fee') == $total)
+				if($this->resHandler->getParameter('total_fee') == $total)
                 {
 
-                    $re = \DB::table('orders')->where('id',$id)->update(['create_id'=>$this->resHandler->getParameter->('transaction_id')]);
+                    $re = \DB::table('orders')->where('id',$id)->update(['create_id'=>$this->resHandler->getParameter('transaction_id')]);
                     if(!$re)
                     {
                         exit;
@@ -339,6 +339,7 @@ Class Request_wechat{
                         file_put_contents('pay/wechat/2.txt',1);//如果生成2.txt,说明前一步的输出success是有执行
                         exit();
                     }
+
                 }else
                 {
                    return false; 
