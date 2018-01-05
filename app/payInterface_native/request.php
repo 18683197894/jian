@@ -313,14 +313,39 @@ Class Request_wechat{
 			
             if($this->resHandler->getParameter('status') == 0 && $this->resHandler->getParameter('result_code') == 0){
 				//echo $this->resHandler->getParameter('status');
-				// 11;
+                $_token = preg_replace('/wechat/','',$this->resHandler->getParameter->('out_trade_no'));
+				$res = \DB::table('orders')->where('_token',$_token)->where('status',0)->first();
+
+                if(!$res)
+                {
+                   return false; 
+                   exit;
+                }
+                $total = $res->total * 100;
+                $total = preg_replace('/\..*/','',$total);
+
 				//校验单号和金额是否一致，更改订单状态等业务处理
-				
+				if($this->resHandler->getParameter->('total_fee') == $total)
+                {
+
+                    $re = \DB::table('orders')->where('id',$id)->update(['create_id'=>$this->resHandler->getParameter->('transaction_id')]);
+                    if(!$re)
+                    {
+                        exit;
+                    }else
+                    {
+                        Utils_wechat_wechat::dataRecodes('接口回调收到通知参数',$this->resHandler->getAllParameters());
+                        echo 'success';
+                        file_put_contents('pay/wechat/2.txt',1);//如果生成2.txt,说明前一步的输出success是有执行
+                        exit();
+                    }
+                }else
+                {
+                   return false; 
+                   exit;
+                }
 			
-                Utils_wechat_wechat::dataRecodes('接口回调收到通知参数',$this->resHandler->getAllParameters());
-                echo 'success';
-				file_put_contents('pay/wechat/2.txt',1);//如果生成2.txt,说明前一步的输出success是有执行
-                exit();
+                
             }else{
                 echo 'failure1';
                 exit();

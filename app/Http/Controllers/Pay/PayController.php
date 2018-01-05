@@ -7,18 +7,18 @@ use payInterface_native;
 use payInterface_alipay;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+date_default_timezone_set('Asia/Shanghai');
 
 class PayController extends Controller
 {
     function wechatnotify(Request $request)
-    {	
-date_default_timezone_set('Asia/Shanghai');
-    	
-    	dd(date('Y-m-d H:i:s',time()));
+    {	    	
+    	$wechat = new payInterface_native\request_wechat();
+    	$wechat->index(null,'callback');
     }
     function alipaynotify(Request $request)
     {
-    	dd(date('Y-m-d H:i:s',time()));
-    	    }
+
+   	}
 
 }
