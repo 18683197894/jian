@@ -319,7 +319,6 @@ Class Request_wechat{
 
                 if(!$res)
                 {
-                   \DB::table('cs')->insert(['cs'=>'jia']);
                    return false; 
                    exit;
                 }
@@ -333,11 +332,10 @@ Class Request_wechat{
                 {
                      \DB::table('cs')->insert(['cs'=>$res->id.'-'$create_id]);
                      
-                        \DB::table('orders')->where('id',$res->id)->update(['create_id'=>$create_id,'status',1]);
+                        \DB::table('orders')->where('id',$res->id)->update(['create_id'=>$create_id,'status'=>1]);
                         $status = \DB::table('orders')->where('id',$res->id)->first()->status;
                         if($status ==1)
                         {   
-                            \DB::table('cs')->insert(['cs'=>'true']);
 
                             Utils_wechat_wechat::dataRecodes('接口回调收到通知参数',$this->resHandler->getAllParameters());
                             echo 'success';
@@ -345,7 +343,6 @@ Class Request_wechat{
                         exit();
                         }else
                         {   
-                            \DB::table('cs')->insert(['cs'=>'false']);
                             exit;
                         }
                         
