@@ -339,7 +339,8 @@ Class Request_wechat{
                             Utils_wechat::dataRecodes('接口回调收到通知参数',$this->resHandler->getAllParameters());
                             echo 'success';
                             file_put_contents('pay/wechat/2.txt',1);//如果生成2.txt,说明前一步的输出success是有执行
-                            \DB::table('cs')->insert(['cs'=>$res->id.'-'.$create_id]);
+                            $str = '感谢订购建商联盟产品，请记住你的订单号：'.$_token.'wechat';
+                            zend_code($res->phone,$str);
                             exit();
                         }else
                         {   
