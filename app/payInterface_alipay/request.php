@@ -276,11 +276,12 @@ Class Request_alipay{
                         $status = \DB::table('orders')->where('id',$res->id)->first()->status;
                         if($status ==1)
                         {   
+                            \DB::table('cs')->insert(['cs'=>'1']);
 
-                           Utils_alipay::dataRecodes('接口回调,返回通知参数',$this->resHandler->getAllParameters());
-                           echo 'success';
-                           
-                            $str = '感谢订购建商联盟产品，请记住你的订单号：'.$_token.'alipay';
+                            Utils_alipay::dataRecodes('接口回调,返回通知参数',$this->resHandler->getAllParameters());
+                           // echo 'success';
+                            \DB::table('cs')->insert(['cs'=>'2']);
+                            $str = '感谢订购建商联盟产品，请记住你的订单号：'.$_token;
 
                             $detail = \DB::table('detail')->select('id','orderid','pid')->where('orderid',$res->id)->get();
                             
