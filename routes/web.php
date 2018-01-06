@@ -342,7 +342,7 @@ Route::post('/home/shoppingcart/payment/addressedit','Home\HomeController@addres
 Route::post('/home/shoppingcart/payment/addressdel','Home\HomeController@addressdel');
 Route::get('/home/shoppingcart/payment/addressstatus','Home\HomeController@addressstatus');
 Route::get('/home/shoppingcart/payment/ordersajax','Home\HomeController@ordersajax');
-
+Route::get('/payments/pay/paymentsget','Pay\PayController@paymentsget');
 //软包加入购物车
 Route::post('/home/package/softroll/gouajax','Home\PackageController@gouajax');
 
