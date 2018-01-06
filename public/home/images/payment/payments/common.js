@@ -28,7 +28,7 @@ $(function(){
 				{
 					alert('订单已失效！请重新下单');
 					clearInterval(a);
-					window.location.href='/home/shoppingcart'
+					window.location.href='/'
 				}
 				if(data == 2)
 				{
@@ -38,7 +38,7 @@ $(function(){
 				{
 					alert('付款成功！将自动跳转自首页');
 					clearInterval(a);
-					window.location.href='/home/shoppingcart'
+					window.location.href='/'
 				}
 			},
 			error : function(data)

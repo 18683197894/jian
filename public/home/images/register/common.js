@@ -236,10 +236,9 @@
 				}
 				if( init1 == true && init2 == true && init3 == true)
 				{	
-					
 			     $.ajax('/home/register/zendcode',{
 			     	type:'post',
-			     	data:{phone:phone,_token:$("meta[name='csrf_token']").attr('content')},
+			     	data:{phone:phone,_token:$("meta[name='csrf-token']").attr('content')},
 			     	async: false,
 			     	success:function(data)
 			     	{	
