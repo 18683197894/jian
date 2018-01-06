@@ -255,8 +255,7 @@ class HomeController extends Controller
         $data['risk'] = $risk;
         $data['phone'] = $dizhi->phone;
         $data['addtime'] = time();
-        // $data['total'] = $total + $risk;
-        $data['total'] = 0.01;
+        $data['total'] = $total + $risk;
         $data['status'] = 0;
         $data['_token'] = date('YmdHms',time()).rand(100000,999999);
        
@@ -282,7 +281,7 @@ class HomeController extends Controller
         }
         $res = \DB::table('orders')->where('id',$ordersid)->first();
         $total = $res->total * 100;
-        $total = preg_replace('/\..*/','',$total);
+        $total = (int) preg_replace('/\..*/','',$total);
         $wechat = new payInterface_native\request_wechat();
         $wechat_url = $wechat->index(['_token'=>$res->_token,'addtime'=>$res->addtime,'total'=>$total],'submitOrderInfo');
                 
