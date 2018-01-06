@@ -57,6 +57,7 @@
 		<div class="payments_2">
 			<title>选择一下支付方式付款</title>
 			<span class="payments_2_span">支付平台</span>
+			
 			<ul>
 				<li><img class="payments_2_img1"  src="{{ asset('/home/images/payment/payments/2.png') }}" alt=""><img src="{{ $wechat_url['code_img_url'] }}" class="payments_2_img2_1" alt=""></li>
 				<li><img class="payments_2_img1"  src="{{ asset('/home/images/payment/payments/3.png') }}" alt=""><img src="{{ $alipay_url['code_img_url'] }}" class="payments_2_img2_2" alt=""></li>
