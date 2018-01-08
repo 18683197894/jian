@@ -33,7 +33,7 @@ $(function(){
 				{
 					alert('订单已失效！请重新下单');
 					clearInterval(a);
-					window.location.href='/'
+					window.location.href='/home/shoppingcart'
 				}
 				if(data == 2)
 				{

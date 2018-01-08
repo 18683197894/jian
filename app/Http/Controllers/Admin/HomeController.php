@@ -22,7 +22,8 @@ class HomeController extends Controller
 
    		foreach( $data as $k => $v )
    		{
-   			$v->gou = \DB::table('playgou')->where('uid',$v->id)->count();
+        $v->gou = \DB::table('playgou')->where('uid',$v->id)->count();
+   			$v->orders = \DB::table('orders')->where('uid',$v->id)->count();
    		}
 
    		$data->appends('key',$key);

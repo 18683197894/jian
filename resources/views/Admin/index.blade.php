@@ -322,7 +322,7 @@ class="active"
 @if($title == "板块管理")
 class="active"
 @endif
-            ><a href="{{ url('jslmadmin/newsleiindex') }}"><i class="fa fa-circle-o"></i>订单管理</a></li>
+            ><a href="{{ url('jslmadmin/payment/index') }}"><i class="fa fa-circle-o"></i>订单管理</a></li>
           </ul>
         </li>
 

@@ -303,6 +303,11 @@ Route::post('/admin/properties/hfnewsdel','Admin\PropertiesController@hfnewsdel'
 //织金新闻添加
 Route::get('admin/properties/hfnewsadd','Admin\PropertiesController@hfnewsadd');
 Route::post('admin/properties/hfnewsadds','Admin\PropertiesController@hfnewsadds');
+
+//订单
+Route::get('jslmadmin/payment/index','Admin\PayController@index');
+Route::get('jslmadmin/payment/index/shopping/{id}','Admin\PayController@shopping');
+Route::get('/jslmadmin/userhome/orders/{id}','Admin\PayController@userhome_orders');
 });
 
 //测试

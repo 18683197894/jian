@@ -17,7 +17,7 @@
                                         <li id="loginli2"></li>
                                         <li id="loginli1"><a href="{{ asset('/home/shoppingcart') }}">购物车</a></li>
                                         <li id="loginli2"></li>
-                                        <li id="loginli1"><a href="{{ asset('/home/login') }}">{{ \session('Home')->name }}</a></li>
+                                        <li id="loginli1"><a href="#">{{ \session('Home')->name }}</a></li>
                                 </ul>
                         </div>
                 </div>

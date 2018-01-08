@@ -141,3 +141,13 @@ key: sign value: B4E1F025E0A3364B839EBCEC41CD9260
 key: sign_type value: MD5
 key: status value: 0
 key: version value: 2.0
+================关闭订单===================
+key: appid value: wx290ce4878c94369d
+key: charset value: UTF-8
+key: mch_id value: 102585335014
+key: nonce_str value: 1515250831
+key: result_code value: 0
+key: sign value: 41110FE8EE589062440119126CEA33D3
+key: sign_type value: MD5
+key: status value: 0
+key: version value: 2.0

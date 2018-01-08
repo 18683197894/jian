@@ -67,7 +67,7 @@
                   <td class="id" style="text-align: center;vertical-align: middle">{{ $v->name }}</td>
                   <td class="id" style="text-align: center;vertical-align: middle">{{ $v->phone }}</td>
                   <td class="id" style="text-align: center;vertical-align: middle"><a href="{{ url('/jslmadmin/userhome/playgou') }}/{{ $v->id }}">{{ $v->gou }}</a></td>
-                  <td class="id" style="text-align: center;vertical-align: middle"><a href="">{{ $v->id }}</a></td>
+                  <td class="id" style="text-align: center;vertical-align: middle"><a href="{{ url('/jslmadmin/userhome/orders/') }}/{{ $v->id }}">{{ $v->orders }}</a></td>
                   <td class="id" style="text-align: center;vertical-align: middle">{{ date('Y-m-d H:i:s',$v->time) }}</td>
                   <td class="id" style="text-align: center;vertical-align: middle">{{ date('Y-m-d H:i:s',$v->uptime) }}</td>
                   <td class="id" style="text-align: center;vertical-align: middle">@if($v->status == 1) 正常 @else 禁止登陆 @endif</td>
