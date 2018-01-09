@@ -65,7 +65,7 @@
                   <td style="text-align: center;vertical-align: middle">{{ date('Y-m-d H:i:s',$v->addtime) }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->total }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->status }}</td>
-                  <td style="text-align: center;vertical-align: middle"><a target="view_window" href="{{ url('/jslmadmin/payment/index/shopping/') }}/{{ $v->id }}">商品详情</a></td>
+                  <td style="text-align: center;vertical-align: middle"><a target="_blank" href="{{ url('/jslmadmin/payment/index/shopping/') }}/{{ $v->id }}">商品详情</a></td>
                 </tr>
 @endforeach
 @else

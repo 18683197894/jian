@@ -285,6 +285,8 @@ Route::post('/admin/caseplaydel','Admin\MakeController@caseplaydeldel');
 Route::get('admin/config/webpage','Admin\ConfigController@webpage');
 Route::get('admin/config/webpage/edit/{id}','Admin\ConfigController@webpageedit');
 Route::post('admin/config/webpage/edits','Admin\ConfigController@webpageedits');
+Route::get('/admin/config/wepage/add','Admin\ConfigController@add');
+Route::post('/admin/config/webpage/adds','Admin\ConfigController@adds');
 
 //织金楼盘动态管理
 Route::get('admin/properties/details','Admin\PropertiesController@details');
@@ -353,5 +355,6 @@ Route::post('/home/package/softroll/gouajax','Home\PackageController@gouajax');
 
 });
 
+//支付回调
 Route::any('/payment/wechat/notify','Pay\PayController@wechatnotify');
 Route::any('/payment/alipay/notify','Pay\PayController@alipaynotify');

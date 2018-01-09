@@ -14,7 +14,10 @@
     </section>
         <div class="col-xs-12" >
           <div class="box">
-
+          <div class="box-header">
+           
+              <h3 class="box-title"> <br><a href="{{ url('/admin/config/wepage/add') }}">添加URL网页</a></h3>
+            </div>
          
  				@if (session('info'))
 				<div style="height:40px;line-height:10px;" class="alert alert-danger">

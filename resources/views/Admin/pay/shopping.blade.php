@@ -51,7 +51,7 @@
                   <td style="text-align: center;vertical-align: middle">{{ $v->id }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->name }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->tus }}</td>
-                  <td style="text-align: center;vertical-align: middle">{{ $v->path }}</td>
+                  <td style="text-align: center;vertical-align: middle"> <a href="{{ url('admin/package/ruan/fg/column/subclass/') }}/{{ $v->sub_id }}" target="_blank">{{ $v->path }}</a></td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->prince }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->num }}</td>
                 </tr>

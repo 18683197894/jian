@@ -7,13 +7,13 @@
 @section('content')
     <section class="content-header">
       <h1>
-        网页关键字更新
+        添加URL网页
         <!-- <small>Control panel</small> -->
 
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{ url('admin/config/webpage') }}"><i class="fa fa-dashboard"></i>网页关键字</a></li>
-        <li class="active">关键字更新</li>
+        <li><a href="{{ url('admin/config/webpage') }}"><i class="fa fa-dashboard"></i>URL列表</a></li>
+        <li class="active">URL网页添加</li>
       </ol>
     </section>
 
@@ -38,33 +38,32 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="{{ url('admin/config/webpage/edits') }}" method="post">
+            <form role="form" action="{{ url('admin/config/webpage/adds') }}" method="post">
 				{{ csrf_field() }}
               <div class="box-body">
 
-               <input type="hidden" name="id" value="{{ $data->id }}">
                <div class="form-group">
                   <label for="exampleInputEmail1">URL地址</label>
-                  <input type="text"  name="url" value="{{ $data->url  }}" class="form-control" id="exampleInputEmail1" placeholder="URL地址">
+                  <input type="text"  name="url" value="{{ old('url') }}" class="form-control" id="exampleInputEmail1" placeholder="URL地址">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">网页名称</label>
-                  <input type="text"  name="title" value="{{ $data->title  }}" class="form-control" id="exampleInputEmail1" placeholder="网页名称">
+                  <input type="text"  name="title" value="{{ old('title') }}" class="form-control" id="exampleInputEmail1" placeholder="网页名称">
                 </div>
 
                <div class="form-group">
                   <label for="exampleInputEmail1">网页标题</label>
-                  <input type="text"  name="titles" value="{{ $data->titles  }}" class="form-control" id="exampleInputEmail1" placeholder="网页标题">
+                  <input type="text"  name="titles" value="{{ old('titles') }}" class="form-control" id="exampleInputEmail1" placeholder="网页标题">
                 </div>
                 
                  <div class="form-group">
                   <label for="exampleInputEmail1">网页关键字</label>
-                  <input type="text"  name="keyworlds" value="{{ $data->keyworlds  }}" class="form-control" id="exampleInputEmail1" placeholder="网页关键字">
+                  <input type="text"  name="keyworlds" value="{{ old('keyworlds') }}" class="form-control" id="exampleInputEmail1" placeholder="网页关键字">
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">网页内容描述</label>
-                  <input type="text"  name="description" value="{{ $data->description  }}" class="form-control" id="exampleInputEmail1" placeholder="网页内容描述">
+                  <input type="text"  name="description" value="{{ old('description') }}" class="form-control" id="exampleInputEmail1" placeholder="网页内容描述">
                 </div>
                  
 
@@ -72,7 +71,7 @@
               <!-- /.box-body -->
 	
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">更新</button>
+                <button type="submit" class="btn btn-primary">添加</button>
               </div>
             </form>
           </div>

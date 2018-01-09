@@ -30,7 +30,7 @@ class PayController extends Controller
     		}
     		if($v->status == 1)
     		{
-    			$v->status == '已支付';
+    			$v->status = '已支付';
     		}
     	}
     	$data->appends(['key'=>$key]);
@@ -47,7 +47,13 @@ class PayController extends Controller
     	{
     		if($v->tus == '软包')
     		{
-    			$v->path = \DB::table('column')->where('id',$v->pid)->first()->path;
+    			$column = \DB::table('column')->where('id',$v->pid)->first();
+    			if($column)
+    			{
+    				$v->path = $column->path;
+    				$v->sub_id = $column->id;
+    			}
+
     		}
     	}
     	return view('Admin.pay.shopping',['title'=>'订单商品详情','data'=>$data]);
@@ -74,7 +80,7 @@ class PayController extends Controller
     		}
     		if($v->status == 1)
     		{
-    			$v->status == '已支付';
+    			$v->status = '已支付';
     		}
     	}
     	return view('Admin.pay.userhome_orders',['title'=>$name.'的订单','name'=>$name,'data'=>$data]);
