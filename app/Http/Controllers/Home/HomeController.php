@@ -461,7 +461,7 @@ class HomeController extends Controller
 
     public function cs()
     {	
-        return view('New.cs');
+        return view('New.home.index.index');
         // dd(zend_code('18683197894','111'));
     	// $data = \DB::table('hfnews')->get();
     	// $pre = '/www.zheng.com/';

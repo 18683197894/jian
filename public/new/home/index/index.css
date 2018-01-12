@@ -1,0 +1,441 @@
+
+
+body{
+    background-color: #fff;
+}
+.banner{
+    margin-top: 75px;
+}
+.Intelligence{
+    width: 100%;
+    margin-top: 60px;
+    overflow: hidden;
+}
+.Intelligence a{
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+    float: left;
+    width: 25%;
+    position: relative;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.Intelligence a:nth-child(1){
+    background-color: #F2AB2B;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    border-right: 7px solid #fff;
+    box-sizing: border-box;
+}
+.Intelligence a:nth-child(2){
+    background-color: #E13E32;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    border-right: 7px solid #fff;
+    box-sizing: border-box;
+}
+.Intelligence a:nth-child(3){
+    background-color: #5AA6B2;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    border-right: 7px solid #fff;
+    box-sizing: border-box;
+}
+ .Intelligence a:nth-child(4){
+     background-color: #7FC6B4;
+     padding-top: 70px;
+     padding-bottom: 70px;
+ }
+.Intelligence a img{
+    display: block;
+    margin: auto;
+}
+.Intelligence a .title{
+    font-size: 25px;
+    color: #fff;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 8px;
+}
+.Intelligence a .brief{
+    font-size: 20px;
+    color: #fff;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+.Intelligence a i{
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #ffffff;
+    margin: auto;
+    margin-top: 15px;
+}
+.hide{
+    width: 100%;
+    height: 100%;
+    background-color: #F5F5F5;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    -webkit-transition: margin-left 1s;
+    -moz-transition: margin-left 1s;
+    -o-transition: margin-left 1s;
+}
+.Intelligence a:hover .hide{
+    margin-left: 100%;
+}
+.hide_title{
+    width: 100%;
+    margin-top: 70px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+.hide .NO1{
+    color: #f2ab2b;
+}
+.hide .NO2{
+    color: #e13e32;
+}
+.hide .NO3{
+    color: #5aa6b2;
+}
+.hide .NO4{
+    color: #7fc6b4;
+}
+.hide .connet{
+    display: block;
+    text-align: center;
+    position: relative;
+    margin-top:15px;
+    color: #999999;
+}
+.hide .connet span{
+    background-color: #999999;
+    width: 8px;
+    height: 8px;
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: 35%;
+}
+.hide .connet em{
+    color: #999999;
+}
+.Case{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 60px;
+    padding-bottom: 60px;
+    background-color: #ffffff;
+}
+.Case .title{
+    display: block;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    color: #666666;
+    line-height: 40px;
+}
+.Case .brief{
+    width: 100%;
+    line-height: 40px;
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    color: #666666;
+}
+.Case_loop{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.Case_loop a{
+    display: block;
+    float: left;
+    width: 25%;
+    position: relative;
+    overflow: hidden;
+}
+.Case_loop a img{
+    display: block;
+    width: 100%;
+}
+.Case_loop a .hide{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background:rgba(0,0,0,0);
+    transition: all 2s;
+    opacity:0;
+
+}
+.Case_loop a:hover .hide{
+    background:rgba(0,0,0,0.5);
+    opacity:1;
+}
+.hide_aout{
+    width: 90%;
+    height: 90%;
+    border: 1px solid #ffffff;
+    margin: auto;
+    margin-top: 3.2%;
+}
+.hide_aout .title{
+    width: 100%;
+    margin-top: 30px;
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+}
+.hide_aout i{
+    width: 20px;
+    height: 3px;
+    display: block;
+    margin: auto;
+    background-color: #ffffff;
+}
+.hide_aout .content{
+    width: 80%;
+    overflow: hidden;
+    line-height: 30px;
+    color: #ffffff;
+    margin: auto;
+    margin-top: 15px;
+    font-size: 12px;
+}
+.News{
+    width: 100%;
+    overflow: hidden;
+    background-color: #F5F5F5;
+    padding-bottom: 10px;
+}
+.News .title{
+    display: block;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    color: #666666;
+    line-height: 40px;
+    margin-top: 30px;
+}
+.News .brief{
+    width: 100%;
+    line-height: 40px;
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    color: #666666;
+}
+.News_show{
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+.News_show a{
+    display: block;
+    float: left;
+    width: 25%;
+    border-right: 7px solid #F5F5F5;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+.News_show a img{
+    display: block;
+    width: 100%;
+    transition: all 0.6s;
+}
+.News_show a .content{
+    width: 90%;
+    height: 120px;
+    margin: auto;
+}
+.News_show a .content .titlel{
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 30px;
+}
+.News_show a .content .brief1{
+    font-size: 12px;
+    line-height: 20px;
+}
+.News_show a .content .See{
+    float: right;
+    display: block;
+    width: 60px;
+    height:20px;
+    border: 1px solid #999;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 5px;
+    color: #999;
+}
+.News_show a:hover img{
+    transform: scale(0.8);
+}
+.News_show a:hover .content .See{
+    border: 1px solid #E12E32;
+    color: #E12E32;
+}
+.News_show a:hover .content .brief1{
+    color: #5AA6B2;
+}
+.News_show a:hover .content .titlel{
+    color: #E13E32;
+}
+.cooperation{
+    width: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+.cooperation .auto{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+.cooperation .auto .brief{
+    width: 100%;
+    line-height: 40px;
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    color: #666666;
+}
+.cooperation .auto .title{
+    width: 100%;
+    text-align: center;
+    display: block;
+    font-size: 25px;
+    color: #666666;
+    line-height: 40px;
+    margin-top: 30px;
+}
+.cooperation_logo{
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #DFDFDF;
+    box-sizing: border-box;
+    border-bottom: none;
+    margin-top: 30px;
+    margin-bottom: 300px;
+}
+.cooperation_logo a{
+    width: 16.66666667%;
+    overflow: hidden;
+    border: 1px solid #DFDFDF;
+    box-sizing: border-box;
+    height: 70px;
+    display: block;
+    text-align:center;
+    vertical-align:middle;
+    float: left;
+    border-right: none;
+    border-top: none;
+}
+.cooperation_logo .add_class{
+    border-left: none;
+}
+.cooperation_logo a .add_div{
+    width: 127px;
+    height: 70px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    margin: auto;
+}
+.cooperation_logo a img{
+    width: 127px;
+    height: 30px;
+    vertical-align: middle;
+    margin: auto;
+}
+.img_hover{
+    display: none;
+}
+.cooperation_logo a:hover .img_hover{
+    display: block;
+}
+.cooperation_logo a:hover .img_od{
+    display: none;
+}
+.cooperation_logo a .vertical{
+    margin: auto;
+    width: 127px;
+}
+
+@media screen and (max-width: 1700px){
+    .hide .connet span{
+        background-color: #999999;
+        width: 8px;
+        height: 8px;
+        display: block;
+        position: absolute;
+        top: 6px;
+        left: 28%;
+    }
+}
+@media screen and (max-width: 1020px){
+    .hide .connet span{
+        background-color: #999999;
+        width: 8px;
+        height: 8px;
+        display: block;
+        position: absolute;
+        top: 6px;
+        left: 36%;
+    }
+    .Intelligence a{
+        display: block;
+        text-decoration: none;
+        overflow: hidden;
+        float: left;
+        width: 100%;
+        position: relative;
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .Case_loop a{
+        width: 100%;
+    }
+    .News_show a{
+        display: block;
+        float: left;
+        width: 100%;
+        border-right: 7px solid #F5F5F5;
+        box-sizing: border-box;
+        background-color: #ffffff;
+        overflow: hidden;
+        padding-bottom: 10px;
+    }
+}
+@media screen and (max-width: 880px){
+    .cooperation_logo{
+        margin-bottom: 30px;
+    }
+    .cooperation_logo a{
+        width: 100%;
+        height: 150px;
+    }
+    .cooperation_logo a .add_div{
+        width: 127px;
+        height: 150px;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        margin: auto;
+    }
+}

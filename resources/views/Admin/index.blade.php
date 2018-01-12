@@ -540,12 +540,12 @@ active
 class="active"
 @endif
             ><a href="{{ url('admin/config/webpage') }}"><i class="fa fa-circle-o"></i>网页关键字</a></li>
-           <!--  <li
-@if($title == "首页装修报价预约")
+            <li
+@if($title == "首页导航栏目")
 class="active"
 @endif
-            ><a href="{{ url('admin/indexationmake') }}"><i class="fa fa-circle-o"></i>首页装修报价预约</a></li>
-            <li
+            ><a href="{{ url('admin/config/nav') }}"><i class="fa fa-circle-o"></i>首页导航栏目</a></li>
+            <!-- <li
 @if($title == "合作伙伴招募")
 class="active"
 @endif

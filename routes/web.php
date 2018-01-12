@@ -15,6 +15,7 @@
 //     return view('heads');
 // });
 Route::get('/','Home\AdminController@index');
+Route::get('/newpro','Newpro\home\IndexController@index');
 
 //楼盘
 Route::get('/propertieszshx','Home\PropertiesController@zshx');
@@ -287,6 +288,15 @@ Route::get('admin/config/webpage/edit/{id}','Admin\ConfigController@webpageedit'
 Route::post('admin/config/webpage/edits','Admin\ConfigController@webpageedits');
 Route::get('/admin/config/wepage/add','Admin\ConfigController@add');
 Route::post('/admin/config/webpage/adds','Admin\ConfigController@adds');
+
+//导航栏目
+Route::get('admin/config/nav','Admin\ConfigController@nav');
+Route::get('/admin/config/nav/add','Admin\ConfigController@navadd');
+Route::post('admin/config/nav/navadds','Admin\ConfigController@navadds');
+Route::get('/home/config/nav/edit/{id}','Admin\ConfigController@navedit');
+Route::post('/admin/config/nav/navedits','Admin\ConfigController@navedits');
+Route::post('/admin/config/nav/navdelajax','Admin\ConfigController@navdelajax');
+Route::post('/admin/config/nav/navshang','Admin\ConfigController@navshang');
 
 //织金楼盘动态管理
 Route::get('admin/properties/details','Admin\PropertiesController@details');
