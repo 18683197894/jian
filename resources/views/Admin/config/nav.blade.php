@@ -77,6 +77,7 @@
   $('.del').on('click',function(){
     var id = $(this).parents('tr').find('.id').html();
     var tr = $(this).parents('tr');
+
     $.ajax('/admin/config/nav/navdelajax',{
       type : 'post',
       data : {id:id,_token:$("meta[name='csrf-token']").attr("content")},
@@ -103,9 +104,14 @@
   $('.shang').on('click',function(){
     var id = $(this).parents('tr').find('.id').html();
     var tr = $(this).parents('tr');
-    
+    var tr_s = tr.prev('tr');
+    var a = tr;
+    var b = tr_s;
+   
+    // tr_s.replaceWith(a);
     $.ajax('/admin/config/nav/navshang',{
       type : 'post',
+      async : false,
       data : {id:id,_token:$("meta[name='csrf-token']").attr("content")},
       success : function(data)
       {
@@ -121,7 +127,46 @@
         }
         if( data == 1 )
         {
-          alert('移动成功!');
+           tr.after(b);
+          // alert('移动成功!');
+        }
+        if( data == 2 )
+        {
+          alert('移动失败！事务处理失败！');
+        }
+      },
+      error : function(data)
+      {
+        alert('删除失败！');
+      }
+    })
+  })
+  $('.xia').on('click',function(){
+    var id = $(this).parents('tr').find('.id').html();
+    var tr = $(this).parents('tr');
+    var tr_s = tr.next('tr');
+    var a = tr;
+    var b = tr_s;
+    $.ajax('/admin/config/nav/navxia',{
+      type : 'post',
+      async : false,
+      data : {id:id,_token:$("meta[name='csrf-token']").attr("content")},
+      success : function(data)
+      {
+        if( data ==4 )
+        {
+          alert('移动失败，数据不存在！');
+          return false;
+        }
+        if( data == 3 )
+        {
+          alert('移动失败，已达到顶点！');
+          return false;
+        }
+        if( data == 1 )
+        {
+          tr_s.after(a);
+          // alert('移动成功!');
         }
         if( data == 2 )
         {

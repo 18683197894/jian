@@ -180,7 +180,7 @@ class ConfigController extends Controller
         $res = \DB::table('nav')->delete($request->id);
         if($res)
         {       
-            $data = \DB::table('nav')->select('id','title','status')->orderBy('status','desc')->get();
+            $data = \DB::table('nav')->select('id','title','status')->orderBy('status')->get();
             if(count($data) <= 0)
             {
                 return response()->json(1);
@@ -204,7 +204,7 @@ class ConfigController extends Controller
     {
         $id = $request->id;
         $res = \DB::table('nav')->where('id',$id)->first();
-        $res_s = \DB::table('nav')->where('id',$id-1)->first();
+        $res_s = \DB::table('nav')->where('status',$res->status - 1)->first();
         if(!$res)
         {
             return response()->json(4);
@@ -214,12 +214,13 @@ class ConfigController extends Controller
         {
             return response()->json(3);
         }
+        // return response()->json($res->title.'-'.$res_s->title);
 
         
         \DB::beginTransaction();
         try{ 
-           $a =  \DB::table('nav')->where('id',$$res->id)->update(['status' => $res->status-1]);
-           $b =  \DB::table('nav')->where('id',$res_s->id)->update(['status' => $res->status+1]);
+           $a =  \DB::table('nav')->where('id',$res->id)->update(['status' => $res->status-1]);
+           $b =  \DB::table('nav')->where('id',$res_s->id)->update(['status' => $res->status]);
             if($a && $b)
             {
                 \DB::commit(); 
@@ -231,6 +232,40 @@ class ConfigController extends Controller
                 return response()->json(2);
             }
 
+
+    }
+
+    public function navxia(Request $request)
+    {
+        $id = $request->id;
+        $res = \DB::table('nav')->where('id',$id)->first();
+        $res_s = \DB::table('nav')->where('status',$res->status + 1)->first();
+        if(!$res)
+        {
+            return response()->json(4);
+        }
+
+        if(!$res_s)
+        {
+            return response()->json(3);
+        }
+        // return response()->json($res->title.'-'.$res_s->title);
+
+        
+        \DB::beginTransaction();
+        try{ 
+           $a =  \DB::table('nav')->where('id',$res->id)->update(['status' => $res->status + 1]);
+           $b =  \DB::table('nav')->where('id',$res_s->id)->update(['status' => $res->status]);
+            if($a && $b)
+            {
+                \DB::commit(); 
+                return response()->json(1);
+            }
+
+            }catch (\Exception $e){ 
+                \DB::rollBack(); 
+                return response()->json(2);
+            }
 
     }
 }

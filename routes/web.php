@@ -297,6 +297,7 @@ Route::get('/home/config/nav/edit/{id}','Admin\ConfigController@navedit');
 Route::post('/admin/config/nav/navedits','Admin\ConfigController@navedits');
 Route::post('/admin/config/nav/navdelajax','Admin\ConfigController@navdelajax');
 Route::post('/admin/config/nav/navshang','Admin\ConfigController@navshang');
+Route::post('/admin/config/nav/navxia','Admin\ConfigController@navxia');
 
 //织金楼盘动态管理
 Route::get('admin/properties/details','Admin\PropertiesController@details');
