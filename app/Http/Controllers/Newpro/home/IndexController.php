@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function index(Request $request)
     {	
-    	$titles = \DB::table('webpage')->select('url','id','keyworlds','description','titles')->where('url','/new')->first();
+    	$titles = \DB::table('webpage')->select('url','id','keyworlds','description','titles')->where('url','/')->first();
     	$title=[];
     	if($titles)
     	{

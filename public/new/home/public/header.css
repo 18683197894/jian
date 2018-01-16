@@ -49,12 +49,22 @@ li{
 .nav li:hover{
     color: #c63232;
 }
+
+@media screen and (min-width: 980px) and (max-width: 1120px){
+
+    .nav li{
+        margin-right: 20px;
+    }
+}
+ 
+@media screen and (min-width: 1120px){
+    .nav li{
+        margin-right: 30px;
+    }
+}
 @media screen and (max-width: 1200px){
     .header_atou{
         width: 100%;
-    }
-    .nav{
-        /*display: none;*/
     }
 }
 @media screen and (max-width: 980px){
@@ -88,9 +98,9 @@ li{
         background-color: #ffffff;
         height: 480px;
         border-bottom: 1px solid #E7E7E7;
-        -webkit-transition: margin-top 5s;
-        -moz-transition: margin-top 5s;
-        -o-transition: margin-top 5s;
+        -webkit-transition: margin-top 1s;
+        -moz-transition: margin-top 1s;
+        -o-transition: margin-top 1s;
     }
     .header_atou .nav li{
         width: 100%;
