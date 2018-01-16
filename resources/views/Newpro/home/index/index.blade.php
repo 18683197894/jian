@@ -1,4 +1,4 @@
-@extends('Newpro.home.public')
+@extends('Newpro.Home.public')
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('/new/home/index/index.css') }}">

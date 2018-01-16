@@ -15,7 +15,8 @@
 //     return view('heads');
 // });
 Route::get('/','Home\AdminController@index');
-Route::get('/newpro','Newpro\home\IndexController@index');
+Route::get('/newpro','Newpro\Home\IndexController@index');
+Route::get('/newpro/smarthome','Newpro\Home\SmartController@smarthome');
 
 //楼盘
 Route::get('/propertieszshx','Home\PropertiesController@zshx');
