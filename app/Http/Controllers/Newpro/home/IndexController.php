@@ -13,6 +13,4 @@ class IndexController extends Controller
     	
     	return view('Newpro.Home.Index.index',['title'=>$title]);
     }
-
-    
 }
