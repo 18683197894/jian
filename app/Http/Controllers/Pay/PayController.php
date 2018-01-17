@@ -64,4 +64,9 @@ class PayController extends Controller
 
    	}
 
+    public function webpay()
+    {
+      dd(1);
+    }
+
 }

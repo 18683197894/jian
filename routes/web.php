@@ -324,6 +324,9 @@ Route::get('jslmadmin/payment/index/shopping/{id}','Admin\PayController@shopping
 Route::get('/jslmadmin/userhome/orders/{id}','Admin\PayController@userhome_orders');
 });
 
+//web支付测试
+Route::get('webpro/cspay','Pay\PayController@webpay');
+
 //测试
 Route::get('home/cs','Home\HomeController@cs');
 
