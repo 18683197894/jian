@@ -326,6 +326,10 @@ Route::get('/jslmadmin/userhome/orders/{id}','Admin\PayController@userhome_order
 
 //web支付测试
 Route::get('webpro/cspay','Pay\PayController@webpay');
+Route::post('webpro/cspays','Pay\PayController@webpays');
+
+Route::any('/webpro/weixinweb_hui','Pay\PayController@weixinweb_hui');
+Route::any('/webpro/weixinweb/notify','Pay\PayController@weixinweb_notify');
 
 //测试
 Route::get('home/cs','Home\HomeController@cs');
