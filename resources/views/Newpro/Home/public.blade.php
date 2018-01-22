@@ -14,6 +14,8 @@
     <!--清楚默认样式-->
     <link rel="stylesheet" href="{{ asset('/new/home/public/base.css') }}"/>
     <!--banner图样式-->
+    <link rel="stylesheet" href="{{ asset('/new/home/bannerList/bannerList.css') }}">
+
     <!--头部样式-->
     <link rel="stylesheet" href="{{ asset('/new/home/public/header.css') }}"/>
     <script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>

@@ -14,8 +14,8 @@
 // Route::get('/', function () {
 //     return view('heads');
 // });
-Route::get('/','Home\AdminController@index');
-Route::get('/newpro','Newpro\Home\IndexController@index');
+// Route::get('/','Home\AdminController@index');
+Route::get('/','Newpro\Home\IndexController@index');
 Route::get('/newpro/smarthome','Newpro\Home\SmartController@smarthome');
 
 //楼盘
@@ -324,12 +324,13 @@ Route::get('jslmadmin/payment/index/shopping/{id}','Admin\PayController@shopping
 Route::get('/jslmadmin/userhome/orders/{id}','Admin\PayController@userhome_orders');
 });
 
-//web支付测试
-Route::get('webpro/cspay','Pay\PayController@webpay');
-Route::post('webpro/cspays','Pay\PayController@webpays');
+//web支付微信
+Route::get('webpro/webpay_wechat','Pay\WebpayController@webpay_wechat');
+Route::post('webpro/webpay_wechats','Pay\WebpayController@webpay_wechats');
+Route::any('/webpro/weixinweb_hui','Pay\WebpayController@weixinweb_hui');
+Route::any('/webpro/weixinweb/wechat_notify','Pay\WebpayController@wechat_notify');
 
-Route::any('/webpro/weixinweb_hui','Pay\PayController@weixinweb_hui');
-Route::any('/webpro/weixinweb/notify','Pay\PayController@weixinweb_notify');
+Route::get('webpro/webpay_alipay','Pay\WebpayController@webpay_alipay');
 
 //测试
 Route::get('home/cs','Home\HomeController@cs');

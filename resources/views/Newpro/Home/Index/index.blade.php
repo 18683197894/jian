@@ -2,7 +2,6 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('/new/home/index/index.css') }}">
-<link rel="stylesheet" href="{{ asset('/new/home/bannerList/bannerList.css') }}">
 @endsection('css')
 
 @section('content')

@@ -14,7 +14,7 @@
 <body>
 	<div id="orderInfo">
     <div class="ico_title">支付测试</div>
-    <form action="{{ url('/webpro/cspays') }}" method="post">
+    <form action="{{ url('/webpro/webpay_wechats') }}" method="post">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
     <div class="form_wrap account">

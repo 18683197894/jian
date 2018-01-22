@@ -3,10 +3,8 @@
 namespace App\Http\Controllers\Pay;
 require('../app/payInterface_alipay/request.php');
 require('../app/payInterface_native/request.php');
-require('../app/payInterface_weixinwap/request.php');
 use payInterface_native;
 use payInterface_alipay;
-use payInterface_weixinwap;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 date_default_timezone_set('Asia/Shanghai');
@@ -66,33 +64,7 @@ class PayController extends Controller
 
    	}
 
-    public function webpay()
-    {
-      return view('Pay.Weixinweb.weixinweb');
-    }
 
-    public function webpays(Request $request)
-    {
-      $data = $request->except("_token");
-      $data['out_trade_no'] = date('YmdHms',time()).rand(10000,20000);
-      $datas = $data;
-      $datas['time'] = time();
-
-      $data['time_start'] = date('YmdHms',$datas['time']);
-      $data['time_expire'] = date('YmdHms',$datas['time'] + 3000);
-     
-      $res = \DB::table('webpay')->insert($datas);
-      if($res)
-      {
-        $weixinweb = new payInterface_weixinwap\Request_weixinw();
-        $url = $weixinweb->index('submitOrderInfo',$data);
-        dd($url);
-      }else
-      {
-        dd('订单创建失败！');
-      }
-      
-      dd($data);
-    }
+    
 
 }

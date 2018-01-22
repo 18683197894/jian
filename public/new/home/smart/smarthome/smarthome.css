@@ -1,0 +1,175 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: #fff;
+}
+.Furnishing_banner{
+    width: 100%;
+    overflow: hidden;
+}
+.Furnishing_banner img{
+    width: 100%;
+    overflow: hidden;
+}
+.F_Life{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 30px;
+}
+.F_Life img{
+    width: 100%;
+    overflow: hidden;
+}
+.pattern{
+    width: 100%;
+    overflow: hidden;
+}
+.pattern .fl{
+    float: left;
+    width: 18.75%;
+    overflow: hidden;
+    line-height: 1100px;
+    height: 1100px;
+
+}
+.pattern .fl img{
+    width: 100%;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+}
+.pattern_auto{
+    width: 60.25%;
+    float: left;
+    overflow: hidden;
+    box-shadow: 1px 1px 1px 1px #EEEEEE;
+    box-sizing:border-box;
+    margin-bottom: 200px;
+}
+.get_home{
+    width: 100%;
+    height: 300px;
+}
+.get_l{
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+.get_r{
+    width: 60%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+}
+.get_l .title{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    color: #666666;
+    margin-top: 70px;
+}
+.get_l i{
+    display: block;
+    width: 15px;
+    height: 2px;
+    background-color: #666666;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.get_l .contact{
+    width: 85%;
+    overflow: hidden;
+    margin: auto;
+    line-height: 25px;
+    font-size: 15px;
+}
+.get_r img{
+    width: 100%;
+    height: 100%
+}
+.from_home{
+    width: 100%;
+    height: 300px;
+}
+.from_l{
+    width: 60%;
+    overflow: hidden;
+    float: left;
+}
+.from_r{
+    width: 40%;
+    overflow: hidden;
+    float: left;
+}
+.from_l img{
+    width: 100%;
+    height: 100%;
+}
+.from_r .title{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    color: #666666;
+    margin-top: 70px;
+}
+.from_r i{
+    display: block;
+    width: 15px;
+    height: 2px;
+    background-color: #666666;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.from_r .contact{
+    width: 85%;
+    overflow: hidden;
+    margin: auto;
+    line-height: 25px;
+    font-size: 15px;
+}
+.pattern_auto img{
+    transition: all 1s;
+    cursor: pointer;
+}
+.pattern_auto img:hover{
+    transform: scale(1.5);
+}
+@media screen and (max-width: 1200px){
+    .F_Life {
+        width: 100%;
+        overflow: hidden;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .pattern .fl{
+        display: none;
+    }
+    .pattern_auto{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 926px){
+    .get_l{
+        width: 100%;
+    }
+    .get_l .contact{
+        text-align: center;
+    }
+    .get_r{
+        width: 100%;
+    }
+    .from_l{
+        width: 100%;
+        margin-top: 15px;
+    }
+    .from_r{
+        width: 100%;
+    }
+}
