@@ -2,15 +2,7 @@
  * Created by Administrator on 2018\1\9 0009.
  */
 
-//bannerͼ
-bannerListFn(
-    $(".banner"),
-    $(".img-btn-list"),
-    $(".left-btn"),
-    $(".right-btn"),
-    2000,
-    true
-);
+
 
 function nav(){
     var nav_nmu = 0;

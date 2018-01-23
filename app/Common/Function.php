@@ -1,6 +1,6 @@
 <?php
 	
-					//电话号码   发送内容
+	//电话号码   发送内容
 	function zend_code($phone,$str)
     {	
     	$per = '/^1[34587](\d){9}/';
@@ -71,4 +71,17 @@
 
 		//直接return 成功或错误的信息 
 		return urldecode($resarr['message']);
+    }
+
+    //获取网页关键字
+    function getwebpage($url=null)
+    {
+    	$titles = \DB::table('webpage')->select('url','id','keyworlds','description','titles')->where('url','/'.$url)->get()->toArray();
+        if($titles)
+        {	
+        	return $titles[0];
+        }else
+        {
+        	return array('titles'=>'建商联盟','keyworlds'=>'建商联盟','description'=>'建商联盟');
+        }
     }

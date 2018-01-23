@@ -1,0 +1,230 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: #fff;
+}
+.residence_banner{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 75px;
+}
+.residence_banner img{
+    width: 100%;
+    overflow: hidden;
+}
+.Real_estate{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 25px;
+}
+.Real_estate .title{
+    width: 100%;
+    overflow: hidden;
+    font-size: 25px;
+    line-height: 40px;
+    color: #666666;
+    text-align: center;
+}
+.Real_estate .brief{
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    color: #999999;
+    text-align: center;
+    margin-bottom: 50px;
+    line-height: 35px;
+}
+.system{
+    width: 100%;
+    overflow: hidden;
+}
+.system_auto{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+}
+.system_auto a{
+    width: 25%;
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+    float: left;
+}
+.system_auto a img{
+    display: block;
+    margin: auto;
+    height: 74px;
+}
+.system_auto a .name{
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    color: #666666;
+}
+.network{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 50px;
+}
+.network .title{
+    width: 100%;
+    overflow: hidden;
+    font-size: 25px;
+    line-height: 40px;
+    color: #666666;
+    text-align: center;
+}
+.network .brief{
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    color: #999999;
+    text-align: center;
+    margin-bottom: 50px;
+    line-height: 35px;
+}
+.network .contact{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.network_bg{
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.network_bg img{
+    width: 100%;
+    overflow: hidden;
+}
+.Property{
+    width: 1200px;;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 104px;
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+}
+.opacity{
+    opacity: 0.8;
+}
+
+.Property_first{
+    width: 100%;
+    height: 295px;
+}
+.Property_left{
+    width: 50%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+}
+.Property_js{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.Property_js .biaoti{
+    font-size: 20px;
+    color: #999999;
+    width: 80%;
+    margin: auto;
+    margin-top: 90px;
+}
+.Property_js .neirong{
+    font-size: 20px;
+    color: #999999;
+    width: 80%;
+    margin: auto;
+    line-height: 30px;
+    margin-top: 10px;
+}
+.Property_img{
+    display: block;
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.Property_img img{
+    width: 100%;
+    height: 100%;
+}
+.Service{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 60px;
+}
+.Service .title{
+    width: 100%;
+    overflow: hidden;
+    font-size: 25px;
+    line-height: 40px;
+    color: #666666;
+    text-align: center;
+}
+.Service .brief{
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    color: #999999;
+    text-align: center;
+    margin-bottom: 50px;
+    line-height: 35px;
+}
+.Service .contact{
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 130px;
+}
+.Service .contact a{
+    display: block;
+    width: 25%;
+    overflow: hidden;
+    float: left;
+}
+.Service_img{
+    width: 88px;
+    float: left;
+}
+.Service_img img{
+    display: block;
+    margin: auto;
+}
+.Service_right{
+    width: 210px;
+    height: 300px;
+    float: left;
+}
+.Service_right span{
+    width: 100%;
+    display:block;
+    font-size: 20px;
+    color: #91B1C6;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+.Service_right div{
+    font-size: 15px;
+    width: 95%;
+    line-height: 25px;
+    color: #999999;
+}
+@media screen and (max-width: 1200px){
+    .system_auto{
+        width: 100%;
+    }
+    .Property{
+        width: 100%;
+    }
+    .Service{
+        width: 100%;
+    }
+}

@@ -2,6 +2,8 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('/new/home/index/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('/new/home/bannerList/bannerList.css') }}">
+
 @endsection('css')
 
 @section('content')
@@ -448,6 +450,6 @@
 @endsection('content')
 
 @section('js')
-<script src="{{ asset('new/home/bannerList/bannerList.js') }}"></script>
+<script src="{{ asset('new/home/index/index.js') }}"></script>
 
 @endsection('js')

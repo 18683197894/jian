@@ -14,7 +14,7 @@
     <!--清楚默认样式-->
     <link rel="stylesheet" href="{{ asset('/new/home/public/base.css') }}"/>
     <!--banner图样式-->
-    <link rel="stylesheet" href="{{ asset('/new/home/bannerList/bannerList.css') }}">
+@yield('css')
 
     <!--头部样式-->
     <link rel="stylesheet" href="{{ asset('/new/home/public/header.css') }}"/>
@@ -23,7 +23,6 @@
     <!--尾部样式-->
     <link rel="stylesheet" href="{{ asset('/new/home/public/footer.css') }}"/>
     <title>{{ $title->titles or '建商联盟' }}</title>
-@yield('css')
 </head>
 <body>
 <!--头部-->

@@ -16,7 +16,10 @@
 // });
 // Route::get('/','Home\AdminController@index');
 Route::get('/','Newpro\Home\IndexController@index');
+//智能家居
 Route::get('/newpro/smarthome','Newpro\Home\SmartController@smarthome');
+//住宅智能社区
+Route::get('/nrepro/ressmartunity','Newpro\Home\SmartController@ressmartunity');
 
 //楼盘
 Route::get('/propertieszshx','Home\PropertiesController@zshx');
