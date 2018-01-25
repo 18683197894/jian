@@ -199,7 +199,7 @@ class NewsController extends Controller
 		    'title' => 'required|min:2|max:30',
 		    'yuan'	=> 'required',
 		    'leicon'=>'required|min:10|max:255',
-		    'titleimg'=>'required|image',
+		    'titleimg'=>'image',
 		    'content' =>'required|max:20000',
             'titles' => 'required|min:2|max:60',
             'keyworlds' => 'required|min:6|max:120',
@@ -222,7 +222,6 @@ class NewsController extends Controller
             'leicon.required'=>'简介不能为空',
             'leicon.min'=>'简介最少10位',
 			'leicon.max'=>'简介最大255位',
-			'titleimg.required'=>'未上传图片',
             'titleimg.image'=>'请上传图片类型的文件',
             'content.required'=>'内容不能为空',
 			'content.max'=>'内容不能超过20000字'
@@ -249,15 +248,19 @@ class NewsController extends Controller
     		return back()->withInput()->with(['info'=>'图片上传失败']);
 
     		}
-    	}else{
-    		return back()->withInput()->with(['info'=>'图片上传失败']);
-    	}
+    	}else
+        {
+            $data['titleimg'] = 'default.jpg';
+        }
 		
     	$res = \DB::table('news')->insert($data);
     	if($res){
     		return redirect('/jslmadmin/newslei/newsindex/'.$data['pid'])->with(['info'=>'添加成功']);
     	}else{
-    		@unlink('./uploads/news/titleimg/'.$fileName);
+            if($data['titleimg'] != 'default.jpg')
+            {
+                @unlink('./uploads/news/titleimg/'.$data['titleimg']);
+            }
     		return back()->withInput()->with(['info'=>'发表失败']);
 
     	}
@@ -309,12 +312,11 @@ class NewsController extends Controller
 				$ext = $request->file('titleimg')->extension();
 				$newimg = time().mt_rand(100,900).'.'.$ext;
 				$request->file('titleimg')->move('./uploads/news/titleimg',$newimg);
-
-				if(file_exists('./uploads/news/titleimg/'.$img)){
-					unlink('./uploads/news/titleimg/'.$img);
-				}
-
 				$data['titleimg'] = $newimg;
+                if(file_exists('./uploads/news/titleimg/'.$img && $img != 'default.jpg'))
+                {
+                    @unlink('./uploads/news/titleimg/'.$img);
+                }
 			}
 		}
     	
@@ -335,7 +337,7 @@ class NewsController extends Controller
 
     	if($res){
     		
-    		if(file_exists('./uploads/news/titleimg/'.$img)){
+    		if(file_exists('./uploads/news/titleimg/'.$img && $img != 'default.jpg')){
     			unlink('./uploads/news/titleimg/'.$img);
     		}
     		 return response()->json(1);

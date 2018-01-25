@@ -76,7 +76,7 @@
 
 
                 <div class="form-group">
-                  <label for="exampleInputFile">新闻展示图片</label>
+                  <label for="exampleInputFile">新闻展示图片(可选)</label>
                   <input type="file" name="titleimg" id="exampleInputFile">
                 </div>
                  

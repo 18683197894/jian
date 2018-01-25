@@ -10,7 +10,7 @@
 <!--banner图 轮播-->
 <div class="banner">
     <ul class="">
-        <li><a href="javascript:;"><img src="{{ asset('/new/home/index/img/banner1.png') }}" alt=""></a></li>
+        <li><a href="javascript:;"><img src="{{ asset('/new/home/index/img/banner3.png') }}" alt=""></a></li>
         <li><a href="javascript:;"><img src="{{ asset('/new/home/index/img/banner2.png') }}" alt=""></a></li>
     </ul>
     <div class="left-btn"></div>

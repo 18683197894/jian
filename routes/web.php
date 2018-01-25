@@ -14,7 +14,7 @@
 // Route::get('/', function () {
 //     return view('heads');
 // });
-// Route::get('/','Home\AdminController@index');
+Route::get('/used','Home\AdminController@index');
 Route::get('/','Newpro\Home\IndexController@index');
 //智能家居
 Route::get('/newpro/smarthome','Newpro\Home\SmartController@smarthome');
@@ -337,6 +337,7 @@ Route::get('webpro/webpay_alipay','Pay\WebpayController@webpay_alipay');
 
 //测试
 Route::get('home/cs','Home\HomeController@cs');
+Route::get('home/css','Home\HomeController@css');
 
 //后台登入
 Route::get('/jslmadmin/login','Admin\LoginController@login');
