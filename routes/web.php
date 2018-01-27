@@ -19,7 +19,17 @@ Route::get('/','Newpro\Home\IndexController@index');
 //智能家居
 Route::get('/newpro/smarthome','Newpro\Home\SmartController@smarthome');
 //住宅智能社区
-Route::get('/nrepro/ressmartunity','Newpro\Home\SmartController@ressmartunity');
+Route::get('/newpro/ressmartunity','Newpro\Home\SmartController@ressmartunity');
+//商业智慧商圈
+Route::get('/newpro/businsmart','Newpro\Home\SmartController@businsmart');
+
+//新闻列表
+Route::get('/newpro/newslist/{id}','Newpro\Home\NewsController@newslist');
+
+
+
+
+
 
 //楼盘
 Route::get('/propertieszshx','Home\PropertiesController@zshx');
@@ -149,9 +159,17 @@ Route::get('jslmadmin/newslei/newsadd/{id}','Admin\NewsController@newsadd');
 Route::post('jslmadmin/newslei/newsadds','Admin\NewsController@newsadds');
 Route::get('jslmadmin/newslei/newsedit/{id}','Admin\NewsController@newsedit');
 Route::post('jslmadmin/newslei/newsedits','Admin\NewsController@newsedits');
-Route::post('/jslmadmin/newslei/newszhi','Admin\NewsController@newszhi');
 Route::post('/jslmadmin/newslei/newsdel','Admin\NewsController@newsdel');
+Route::post('/jslmadmin/newslei/newszhi','Admin\NewsController@newszhi');
 
+Route::get('/jslmadmin/newslei/newszhiindex/{id}','Admin\NewsController@newszhiindex');
+Route::get('/jslmadmin/newslei/newszhiindex/ban/{id}','Admin\NewsController@ban');
+Route::post('/jslmadmin/newslei/newszhiindex/bans','Admin\NewsController@bans');
+Route::get('/jslmadmin/newslei/newszhiindex/zhiadd/{id}','Admin\NewsController@zhiadd');
+Route::post('/jslmadmin/newslei/newszhiindex/zhiadds','Admin\NewsController@zhiadds');
+Route::get('/jslmadmin/newslei/newszhiindex/zhiedit/{id}','Admin\NewsController@zhiedit');
+Route::post('/jslmadmin/newslei/newszhiindex/zhiedits','Admin\NewsController@zhiedits');
+Route::post('/jslmadmin/newslei/newszhiindex/zhidel','Admin\NewsController@zhidel');
 
 //软包
 Route::get('admin/package/ruan/fashion','Admin\RuanController@fashion');

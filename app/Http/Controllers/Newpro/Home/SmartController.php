@@ -21,5 +21,11 @@ class SmartController extends Controller
         return view('Newpro.Home.Smart.ressmartunity',['title'=>$titles]);
     	
     }
+
+    public function businsmart(request $request)
+    {
+        $titles = getwebpage($request->path());
+        return view('Newpro.Home.Smart.businsmart',['title'=>$titles]);
+    }
      
 }

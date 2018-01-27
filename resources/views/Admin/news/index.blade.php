@@ -37,7 +37,9 @@
            
             <div class="box-header">
            
-              <h3 class="box-title"><a href="{{ url('/jslmadmin/newslei/newsadd/') }}/{{ $pid }}">添加文章</a></h3>
+              <h3 class="box-title" style="width:300px;"><a href="{{ url('/jslmadmin/newslei/newsadd/') }}/{{ $pid }}">添加文章</a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="{{ url('/jslmadmin/newslei/newszhiindex/') }}/{{ $pid }}">置顶文章管理</a></h3>
             </div>
             
           </div>
@@ -76,12 +78,9 @@
                   <td style="text-align: center;vertical-align: middle">{{ date("Y-m-d H:i:s",$v->time) }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->click }}</td>
                   <td style="text-align: center;vertical-align: middle"><a href="{{ url('/jslmadmin/newslei/newsedit') }}/{{ $v->id }}">编辑
-                  </a>&nbsp;&nbsp;<a class="shan" href="#" onclick="return false;">删除
-                  &nbsp;</a>&nbsp;&nbsp;<a class="zhi" pid="{{ $v->pid }}"  href="#" 
-                  @if($v->zhi ==1)
-                  index="2" style="opacity: 0.6"
-                  @endif
-                   onclick="return false;" >置顶</a></td>
+                  </a>&nbsp;&nbsp;<a class="shan" href="#" onclick="return false;">删除&nbsp;</a>&nbsp;&nbsp;
+                  @if($v->zhi == 0)<a href="javascript:;" index="{{ $v->pid }}" class="zhi">移入列表置顶</a>@else <a href="javascript:;" index="{{ $v->pid }}" >已置顶 @endif
+                  </td>
                 </tr>
 @endforeach
 @else
@@ -104,16 +103,12 @@
 
        <script>
        $(".zhi").on('click',function(){
-        var css = $(this).attr('index');
-        var pid = $(this).attr('pid');
-        if(css =="2")
-        {
-          return false;
-        }
+        
+        
         var id = $(this).parents('tr').find('td').eq(0).html();
-        var zhi = $(this);
-        var yuan = $("a[index='2']");
-
+        var tr = $(this).parents('tr');
+        
+        var pid = $(this).attr('index');
          $.ajaxSetup({
           headers: {
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -126,16 +121,14 @@
             data:{id:id,pid:pid},
             success:function(data){
               if(data ==1 ){
-                yuan.css('opacity','1');
-                yuan.attr('index','1');
-               
-                zhi.css('opacity','0.6');
-                zhi.attr('index','2');
-              alert('置顶成功');
-               
+              window.location.href='/jslmadmin/newslei/newszhiindex/zhiadd/'+id;
+              
+              return false;
+
               }
               if(data ==2){
-                alert('置顶失败！');
+                alert('置顶失败！置顶位已满');
+                return false;
               }
             },
             error:function(data){

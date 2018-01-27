@@ -229,224 +229,28 @@
     </div>
 </div>
 <!--动态新闻-->
+@if(count($news) > 0)
 <div class="News">
     <div class="title">动态新闻</div>
     <div class="brief">记录我们成长的每一步</div>
     <div class="News_show">
+    @foreach($news as $k => $v)
         <a href="javascript:;">
-            <img src="{{ asset('/new/home/index/img/News1.png') }}" alt=""/>
+            <img src="{{ asset('/uploads/news/titleimg') }}/{{ $v->titleimg }}" alt=""/>
             <div class="content">
-                <div class="titlel">人脸识别购物形式在各国推广</div>
+                <div class="titlel">{{ mb_substr($v->title,0,24,'utf8')  }}</div>
                 <div class="brief1">
-                    在过去的一年中，人脸识别技术被评选为2017年科技行业五大突破之一。近年来，人脸识别技术快速发展、应用广泛，影响了人们生活的方方面面。其中“人脸识别购物”应用得到了世界多国的推崇
+                    @if(mb_strlen($v->leicon,'utf8') > 114) {{ mb_substr($v->leicon,0,114,'utf8')}} ... @else {{$v->leicon}} @endif
                 </div>
                 <span class="See">查看详情</span>
             </div>
         </a>
-        <a href="javascript:;">
-            <img src="{{ asset('/new/home/index/img/News2.png') }}" alt=""/>
-            <div class="content">
-                <div class="titlel">人脸识别购物形式在各国推广</div>
-                <div class="brief1">
-                    在过去的一年中，人脸识别技术被评选为2017年科技行业五大突破之一。近年来，人脸识别技术快速发展、应用广泛，影响了人们生活的方方面面。其中“人脸识别购物”应用得到了世界多国的推崇
-                </div>
-                <span class="See">查看详情</span>
-            </div>
-        </a>
-        <a href="javascript:;">
-            <img src="{{ asset('/new/home/index/img/News3.png') }}" alt=""/>
-            <div class="content">
-                <div class="titlel">人脸识别购物形式在各国推广</div>
-                <div class="brief1">
-                    在过去的一年中，人脸识别技术被评选为2017年科技行业五大突破之一。近年来，人脸识别技术快速发展、应用广泛，影响了人们生活的方方面面。其中“人脸识别购物”应用得到了世界多国的推崇
-                </div>
-                <span class="See">查看详情</span>
-            </div>
-        </a>
-        <a href="javascript:;">
-            <img src="{{ asset('/new/home/index/img/News4.png') }}" alt=""/>
-            <div class="content">
-                <div class="titlel">人脸识别购物形式在各国推广</div>
-                <div class="brief1">
-                    在过去的一年中，人脸识别技术被评选为2017年科技行业五大突破之一。近年来，人脸识别技术快速发展、应用广泛，影响了人们生活的方方面面。其中“人脸识别购物”应用得到了世界多国的推崇
-                </div>
-                <span class="See">查看详情</span>
-            </div>
-        </a>
-
-        <a href="javascript:;">
-            <img src="{{ asset('/new/home/index/img/News5.png') }}" alt=""/>
-            <div class="content">
-                <div class="titlel">人脸识别购物形式在各国推广</div>
-                <div class="brief1">
-                    在过去的一年中，人脸识别技术被评选为2017年科技行业五大突破之一。近年来，人脸识别技术快速发展、应用广泛，影响了人们生活的方方面面。其中“人脸识别购物”应用得到了世界多国的推崇
-                </div>
-                <span class="See">查看详情</span>
-            </div>
-        </a>
-        <a href="javascript:;">
-            <img src="{{ asset('/new/home/index/img/News6.png') }}" alt=""/>
-            <div class="content">
-                <div class="titlel">人脸识别购物形式在各国推广</div>
-                <div class="brief1">
-                    在过去的一年中，人脸识别技术被评选为2017年科技行业五大突破之一。近年来，人脸识别技术快速发展、应用广泛，影响了人们生活的方方面面。其中“人脸识别购物”应用得到了世界多国的推崇
-                </div>
-                <span class="See">查看详情</span>
-            </div>
-        </a>
-        <a href="javascript:;">
-            <img src="{{ asset('/new/home/index/img/News7.png') }}" alt=""/>
-            <div class="content">
-                <div class="titlel">人脸识别购物形式在各国推广</div>
-                <div class="brief1">
-                    在过去的一年中，人脸识别技术被评选为2017年科技行业五大突破之一。近年来，人脸识别技术快速发展、应用广泛，影响了人们生活的方方面面。其中“人脸识别购物”应用得到了世界多国的推崇
-                </div>
-                <span class="See">查看详情</span>
-            </div>
-        </a>
-        <a href="javascript:;">
-            <img src="{{ asset('/new/home/index/img/News8.png') }}" alt=""/>
-            <div class="content">
-                <div class="titlel">人脸识别购物形式在各国推广</div>
-                <div class="brief1">
-                    在过去的一年中，人脸识别技术被评选为2017年科技行业五大突破之一。近年来，人脸识别技术快速发展、应用广泛，影响了人们生活的方方面面。其中“人脸识别购物”应用得到了世界多国的推崇
-                </div>
-                <span class="See">查看详情</span>
-            </div>
-        </a>
-    </div>
-</div>
-<!--战略合作-->
-<div class="cooperation">
-    <div class="auto">
-        <div class="title">战略合作</div>
-        <div class="brief">记录我们成长的每一步</div>
-        <div class="cooperation_logo">
-            <!--第1个加样式-->
-            <a href="javascript:;" class="add_class">
-                <!--多加一个容器实现突破垂直居中-->
-                <div class="vertical">
-                    <div class="add_div">
-                        <img src="{{ asset('/new/home/index/img/logo1.png') }}" alt="" class="img_od"/>
-                        <img src="{{ asset('/new/home/index/img/logo1_H.png') }}" alt="" class="img_hover"/>
-                    </div>
-                </div>
-
-            </a>
-            <a href="javascript:;">
-                <!--多加一个容器实现突破垂直居中-->
-                <div class="vertical">
-                    <div class="add_div">
-                        <img src="{{ asset('/new/home/index/img/logo1.png') }}" alt="" class="img_od"/>
-                        <img src="{{ asset('/new/home/index/img/logo1_H.png') }}" alt="" class="img_hover"/>
-                    </div>
-                </div>
-
-            </a>
-            <a href="javascript:;">
-                <!--多加一个容器实现突破垂直居中-->
-                <div class="vertical">
-                    <div class="add_div">
-                        <img src="{{ asset('/new/home/index/img/logo1.png') }}" alt="" class="img_od"/>
-                        <img src="{{ asset('/new/home/index/img/logo1_H.png') }}" alt="" class="img_hover"/>
-                    </div>
-                </div>
-
-            </a>
-            <a href="javascript:;">
-                <!--多加一个容器实现突破垂直居中-->
-                <div class="vertical">
-                    <div class="add_div">
-                        <img src="{{ asset('/new/home/index/img/logo1.png') }}" alt="" class="img_od"/>
-                        <img src="{{ asset('/new/home/index/img/logo1_H.png') }}" alt="" class="img_hover"/>
-                    </div>
-                </div>
-
-            </a>
-            <a href="javascript:;">
-                <!--多加一个容器实现突破垂直居中-->
-                <div class="vertical">
-                    <div class="add_div">
-                        <img src="{{ asset('/new/home/index/img/logo1.png') }}" alt="" class="img_od"/>
-                        <img src="{{ asset('/new/home/index/img/logo1_H.png') }}" alt="" class="img_hover"/>
-                    </div>
-                </div>
-
-            </a>
-            <a href="javascript:;">
-                <!--多加一个容器实现突破垂直居中-->
-                <div class="vertical">
-                    <div class="add_div">
-                        <img src="{{ asset('/new/home/index/img/logo1.png') }}" alt="" class="img_od"/>
-                        <img src="{{ asset('/new/home/index/img/logo1_H.png') }}" alt="" class="img_hover"/>
-                    </div>
-                </div>
-
-            </a>
-            <!--第7个加样式-->
-            <a href="javascript:;" class="add_class">
-                <!--多加一个容器实现突破垂直居中-->
-                <div class="vertical">
-                    <div class="add_div">
-                        <img src="{{ asset('/new/home/index/img/logo1.png') }}" alt="" class="img_od"/>
-                        <img src="{{ asset('/new/home/index/img/logo1_H.png') }}" alt="" class="img_hover"/>
-                    </div>
-                </div>
-
-            </a>
-            <a href="javascript:;">
-                <!--多加一个容器实现突破垂直居中-->
-                <div class="vertical">
-                    <div class="add_div">
-                        <img src="{{ asset('/new/home/index/img/logo1.png') }}" alt="" class="img_od"/>
-                        <img src="{{ asset('/new/home/index/img/logo1_H.png') }}" alt="" class="img_hover"/>
-                    </div>
-                </div>
-
-            </a>
-            <a href="javascript:;">
-                <!--多加一个容器实现突破垂直居中-->
-                <div class="vertical">
-                    <div class="add_div">
-                        <img src="{{ asset('/new/home/index/img/logo1.png') }}" alt="" class="img_od"/>
-                        <img src="{{ asset('/new/home/index/img/logo1_H.png') }}" alt="" class="img_hover"/>
-                    </div>
-                </div>
-
-            </a>
-            <a href="javascript:;">
-                <!--多加一个容器实现突破垂直居中-->
-                <div class="vertical">
-                    <div class="add_div">
-                        <img src="{{ asset('/new/home/index/img/logo1.png') }}" alt="" class="img_od"/>
-                        <img src="{{ asset('/new/home/index/img/logo1_H.png') }}" alt="" class="img_hover"/>
-                    </div>
-                </div>
-
-            </a>
-            <a href="javascript:;">
-                <!--多加一个容器实现突破垂直居中-->
-                <div class="vertical">
-                    <div class="add_div">
-                        <img src="{{ asset('/new/home/index/img/logo1.png') }}" alt="" class="img_od"/>
-                        <img src="{{ asset('/new/home/index/img/logo1_H.png') }}" alt="" class="img_hover"/>
-                    </div>
-                </div>
-
-            </a>
-            <a href="javascript:;">
-                <!--多加一个容器实现突破垂直居中-->
-                <div class="vertical">
-                    <div class="add_div">
-                        <img src="{{ asset('/new/home/index/img/logo1.png') }}" alt="" class="img_od"/>
-                        <img src="{{ asset('/new/home/index/img/logo1_H.png') }}" alt="" class="img_hover"/>
-                    </div>
-                </div>
-
-            </a>
+    @endforeach
         </div>
     </div>
+    @endif
 </div>
+ 
 @endsection('content')
 
 @section('js')

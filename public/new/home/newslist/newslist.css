@@ -1,0 +1,328 @@
+
+
+body{
+    background-color: #ffffff;
+}
+.banner{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 130px;
+}
+.banner img{
+    width: 100%;
+    overflow: hidden;
+}
+.information{
+    width: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+.information .title{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    line-height: 95px;
+    color: #010101;
+    font-size: 20px;
+}
+.information .title img{
+    margin-left: 5px;
+}
+.headlines{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+}
+/*.headlines_l{*/
+    /*width: 495px;*/
+    /*height: 360px;*/
+    /*overflow: hidden;*/
+    /*float: left;*/
+    /*position: relative;*/
+/*}*/
+/*.headlines_l img{*/
+    /*width: 495px;*/
+    /*height: 360px;*/
+/*}*/
+/*.headlines_a{*/
+    /*width: 265px;*/
+    /*height: 360px;*/
+    /*float: left;*/
+    /*margin-left: 8px;*/
+    /*margin-right: 8px;*/
+    /*position: relative;*/
+/*}*/
+/*.headlines_r{*/
+    /*width: 420px;*/
+    /*height: 360px;*/
+    /*overflow: hidden;*/
+    /*float: left;*/
+    /*position: relative;*/
+/*}*/
+/*.layer{*/
+    /*width: 100%;*/
+    /*height: 50px;*/
+    /*background-color: #010101;*/
+    /*opacity: 0.2;*/
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*bottom: 0;*/
+/*}*/
+.Nws{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+}
+.information_left{
+    width: 820px;
+    float: left;
+    border-top: 3px solid #333333;
+    position: relative;
+}
+.information_left i{
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #E12E32;
+    position: absolute;
+    left: 0;
+    top: -3px;
+}
+.information_left .titel{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    color: #333333;
+}
+.information_left .brief{
+    width: 100%;
+    font-size: 14px;
+    color: #999999;
+    margin-bottom: 10px;
+}
+.information_left .area{
+    width: 100%;
+    height: 410px;
+    overflow: hidden;
+    position: relative;
+}
+.jsNav{
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.jsNav a{
+    display: block;
+    float: left;
+    width: 9px;
+    height: 9px;
+    background-color: #ffffff;
+    border-radius: 50px;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+.jsNav .imgSelected{
+    background-color: red;
+}
+.banner1{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 410px;
+}
+
+.banner1 .titlel{
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 18px;
+    line-height: 50px;
+    color: #ffffff;
+    text-indent: 20px;
+}
+.data{
+    width: 100%;
+    overflow: hidden;
+}
+.data .loop{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+    border-bottom: 1px solid #DADADA;
+    display: block;
+    text-decoration: none;
+}
+.data .loop img{
+    width: 200px;
+    height: 140px;
+    display: block;
+    float: left;
+}
+.loop_right{
+    width: 600px;
+    overflow: hidden;
+    float: right;
+}
+.loop_right .name{
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    overflow: hidden;
+    font-size: 20px;
+    color: #333333;
+}
+.loop_right .content{
+    width: 100%;
+    height: 90px;
+    line-height: 30px;
+    overflow: hidden;
+    font-size: 14px;
+    color: #999999;
+}
+.loop_right .time{
+    width: 100%;
+    height: 40px;
+}
+.loop_right .time span{
+    display: block;
+    float: right;
+    font-size: 13px;
+    color: #999999;
+    line-height: 40px;
+}
+.loop_right .time .i{
+    display: block;
+    width: 1px;
+    height: 10px;
+    float: right;
+    background-color: #999999;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+.Notice{
+    width: 340px;
+    float: right;
+}
+.Notice_first{
+    border-top: 3px solid #333333;
+    position: relative;
+    width: 100%;
+}
+.Notice_first i{
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #E12E32;
+    position: absolute;
+    left: 0;
+    top: -3px;
+}
+.Notice_first .name{
+    font-size: 18px;
+    color: #333333;
+    line-height: 30px;
+    margin-top: 8px;
+}
+.Notice_first .loop{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+    display: block;
+}
+.Notice_first .loop span{
+    font-size: 16px;
+    display:block;
+    line-height: 20px;
+    padding-bottom: 3px;
+    color: #333333;
+}
+.Notice_first .loop .content{
+    font-size: 12px;
+    color: #999999;
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+}
+.Notice_first .loop:last-child{
+    margin-bottom: 30px;
+}
+.paging{
+    width: 100%;
+    height: 30px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.paging_r{
+    width: 375px;
+    height: 30px;
+    float: right;
+    margin-right: 60px;
+}
+.paging_r a{
+    display: block;
+    height: 30px;
+    border: 1px solid #F1F1F1;
+    font-size: 12px;
+    line-height: 30px;
+    width: 35px;
+    text-align: center;
+    float: left;
+}
+.paging_r .Previous{
+    width: 65px;
+}
+.paging_r a.avtive{
+    background-color: #E12E32;
+    color: #ffffff;
+}
+@media screen and (max-width: 1200px){
+    .information .Nws{
+        width: 100%;
+    }
+    .Nws .information_left{
+        width: 100%;
+    }
+    .information_left .titel{
+        text-indent: 5%;
+    }
+    .banner {
+        width: 100%;
+        overflow: hidden;
+        margin-top: 75px;
+    }
+    .information_left .brief{
+        text-indent: 5%;
+    }
+    .Notice{
+        display: none;
+    }
+    .paging{
+        width: 375px;
+        height: 30px;
+        margin: auto;
+        margin-top: 50px;
+        margin-bottom: 100px;
+    }
+    .paging_r{
+        margin-right:0;
+    }
+    .banner1 img{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 820px){
+    .data .loop img{
+        width: 25%;
+    }
+    .loop_right{
+        width: 75%;
+    }
+
+}

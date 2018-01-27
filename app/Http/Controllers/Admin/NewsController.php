@@ -348,30 +348,237 @@ class NewsController extends Controller
     }
 
     public function newszhi(Request $request){
-    	$res = \DB::table('news')->select('id')->where('zhi',1)->where('pid',$request->pid)->first();
+    	$res = \DB::table('news')->select('id')->where('zhi',1)->where('pid',$request->pid)->get();
+        if(count($res) >= 4)
+        {
+        return response()->json(2);
+        }else
+        {
+        return response()->json(1);
+        }
 
-    	if($res)
-    	{
-    		\DB::table('news')->where('id',$res->id)->update(['zhi'=>0]);
-    		$da = \DB::table('news')->where('id',$request->id)->update(['zhi'=>1]);
-    		if($da)
-    		{
-    			return response()->json(1);
-    		}else
-    		{
-    			return response()->json(2);
-    		}
-    	}else
-    	{
-    		$da = \DB::table('news')->where('id',$request->id)->update(['zhi'=>1]);
-    		if($da)
-    		{
-    			return response()->json(1);
-    		}else
-    		{
-    			return response()->json(2);
-    		}
-    	}
+    }
+
+    public function newszhiindex($id)
+    {
+        $title = \DB::table('newslei')
+                ->select('id','title')
+                ->where('id',$id)
+                ->first();
+        if(!$title)
+        {
+            return back()->with(['info'=>'数据不存在']);
+        }
+        $data = \DB::table('news')
+                ->join('banimg','news.id','=','banimg.pid')
+                ->select('news.*','banimg.img as banimg')
+                ->where('news.pid',$id)
+                ->where('news.zhi',1)
+                ->get();
+        return view('Admin.news.newszhiindex',['title'=>'置顶文章管理','titles'=>$title,'data'=>$data]);
+    }
+
+    public function ban($id)
+    {
+        $data = \DB::table('newsban')
+        ->select('id','pid','title','con')
+        ->where('pid',$id)
+        ->first();
+        return view('Admin.news.banadd',['title'=>'置顶文章介绍修改','data'=>$data,'pid'=>$id]);
+    }
+
+    public function bans(request $request)
+    {
+        $data = $request->except("_token",'ors');
+        $this->validate($request,[
+            'title' => 'required|min:4|max:20',
+            'con' => 'required|min:4|max:255'
+            ],[
+            'title.required' => '标题不能为空',
+            'title.min' => '标题长度最小4位最大20位',
+            'title.max' => '标题长度最小4位最大20位',
+            'con.required' => '介绍不能为空',
+            'con.min' => '介绍长度最小4位最大20位',
+            'con.max' => '介绍长度最小4位最大20位'
+            ]);
+
+        if($request->ors == 'add')
+        {
+            $res = \DB::table('newsban')->insert($data);
+            if($res)
+            {
+                return redirect('/jslmadmin/newslei/newszhiindex/'.$data['pid'])->with(['info'=>'置顶板块介绍修改成功']);
+            }else
+            {
+                return back()->with(['info'=>'数据库写入失败']);
+            }
+        }
+        if($request->ors == 'edit')
+        {
+            $res = \DB::table('newsban')->update($data);
+            
+                return redirect('/jslmadmin/newslei/newszhiindex/'.$data['pid'])->with(['info'=>'置顶板块介绍修改成功']);
+        }
+    }
+
+    public function zhiadd($id)
+    {
+        $data = \DB::table('news')
+                ->select('id','zhi','pid','title')
+                ->where('id',$id)
+                ->first();
+
+        if(!$data || $data->zhi == 1)
+        {
+            return back()->with(['info'=>'数据不存在或已置顶']);
+        }
+
+        return view('Admin.news.zhiadd',['title'=>'置顶文章','data'=>$data]);
+
+    }
+
+    public function zhiadds(Request $request)
+    {
+        $this->validate($request,[
+            'img'=>'required|image'
+            ],[
+            'img.required' => '未上传图片',
+            'img.image'    => '请上传图片类型的文件'
+            ]);
+
+        if($request->hasFile('img'))
+        {
+            if($request->file('img')->isValid())
+            {
+                $hou = $request->file('img')->extension();
+                $newimg = date('YmdHis',time()).rand(1000,9999).'.'.$hou;
+                $request->file('img')->move('./uploads/news/banimg',$newimg);
+                if(file_exists('./uploads/news/banimg/'.$newimg))
+                {
+                    $a = \DB::table('banimg')->insert(['pid'=>$request->id,'img'=>$newimg]);
+                    $b = \DB::table('news')->where('id',$request->id)->update(['zhi'=>1]);
+                    if($a && $b)
+                    {
+                        return redirect('jslmadmin/newslei/newsindex/'.$request->pid)->with(['info'=>'置顶成功']);
+                    }else
+                    {
+                        \DB::table('banimg')->delete($a);
+                        \DB::table('news')->where('id',$request->id)->update(['zhi',0]);
+                        return back()->with(['info'=>'置顶失败！数据库写入失败。']);
+
+                    }
+
+                }else
+                {
+                    return back()->with(['info'=>'图片移动失败！']);
+
+                }
+            }else
+            {
+            return back()->with(['info'=>'图片上传失败！']);
+            }
+        }else
+        {
+            return back()->with(['info'=>'未上传图片']);
+        }
+       
+    }
+
+    public function zhiedit($id)
+    {
+        $data = \DB::table('news')
+                ->select('id','zhi','pid','title')
+                ->where('id',$id)
+                ->first();
+
+        if(!$data || $data->zhi == 0)
+        {
+            return back()->with(['info'=>'数据不存在或未置顶']);
+        }
+
+        return view('Admin.news.zhiedit',['title'=>'置顶文章修改','data'=>$data]);
+    }
+
+    public function zhiedits(Request $request)
+    {
+        $this->validate($request,[
+            'img'=>'required|image'
+            ],[
+            'img.required' => '未上传图片',
+            'img.image'    => '请上传图片类型的文件'
+            ]);
+            if($request->hasFile('img'))
+            {
+                if($request->file('img')->isValid())
+                {
+
+                    $res = \DB::table('banimg')->select('id','img')->where('pid',$request->id)->first();
+                    if($res)
+                    {
+
+                        $hou = $request->file('img')->extension();
+                        $newname = date('YmdHis',time()).rand(1111,9999).'.'.$hou;
+                        $request->file('img')->move('./uploads/news/banimg',$newname);
+
+                        if(file_exists('./uploads/news/banimg/'.$newname))
+                        {
+                            $ors = \DB::table('banimg')->where('id',$res->id)->update(['img'=>$newname]);
+                            if($ors)
+                            {
+                                @unlink('./uploads/news/banimg/'.$res->img);
+                                return redirect('/jslmadmin/newslei/newszhiindex/'.$request->pid)->with(['info'=>'更新成功']);
+
+                            }else
+                            {   
+                                @unlink('./uploads/news/banimg/'.$newname);
+                                return back()->with(['info'=>'数据库写入失败']);                                
+                            }
+                        }else
+                        {
+                            return back()->with(['info'=>'图片移入失败']);
+                        }
+
+                    }else
+                    {   
+                        \DB::table('news')->where('id',$request->id)->update(['zhi'=>0]);
+                        return back()->with(['info'=>'数据不存在']);
+                    }
+
+                }else
+                {
+                    return back()->with(['info'=>'图片上传失败']);
+                }
+            }else
+            {
+                return back()->with(['info'=>'未上传图片']);
+            }
+    }
+
+    public function zhidel(Request $request)
+    {
+        $res = \DB::table('news')->select('id','zhi','pid')->where('id',$request->id)->where('zhi',1)->first();
+        if($res)
+        {
+            $img = \DB::table('banimg')->select('id','img')->where('pid',$res->id)->first();
+            if($img)
+            {   
+                
+                
+                \DB::table('news')->where('id',$res->id)->update(['zhi'=>0]);
+                \DB::table('banimg')->delete($img->id);
+                @unlink('./uploads/news/banimg/'.$img->img);
+                return response()->json(1);
+
+            }else
+            {   
+                
+                \DB::table('news')->where('id',$res->id)->update(['zhi'=>0]);
+                return response()->json(1);
+            }
+        }else
+        {
+            return response()->json(3);
+        }
     }
 
 }
