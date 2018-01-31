@@ -43,6 +43,13 @@ Route::get('/newpro/defu/questionnaire/changzhu','Newpro\Home\QuestionController
 Route::get('/newpro/defu/questionnaire/fengge','Newpro\Home\QuestionController@defufengge');
 Route::get('/newpro/defu/questionnaire/ors','Newpro\Home\QuestionController@defuors');
 
+Route::get('/newpro/zhijin/questionnaire/index','Newpro\Home\QuestionController@zhijinindex');
+Route::get('/newpro/zhijin/questionnaire/name','Newpro\Home\QuestionController@zhijinname');
+Route::get('/newpro/zhijin/questionnaire/phone','Newpro\Home\QuestionController@zhijinphone');
+Route::get('/newpro/zhijin/questionnaire/fanghao','Newpro\Home\QuestionController@zhijinfanghao');
+Route::get('/newpro/zhijin/questionnaire/changzhu','Newpro\Home\QuestionController@zhijinchangzhu');
+Route::get('/newpro/zhijin/questionnaire/fengge','Newpro\Home\QuestionController@zhijinfengge');
+Route::get('/newpro/zhijin/questionnaire/ors','Newpro\Home\QuestionController@zhijinors');
 //楼盘
 Route::get('/propertieszshx','Home\PropertiesController@zshx');
 Route::get('/propertiesdfhx','Home\PropertiesController@dfhx');
