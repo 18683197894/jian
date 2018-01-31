@@ -12,32 +12,7 @@
             <a href="javascript:;" class=" @if($set==2) avtive @endif dians" >在建案例</a>
         </div>
     </div>
-    <script>
-    	$('.dians').on('click',function(){
-    		var id =$(this).html();
-
-    		if(id =='完整案例')
-    		{
-    			id = 1;
-    		}
-    		if( id=='在建案例')
-    		{
-    			id = 2;
-    		}
-
-    		$.ajax('/newpro/case/setajax',{
-    			type : 'GET',
-    			data : {id:id},
-    			success : function(data)
-    			{
-    			},
-    			error:function(data)
-    			{
-    				alert('设置失败！');
-    			}
-    		})
-    	})
-    </script>
+   
     <div class="contact">
         <div id="wan" class="Choice @if($set==1) avtive @endif">
             <div class="Choice_type">
@@ -161,68 +136,10 @@
                @endforeach
                 
             </div>
-            <div class="dian" count="{{ $countzai }}" num="{{ $zai->count() }}" @if($countzai > $zai->count()) style="display:block" @else style="none" @endif>
+            <div class="dian" count="{{ $countzai }}" num="{{ $zai->count() }}" @if($countzai > $zai->count()) style="display:block" @else style="display:none" @endif>
 				<button class="button1">点击加载更多</button>
 				<button class="button2" style="display:none">暂无更多内容</button>
 				</div>
-<script>
-
-		$('.dian > .button1').on('click',function(){
-			var count = $(this).parent('.dian').attr('count');
-			var num = $(this).parent('.dian').attr('num');
-			
-			var huxing = $('.zai1 > .type_right > .avtive').html();
-			var fengge = $('.zai2 > .type_right > .avtive').html();
-			var yusuan = $('.zai3 > .type_right > .avtive').html();
-			if(Number(count) <= Number(num) )
-			{	
-				$('.dian').css('display','none');
-				return false;
-			}
-			
-			if(!huxing || !fengge || !yusuan)
-			{
-				return false;
-			}
-			$.ajax('/newpro/case/getmoreajax',{
-				type : 'POST',
-				dataType: 'json',
-				data:{count:count,num:num,huxing:huxing,fengge:fengge,yusuan:yusuan,_token:$("meta[name='csrf-token']").attr('content')},
-				success: function(data)
-				{
-					if(data == 2)
-					{	
-						alert('没有更多数据');
-						$('.dian').css('display','none');
-						return false;
-					}
-
-					var str = "";
-					$.each(data,function(i,n){
-					var zai = $('#zai > .show > a').eq(0).clone(true);
-						zai.find('.show_name_title').html(n['title']);
-						zai.find('.con_span > span').eq(0).html(n['huxing']);
-						zai.find('.con_span > span').eq(1).html(n['fengge']);
-						zai.find('.con_span > span').eq(2).html(n['yusuan']);
-						zai.find('.show_auto > img').attr('src','/uploads/case/img/'+n['img'])
-						str +=zai[0].outerHTML;
-					})
-					$('#zai > .show').append(str);
-					$('.dian').attr('num',data[0]['num']);
-					if(data[0]['num'] >= count)
-					{
-						$('.dian > button').eq(0).css('display','none');
-						$('.dian > button').eq(1).css('display','block');
-					}
-				},
-				error:function(data)
-				{
-					alert('加载失败！');
-				}
-			})
-			
-		})
-</script>
 			
         </div>
     </div>
