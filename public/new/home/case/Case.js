@@ -8,6 +8,31 @@ $(".auto a").click(function(){
 });
 
 
+	$('.dians').on('click',function(){
+    		var id =$(this).html();
+
+    		if(id =='完整案例')
+    		{
+    			id = 1;
+    		}
+    		if( id=='在建案例')
+    		{
+    			id = 2;
+    		}
+
+    		$.ajax('/newpro/case/setajax',{
+    			type : 'GET',
+    			data : {id:id},
+    			success : function(data)
+    			{
+    			},
+    			error:function(data)
+    			{
+    				alert('设置失败！');
+    			}
+    		})
+    	})
+
 
 var color = $(".contact .avtive .Choice_type .Choice_type1 .type_right a");
 color.click(function(){
@@ -276,27 +301,4 @@ $('.dian > .button1').on('click',function(){
 			
 		})
 
-		$('.dians').on('click',function(){
-    		var id =$(this).html();
-
-    		if(id =='完整案例')
-    		{
-    			id = 1;
-    		}
-    		if( id=='在建案例')
-    		{
-    			id = 2;
-    		}
-
-    		$.ajax('/newpro/case/setajax',{
-    			type : 'GET',
-    			data : {id:id},
-    			success : function(data)
-    			{
-    			},
-    			error:function(data)
-    			{
-    				alert('设置失败！');
-    			}
-    		})
-    	})
+		
