@@ -14,7 +14,7 @@ class QuestionController extends Controller
 
     public function defuname(Request $request)
     {	
-    		return view('Newpro.Home.Question.zhiname',['title'=>'你的名字']);
+    		return view('Newpro.Home.Question.defuname',['title'=>'你的名字']);
     }
 
     public function zhijinindex(Request $request)
