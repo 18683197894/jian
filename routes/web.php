@@ -26,10 +26,13 @@ Route::get('/newpro/businsmart','Newpro\Home\SmartController@businsmart');
 //新闻列表
 Route::get('/newpro/newslist/{id}','Newpro\Home\NewsController@newslist');
 
-
-
-
-
+//案例列表
+Route::get('/newpro/case/index','Newpro\Home\CaseController@index');
+Route::get('/newpro/case/setajax','Newpro\Home\CaseController@setajax');
+Route::post('/newpro/case/getmoreajax','Newpro\Home\CaseController@getmoreajax');
+Route::post('/newpro/case/zaiajax','Newpro\Home\CaseController@zaiajax');
+Route::post('/newpro/case/pagemoreajax','Newpro\Home\CaseController@pagemoreajax');
+Route::post('/newpro/case/wanajax','Newpro\Home\CaseController@wanajax');
 
 //楼盘
 Route::get('/propertieszshx','Home\PropertiesController@zshx');

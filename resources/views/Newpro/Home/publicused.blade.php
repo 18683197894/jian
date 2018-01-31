@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!--让IE的文档模式永远都是最新的-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!--使用Webkit引擎及V8引擎进行排版及运算-->
     <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
     <!--清楚默认样式-->

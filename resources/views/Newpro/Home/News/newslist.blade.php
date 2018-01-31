@@ -58,8 +58,8 @@
             <div class="data">
                 @if(count($data) > 0)
                 @foreach($data as $k => $v)
-                <a href="javascript:;" class="loop">
-                    <img src="{{ asset('/new/home/newslist/img/Nws_loop.png') }}" alt=""/>
+                <a href="{{ url('/newpro/newslist/play') }}/{{ $v->id }}" class="loop">
+                    <img src="{{ asset('/uploads/news/titleimg/') }}/{{  $v->titleimg }}" alt=""/>
                     <div class="loop_right">
                         <div class="name">{{ $v->title }}</div>
                         <div class="content">

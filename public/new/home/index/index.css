@@ -274,6 +274,7 @@ body{
     font-size: 12px;
     line-height: 20px;
     height:80px;
+    overflow: hidden;
 }
 .News_show a .content .See{
     float: right;
