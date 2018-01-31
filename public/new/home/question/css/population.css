@@ -1,0 +1,71 @@
+
+
+.content{
+    width: 90%;
+    margin: auto;
+}
+.you{
+    width: 100%;
+    color: #0066FF;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.you span{
+    color: red !important;
+    margin: 2px 0 0 2px;
+}
+.click{
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border-bottom: none;
+}
+.click .loop{
+    display: block;
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+    display: block;
+}
+.click .loop input{
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin-top: 10px;
+    margin-left: 20px;
+    float: left;
+}
+.click .loop span {
+    display: block;
+    float: left;
+    margin-left: 10px;
+    font-size: 16px;
+    color: #010101;
+    line-height: 40px;
+}
+.Next{
+    width:100%;
+    display: block;
+    height: 50px;
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+}
+.Next a{
+    display: block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    width: 90%;
+    height: 50px;
+    margin: auto;
+    background-color: rgb(255, 153, 0);
+    color: #ffffff;
+    line-height: 50px;
+    border-radius: 10px;
+}
