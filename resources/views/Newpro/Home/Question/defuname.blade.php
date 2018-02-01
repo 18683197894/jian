@@ -32,5 +32,7 @@
 
 <script src="{{ asset('/new/home/question/js/jquery-1.8.3.js') }}"></script>
 <script src="{{ asset('/new/home/question/js/name.js') }}"></script>
+<script src="{{ asset('/new/home/question/js/public.js') }}"></script>
+
 </body>
 </html>
