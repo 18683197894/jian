@@ -79,7 +79,7 @@
     	$titles = \DB::table('webpage')->select('url','id','keyworlds','description','titles')->where('url','/'.$url)->get()->toArray();
         if($titles)
         {	
-        	return $titles[0];
+        	return array('titles'=>$titles[0]->titles,'keyworlds'=>$titles[0]->keyworlds,'description'=>$titles[0]->description);
         }else
         {
         	return array('titles'=>'建商联盟','keyworlds'=>'建商联盟','description'=>'建商联盟');

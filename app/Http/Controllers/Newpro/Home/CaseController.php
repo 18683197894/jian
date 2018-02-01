@@ -335,15 +335,26 @@ class CaseController extends Controller
     public function play($id)
     {
         $data = \DB::table('case')
-        ->select('id','title','huxing','fengge','yusuan','titles','keyworlds','description','or','img1','img2','img3','img4','time','offect1','offect2')
+        ->select('id','title','huxing','fengge','yusuan','titles','keyworlds','description','or','img1','img2','img3','img4','time','effect1','effect2')
         ->where('id',$id)
         ->first();
+
         if(!$data)
         {
             return back()->with(['info'=>'数据不存在']);
         }
+        $title['titles'] = $data->titles;
+        $title['keyworlds'] = $data->keyworlds;
+        $title['description'] = $data->description;
+        
+        if($data->or == 5)
+        {
+            $a = explode(',',$data->effect1);
+            $b = explode(',',$data->effect2);
+            $data->img =array_combine($a,$b);
 
-        dd($data);
+            return view('Newpro.Home.Case.play',['title'=>$title,'data'=>$data]);
+        }
     }
 }
     

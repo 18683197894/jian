@@ -1,0 +1,281 @@
+
+
+body{
+    background-color: #ffffff;
+}
+.Case_contact{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    padding-top: 130px;
+}
+.Case_contact .current{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #eee;
+    text-indent: 20px;
+}
+.Case_contact .box{
+    width: 100%;
+    overflow: hidden;
+}
+.Case_contact .box .title{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    display: block;
+    color: #010101;
+    line-height: 70px;
+}
+.Case_contact .box .brief{
+    width: 100%;
+    overflow: hidden;
+}
+.Case_contact .box .brief span{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    padding: 6px 10px 6px 10px;
+    color: #333;
+    border: 1px solid #E5E5E5;
+    display: block;
+    float: left;
+    margin-right: 12px;
+    cursor: pointer;
+}
+.Case_contact .box .brief span:hover{
+    background-color: #50AF63;
+    color:#fff;
+}
+.Carousel{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+}
+.area{
+    width: 850px;
+    height: 530px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+}
+.area .js{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.box01{
+    width: 100%;
+    height: 100%;
+}
+.box01 .banner1{
+    width: 100%;
+    height: 100%;
+}
+.box01 .banner1 img{
+    width: 100%;
+    height: 480px;
+}
+.box01 .banner1 .titlel{
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    color: #000;
+}
+#prev{
+    user-select: none;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    font-family: 宋体;
+    background: rgba(0, 0, 0, 0.5);
+}
+#next{
+    user-select: none;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    right: 0px;
+    top: 45%;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    font-family: 宋体;
+    background: rgba(0, 0, 0, 0.5);
+}
+.Carousel_right{
+    width: 300px;
+    overflow: hidden;
+    float: right;
+}
+.Carousel_right .information{
+    width: 100%;
+    height: 250px;
+    border-top: 2px solid #FC730D;
+    border-right: 1px solid #DFDFDF;
+    border-left: 1px solid #DFDFDF;
+    border-bottom: 1px solid #DFDFDF;
+}
+.Carousel_right .information .title{
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    display: block;
+    color: #000;
+    line-height: 40px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.information input{
+    width: 200px;
+    height: 35px;
+    text-indent: 10px;
+    border: 1px solid #dfdfdf;
+    font-size: 16px;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.information button{
+    width: 200px;
+    height: 45px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 5px;
+    line-height: 45px;
+    text-align: center;
+    background-color: #FA4B4B;
+    border: none;
+    color: #fff;
+    font-weight: normal;
+    margin-top: 5px;
+    letter-spacing: 1px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.Customer{
+    width: 300px;
+    height: 200px;
+    margin-top: 25px;
+    border: 1px solid #DFDFDF;
+}
+.Customer .kefu{
+    width: 75%;
+    height: 30px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    display: block;
+    color: #333;
+    margin: auto;
+    margin-top: 20px;
+}
+.Customer_zx{
+    width: 75%;
+    margin: auto;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.Customer_zx i{
+    width: 33px;
+    height: 33px;
+    float: left;
+    display: block;
+    background: url("../img/2.png")no-repeat 100% 100%;
+}
+.Customer_zx span{
+    display: block;
+    float: left;
+    line-height: 30px;
+    color: #010101;
+    margin-left: 10px;
+}
+.Customer_zx em{
+    width: 33px;
+    height: 33px;
+    float: left;
+    display: block;
+    background: url("../img/1.png")no-repeat 100% 100%;
+}
+.course{
+    width: 100%;
+    overflow: hidden;
+}
+.course .title{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #FAFAFA;
+    font-size: 22px;
+    color: #333;
+}
+.course .contact{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 30px;
+    padding-top: 0;
+}
+.course .contact .loop{
+    width: 100%;
+    margin-left: 35px;
+    position: relative;
+    padding: 20px 0px 20px 0px;
+    border-left: 1px solid #ccc;
+    height: 300px;
+}
+.course .contact .loop em{
+    width: 70px;
+    height: 70px;
+    background-color: #63C99D;
+    position: absolute;
+    border-radius: 9999px;
+    top: 15px;
+    left: -35px;
+}
+.course .contact .loop em span{
+    font-weight: normal;
+    font-style: normal;
+    font-size: 15px;
+    color: #fff;
+    width: 30px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 14px;
+}
+.loop_img{
+    width: 340px;
+    height: 240px;
+    overflow: hidden;
+    float: left;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+.loop_img{
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-width: 1200px){
+    .Case_contact{
+        width: 100%;
+    }
+    .area{
+        width: 100%;
+    }
+    .Carousel_right{
+        display: none;
+    }
+}

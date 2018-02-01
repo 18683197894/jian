@@ -3,8 +3,8 @@
 <head lang="en">
     <meta charset="UTF-8">
     <!--网站SEO关键词优化-->
-    <meta name="keywords" content="{{ $title->keyworlds or '建商联盟' }}">
-    <meta name="description" content="{{ $title->description or '建商联盟' }}">
+    <meta name="keywords" content="{{ $title['keyworlds'] or '建商联盟' }}">
+    <meta name="description" content="{{ $title['description'] or '建商联盟' }}">
     <!--禁止手机自动缩放-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!--让IE的文档模式永远都是最新的-->
@@ -21,7 +21,7 @@
     <script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
     
 
-    <title>{{ $title->titles or '建商联盟' }}</title>
+    <title>{{ $title['titles'] or '建商联盟' }}</title>
 @yield('css')
 </head>
 <body>
