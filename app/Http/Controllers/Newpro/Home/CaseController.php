@@ -334,8 +334,16 @@ class CaseController extends Controller
 
     public function play($id)
     {
-        // $data = \DB::table('case')
-        // ->select('id','title')
+        $data = \DB::table('case')
+        ->select('id','title','huxing','fengge','yusuan','titles','keyworlds','description','or','img1','img2','img3','img4','time','offect1','offect2')
+        ->where('id',$id)
+        ->first();
+        if(!$data)
+        {
+            return back()->with(['info'=>'数据不存在']);
+        }
+
+        dd($data);
     }
 }
     
