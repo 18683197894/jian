@@ -334,7 +334,8 @@ class CaseController extends Controller
 
     public function play($id)
     {
-        dd($id);
+        // $data = \DB::table('case')
+        // ->select('id','title')
     }
 }
     
