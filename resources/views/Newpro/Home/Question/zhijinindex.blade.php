@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
     <link rel="stylesheet" href="{{ asset('/new/home/question/css/public.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/new/home/question/css/index.css') }}"/>
-    <title>德福公元问卷调查</title>
+    <title>织金万都铭城问卷调查</title>
 </head>
 <body>
 <div class="home">
