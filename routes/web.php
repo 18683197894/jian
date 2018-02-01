@@ -33,7 +33,8 @@ Route::post('/newpro/case/getmoreajax','Newpro\Home\CaseController@getmoreajax')
 Route::post('/newpro/case/zaiajax','Newpro\Home\CaseController@zaiajax');
 Route::post('/newpro/case/pagemoreajax','Newpro\Home\CaseController@pagemoreajax');
 Route::post('/newpro/case/wanajax','Newpro\Home\CaseController@wanajax');
-Route::get('/newpro/zhijin/questionnaire/index','Newpro\Home\QuestionController@index');
+
+Route::get('/newpro/case/play/{id}','Newpro\Home\CaseController@play');
 
 Route::get('/newpro/defu/questionnaire/index','Newpro\Home\QuestionController@defuindex');
 Route::get('/newpro/defu/questionnaire/name','Newpro\Home\QuestionController@defuname');
