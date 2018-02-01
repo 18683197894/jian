@@ -3,7 +3,7 @@
     padding: 0;
 }
 body{
-    font-family: “Microsoft YaHei” ! important;position: relative;
+    font-family: “Microsoft YaHei” ! important;
 }
 .bg{
     width: 100%;
@@ -38,7 +38,7 @@ body{
     width:100%;
     display: block;
     height: 50px;
-    position: absolute!important;
+    position: fixed!important;
     bottom: 0;
     left: 0;
 }
