@@ -29,5 +29,5 @@ body{
     margin-bottom: 30px;
 }
 .content{
-    margin-bottom: 50px;
+    margin-bottom: 50px!important;
 }

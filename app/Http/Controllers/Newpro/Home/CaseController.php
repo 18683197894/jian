@@ -331,6 +331,11 @@ class CaseController extends Controller
             }
             return response()->json($data);
     }
+
+    public function play($id)
+    {
+        dd($id);
+    }
 }
     
 

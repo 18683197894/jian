@@ -47,7 +47,7 @@
             <div class="show">
             
             	@foreach($wan as $k => $v)
-                <a href="javascript:;">
+                <a href="{{ url('/newpro/case/play/') }}/{{ $v->id }}">
                     <div class="show_auto">
                         <img src="{{ asset('/uploads/case/img/') }}/{{ $v->img }}" alt=""/>
                         <div class="show_name">
@@ -98,7 +98,7 @@
             
             <div class="show">
             @foreach($zai as $k => $v)
-                <a href="javascript:;">
+                <a href="{{ url('/newpro/case/play/') }}/{{ $v->id }}">
                     <div class="show_auto">
                         <img src="{{ asset('/uploads/case/img/') }}/{{ $v->img }}" alt=""/>
                         <div class="show_name">
