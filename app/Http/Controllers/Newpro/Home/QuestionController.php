@@ -13,30 +13,37 @@ class QuestionController extends Controller
     }
 
     public function defuname(Request $request)
-    {	
-    		return view('Newpro.Home.Question.defuname',['title'=>'你的名字']);
+    {	    
+        if(isset($request->sid))
+        {
+            $data = \DB::table('question')->where('id',$request->sid)->where('or','!=',2)->first();
+           
+            return view('Newpro.Home.Question.defuname',['title'=>'你的名字','data'=>$data]);
+            
+        }else
+        {
+            return view('Newpro.Home.Question.defuname',['title'=>'你的名字']);
+        }
     }
-
-    public function zhijinindex(Request $request)
-    {	
-    			return view('Newpro.Home.Question.zhijinindex',['or'=>1]);
-    }
-
-    public function zhijinname(Request $request)
-    {	
-    		return view('Newpro.Home.Question.zhijinname',['title'=>'你的名字']);
-    }
+    
 
     public function defuphone(Request $request)
     {	
+        $sid = $request->input('sid',false);
+        if(!$sid)
+        {
+
+
     	$request->setTrustedProxies(array('10.32.0.1/16'));  
 		$ip = $request->getClientIp();
-    	$name = $request->name;
-
-    	if(!$ip || !$name)
+        $name = $request->name;
+    	$sex = $request->sex;
+        $id = $request->input('id',false);
+    	if(!$ip || !$name || !$sex)
     	{	
     		return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'数据无法提交']);
     	}
+        
     	$res = \DB::table('question')
     		->where('ors','德福')
     		->where('ip',$ip)
@@ -48,273 +55,306 @@ class QuestionController extends Controller
     		return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'你已参与过调查']);
     	}else
     	{	
-    		$ress = \DB::table('question')
-    		->where('ors','德福')
-    		->where('ip',$ip)
-    		->where('or','!=',1)
-    		->where('name',$name)
-    		->first();
+            if(!$id)
+            {
+                $ress = \DB::table('question')
+                ->where('ors','德福')
+                ->where('ip',$ip)
+                ->where('or','!=',1)
+                ->where('name',$name)
+                ->first();
+            
+                if(!$ress)
+                 {
+                    $id = \DB::table('question')
+                    ->insertGetId(['ip'=>$ip,'or'=>0,'ors'=>'德福','name'=>$name,'sex'=>$sex,'time'=>time()]);
+                    if($id)
+                    {
+                        return view('Newpro.Home.Question.defuphone',['id'=>$id]);
+
+                    }else
+                    {
+                        return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'无法继续完成调查']);
+                    }
+                }else
+                {
+                    return view('Newpro.Home.Question.defuphone',['data'=>$ress]);
+
+                 }
+        }else
+        {
+            \DB::table('question')->where('id',$id)->update(['name'=>$name,'sex'=>$sex]);
+            $data = \DB::table('question')->where('id',$id)->first();
+            return view('Newpro.Home.Question.defuphone',['data'=>$data]);
+
+        }
     		
-    		if(!$ress)
-    		{
-    			$id = \DB::table('question')
-    			->insertGetId(['ip'=>$ip,'or'=>0,'ors'=>'德福','name'=>$name]);
-    			if($id)
-    			{
-    				return view('Newpro.Home.Question.defuphone',['id'=>$id]);
-
-    			}else
-    			{
-    				return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'无法继续完成调查']);
-    			}
-    		}else
-    		{
-    				return view('Newpro.Home.Question.defuphone',['id'=>$ress->id]);
-
-    		}
-    		
-    	}
-
-    }
-    public function zhijinphone(Request $request)
-    {	
-    	$request->setTrustedProxies(array('10.32.0.1/16'));  
-		$ip = $request->getClientIp();
-    	$name = $request->name;
-
-    	if(!$ip || !$name)
-    	{	
-    		return redirect('/newpro/zhijin/questionnaire/index')->with(['info'=>'数据无法提交']);
-    	}
-    	$res = \DB::table('question')
-    		->where('ors','织金')
-    		->where('ip',$ip)
-    		->where('or','=',1)
-    		->where('name',$name)
-    		->first();
-    	if($res)
-    	{
-    		return redirect('/newpro/zhijin/questionnaire/index')->with(['info'=>'你已参与过调查']);
-    	}else
-    	{	
-    		$ress = \DB::table('question')
-    		->where('ors','织金')
-    		->where('ip',$ip)
-    		->where('or','!=',1)
-    		->where('name',$name)
-    		->first();
-    		
-    		if(!$ress)
-    		{
-    			$id = \DB::table('question')
-    			->insertGetId(['ip'=>$ip,'or'=>0,'ors'=>'织金','name'=>$name]);
-    			if($id)
-    			{
-    				return view('Newpro.Home.Question.zhijinphone',['id'=>$id]);
-
-    			}else
-    			{
-    				return redirect('/newpro/zhijin/questionnaire/index')->with(['info'=>'无法继续完成调查']);
-    			}
-    		}else
-    		{
-    				return view('Newpro.Home.Question.zhijinphone',['id'=>$ress->id]);
-
-    		}
     		
     	}
-
-    }
-
-    public function defufanghao(Request $request)
+    }else
     {
-    	$id = $request->id;
-    	$phone = $request->phone;
-    	if(!$id || !$phone)
-    	{
-    		return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'数据无法提交']);
-    	}
-
-    	$res = \DB::table('question')
-    		->where('ors','德福')
-    		->where('id',$id)
-    		->where('or','!=',1)
-    		->first();
-    	if($res)
-    	{
-    		\DB::table('question')->where('id',$id)->update(['phone'=>$phone]);
-    		return view('Newpro.Home.Question.defufanghao',['id'=>$id]);
-    	}else
-    	{
-    		return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'无法继续完成调查']);
-    	}
+         $data = \DB::table('question')->where('id',$sid)->first();
+         return view('Newpro.Home.Question.defuphone',['data'=>$data]);
+    }
     }
 
-    public function zhijinfanghao(Request $request)
+    public function defuqccupation(Request $request)
+    {   
+        $sid = $request->input('sid',false);
+        if(!$sid)
+        {
+            $id = $request->id;
+            $phone = $request->phone;
+
+            if(!$id || !$phone )
+            {   
+                return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'数据无法提交']);
+            }
+            \DB::table('question')->where('id',$id)->update(['phone'=>$phone]);
+            $data = \DB::table('question')->where('id',$id)->first();
+            return view('Newpro.Home.Question.defuqccupation',['data'=>$data]);
+
+        }else
+
+        {
+            $data = \DB::table('question')->where('id',$sid)->first();
+            return view('Newpro.Home.Question.defuqccupation',['data'=>$data]);
+        }
+    }
+    public function defuresident(Request $request)
     {
-    	$id = $request->id;
-    	$phone = $request->phone;
-    	if(!$id || !$phone)
-    	{
-    		return redirect('/newpro/zhijin/questionnaire/index')->with(['info'=>'数据无法提交']);
-    	}
+        $sid = $request->input('sid',false);
+        if(!$sid)
+        {
+            $id = $request->id;
+            $qccupation = $request->qccupation;
 
-    	$res = \DB::table('question')
-    		->where('ors','织金')
-    		->where('id',$id)
-    		->where('or','!=',1)
-    		->first();
-    	if($res)
-    	{
-    		\DB::table('question')->where('id',$id)->update(['phone'=>$phone]);
-    		return view('Newpro.Home.Question.zhijinfanghao',['id'=>$id]);
-    	}else
-    	{
-    		return redirect('/newpro/zhijin/questionnaire/index')->with(['info'=>'无法继续完成调查']);
-    	}
+            if(!$id || !$qccupation )
+            {   
+                return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'数据无法提交']);
+            }
+            \DB::table('question')->where('id',$id)->update(['qccupation'=>$qccupation]);
+            $data = \DB::table('question')->where('id',$id)->first();
+            return view('Newpro.Home.Question.defuresident',['data'=>$data]);
+
+        }else
+        {   
+            $data = \DB::table('question')->where('id',$sid)->first();
+
+            return view('Newpro.Home.Question.defuresident',['data'=>$data]);
+        }
     }
 
-    public function defufengge(Request $request)
-    {	
-
-    	$id = $request->id;
-    	$chuangzhu = $request->click;
-    	if(!$id || !$chuangzhu)
-    	{
-    		return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'数据无法提交']);
-    	}
-    	$res = \DB::table('question')
-    		->where('ors','德福')
-    		->where('id',$id)
-    		->where('or','!=',1)
-    		->first();
-    	if($res)
-    	{
-    		\DB::table('question')->where('id',$id)->update(['chuangzhu'=>$chuangzhu]);
-    		return view('Newpro.Home.Question.defufengge',['id'=>$id]);
-    	}else
-    	{
-    		return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'无法继续完成调查']);
-    	}
-    }
-
-    public function zhijinfengge(Request $request)
-    {	
-
-    	$id = $request->id;
-    	$chuangzhu = $request->click;
-    	if(!$id || !$chuangzhu)
-    	{
-    		return redirect('/newpro/zhijin/questionnaire/index')->with(['info'=>'数据无法提交']);
-    	}
-    	$res = \DB::table('question')
-    		->where('ors','织金')
-    		->where('id',$id)
-    		->where('or','!=',1)
-    		->first();
-    	if($res)
-    	{
-    		\DB::table('question')->where('id',$id)->update(['chuangzhu'=>$chuangzhu]);
-    		return view('Newpro.Home.Question.zhijinfengge',['id'=>$id]);
-    	}else
-    	{
-    		return redirect('/newpro/zhijin/questionnaire/index')->with(['info'=>'无法继续完成调查']);
-    	}
-    }
-
-    public function defuchangzhu(Request $request)
-    {	
-
-    	$id = $request->id;
-    	$fanghao = $request->fanghao;
-    	if(!$id || !$fanghao)
-    	{
-    		return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'数据无法提交']);
-    	}
-    	$res = \DB::table('question')
-    		->where('ors','德福')
-    		->where('id',$id)
-    		->where('or','!=',1)
-    		->first();
-    	if($res)
-    	{
-    		\DB::table('question')->where('id',$id)->update(['fanghao'=>$fanghao]);
-    		return view('Newpro.Home.Question.defuchangzhu',['id'=>$id]);
-    	}else
-    	{
-    		return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'无法继续完成调查']);
-    	}
-    }
-
-    public function zhijinchangzhu(Request $request)
-    {	
-
-    	$id = $request->id;
-    	$fanghao = $request->fanghao;
-    	if(!$id || !$fanghao)
-    	{
-    		return redirect('/newpro/zhijin/questionnaire/index')->with(['info'=>'数据无法提交']);
-    	}
-    	$res = \DB::table('question')
-    		->where('ors','织金')
-    		->where('id',$id)
-    		->where('or','!=',1)
-    		->first();
-    	if($res)
-    	{
-    		\DB::table('question')->where('id',$id)->update(['fanghao'=>$fanghao]);
-    		return view('Newpro.Home.Question.zhijinchangzhu',['id'=>$id]);
-    	}else
-    	{
-    		return redirect('/newpro/zhijin/questionnaire/index')->with(['info'=>'无法继续完成调查']);
-    	}
-    }
-
-    function defuors(Request $request)
+    public function defuservice(Request $request)
     {
-    	$id = $request->id;
-    	$fengge = $request->fengge;
-    	if(!$id || !$fengge)
-    	{
-    		return response()->json(2);
-    	}
-    	$res = \DB::table('question')
-    		->where('ors','德福')
-    		->where('id',$id)
-    		->where('or','!=',1)
-    		->first();
-    	if($res)
-    	{
-    		\DB::table('question')->where('id',$id)->update(['fengge'=>$fengge,'or'=>1]);
-    		return response()->json(1);
-    	}else
-    	{
-    		return response()->json(2);
-    		
-    	}
+        $sid = $request->input('sid',false);
+        if(!$sid)
+        {
+            $id = $request->id;
+            $resident = $request->population;
+
+            if(!$id || !$resident )
+            {   
+                return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'数据无法提交']);
+            }
+            \DB::table('question')->where('id',$id)->update(['resident'=>$resident]);
+            $data = \DB::table('question')->where('id',$id)->first();
+            return view('Newpro.Home.Question.defuservice',['data'=>$data]);
+
+        }else
+        {   
+
+            $data = \DB::table('question')->where('id',$sid)->first();
+            return view('Newpro.Home.Question.defuservice',['data'=>$data]);
+        }
     }
 
-    function zhijinors(Request $request)
+    public function defucare(Request $request)
     {
-    	$id = $request->id;
-    	$fengge = $request->fengge;
-    	if(!$id || !$fengge)
-    	{
-    		return response()->json(2);
-    	}
-    	$res = \DB::table('question')
-    		->where('ors','织金')
-    		->where('id',$id)
-    		->where('or','!=',1)
-    		->first();
-    	if($res)
-    	{
-    		\DB::table('question')->where('id',$id)->update(['fengge'=>$fengge,'or'=>1]);
-    		return response()->json(1);
-    	}else
-    	{
-    		return response()->json(2);
-    		
-    	}
+        $sid = $request->input('sid',false);
+        if(!$sid)
+        {
+            $id = $request->id;
+            $service = $request->service;
+
+            if(!$id || !$service )
+            {   
+                return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'数据无法提交']);
+            }
+            \DB::table('question')->where('id',$id)->update(['service'=>$service]);
+            $data = \DB::table('question')->where('id',$id)->first();
+            if($data->care != null)
+            {
+                $data->care = explode(',',$data->care);
+
+            }
+            return view('Newpro.Home.Question.defucare',['data'=>$data]);
+
+        }else
+        {
+            $data = \DB::table('question')->where('id',$sid)->first();
+            if($data->care != null)
+            {
+                $data->care = explode(',',$data->care);
+
+            }
+            return view('Newpro.Home.Question.defucare',['data'=>$data]);
+        }
+    }
+    public function defustyle(Request $request)
+    {
+        $sid = $request->input('sid',false);
+        if(!$sid)
+        {
+            $id = $request->id;
+            $care1 = $request->care1;
+            $care2 = $request->care2;
+            $care3 = $request->care3;
+            $care4 = $request->care4;
+            $care5 = $request->care5;
+            $care6 = $request->care6;
+            $care7 = $request->care7;
+            $care = $care1.','.$care2.','.$care3.','.$care4.','.$care5.','.$care6.','.$care7;
+            if(!$id)
+            {   
+                return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'数据无法提交']);
+            }
+            
+            \DB::table('question')->where('id',$id)->update(['care'=>$care]);
+            $data = \DB::table('question')->where('id',$id)->first();
+            return view('Newpro.Home.Question.defustyle',['data'=>$data]);
+
+        }else
+        {
+            $data = \DB::table('question')->where('id',$sid)->first();
+            return view('Newpro.Home.Question.defustyle',['data'=>$data]);
+        }
+    }
+
+    public function defumoney(Request $request)
+    {
+        $sid = $request->input('sid',false);
+        if(!$sid)
+        {
+            $id = $request->id;
+            $style = $request->style;
+            if(!$id || !$style)
+            {   
+                return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'数据无法提交']);
+            }
+            
+            \DB::table('question')->where('id',$id)->update(['style'=>$style]);
+            $data = \DB::table('question')->where('id',$id)->first();
+            return view('Newpro.Home.Question.defumoney',['data'=>$data]);
+
+        }else
+        {
+            $data = \DB::table('question')->where('id',$sid)->first();
+            return view('Newpro.Home.Question.defumoney',['data'=>$data]);
+        }
+    }
+
+    public function defuintelligence(Request $request)
+    {
+        $sid = $request->input('sid',false);
+        if(!$sid)
+        {
+            $id = $request->id;
+            $money = $request->money;
+            if(!$id || !$money)
+            {   
+                return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'数据无法提交']);
+            }
+            
+            \DB::table('question')->where('id',$id)->update(['money'=>$money]);
+            $data = \DB::table('question')->where('id',$id)->first();
+            return view('Newpro.Home.Question.defuintelligence',['data'=>$data]);
+
+        }else
+        {
+            $data = \DB::table('question')->where('id',$sid)->first();
+            return view('Newpro.Home.Question.defuintelligence',['data'=>$data]);
+        }
+    }
+
+    function defudoor(Request $request)
+    {
+        $sid = $request->input('sid',false);
+        if(!$sid)
+        {
+            $id = $request->id;
+            $intelligence = $request->intelligence;
+            if(!$id || !$intelligence)
+            {   
+                return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'数据无法提交']);
+            }
+            
+            \DB::table('question')->where('id',$id)->update(['intelligence'=>$intelligence]);
+            $data = \DB::table('question')->where('id',$id)->first();
+            return view('Newpro.Home.Question.defudoor',['data'=>$data]);
+
+        }else
+        {
+            $data = \DB::table('question')->where('id',$sid)->first();
+            return view('Newpro.Home.Question.defudoor',['data'=>$data]);
+        }
+    }
+
+    public function defufeel(Request $request)
+    {
+        $sid = $request->input('sid',false);
+        if(!$sid)
+        {
+            $id = $request->id;
+            $door = $request->door;
+            if(!$id || !$door)
+            {   
+                return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'数据无法提交']);
+            }
+            
+            \DB::table('question')->where('id',$id)->update(['door'=>$door]);
+            $data = \DB::table('question')->where('id',$id)->first();
+            if($data->feel != null)
+            {
+                $data->feel = explode(',',$data->feel);
+
+            }
+            return view('Newpro.Home.Question.defufeel',['data'=>$data]);
+
+        }else
+        {
+            $data = \DB::table('question')->where('id',$sid)->first();
+            if($data->feel != null)
+            {
+                $data->feel = explode(',',$data->feel);
+
+            }
+            
+            return view('Newpro.Home.Question.defufeel',['data'=>$data]);
+        }
+    }
+
+    public function defuors(Request $request)
+    {
+       
+        
+            $id = $request->id;
+            $feel1 = $request->feel1;
+            $feel2 = $request->feel2;
+            $feel3 = $request->feel3;
+            $feel4 = $request->feel4;
+            $feel5 = $request->feel5;
+            
+            $feel = $feel1.','.$feel2.','.$feel3.','.$feel4.','.$feel5;
+            if(!$id)
+            {   
+                return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'数据无法提交']);
+            }
+            
+            \DB::table('question')->where('id',$id)->update(['feel'=>$feel,'or'=>1]);
+            $data = \DB::table('question')->where('id',$id)->first();
+            return view('Newpro.Home.Question.defuors',['data'=>$data]);
+
+       
     }
 }

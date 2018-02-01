@@ -4,15 +4,13 @@
 }
 body{
     font-family: “Microsoft YaHei” ! important;
+    position: relative;
 }
 .bg{
     width: 100%;
     overflow: hidden;
     margin-bottom: 10px;
     height: 100px;
-}
-.bg.active{
-    display: none;
 }
 .title{
     width: 100%;
@@ -29,19 +27,15 @@ body{
     margin: auto;
     line-height: 50px;
     border-bottom: 1px dotted #ccc;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .content{
     margin-bottom: 80px!important;
+    flex:1;-ms-flex:1;-webkit-flex:1
 }
-/*.Next{
-    width:100%;
-    display: block;
-    height: 50px;
-    position: fixed!important;
-    bottom: 0;
-    left: 0;
-}*/
+.bg.active{
+    display: none;
+}
 .Next{
     position: relative!important;
     display: block!important;
@@ -54,8 +48,22 @@ body{
     display:-webkit-flex;
     flex-direction: column;
 }
-:
-.content{
-    margin-bottom: 80px!important;
-    flex:1;-ms-flex:1;-webkit-flex:1
+.Next a{
+    display: block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    width:49%;
+    height: 50px;
+    margin: auto;
+    background-color: rgb(255, 153, 0);
+    color: #ffffff;
+    line-height: 50px;
+    border-radius: 10px;
+    float: left;
+}
+.Next .Next_a{
+    float: right;
 }

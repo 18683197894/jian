@@ -15,7 +15,7 @@
 @if(!session('info'))
 <a href="{{ url('/newpro/defu/questionnaire/name') }}" class="footer">开始填写</a>
 @else
-<a href="javascript:;" class="footer">无法完成调查</a>
+<a href="javascript:;" class="footer">{{ session('info') }}</a>
 @endif
 </body>
 </html>

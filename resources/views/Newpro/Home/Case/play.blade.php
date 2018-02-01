@@ -76,31 +76,39 @@
                         <span>准备开工</span>
                     </em>
                     <div class="loop_img">
-                        <img src="img/150995022227089.png" alt=""/>
+                    	@foreach($data->img1 as $k => $v)
+                        <img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt=""/>
+                        @endforeach
                     </div>
                 </div>
                 <div class="loop">
                     <em>
-                        <span>准备开工</span>
+                        <span>水电阶段</span>
                     </em>
                     <div class="loop_img">
-                        <img src="img/150995022227089.png" alt=""/>
+                        @foreach($data->img2 as $k => $v)
+                        <img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt=""/>
+                        @endforeach
                     </div>
                 </div>
                 <div class="loop">
                     <em>
-                        <span>准备开工</span>
+                        <span>泥木阶段</span>
                     </em>
                     <div class="loop_img">
-                        <img src="img/150995022227089.png" alt=""/>
+                        @foreach($data->img3 as $k => $v)
+                        <img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt=""/>
+                        @endforeach
                     </div>
                 </div>
                 <div class="loop">
                     <em>
-                        <span>准备开工</span>
+                        <span>油漆阶段</span>
                     </em>
                     <div class="loop_img">
-                        <img src="img/150995022227089.png" alt=""/>
+                       @foreach($data->img4 as $k => $v)
+                        <img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt=""/>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -110,5 +118,5 @@
 @endsection('content')
 
 @section('js')
-
+<script src="{{ asset('/new/home/case/play.js') }}"></script>
 @endsection('js')

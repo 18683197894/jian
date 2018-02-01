@@ -1,5 +1,4 @@
 
-
 .content{
     width: 90%;
     margin: auto;
@@ -15,36 +14,17 @@
     color: red !important;
     margin: 2px 0 0 2px;
 }
-.click{
-    width: 100%;
-    overflow: hidden;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    border-bottom: none;
-}
-.click .loop{
-    display: block;
-    width: 100%;
-    height: 40px;
-    border-bottom: 1px solid #ccc;
-    overflow: hidden;
-    display: block;
-}
-.click .loop input{
-    width: 20px;
-    height: 20px;
-    display: block;
-    margin-top: 10px;
-    margin-left: 20px;
-    float: left;
-}
-.click .loop span {
-    display: block;
-    float: left;
-    margin-left: 10px;
+.phone{
+    width:100%;
+    border: 1px solid #d5d5d5;
+    margin: 5px 0;
+    background-color: #fff;
+    padding: 0;
+    border-radius: 3px;
+    height: 35px;
+    outline: none;
+    text-indent: 30px;
     font-size: 16px;
-    color: #010101;
-    line-height: 40px;
 }
 .Next{
     width:100%;
@@ -54,6 +34,17 @@
     bottom: 10px;
     left: 0;
 }
+
+.Ok{
+    width: 100%;
+    height: 30px;
+    color:red ;
+    font-size: 16px;
+    display: none;
+}
+.Ok.active{
+    display: block;
+}
 .Next a{
     display: block;
     outline: none;
@@ -61,11 +52,15 @@
     text-align: center;
     text-decoration: none;
     box-sizing: border-box;
-    width: 90%;
+    width:49%;
     height: 50px;
     margin: auto;
     background-color: rgb(255, 153, 0);
     color: #ffffff;
     line-height: 50px;
     border-radius: 10px;
+    float: left;
+}
+.Next .Next_a{
+    float: right;
 }

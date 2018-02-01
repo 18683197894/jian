@@ -1,22 +1,5 @@
 
 
-.title{
-    width: 100%;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    color: #010101;
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-.brief{
-    width: 90%;
-    margin: auto;
-    line-height: 50px;
-    border-bottom: 1px dotted #ccc;
-    margin-bottom: 30px;
-}
 .content{
     width: 90%;
     margin: auto;
@@ -44,14 +27,14 @@
     text-indent: 30px;
     font-size: 16px;
 }
-.Next{
-    width:100%;
-    display: block;
-    height: 50px;
-    position: fixed;
-    bottom: 10px;
-    left: 0;
-}
+/*.Next{*/
+    /*width:100%;*/
+    /*display: block;*/
+    /*height: 50px;*/
+    /*position: absolute!important;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
+/*}*/
 .Next a{
     display: block;
     outline: none;
@@ -59,13 +42,17 @@
     text-align: center;
     text-decoration: none;
     box-sizing: border-box;
-    width: 90%;
+    width:49%;
     height: 50px;
     margin: auto;
     background-color: rgb(255, 153, 0);
     color: #ffffff;
     line-height: 50px;
     border-radius: 10px;
+    float: left;
+}
+.Next .Next_a{
+    float: right;
 }
 .tishi{
     width: 100%;
@@ -85,5 +72,45 @@
     display: none;
 }
 .hanzi.active{
+    display: block;
+}
+.Sex{
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+}
+.left{
+    width: 50%;
+    height: 100%;
+    line-height: 30px;
+    float: left;
+    font-size: 16px;
+    color: #010101;
+}
+.left input{
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    margin-right: 5px;
+    display: block;
+    float: left;
+    margin-left: 20%;
+}
+.left span{
+    font-size: 16px;
+    color: #010101;
+    line-height: 30px;
+    display: block;
+    float: left;
+}
+.xuanz{
+    width: 100%;
+    height: 30px;
+    color:red ;
+    font-size: 16px;
+    display: none;
+    line-height: 30px;
+}
+.xuanz.active{
     display: block;
 }

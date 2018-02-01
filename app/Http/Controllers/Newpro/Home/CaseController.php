@@ -337,6 +337,7 @@ class CaseController extends Controller
         $data = \DB::table('case')
         ->select('id','title','huxing','fengge','yusuan','titles','keyworlds','description','or','img1','img2','img3','img4','time','effect1','effect2')
         ->where('id',$id)
+        ->where('or',5)
         ->first();
 
         if(!$data)
@@ -352,7 +353,10 @@ class CaseController extends Controller
             $a = explode(',',$data->effect1);
             $b = explode(',',$data->effect2);
             $data->img =array_combine($a,$b);
-
+            $data->img1 = explode(',',$data->img1);
+            $data->img2 = explode(',',$data->img2);
+            $data->img3 = explode(',',$data->img3);
+            $data->img4 = explode(',',$data->img4);
             return view('Newpro.Home.Case.play',['title'=>$title,'data'=>$data]);
         }
     }
