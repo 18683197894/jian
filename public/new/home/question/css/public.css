@@ -32,5 +32,13 @@ body{
     margin-bottom: 30px;
 }
 .content{
-    margin-bottom: 50px!important;
+    margin-bottom: 80px!important;
+}
+.Next{
+    width:100%;
+    display: block;
+    height: 50px;
+    position: fixed;
+    bottom: 0!important;
+    left: 0;
 }
