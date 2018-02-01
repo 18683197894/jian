@@ -26,8 +26,8 @@
                     <div class="box01">
 						@foreach($data->img as $k => $v)
                         <div class="banner1">
-                            <img onClick="location.href='#'"  src="img/information_banner.png">
-                            <div class="titlel">客厅</div>
+                            <img onClick="location.href='#'"  src="{{ url('/uploads/case/img') }}/{{$v}}">
+                            <div class="titlel">{{ $k }}</div>
                         </div>
                         @endforeach
                     </div>
