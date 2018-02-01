@@ -68,9 +68,10 @@ class QuestionController extends Controller
                  {
                     $id = \DB::table('question')
                     ->insertGetId(['ip'=>$ip,'or'=>0,'ors'=>'德福','name'=>$name,'sex'=>$sex,'time'=>time()]);
+                    $data = \DB::table('question')->where('id',$id)->first();
                     if($id)
                     {
-                        return view('Newpro.Home.Question.defuphone',['id'=>$id]);
+                        return view('Newpro.Home.Question.defuphone',['data'=>$data]);
 
                     }else
                     {
