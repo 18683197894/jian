@@ -34,19 +34,19 @@ $(".auto a").click(function(){
     	})
 
 
-var color = $(".contact .avtive .Choice_type .Choice_type1 .type_right a");
+var color = $(".contact #wan .Choice_type .Choice_type1 .type_right a");
 color.click(function(){
     color.removeClass("avtive").eq($(this).index()).addClass("avtive");
 	wanajax($(this));
 
 });
-var color1 = $(".contact .avtive .Choice_type .Choice_type2 .type_right a");
+var color1 = $(".contact #wan .Choice_type .Choice_type2 .type_right a");
 color1.click(function(){
     color1.removeClass("avtive").eq($(this).index()).addClass("avtive");
 	wanajax($(this));
 
 });
-var color2 = $(".contact .avtive .Choice_type .Choice_type3 .type_right a");
+var color2 = $(".contact #wan .Choice_type .Choice_type3 .type_right a");
 color2.click(function(){
     color2.removeClass("avtive").eq($(this).index()).addClass("avtive");
 	wanajax($(this));
