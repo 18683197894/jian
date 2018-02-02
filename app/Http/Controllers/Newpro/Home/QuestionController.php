@@ -510,7 +510,7 @@ class QuestionController extends Controller
     }else
     {
          $data = \DB::table('question')->where('id',$sid)->first();
-         return view('Newpro.Home.Question.defuphone',['data'=>$data]);
+         return view('Newpro.Home.Question.zhijinphone',['data'=>$data]);
     }
     }
 
@@ -791,7 +791,7 @@ class QuestionController extends Controller
             $url = isset($arr[$data->door])?$arr[$data->door]:false;
             if($url == false)
             {
-                return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'数据无法提交']);
+                return redirect('/newpro/zhijin/questionnaire/index')->with(['info'=>'数据无法提交']);
             }
             $datas = [];
             foreach($url as $k => $v)
