@@ -19,25 +19,25 @@
             <div class="you">10.您购买的户型：<span>*</span></div>
             <div class="click">
                 <label class="loop">
-                    <input type="radio" @if($data->door == 'A1' ) checked="checked" @endif value="A1" name="door"/> <span>A1</span>
+                    <input type="radio" @if($data->door == 'A1户型' ) checked="checked" @endif value="A1户型" name="door"/> <span>A1户型</span>
                 </label>
                 <label class="loop">
-                    <input type="radio" @if($data->door == 'A2' ) checked="checked" @endif value="A2" name="door"/> <span>A2</span>
+                    <input type="radio" @if($data->door == 'A2户型' ) checked="checked" @endif value="A2户型" name="door"/> <span>A2户型</span>
                 </label>
                 <label class="loop">
-                    <input type="radio" @if($data->door == 'B1' ) checked="checked" @endif value="B1" name="door"/> <span>B1</span>
+                    <input type="radio" @if($data->door == 'B1户型' ) checked="checked" @endif value="B1户型" name="door"/> <span>B1户型</span>
                 </label>
                 <label class="loop">
-                    <input type="radio" @if($data->door == 'B2' ) checked="checked" @endif value="B2" name="door"/> <span>B2</span>
+                    <input type="radio" @if($data->door == 'B2户型' ) checked="checked" @endif value="B2户型" name="door"/> <span>B2户型</span>
                 </label>
                 <label class="loop">
-                    <input type="radio" @if($data->door == 'C1' ) checked="checked" @endif value="C1" name="door"/> <span>C1</span>
+                    <input type="radio" @if($data->door == 'C1户型' ) checked="checked" @endif value="C1户型" name="door"/> <span>C1户型</span>
                 </label>
                 <label class="loop">
-                    <input type="radio" @if($data->door == 'C2' ) checked="checked" @endif value="C2" name="door"/> <span>C2</span>
+                    <input type="radio" @if($data->door == 'C2户型' ) checked="checked" @endif value="C2户型" name="door"/> <span>C2户型</span>
                 </label>
                 <label class="loop">
-                    <input type="radio" @if($data->door == 'C3' ) checked="checked" @endif value="C3" name="door"/> <span>C3</span>
+                    <input type="radio" @if($data->door == 'C3户型' ) checked="checked" @endif value="C3户型" name="door"/> <span>C3户型</span>
                 </label>
             </div>
             <div class="xuanz">请选择您购买的户型</div>
