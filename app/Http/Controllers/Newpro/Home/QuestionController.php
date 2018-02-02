@@ -401,6 +401,10 @@ class QuestionController extends Controller
             {
                 return redirect('/newpro/defu/questionnaire/index')->with(['info'=>'数据无法提交']);
             }
+            if($data->style == '其他')
+            {
+                $data->style = '现代风格';
+            }
             $datas = [];
             foreach($url as $k => $v)
             {
@@ -794,6 +798,10 @@ class QuestionController extends Controller
                 return redirect('/newpro/zhijin/questionnaire/index')->with(['info'=>'数据无法提交']);
             }
             $datas = [];
+            if($data->style == '其他')
+            {
+                $data->style = '现代风格';
+            }
             foreach($url as $k => $v)
             {
                 if($data->style == $k)
