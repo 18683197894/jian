@@ -50,7 +50,19 @@ Route::get('/newpro/defu/questionnaire/door','Newpro\Home\QuestionController@def
 Route::get('/newpro/defu/questionnaire/feel','Newpro\Home\QuestionController@defufeel');
 Route::get('/newpro/defu/questionnaire/ors','Newpro\Home\QuestionController@defuors');
 
-
+Route::get('/newpro/defu/questionnaire/index','Newpro\Home\QuestionController@defuindex');
+Route::get('/newpro/defu/questionnaire/name','Newpro\Home\QuestionController@defuname');
+Route::get('/newpro/defu/questionnaire/phone','Newpro\Home\QuestionController@defuphone');
+Route::get('/newpro/defu/questionnaire/qccupation','Newpro\Home\QuestionController@defuqccupation');
+Route::get('/newpro/defu/questionnaire/resident','Newpro\Home\QuestionController@defuresident');
+Route::get('/newpro/defu/questionnaire/service','Newpro\Home\QuestionController@defuservice');
+Route::get('/newpro/defu/questionnaire/care','Newpro\Home\QuestionController@defucare');
+Route::get('/newpro/defu/questionnaire/style','Newpro\Home\QuestionController@defustyle');
+Route::get('/newpro/defu/questionnaire/money','Newpro\Home\QuestionController@defumoney');
+Route::get('/newpro/defu/questionnaire/intelligence','Newpro\Home\QuestionController@defuintelligence');
+Route::get('/newpro/defu/questionnaire/door','Newpro\Home\QuestionController@defudoor');
+Route::get('/newpro/defu/questionnaire/feel','Newpro\Home\QuestionController@defufeel');
+Route::get('/newpro/defu/questionnaire/ors','Newpro\Home\QuestionController@defuors');
 
 //楼盘
 Route::get('/propertieszshx','Home\PropertiesController@zshx');

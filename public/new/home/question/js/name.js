@@ -22,3 +22,31 @@ $(".Next_a").click(function(){
         $(".tishi").addClass("active")
     }
 });
+$(document).keydown(function(event) {
+    if (event.keyCode == 13) {
+        var reg= /^[\u4e00-\u9fa5\s]+$/;
+        if(!($('.name').val()=='')){
+            if(reg.test($("input[type=text]").val())){
+                var yanz=$('input:radio[name="sex"]:checked').val();
+                if(yanz==null){
+                    $(".xuanz").addClass("active")
+                    return false;
+                }else{
+                    
+                    $('form').submit();//验证成功跳转
+                }
+            }else{
+                    
+
+                $(".hanzi").addClass("active")
+                 return false;
+            }
+        }else{
+                   
+
+            $(".tishi").addClass("active")
+             return false;
+        }
+    };
+  
+});
