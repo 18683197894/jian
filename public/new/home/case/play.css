@@ -16,11 +16,11 @@ body{
     border: 1px solid #eee;
     text-indent: 20px;
 }
-.Case_contact .box{
+.Case_contact .box1{
     width: 100%;
     overflow: hidden;
 }
-.Case_contact .box .title{
+.Case_contact .box1 .title{
     font-style: normal;
     font-weight: normal;
     font-size: 23px;
@@ -28,11 +28,11 @@ body{
     color: #010101;
     line-height: 70px;
 }
-.Case_contact .box .brief{
+.Case_contact .box1 .brief{
     width: 100%;
     overflow: hidden;
 }
-.Case_contact .box .brief span{
+.Case_contact .box1 .brief span{
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -44,7 +44,7 @@ body{
     margin-right: 12px;
     cursor: pointer;
 }
-.Case_contact .box .brief span:hover{
+.Case_contact .box1 .brief span:hover{
     background-color: #50AF63;
     color:#fff;
 }
@@ -97,7 +97,7 @@ body{
     text-align: center;
     cursor: pointer;
     display: block;
-    font-family: 宋体;
+    font-family: ËÎÌå;
     background: rgba(0, 0, 0, 0.5);
 }
 #next{
@@ -113,7 +113,7 @@ body{
     text-align: center;
     cursor: pointer;
     display: block;
-    font-family: 宋体;
+    font-family: ËÎÌå;
     background: rgba(0, 0, 0, 0.5);
 }
 .Carousel_right{
@@ -265,17 +265,110 @@ body{
     margin-top: 20px;
 }
 .loop_img{
+    width: 400px;
+    height: 100%;
+}
+.win {
+    width: 850px;
+    height: 530px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+}
+
+.box {
+    width: 100%;
+    height: 480px;
+    position: relative;
+}
+
+.box div {
+    width: 100%;
+    height: 480px;
+    position: absolute;
+    left: -100%;
+    font-size: 70px;
+    text-align: center;
+    line-height: 300px;
+    top: 0;
+    color: #fff;
+}
+
+.box div img {
     width: 100%;
     height: 100%;
+}
+
+.rightB {
+    -moz-user-select: none;
+    /*»ðºü*/
+    -webkit-user-select: none;
+    /*webkitä¯ÀÀÆ÷*/
+    -ms-user-select: none;
+    /*IE10*/
+    -khtml-user-select: none;
+    /*ÔçÆÚä¯ÀÀÆ÷*/
+    user-select: none;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    right: 0;
+    top: 45%;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    font-family: "ËÎÌå";
+}
+
+.leftB {
+    -moz-user-select: none;
+    /*»ðºü*/
+    -webkit-user-select: none;
+    /*webkitä¯ÀÀÆ÷*/
+    -ms-user-select: none;
+    /*IE10*/
+    -khtml-user-select: none;
+    /*ÔçÆÚä¯ÀÀÆ÷*/
+    user-select: none;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    left: 0;
+    top: 45%;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    font-family: "ËÎÌå";
+}
+.con1_leftul li{
+    width: 100%;
+    text-align: center;
+    color: #010101;
+    font-size: 18px;
+    line-height: 50px;
 }
 @media screen and (max-width: 1200px){
     .Case_contact{
         width: 100%;
     }
-    .area{
+    .box{
         width: 100%;
     }
     .Carousel_right{
         display: none;
+    }
+}
+@media screen and (max-width: 500px){
+    .loop_img{
+        width: 100%;
+        height: 100%;
     }
 }

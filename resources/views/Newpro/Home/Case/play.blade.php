@@ -7,44 +7,28 @@
 
 @section('content')
 <div class="Case_contact">
-    <div class="current">当前位置：<a href="{{ url('/') }}">首页</a> > <a href="{{ url('/newpro/case/index') }}">完整案例</a> > <a href="#">案例详情</a></div>
-    <div class="box">
-        <div class="title">{{ $data->title }}</div>
+    <div class="current">当前位置：<a href="#">首页</a> > <a href="#">完整案例</a> > <a href="#">案例详情</a></div>
+    <div class="box1">
+        <div class="title">贵州织金万都铭城港式</div>
         <div class="brief">
-            <span>{{ $data->huxing }}</span><span>{{ $data->fengge }}</span><span>{{ $data->yusuan }}</span>
+            <span>小户型</span><span>现代</span><span>8万-12万</span>
         </div>
         <div class="Carousel">
             <!--轮播-->
-            <div class="area">
-
-                <a id="prev" class="prevBtn qq" href="javascript:void(0)"><</a>
-
-                <a id="next" class="nextBtn qq" href="javascript:void(0)">></a>
-
-                <div id="js" class="js">
-
-                    <div class="box01">
-						@foreach($data->img as $k => $v)
-                        <div class="banner1">
-                            <img onClick="location.href='#'"  src="{{ url('/uploads/case/img') }}/{{$v}}">
-                            <div class="titlel">{{ $k }}</div>
-                        </div>
-                        @endforeach
-                    </div>
-                    <div class="bg"></div>
-                    <div id="jsNav" class="jsNav">
-
-                        <a class="trigger imgSelected" href="javascript:void(0)"></a>
-
-                        <a class="trigger" href="javascript:void(0)"></a>
-
-                        <a class="trigger" href="javascript:void(0)"></a>
-
-                        <a class="trigger" href="javascript:void(0)"></a>
-
-                    </div>
+            <div class="win" index="{{ count($data->effect2) }}">
+                <div class="box">
+                    @foreach($data->effect2 as $k => $v)
+                    <div @if($loop->first) style="left:0" class="num1" @endif  index="{{ $loop->index }}"><img  src="{{ asset('/uploads/case/img/') }}/{{ $v }}" style="display: inline;"></div>
+                    
+                    @endforeach
                 </div>
-
+                <div class="leftB">&lt;</div>
+                <div class="rightB">&gt;</div>
+                <ul class="con1_leftul">
+                @foreach($data->effect1 as $k => $v)
+                    <li id="index{{ $loop->index }}" @if($loop->first) style="display:block" @else style="display:none" @endif >{{ $v }}</li>
+                @endforeach
+                </ul>
             </div>
             <!--右边-->
             <div  class="Carousel_right">
@@ -76,39 +60,31 @@
                         <span>准备开工</span>
                     </em>
                     <div class="loop_img">
-                    	@foreach($data->img1 as $k => $v)
-                        <img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt=""/>
-                        @endforeach
+                        <img src="img/150995022227089.png" alt=""/>
                     </div>
                 </div>
                 <div class="loop">
                     <em>
-                        <span>水电阶段</span>
+                        <span>准备开工</span>
                     </em>
                     <div class="loop_img">
-                        @foreach($data->img2 as $k => $v)
-                        <img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt=""/>
-                        @endforeach
+                        <img src="img/150995022227089.png" alt=""/>
                     </div>
                 </div>
                 <div class="loop">
                     <em>
-                        <span>泥木阶段</span>
+                        <span>准备开工</span>
                     </em>
                     <div class="loop_img">
-                        @foreach($data->img3 as $k => $v)
-                        <img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt=""/>
-                        @endforeach
+                        <img src="img/150995022227089.png" alt=""/>
                     </div>
                 </div>
                 <div class="loop">
                     <em>
-                        <span>油漆阶段</span>
+                        <span>准备开工</span>
                     </em>
                     <div class="loop_img">
-                       @foreach($data->img4 as $k => $v)
-                        <img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt=""/>
-                        @endforeach
+                        <img src="img/150995022227089.png" alt=""/>
                     </div>
                 </div>
             </div>

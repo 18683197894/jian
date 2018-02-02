@@ -357,7 +357,13 @@ class CaseController extends Controller
             $data->img2 = explode(',',$data->img2);
             $data->img3 = explode(',',$data->img3);
             $data->img4 = explode(',',$data->img4);
+            $data->effect2 = explode(',',$data->effect2);
+            $data->effect1 = explode(',',$data->effect1);
+            
             return view('Newpro.Home.Case.play',['title'=>$title,'data'=>$data]);
+        }else
+        {
+            return back();
         }
     }
 }
