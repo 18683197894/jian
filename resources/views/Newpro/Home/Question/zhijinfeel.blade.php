@@ -10,7 +10,7 @@
 <body>
 <img src="{{ asset('/new/home/question/img/bg.jpg') }}" alt="" class="bg"/>
 
-<div class="title">德福样板房调查</div>
+<div class="title">织金样板房调查</div>
 <div class="brief">品质生活 从这里开始</div>
 <div class="container-box">
     <form action="{{ url('/newpro/zhijin/questionnaire/ors') }}" method="GET">
