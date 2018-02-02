@@ -15,7 +15,7 @@
     <form action="{{ url('/newpro/zhijin/questionnaire/intelligence') }}" method="GET">
             <input type="hidden" name="id" value="{{ $data->id }}">
         <div class="content">
-            <div class="you">8.为了获得喜欢的装修效果，您更愿意投入多少资金？：<span>*</span></div>
+            <div class="you">8.为了获得喜欢的装修效果，您更愿意投入多少资金？<span>*</span></div>
             <div class="click">
                 <label class="loop">
                     <input type="radio" @if($data->money == '10-15万' ) checked="checked" @endif  value="10-15万" name="money"/> <span>10-15万</span>

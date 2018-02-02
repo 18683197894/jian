@@ -34,8 +34,8 @@
             <div  class="Carousel_right">
                 <div class="information">
                     <div class="title">我家也要设计成这样</div>
-                    <input type="text" placeholder="请输入你的姓名"/>
-                    <input type="text" placeholder="请输入你的电话"/>
+                    <input type="text" name="name" placeholder="请输入你的姓名"/>
+                    <input type="text" name="phone" placeholder="请输入你的电话"/>
                     <button>立即提交</button>
                 </div>
                 <div class="Customer">
@@ -59,9 +59,11 @@
                     <em>
                         <span>准备开工</span>
                     </em>
+                    @foreach($data->img1 as $k => $v)
                     <div class="loop_img">
-                        <img src="img/150995022227089.png" alt=""/>
+                        <img src="{{ asset('/uploads/case/img/') }}/{{ $v }}" alt=""/>
                     </div>
+                    @endforeach
                 </div>
                 <div class="loop">
                     <em>

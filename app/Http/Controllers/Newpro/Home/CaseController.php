@@ -350,16 +350,14 @@ class CaseController extends Controller
         
         if($data->or == 5)
         {
-            $a = explode(',',$data->effect1);
-            $b = explode(',',$data->effect2);
-            $data->img =array_combine($a,$b);
+            
             $data->img1 = explode(',',$data->img1);
             $data->img2 = explode(',',$data->img2);
             $data->img3 = explode(',',$data->img3);
             $data->img4 = explode(',',$data->img4);
             $data->effect2 = explode(',',$data->effect2);
             $data->effect1 = explode(',',$data->effect1);
-            
+
             return view('Newpro.Home.Case.play',['title'=>$title,'data'=>$data]);
         }else
         {

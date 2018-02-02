@@ -18,7 +18,7 @@
             <div class="you">6.在您选择装修服务时，您最在意哪个方面？：<span>*</span></div>
             <div class="click">
                 <label class="loop">
-                    <input type="checkbox" @if($data->care != null && $data->care[0] == '价格') checked="checked" @endif value="价格" name="care1"/> <span>价格）</span>
+                    <input type="checkbox" @if($data->care != null && $data->care[0] == '价格') checked="checked" @endif value="价格" name="care1"/> <span>价格</span>
                 </label>
                 <label class="loop">
                     <input type="checkbox" @if($data->care != null && $data->care[1] == '设计水平') checked="checked" @endif value="设计水平" name="care2"/> <span>设计水平</span>
