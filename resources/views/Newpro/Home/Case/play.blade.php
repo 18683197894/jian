@@ -7,7 +7,7 @@
 
 @section('content')
 <div class="Case_contact">
-    <div class="current">当前位置：<a href="#">首页</a> > <a href="#">完整案例</a> > <a href="#">案例详情</a></div>
+    <div class="current">当前位置：<a href="{{ url('/') }}">首页</a> > <a href="{{ url('/newpro/case/playindex?a=1') }}">完整案例</a> > <a href="#">案例详情</a></div>
     <div class="box1">
         <div class="title">贵州织金万都铭城港式</div>
         <div class="brief">
@@ -31,26 +31,34 @@
                 </ul>
             </div>
             <!--右边-->
-            <div  class="Carousel_right">
-                <div class="information">
-                    <div class="title">我家也要设计成这样</div>
-                    <input type="text" name="name" placeholder="请输入你的姓名"/>
-                    <input type="text" name="phone" placeholder="请输入你的电话"/>
-                    <button>立即提交</button>
-                </div>
-                <div class="Customer">
-                    <div class="kefu">在线客服 :</div>
-                    <div class="Customer_zx">
-                        <i></i>
-                        <span>2022509729</span>
+            <div class="con1_right">
+                    <div class="con1_right_con1" index="{{ $data->id }}">
+                        <title>我家也要设计成这样</title>
+                        <label for="">
+                            <input type="text"  placeholder="你的姓名" >
+                            <span>请输入你的姓名</span>
+                        </label>
+                        <label for="">
+                            <input type="text"  placeholder="你的电话">
+                            <span>请输入你的电话</span>
+                        </label>
+                        <button>立即提交</button>
                     </div>
-                    <div class="kefu">咨询电话 :</div>
-                    <div class="Customer_zx">
-                        <em></em>
-                        <span>400-188-6585</span>
+                    <div class="con1_right_con2">
+                        <label for="" class="label1">
+
+                            <title>在线客服 :</title>
+                            <em></em>
+                            <span>2022509729</span>
+                        </label>
+                        <label for="" class="label2">
+
+                            <title>咨询电话 :</title>
+                            <em></em>
+                            <span>400-188-6585</span>
+                        </label>
                     </div>
                 </div>
-            </div>
         </div>
         <div class="course">
             <div class="title">施工流程</div>
@@ -59,36 +67,43 @@
                     <em>
                         <span>准备开工</span>
                     </em>
-                    @foreach($data->img1 as $k => $v)
                     <div class="loop_img">
-                        <img src="{{ asset('/uploads/case/img/') }}/{{ $v }}" alt=""/>
-                    </div>
-                    @endforeach
-                </div>
-                <div class="loop">
-                    <em>
-                        <span>准备开工</span>
-                    </em>
-                    <div class="loop_img">
-                        <img src="img/150995022227089.png" alt=""/>
+                        @foreach($data->img1 as $k => $v)
+                        <a target="_blank" href="{{ url('/uploads/case/img') }}/{{ $v }}"><img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt=""/></a>
+                        @endforeach
                     </div>
                 </div>
                 <div class="loop">
                     <em>
-                        <span>准备开工</span>
+                        <span>水电阶段</span>
                     </em>
                     <div class="loop_img">
-                        <img src="img/150995022227089.png" alt=""/>
+                        @foreach($data->img2 as $k => $v)
+                        <a target="_blank" href="{{ url('/uploads/case/img') }}/{{ $v }}"><img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt=""/></a>
+                        @endforeach
                     </div>
                 </div>
                 <div class="loop">
                     <em>
-                        <span>准备开工</span>
+                        <span>泥木阶段</span>
                     </em>
                     <div class="loop_img">
-                        <img src="img/150995022227089.png" alt=""/>
+                        @foreach($data->img3 as $k => $v)
+                        <a target="_blank" href="{{ url('/uploads/case/img') }}/{{ $v }}"><img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt=""/></a>
+                        @endforeach
                     </div>
                 </div>
+                <div class="loop">
+                    <em>
+                        <span>油漆阶段</span>
+                    </em>
+                    <div class="loop_img">
+                        @foreach($data->img4 as $k => $v)
+                        <a target="_blank" href="{{ url('/uploads/case/img') }}/{{ $v }}"><img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt=""/></a>
+                        @endforeach                        
+                    </div>
+                </div>
+                <div class="xian"></div>
             </div>
         </div>
     </div>

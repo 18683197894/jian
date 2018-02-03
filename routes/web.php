@@ -34,8 +34,13 @@ Route::post('/newpro/case/zaiajax','Newpro\Home\CaseController@zaiajax');
 Route::post('/newpro/case/pagemoreajax','Newpro\Home\CaseController@pagemoreajax');
 Route::post('/newpro/case/wanajax','Newpro\Home\CaseController@wanajax');
 
+//完整案例
 Route::get('/newpro/case/play/{id}','Newpro\Home\CaseController@play');
+Route::get('/newpro/case/playindex','Newpro\Home\CaseController@playindex');
 
+//在建案例
+Route::get('/newpro/case/zaiplay/{id}','Newpro\Home\CaseController@zaiplay');
+//德福调查问卷
 Route::get('/newpro/defu/questionnaire/index','Newpro\Home\QuestionController@defuindex');
 Route::get('/newpro/defu/questionnaire/name','Newpro\Home\QuestionController@defuname');
 Route::get('/newpro/defu/questionnaire/phone','Newpro\Home\QuestionController@defuphone');
@@ -50,6 +55,7 @@ Route::get('/newpro/defu/questionnaire/door','Newpro\Home\QuestionController@def
 Route::get('/newpro/defu/questionnaire/feel','Newpro\Home\QuestionController@defufeel');
 Route::get('/newpro/defu/questionnaire/ors','Newpro\Home\QuestionController@defuors');
 
+//织金调查问卷
 Route::get('/newpro/zhijin/questionnaire/index','Newpro\Home\QuestionController@zhijinindex');
 Route::get('/newpro/zhijin/questionnaire/name','Newpro\Home\QuestionController@zhijinname');
 Route::get('/newpro/zhijin/questionnaire/phone','Newpro\Home\QuestionController@zhijinphone');

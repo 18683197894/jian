@@ -116,12 +116,12 @@ body{
     font-family: ËÎÌå;
     background: rgba(0, 0, 0, 0.5);
 }
-.Carousel_right{
+.con1_right{
     width: 300px;
     overflow: hidden;
     float: right;
 }
-.Carousel_right .information{
+.con1_right .con1_right_con1{
     width: 100%;
     height: 250px;
     border-top: 2px solid #FC730D;
@@ -129,7 +129,7 @@ body{
     border-left: 1px solid #DFDFDF;
     border-bottom: 1px solid #DFDFDF;
 }
-.Carousel_right .information .title{
+.con1_right .con1_right_con1 title{
     font-weight: normal;
     font-style: normal;
     font-size: 20px;
@@ -140,7 +140,13 @@ body{
     width: 100%;
     margin-bottom: 20px;
 }
-.information input{
+.con1_right_con1 label {
+    width: 200px;
+    height: 60px;
+    margin: 0 auto;
+    display: block;
+}
+.con1_right_con1 input{
     width: 200px;
     height: 35px;
     text-indent: 10px;
@@ -148,9 +154,17 @@ body{
     font-size: 16px;
     display: block;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
-.information button{
+.con1_right_con1 label span {
+    font-weight: normal;
+    font-style: normal;
+    font-size: 14px;
+    padding-top: 1px;
+    display: none;
+    color: #FA4B4B;
+}
+.con1_right_con1 button{
     width: 200px;
     height: 45px;
     margin: 0 auto;
@@ -167,22 +181,35 @@ body{
     font-size: 16px;
     cursor: pointer;
 }
-.Customer{
+.con1_right_con2{
     width: 300px;
     height: 200px;
     margin-top: 25px;
     border: 1px solid #DFDFDF;
 }
-.Customer .kefu{
-    width: 75%;
-    height: 30px;
+.label1 {
+    width: 200px;
+    height: 80px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.con1_right_con2 label title {
     font-style: normal;
+    float: left;
     font-weight: normal;
     font-size: 19px;
     display: block;
+    width: 200px;
+    height: 30px;
     color: #333;
-    margin: auto;
-    margin-top: 20px;
+}
+.label2 {
+    width: 200px;
+    height: 80px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 25px;
 }
 .Customer_zx{
     width: 75%;
@@ -190,21 +217,25 @@ body{
     overflow: hidden;
     margin-bottom: 10px;
 }
-.Customer_zx i{
+.label1 em{
     width: 33px;
     height: 33px;
     float: left;
     display: block;
-    background: url("../img/2.png")no-repeat 100% 100%;
+    background: url(../img/2.png) no-repeat 100% 100%;
 }
-.Customer_zx span{
-    display: block;
+.con1_right_con2 label span {
+    font-style: normal;
     float: left;
-    line-height: 30px;
-    color: #010101;
-    margin-left: 10px;
+    font-weight: normal;
+    font-size: 23px;
+    display: block;
+    color: red;
+    padding-top: 3px;
+    padding-left: 8px;
 }
-.Customer_zx em{
+
+.label2 em{
     width: 33px;
     height: 33px;
     float: left;
@@ -228,14 +259,13 @@ body{
     overflow: hidden;
     margin-bottom: 30px;
     padding-top: 0;
+    position: relative;
 }
 .course .contact .loop{
     width: 100%;
-    margin-left: 35px;
     position: relative;
-    padding: 20px 0px 20px 0px;
-    border-left: 1px solid #ccc;
-    height: 300px;
+    padding: 20px 0px 0px 0px;
+    overflow: hidden;
 }
 .course .contact .loop em{
     width: 70px;
@@ -244,7 +274,8 @@ body{
     position: absolute;
     border-radius: 9999px;
     top: 15px;
-    left: -35px;
+    left: 0px;
+    z-index: 2;
 }
 .course .contact .loop em span{
     font-weight: normal;
@@ -258,15 +289,31 @@ body{
 }
 .loop_img{
     width: 340px;
-    height: 240px;
     overflow: hidden;
     float: left;
-    margin-left: 40px;
-    margin-top: 20px;
+    margin-left: 75px;
+    margin-top: 10px;
+}
+.loop_img a{
+    display: block;
+    float: left;
+    width: 370px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.loop_img img{
+   width: 100%;
 }
 .loop_img{
-    width: 400px;
+    width:100%;
+}
+.xian{
+    width: 1px;
     height: 100%;
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    background-color: #ccc;
 }
 .win {
     width: 850px;
@@ -359,16 +406,43 @@ body{
     .Case_contact{
         width: 100%;
     }
+    .win{
+        width: 100%;
+    }
     .box{
         width: 100%;
     }
-    .Carousel_right{
+    .con1_right{
         display: none;
+    }
+}
+@media screen and (max-width: 600px){
+    .loop_img{
+        width: 100%;
+        height: 100%;
+    }
+    .box div{
+        height: 330px;
+    }
+    .box{
+        height: 330px;
+    }
+    .win{
+        height: 380px;
     }
 }
 @media screen and (max-width: 500px){
     .loop_img{
         width: 100%;
         height: 100%;
+    }
+    .box div{
+        height: 298px;
+    }
+    .box{
+        height: 300px;
+    }
+    .win{
+        height: 360px;
     }
 }

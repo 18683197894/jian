@@ -74,6 +74,7 @@ font-family: “Microsoft YaHei;
     vertical-align: middle;
     text-align: center;
     cursor: pointer;
+    line-height: 25px;
 }
 .search_i .click img{
     width: 16px;

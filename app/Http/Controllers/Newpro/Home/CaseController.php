@@ -93,7 +93,7 @@ class CaseController extends Controller
     	$id = $request->id;
     	if($id==1 || $id ==2)
     	{
-    		\Cache::put($ip.'case',$id,30);
+    		\Cache::put($ip.'case',$id,50);
     	}
     	
     }
@@ -363,6 +363,46 @@ class CaseController extends Controller
         {
             return back();
         }
+    }
+
+    public function playindex(Request $request)
+    {   
+        $request->setTrustedProxies(array('10.32.0.1/16'));  
+        $ip = $request->getClientIp(); 
+        $a = $request->input('a',1);
+        if($a == 1)
+        {
+            \Cache::put($ip.'case',1,50);
+        }elseif($a == 2)
+        {
+            \Cache::put($ip.'case',2,50);
+        }
+        
+        return redirect('/newpro/case/index');
+
+    }
+
+    public function zaiplay(Request $request)
+    {
+        $id = $request->id;
+        $data = \DB::table('case')
+            ->select('id','title','huxing','fengge','yusuan','titles','keyworlds','description','or','img1','img2','img3','img4','time')
+            ->where('id',$id)
+            ->where('or','!=',$id)
+            ->first();
+        if(!$data)
+        {
+            return back()->with(['info'=>'数据不存在']);
+        }
+        $title['titles'] = $data->titles;
+        $title['keyworlds'] = $data->keyworlds;
+        $title['description'] = $data->description;
+        $data->img1 = $data->img1?explode(',',$data->img1):false;
+        $data->img2 = $data->img2?explode(',',$data->img2):false;
+        $data->img3 = $data->img3?explode(',',$data->img3):false;
+        $data->img4 = $data->img4?explode(',',$data->img4):false;
+
+        return view('Newpro.Home.Case.zaiplay',['titles'=>$title,'data'=>$data]);
     }
 }
     

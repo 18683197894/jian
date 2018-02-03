@@ -98,7 +98,7 @@
             
             <div class="show">
             @foreach($zai as $k => $v)
-                <a href="{{ url('/newpro/case/play/') }}/{{ $v->id }}">
+                <a href="{{ url('/newpro/case/zaiplay/') }}/{{ $v->id }}">
                     <div class="show_auto">
                         <img src="{{ asset('/uploads/case/img/') }}/{{ $v->img }}" alt=""/>
                         <div class="show_name">

@@ -93,7 +93,7 @@ color5.click(function(){
 						zai.find('.con_span > span').eq(1).html(n['fengge']);
 						zai.find('.con_span > span').eq(2).html(n['yusuan']);
 						zai.find('.show_auto > img').attr('src','/uploads/case/img/'+n['img'])
-						zai.attr('href','/newpro/case/play/'+n['id']);
+						zai.attr('href','/newpro/case/zaiplay/'+n['id']);
 						str +=zai[0].outerHTML;
 					})
 					$('#zai > .show > a').remove();
@@ -200,6 +200,7 @@ function wanajax(th)
 }
 
 $(document).on("click",'.pagination > li > a',function(){
+	
   	var huxing = $('.wan1 > .type_right > .avtive').html();
 	var fengge = $('.wan2 > .type_right > .avtive').html();
 	var yusuan = $('.wan3 > .type_right > .avtive').html();
@@ -288,7 +289,7 @@ $('.dian > .button1').on('click',function(){
 						zai.find('.con_span > span').eq(1).html(n['fengge']);
 						zai.find('.con_span > span').eq(2).html(n['yusuan']);
 						zai.find('.show_auto > img').attr('src','/uploads/case/img/'+n['img'])
-						zai.attr('href','/newpro/case/play/'+n['id']);
+						zai.attr('href','/newpro/case/zaiplay/'+n['id']);
 
 						str +=zai[0].outerHTML;
 					})
