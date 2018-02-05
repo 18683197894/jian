@@ -382,6 +382,10 @@ Route::post('admin/properties/hfnewsadds','Admin\PropertiesController@hfnewsadds
 Route::get('jslmadmin/payment/index','Admin\PayController@index');
 Route::get('jslmadmin/payment/index/shopping/{id}','Admin\PayController@shopping');
 Route::get('/jslmadmin/userhome/orders/{id}','Admin\PayController@userhome_orders');
+
+//调查问卷
+Route::get('admin/question/zhijin/index','Admin\QuestionController@zhijinindex');
+Route::get('admin/question/defu/index','Admin\QuestionController@defuindex');
 });
 
 //web支付微信

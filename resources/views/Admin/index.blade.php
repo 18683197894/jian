@@ -524,7 +524,7 @@ class="active"
         </li>
 
         <li class="
-@if($title == "网页关键字" || $title == "首页装修报价预约" || $title == "合作伙伴招募" || $title == "案例页装修设计预约")
+@if($title == "网页关键字" || $title == "首页导航栏目" )
 active
 @endif
         treeview">
@@ -583,24 +583,36 @@ class="active"
 @endif
             ><a href="{{ url('admin/properties/hfnews') }}"><i class="fa fa-circle-o"></i>织金新闻动态管理</a>
             </li>
-           <!--  <li
-@if($title == "首页装修报价预约")
-class="active"
-@endif
-            ><a href="{{ url('admin/indexationmake') }}"><i class="fa fa-circle-o"></i>首页装修报价预约</a></li>
-            <li
-@if($title == "合作伙伴招募")
-class="active"
-@endif
-            ><a href="{{ url('admin/franchisezm') }}"><i class="fa fa-circle-o"></i>合作伙伴招募</a></li>
-            <li
-@if($title == "合作伙伴招募")
-class="active"
-@endif
-            ><a href="{{ url('admin/caseplay') }}"><i class="fa fa-circle-o"></i>案例页装修设计预约</a></li> -->
           </ul>
         </li>
-        
+
+        <li class="
+@if($title == "织金调查问卷" || $title == "德福调查问卷")
+active
+@endif
+        treeview">
+          <a href="#">
+            <i class="fa fa-calendar"></i> <span>调查问卷</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li
+@if($title == "织金调查问卷")
+class="active"
+@endif
+            ><a href="{{ url('admin/question/zhijin/index') }}"><i class="fa fa-circle-o"></i>织金调查问卷</a>
+            </li>
+
+            <li
+@if($title == "德福调查问卷")
+class="active"
+@endif
+            ><a href="{{ url('admin/question/defu/index') }}"><i class="fa fa-circle-o"></i>德福调查问卷</a>
+            </li>
+          </ul>
+        </li> 
 
         <!-- <li>
           <a href="pages/calendar.html">
