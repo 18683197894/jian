@@ -348,8 +348,7 @@ class CaseController extends Controller
         $title['keyworlds'] = $data->keyworlds;
         $title['description'] = $data->description;
         
-        if($data->or == 5)
-        {
+        
             
             $data->img1 = explode(',',$data->img1);
             $data->img2 = explode(',',$data->img2);
@@ -359,10 +358,7 @@ class CaseController extends Controller
             $data->effect1 = explode(',',$data->effect1);
 
             return view('Newpro.Home.Case.play',['title'=>$title,'data'=>$data]);
-        }else
-        {
-            return back();
-        }
+       
     }
 
     public function playindex(Request $request)
@@ -401,8 +397,24 @@ class CaseController extends Controller
         $data->img2 = $data->img2?explode(',',$data->img2):false;
         $data->img3 = $data->img3?explode(',',$data->img3):false;
         $data->img4 = $data->img4?explode(',',$data->img4):false;
-
-        return view('Newpro.Home.Case.zaiplay',['titles'=>$title,'data'=>$data]);
+        if($data->or == 1)
+        {
+            $data->img = $data->img1[0];
+        }
+        if($data->or == 2)
+        {
+            $data->img = $data->img2[0];
+        }
+        if($data->or == 3)
+        {
+            $data->img = $data->img3[0];
+        }
+        if($data->or == 4)
+        {
+            $data->img = $data->img4[0];
+        }
+       
+        return view('Newpro.Home.Case.zaiplay',['title'=>$title,'data'=>$data]);
     }
 }
     

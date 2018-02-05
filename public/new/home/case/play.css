@@ -222,7 +222,7 @@ body{
     height: 33px;
     float: left;
     display: block;
-    background: url(../img/2.png) no-repeat 100% 100%;
+    background: url(/new/home/case/img/2.png) no-repeat 100% 100%;
 }
 .con1_right_con2 label span {
     font-style: normal;
@@ -231,7 +231,7 @@ body{
     font-size: 23px;
     display: block;
     color: red;
-    padding-top: 3px;
+    padding-top: 5px;
     padding-left: 8px;
 }
 
@@ -240,7 +240,7 @@ body{
     height: 33px;
     float: left;
     display: block;
-    background: url("../img/1.png")no-repeat 100% 100%;
+    background: url(/new/home/case/img/1.png)no-repeat 100% 100%;
 }
 .course{
     width: 100%;

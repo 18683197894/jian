@@ -1,0 +1,235 @@
+body{
+    background-color: #ffffff;
+}
+.building_contact{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    padding-top: 130px;
+}
+.building_contact .current{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #eee;
+    text-indent: 20px;
+}
+.building_contact .contact{
+    width: 100%;
+    overflow: hidden;
+}
+.building_contact .contact .case3con{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.case3con_img{
+    display: block;
+    width: 270px;
+    float: left;
+}
+.conright{
+    width: 900px;
+    float: right;
+}
+.conright title {
+    width: 900px;
+    height: 50px;
+    line-height: 50px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #000;
+    display: block;
+}
+.con_span {
+    width: 900px;
+    height: 25px;
+    /* line-height: 40px; */
+}
+.con_span a{
+    display: block;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    height: 30px;
+    padding: 0px 5px 0px 5px;
+    border: 1px solid #eec;
+    line-height: 28px;
+    color: #999;
+    float: left;
+    margin-right: 10px;
+}
+.con_con{
+    width: 750px;
+    height: 60px;
+    border-top: 2px solid #eee;
+    margin-top: 40px;
+}
+.con_con li{
+    width: 75px;
+    height: 60px;
+    text-align: center;
+    float: left;
+    margin-right: 75px;
+}
+.con_con li em{
+    width: 13px;
+    height: 13px;
+    border: 2px solid #ccc;
+    margin-left: 28px;
+    display: block;
+    position: relative;
+    border-radius: 9999px;
+    margin-top: -8px;
+    background-color: #fff;
+}
+.con_con li.avtive em{
+    border: 2px solid #00AF62;
+}
+.con_con li span {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #333;
+    line-height: 50px;
+}
+.con_con li.avtive span{
+    color: #00AF62;
+}
+.contact_process{
+    width: 100%;
+    overflow: hidden;
+}
+.contact_process .title{
+    width:100%;
+    height: 50px;
+    display: block;
+    background-color: #FAFAFA;
+    font-size: 22px;
+    color: #333;
+    line-height: 50px;
+}
+.contact_details{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+}
+.contact_details .loop{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0px 0px 0px;
+}
+.contact_details .loop em {
+    width: 70px;
+    height: 70px;
+    background-color: #63C99D;
+    position: absolute;
+    border-radius: 9999px;
+    top: 15px;
+    left: 0px;
+    z-index: 2;
+}
+.contact_details .loop em span {
+    font-weight: normal;
+    font-style: normal;
+    font-size: 15px;
+    color: #fff;
+    width: 30px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 14px;
+}
+.contact_details .loop img{
+    width: 100%;
+    overflow: hidden;
+    float: left;
+    margin-top: 10px;
+}
+.loop_img a {
+    display: block;
+    float: left;
+    width: 370px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.contact_details .xian{
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    background-color: #ccc;
+}
+.loop_img {
+    width: 100%;
+    overflow: hidden;
+    float: left;
+    margin-left: 75px;
+    margin-top: 10px;
+}
+@media screen and (max-width: 1200px){
+    .building_contact{
+        width: 100%;
+    }
+    .case3con_img{
+        width: 22.5%;
+    }
+    .conright{
+        width: 75%;
+    }
+    .contact_process .title{
+        text-indent: 3%;
+    }
+    .con_span{
+        width: 100%;
+    }
+    .con_con{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1020px){
+    .con_con li {
+        width: 75px;
+        height: 60px;
+        text-align: center;
+        float: left;
+        margin-right: 55px;
+    }
+}
+@media screen and (max-width: 895px){
+    .con_con li {
+        width: 75px;
+        height: 60px;
+        text-align: center;
+        float: left;
+        margin-right: 35px;
+    }
+}
+@media screen and (max-width: 755px){
+    .case3con_img{
+        width: 100%;
+    }
+    .conright{
+        width: 100%;
+    }
+    .con_con li {
+        width: 15%;
+        height: 60px;
+        text-align: center;
+        float: left;
+        margin-right: 5%;
+    }
+    .loop_img{
+        width: 100%;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 500px){
+    .loop_img{
+        width: 100%;
+        height: 100%;
+    }
+}
