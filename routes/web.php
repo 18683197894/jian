@@ -169,13 +169,16 @@ Route::get('/home/case/zaiplay/zaiurl','Home\CaseController@zaiurl');
 //搜索
 Route::get('/home/sou','Home\AdminController@sou');
 
+//***************************************************************************
 Route::group(['middleware' => ['Login']], function () {
-
 //主页
 Route::get('/jslmadmin/index','Admin\IndexController@index');
 //退出
 Route::get('/jslmext','Admin\LoginController@jslmext');
 
+
+
+Route::group(['middleware'=>['Yxb']],function(){
 //用户管理
 Route::get('/jslmadmin/userhome/index','Admin\HomeController@index');
 //用户的购物车
@@ -382,7 +385,7 @@ Route::post('admin/properties/hfnewsadds','Admin\PropertiesController@hfnewsadds
 Route::get('jslmadmin/payment/index','Admin\PayController@index');
 Route::get('jslmadmin/payment/index/shopping/{id}','Admin\PayController@shopping');
 Route::get('/jslmadmin/userhome/orders/{id}','Admin\PayController@userhome_orders');
-
+});
 //调查问卷
 Route::get('admin/question/zhijin/index','Admin\QuestionController@zhijinindex');
 Route::get('admin/question/defu/index','Admin\QuestionController@defuindex');

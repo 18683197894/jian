@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class LoginMiddleware
+class YxbMiddleware
 {
     /**
      * Handle an incoming request.
@@ -14,9 +14,10 @@ class LoginMiddleware
      * @return mixed
      */
     public function handle($request, Closure $next)
-    {      
-        if(!session('Admin')){
-           return redirect('/jslmadmin/login')->with(['info'=>'无权限']);
+    {   
+        if(session('Admin')->status == 2)
+        {
+            return redirect('/jslmadmin/index');
         }
         return $next($request);
     }
