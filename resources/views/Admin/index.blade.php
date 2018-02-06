@@ -237,7 +237,6 @@ class="active"
           </ul>
         </li>
 
-
         <li class="
 @if($title == "添加板块" || $title == "板块管理")
 active
@@ -260,6 +259,37 @@ class="active"
 class="active"
 @endif
             ><a href="{{ url('jslmadmin/newsleiindex') }}"><i class="fa fa-circle-o"></i>板块管理</a></li>
+          </ul>
+        </li>
+
+        <li class="
+@if($title == "包管理")
+active
+@endif
+        treeview">
+          <a href="#">
+            <i class="fa fa-files-o"></i>
+            <span>产品管理</span>
+            <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li
+@if($title == "风格列表")
+class="active"
+@endif
+            ><a href="{{ url('/admin/product/style/index') }}"><i class="fa fa-circle-o"></i>风格列表</a></li>
+            <!-- <li
+@if($title == "质享包")
+class="active"
+@endif
+            ><a href="{{ url('/admin/package/ruan/joylity') }}"><i class="fa fa-circle-o"></i>质享包</a></li>
+            <li
+@if($title == "臻藏包")
+class="active"
+@endif
+            ><a href="{{ url('/admin/package/ruan/peghid') }}"><i class="fa fa-circle-o"></i>臻藏包</a></li> -->
           </ul>
         </li>
         <li class="
@@ -292,6 +322,8 @@ class="active"
             ><a href="{{ url('/admin/package/ruan/peghid') }}"><i class="fa fa-circle-o"></i>臻藏包</a></li>
           </ul>
         </li>
+
+
 
         <li class="
 @if($title == "包管理" || $title == "套餐管理")

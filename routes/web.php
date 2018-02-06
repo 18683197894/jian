@@ -213,6 +213,14 @@ Route::get('/jslmadmin/newslei/newszhiindex/zhiedit/{id}','Admin\NewsController@
 Route::post('/jslmadmin/newslei/newszhiindex/zhiedits','Admin\NewsController@zhiedits');
 Route::post('/jslmadmin/newslei/newszhiindex/zhidel','Admin\NewsController@zhidel');
 
+//Newpro 风格 包
+Route::get('/admin/product/style/index','Admin\StyleController@styleindex');
+Route::get('/admin/product/style/styleadd','Admin\StyleController@styleadd');
+Route::post('/admin/product/style/styleadds','Admin\StyleController@styleadds');
+Route::get('/admin/product/style/styleedit/{id}','Admin\StyleController@styleedit');
+Route::post('/admin/product/style/styleedits/{id}','Admin\StyleController@styleedits');
+Route::get('/admin/product/style/package/index/{id}','Admin\StyleController@packageindex');
+
 //软包
 Route::get('admin/package/ruan/fashion','Admin\RuanController@fashion');
 Route::get('/admin/package/ruan/joylity','Admin\RuanController@joylity');
