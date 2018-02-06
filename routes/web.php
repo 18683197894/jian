@@ -386,6 +386,7 @@ Route::get('/jslmadmin/userhome/orders/{id}','Admin\PayController@userhome_order
 //调查问卷
 Route::get('admin/question/zhijin/index','Admin\QuestionController@zhijinindex');
 Route::get('admin/question/defu/index','Admin\QuestionController@defuindex');
+Route::post('admin/question/index/del','Admin\QuestionController@indexdel');
 });
 
 //web支付微信

@@ -6,10 +6,10 @@
 
 @section('content')
     <section class="content-header">
-      <h1>织金调查问卷</h1>
+      <h1>德福调查问卷</h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>调查问卷</a></li>
-        <li class="active">织金调查问卷</li>
+        <li class="active">德福调查问卷</li>
       </ol>
     </section>
         <div class="col-xs-12" >
@@ -40,7 +40,6 @@
                   <th style="text-align:center;">体验厅感受</th>
                   <th style="text-align:center;">时间</th>
                   <th style="text-align:center;">操作</th>
-                  
                 </tr>
                 </thead>
                 <tbody>
@@ -66,8 +65,8 @@
                   	<p>套餐价格 : {{ $v->feel[3] }}</p>
                   	<p>智能产品 : {{ $v->feel[4] }}</p>
                   </td>
-                  <td style="text-align: center;vertical-align: middle">{{ date('Y年m月d日',$v->time) }}</td>
-                  <td style="text-align: center;vertical-align: middle"><a class="del" href="javascript:;">删除</a></td>
+                  <td  style="text-align: center;vertical-align: middle">{{ date('Y年m月d日',$v->time) }}</td>
+                  <td  style="text-align: center;vertical-align: middle"><a class="del" href="javascript:;">删除</a></td>
                 </tr>
     @endforeach($data as $k => $v)
 @else

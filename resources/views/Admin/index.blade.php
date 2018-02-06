@@ -301,6 +301,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
+@if(session('Admin')->status == 1)
      <li class="
 @if($title == "用户管理" || $title == "")
 active
@@ -585,7 +586,7 @@ class="active"
             </li>
           </ul>
         </li>
-
+@endif
         <li class="
 @if($title == "织金调查问卷" || $title == "德福调查问卷")
 active
