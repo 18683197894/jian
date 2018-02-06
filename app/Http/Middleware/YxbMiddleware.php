@@ -17,7 +17,7 @@ class YxbMiddleware
     {   
         if(session('Admin')->status == 2)
         {
-            return redirect('/jslmadmin/index');
+            return redirect('/jslmadmin/index')->with(['info'=>'无权限！']);
         }
         return $next($request);
     }

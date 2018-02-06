@@ -62,7 +62,9 @@
       </a>
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
+
         <ul class="nav navbar-nav">
+
           <!-- Messages: style can be found in dropdown.less-->
 
           <!-- Notifications: style can be found in dropdown.less -->
@@ -208,7 +210,7 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MAIN NAVIGATION</li>
+        <li class="header">&nbsp;&nbsp;{{ !empty(session('info'))?session('info'):'MAIN NAVIGATION' }}</li>
 @if(session('Admin')->status == 1)
      <li class="
 @if($title == "用户管理" || $title == "")
