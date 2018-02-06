@@ -50,7 +50,7 @@
         <div class="nav">
             <a href="{{ url('/') }}">首页</a>
             <a href="javascript:;">设计风格</a>
-            <a href="javascript:;">建商工程</a>
+            <a href="{{ url('/newpro/case/index') }}">装修案例</a>
             <a href="javascript:;">精装房</a>
             <a href="javascript:;">建商家装</a>
             <a href="javascript:;">建商网</a>

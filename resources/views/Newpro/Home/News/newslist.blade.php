@@ -10,7 +10,7 @@
 </div>
 
 <div class="information">
-    <div class="title">{{ $title->title }} <img src="{{ asset('/new/home/newslist/img/red_x.png') }}" alt=""/></div>
+    <div class="title">{{ $titles->title }} <img src="{{ asset('/new/home/newslist/img/red_x.png') }}" alt=""/></div>
 
     <div class="Nws">
         <!--左边-->

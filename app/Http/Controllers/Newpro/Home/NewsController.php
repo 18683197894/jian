@@ -9,14 +9,19 @@ class NewsController extends Controller
 {
     public function newslist(Request $request,$id)
     {
-    	$title = \DB::table('newslei')
+    	$titles = \DB::table('newslei')
     		->select('id','title','img','titles','keyworlds','description')
     		->where('id',$id)
     		->first();
-    	if(!$title)
+    	if(!$titles)
     	{
     		return back()->with(['info'=>'列表不存在']);
     	}
+        $title = [
+            'title'=> $titles->title,
+            'keyworlds'=> $titles->keyworlds,
+            'description'=> $titles->description,
+        ];
     	$data = \DB::table('news')
     			->select('id','title','leicon','time','click','titleimg','pid','zhi')
     			->where('pid',$id)
@@ -51,7 +56,7 @@ class NewsController extends Controller
     	$zhis = \DB::table('newsban')->select('title','con')->where('pid',$id)->get();
 
 
-    	return view('Newpro.Home.News.newslist',['title'=>$title,'data'=>$data,'ors'=>$ors,'zhis'=>$zhis,'zhi'=>$zhi]);
+    	return view('Newpro.Home.News.newslist',['title'=>$title,'titles'=>$titles,'data'=>$data,'ors'=>$ors,'zhis'=>$zhis,'zhi'=>$zhi]);
     }
 
 
