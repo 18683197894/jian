@@ -25,7 +25,7 @@ Route::get('/newpro/businsmart','Newpro\Home\SmartController@businsmart');
 
 //新闻列表
 Route::get('/newpro/newslist/{id}','Newpro\Home\NewsController@newslist');
-
+Route::get('/newpro/newslist/play/{id}','Newpro\Home\NewsController@newsplay');
 //案例列表
 Route::get('/newpro/case/index','Newpro\Home\CaseController@index');
 Route::get('/newpro/case/setajax','Newpro\Home\CaseController@setajax');
@@ -40,6 +40,10 @@ Route::get('/newpro/case/playindex','Newpro\Home\CaseController@playindex');
 
 //在建案例
 Route::get('/newpro/case/zaiplay/{id}','Newpro\Home\CaseController@zaiplay');
+
+//软包
+Route::get('/newpro/style','Newpro\Home\StyleController@styleindex');
+
 //德福调查问卷
 Route::get('/newpro/defu/questionnaire/index','Newpro\Home\QuestionController@defuindex');
 Route::get('/newpro/defu/questionnaire/name','Newpro\Home\QuestionController@defuname');
@@ -219,7 +223,17 @@ Route::get('/admin/product/style/styleadd','Admin\StyleController@styleadd');
 Route::post('/admin/product/style/styleadds','Admin\StyleController@styleadds');
 Route::get('/admin/product/style/styleedit/{id}','Admin\StyleController@styleedit');
 Route::post('/admin/product/style/styleedits/{id}','Admin\StyleController@styleedits');
-Route::get('/admin/product/style/package/index/{id}','Admin\StyleController@packageindex');
+Route::post('/admin/product/style/styledel','Admin\StyleController@styledel');
+Route::get('/admin/product/style/qingedit','Admin\StyleController@qingedit');
+Route::post('/admin/product/style/qingedits/{id}','Admin\StyleController@qingedits');
+
+Route::get('/admin/product/style/doorindex/{id}','Admin\StyleController@doorindex');
+Route::get('/admin/product/style/dooradd/{id}','Admin\StyleController@dooradd');
+Route::post('/admin/product/style/dooradds','Admin\StyleController@dooradds');
+Route::get('/admin/product/style/dooredit/{id}','Admin\StyleController@dooredit');
+Route::post('/admin/product/style/dooredits','Admin\StyleController@dooredits');
+Route::post('/admin/product/style/doordel','Admin\StyleController@doordel');
+Route::get('/admin/product/style/mainindex/{id}','Admin\StyleController@mainindex');
 
 //软包
 Route::get('admin/package/ruan/fashion','Admin\RuanController@fashion');

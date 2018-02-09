@@ -235,7 +235,7 @@
     <div class="brief">记录我们成长的每一步</div>
     <div class="News_show">
     @foreach($news as $k => $v)
-        <a href="javascript:;">
+        <a href="{{ url('/newpro/newslist/play') }}/{{ $v->id }}">
             <img src="{{ asset('/uploads/news/titleimg') }}/{{ $v->titleimg }}" alt=""/>
             <div class="content">
                 <div class="titlel">{{ mb_substr($v->title,0,24,'utf8')  }}</div>

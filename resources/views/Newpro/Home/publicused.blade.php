@@ -21,12 +21,19 @@
     <script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
     
 
-    <title>{{ $title['titles'] or '建商联盟' }}</title>
+    <title>{{ $title['title'] or '建商联盟' }}</title>
 @yield('css')
 </head>
 <body>
 
 <div class="header">
+    <div class="Log_on">
+        <div class="auto">
+            <a href="javascript:;">热线电话：400-188-6585</a>
+            <a href="javascript:;">注册</a>
+            <a href="javascript:;">登录</a>
+        </div>
+    </div>
     <div class="header_atou">
         <div class=header_top>
             <img src="{{ asset('/new/home/publicused/img/logo.png') }}" alt="" class="Logo"/>
@@ -49,11 +56,10 @@
         </div>
         <div class="nav">
             <a href="{{ url('/') }}">首页</a>
-            <a href="javascript:;">设计风格</a>
+            <a href="{{ url('/newpro/style') }}">建商家装</a>
             <a href="{{ url('/newpro/case/index') }}">装修案例</a>
             <a href="javascript:;">精装房</a>
-            <a href="javascript:;">建商家装</a>
-            <a href="javascript:;">建商网</a>
+            <a href="javascript:;">设计风格</a>
             <a href="javascript:;">联系我们</a>
         </div>
         <a href="javascript:;" class="botton">

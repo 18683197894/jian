@@ -59,5 +59,26 @@ class NewsController extends Controller
     	return view('Newpro.Home.News.newslist',['title'=>$title,'titles'=>$titles,'data'=>$data,'ors'=>$ors,'zhis'=>$zhis,'zhi'=>$zhi]);
     }
 
+    public function newsplay($id)
+    {
+        $data = \DB::table('news')
+                ->select('id','title','yuan','time','titleimg','content','click','pid','leicon','keyworlds','description','titles')
+                ->where('id',$id)
+                ->first();
+        if(!$data)
+        {
+            return back()->with(['info'=>'数据不存在']);
+        }
 
+        $title = [
+            'title'=> $data->titles,
+            'keyworlds'=> $data->keyworlds,
+            'description'=> $data->description,
+        ];
+        $ban = \DB::table('newslei')->select('id','title','img')->get();
+        $pid = \DB::table('newslei')->select('id','title')->where('id',$data->pid)->first();
+        $click = \DB::table('news')->select('titleimg','id','click','title')->orderBy('click','desc')->offset(0)->limit(10)->get();
+        // dd($click);
+        return view('Newpro.Home.News.newsplay',['data'=>$data,'title'=>$title,'pid'=>$pid,'ban'=>$ban,'click'=>$click]);
+    }
 }

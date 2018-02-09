@@ -1,0 +1,380 @@
+
+body{
+    background-color: #ffffff;
+}
+.banner{
+    width: 100%;
+    height: 500px;
+    background: url("/new/home/product/img/Soft_banner.png");
+    background-size: 100% 100%;
+    margin-top: 165px;
+    overflow: hidden;
+}
+.banner .contact{
+    width: 500px;
+    height: 350px;
+    margin: auto;
+    background-color: #ffffff;
+    margin-top: 75px;
+    overflow: hidden;
+}
+.banner .contact .money{
+    width: 400px;
+    height: 120px;
+    margin: 0 auto;
+    margin-top: 48px;
+    display: block;
+    overflow: hidden;
+}
+.banner .contact .money .Num{
+    font-size: 90px;
+    display: block;
+    font-weight: 600;
+    float: left;
+    margin-left: 76px;
+    font-family: 'Microsoft JhengHei';
+    color: #F4993C;
+    letter-spacing: 2px;
+    height: 120px;
+    line-height: 120px;
+}
+.banner .contact .money .Company{
+    font-size: 40px;
+    font-weight: 600;
+    float: left;
+    color: #F4993C;
+    display: block;
+    margin-left: 5px;
+    font-family: "Times New Roman", Times, serif;
+    letter-spacing: 1px;
+    line-height: 140px;
+}
+.banner .contact .reach{
+    display: block;
+    font-family: "Times New Roman", Times, serif;
+    color: #2F2E40;
+    font-size: 30px;
+    font-weight: 900;
+    font-style: normal;
+    margin-top: -2px;
+    letter-spacing: 3px;
+    text-align: center;
+    height: 50px;
+}
+.banner .contact .quality{
+    line-height: 44px;
+    color: #fff;
+    letter-spacing: 4px;
+    font-size: 26px;
+    background-color: #010101;
+    display: block;
+    width: 320px;
+    margin: auto;
+    text-align: center;
+}
+.Soft_title{
+    width: 100%;
+    height: 64px;
+    background-color: #f5f5f5;
+}
+.Soft_title .auto{
+    width: 130px;
+    height: 62px;
+    border-bottom: 2px solid #E12E32;
+    margin: auto;
+    line-height: 64px;
+}
+.Soft_title .auto img{
+    display: block;
+    float: left;
+    margin-top: 15px;
+}
+.Soft_title .auto a{
+    display: block;
+    float: left;
+    font-size: 20px;
+    line-height: 64px;
+    margin-left: 7px;
+    font-family: Arial,Helvetica,sans-serif;
+    color: #E33A3D;
+}
+.Soft_home{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+}
+.Soft_home .perfect{
+    width: 100%;
+    overflow: hidden;
+}
+.perfect .title{
+    height: 94px;
+    line-height: 94px;
+    text-align: center;
+    font-size: 22px;
+    color: #333;
+}
+.perfect_rb{
+    width: 100%;
+    overflow: hidden;
+}
+.perfect_rb a{
+    display: block;
+    float: left;
+    padding: 0;
+    width: 25%;
+    height: 366px;
+    background: url("../img/rf-bk2.jpg") no-repeat top right;
+    color: #989898;
+}
+.perfect_rb a .name{
+    padding: 0;
+    font-size: 18px;
+    width: 292px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    display: block;
+    font-weight: normal;
+    margin-top: 16px;
+    color: #727272;
+}
+.perfect_rb a .contact{
+    padding: 0;
+    font-size: 14px;
+    width: 70%;
+    height: 50px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.fashion{
+    width: 100%;
+    overflow: hidden;
+}
+.fashion .title{
+    width: 100%;
+    height: 88px;
+    line-height: 88px;
+    text-align: center;
+    font-size: 22px;
+    color: #333;
+}
+.fashion .contact{
+    width: 100%;
+    overflow: hidden;
+}
+.fashion .contact .Style{
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+}
+.fashion .contact .Style a{
+    text-align: center;
+    display: block;
+    float: left;
+    width:33.33%;
+    height: 40px;
+    line-height: 40px;
+    color: #666;
+    font-size: 16px;
+    background: #f5f5f5;
+}
+.fashion .contact .Style a.avtive{
+    background: #E12E32;
+    color: #fff;
+}
+.fashion .contact .detailed{
+    display: block;
+    padding-bottom: 40px;
+    width: 100%;
+    overflow: hidden;
+}
+.detailed_img{
+    width: 100%;
+    overflow: hidden;
+    display: none;
+}
+/*.detailed .NO1{
+    background: url("../img/detailed_img1.png");
+    background-size: 100% 100%;
+}
+.detailed .NO2{
+    background: url("../img/detailed_img2.png");
+    background-size: 100% 100%;
+}
+.detailed .NO3{
+    background: url("../img/detailed_img3.png");
+    background-size: 100% 100%;
+}*/
+.detailed_img .introduce{
+    width: 300px;
+    height: 100%;
+    color: #555;
+    display: block;
+    background: #fff;
+    background: rgba(255,255,255,0.88);
+    line-height: 1.8em;
+    font-size: 15px;
+    margin-left: 800px;
+}
+.detailed_img.avtive{
+    display: block;
+}
+.introduce .title{
+    font-size: 18px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    padding-bottom: 5px;
+    color: #555;
+    width: 100%;
+}
+.introduce .neirong{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 5px;
+    color: #555;
+    font-size: 16px;
+}
+.detailed_top{
+    width: 100%;
+    height:400px;
+    overflow: hidden;
+}
+.detailed_img ul{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+}
+.detailed_img ul li{
+    width: 100%;
+    background: #f5f5f5;
+    line-height: 35px;
+    border-bottom: 1px solid #e1e1e1;
+    overflow: hidden;
+}
+.detailed_img ul li:first-child{
+    background: #e1e1e1;
+    font-weight: 600;
+    color: #010101;
+}
+.detailed_img ul li div{
+    float: left;
+    font-size: 14px;
+}
+.Choice{
+    width: 10%;
+    text-align: center;
+}
+.Housing{
+    width: 15%;
+    text-align: center;
+}
+.Package{
+    width: 60%;
+    text-align: center;
+}
+.Price{
+    width: 15%;
+    text-align: center;
+}
+.Choice input{
+    width: 20px;
+    height: 20px;
+    -webkit-appearance: radio;
+    display: block;
+    margin: auto;
+    margin-top: 8px;
+}
+.purchase{
+    width: 100%;
+    height: 80px;
+    background: #f5f5f5;
+}
+.purchase .auto{
+    width: 400px;
+    height: 80px;
+    margin: auto;
+    /*background-color: red;*/
+}
+.purchase .auto span{
+    float: left;
+    line-height: 70px;
+    font-size: 28px;
+    color: #E12E32;
+}
+.purchase .auto a{
+    float: right;
+    border: none;
+    width: 100px;
+    font-size: 17px;
+    display: block;
+    color: #A06827;
+    border-radius: 5px 5px 5px 5px;
+    background-color: #FFD401;
+    height: 37px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    line-height: 37px;
+    margin-top: 19px;
+    margin-right: 20px;
+}
+@media screen and (max-width: 1200px){
+    .Soft_home{
+        width: 100%;
+    }
+    .detailed_img .introduce{
+        margin-left: 0;
+        float: right;
+        margin-right: 20px;
+    }
+}
+@media screen and (max-width: 1000px){
+    .Soft_home{
+        width: 100%;
+    }
+    .perfect_rb a{
+        width: 50%;
+        background-size: 100% 100%;
+    }
+    .perfect_rb a img{
+        display: block;
+        margin: auto;
+    }
+    .perfect_rb a .name{
+        margin: auto;
+        margin-top: 16px;
+    }
+    .detailed_img .introduce{
+        margin-left: 0;
+        float: right;
+        margin-right: 10px;
+    }
+}
+@media screen and (max-width: 700px){
+    .Soft_home{
+        width: 100%;
+    }
+    .perfect_rb a{
+        width: 100%;
+        background-size: 100% 100%;
+    }
+    .perfect_rb a img{
+        display: block;
+        margin: auto;
+    }
+    .perfect_rb a .name{
+        margin: auto;
+        margin-top: 16px;
+    }
+    .detailed_img .introduce{
+        margin-left: 0;
+        float: right;
+        margin-right:0;
+    }
+}

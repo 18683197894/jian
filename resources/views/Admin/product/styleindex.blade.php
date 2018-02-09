@@ -14,18 +14,31 @@
     </section>
         <div class="col-xs-12" >
           <div class="box">
-
-            <div class="box-header">
-           
-              <h3 class="box-title"> <br><a href="{{ url('/admin/product/style/styleadd') }}">添加风格</a></h3>
-            </div>
+          
+            <div class="box-header" style="padding:0; padding-top:20px;">
+              <h3 class="box-title col-xs-1"> <br><a href="{{ url('/admin/product/style/styleadd') }}">添加风格</a>  </h3>
+              <h3 class="box-title col-xs-2"> <br> <a href="{{ url('/admin/product/style/qingedit') }}">修改清水房报价</a> </h3>
+            <div class="form-group col-xs-2">
+                  <form action="{{ url('/admin/product/style/index') }}" method="GET">
+                  <label>筛选</label>
+                  <select name="bao" class="form-control">
+                  <option value="00">全部包</option>
+                  @foreach($packages as $k => $v)
+                    <option @if($bao == $v->id ) selected="selected" @endif value="{{ $v->id }}">{{ $v->title }}</option>
+                  @endforeach
+                  </select>
+                  </form>
+          </div>
+          </div>
  				@if (session('info'))
 				<div style="height:40px;line-height:10px;" class="alert alert-danger">
 				{{ session('info') }}
 				</div>
 				@endif
+          
             <!-- /.box-header -->
             <div class="box-body">
+            
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
@@ -33,7 +46,7 @@
                   <th style=" text-align:center;">标题</th>
                   <th style=" text-align:center;">所属包</th>
                   <th style=" text-align:center;">简介标题</th>
-                  <th style=" text-align:center;">简介内容</th>
+                  <th style="width:30%; text-align:center;">简介内容</th>
                   <th style=" text-align:center;">展示图片</th>
                   <th style=" text-align:center;">创建时间</th>
                   <th style=" text-align:center;">操作</th>
@@ -51,22 +64,9 @@
                   <td style="text-align: center;vertical-align: middle"><a href="{{ asset('uploads/ruan/img/') }}/{{$v->img}}"><img src="{{ asset('uploads/ruan/img/') }}/{{$v->img}}" width="170px" height="100px" alt=""></a></td>
                   <td style="text-align: center;vertical-align: middle">{{ date("Y年m月d日",$v->time) }}</td>
                   <td style="text-align: center;vertical-align: middle">
-                  	<a href="#" class="on" index="
-@if($v->status == 1)
-2
-@else
-1
-@endif 
-                    ">
-@if($v->status == 1)
-停用
-@else
-启用
-@endif 
-                    </a>&nbsp;&nbsp;
                     <a href="{{ url('admin/product/style/styleedit') }}/{{ $v->id }}">编辑</a>&nbsp;&nbsp;
                   	<a href="#" class="del">删除</a>&nbsp;&nbsp;
-                  	<a href="{{ url('admin/product/style/package/index') }}/{{ $v->id }}">子包管理</a>
+                  	<a href="{{ url('admin/product/style/doorindex') }}/{{ $v->id }}">户型管理</a>
                   </td>
                 </tr>
     @endforeach($data as $k => $v)
@@ -76,10 +76,13 @@
                 </tr>
 @endif
 
-                </tbody>
-   
+                </tbody>  
               </table>
             </div>
+            <div class="row"><div class="col-sm-5"></div><div class="col-sm-7">
+              <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
+                {{ $data->links() }}
+              </div></div></div>
            </div>
            </div>
 @endsection('content')
@@ -97,7 +100,7 @@
           
           });
 
-         $.ajax('/admin/package/ruan/fgdel',{
+         $.ajax('/admin/product/style/styledel',{
             type : 'post',
             data :{id:id},
             success : function(data){
@@ -122,69 +125,11 @@
             dateType : 'json'
          })
   })
-  $(".on").on('click',function(){
-          var index = $(this).attr('index');
-          var id = $(this).parents('tr').find('.id').html();
-          var on = $(this);
-         $.ajaxSetup({
-          headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          }
-          
-          });
-         if(index == 1)
-         {
-
-         $.ajax('/admin/package/ruan/fgajax',{
-            type : 'post',
-            data :{id:id},
-            success : function(data){
-              if(data ==1)
-              {
-                on.html('停用');
-                on.attr('index',2);
-                alert('启用成功！');
-              }else if(data ==2)
-              {
-                alert('启用失败！');
-              }else if(data ==3)
-              {
-                alert('启用失败 请先添加栏目后启用！');
-                
-
-              }else if(data == 4)
-              {
-                alert('启用失败 最大启用数4 请先停用后再启用');
-              }
-            },
-            error : function(data){
-              alert('启用失败 请重试!');
-            },
-            dateType : 'json'
-         })
-        }else if(index == 2)
-        {
-         $.ajax('/admin/package/ruan/fgajaxs',{
-            type : 'post',
-            data :{id:id},
-            success : function(data){
-              if(data ==1)
-              {
-                on.html('启用');
-                on.attr('index',1);
-                alert('停用成功！');
-              }else if(data ==2)
-              {
-                alert('停用失败！');
-              }
-            },
-            error : function(data){
-              alert('停用失败 请重试!');
-            },
-            dateType : 'json'
-         })
-        }
-  })
+  
+  
+  $("select[name='bao'] > option").on('click',function(){
+    $('form').submit();
+  });
 
 </script>
 @endsection('js')
