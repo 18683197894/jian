@@ -30,8 +30,13 @@
     <div class="Log_on">
         <div class="auto">
             <a href="javascript:;">热线电话：400-188-6585</a>
-            <a href="javascript:;">注册</a>
-            <a href="javascript:;">登录</a>
+            @if(!session('Home'))
+            <a href="{{ url('/newpro/register') }}">注册</a>
+            <a href="{{ url('/newpro/login') }}">登录</a>
+            @else 
+            <a href="javascript:;">个人中心</a>
+            <a href="javascript:;">{{ session('Home')->name }}</a>
+            @endif
         </div>
     </div>
     <div class="header_atou">
@@ -43,8 +48,8 @@
                     免费量房与报价
                 </a>
                 <a href="javascript:;" class="link">
-                    <img src="{{ asset('/new/home/publicused/img/header_gg.png') }}" alt=""/>
-                    免费量房与报价
+                    <img src="{{ asset('/new/home/login/img/hade_1.png') }}" alt=""/>
+                    装修公司实力认证
                 </a>
                 <div class="search_i">
                     <input type="text" placeholder="海量效果图任你选"/>

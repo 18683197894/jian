@@ -43,6 +43,15 @@ Route::get('/newpro/case/zaiplay/{id}','Newpro\Home\CaseController@zaiplay');
 
 //软包
 Route::get('/newpro/style','Newpro\Home\StyleController@styleindex');
+Route::post('/newpro/style/paygouajax','Newpro\Home\StyleController@paygouajax');
+
+
+//登入
+Route::get('newpro/login','Newpro\Home\LoginController@login');
+Route::post('/newpro/logins','Newpro\Home\LoginController@logins');
+Route::get('/newpro/register','Newpro\Home\LoginController@register');
+Route::get('/newpro/register/chongajax','Newpro\Home\LoginController@chongajax');
+
 
 //德福调查问卷
 Route::get('/newpro/defu/questionnaire/index','Newpro\Home\QuestionController@defuindex');

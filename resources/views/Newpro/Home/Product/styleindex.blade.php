@@ -19,7 +19,7 @@
 <div class="Soft_title">
     <div class="auto">
         <img src="{{ asset('/new/home/product/img/Soft_title.png') }}" alt=""/>
-        <a href="javascript:;">软包套餐</a>
+        <a href="javascript:;">建商家装</a>
     </div>
 </div>
 <div class="Soft_home">
@@ -80,14 +80,14 @@
                         @if(count($vvv->door) > 0)
                         @foreach($vvv->door as $kkkk => $vvvv)
                         <li>
-                            <div class="Choice"><input type="radio" value="{{ $vvvv->id }}" name="Choice"> </input></div>
+                            <div class="Choice"><input type="radio" value="{{ $vvvv->id }}" index="main"  feel="{{ $vvvv->main }}" name="Choice{{ $v->id }}"> </input></div>
                             <div class="Housing">{{ $vvvv->title }}/主流品牌</div>
                             <div class="Package">（{{ $vvvv->mains }}）</div>
                             <div class="Price">{{ $vvvv->main }}元</div>
                         </li>
                         @if($vvvv->nomain != null)
                         <li>
-                            <div class="Choice"><input type="radio" value="{{ $vvvv->id }}" name="Choice"> </input></div>
+                            <div class="Choice"><input type="radio" value="{{ $vvvv->id }}" index="nomain" feel="{{ $vvvv->nomain }}" name="Choice{{ $v->id }}"> </input></div>
                             <div class="Housing">{{ $vvvv->title }}/非主流品牌</div>
                             <div class="Package">（{{$vvvv->nomains}}）</div>
                             <div class="Price">{{ $vvvv->nomain }}元</div>
@@ -95,14 +95,14 @@
                         @endif
                         @if($vvvv->model != null)
                         <li>
-                            <div class="Choice"><input type="radio" value="{{ $vvvv->id }}" name="Choice"> </input></div>
+                            <div class="Choice"><input type="radio" value="{{ $vvvv->id }}" index="model" feel="{{ $vvvv->model }}" name="Choice{{ $v->id }}"> </input></div>
                             <div class="Housing">{{ $vvvv->title }}/样板间</div>
                             <div class="Package">（{{$vvvv->models}}）</div>
                             <div class="Price">{{ $vvvv->model }}元</div>
                         </li>
                         @endif
                         <li>
-                            <div class="Choice"><input type="radio" value="{{ $vvvv->id }}" name="Choice"> </input></div>
+                            <div class="Choice"><input type="radio" value="{{ $vvvv->id }}" index="qing" feel="{{ $qing }}" name="Choice{{ $v->id }}"> </input></div>
                             <div class="Housing">{{ $vvvv->title }}/清水房</div>
                             <div class="Package">（含硬装，厨房地柜，吊柜，卫生间洁柜）</div>
                             <div class="Price">{{ $qing }}元 / 每平方</div>
@@ -113,20 +113,15 @@
                     <div class="purchase">
                         <div class="auto">
                             <span>￥</span>
-                            <span>38403</span>
-                            <a href="javascript:;" class="paygou">加入购物车</a>
-                            <a href="javascript:;">去支付</a>
+                            <span>0</span>
+                            <a @if(!session('Home')) href="{{ url('/newpro/login?path=') }}{{ $path }}" @else href="javascript:;" class="paygou" @endif >加入购物车</a>
+                            <a @if(!session('Home')) href="{{ url('/newpro/login?path=') }}{{ $path }}" @else href="javascript:;" class="paygou" @endif href="javascript:;">去支付</a>
                         </div>
                     </div>
                 </div>
                 @endforeach
                 @endif
-                <script>
-                $('.paygou').on('click',function(){
-                    var id = $(this).parents('.Soft_home').find("input[type='radio']:checked").val();
-                    alert(id);
-                })
-                </script>
+                
             </div>
         </div>
     </div>
@@ -139,4 +134,44 @@
 
 @section('js')
 <script src="{{ asset('/new/home/product/styleindex.js') }}"></script>
+            <script>
+            $("input[type='radio']").on('click',function(){
+                var money = $(this).attr('feel');
+                $(this).parents('.fashion').find('.auto > span ').eq(1).html(money);
+            });
+                $('.paygou').on('click',function(){
+                    var id = $(this).parents('.fashion').find("input[type='radio']:checked").val();
+                    var ors = $(this).parents('.fashion').find("input[type='radio']:checked").attr('index');
+                    if(id == null || ors == null)
+                    {
+                        alert('请先选择产品!');
+                        return false;
+                    }
+                    $.ajax('/newpro/style/paygouajax',{
+                        type : 'post',
+                        data : {id:id,ors:ors,_token:$("meta[name='csrf-token']").attr('content')},
+                        success : function(data)
+                        {   
+                            if(data == 1 )
+                            {
+                                alert('加入购物车成功！');
+                            }
+                            if(data == 2)
+                            {
+                                alert('加入购物车失败!');
+                            }
+                            if(data == 3)
+                            {
+                                alert('未登入!');
+                                window.location.href="/newpro/login?path=/newpro/style";
+                            }
+                        },
+                        error : function(data)
+                        {
+                            alert('购物车加入失败！');
+                            return false;
+                        }
+                    })
+                })
+            </script>
 @endsection('js')

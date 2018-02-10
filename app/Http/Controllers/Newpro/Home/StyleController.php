@@ -23,6 +23,33 @@ class StyleController extends Controller
     		}
     	}
     	$qing = \DB::table('qing')->select('money')->first()->money;
-    	return view('Newpro.Home.Product.styleindex',['title'=>$title,'data'=>$data,'qing'=>$qing]);
+    	return view('Newpro.Home.Product.styleindex',['title'=>$title,'data'=>$data,'qing'=>$qing,'path'=>$request->path()]);
+    }
+    public function paygouajax(Request $request)
+    {
+        $id = $request->id;
+        $ors = $request->ors;
+        $user = $request->session()->get('Home',null);
+        if(!$user)
+        {
+            return response()->json(3);
+        }
+        $res = \DB::table('playgou')
+                ->insert([
+                    'pid'=>$id,
+                    'name' => \DB::table('door')->select('id','title')->where('id',$id)->first()->title,
+                    'tus' => $ors,
+                    'time'=>time(),
+                    'num' => 1,
+                    'status' => 0,
+                    'uid'=>$user->id
+                    ]);
+        if($res)
+        {
+            return response()->json(1);
+        }else
+        {
+            return response()->json(2);
+        }
     }
 }

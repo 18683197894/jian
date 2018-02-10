@@ -24,7 +24,7 @@
     <!--首页样式-->
     <!--尾部样式-->
     <link rel="stylesheet" href="{{ asset('/new/home/public/footer.css') }}"/>
-    <title>{{ $title['titles'] or '建商联盟' }}</title>
+    <title>{{ $title['title'] or '建商联盟' }}</title>
 </head>
 <body>
 <!--头部-->

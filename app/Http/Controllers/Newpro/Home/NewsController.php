@@ -81,4 +81,6 @@ class NewsController extends Controller
         // dd($click);
         return view('Newpro.Home.News.newsplay',['data'=>$data,'title'=>$title,'pid'=>$pid,'ban'=>$ban,'click'=>$click]);
     }
+
+    
 }

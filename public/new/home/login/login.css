@@ -1,0 +1,188 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #ffffff;
+}
+.logins{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+}
+.logins_top{
+    width: 100%;
+    height: 100px;
+    /*border-bottom: 1px solid #000000;*/
+}
+.logins_top .Logo{
+    width: 177px;
+    height: 59px;
+    display: block;
+    float: left;
+    margin-top: 20px;
+}
+.search{
+    float: left;
+}
+.search a{
+    display: block;
+    float: left;
+    margin-left: 30px;
+    color: #e12e32;
+    line-height: 100px;
+    text-decoration: none;
+}
+.logins .content{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 90px;
+}
+.logins_bg{
+    display: block;
+    width: 623px;
+    float: left;
+    overflow: hidden;
+}
+.logins .Account{
+    width: 380px;
+    height: 380px;
+    float: right;
+    border:1px solid #D2D2D2;
+    box-sizing: border-box;
+}
+.Account .title{
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    font-size: 23px;
+    color: #e12e32;
+}
+label{
+    display: block;
+    width: 300px;
+    height: 35px;
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid #D2D2D2;
+    border-radius: 5px;
+    overflow: hidden;
+}
+label input{
+    width: 300px;
+    height: 35px;
+    outline: none;
+    border: none;
+    text-indent: 15px;
+    line-height: 35px;
+    font-size: 16px;
+}
+#lod{
+    width: 100%;
+    text-align: center;
+    display: block;
+    line-height: 35px;
+    color: #e12e32 ;
+}
+#label_4{
+    border: none;
+}
+#label_4 span{
+    width: 100%;
+    height: 37px;
+    display: block;
+    line-height: 37px;
+    text-align: center;
+    background-color: #E12E32;
+    color: #fff;
+    border-radius: 3px 3px 3px 3px;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 17px;
+    border: none;
+}
+.wj{
+    border: none!important;
+}
+.wj a{
+    display: block;
+    text-decoration: none;
+}
+#label_5_a1{
+    float: left;
+    font-weight: normal;
+    font-size: 14px;
+    color: red;
+}
+#label_5_a2{
+    font-weight: normal;
+    font-size: 14px;
+    color: #333;
+    float: right;
+}
+
+@media screen and (max-width: 1200px){
+    .logins{
+        width: 1000px;
+        height: 100%;
+    }
+    .logins_bg{
+        width: 60%;
+    }
+    .logins .Account{
+        width: 40%;
+    }
+    label{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 1000px){
+    .logins{
+        width: 98%;
+        height: 100%;
+    }
+    .logins_bg{
+        width: 60%;
+    }
+    .logins .Account{
+        width: 40%;
+    }
+}
+@media screen and (max-width: 800px){
+    .logins .content{
+        clear: both;
+        position: relative;
+        margin-top: 30px;
+    }
+    .logins_bg{
+        clear: both;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    .logins .Account{
+        width: 40%;
+        clear: both;
+        margin: auto;
+        position: relative;
+        z-index: 2;
+        margin-right: 30%;
+    }
+}
+@media screen and (max-width: 600px){
+    .search{
+       display: none;
+    }
+    .Logo{
+        margin-left: 50px;
+    }
+    .logins .Account{
+        width: 60%;
+        margin-right: 20%;
+    }
+}

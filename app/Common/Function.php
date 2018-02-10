@@ -82,7 +82,7 @@
         	return array('titles'=>$titles[0]->titles,'keyworlds'=>$titles[0]->keyworlds,'description'=>$titles[0]->description);
         }else
         {
-        	return array('titles'=>'建商联盟','keyworlds'=>'建商联盟','description'=>'建商联盟');
+        	return array('title'=>'建商联盟','keyworlds'=>'建商联盟','description'=>'建商联盟');
         }
     }
 
