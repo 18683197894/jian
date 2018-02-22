@@ -141,7 +141,7 @@ label span{
     margin-top: 1px;
     border-radius: 5px;
 }
-#label_5 button{
+#label_5 #button1{
     display: block;
     width: 40%;
     height: 32px;
@@ -150,6 +150,21 @@ label span{
     background-color: #529B7C;
     color: #fff;
     cursor: pointer;
+    font-weight: normal;
+    line-height: 34px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+}
+#label_5 #button3{
+    display: none;
+    width: 40%;
+    height: 32px;
+    float: right;
+    text-align: center;
+    background-color: #529B7C;
+    color: #fff;
+    cursor: not-allowed;
     font-weight: normal;
     line-height: 34px;
     font-size: 15px;
@@ -190,6 +205,7 @@ label span{
     color: #333;
     float: right;
 }
+
 @media screen and (max-width: 1200px){
     .register{
         width: 1000px;

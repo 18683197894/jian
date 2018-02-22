@@ -50,9 +50,10 @@ Route::post('/newpro/style/paygouajax','Newpro\Home\StyleController@paygouajax')
 Route::get('newpro/login','Newpro\Home\LoginController@login');
 Route::post('/newpro/logins','Newpro\Home\LoginController@logins');
 Route::get('/newpro/register','Newpro\Home\LoginController@register');
+Route::post('/newpro/registers','Newpro\Home\LoginController@registers');
 Route::get('/newpro/register/chongajax','Newpro\Home\LoginController@chongajax');
-
-
+Route::post('/newpro/register/zendcode','Newpro\Home\LoginController@zendcode');
+Route::get('/newpro/register/yan','Newpro\Home\LoginController@yan');
 //德福调查问卷
 Route::get('/newpro/defu/questionnaire/index','Newpro\Home\QuestionController@defuindex');
 Route::get('/newpro/defu/questionnaire/name','Newpro\Home\QuestionController@defuname');

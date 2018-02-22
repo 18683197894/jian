@@ -52,7 +52,7 @@ class LoginController extends Controller
     	return view('Newpro.Home.Login.register',['title'=>$title]);
     }
     
-    public function chongajax(Requets $request)
+    public function chongajax(Request $request)
     {	
     	$ors = $request->ors;
     	$init = $request->init;
@@ -73,6 +73,64 @@ class LoginController extends Controller
     	{
     		return response()->json(1);
 
+    	}
+    }
+
+    function zendcode(Request $request)
+    {	
+    	$phone = $request->phone;
+    	$num = rand(111111,999999);
+    	$str = '注册验证码：'.$num.'，有效时间30分钟';
+
+    	$res = zend_code($phone,$str);
+    	if($res == 'OK' || $res == 'ok')
+    	{
+    		\Cache::put($phone,$num,30);
+    	}
+    	return response()->json($res);
+    }
+    function yan(Request $request)
+    {
+    	$phone = $request->phone;
+    	$yan = $request->yan;
+    	if(\Cache::has($phone))
+    	{
+    		if($yan == \Cache::get($phone))
+    		{
+    			return response()->json(1);
+    		}else
+    		{
+    			return response()->json(2);
+
+    		}
+    	}else
+    	{
+    		return response()->json(3);
+    	}
+    }
+
+    public function registers(Request $request)
+    {
+    	$data = $request->except("_token","yan");
+    	if($data['name'] == null || $data['password'] == null || $data['phone'] == null)
+    	{
+    		return back()->withInput()->with(['info'=>'数据有空！']);
+    	}
+    	$data['time'] = time();
+    	$data['status'] = 1;
+    	$str = 'QWERTYUIOPASDFGHJKLZXCVBNM0123456789qwertyuiopasdfghjklzxcvbnm';
+    	str_shuffle($str);
+    	$data['password'] = \Hash::make($data['password']);
+    	$token = substr(str_shuffle($str),26,15);
+    	$data['_token'] = \Hash::make($token);
+    	$data['uptime'] = 0;
+    	$res = \DB::table('user_home')->insert($data);
+    	if($res)
+    	{
+    		return redirect('/newpro/login')->with(['info'=>'注册成功！']);
+    	}else
+    	{
+    		return back()->withInput()->with(['info'=>'注册失败！']);
     	}
     }
 }
