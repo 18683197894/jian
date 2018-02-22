@@ -16,7 +16,7 @@ class ConfigController extends Controller
         $data = $request->except('_token');
         $this->validate($request,[
             'titles' => 'required|min:2|max:60',
-            'keyworlds' => 'required|min:6|max:30',
+            'keyworlds' => 'required|min:6|max:120',
             'description' => 'required|min:10|max:120',
             'url' => 'required|min:1|max:255',
             'title' => 'required|min:1|max:30'
@@ -25,8 +25,8 @@ class ConfigController extends Controller
             'titles.min'=>'网页标题最少2位最大60位',
             'titles.max'=>'网页标题最少2位最大15位',
             'keyworlds.required'=>'网页关键字不能为空',
-            'keyworlds.min'=>'网页关键字最少6位最大30位',
-            'keyworlds.max'=>'网页关键字最少6位最大30位',
+            'keyworlds.min'=>'网页关键字最少6位',
+            'keyworlds.max'=>'网页关键字最大120位',
             'description.required'=>'网页内容描述不能为空',
             'description.min'=>'网页内容描述最少10位',
             'description.max'=>'网页内容描述最大120位',
@@ -64,7 +64,7 @@ class ConfigController extends Controller
     	$data = $request->except('_token');
     	$this->validate($request,[
             'titles' => 'required|min:2|max:60',
-            'keyworlds' => 'required|min:6|max:30',
+            'keyworlds' => 'required|min:6|max:120',
             'description' => 'required|min:10|max:120',
             'url' => 'required|min:1|max:255',
             'title' => 'required|min:1|max:30'
@@ -73,11 +73,11 @@ class ConfigController extends Controller
             'titles.min'=>'网页标题最少2位最大60位',
             'titles.max'=>'网页标题最少2位最大15位',
             'keyworlds.required'=>'网页关键字不能为空',
-            'keyworlds.min'=>'网页关键字最少6位最大30位',
-            'keyworlds.max'=>'网页关键字最少6位最大30位',
+            'keyworlds.min'=>'网页关键字最少6位',
+            'keyworlds.max'=>'网页关键字最大120位',
             'description.required'=>'网页内容描述不能为空',
-            'description.min'=>'网页内容描述最少10位最大120位',
-            'description.max'=>'网页内容描述最少10位最大120位',
+            'description.min'=>'网页内容描述最少10位',
+            'description.max'=>'网页内容描述最大120位',
             'url.required'=>'url不能为空',
             'url.min'=>'url最少1位',
             'url.max'=>'url最大255位',
