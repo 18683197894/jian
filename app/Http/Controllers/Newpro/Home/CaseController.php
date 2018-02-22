@@ -10,6 +10,7 @@ class CaseController extends Controller
     public function index(Request $request)
     {	
     	$titles = getwebpage($request->path());
+      
     	$wan = \DB::table('case')
     		->select('id','title','huxing','fengge','yusuan','or','time','effect2')
     		->where('or',5)
