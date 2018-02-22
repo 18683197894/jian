@@ -46,10 +46,7 @@
                   <label for="exampleInputEmail1">栏目名称</label>
                   <input type="text"  name="title" value="{{ $data->title }}" class="form-control" id="exampleInputEmail1" placeholder="栏目名称">
                 </div>
-               <div class="form-group">
-                  <label for="exampleInputEmail1">URL地址</label>
-                  <input type="text"  name="url" value="{{ $data->url }}" class="form-control" id="exampleInputEmail1" placeholder="URL地址">
-                </div>
+               
                  
 
               </div>

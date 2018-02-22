@@ -33,7 +33,11 @@
         <img src="{{ asset('/new/home/public/img/logo.png') }}" alt="" class="Logo"/>
         <ul class="nav">
 @php
-$nav =\DB::table('nav')->select('id','title','status','url')->orderBy('status')->get();
+$nav =\DB::table('nav')
+->join('webpage','nav.pid','=','webpage.id')
+->select('nav.id','nav.title','nav.status','webpage.url')
+->orderBy('nav.status')
+->get();
 @endphp     
             @foreach($nav as $i => $j)
             <li><a href="{{ $j->url }}">{{ $j->title }}</a></li>

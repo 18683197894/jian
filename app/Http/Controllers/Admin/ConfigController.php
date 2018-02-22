@@ -37,7 +37,7 @@ class ConfigController extends Controller
             'title.min'=>'网页名称最少1位',
             'title.max'=>'网页名称最大30位'
         ]);
-
+        $data['time'] = time();
         $res = \DB::table('webpage')->insert($data);
         if($res)
         {
@@ -49,7 +49,7 @@ class ConfigController extends Controller
     }
     public function webpage()
     {	
-    	$data = \DB::table('webpage')->paginate(13);
+    	$data = \DB::table('webpage')->orderBy('time','desc')->paginate(13);
     	return view('Admin.config.webpage',['title'=>'网页关键字','data'=>$data]);
     }
     
@@ -99,29 +99,24 @@ class ConfigController extends Controller
 
     public function nav()
     {   
-        $data = \DB::table('nav')->select('id','title','url','time','status')->orderBy('status')->get();
-
+        $data = \DB::table('nav')
+        ->join('webpage','nav.pid','=','webpage.id')
+        ->select('nav.id','nav.title','nav.status','nav.pid','webpage.url')
+        ->orderBy('nav.status')
+        ->get();
+        
         return view('Admin.config.nav',['title'=>'首页导航栏目','data'=>$data]);
     }
     public function navadd()
-    {
-        return view('Admin.config.navadd',['title'=>'首页导航栏目添加']);
+    {   
+        $data = \DB::table('webpage')->select('id','title')->orderBy('time','desc')->get();
+        return view('Admin.config.navadd',['title'=>'首页导航栏目添加','data'=>$data]);
     }
     public function navadds(Request $request)
     {
         $data = $request->except("_token");
-        $this->validate($request,[
-            'url' => 'required|min:1|max:255',
-            'title' => 'required|min:1|max:30'
-        ],[
-            'url.required'=>'url不能为空',
-            'url.min'=>'url最少1位',
-            'url.max'=>'url最大255位',
-            'title.required'=>'栏目名称不能为空',
-            'title.min'=>'栏目名称最少1位',
-            'title.max'=>'栏目名称最大30位'
-        ]);
-        $data['time'] = time();
+        $res = \DB::table('webpage')->where('id',$data['pid'])->first();
+        $data['title'] = $res->title;
         $count = \DB::table('nav')->select('id')->count();
         if($count <= 0)
         {
@@ -141,7 +136,7 @@ class ConfigController extends Controller
     }
     public function navedit(Request $request)
     {
-        $data = \DB::table('nav')->select('id','title','status','url')->where('id',$request->id)->first();
+        $data = \DB::table('nav')->select('id','title','status')->where('id',$request->id)->first();
         if($data)
         {
             return view('Admin.config.navedit',['title'=>'首页栏目修改','data'=>$data]);
@@ -155,17 +150,13 @@ class ConfigController extends Controller
     {
         $data = $request->except("_token","id");
          $this->validate($request,[
-            'url' => 'required|min:1|max:255',
             'title' => 'required|min:1|max:30'
         ],[
-            'url.required'=>'url不能为空',
-            'url.min'=>'url最少1位',
-            'url.max'=>'url最大255位',
+            
             'title.required'=>'栏目名称不能为空',
             'title.min'=>'栏目名称最少1位',
             'title.max'=>'栏目名称最大30位'
         ]);
-        $data['time'] = time();
         $res = \DB::table('nav')->where('id',$request->id)->update($data);
         if($res)
         {

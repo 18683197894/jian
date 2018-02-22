@@ -40,14 +40,13 @@
             <!-- form start -->
             <form role="form" action="{{ url('admin/config/nav/navadds') }}" method="post">
 				{{ csrf_field() }}
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">栏目名称</label>
-                  <input type="text"  name="title" value="{{ old('title') }}" class="form-control" id="exampleInputEmail1" placeholder="栏目名称">
-                </div>
-               <div class="form-group">
-                  <label for="exampleInputEmail1">URL地址</label>
-                  <input type="text"  name="url" value="{{ old('url') }}" class="form-control" id="exampleInputEmail1" placeholder="URL地址">
+              <div class="form-group">
+                  <label>添加导航页</label>
+                  <select class="form-control" name="pid">
+                    @foreach($data as $k =>$v )
+                    <option value="{{ $v->id }}">{{ $v->title }}</option>
+                    @endforeach
+                  </select>
                 </div>
                  
 
