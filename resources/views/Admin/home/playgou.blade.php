@@ -48,8 +48,9 @@
                 <thead>
                 <tr>
                   <th width="10%"  style=" text-align:center;">ID</th>
-                  <th width="15%"  style="text-align:center;">包</th>
-                  <th width="25%"  style="text-align:center;">包路径</th>
+                  <th width="15%"  style="text-align:center;">包名称</th>
+                  <th width="25%"  style="text-align:center;">所属风格</th>
+                  <th width="10%"  style="text-align:center;">价格</th>
                   <th width="10%"  style="text-align:center;">数量</th>
                   <th width="25%"  style="text-align:center;">创建时间</th>
                   <th width="15%"  style="text-align:center;">操作</th>
@@ -60,17 +61,18 @@
 	@foreach($data as $k => $v)
                 <tr>
                   <td class="id" style="text-align: center;vertical-align: middle">{{ $v->id }}</td>
-                  <td class="id" style="text-align: center;vertical-align: middle">{{ $v->tus }}</td>
-                  <td class="id" style="text-align: center;vertical-align: middle"><a target="view_window" @if($v->tus == '软包') href="{{ url('admin/package/ruan/fg/column/subclass') }}/{{$v->pid}}" @endif>{{ $v->path }}</a></td>
+                  <td class="id" style="text-align: center;vertical-align: middle">{{ $v->name }}</td>
+                  <td class="id" style="text-align: center;vertical-align: middle">{{ $v->path }}</td>
+                  <td class="id" style="text-align: center;vertical-align: middle">{{ $v->money }}</td>
                   <td class="id" style="text-align: center;vertical-align: middle">{{ $v->num }}</td>
                   <td class="id" style="text-align: center;vertical-align: middle">{{ date('Y-m-d H:i:s',$v->time) }}</td>
-                  <td class="id" style="text-align: center;vertical-align: middle">{{ $v->id }}</td>
+                  <td class="id" style="text-align: center;vertical-align: middle"></td>
                  
                 </tr>
     @endforeach($data as $k => $v)
 @else
                 <tr>
-                  <td style="text-align: center;vertical-align: middle" colspan="6">未找到数据</td>
+                  <td style="text-align: center;vertical-align: middle" colspan="7">未找到数据</td>
                 </tr>
 @endif
 

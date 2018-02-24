@@ -11,7 +11,12 @@ class UsedController extends Controller
     {
     	$title = getwebpage($request->path());
     	$ors = $request->input('ors','about');
-    	
+    	$ars = array('about','team','strategy','framework','contact');
+    	if( !in_array($ors,$ars) )
+    	{
+    		$ors = 'about';
+    	}
     	return 	view('Newpro.Home.Used.about',['title'=>$title,'ors'=>$ors]);
     }
+     
 }

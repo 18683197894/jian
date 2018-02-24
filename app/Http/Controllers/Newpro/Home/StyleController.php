@@ -34,8 +34,17 @@ class StyleController extends Controller
         {
             return response()->json(3);
         }
-        $res = \DB::table('playgou')
-                ->insert([
+
+        $over = \DB::table('playgou')->where('uid',$user->id)->where('tus',$ors)->where('pid',$id)->first();
+        
+        if($over)
+        {   
+            $num = $over->num + 1;
+            \DB::table('playgou')->where('id',$over->id)->update(['num'=>$num]);
+            return response()->json(1);
+
+        }
+        $data = [
                     'pid'=>$id,
                     'name' => \DB::table('door')->select('id','title')->where('id',$id)->first()->title,
                     'tus' => $ors,
@@ -43,7 +52,9 @@ class StyleController extends Controller
                     'num' => 1,
                     'status' => 0,
                     'uid'=>$user->id
-                    ]);
+                    ];
+        // return response()->json($data);
+        $res = \DB::table('playgou')->insert($data);
         if($res)
         {
             return response()->json(1);

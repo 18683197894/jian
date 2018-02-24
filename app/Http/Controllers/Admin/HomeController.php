@@ -33,12 +33,47 @@ class HomeController extends Controller
     public function playgou($id)
     {
     	$tit = \DB::table('user_home')->where('id',$id)->first()->name.'的购物车';
-    	
+    	$qing = \DB::table('qing')->first()->money;
     	$data = \DB::table('playgou')
-    	->join('column','playgou.pid','=','column.id')
-    	->select('playgou.id','playgou.tus','playgou.time','playgou.num','column.id as pid','column.path')
-    	->where('uid',$id)->paginate(12);
-    	
+              ->join('door','playgou.pid','=','door.id')
+              ->select('playgou.id','playgou.pid','playgou.tus','playgou.time','playgou.num','playgou.uid','door.main','door.nomain','door.model','door.pid as ppid','door.title as name')
+              ->where('playgou.uid',$id)
+              ->orderBy('time','desc')
+              ->paginate(15);
+
+      $style = \DB::table('style')
+      ->join('packages','style.pid','=','packages.id')
+      ->select('style.id','style.title','packages.title as titles')
+      ->get();
+      if($data->count() > 0)
+      {
+
+      foreach($data as $k => $v)
+      {
+          if($v->tus == 'main')
+          {
+            $v->money = $v->main;
+          }else if($v->tus == 'nomain')
+          {
+            $v->money = $v->nomain;
+          }else if($v->tus == 'model')
+          {
+            $v->money = $v->model;
+          }else if($v->tus == 'qing')
+          {
+            $v->money = $qing.'/每平方';
+          }
+
+          foreach($style as $kk => $vv)
+          {
+            if($v->ppid == $vv->id)
+            {
+              $v->path = $vv->titles.' '.$vv->title;
+            }
+          }
+
+      }
+      }
     	return view('Admin.home.playgou',['data'=>$data,'title'=>$tit]);
     }
 

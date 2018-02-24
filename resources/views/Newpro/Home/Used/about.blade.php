@@ -14,7 +14,7 @@
             <a href="javascript:;" class="@if( $ors == 'about' ) avtive @endif">企业简介</a>
             <a href="javascript:;" class="@if( $ors == 'team' ) avtive @endif">运营团队</a>
             <a href="javascript:;" class="@if( $ors == 'strategy' ) avtive @endif">发展战略</a>
-            <a href="javascript:;" class="@if( $ors == 'Framework' ) avtive @endif">组织构架</a>
+            <a href="javascript:;" class="@if( $ors == 'framework' ) avtive @endif">组织构架</a>
             <a href="javascript:;" class="@if( $ors == 'contact' ) avtive @endif">联系我们</a>
         </div>
     </div>
@@ -212,7 +212,7 @@
             </div>
         </div>
         <!--组织架构-->
-        <div class="Sorts_lower @if( $ors == 'Framework' ) avtive @endif" >
+        <div class="Sorts_lower @if( $ors == 'framework' ) avtive @endif" >
             <img src="{{ asset('/new/home/about/img/zuzhi.jpg') }}" alt="" class="zuzhi"/>
         </div>
         <!--联系我们-->
