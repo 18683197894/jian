@@ -1,0 +1,622 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #ffffff;
+}
+.banner{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 165px;
+}
+.banner img{
+    width: 100%;
+    overflow: hidden;
+}
+.contact{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.Choice{
+    width: 100%;
+    height: 90px;
+    border-bottom: 1px solid #f5f5f5;
+}
+.Choice_a{
+    width: 1200px;
+    height: 90px;
+    margin: auto;
+}
+.Choice_a a{
+    display: block;
+    width: 130px;
+    height: 90px;
+    line-height: 90px;
+    color: #666;
+    text-align: center;
+    font-size: 24px;
+    float: left;
+    margin-right: 15px;
+}
+.Choice_a a.avtive{
+    border-bottom: 3px solid #E04034;
+}
+.Sorts{
+    width: 100%;
+    overflow: hidden;
+}
+.Sorts_lower{
+    width: 100%;
+    overflow: hidden;
+    display: none;
+}
+.Sorts_lower.avtive{
+    display: block;
+}
+.explain{
+    width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 60px;
+}
+.explain img{
+    display: block;
+    float: right;
+    max-width: 580px;
+}
+.explain .text{
+    width: 550px;
+    overflow: hidden;
+    float: left;
+}
+.explain .text div{
+    font-size: 16px;
+    width: 552px;
+    height: 35px;
+    font-weight: bold;
+    color: #010101;
+}
+.explain .text p{
+    font-size: 13px;
+    color: #333333;
+    line-height: 30px;
+    text-indent: 25px;
+}
+.Location{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 60px;
+}
+.Location .title{
+    text-align: center;
+    color: #010101;
+    font-size: 18px;
+    font-weight: 600;
+    height: 80px;
+}
+.Location .title img{
+    margin-left: 10px;
+}
+.Location_bg{
+    width: 100%;
+    overflow: hidden;
+}
+.votes{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 60px;
+}
+.votes .title{
+    text-align: center;
+    color: #010101;
+    font-size: 18px;
+    font-weight: 600;
+    height: 80px;
+}
+.votes .title img{
+    margin-left: 10px;
+}
+.votes_auto{
+    width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+.votes_auto a{
+    display: block;
+    width: 25%;
+    overflow: hidden;
+    padding-bottom: 30px;
+    background-color: #fafafa;
+    border-right: 10px solid #ffffff;
+    box-sizing: border-box;
+    float: left;
+    min-height: 389px;
+}
+.votes_auto a:nth-child(4N){
+    border-right: none;
+}
+.votes_auto a img{
+    display: block;
+    width: 100%;
+}
+.votes_auto a div{
+    font-size: 18px;
+    color: #010101;
+    width: 90%;
+    margin: auto;
+    line-height: 50px;
+}
+.votes_auto a p{
+    font-size: 13px;
+    color: #333333;
+    width: 90%;
+    margin: auto;
+    line-height: 25px;
+    text-indent: 10px;
+    margin-bottom: 5px;
+}
+.Culture{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 60px;
+}
+.Culture .title{
+    text-align: center;
+    color: #010101;
+    font-size: 18px;
+    font-weight: 600;
+    height: 80px;
+}
+.Culture .title img{
+    margin-left: 10px;
+}
+.vision{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 60px;
+}
+.vision .title{
+    text-align: center;
+    color: #010101;
+    font-size: 18px;
+    font-weight: 600;
+    height: 80px;
+}
+.vision .title img{
+    margin-left: 10px;
+}
+.vision_auto{
+    width: 1200px;
+    margin: auto;
+    background-color: #fafafa;
+    overflow: hidden;
+}
+.vision_auto img{
+    width: 100%;
+    overflow: hidden;
+}
+.vision_auto .text{
+    width: 100%;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+.vision_auto .text p{
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+}
+.team{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 60px;
+}
+.team .loop{
+    width: 100%;
+    overflow: hidden;
+}
+.team .loop img{
+    width: 50%;
+    float: left;
+}
+.team .loop .data{
+    width: 50%;
+    float: left;
+    overflow: hidden;
+}
+.team .loop .data .title{
+    width: 90%;
+    float: right;
+    text-align: left;
+    height: 28px;
+    display: block;
+    color: #666;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 28px;
+}
+.team .loop .data .data_p{
+    width: 90%;
+    float: right;
+    text-align: left;
+    display: block;
+    line-height: 35px;
+    font-size: 16px;
+    color: #979797;
+    text-indent: 35px;
+}
+.team .loop .data .data_t p{
+    line-height: 35px;
+}
+.data_t{
+    width: 90%;
+    float: left;
+    text-align: left;
+    display: block;
+    line-height: 35px;
+    font-size: 16px;
+    color: #979797;
+    text-indent: 35px;
+}
+.team .loop .data .title_t{
+    width: 90%;
+    float: left;
+    text-align: left;
+    height: 28px;
+    display: block;
+    color: #666;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 28px;
+}
+.Strategy{
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+    display: block;
+    line-height: 40px;
+    font-size: 18px;
+    color: #333333;
+    overflow: hidden;
+}
+.Strategy .title{
+    height: 35px;
+    line-height: 35px;
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    color: #010101;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+.Strategy .zhanlui{
+    width: 1200px;
+    overflow: hidden;
+    display: block;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+.Strategy .zhanlui .fl{
+    width: 33.33%;
+    overflow: hidden;
+    float: left;
+}
+.Strategy .zhanlui .fl img{
+    display: block;
+    margin: auto;
+}
+.Strategy .zhanlui .fl span{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    color: #333333;
+}
+.Economics{
+    width: 100%;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    padding-bottom: 100px;
+}
+.Economics_auto{
+    width: 1050px;
+    margin: auto;
+    overflow: hidden;
+    padding-top: 100px;
+}
+.Economics_auto img{
+    display: block;
+    float: left;
+    max-width: 50%;
+}
+.Economics_auto .text{
+    width: 50%;
+    overflow: hidden;
+    float: right;
+}
+.Economics_auto .text span{
+    display: block;
+    border-left: 5px solid #E12E32;
+    line-height: 30px;
+    width: 581px;
+    height: 30px;
+    color: #2F2F2F;
+    font-size: 22px;
+    text-indent: 15px;
+    margin-bottom: 40px;
+}
+.Economics_auto .text p{
+    width:100%;
+    line-height: 40px;
+    display: block;
+    font-size: 16px;
+    color: #2F2F2F;
+    background: url(/new/home/about/img/jz6.jpg) no-repeat center left;
+    text-indent: 33px;
+}
+.Promote{
+    width: 1050px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.Promote_text{
+    float: left;
+    width: 50%;
+    overflow: hidden;
+}
+.Promote_text span{
+    display: block;
+    border-left: 5px solid #E12E32;
+    line-height: 30px;
+    width: 581px;
+    height: 30px;
+    color: #2F2F2F;
+    font-size: 22px;
+    text-indent: 15px;
+    margin-bottom: 40px;
+}
+.Promote_text p{
+    width:100%;
+    line-height: 40px;
+    display: block;
+    font-size: 16px;
+    color: #2F2F2F;
+    background: url(/new/home/about/img/jz4.jpg) no-repeat center left;
+    text-indent: 33px;
+}
+.Promote_img{
+    float: right;
+    max-width: 50%;
+}
+.Job{
+    width: 100%;
+    overflow: hidden;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.Job .title{
+    width: 100%;
+    text-align: center;
+    color: #010101;
+    font-size: 22px;
+    line-height: 35px;
+}
+.Job_text{
+    width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0;
+    line-height: 40px;
+    display: block;
+    font-size: 18px;
+    color: #2F2F2F;
+    padding-top: 10px;
+}
+.Job_img{
+    width: 1200px;
+    margin: auto;
+    padding-top: 50px;
+    overflow: hidden;
+}
+.Job_img img{
+    float: left;
+    width: 25%;
+    max-height: 283px;
+}
+.zuzhi{
+    display: block;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.linked{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    background: url(/new/home/about/img/timg.jpg) no-repeat bottom right;
+}
+.linked_top{
+    width: 850px;
+    display: block;
+    font-size: 16px;
+    color: #333333;
+    line-height: 35px;
+}
+.linked_con{
+    width: 850px;
+    overflow: hidden;
+    margin-top: 50px;
+}
+.linked_con .name{
+    display: block;
+    font-size: 20px;
+    color: #010101;
+    margin-bottom: 30px;
+}
+.linked_con p{
+    line-height: 30px;
+    font-size: 14px;
+    color: #333333;
+}
+@media screen and (max-width: 1200px){
+   .Choice_a{
+       width: 90%;
+   }
+    .explain{
+        width: 90%;
+    }
+    .explain img{
+        max-width: 48%;
+    }
+    .explain .text{
+        width: 50%;
+    }
+    .votes_auto{
+        width: 100%;
+    }
+    .vision_auto{
+        width: 100%;
+    }
+    .banner{
+        margin-top: 80px;
+    }
+    .team{
+        width: 100%;
+    }
+    .Strategy .zhanlui{
+        width: 100%;
+    }
+    .Economics_auto{
+        width: 100%;
+    }
+    .Promote{
+        width: 100%;
+    }
+    .Promote_text{
+        width: 45%;
+        margin-left: 5%;
+    }
+    .Job_text{
+        width: 100%;
+    }
+    .Job_img{
+        width: 100%;
+    }
+    .Job_img img{
+        max-height: 233px;
+    }
+    .zuzhi{
+        width: 90%;
+    }
+    .linked{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1000px){
+    .team .loop .data .title{
+        margin-top: 30px;
+    }
+    .team .loop img{
+        width: 100%;
+    }
+    .team .loop .data{
+        width: 100%;
+    }
+    .team .loop .data .title{
+        margin-right: 5%;
+    }
+    .team .loop .data .data_p{
+        margin-right: 5%;
+    }
+    .team .loop .data .title_t{
+        margin-left: 5%;
+    }
+    .data_t{
+        margin-left: 5%;
+    }
+    .Job_img img{
+        max-height: 197px;
+    }
+}
+@media screen and (max-width: 850px){
+    .Choice_a{
+        width:100%;
+        height: 180px;
+        border-bottom: 1px solid #f5f5f5;
+    }
+    .explain img{
+        display: none;
+    }
+    .explain .text{
+        width:100%;
+    }
+    .votes_auto a{
+        width: 50%;
+    }
+    .votes_auto a:nth-child(2N){
+        border-right: none;
+    }
+    .Strategy .zhanlui .fl{
+        width: 50%;
+        margin-bottom: 20px;
+    }
+    .Economics_auto img{
+        display: none;
+    }
+    .Economics_auto .text{
+        width: 90%;
+        margin-left: 5%;
+    }
+    .Promote_img{
+        display: none;
+    }
+    .Promote_text{
+        width: 90%;
+        margin-left: 5%;
+        float: right;
+    }
+    .linked_top{
+        width: 90%;
+        margin-left: 10%;
+    }
+    .linked_con{
+        width: 90%;
+        margin-left: 10%;
+    }
+}
+@media screen and (max-width: 550px){
+    .votes_auto a{
+        width: 100%;
+    }
+    .votes_auto a{
+        border-right: none;
+    }
+    .Strategy .zhanlui .fl{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .Economics_auto img{
+        display: none;
+    }
+    .Economics_auto .text p{
+        background: none;
+    }
+    .Promote_text p{
+        background: none;
+    }
+    .Job_img img{
+        width: 50%;
+    }
+}

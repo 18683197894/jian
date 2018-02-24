@@ -65,7 +65,7 @@
             <a href="{{ url('/newpro/case/index') }}">装修案例</a>
             <a href="javascript:;">精装房</a>
             <a href="javascript:;">设计风格</a>
-            <a href="javascript:;">联系我们</a>
+            <a href="{{ asset('/newpro/about?ors=contact') }}">联系我们</a>
         </div>
         <a href="javascript:;" class="botton">
             <span></span>

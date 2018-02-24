@@ -101,7 +101,7 @@ $(function(){
 						$(this).parent('label').addClass('active');
 						$(this).parent('label').find('span').eq(0).css('display','block');
 						yan = false;
-						alert(yan);
+						
 						return false;
 					}
 				}
