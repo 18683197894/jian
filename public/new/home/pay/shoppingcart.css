@@ -1,0 +1,302 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #ffffff;
+}
+.nav_top{
+    width: 100%;
+    height: 35px;
+    background-color: #f5f5f5;
+}
+.nav_top .auto{
+    width: 1200px;
+    height: 35px;
+    margin: auto;
+}
+.nav_top .auto a{
+    display: block;
+    float: right;
+    line-height: 35px;
+    font-size: 16px;
+    color: #010101;
+}
+.nav_top .auto span{
+    display: block;
+    float: right;
+    width: 1px;
+    background-color: #ccc;
+    height: 18px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.contact{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.contact_logo{
+    width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    height: 60px;
+    line-height: 60px;
+}
+.logo{
+    float: left;
+}
+.contact_logo_r{
+    float: left;
+    margin-left: 20px;
+}
+.contact_logo_r a{
+    display: block;
+    float: left;
+    margin-left: 30px;
+    color: red;
+}
+.gwc{
+    display: block;
+    float: left;
+    width: 100px;
+    height: 30px;
+    margin-top: 15px;
+    border-left: 1px solid  #ccc;
+    line-height: 30px;
+    text-align: center;
+    margin-left: 30px;
+}
+.shopping{
+    display: block;
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 30px;
+    background-color: #f2f2f2;
+}
+.shopping .top{
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #ccc;
+}
+.shopping li{
+    width: 10%;
+    text-align: center;
+    height: 100%;
+    line-height: 60px;
+    float: left;
+    overflow: hidden;
+}
+.shopping li{
+    width: 10%;
+    float: left;
+    color: #010101;
+}
+.shopping tbody{
+    width: 100%;
+}
+.shopping .top li input{
+    width: 20px;
+    height: 20px;
+    -webkit-appearance: checkbox;
+    margin-top: 20px;
+    float: left;
+    margin-left: 30%;
+}
+.shopping .top li span{
+    float: left;
+    line-height: 60px;
+    margin-left: 5%;
+    color: #010101;
+}
+.shopping .name{
+    width: 40%;
+}
+.shopping .jiage{
+    width: 14%;
+}
+.shopping .num{
+    width: 15%;
+}
+.shopping .jie{
+    width: 14%;
+}
+.shopping .cz{
+    width: 7%;
+}
+.shopping .cz i{
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    line-height: 20px;
+    margin-top: 50px;
+    color: #010101;
+    cursor: pointer;
+}
+.shopping .con{
+    width: 100%;
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+.shopping .con li{
+    line-height: 120px;
+}
+.shopping .con li input{
+    width: 20px;
+    height: 20px;
+    -webkit-appearance: checkbox;
+    margin-top: 50px;
+    float: left;
+    margin-left: 30%;
+    color: #010101;
+}
+.shopping .con li span{
+    float: left;
+    margin-left: 5%;
+    color: #010101;
+}
+.shopping .con .name_top{
+    width: 60%;
+    height: 50%;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+    line-height: 70px;
+    color: #010101;
+    margin: auto;
+}
+.shopping .con .name_bo{
+    width: 100%;
+    height: 50%;
+    line-height: 50px;
+    color: #010101;
+}
+.shopping .con .cz{
+    font-size: 30px;
+}
+.shopping .con .jie{
+    color: #E12E32;
+}
+.shopping .con li .box{
+    width: 20%;
+    height: 30px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    display: block;
+    margin-left: 0;
+    float: left;
+    line-height: 30px;
+    margin-top: 45px;
+    cursor: pointer;
+    border-left: none;
+    border-right: 0;
+    font-size: 18px;
+}
+.shopping .con li .jian{
+    display: block;
+    width: 20%;
+    height: 30px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    float: left;
+    margin-top: 45px;
+    cursor: pointer;
+    border-left: none;
+    border-right: 0;
+    margin-left: 20%;
+    border-left:1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 30px;
+    line-height: 26px;
+    color: #010101;
+}
+.shopping .con li .jia{
+    display: block;
+    width: 20%;
+    height: 30px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    float: left;
+    margin-top: 45px;
+    cursor: pointer;
+    border-left: none;
+    border-right: 0;
+    border-right:1px solid #ccc;
+    box-sizing: border-box;
+    line-height: 26px;
+    font-size: 21px;
+    color: #010101;
+}
+.Settlement{
+    width: 100%;
+    line-height: 50px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-top: 2px solid #FEFEFE;
+}
+.Settlement .shop{
+    float: left;
+    font-size: 14px;
+    margin-left:3%;
+    color: #010101;
+}
+.Settlement .shop span{
+    color: red;
+}
+
+.money{
+    float: right;
+}
+.money .Total{
+    float: left;
+    font-size: 16px;
+    color: red;
+    margin-right: 20px;
+}
+.money .Total span{
+    font-size: 20px;
+    color: red;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.money button{
+    display: block;
+    float: left;
+    width: 190px;
+    height: 50px;
+    border: none;
+    list-style: none;
+    background-color: #E12E32;
+    font-size: 17px;
+    color: #fff;
+    cursor: pointer;
+}
+@media screen and (max-width: 1200px){
+    .nav_top .auto{
+      width: 100%;
+    }
+    .contact_logo{
+        width: 96%;
+    }
+    .shopping{
+        width: 96%;
+    }
+}
+@media screen and (max-width: 700px){
+    .shopping .name{
+        width: 30%;
+    }
+    .shopping .num{
+      width: 22%;
+    }
+    .shopping .jie{
+      width: 17%;
+    }
+}

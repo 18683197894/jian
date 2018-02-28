@@ -82,14 +82,14 @@
                         <li>
                             <div class="Choice"><input type="radio" value="{{ $vvvv->id }}" index="main"  feel="{{ $vvvv->main }}" name="Choice{{ $v->id }}"> </input></div>
                             <div class="Housing">{{ $vvvv->title }}/主流品牌</div>
-                            <div class="Package">（{{ $vvvv->mains }}）</div>
+                            <div class="Package">{{ $vvvv->mains }}</div>
                             <div class="Price">{{ $vvvv->main }}元</div>
                         </li>
                         @if($vvvv->nomain != null)
                         <li>
                             <div class="Choice"><input type="radio" value="{{ $vvvv->id }}" index="nomain" feel="{{ $vvvv->nomain }}" name="Choice{{ $v->id }}"> </input></div>
                             <div class="Housing">{{ $vvvv->title }}/非主流品牌</div>
-                            <div class="Package">（{{$vvvv->nomains}}）</div>
+                            <div class="Package">{{$vvvv->nomains}}</div>
                             <div class="Price">{{ $vvvv->nomain }}元</div>
                         </li>
                         @endif
@@ -97,14 +97,14 @@
                         <li>
                             <div class="Choice"><input type="radio" value="{{ $vvvv->id }}" index="model" feel="{{ $vvvv->model }}" name="Choice{{ $v->id }}"> </input></div>
                             <div class="Housing">{{ $vvvv->title }}/样板间</div>
-                            <div class="Package">（{{$vvvv->models}}）</div>
+                            <div class="Package">{{$vvvv->models}}</div>
                             <div class="Price">{{ $vvvv->model }}元</div>
                         </li>
                         @endif
                         <li>
                             <div class="Choice"><input type="radio" value="{{ $vvvv->id }}" index="qing" feel="{{ $qing }}" name="Choice{{ $v->id }}"> </input></div>
                             <div class="Housing">{{ $vvvv->title }}/清水房</div>
-                            <div class="Package">（含硬装，厨房地柜，吊柜，卫生间洁柜）</div>
+                            <div class="Package">含硬装，厨房地柜，吊柜，卫生间洁柜</div>
                             <div class="Price">{{ $qing }}元 / 每平方</div>
                         </li>
                         @endforeach
@@ -114,8 +114,9 @@
                         <div class="auto">
                             <span>￥</span>
                             <span>0</span>
+                            <input style="display:none" type="text" placeholder="输入平米" class="purchase_in">
                             <a @if(!session('Home')) href="{{ url('/newpro/login?path=') }}{{ $path }}" @else href="javascript:;" class="paygou" @endif >加入购物车</a>
-                            <a @if(!session('Home')) href="{{ url('/newpro/login?path=') }}{{ $path }}" @else href="javascript:;" class="paygou" @endif href="javascript:;">去支付</a>
+                            <a @if(!session('Home')) href="{{ url('/newpro/login?path=') }}{{ $path }}" @else href="javascript:;" class="paygous" @endif href="javascript:;">去支付</a>
                         </div>
                     </div>
                 </div>
@@ -135,21 +136,42 @@
 @section('js')
 <script src="{{ asset('/new/home/product/styleindex.js') }}"></script>
             <script>
+            $(document).ready(function(){
+                $("input[type='radio']").removeAttr('checked');
+            })
             $("input[type='radio']").on('click',function(){
                 var money = $(this).attr('feel');
                 $(this).parents('.fashion').find('.auto > span ').eq(1).html(money);
+                if($(this).attr('index') == 'qing')
+                {
+                    $(this).parents('.fashion').find('.auto > input').css('display','block');
+                }else
+                {
+                    $(this).parents('.fashion').find('.auto > input').css('display','none');
+                }
             });
                 $('.paygou').on('click',function(){
                     var id = $(this).parents('.fashion').find("input[type='radio']:checked").val();
                     var ors = $(this).parents('.fashion').find("input[type='radio']:checked").attr('index');
+                    
                     if(id == null || ors == null)
                     {
                         alert('请先选择产品!');
                         return false;
                     }
+                    if(ors == 'qing')
+                    {
+                        var num = $(this).parents('.fashion').find("input[type='text']").val();
+                        var pre =/^[\d]{1,3}$/;
+                        if(!pre.test(num) || num < 10)
+                        {
+                            alert('输入错误(最小单位为10)');
+                            return false;
+                        }
+                    }
                     $.ajax('/newpro/style/paygouajax',{
                         type : 'post',
-                        data : {id:id,ors:ors,_token:$("meta[name='csrf-token']").attr('content')},
+                        data : {id:id,num:num,ors:ors,_token:$("meta[name='csrf-token']").attr('content')},
                         success : function(data)
                         {   
                             if(data == 1 )

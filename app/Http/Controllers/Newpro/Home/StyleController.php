@@ -29,6 +29,7 @@ class StyleController extends Controller
     {
         $id = $request->id;
         $ors = $request->ors;
+        $num = $request->input('num',1);
         $user = $request->session()->get('Home',null);
         if(!$user)
         {
@@ -39,17 +40,24 @@ class StyleController extends Controller
         
         if($over)
         {   
+            if($ors == 'qing')
+            {
+                \DB::table('playgou')->where('id',$over->id)->update(['num'=>$num]);
+                return response()->json(1);
+            }
+
             $num = $over->num + 1;
             \DB::table('playgou')->where('id',$over->id)->update(['num'=>$num]);
             return response()->json(1);
 
         }
+        
         $data = [
                     'pid'=>$id,
                     'name' => \DB::table('door')->select('id','title')->where('id',$id)->first()->title,
                     'tus' => $ors,
                     'time'=>time(),
-                    'num' => 1,
+                    'num' => $num,
                     'status' => 0,
                     'uid'=>$user->id
                     ];

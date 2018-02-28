@@ -48,12 +48,12 @@
                 <thead>
                 <tr>
                   <th width="10%"  style=" text-align:center;">ID</th>
-                  <th width="15%"  style="text-align:center;">包名称</th>
-                  <th width="25%"  style="text-align:center;">所属风格</th>
+                  <th width="25%"  style="text-align:center;">包名称</th>
+                  <th width="15%"  style="text-align:center;">所属风格</th>
                   <th width="10%"  style="text-align:center;">价格</th>
                   <th width="10%"  style="text-align:center;">数量</th>
-                  <th width="25%"  style="text-align:center;">创建时间</th>
-                  <th width="15%"  style="text-align:center;">操作</th>
+                  <th width="20%"  style="text-align:center;">创建时间</th>
+                  <th width="10%"  style="text-align:center;">操作</th>
                 </tr>
                 </thead>
                 <tbody>

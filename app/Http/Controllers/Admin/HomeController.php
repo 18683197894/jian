@@ -52,15 +52,19 @@ class HomeController extends Controller
       {
           if($v->tus == 'main')
           {
+            $v->name = $v->name.' （主流品牌）';
             $v->money = $v->main;
           }else if($v->tus == 'nomain')
           {
+            $v->name = $v->name.' （非主流品牌）';
             $v->money = $v->nomain;
           }else if($v->tus == 'model')
           {
+            $v->name = $v->name.' （样板间）';
             $v->money = $v->model;
           }else if($v->tus == 'qing')
           {
+            $v->name = $v->name.' （清水房）';
             $v->money = $qing.'/每平方';
           }
 
