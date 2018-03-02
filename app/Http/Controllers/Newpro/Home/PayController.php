@@ -143,7 +143,7 @@ class PayController extends Controller
         $address = \DB::table('address')->select('status','id','shen','shi','qu','name','phone','tails','zipcode','lebel','uid')->where('uid',$uid)->get();
         $district = \DB::table('district')->select('id','name','level','upid')->where('level',1)->get();
 
-    	return view('Newpro.Home.pay.payment',['title'=>$title,'address'=>$address,'district'=>$district]);
+    	return view('Newpro.Home.Pay.payment',['title'=>$title,'address'=>$address,'district'=>$district]);
     }
 
     public function addressajax(Request $request)
