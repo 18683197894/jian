@@ -416,7 +416,7 @@ class QuestionController extends Controller
                     array_push($datas,[$data->door.$k=>$v]);
                 }
             }
-            
+           
             return view('Newpro.Home.Question.defuors',['datas'=>$datas,'data'=>$data]);
 
        

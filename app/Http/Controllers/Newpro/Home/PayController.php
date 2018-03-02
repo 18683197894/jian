@@ -130,4 +130,94 @@ class PayController extends Controller
     		}
     	}
     }
+
+    public function payment(Request $request)
+    {	
+    	$uid = \session('Home')->id;
+    	$ids = $request->data;
+    	if(!$ids) return back();
+    	$id = Base64_decode($ids);
+    	$id = substr($id,0,-1);
+    	$id = explode(',',$id);
+    	$title = getwebpage($request->path());
+        $address = \DB::table('address')->select('status','id','shen','shi','qu','name','phone','tails','zipcode','lebel','uid')->where('uid',$uid)->get();
+        $district = \DB::table('district')->select('id','name','level','upid')->where('level',1)->get();
+
+    	return view('Newpro.Home.pay.payment',['title'=>$title,'address'=>$address,'district'=>$district]);
+    }
+
+    public function addressajax(Request $request)
+    {
+    	$id = $request->id;
+    	$ors = $request->ors;
+    	if($ors == 'shen')
+    	{
+    		$ors = 2;
+    	}else if($ors == 'shi')
+    	{
+    		$ors = 3;
+    	}
+    		$data = \DB::table('district')->select('id','name','level','upid')->where('upid',$id)->where('level',$ors)->get();
+    		if($data)
+    		{
+    			return response()->json($data);
+    		}else
+    		{
+    			return response()->json(false);
+    		}
+    	
+    }
+
+    public function addressadd(Request $request)
+    {
+    	$uid = \session('Home')->id;
+    	$ors = $request->ors;
+    	$data = $request->data;
+    	
+    	if($ors == 'add')
+    	{
+    		$data['uid'] = $uid;
+    		$data['time'] = time();
+    		$data['uptime'] = time();
+    		$data['status'] = 0;
+
+    		$id = \DB::table('address')->insertGetid($data);
+    		if($id)
+    		{
+    			$data['id'] = $id;
+    			return response()->json($data);
+    		}else
+    		{
+    			return response()->json(false);
+    		}
+    	}
+    }
+
+    public function addressstatus(Request $request)
+    {	
+    	$uid = \session('Home')->id;
+    	$id = $request->id;
+    	$res = \DB::table('address')->where('uid',$uid)->update(['status'=>0]);
+    	$ress = \DB::table('address')->where('id',$id)->update(['status'=>1]);
+    	if($ress && $res)
+    	{
+    		return response()->json(true);
+    	}else
+    	{
+    		return response()->json(false);
+    	}
+    }
+
+    public function addressdel(Request $request)
+    {
+    	$id = $request->id;
+    	$res = \DB::table('address')->delete($id);
+    	if($res)
+    	{
+    		return response()->json(true);
+    	}else
+    	{
+    		return response()->json(false);
+    	}
+    }
 }

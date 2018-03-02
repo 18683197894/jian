@@ -1,0 +1,832 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #ffffff;
+}
+.nav_top{
+    width: 100%;
+    height: 35px;
+    background-color: #f5f5f5;
+}
+.nav_top .auto{
+    width: 1200px;
+    height: 35px;
+    margin: auto;
+}
+.nav_top .auto a{
+    display: block;
+    float: right;
+    line-height: 35px;
+    font-size: 16px;
+    color: #010101;
+}
+.nav_top .auto span{
+    display: block;
+    float: right;
+    width: 1px;
+    background-color: #ccc;
+    height: 18px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.contact{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.contact_logo{
+    width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    height: 60px;
+    line-height: 60px;
+}
+.logo{
+    float: left;
+}
+.contact_logo_r{
+    float: left;
+    margin-left: 20px;
+}
+.contact_logo_r a{
+    display: block;
+    float: left;
+    margin-left: 30px;
+    color: red;
+}
+.gwc{
+    display: block;
+    float: left;
+    width: 100px;
+    height: 30px;
+    margin-top: 15px;
+    border-left: 1px solid  #ccc;
+    line-height: 30px;
+    text-align: center;
+    margin-left: 30px;
+}
+.Order{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 50px;
+}
+.Order .address{
+    width: 100%;
+    overflow: hidden;
+}
+.address .title{
+    line-height: 30px;
+    font-size: 16px;
+    display: block;
+    color: #444;
+}
+.address .dizhi{
+    width: 100%;
+    overflow: hidden;
+}
+.address .dizhi span{
+    display: block;
+    width: 260px;
+    height: 120px;
+    background: url("/new/home/pay/img/nodefault.png");
+    background-size: 100% 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    float: left;
+    margin-right: 20px;
+}
+.address .dizhi span.avtive{
+    background: url("/new/home/pay/img/default.png");
+    background-size: 100% 100%;
+}
+.address .dizhi span.avtive .operation .delete{
+    display: none;
+}
+.address .dizhi span .name{
+    width: 220px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    font-size: 15px;
+    color: #555;
+    overflow: hidden;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+}
+.address .dizhi span .con{
+    width: 220px;
+    height: 45px;
+    display: block;
+    margin: 0 auto;
+    font-size: 15px;
+    padding-top: 5px;
+    overflow: hidden;
+    color: #555;
+}
+.address .dizhi span .operation{
+    width: 220px;
+    height: 30px;
+    margin: auto;
+}
+.address .dizhi span .operation button{
+    list-style: none;
+    border: none;
+    float: left;
+    font-size: 14px;
+    color: #D5A68A;
+    background-color: #fff;
+    padding: 0;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.address .New{
+    width: 100%;
+    margin-top: 20px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.address .New a{
+    display: block;
+    border: none;
+    font-size: 15px;
+    color: #ffffff;
+    list-style: none;
+    padding: 4px 8px;
+    background: red;
+    width: 100px;
+    text-align: center;
+}
+.New .add{
+    width: 500px;
+    overflow: hidden;
+    margin-top: 20px;
+    display: none;
+}
+.New .add.avtive{
+    display: block;
+}
+.New .add .modal_title{
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #EEEEEE;
+    height: 55px;
+    color: #010101;
+    font-size: 22px;
+    line-height: 55px;
+    text-indent: 20px;
+    position: relative;
+    /*margin-bottom: 10px;*/
+}
+.New .add .modal_title span{
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 35px;
+    color: #010101;
+    line-height: 10px;
+    text-align: right;
+    cursor: pointer;
+    text-indent: 0;
+}
+.New .add .fill{
+    width: 100%;
+    height: 40px;
+    margin: auto;
+    margin-top: 20px;
+}
+.New .add .fill input{
+    display: block;
+    float: left;
+    border: 1px solid #EDEDED;
+    box-sizing: border-box;
+    outline: none;
+    height: 40px;
+    text-indent: 20px;
+    color: #010101;
+}
+.New .add .fill .left{
+    float: left;
+    width: 45%;
+}
+.New .add .fill .right{
+    float: right;
+    width: 45%;
+}
+.linkage{
+    width: 30%;
+    height: 40px;
+    border: 1px solid #EDEDED;
+    box-sizing: border-box;
+    float: left;
+    margin-right: 3%;
+    text-indent: 10px;
+    color: #010101;
+    font-size: 16px;
+    background: url("/new/home/pay/img/xiala.png") no-repeat scroll right center transparent;
+    cursor: pointer;
+    position: relative;
+}
+.selected{
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    line-height: 40px;
+    overflow:hidden;
+    color: #010101;
+}
+.down{
+    position: absolute;
+    left: 0;
+    top: 39px;
+    width: 100%;
+    background: #fff;
+    display: none;
+    background-color: #fff;
+    border-radius: 0px 0px 5px 5px;
+    max-height: 200px;
+    overflow: auto;
+    border: 1px solid #ededed;
+    border-top: none;
+    box-sizing: border-box;
+}
+.down.avtive{
+    display: block;
+}
+.fill .down li a{
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: #010101;
+    font-size: 16px;
+    background: #ffffff;
+    text-align: left;
+    padding: 0;
+    overflow:hidden;
+}
+.fill .down li a:hover {
+    background: #f9f999;
+}
+.New .add .fill .xiangxi{
+    width: 100%;
+}
+.New .add .Submit{
+    width: 100%;
+    height: 50px;
+    border: 1px solid #EEEEEE;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.New .add .Submit .left{
+    width: 50%;
+    height: 50px;
+    float: left;
+}
+.cancel{
+    float: right;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+    user-select: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    border-image: initial;
+    border-radius: 5px;
+    padding: 5px 20px;
+    outline: none;
+    margin-right: 10px;
+}
+.cancel:hover{
+    color: #333;
+    background-color: #d4d4d4;
+    border-color: #8c8c8c;
+}
+.determine,.determines{
+    float: left;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+    user-select: none;
+    border-width: 1px;
+    border-style: solid;
+    border-image: initial;
+    border-radius: 5px;
+    padding: 5px 20px;
+    outline: none;
+    margin-right: 10px;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    margin-left: 10px;
+    color: #ffffff;
+}
+.Determine:hover{
+    background-color: #286090;
+    border-color: #204d74;
+}
+.details{
+    width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+.details .title{
+    width: 100%;
+    font-size: 16px;
+    color: #444;
+    display: block;
+    line-height: 35px;
+}
+.details ul{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.details ul li{
+    display: block;
+    float: left;
+    text-align: center;
+}
+.details .top .shop{
+    width: 21%;
+    margin-right: 1%;
+    float: left;
+    display: block;
+    font-size: 16px;
+    height: 34px;
+    text-align: center;
+    color: #444;
+    line-height: 40px;
+    border-bottom: 3px solid #B4D0FF;
+    padding: 0;
+}
+.details .top .Attribute{
+    width: 22%;
+    margin-right: 1%;
+    float: left;
+    display: block;
+    font-size: 16px;
+    height: 34px;
+    text-align: center;
+    color: #444;
+    line-height: 40px;
+    border-bottom: 3px solid #B4D0FF;
+    padding: 0;
+}
+.details .top .Price{
+    width: 14%;
+    margin-right: 1%;
+    float: left;
+    display: block;
+    font-size: 16px;
+    height: 34px;
+    text-align: center;
+    color: #444;
+    line-height: 40px;
+    border-bottom: 3px solid #B4D0FF;
+    padding: 0;
+}
+.details .top .Number{
+    width: 15%;
+    margin-right: 1%;
+    float: left;
+    display: block;
+    font-size: 16px;
+    height: 34px;
+    text-align: center;
+    color: #444;
+    line-height: 40px;
+    border-bottom: 3px solid #B4D0FF;
+    padding: 0;
+}
+.details .top .Subtotal{
+    width: 24%;
+    float: left;
+    display: block;
+    font-size: 16px;
+    height: 34px;
+    text-align: center;
+    color: #444;
+    line-height: 40px;
+    border-bottom: 3px solid #B4D0FF;
+    padding: 0;
+}
+.details .con{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+    line-height: 40px;
+    border-bottom: 1px solid #B4D0FF;
+    font-size: 16px;
+}
+.details .shop{
+    width: 21%;
+    float: left;
+    margin-right: 1%;
+    color: #444444;
+}
+.details .Attribute{
+    width: 22%;
+    float: left;
+    margin-right: 1%;
+    color: #444444;
+}
+.details .Price{
+    width: 14%;
+    float: left;
+    margin-right: 1%;
+    color: #444444;
+}
+.details .Number{
+    width: 15%;
+    float: left;
+    margin-right: 1%;
+    color: #444444;
+}
+.details .Subtotal{
+    width: 24%;
+    float: left;
+    color: #444;
+    font-size: 19px;
+}
+.details .sub{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0;
+    line-height: 50px;
+}
+.details .sub .Subtotal{
+    color: #E42D2F;
+}
+.invoice{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 30px;
+}
+.invoice .left{
+    width: 50%;
+    border-right: 3px solid #ffffff;
+    box-sizing: border-box;
+    float: left;
+}
+.invoice .right{
+    float: left;
+    width: 50%;
+}
+.in_click{
+    width: 100%;
+    height: 40px;
+    background-color: #F2F6FF;
+}
+.in_click input{
+    width: 20px;
+    height: 20px;
+    display: block;
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px;
+    -webkit-appearance: checkbox;
+}
+.in_click span{
+    font-size: 15px;
+    color: #555;
+    float: left;
+    line-height: 40px;
+    margin-left: 10px;
+}
+.fapiao{
+    overflow: hidden;
+    width: 100%;
+}
+.fapiao .input{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: none;
+}
+.fapiao .input.avtive{
+    display: block;
+}
+.fapiao .input input{
+    width: 46%;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    margin-left: 2%;
+    text-indent: 15px;
+}
+.fapiao span{
+    width: 240px;
+    margin-left: 10px;
+    height: 120px;
+    background: url(/new/home/pay/img/nodefault.png);
+    background-size: 100% 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    float: left;
+    margin-right: 20px;
+    display: none;
+    overflow: hidden;
+}
+.fapiao span.avtive{
+    display: block;
+    background: url(/new/home/pay/img/default.png);
+    background-size: 100% 100%;
+    margin-bottom: 20px;
+}
+.fapiao .name{
+    width: 200px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    font-size: 15px;
+    color: #555;
+    overflow: hidden;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+}
+.fapiao .con{
+    width: 200px;
+    height: 45px;
+    display: block;
+    margin: 0 auto;
+    font-size: 15px;
+    padding-top: 5px;
+    overflow: hidden;
+    color: #555;
+}
+.piao_ope{
+    width: 200px;
+    height: 30px;
+    margin: auto;
+}
+.piao_ope button{
+    list-style: none;
+    border: none;
+    float: left;
+    font-size: 14px;
+    color: #D5A68A;
+    background-color: #fff;
+    padding: 0;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.liuyan{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 5px;
+    background-color: #F2F6FF;
+}
+.liuyan .text{
+    float: left;
+    line-height: 40px;
+    margin-right: 5%;
+    text-indent: 20px;
+    font-size: 15px;
+}
+.liuyan input{
+    float: left;
+    width: 250px;
+    height: 40px;
+    outline: none;
+    text-indent: 15px;
+}
+.Postage{
+    width: 100%;
+    height: 40px;
+    background-color: #F2F6FF;
+}
+.Postage span{
+    display: block;
+    float: left;
+    font-size: 15px;
+    color: #555;
+    line-height: 40px;
+    margin-left: 10px;
+}
+.Postage i{
+    display: block;
+    float: right;
+    color: #E12F2F;
+    line-height: 40px;
+    margin-right: 20px;
+}
+.Insurance{
+    width: 100%;
+    height: 40px;
+    background-color: #F2F6FF;
+    margin-top: 5px;
+}
+.Insurance .name{
+    float: left;
+    text-indent: 15px;
+    line-height: 40px;
+    font-size: 15px;
+    color: #666;
+}
+.Insurance input{
+    width: 20px;
+    height: 20px;
+    display: block;
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px;
+    -webkit-appearance: checkbox;
+}
+.Insurance i{
+    width: 47px;
+    height: 20px;
+    background-color: #2EA468;
+    color: #fff;
+    display: block;
+    text-align: center;
+    line-height: 20px;
+    float: left;
+    margin-left: 3px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.Insurance .jies{
+    line-height: 40px;
+    font-size: 15px;
+    color: #666;
+    float: left;
+    margin-left: 15px;
+}
+.Insurance .number{
+    float: right;
+    text-align: center;
+    line-height: 40px;
+    font-size: 19px;
+    color: #E12F2F;
+    margin-right: 20px;
+}
+.jiesuan{
+    background-color: #F2F6FF;
+    width: 1200px;
+    height: 45px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 5px;
+}
+.jiesuan div{
+    float: right;
+    line-height: 60px;
+    font-size: 14px;
+    color: #555;
+    margin-right: 10px;
+}
+.jiesuan span{
+    float: right;
+    font-size: 18px;
+    margin-right: 2px;
+    line-height: 62px;
+    color: #E12F2F;
+}
+.jiesuan i{
+    float: right;
+    text-align: left;
+    line-height: 60px;
+    font-size: 18px;
+    color: #E12F2F;
+    margin-right: 20px;
+}
+.payment_buttom_sub{
+    width: 1200px;
+    height: 230px;
+    display: block;
+    margin: 0 auto;
+    /* position: relative; */
+}
+.payment_buttom_sub_1{
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+.payment_buttom_sub_1 i{
+    float: right;
+    text-align: left;
+    line-height: 50px;
+    font-size: 30px;
+    margin-right: 20px;
+    color: #FF0036;
+}
+.payment_buttom_sub_1 span{
+    float: right;
+    font-size: 30px;
+    margin-right: 2px;
+    line-height: 50px;
+    color: #FF0036;
+    font-weight: 600;
+}
+.payment_buttom_sub_1 div{
+    line-height:50px;
+    font-size: 15px;
+    color: #000;
+    float: right;
+    margin-right: 5px;
+}
+.payment_buttom_sub_2{
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    overflow: hidden;
+    font-size: 15px;
+    color: #000;
+    text-align: right;
+    line-height: 30px;
+}
+.payment_buttom_sub_2 span{
+    margin-right: 20px;
+    font-size: 15px;
+    color: #000;
+}
+.payment_buttom_sub_3{
+    width: 100%;
+    overflow: hidden;
+}
+.payment_buttom_sub_3 button{
+    width: 180px;
+    height: 40px;
+    float: right;
+    list-style: none;
+    border: none;
+    margin-right: 20px;
+    color: #fff;
+    font-size: 15px;
+    background-color: #FE214D;
+    margin-top: 20px;
+    cursor: pointer;
+}
+@media screen and (max-width: 1200px){
+    .nav_top .auto{
+      width: 100%;
+    }
+    .contact_logo{
+        width: 98%;
+    }
+    .Order{
+        width: 98%;
+    }
+    .details{
+        width: 100%;
+    }
+    .invoice{
+        width: 100%;
+    }
+    .jiesuan{
+        width: 100%;
+    }
+    .payment_buttom_sub{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 760px){
+    .gwc{
+        display: none;
+    }
+}
+@media screen and (max-width: 750px){
+    .invoice .left{
+        width: 90%;
+        margin-left: 5%;
+    }
+    .invoice .right{
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 5px;
+    }
+    .jiesuan{
+        width: 90%;
+    }
+
+}
+@media screen and (max-width: 520px){
+    .Insurance .jies{
+        font-size: 12px;
+    }
+    .Insurance .name{
+      font-size: 12px;
+    }
+    .Insurance input{
+      margin-left: 10px;
+    }
+    .New .add{
+        width: 100%;
+    }
+}

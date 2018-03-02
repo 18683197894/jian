@@ -28,7 +28,10 @@
             @endif
         @endforeach
     </div>
-    <img src="{{ asset('/new/home/question/img/'.$data->door.'.jpg') }}" alt="" class="yusuan"/>
+    @foreach($datas[10] as $k => $v)
+        <img src="{{ asset('/new/home/question/img/'.$k.'.jpg') }}" alt="" class="yusuan"/>
+        
+        @endforeach
     <!--<a href="https://yun.kujiale.com/design/3FO4LP7XDXQO/show">A2户型北欧风格</a>-->
     <!--<a href="https://yun.kujiale.com/design/3FO4LR54M0S9/show">A2户型美式风格</a>-->
     <!--<a href="https://yun.kujiale.com/design/3FO4LR546MGN/show">A2户型现代风格</a>-->

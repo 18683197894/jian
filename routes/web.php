@@ -460,6 +460,12 @@ Route::group(['middleware'=>['HomeLogin']],function(){
 Route::get('/newpro/shoppingcart','Newpro\Home\PayController@shoppingcart');
 Route::get('/newpro/shoppingcart/ajax','Newpro\Home\PayController@shoppingcartajax');
 
+//支付页面
+Route::any('/newpro/payment','Newpro\Home\PayController@payment');
+Route::get('/newpro/payment/addressajax','Newpro\Home\PayController@addressajax');
+Route::post('/newpro/shoppingcart/addressadd','Newpro\Home\PayController@addressadd');
+Route::get('/newpro/payment/addressstatus','Newpro\Home\PayController@addressstatus');
+Route::get('/newpro/payment/addressdel','Newpro\Home\PayController@addressdel');
 //购物车
 Route::get('/home/shoppingcart','Home\HomeController@shoppingcart');
 Route::get('/home/shoppingcart/numajax','Home\HomeController@numajax');
