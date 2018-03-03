@@ -74,8 +74,6 @@ Class Request_wechat{
      */
     public function submitOrderInfo($res){
         $_POST['total_fee'] =$res['total'];
-        $_POST['time_start'] = date('YmdHms',$res['addtime']);
-        $_POST['time_expire'] = date('YmdHms',$res['addtime'] + 3000);
         $this->reqHandler->setReqParams($_POST,array('method'));
         $this->reqHandler->setParameter('service','pay.weixin.native');//接口类型
         $this->reqHandler->setParameter('mch_id',$this->cfg->C('mchId'));//必填项，商户号，由平台分配
@@ -339,13 +337,6 @@ Class Request_wechat{
                             // echo 'success';
                             // file_put_contents('pay/wechat/2.txt',1);//如果生成2.txt,说明前一步的输出success是有执行
                             $str = '感谢订购建商联盟产品，请记住你的订单号：'.$_token;
-
-                            $detail = \DB::table('detail')->select('id','orderid','pid')->where('orderid',$res->id)->get();
-                            
-                            foreach( $detail as $k => $v )
-                            {
-                                \DB::table('playgou')->where('pid',$v->pid)->delete();
-                            }
                             zend_code($res->phone,$str);
 
 

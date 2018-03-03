@@ -466,6 +466,11 @@ Route::get('/newpro/payment/addressajax','Newpro\Home\PayController@addressajax'
 Route::post('/newpro/shoppingcart/addressadd','Newpro\Home\PayController@addressadd');
 Route::get('/newpro/payment/addressstatus','Newpro\Home\PayController@addressstatus');
 Route::get('/newpro/payment/addressdel','Newpro\Home\PayController@addressdel');
+Route::get('/newpro/payment/addressgetedit','Newpro\Home\PayController@addressgetedit');
+
+Route::post('/newpro/payments','Newpro\Home\PayController@payments');
+Route::get('newpro/payments/paymentsget','Newpro\Home\PayController@paymentsget');
+
 //购物车
 Route::get('/home/shoppingcart','Home\HomeController@shoppingcart');
 Route::get('/home/shoppingcart/numajax','Home\HomeController@numajax');

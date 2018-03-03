@@ -195,6 +195,7 @@ body{
     text-align: right;
     cursor: pointer;
     text-indent: 0;
+    line-height: 30px;
 }
 .New .add .fill{
     width: 100%;
@@ -427,7 +428,7 @@ body{
     overflow: hidden;
     margin-top: 20px;
     line-height: 40px;
-    border-bottom: 1px solid #B4D0FF;
+    /*border-bottom: 1px solid #B4D0FF;*/
     font-size: 16px;
 }
 .details .shop{

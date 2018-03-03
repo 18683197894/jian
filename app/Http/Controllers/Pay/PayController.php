@@ -40,13 +40,7 @@ class PayController extends Controller
    		$res = \DB::table('orders')->select('id','_token','status','uid','create_id','addtime')->where('id',$id)->where('uid',$uid)->first();
 		if($res)
 		{
-			if( $res->status == 0 && ( time() - $res->addtime ) > 1800 )
-			{
-				$wechat = new payInterface_native\request_wechat();
-				$wechat->index(['_token'=>$res->_token],'closeOrder');
-				return response()->json(3);
-			}else
-			{
+			
 				if($res->status == 1 && !empty($res->create_id))
 				{
 					return response()->json(1);
@@ -54,7 +48,6 @@ class PayController extends Controller
 				{
 					return response()->json(2);
 				}  
-			}
 
 		}else
 		{
@@ -63,8 +56,5 @@ class PayController extends Controller
 		 
 
    	}
-
-
-    
 
 }

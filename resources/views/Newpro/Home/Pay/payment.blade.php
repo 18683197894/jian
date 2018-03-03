@@ -22,16 +22,16 @@
 
     <link rel="stylesheet" href="{{ asset('/new/home/public/footer.css') }}"/>
     <title>{{ $title['title'] or '建商联盟' }}</title>
-    <title>购物车</title>
+   
 </head>
 <body>
 <div class="nav_top">
     <div class="auto">
         <a href="javascript:;">热线电话：400-188-6585</a>
         <span></span>
-        <a href="javascript:;">购物车</a>
+        <a href="{{ url('/newpro/center') }}">个人中心</a>
         <span></span>
-        <a href="javascript:;">樊恩材</a>
+        <a href="javascript:;">{{ session('Home')->name }}</a>
     </div>
 </div>
 <div class="contact">
@@ -56,10 +56,10 @@
                 @if($address->count() > 0)
                 @foreach($address as $k => $v)
                 <span @if($v->status == 1) class="avtive" @endif index ="{{ $v->id }}">
-                    <div class="name">{{ $v->shen.$v->shi }} （{{ $v->name }}）</div>
-                    <div class="con">{{ $v->tails }}</div>
+                    <div class="name">{{ $v->name }} （{{ $v->phone }}）</div>
+                    <div class="con">{{ $v->shen.$v->shi.' '.$v->tails }}</div>
                     <div class="operation">
-                        <button>编辑</button>
+                        <button class="addressedit">编辑</button>
                         <button class="delete">删除</button>
                     </div>
                 </span>
@@ -69,15 +69,15 @@
                     <div class="name">四川省成都市 （樊恩材）</div>
                     <div class="con">四川省成都市 （樊恩材）四川省成都市 （樊恩材）</div>
                     <div class="operation">
-                        <button>编辑</button>
+                        <button class="addressedit">编辑</button>
                         <button class="delete">删除</button>
                     </div>
                 </span>
                 
             </div>
             <div class="New">
-                <a href="javascript:;">使用新地址</a>
-                <div class="add">
+                <a class="addresors" href="javascript:;">使用新地址</a>
+                <div class="add" index="0">
                     <div class="modal_title">
                         添加收货地址
                         <span>×</span>
@@ -137,92 +137,33 @@
             <li class="Number">数量</li>
             <li class="Subtotal">小计</li>
         </ul>
-        <ul class="con">
-            <li class="shop">客厅</li>
-            <li class="Attribute">时尚包 现代简约 客厅</li>
-            <li class="Price">---</li>
-            <li class="Number">2</li>
-            <li class="Subtotal">30652.00元</li>
+        @foreach($data as $k=>$v)
+        <ul class="con" index="{{ $v->id }}">
+            <li class="shop">{{ $v->name }}</li>
+            <li class="Attribute">{{ $v->path }}</li>
+            <li class="Price">{{ $v->money }}</li>
+            <li class="Number">{{ $v->num }}</li>
+            <li class="Subtotal">{{ $v->moneys }}元</li>
         </ul>
-        <ul class="sub">
-            <li class="shop">三人沙发</li>
-            <li class="Attribute">2米</li>
-            <li class="Price">2680.00</li>
-            <li class="Number">1张</li>
-            <li class="Subtotal">5360.00元</li>
-        </ul>
-        <ul class="sub">
-            <li class="shop">三人沙发</li>
-            <li class="Attribute">2米</li>
-            <li class="Price">2680.00</li>
-            <li class="Number">1张</li>
-            <li class="Subtotal">5360.00元</li>
-        </ul>
-        <ul class="sub">
-            <li class="shop">三人沙发</li>
-            <li class="Attribute">2米</li>
-            <li class="Price">2680.00</li>
-            <li class="Number">1张</li>
-            <li class="Subtotal">5360.00元</li>
-        </ul>
-        <ul class="sub">
-            <li class="shop">三人沙发</li>
-            <li class="Attribute">2米</li>
-            <li class="Price">2680.00</li>
-            <li class="Number">1张</li>
-            <li class="Subtotal">5360.00元</li>
-        </ul>
-        <ul class="sub">
-            <li class="shop">三人沙发</li>
-            <li class="Attribute">2米</li>
-            <li class="Price">2680.00</li>
-            <li class="Number">1张</li>
-            <li class="Subtotal">5360.00元</li>
-        </ul>
-        <ul class="sub">
-            <li class="shop">三人沙发</li>
-            <li class="Attribute">2米</li>
-            <li class="Price">2680.00</li>
-            <li class="Number">1张</li>
-            <li class="Subtotal">5360.00元</li>
-        </ul>
-        <ul class="sub">
-            <li class="shop">三人沙发</li>
-            <li class="Attribute">2米</li>
-            <li class="Price">2680.00</li>
-            <li class="Number">1张</li>
-            <li class="Subtotal">5360.00元</li>
-        </ul>
-        <ul class="sub">
-            <li class="shop">三人沙发</li>
-            <li class="Attribute">2米</li>
-            <li class="Price">2680.00</li>
-            <li class="Number">1张</li>
-            <li class="Subtotal">5360.00元</li>
-        </ul>
+        @endforeach
     </div>
     <div class="invoice">
+    <form action="{{ url('/newpro/payments') }}" method="post">
+                {{ csrf_field() }}
         <div class="left">
             <div class="in_click">
-                <input type="checkbox" name="" value=""/>
+                <input type="checkbox" name="invoice"/>
                 <span>开具发票</span>
             </div>
             <div class="fapiao">
                 <div class="input">
-                    <input type="text" placeholder="输入发票抬头"/>
-                    <input type="text" placeholder="输入纳税号"/>
+                    <input type="text" name="invoice_tou" placeholder="输入发票抬头"/>
+                    <input type="text" name="invoice_ors" placeholder="输入纳税号"/>
                 </div>
-                <span class="">
-                    <div class="name">发票抬头</div>
-                    <div class="con">纳税号----------（个人发票可不填写）</div>
-                    <div class="piao_ope">
-                        <button class="bianj">编辑</button>
-                        <button class="shanchu">删除</button>
-                    </div>
-                </span>
+               
                 <div class="liuyan">
                     <div class="text">给卖家留言</div>
-                    <input type="text" placeholder="选填：填写内容已和卖家协商确认"/>
+                    <input name="remarks" type="text" placeholder="选填：填写内容已和卖家协商确认"/>
                 </div>
             </div>
         </div>
@@ -233,27 +174,28 @@
             </div>
             <div class="Insurance">
                 <div class="name">运费险：</div>
-                <input type="checkbox"/>
+                <input name="risk" type="checkbox"/>
                 <i>运费险</i>
                 <div class="jies">卖家送，确认收货前可退可赔</div>
                 <div class="number">200.00</div>
             </div>
         </div>
+        </form>
     </div>
     <div class="jiesuan">
-        <i>30852.00</i>
+        <i>{{ $moenyss }}</i>
         <span>￥</span>
         <div>合计（含运费）</div>
     </div>
     <div class="payment_buttom_sub">
         <div class="payment_buttom_sub_1">
-            <i>30852.00</i>
+            <i class="moneyss">{{ $moenyss }}</i>
             <span>￥</span>
             <div>合计（含运费）</div>
         </div>
-        <div class="payment_buttom_sub_2">寄送至：<span>3444444</span></div>
-        <div class="payment_buttom_sub_2">收货人：<span> 辅导费 15698562589</span></div>
-        <div class="payment_buttom_sub_3">
+        <div class="payment_buttom_sub_2">寄送至：<span>@if(isset($addressstatus['dizhi'])) {{ $addressstatus['dizhi'] }} @endif</span></div>
+        <div class="payment_buttom_sub_2">收货人：<span>@if(isset($addressstatus['name'])) {{ $addressstatus['name'] }} @endif</span></div>
+        <div class="payment_buttom_sub_3" index="@if(isset($addressstatus['id'])) {{ $addressstatus['id'] }} @endif">
             <button>提交订单</button>
         </div>
     </div>

@@ -1,0 +1,257 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #ffffff;
+}
+.nav_top{
+    width: 100%;
+    height: 35px;
+    background-color: #f5f5f5;
+}
+.nav_top .auto{
+    width: 1200px;
+    height: 35px;
+    margin: auto;
+}
+.nav_top .auto a{
+    display: block;
+    float: right;
+    line-height: 35px;
+    font-size: 16px;
+    color: #010101;
+}
+.nav_top .auto span{
+    display: block;
+    float: right;
+    width: 1px;
+    background-color: #ccc;
+    height: 18px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.contact{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.contact_logo{
+    width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    height: 60px;
+    line-height: 60px;
+}
+.logo{
+    float: left;
+}
+.contact_logo_r{
+    float: left;
+    margin-left: 20px;
+}
+.contact_logo_r a{
+    display: block;
+    float: left;
+    margin-left: 30px;
+    color: red;
+}
+.gwc{
+    display: block;
+    float: left;
+    width: 100px;
+    height: 30px;
+    margin-top: 15px;
+    border-left: 1px solid  #ccc;
+    line-height: 30px;
+    text-align: center;
+    margin-left: 30px;
+}
+.payment{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+}
+.payment .Success{
+    width: 100%;
+    margin-top: 30px;
+    overflow: hidden;
+    background-color: #F8F8F8;
+}
+.Success .top{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+}
+.Success .top img{
+    float: left;
+    display: block;
+    margin-left: 20px;
+    width: 90px;
+}
+.Success .top .title{
+    width: 1020px;
+    margin-left: 50px;
+    float: left;
+    color: #010101;
+    border-bottom: 2px solid #EAEAEA;
+    padding-bottom: 30px;
+}
+.left{
+    float: left;
+    overflow: hidden;
+}
+.right{
+    float: right;
+    overflow: hidden;
+    line-height: 75px;
+    color: #555;
+    font-size: 16px;
+}
+.left .name{
+    height: 50px;
+    line-height: 50px;
+    color: #010101;
+    font-size: 20px;
+}
+.left .neir{
+    font-size: 16px;
+    color: #010101;
+}
+.left .neir i{
+    font-size: 16px;
+    color: #E63336;
+}
+.right i{
+    font-size: 19px;
+    color: #E63336;
+}
+
+.Success .Order{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.Success .Order p{
+    display: block;
+    font-size: 16px;
+    padding-top: 10px;
+    color: #555;
+    margin-left: 160px;
+    line-height: 25px;
+}
+.Success .Order p span{
+    color: #E63336;
+    margin-left: 30px;
+}
+.Success .Order p i{
+    margin-left: 10px;
+}
+.payment .mode{
+    width: 1200px;
+    margin: auto;
+    margin-top: 30px;
+    overflow: hidden;
+    background-color: #F8F8F8;
+    padding-bottom: 30px;
+}
+.mode .title{
+    width: 90%;
+    overflow: hidden;
+    font-size: 18px;
+    color: #222;
+    line-height: 80px;
+    border-bottom: 2px solid #EAEAEA;
+    margin: auto;
+}
+.platform{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+.platform .biaoti{
+    width: 100px;
+    line-height: 30px;
+    color: #444;
+    margin-top: 20px;
+    font-size: 17px;
+}
+.platform .Choice{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+}
+.Choice .left{
+    width: 250px;
+    overflow: hidden;
+}
+.Choice .left{
+    margin-right: 30px;
+}
+.Choice .left img{
+    display: block;
+    margin: auto;
+}
+.Choice .left .weixin{
+    width: 100%;
+    margin-top: 30px;
+}
+.paid{
+    width: 1200px;
+    margin: auto;
+    margin-top: 30px;
+    overflow: hidden;
+    background-color: #F8F8F8;
+    line-height: 60px;
+    text-indent: 100px;
+    color: #010101;
+    font-size: 18px;
+}
+@media screen and (max-width: 1200px){
+    .nav_top .auto{
+        width: 100%;
+    }
+    .contact_logo{
+        width: 95%;
+    }
+    .payment{
+        width: 95%;
+    }
+    .Success .top img{
+        width: 7.5%;
+        margin-left:1%;
+    }
+    .Success .top .title{
+        width: 88%;
+        margin-right: 0;
+        margin-left: 3%;
+    }
+    .paid{
+      width: 100%;
+    }
+    .payment .mode{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 770px){
+    .gwc{
+        display: none;
+    }
+    .Success .top img{
+      display: none;
+    }
+    .Success .Order p{
+        margin-left: 3%;
+    }
+}
+@media screen and (max-width: 670px){
+    .Choice .left{
+        width: 90%;
+        margin-left: 5%;
+        margin-bottom: 30px;
+    }
+}

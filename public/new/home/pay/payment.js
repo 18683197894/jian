@@ -16,8 +16,8 @@ $('.determines').on('click',function(){
                 {
                     var address = $('.addressspan').clone(true);
                         address.attr('index',data['id']);
-                        address.find('name').html(data['name']);
-                        address.find('con').html(data['shen']+data['shi']+'（'+data['name']+'）');
+                        address.find('.name').html(data['name']+' （'+data['phone']+'）' );
+                        address.find('.con').html(data['shen']+data['shi']+' '+data['tails']);
                         address.css('display','block');
                         address.removeClass('addressspan');
                         $('.dizhi').append(address);
@@ -38,8 +38,129 @@ $('.determines').on('click',function(){
         })
     }
 })
+
+$('.addressedit').on('click',function(){
+
+    var span = $(this).parents('span');
+    var id = span.attr('index');
+    var data = edit(id);
+    var id = span.attr('index');
+    $('.add').attr('index',id);
+    if(data)
+    {    
+        var span = $('.modal_title > span').clone(true);
+        var lis = $('.shi > .down > li').eq(0).clone(true);
+        $('.shi > .down > li').remove();
+        $('.shi > .down').append(lis);
+        var liss = $('.qu > .down > li').eq(0).clone(true);
+        $('.qu > .down > li').remove();
+        $('.qu > .down').append(liss);
+        $('.modal_title').html("更新收货地址");
+        $('.modal_title').append(span);
+        $('.determines').css('display','none');
+        $('.determine').css('display','block');
+        $('.addresors').css('display','none');
+        $(".New .add").removeClass("avtive").eq($(this).index()).addClass("avtive");
+        $("input[name='name']").val(data['name']);
+        $("input[name='phone']").val(data['phone']);
+        $("input[name='tails']").val(data['tails']);
+        $("input[name='zipcode']").val(data['zipcode']);
+        $("input[name='lebel']").val(data['lebel']);
+
+        $('.shen > .selected').html(data['shen']);
+        $('.shi > .selected').html(data['shi']);
+        $('.qu > .selected').html(data['qu']);
+        $('.shen > .selected').attr('index',data['addressid'][0]);
+        $('.shi > .selected').attr('index',data['addressid'][1]);
+        $('.qu > .selected').attr('index',data['addressid'][2]);
+
+        $.each(data['shis'],function(i,n){
+                var li = $('.shi > .down > li').eq(0).clone(true);
+                li.find('a').attr('index',n['id']);
+                li.find('a').html(n['name']);
+                $('.shi > .down').append(li);
+
+            })
+        $.each(data['qus'],function(i,n){
+                var li = $('.qu > .down > li').eq(0).clone(true);
+                li.find('a').attr('index',n['id']);
+                li.find('a').html(n['name']);
+                $('.qu > .down').append(li);
+
+            })
+    }else
+    {
+        return false;
+    }
+    
+    return false;
+})
+function edit(id)
+{   
+    var da;
+
+    $.ajax('/newpro/payment/addressgetedit',{
+        type : 'get',
+        data : {id:id},
+        async : false,
+        success : function(data)
+        {
+            da = data;
+        },
+        error : function(data)
+        {
+            da = false;
+        },
+        dataType:'json'
+    })
+    return da;
+}
+
+$('.determine').on('click',function(){
+    var data = preaddress();
+
+    if(data != false)
+    {   
+        data['id'] = $('.add').attr('index');
+        
+        $.ajax('/newpro/shoppingcart/addressadd',{
+            type : 'post',
+            data : {ors:'edit',data:data,_token:$("meta[name='csrf-token']").attr('content')},
+            success : function(data)
+            {
+                if(data != false)
+                {       
+                        var address = $(".dizhi > span[index='"+data['id']+"']");
+                        address.find('.name').html(data['name']+' （'+data['phone']+'）' );
+                        address.find('.con').html(data['shen']+data['shi']+' '+data['tails']);
+                        $(".New .add").removeClass("avtive");
+                        addressformdel();
+                }else
+                {
+                    alert('更新失败！');
+                    return false;
+                }
+            },
+            error : function(dtta)
+            {
+                alert('更新失败！');
+                return false;
+            },
+            dataTpye : 'json'
+        })
+    }
+
+})
+
+
 function addressformdel()
-{
+{   
+    $('.addresors').css('display','block');
+    var span = $('.modal_title > span').clone(true);
+    $('.modal_title').html("使用新地址");
+    $('.modal_title').append(span);
+    $('.determines').css('display','block');
+    $('.determine').css('display','none');
     $('.fill > input').val('');
     $('.shen > .selected').attr('index','00');
     $('.shen > .selected').html('选择省');
@@ -122,7 +243,11 @@ function preaddress()
 $(".dizhi span").click(function(){
     var id = $(this).attr('index');
     var th = $(this).index();
-
+    var name = $(this).find('.name').html();
+    var dizhi = $(this).find('.con').html();
+    $(".payment_buttom_sub_2").eq(0).find('span').html(dizhi);
+    $(".payment_buttom_sub_2").eq(1).find('span').html(name);
+    $('.payment_buttom_sub_3').attr('index',id);
     $.ajax('/newpro/payment/addressstatus',{
         type : 'get',
         data : {id:id},
@@ -152,6 +277,8 @@ $('.delete').on('click',function(){
             {   
                 alert('删除成功！');
                 span.remove();
+                $('.addresors').css('display','block');
+                $(".New .add").removeClass("avtive");
                  
             }else
             {   
@@ -170,13 +297,18 @@ $('.delete').on('click',function(){
 })
 $('.cancel').on('click',function(){
     $(".New .add").removeClass("avtive");
+    addressformdel();
 })
 
-$(".New a").click(function(){
+$(".New .addresors").click(function(){
+    $('.determine').css('display','none');
+    $('.determines').css('display','block');
+    $('.addresors').css('display','none');
     $(".New .add").removeClass("avtive").eq($(this).index()).addClass("avtive");
 });
 $(".New .add .modal_title span").click(function(){
     $(".New .add").removeClass("avtive");
+    addressformdel();
 });
 
 
@@ -226,8 +358,7 @@ $(".shen .down li a").click(function(){
     $('.shi > .selected').attr('index','00');
     $('.shi > .selected').html('选择市');
     $('.qu > .selected').attr('index','00');
-    $('.qu > .selected').html('选择区');
-
+    $('.qu > .selected').html('选择区');    
     var th = $(this);
     
     var str = '';
@@ -238,6 +369,7 @@ $(".shen .down li a").click(function(){
         {       
             if(data != false)
             {   
+
                 $.each(data,function(i,n){
                 var li = $('.shi > .down > li').eq(0).clone(true);
                 li.find('a').attr('index',n['id']);
@@ -297,7 +429,7 @@ $(".shi .down li a").click(function(){
         {
             alert('地址载入失败！');
         },
-        dataTpye : 'json'
+        dataType : 'json'
     })
 });
 
@@ -330,3 +462,81 @@ $(".in_click input").click(function(){
         $(".fapiao span").removeClass("avtive");
     }
 });
+
+$(function(){
+    $("input[name='invoice']").removeAttr('checked');
+    $("input[name='risk']").removeAttr('checked');
+})
+$("input[name='risk']").on('click',function(){
+    var money = parseFloat($('.payment_buttom_sub_1 > i').html());
+    if($(this).attr('checked'))
+    {
+        $('.moneyss').html(money + 200);
+    }else
+    {
+        $('.moneyss').html(money - 200);
+
+    }
+})
+
+$("input[name='remarks']").keyup(function(){
+        var str = $(this).val();
+
+        if( str.length > 20)
+        {
+            var res = str.substr(0,20);
+            $(this).val(res);
+            // alert('字数超出限制');
+
+        }
+    })
+$("input[name='invoice_tou']").keyup(function(){
+        var str = $(this).val();
+
+        if( str.length > 12)
+        {
+            var res = str.substr(0,12);
+            $(this).val(res);
+            // alert('字数超出限制');
+
+        }
+    })
+$("input[name='invoice_tou']").keyup(function(){
+        var str = $(this).val();
+
+        if( str.length > 20)
+        {
+            var res = str.substr(0,20);
+            $(this).val(res);
+            // alert('字数超出限制');
+
+        }
+    })
+
+$('.payment_buttom_sub_3 > button').on('click',function(){
+    
+    var dizhi = $(".payment_buttom_sub_3").attr('index');
+    var payid = '';
+    $.each($('.details > .con'),function(){
+        payid += $(this).attr('index')+',';
+    })
+    
+    if(dizhi == '')
+    {
+        alert('未选择收货地址！');
+        return false;
+    }
+    if(payid == '')
+    {
+        alert('没有商品');
+        return false;
+    }
+    var a = "<input type='hidden' name='dizhiid' value='"+dizhi+"'>";
+    var b= "<input type='hidden' name='payid' value='"+payid+"'>";
+    var inp = $(a);
+    var inps = $(b);
+    
+    $('form').append(inp);
+    $('form').append(inps);
+    $('form').submit();
+})

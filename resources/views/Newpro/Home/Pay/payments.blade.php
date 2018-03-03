@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
+       <meta charset="UTF-8">
     <!--网站SEO关键词优化-->
     <meta name="keywords" content="{{ $title['keyworlds'] or '建商联盟' }}">
     <meta name="description" content="{{ $title['description'] or '建商联盟' }}">
@@ -17,12 +17,11 @@
     <link rel="stylesheet" href="{{ asset('/new/home/public/base.css') }}"/>
     <!--首页样式-->
     <!--尾部样式-->
-    <link rel="stylesheet" href="{{ asset('/new/home/pay/shoppingcart.css') }}">
+    <link rel="stylesheet" href="{{ asset('/new/home/pay/payments.css') }}">
     <script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
 
     <link rel="stylesheet" href="{{ asset('/new/home/public/footer.css') }}"/>
     <title>{{ $title['title'] or '建商联盟' }}</title>
-    <title>购物车</title>
 </head>
 <body>
 <div class="nav_top">
@@ -34,7 +33,6 @@
         <a href="javascript:;">{{ session('Home')->name }}</a>
     </div>
 </div>
-
 <div class="contact">
     <div class="contact_logo">
         <img src="{{ asset('/home/images/logo.png') }}" alt="" class="logo"/>
@@ -48,48 +46,51 @@
                 装修公司实力认证
             </a>
         </div>
-        <span class="gwc">购物车</span>
+        <span class="gwc">支付订单</span>
     </div>
-    <div  class="shopping">
-        <ul class="top">
-            <li><input type="checkbox" id="" class="quan" ><span>全选</span></li>
-            <li class="name">商品名称</li>
-            <li class="jiage">单价</li>
-            <li class="num">数量</li>
-            <li class="jie">小计</li>
-            <li class="cz">操作</li>
-        </ul>
-        @if($data->count() > 0)
-        @foreach($data as $k => $v)
-        <ul class="con">
-            <li><input index="xuan" type="checkbox" id="{{ $v->id }}"><span>选择</span></li>
-            <li class="name">
-            <div class="name_top">{{ $v->path }}</div>
-            <div class="name_bo">{{ $v->name }}</div>
-            </li>
-            <li class="jiage">{{ $v->money }}</li>
-            <li class="num" index="{{ $v->tus }}">
-            	<div class="divse">
-                <a href="javascript:;" class="jian">-</a>
-                <span class="box">{{ $v->num }}</span>
-                <a href="javascript:;" class="jia">+</a>
+    <div class="payment">
+        <div class="Success">
+            <div class="top">
+                <img src="{{ asset('/new/home/pay/img/goug.png') }}" alt=""/>
+                <div class="title">
+                    <div class="left">
+                        <div class="name">订单提交成功</div>
+                        <!-- <div class="neir">请于 <i>30分钟</i> 内完成支付 超时将取消订单</div> -->
+                    </div>
+                    <div class="right">应付金额：<i>{{ $orders->total }} 元</i></div>
                 </div>
-            </li>
-            <li class="jie">{{ $v->money * $v->num }}</li>
-            <li class="cz" ><i>×</i></li>
-        </ul>
-        @endforeach
-        @endif
-        <div class="Settlement">
-            <div class="shop">共 <span>1</span> 件商品 已选择 <span>1</span> 件</div>
-            <div class="money">
-                <div class="Total">合计 <span>30652</span> 元</div>
-                <button>去结算</button>
+            </div>
+            <div class="Order" index="{{ $orders->id }}">
+                <p>订单号：<span>{{ $orders->_token }}</span></p>
+                <p>收货信息：<i>  {{ $orders->address }}</i></p>
+                <p>商品名称：<i></i></p>
+                <p>配送时间：<i>不限收货时间</i></p>
+                <p>发票信息：<i>{{ $orders->invoice }}</i></p>
             </div>
         </div>
-    </div >
-</div>
+        <div class="mode">
+            <div class="title">选择一下支付方式付款</div>
+            <div class="platform">
 
+                <div class="biaoti">支付平台</div>
+                <div class="Choice">
+                    <div class="left">
+                        <img src="{{ asset('new/home/pay/img/weixin.png') }}" alt=""/>
+                        <img src="{{ $weixin }}" alt="" class="weixin"/>
+                    </div>
+                    <div class="left">
+                        <img src="{{ asset('new/home/pay/img/zhifubao.png') }}" alt=""/>
+                        <img src="{{ $zhifubao }}" alt="" class="weixin"/>
+                    </div>
+                </div>
+            </div>
+            <div class="paid" style="display:none">
+              支付成功！ <span>30</span> 秒后自动跳转<a href="{{ url('/newpro/center') }}">个人中心</a>
+            </div>
+        </div>
+        
+    </div>
+</div>
 
 <!--尾部-->
 <div class="footer">
@@ -141,7 +142,7 @@
 </div>
 <!--版权-->
 <div class="copyright">CopyRight 2017-2020 建商联盟版权所有 ICP备案：蜀ICP备17010220</div>
-<script src="{{ asset('/new/home/pay/shoppingcart.js') }}"></script>
+<script src="{{ asset('/new/home/pay/payments.js') }}"></script>
 
 </body>
 </html>
