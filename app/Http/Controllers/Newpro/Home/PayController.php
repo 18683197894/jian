@@ -360,6 +360,10 @@ class PayController extends Controller
         ->select('style.id','style.title','packages.title as titles')
         ->get();
       $moenyss = 0;
+      if(!isset($data[0]->tus))
+      {
+        return redirect('/newpro/shoppingcart');
+      }
         foreach($data as $k => $v)
       {
           if($v->tus == 'main')
