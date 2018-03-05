@@ -52,7 +52,7 @@ $(function(){
 		if(time <= 0)
 		{
 			clearInterval(b);
-			window.location.href = '/newpro/center';
+			window.location.href = '/newpro/center/my_orders';
 		}
 		var b = setInterval(function(){
 

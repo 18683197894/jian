@@ -85,7 +85,7 @@
                 </div>
             </div>
             <div class="paid" style="display:none">
-              支付成功！ <span>30</span> 秒后自动跳转<a href="{{ url('/newpro/center') }}">个人中心</a>
+              支付成功！ <span>30</span> 秒后自动跳转<a href="{{ url('/newpro/center/my_orders') }}">个人中心</a>
             </div>
         </div>
         

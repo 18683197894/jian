@@ -16,67 +16,66 @@
     <!--清楚默认样式-->
     <link rel="stylesheet" href="{{ asset('/new/home/public/base.css') }}"/>
     <!--New_header样式-->
-    <link rel="stylesheet" href="{{ asset('/new/home/publicused/publicused.css') }}"/>
+    <!--尾部样式-->
     <link rel="stylesheet" href="{{ asset('/new/home/public/footer.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('/new/home/publiccenter/publiccenter.css') }}" />
     <script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
-    
-
     <title>{{ $title['title'] or '建商联盟' }}</title>
-@yield('css')
+    @yield('css')
 </head>
 <body>
 
-<div class="header">
-    <div class="Log_on">
-        <div class="auto">
-            <a href="javascript:;">热线电话：400-188-6585</a>
-            @if(!session('Home'))
-            <a href="{{ url('/newpro/register') }}">注册</a>
-            <a href="{{ url('/newpro/login') }}">登录</a>
-            @else 
-            <a href="{{ url('/newpro/center/my_orders') }}">个人中心</a>
-            <a href="javascript:;">{{ session('Home')->name }}</a>
-            @endif
-        </div>
+<div class="nav_top">
+    <div class="auto">
+        <a href="{{ url('/newpro/shoppingcart') }}">购物车</a>
+        <span></span>
+        <a href="javascript:;">我的订单</a>
+        <span></span>
+        <a href="javascript:;">消息通知</a>
+        <span></span>
+        <a href="javascript:;">{{ session('Home')->name }}</a>
     </div>
-    <div class="header_atou">
-        <div class=header_top>
-            <img src="{{ asset('/new/home/publicused/img/logo.png') }}" alt="" class="Logo"/>
-            <div class="search">
-                <a href="javascript:;" class="link">
-                    <img src="{{ asset('/new/home/publicused/img/header_gg.png') }}" alt=""/>
-                    免费量房与报价
-                </a>
-                <a href="javascript:;" class="link">
-                    <img src="{{ asset('/new/home/login/img/hade_1.png') }}" alt=""/>
-                    装修公司实力认证
-                </a>
-                <div class="search_i">
-                    <input type="text" placeholder="海量效果图任你选"/>
-                    <div class="click">
-                        <img src="{{ asset('/new/home/publicused/img/search_i.png') }}" alt=""/>
-                    </div>
-                </div>
-            </div>
+</div>
+<div class="Personal_top">
+    <div class="Personal_logo">
+        <a href="{{ url('/') }}" class="logo_a"><img src="{{ asset('/new/home/publicused/img/logo.png') }}" alt="" class="Logo"/></a>
+        <div class="Personal_logo_r">
+            <a href="javascript:;">
+                <img src="{{ asset('/new/home/publicused/img/header_gg.png') }}" alt=""/>
+                免费量房与报价
+            </a>
+            <a href="javascript:;">
+                <img src="{{ asset('/new/home/login/img/hade_1.png') }}" alt=""/>
+                装修公司实力认证
+            </a>
         </div>
-        <div class="nav">
-            <a href="{{ url('/') }}">首页</a>
-            <a href="{{ url('/newpro/style') }}">建商家装</a>
-            <a href="{{ url('/newpro/case/index') }}">装修案例</a>
-            <a href="javascript:;">精装房</a>
-            <a href="javascript:;">设计风格</a>
-            <a href="{{ asset('/newpro/about?ors=contact') }}">联系我们</a>
-        </div>
-        <a href="javascript:;" class="botton">
-            <span></span>
-            <span></span>
-            <span></span>
-        </a>
+        <span class="gwc">个人中心</span>
     </div>
-
 </div>
 
-@yield('content')
+<div class="contact">
+    <div class="contact_left">
+        <a href="javascript:;" class="title">订单中心</a>
+        <a href="{{ url('/newpro/center/my_orders') }}" @if($ors = 'my_orders') class="avtive" @endif>我的订单</a>
+        <a href="javascript:;" >评价晒单(2)</a>
+
+        <a href="javascript:;" class="title">个人中心</a>
+        <a href="javascript:;" class="">我的个人中心</a>
+        <a href="javascript:;" class="">消息通知(2)</a>
+        <a href="javascript:;" class="">收货地址</a>
+
+        <a href="javascript:;" class="title">售后服务</a>
+        <a href="javascript:;" class="">服务记录</a>
+        <a href="javascript:;" class="">申请服务</a>
+
+        <a href="javascript:;" class="title">账户管理</a>
+        <a href="javascript:;" class="">个人信息</a>
+        <a href="javascript:;" class="">修改密码</a>
+    </div>
+    @yield('content')
+</div>
+
+<div class="snajiao"></div>
 <!--尾部-->
 <div class="footer">
     <div class="auto">
@@ -127,7 +126,7 @@
 </div>
 <!--版权-->
 <div class="copyright">CopyRight 2017-2020 建商联盟版权所有 ICP备案：蜀ICP备17010220</div>
+<script src="{{ asset('/new/home/publiccenter/publiccenter.js') }}"></script>
 @yield('js')
-<script src="{{ asset('/new/home/public/header.js') }}"></script>
 </body>
 </html>

@@ -109,7 +109,7 @@
 </div>
 <!--最好的智慧生活服务商-->
 <div class="Service">
-    <div class="title">最好的智慧生活服务商</div>
+    <div class="title">智慧生活服务商</div>
     <div class="brief">智慧物业管理系统可实现业主与管理者无缝联系</div>
     <div class="contact">
         <a href="javascript:;">

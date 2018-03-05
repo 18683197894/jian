@@ -457,6 +457,7 @@ Route::post('/home/register/doreg','Home\LoginController@doreg');
 //前台登录中间间
 Route::group(['middleware'=>['HomeLogin']],function(){
 
+//购物车
 Route::get('/newpro/shoppingcart','Newpro\Home\PayController@shoppingcart');
 Route::get('/newpro/shoppingcart/ajax','Newpro\Home\PayController@shoppingcartajax');
 
@@ -470,6 +471,8 @@ Route::get('/newpro/payment/addressgetedit','Newpro\Home\PayController@addressge
 
 Route::post('/newpro/payments','Newpro\Home\PayController@payments');
 Route::get('newpro/payments/paymentsget','Newpro\Home\PayController@paymentsget');
+
+Route::get('/newpro/center/my_orders','Newpro\Home\CenterController@my_orders');
 
 //购物车
 Route::get('/home/shoppingcart','Home\HomeController@shoppingcart');
