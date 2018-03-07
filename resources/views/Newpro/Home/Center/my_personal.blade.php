@@ -11,7 +11,7 @@
                 <div class="left">
                     <img src="{{ asset('/uploads/user/img/') }}/{{ $user->img }}" alt=""/>
                     <div class="xinxi">
-                        <div class="name">{{ $user->names or $user->name }}}</div>
+                        <div class="name">{{ $user->names or $user->name }}</div>
                         <!-- <div class="gexin">开启装逼生活</div> -->
                         <a href="{{ url('/newpro/center/my_metion') }}" style="margin-top:15px">修改个人资料></a>
                     </div>

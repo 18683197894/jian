@@ -57,16 +57,16 @@
     <div class="contact_left">
         <a href="javascript:;" class="title">订单中心</a>
         <a href="{{ url('/newpro/center/my_orders') }}" @if($ors == 'my_orders') class="avtive" @endif>我的订单</a>
-        <a href="javascript:;" >评价晒单(2)</a>
+        <!-- <a href="javascript:;" >评价晒单(2)</a> -->
 
         <a href="javascript:;" class="title">个人中心</a>
-        <a href="" class="">我的个人中心</a>
-        <a href="{{ url('/newpro/center/my_notice') }}" @if($ors == 'my_notice') class="avtive" @endif class="">消息通知(2)</a>
+        <!-- <a href="" class="">我的个人中心</a> -->
+        <a href="{{ url('/newpro/center/my_notice') }}" @if($ors == 'my_notice') class="avtive" @endif class="">消息通知</a>
         <a href="{{ url('/newpro/center/my_address') }}" @if($ors == 'my_address') class="avtive" @endif>收货地址</a>
 
-        <a href="javascript:;" class="title">售后服务</a>
+        <!-- <a href="javascript:;" class="title">售后服务</a>
         <a href="javascript:;" class="">服务记录</a>
-        <a href="javascript:;" class="">申请服务</a>
+        <a href="javascript:;" class="">申请服务</a> -->
 
         <a href="javascript:;" class="title">账户管理</a>
         <a href="{{ url('/newpro/center/my_personal') }}" class="">个人信息</a>
