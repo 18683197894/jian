@@ -28,7 +28,7 @@
             <div class="data">
                 <div class="jibn">基本资料</div>
                 <div class="name names">姓名：{{ $data->names or '未设置' }}</div>
-                <div class="name dates">生日：@if($data->date) {{ $data->date }} @else '未设置' }} @endif</div>
+                <div class="name dates">生日：@if($data->date) {{ $data->date }} @else 未设置 @endif</div>
                 <div class="name sexs">性别：{{ $data->sex or '未设置' }}</div>
                 <!-- <div class="gexin">个性签名：小小程序猿</div> -->
             </div>
