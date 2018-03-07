@@ -87,6 +87,7 @@ class CenterController extends Controller
     	$data = \DB::table('orders')->select('status','id')->where('uid',\session('Home')->id)->get();
     	$a = 0;
     	$b = 0;
+    	$user = \DB::table('user_home')->select('id','phone','img','name','names')->where('id',\session('Home')->id)->first();
     	if($data)
     	{
     		foreach($data as $k => $v)
@@ -100,7 +101,7 @@ class CenterController extends Controller
     			}
     		}
     	}
-    	return view('Newpro.Home.Center.my_personal',['title'=>$title,'ors'=>'my_personal','a'=>$a,'b'=>$b]);
+    	return view('Newpro.Home.Center.my_personal',['user'=>$user,'title'=>$title,'ors'=>'my_personal','a'=>$a,'b'=>$b]);
     }
 
     public function my_metion(Request $request)

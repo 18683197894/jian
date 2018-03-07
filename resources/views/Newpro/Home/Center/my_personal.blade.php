@@ -9,16 +9,16 @@
         <div class="Personal_top">
             <div class="auto">
                 <div class="left">
-                    <img src="{{ asset('/new/home/center/img/touxiang.png') }}" alt=""/>
+                    <img src="{{ asset('/uploads/user/img/') }}/{{ $user->img }}" alt=""/>
                     <div class="xinxi">
-                        <div class="name">{{ session('Home')->name }}</div>
+                        <div class="name">{{ $user->names or $user->name }}}</div>
                         <!-- <div class="gexin">开启装逼生活</div> -->
                         <a href="{{ url('/newpro/center/my_metion') }}" style="margin-top:15px">修改个人资料></a>
                     </div>
                 </div>
                 <div class="left">
                     <div class="zhanghao">账号安全：<span>普通</span></div>
-                    <div class="shouji">绑定手机：{{ session('Home')->phone }}</div>
+                    <div class="shouji">绑定手机：{{ $user->phone }}</div>
                     <!-- <div class="youxiang">绑定邮箱：12345678911@qq.com</div> -->
                 </div>
             </div>
