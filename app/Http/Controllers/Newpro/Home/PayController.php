@@ -330,7 +330,8 @@ class PayController extends Controller
         $ids = substr($datas['payid'],0,-1);
         $idss = explode(',',$ids);
         $data = [];
-        if(!$ids || !$datas['dizhiid'])
+      
+        if(!$ids)
         {
             echo "<script> alert('订单创建失败！'); window.location.href='/newpro/shoppingcart' </script>";
         }

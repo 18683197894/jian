@@ -1,0 +1,260 @@
+
+
+
+.contact_right{
+    width: 80%;
+    float: right;
+    background: #F8F8F8;
+    min-height: 625px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.contact_right .title{
+    width: 100%;
+    height: 110px;
+    line-height: 140px;
+    font-size: 30px;
+    color: #666666;
+    text-indent: 35px;
+}
+.Information{
+    width: 95%;
+    overflow: hidden;
+    margin: auto;
+    padding-top: 20px;
+}
+.Information_img{
+    width: 25%;
+    overflow: hidden;
+    float: left;
+}
+.Information_img img{
+    width: 130px;
+    height: 130px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+}
+.Information_img input{
+    display: block;
+    margin: auto;
+    width: 140px;
+    margin-top: 10px;
+}
+.Information_img button{
+    display: block;
+    font-size: 17px;
+    color: #25a2e2;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    background: #F8F8F8;
+    cursor: pointer;
+}
+.Information .data{
+    width: 60%;
+    overflow: hidden;
+    float: left;
+    margin-left: 5%;
+}
+.data .jibn{
+    width: 100%;
+    font-size: 16px;
+    color: #666666;
+    line-height: 30px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.data .name{
+    font-size: 15px;
+    width: 100%;
+    line-height: 35px;
+    overflow: hidden;
+}
+.data .gexin{
+    font-size: 15px;
+    margin-top: 10px;
+    line-height: 35px;
+    width: 100%;
+    overflow: hidden;
+}
+.Information .modify{
+    width: 10%;
+    float: left;
+    overflow: hidden;
+}
+.Information .modify a{
+    display: block;
+    width: 100%;
+}
+.Information .modify .jichu{
+    margin-bottom: 150px;
+}
+.Information .modify .jichu img{
+    display: block;
+    margin: auto;
+}
+.Information .modify .gex img{
+    display: block;
+    margin: auto;
+}
+.Basics{
+    width: 90%;
+    margin: auto;
+    padding-top: 30px;
+    overflow: hidden;
+    display: none;
+}
+.Basics.avtive{
+    display: block;
+}
+.Basics_top{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.Basics_loop{
+    width: 50%;
+    float: left;
+}
+.Basics_loop span{
+    font-size: 15px;
+}
+.Basics_loop input{
+    width: 180px;
+    height: 30px;
+    line-height: 40px;
+    text-indent: 15px;
+    outline: none;
+}
+.Basics_loop select{
+    width: 50px;
+}
+.Basics .yea{
+    width: 100%;
+    margin-top: 20px;
+}
+.Basics .yea span{
+    font-size: 15px;
+}
+.Basics .yea select{
+   margin-right: 20px;
+}
+.click_Ok{
+    width: 100%;
+    margin-top: 40px;
+}
+.Basics .OK{
+    display: block;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    background-color: red;
+    line-height: 40px;
+    border-radius: 5px;
+    color: #ffffff;
+    float: left;
+    margin-right: 20px;
+}
+.Basics .OK:hover{
+    background-color: #337ab7;
+}
+.gaoji{
+    width: 90%;
+    margin: auto;
+    padding-top: 30px;
+    overflow: hidden;
+    display: none;
+}
+.gaoji.avtive{
+    display: block;
+}
+.gaoji span{
+    font-size: 15px;
+}
+.gaoji input{
+    width: 180px;
+    height: 30px;
+    text-indent: 15px;
+    outline: none;
+}
+.gaoji_top{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.gaoji_a a{
+    display: block;
+    float: left;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    background-color: red;
+    line-height: 40px;
+    border-radius: 5px;
+    color: #ffffff;
+    margin-right: 20px;
+}
+.gaoji_a a:hover{
+    background-color: #337ab7;
+}
+@media screen and (max-width: 750px){
+    .Information_img{
+        width: 30%;
+    }
+    .Information .data{
+      width: 55%;
+    }
+}
+@media screen and (max-width: 650px){
+    .contact_right{
+        width: 100%;
+    }
+    .Information_img{
+        width: 30%;
+    }
+    .Information .data{
+        width: 55%;
+    }
+}
+@media screen and (max-width: 550px){
+    .Basics_loop input{
+        width: 150px;
+    }
+}
+@media screen and (max-width: 480px){
+    .Basics_loop input{
+        width: 120px;
+    }
+    .Information_img{
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+    .Information .data{
+        width: 65%;
+    }
+    .Information .modify{
+        width: 20%;
+    }
+    .gaoji input{
+      margin-left: 3px;
+    }
+    .Basics_loop{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .Basics_loop input{
+        width: 180px;
+    }
+    .Basics .yea{
+      margin-top: 0;
+    }
+    .Basics_top{
+        margin-bottom: 0;
+    }
+}

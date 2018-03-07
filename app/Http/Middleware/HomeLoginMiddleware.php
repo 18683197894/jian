@@ -17,7 +17,7 @@ class HomeLoginMiddleware
     {   
         if( !\session('Home') )
         {
-            return redirect('/home/login')->with(['info'=>'未登入']);
+            return redirect('/newpro/login')->with(['info'=>'未登入']);
         }
         return $next($request);
     }

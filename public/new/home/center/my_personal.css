@@ -1,0 +1,120 @@
+
+
+.contact_right{
+    width: 80%;
+    float: right;
+    background: #F8F8F8;
+    min-height: 625px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.contact_right .Personal_top{
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+}
+.contact_right .Personal_top .auto{
+    width: 95%;
+    height: 100%;
+    margin: auto;
+    border-bottom: 1px solid #EBEAEA;
+}
+.contact_right .Personal_top .auto .left{
+    width: 50%;
+    float: left;
+    overflow: hidden;
+    margin-top: 55px;
+}
+.contact_right .Personal_top .auto .left img{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    display: block;
+    float: left;
+}
+.contact_right .Personal_top .auto .left .xinxi{
+    float: left;
+    margin-left: 10px;
+}
+.xinxi .name{
+    font-size: 25px;
+    color:#000000;
+    margin-top: 30px;
+}
+.gexin{
+    max-width: 180px;
+    height: 30px;
+    overflow: hidden;
+    line-height: 30px;
+    color: #b9b9b9;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.xinxi a{
+    display: block;
+    color: red;
+    font-size: 12px;
+}
+.left .zhanghao{
+    font-size: 14px;
+    line-height: 30px;
+    margin-top: 25px;
+    color: #888989;
+}
+.left .zhanghao span{
+    color: red;
+}
+.left .shouji{
+    font-size: 14px;
+    line-height: 30px;
+    color: #888989;
+}
+.left .youxiang{
+    font-size: 14px;
+    line-height: 30px;
+    color: #888989;
+}
+.Personal_dd{
+    width: 100%;
+    overflow: hidden;
+}
+.Personal_dd .auto{
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+}
+.Personal_dd .loop{
+    width: 50%;
+    float: left;
+    overflow: hidden;
+    margin-top: 40px;
+}
+.Personal_dd .loop img{
+    width: 100px;
+    height: 100px;
+    display: block;
+    float: left;
+}
+.Personal_dd .loop .text{
+    float: left;
+    margin-left: 20px;
+    margin-top: 25px;
+}
+.loop .text .num{
+    font-size: 18px;
+    color: #888989;
+}
+.loop .text .num span{
+    color: red;
+}
+.Personal_dd .loop a{
+    display: block;
+    font-size: 14px;
+    color: #888989;
+    margin-top: 10px;
+}
+@media screen and (max-width: 650px){
+    .contact_right{
+        width: 100%;
+    }
+}

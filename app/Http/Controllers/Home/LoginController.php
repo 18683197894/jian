@@ -142,7 +142,7 @@ class LoginController extends Controller
 			}
 
 			$password_re = $name->password;
-
+			return response()->json(\Hash::make('qq1214422067'));
 			if( \Hash::check($data['password'],$password_re) )
 			{	
 				\DB::table('user_home')->where('id',$name->id)->update(['uptime'=>time()]);

@@ -1,0 +1,217 @@
+
+
+.contact_right{
+    width: 80%;
+    float: right;
+    background: #F8F8F8;
+    min-height: 625px;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+.contact_right .title{
+    width: 100%;
+    height: 110px;
+    line-height: 140px;
+    font-size: 30px;
+    color: #666666;
+    text-indent: 35px;
+}
+.address{
+    width: 95%;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 30px;
+}
+.address .loop{
+    width: 270px;
+    height: 180px;
+    border:1px solid #E7E7E7;
+    box-sizing: border-box;
+    float: left;
+    margin-right: 15px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.address .loop .name{
+    width: 90%;
+    margin: auto;
+    height: 65px;
+    line-height: 70px;
+    color: #666666;
+    font-size: 18px;
+    overflow: hidden;
+}
+.address .loop .Telephone{
+    width: 90%;
+    margin: auto;
+    font-size: 13px;
+    color: #999999;
+    margin-bottom: 5px;
+}
+.address .loop .dizhi{
+    width: 90%;
+    margin: auto;
+    font-size: 14px;
+    color: #999999;
+    overflow: hidden;
+    height: 60px;
+}
+.address .loop .shanc{
+    width: 90%;
+    margin: auto;
+    height: 30px;
+}
+.address .loop .shanc a{
+    display: block;
+    float: right;
+    font-size: 13px;
+    margin-left: 10px;
+    width: 35px;
+    height: 30px;
+    text-align: center;
+    line-height: 25px;
+    color: #D5A68A;
+    border-radius: 5px;
+}
+
+.address .loop.add{
+    cursor: pointer;
+}
+.address .loop.add img{
+    display: block;
+    margin: auto;
+    margin-top: 68px;
+    width: 39px;
+    height: 39px;
+}
+.address .loop.add .add_n{
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #c8c8c8;
+    margin-top: 5px;
+}
+.contact_right .fill{
+    width: 95%;
+    padding-top: 30px;
+    margin: auto;
+    display: none;
+}
+.contact_right .fill.avtive{
+    display: block;
+}
+
+.contact_right .fill .loop{
+    width: 100%;
+    padding-bottom: 35px;
+    overflow: hidden;
+}
+.contact_right .fill .loop input{
+    display: block;
+    width: 44%;
+    height: 40px;
+    float: left;
+    margin-right: 6%;
+    text-indent: 20px;
+    outline: none;
+    border:1px solid #E7E7E7;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+.sanjild{
+    display: block;
+    width: 100%;
+    height: 40px;
+    float: left;
+    margin-bottom: 30px;
+}
+.sanjild .linkage{
+    width: 120px;
+    height: 40px;
+    border: 1px solid #EDEDED;
+    box-sizing: border-box;
+    float: left;
+    margin-right: 3%;
+    text-indent: 10px;
+    color: #010101;
+    font-size: 16px;
+    background: url(/new/home/center/img/xiala.png) no-repeat scroll right center transparent;
+    cursor: pointer;
+    position: relative;
+}
+.selected{
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    line-height: 40px;
+    color: #010101;
+}
+.down{
+    position: absolute;
+    left: 0;
+    top: 39px;
+    width: 100%;
+    display: none;
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+    max-height: 150px;
+    overflow: auto;
+    border: 1px solid #ededed;
+    border-top: none;
+    box-sizing: border-box;
+    z-index: 999;
+}
+.down.avtive{
+    display: block;
+}
+.linkage .down li a {
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: #010101;
+    font-size: 16px;
+    background: #ffffff;
+    text-align: left;
+    padding: 0;
+    overflow: hidden;
+} 
+.down li a:hover {
+    background: #f9f999;
+}
+.contact_right .fill .bott{
+    display: block;
+    overflow: hidden;
+    margin: auto;
+    padding-top: 30px;
+}
+.contact_right .fill .bott button{
+    display: block;
+    width: 100px;
+    text-align: center;
+    height: 40px;
+    float: left;
+    margin-left: 30px;
+    border: none;
+    list-style: none;
+    background-color: #E12E32;
+    font-size: 17px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.contact_right .fill .bott button:hover{
+    background-color: #264874;
+}
+@media screen and (max-width: 600px){
+    .contact_right{
+        width: 90%;
+    }
+    .sanjild{
+        height: 90px;
+    }
+    .sanjild .linkage{
+        margin-bottom: 5px;
+    }
+
+}

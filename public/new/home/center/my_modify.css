@@ -1,0 +1,112 @@
+
+
+
+
+.contact_right{
+    width: 80%;
+    float: right;
+    background: #F8F8F8;
+    height: 625px;
+}
+.contact_right .title{
+    width: 100%;
+    height: 110px;
+    line-height: 140px;
+    font-size: 30px;
+    color: #666666;
+    text-indent: 35px;
+}
+.contact_right .used{
+    width: 100%;
+    overflow: hidden;
+}
+.contact_right .used span{
+    width: 100%;
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+    color: #666666;
+    text-indent: 35px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.contact_right .used input{
+    display: block;
+    width: 298px;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 1px solid #DADADA;
+    outline: none;
+    margin-left: 35px;
+    text-indent: 15px;
+    background: #F8F8F8;
+    border-radius: 5px;
+}
+.tijiao{
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: block;
+    color: #fff;
+    background-color: red;
+    margin-left: 34px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.tijiao:hover{
+    color: #fff;
+    background-color: #DADADA;
+}
+.used_cw{
+    line-height: 40px;
+    margin-left: 35px;
+    font-size: 15px;
+    color: red;
+    display: none;
+}
+.used_cw.avtive{
+    display: block;
+}
+.used_mm{
+    line-height: 40px;
+    margin-left: 35px;
+    font-size: 15px;
+    color: red;
+    display: none;
+}
+.used_mm.avtive{
+    display: block;
+}
+@media screen and (max-width: 1200px){
+    .contact{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 700px){
+    .contact_left{
+        width: 25%;
+    }
+    .contact_right{
+        width: 73%;
+    }
+}
+@media screen and (max-width: 520px){
+    .contact_left{
+        width: 25%;
+        position: absolute;
+        left: -25%;
+        top: 0;
+    }
+    .contact_right{
+        width: 90%;
+        float: right;
+    }
+    .contact{
+        background: #F8F8F8;
+    }
+    .snajiao{
+        display: block;
+    }
+}

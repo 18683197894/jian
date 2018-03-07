@@ -168,6 +168,10 @@ function addressformdel()
     $('.shi > .selected').html('选择市');
     $('.qu > .selected').attr('index','00');
     $('.qu > .selected').html('选择区');
+    var shi = $('.shi > .down >li').eq(0);
+    $('.shi > .down').html(shi);
+    var qu = $('.qu > .down >li').eq(0);
+    $('.qu > .down').html(shi);
 }
 function preaddress()
 {
@@ -212,7 +216,6 @@ function preaddress()
     {
         $('.qu').css('border','1px solid red');
         return false;
-        
     }
     var tailsper = /^.{2,33}$/.test(tails);
     if(!tailsper)

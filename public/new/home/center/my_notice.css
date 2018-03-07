@@ -1,0 +1,64 @@
+
+
+.contact_right{
+    width: 80%;
+    float: right;
+    background: #F8F8F8;
+    height: 625px;
+}
+.contact_right .title{
+    width: 100%;
+    height: 110px;
+    line-height: 140px;
+    font-size: 30px;
+    color: #666666;
+    text-indent: 35px;
+}
+.logistics{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    border-bottom:1px solid #E7E7E7;
+    padding-bottom: 20px;
+}
+.logistics a{
+    display: block;
+    margin-left: 35px;
+    line-height: 35px;
+    float: left;
+    color: #85807c;
+    font-size: 18px;
+}
+.logistics a.avtive{
+    color: red;
+}
+.contact_right .con{
+    width: 100%;
+    height: 300px;
+}
+.contact_right .con .loop{
+    width: 100%;
+    overflow: hidden;
+    display: none;
+    padding-left: 35px;
+    margin-top: 30px;
+    font-size: 16px;
+}
+.contact_right .con .loop.avtive{
+    display: block;
+}
+@media screen and (max-width: 520px){
+    .contact_right {
+        width: 100%;
+        float: right;
+    }
+    .contact_right .title{
+        text-indent: 60px;
+    }
+    .logistics a{
+        margin-left: 60px;
+    }
+    .contact_right .con .loop{
+        padding-left: 60px;
+    }
+}

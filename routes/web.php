@@ -469,11 +469,23 @@ Route::get('/newpro/payment/addressstatus','Newpro\Home\PayController@addresssta
 Route::get('/newpro/payment/addressdel','Newpro\Home\PayController@addressdel');
 Route::get('/newpro/payment/addressgetedit','Newpro\Home\PayController@addressgetedit');
 
-Route::post('/newpro/payments','Newpro\Home\PayController@payments');
+Route::any('/newpro/payments','Newpro\Home\PayController@payments');
 Route::get('newpro/payments/paymentsget','Newpro\Home\PayController@paymentsget');
 
+//个人中心 我的订单
 Route::get('/newpro/center/my_orders','Newpro\Home\CenterController@my_orders');
-
+//收货地址
+Route::get('/newpro/center/my_address','Newpro\Home\CenterController@my_address');
+//修改密码
+Route::get('/newpro/center/my_modify','Newpro\Home\CenterController@my_modify');
+Route::post('/newpro/center/my_modify/passajax','Newpro\Home\CenterController@passajax');
+//消息
+Route::get('/newpro/center/my_notice','Newpro\Home\CenterController@my_notice');
+//我的个人中心
+Route::get('/newpro/center/my_personal','Newpro\Home\CenterController@my_personal');
+Route::get('/newpro/center/my_metion','Newpro\Home\CenterController@my_metion');
+Route::post('/newpro/center/my_metion/ajax','Newpro\Home\CenterController@my_metionajax');
+Route::post('/newpro/center/my_metion/post','Newpro\Home\CenterController@my_metionpost');
 //购物车
 Route::get('/home/shoppingcart','Home\HomeController@shoppingcart');
 Route::get('/home/shoppingcart/numajax','Home\HomeController@numajax');
