@@ -22,7 +22,7 @@
                             <div class="left">
                                 <div class="left_title">{{ $v->statuss }}</div>
                                 <div class="time">
-                                    <span>{{ date('Y年m月d日 H:i:s',$v->addtime) }}</span>
+                                    <span>{{ date('Y年m月d日 H:i:s',$v->times[0]) }}</span>
                                     <i></i>
                                     <span>订单号：{{ $v->_token }}</span>
                                     <i></i>
@@ -41,7 +41,7 @@
                                 <div class="con"></div>
                             </div>
                             <div class="right">
-                                <a href="javascript:;">订单详情</a>
+                                <a href="{{ url('/newpro/center/my_orders_details?id=') }}{{ $v->id }}">订单详情</a>
                             </div>
                             @if($v->status == 0)
                             <div class="jili">
@@ -50,22 +50,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="xinc">
-                        <div class="auto">
-                            <div class="left">
-                                <div class="Detailed_name">名称</div>
-                                <div class="shuxin">属性</div>
-                                <div class="num">数量</div>
-                            </div>
-                            @foreach($v->detail as $kk => $vv)
-                            <div class="left">
-                                <div class="Detailed_name">{{ $vv->name }}</div>
-                                <div class="shuxin">{{ $vv->ors }}</div>
-                                <div class="num">{{ $vv->num }}</div>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
+                    
                 </div>
                 @endforeach
             </div>
@@ -80,7 +65,7 @@
                             <div class="left">
                                 <div class="left_title">{{ $v->statuss }}</div>
                                 <div class="time">
-                                    <span>{{ date('Y年m月d日 H:i:s',$v->addtime) }}</span>
+                                    <span>{{ date('Y年m月d日 H:i:s',$v->addtime[0]) }}</span>
                                     <i></i>
                                     <span>订单号：{{ $v->_token }}</span>
                                     <i></i>
@@ -99,7 +84,7 @@
                                 <div class="con"></div>
                             </div>
                             <div class="right">
-                                <a href="javascript:;">订单详情</a>
+                                <a href="{{ url('/newpro/center/my_orders_details?id=') }}{{ $v->id }}">订单详情</a>
                             </div>
                             @if($v->status == 0)
                             <div class="jili">
@@ -108,22 +93,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="xinc">
-                        <div class="auto">
-                            <div class="left">
-                                <div class="Detailed_name">名称</div>
-                                <div class="shuxin">属性</div>
-                                <div class="num">数量</div>
-                            </div>
-                            @foreach($v->detail as $kk => $vv)
-                            <div class="left">
-                                <div class="Detailed_name">{{ $vv->name }}</div>
-                                <div class="shuxin">{{ $vv->ors }}</div>
-                                <div class="num">{{ $vv->num }}</div>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
+                    
                 </div>
                 @endif
                 @endforeach
@@ -157,7 +127,7 @@
                                 <div class="con"></div>
                             </div>
                             <div class="right">
-                                <a href="javascript:;">订单详情</a>
+                                <a href="{{ url('/newpro/center/my_orders_details?id=') }}{{ $v->id }}">订单详情</a>
                             </div>
                             @if($v->status == 0)
                             <div class="jili">
@@ -166,22 +136,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="xinc">
-                        <div class="auto">
-                            <div class="left">
-                                <div class="Detailed_name">名称</div>
-                                <div class="shuxin">属性</div>
-                                <div class="num">数量</div>
-                            </div>
-                            @foreach($v->detail as $kk => $vv)
-                            <div class="left">
-                                <div class="Detailed_name">{{ $vv->name }}</div>
-                                <div class="shuxin">{{ $vv->ors }}</div>
-                                <div class="num">{{ $vv->num }}</div>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
+                    
                 </div>
                 @endif
                 @endforeach

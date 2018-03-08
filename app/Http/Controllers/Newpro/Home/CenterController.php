@@ -22,11 +22,22 @@ class CenterController extends Controller
     		{
     			$v->statuss = '已支付';
     		}
+    		$v->times = explode(',',$v->addtime);
 
-    		$v->detail = \DB::table('detail')->select('name','num','ors')->where('orderid',$v->id)->get();
+    		// $v->detail = \DB::table('detail')->select('name','num','ors')->where('orderid',$v->id)->get();
     	} 	
     	
     	return view('Newpro.Home.Center.my_orders',['title'=>$title,'ors'=>'my_orders','data'=>$data,'orss'=>$orss]);
+    }
+    public function my_orders_details(Request $request)
+    {	
+    	$id = $request->id;
+    	$data = \DB::table('orders')->select('id','address','linkman','phone','status','addtime','_token','total','zid','payors')->where('id',$id)->first();
+    	$data->times = explode(',',$data->addtime);
+    	$data->detail = \DB::table('detail')->select('name','prince','num','ors')->where('orderid',$data->id)->get();
+    	// dd($data);
+    	$title = getwebpage($request->path());
+    	return view('Newpro.Home.Center.my_orders_details',['data'=>$data,'title'=>$title,'ors'=>'my_orders_details']);
     }
 
     public function my_address(Request $request)

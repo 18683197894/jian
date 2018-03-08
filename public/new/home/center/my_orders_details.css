@@ -1,0 +1,264 @@
+
+.contact_right{
+    width: 80%;
+    float: right;
+    background: #F8F8F8;
+    min-height: 625px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.contact_right .title{
+    width: 100%;
+    height: 110px;
+    line-height: 140px;
+    font-size: 30px;
+    color: #666666;
+    text-indent: 35px;
+}
+.contact_right .dindanh{
+    width: 92%;
+    height: 50px;
+    border-bottom: 1px solid #E3E3E3;
+    margin: auto;
+    line-height: 50px;
+    color: #666666;
+    font-size: 18px;
+}
+.contact_right .Order{
+    width: 92%;
+    margin: auto;
+    overflow: hidden;
+}
+.contact_right .Order .state{
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    font-size: 18px;
+    color: #999999;
+}
+.Speed{
+    width: 100%;
+    overflow: hidden;
+}
+.Speed .Place{
+    width: 20%;
+    float: left;
+    overflow: hidden;
+}
+.Speed .Place .text{
+    width: 100%;
+    height: 20px;
+    display: block;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-color: red;
+    color: #ffffff;
+    box-sizing: border-box;
+    border-right: none;
+}
+.Speed .Place.avtive .text{
+    background-color: #83C44E;
+    color: #ffffff;
+    border: none;
+}
+.Speed .Place .time{
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #999999;
+    display: block;
+    margin-top: 15px;
+}
+.Speed .payment{
+    width: 20%;
+    float: left;
+    overflow: hidden;
+}
+.Speed .payment .text{
+    width: 100%;
+    height: 20px;
+    display: block;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    background-color: red;
+    color: #ffffff;
+    border-right: none;
+}
+.Speed .payment.avtive .text{
+    background-color: #83C44E;
+    color: #ffffff;
+    border: none;
+}
+.Speed .payment .time{
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #999999;
+    display: block;
+    margin-top: 15px;
+}
+.Speed .Distribution{
+    width: 20%;
+    float: left;
+    overflow: hidden;
+}
+.Speed .Distribution .text{
+    width: 100%;
+    height: 20px;
+    display: block;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    background-color: red;
+    color: #ffffff;
+    border-right: none;
+}
+.Speed .Distribution.avtive .text{
+    background-color: #83C44E;
+    color: #ffffff;
+    border: none;
+}
+.Speed .Distribution .time{
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #999999;
+    display: block;
+    margin-top: 15px;
+}
+.Speed .Acceptance{
+    width: 20%;
+    float: left;
+    overflow: hidden;
+}
+.Speed .Acceptance .text{
+    width: 100%;
+    height: 20px;
+    display: block;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    /*border: 1px solid #83C44E;*/
+    /*box-sizing: border-box;*/
+    border-right: none;
+    background-color: red;
+    color: #ffffff;
+}
+.Speed .Acceptance.avtive .text{
+    background-color: #83C44E;
+    color: #ffffff;
+    border: none;
+}
+.Speed .Acceptance .time{
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #999999;
+    display: block;
+    margin-top: 15px;
+}
+.Speed .Success{
+    width: 20%;
+    float: left;
+    overflow: hidden;
+}
+.Speed .Success .text{
+    width: 100%;
+    height: 20px;
+    display: block;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-sizing: border-box;
+    /*border: 1px solid #83C44E;*/
+    /*box-sizing: border-box;*/
+    border-right: none;
+    background-color: red;
+    color: #ffffff;
+}
+.Speed .Success.avtive .text{
+    background-color: #83C44E;
+    color: #ffffff;
+    border: none;
+}
+.Speed .Success .time{
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #999999;
+    display: block;
+    margin-top: 15px;
+}
+.Order .Shop{
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid #83C44E;
+    box-sizing: border-box;
+    margin-top: 40px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.Shop_left{
+    width: 50%;
+    float: left;
+}
+.Shop_left .Shop_name{
+    width: 100%;
+    margin-top: 50px;
+    font-size: 15px;
+    color: #666666;
+    line-height: 25px;
+}
+.Shop_left .jieshao{
+    width: 100%;
+    font-size: 13px;
+    color: #666666;
+}
+.guige{
+    float: left;
+    line-height: 140px;
+    font-size: 13px;
+    color: #666666;
+    width: 50%;
+}
+.Order .personal{
+    width: 100%;
+    height: 165px;
+    border-top: 1px solid #E3E3E3;
+    box-sizing: border-box;
+}
+.personal .biaoti{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    color: #666666;
+}
+.personal .name{
+    line-height:30px;
+    color: #999999;
+    font-size: 14px;
+}
+.Shop_top{
+    width: 100%;
+    line-height: 35px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.shop_loop{
+    float: left;
+    width: 25%;
+    font-size: 13px;
+    text-align: center;
+}
+@media screen and (max-width: 650px){
+    .contact_right{
+        width: 100%;
+    }
+}

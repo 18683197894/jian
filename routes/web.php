@@ -474,6 +474,8 @@ Route::get('newpro/payments/paymentsget','Newpro\Home\PayController@paymentsget'
 
 //个人中心 我的订单
 Route::get('/newpro/center/my_orders','Newpro\Home\CenterController@my_orders');
+Route::get('/newpro/center/my_orders_details','Newpro\Home\CenterController@my_orders_details');
+
 //收货地址
 Route::get('/newpro/center/my_address','Newpro\Home\CenterController@my_address');
 //修改密码

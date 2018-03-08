@@ -49,7 +49,7 @@
                 装修公司实力认证
             </a>
         </div>
-        <span class="gwc">个人中心</span>
+        <span class="gwc">{{ $title['title'] or '个人中心' }}</span>
     </div>
 </div>
 

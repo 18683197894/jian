@@ -327,8 +327,8 @@ Class Request_wechat{
 				//校验单号和金额是否一致，更改订单状态等业务处理
 				if($total_fee == $total)
                 {
-                     
-                        \DB::table('orders')->where('id',$res->id)->update(['create_id'=>$create_id,'status'=>1]);
+                        $time = $res->addtime.','.time();
+                        \DB::table('orders')->where('id',$res->id)->update(['create_id'=>$create_id,'status'=>1,'payors'=>'微信','addtime'=>$time]);
                         $status = \DB::table('orders')->where('id',$res->id)->first()->status;
                         if($status ==1)
                         {   
