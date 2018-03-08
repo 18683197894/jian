@@ -28,7 +28,7 @@
     <div class="auto">
         <a href="javascript:;">热线电话：400-188-6585</a>
         <span></span>
-        <a href="{{ url('/newpro/my_orders') }}">个人中心</a>
+        <a href="{{ url('/newpro/center/my_orders') }}">个人中心</a>
         <span></span>
         <a href="javascript:;">{{ session('Home')->name }}</a>
     </div>

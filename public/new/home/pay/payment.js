@@ -337,11 +337,26 @@ $('.right').keyup(function(){
         }
     })
 $(".linkage .selected").click(function(){
-    $('.linkage .down').slideUp(300);
-    if($(this).siblings(".down").css('display') !== 'block' )
-    {
-    $(this).siblings(".down").slideDown(300);
-    }
+    // $('.linkage .down').slideUp(300);
+    // if($(this).siblings(".down").css('display') !== 'block' )
+    // {
+    // $(this).siblings(".down").slideDown(300);
+    // }
+    var a  = $(this).parents('.linkage').attr('class');
+         $.each($(".linkage .selected"),function(){
+            if($(this).parents('.linkage').attr('class') !== a)
+            {
+                $(this).siblings(".down").removeClass("avtive");
+            }
+         })
+
+        if($(this).siblings(".down").css('display') !== 'block' )
+        {
+            $(this).siblings(".down").addClass("avtive");
+        }else
+        {
+            $(this).siblings(".down").removeClass("avtive");
+        }
 });
 
 $(".shen .down li a").click(function(){
@@ -349,7 +364,7 @@ $(".shen .down li a").click(function(){
     var name = $(this).html();
     $(this).parents('.shen').find('.selected').html(name);
     $(this).parents('.shen').find('.selected').attr('index',id);
-    $(this).parents('.down').slideUp(300);
+    $(this).parents('.down').removeClass("avtive");
     
     var lis = $('.shi > .down > li').eq(0).clone(true);
     $('.shi > .down > li').remove();
@@ -396,7 +411,7 @@ $(".shi .down li a").click(function(){
     var name = $(this).html();
     $(this).parents('.shi').find('.selected').html(name);
     $(this).parents('.shi').find('.selected').attr('index',id);
-    $(this).parents('.down').slideUp(300);
+    $(this).parents('.down').removeClass("avtive");
     var lis = $('.qu > .down > li').eq(0).clone(true);
     $('.qu > .down > li').remove();
     $('.qu > .down').append(lis);
@@ -441,7 +456,7 @@ $('.qu > .down > li > a').on('click',function(){
     var name = $(this).html();
     $(this).parents('.qu').find('.selected').html(name);
     $(this).parents('.qu').find('.selected').attr('index',id);
-    $(this).parents('.down').slideUp(300);
+    $(this).parents('.down').removeClass("avtive");
 })
 
 
