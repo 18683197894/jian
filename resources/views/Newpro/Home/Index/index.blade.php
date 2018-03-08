@@ -19,7 +19,7 @@
 </div>
 <!--智能社区-->
 <div class="Intelligence">
-    <a href="javascript:;">
+    <a href="{{ url('/newpro/smarthome') }}">
         <img src="{{ asset('/new/home/index/img/Furnishing.png') }}" alt=""/>
         <span class="title">智能家居</span>
         <span class="brief">健康智能家居系统</span>
@@ -45,10 +45,10 @@
             </div>
         </div>
     </a>
-    <a href="javascript:;">
+    <a href="{{ url('/newpro/ressmartunity') }}">
         <img src="{{ asset('/new/home/index/img/Community.png') }}" alt=""/>
         <span class="title">智慧社区</span>
-        <span class="brief">建商智家智慧社区</span>
+        <span class="brief">建商住宅智慧社区</span>
         <i></i>
         <!--隐藏栏目-->
         <div class="hide">
@@ -71,7 +71,7 @@
             </div>
         </div>
     </a>
-    <a href="javascript:;">
+    <a href="{{ url('/newpro/businsmart') }}">
         <img src="{{ asset('/new/home/index/img/Trading.png') }}" alt=""/>
         <span class="title">智慧商圈</span>
         <span class="brief">商业地产智慧管理系统</span>
