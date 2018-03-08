@@ -42,7 +42,7 @@ class CenterController extends Controller
 
     public function my_address(Request $request)
     {
-    	$title = getwebpage($request->path);
+    	$title = getwebpage($request->path());
     	$address = \DB::table('address')->select('id','phone','name','tails','zipcode','shen','shi','qu')->where('uid',\session('Home')->id)->get();
     	$shens = \DB::table('district')->select('id','name','level','upid')->where('level',1)->get();
     	return view('Newpro.Home.Center.my_address',['title'=>$title,'ors'=>'my_address','shens'=>$shens,'address'=>$address]);

@@ -29,9 +29,9 @@
     <div class="auto">
         <a href="{{ url('/newpro/shoppingcart') }}">购物车</a>
         <span></span>
-        <a href="javascript:;">我的订单</a>
+        <a href="{{ url('/newpro/center/my_orders') }}">我的订单</a>
         <span></span>
-        <a href="javascript:;">消息通知</a>
+        <a href="{{ url('/') }}">首页</a>
         <span></span>
         <a href="javascript:;">{{ session('Home')->name }}</a>
     </div>
