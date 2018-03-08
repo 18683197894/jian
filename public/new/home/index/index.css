@@ -8,7 +8,7 @@ body{
 }
 .Intelligence{
     width: 100%;
-    margin-top: 60px;
+    margin-top:50px;
     overflow: hidden;
 }
 .Intelligence a{
@@ -20,6 +20,9 @@ body{
     position: relative;
     padding-top: 70px;
     padding-bottom: 70px;
+}
+.banner > ul > li > a img{
+    width: 100%;
 }
 .Intelligence a:nth-child(1){
     background-color: #F2AB2B;
