@@ -59,26 +59,24 @@ $nav =\DB::table('nav')
         <div class="about">
             <div class="title">关于建商</div>
             <i></i>
-            <a href="javascript:;" class="about_loop">建商介绍</a>
-            <a href="javascript:;" class="about_loop">建商团队</a>
-            <a href="javascript:;" class="about_loop">建商文化</a>
-            <a href="javascript:;" class="about_loop">联系我们</a>
+            <a href="{{ url('/newpro/about?ors=about') }}" class="about_loop">建商简介</a>
+            <a href="{{ url('/newpro/about?ors=team') }}" class="about_loop">运营团队</a>
+            <a href="{{ url('/newpro/about?ors=strategy') }}" class="about_loop">发展战略</a>
+            <a href="{{ url('/newpro/about?ors=framework') }}" class="about_loop">组织构架</a>
+            <a href="{{ url('/newpro/about?ors=contact') }}" class="about_loop">联系我们</a>
         </div>
         <div class="about">
             <div class="title">建商项目</div>
             <i></i>
-            <a href="javascript:;" class="about_loop">智能家居</a>
-            <a href="javascript:;" class="about_loop">智慧地产</a>
-            <a href="javascript:;" class="about_loop">智慧商圈</a>
-            <a href="javascript:;" class="about_loop">智慧文旅</a>
+            <a href="{{ url('/newpro/smarthome') }}" class="about_loop">智能家居</a>
+            <a href="{{ url('/newpro/ressmartunity') }}" class="about_loop">住宅智慧社区</a>
+            <a href="{{ url('/newpro/businsmart') }}" class="about_loop">商业智慧商圈</a>
         </div>
         <div class="about">
             <div class="title">建商服务</div>
             <i></i>
-            <a href="javascript:;" class="about_loop">建商工程</a>
-            <a href="javascript:;" class="about_loop">精装房</a>
-            <a href="javascript:;" class="about_loop">建商家装</a>
-            <a href="javascript:;" class="about_loop">建商网</a>
+            <a href="{{ url('/newpro/case/index') }}" class="about_loop">工程案例</a>
+            <a href="{{ url('/newpro/style') }}" class="about_loop">建商家装</a>
         </div>
         <div class="contact">
             <div class="title">联系我们</div>
