@@ -99,7 +99,7 @@
         <div class="about">
             <div class="title">建商服务</div>
             <i></i>
-            <a href="{{ url('/newpro/case/index') }}" class="about_loop">工程案例</a>
+            <a href="{{ url('/newpro/case/index') }}" class="about_loop">装修案例</a>
             <a href="{{ url('/newpro/style') }}" class="about_loop">建商家装</a>
         </div>
         <div class="contact">

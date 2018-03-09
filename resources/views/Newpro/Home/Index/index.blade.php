@@ -153,7 +153,7 @@
                 </div>
             </div>
         </a>
-        <a href="javascript:;">
+        <a href="{{ url('/newpro/estate/defu') }}">
             <img src="{{ asset('/new/home/index/img/Case3.png') }}" alt=""/>
             <div class="hide">
                 <div class="hide_aout">
@@ -165,7 +165,7 @@
                 </div>
             </div>
         </a>
-        <a href="javascript:;">
+        <a href="{{ url('/newpro/estate/zheshang') }}">
             <img src="{{ asset('/new/home/index/img/Case4.png') }}" alt=""/>
             <div class="hide">
                 <div class="hide_aout">

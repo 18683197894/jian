@@ -47,6 +47,12 @@ Route::get('/newpro/case/zaiplay/{id}','Newpro\Home\CaseController@zaiplay');
 Route::get('/newpro/style','Newpro\Home\StyleController@styleindex');
 Route::post('/newpro/style/paygouajax','Newpro\Home\StyleController@paygouajax');
 
+//楼盘
+Route::get('/newpro/estate/defu','Newpro\Home\EstateController@defu');
+Route::get('/newpro/estate/defu/details','Newpro\Home\EstateController@defudetails');
+
+Route::get('/newpro/estate/zheshang','Newpro\Home\EstateController@zheshang');
+Route::get('/newpro/estate/zheshang/details','Newpro\Home\EstateController@zheshangdetails');
 
 //登入
 Route::get('newpro/login','Newpro\Home\LoginController@login');
