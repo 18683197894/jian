@@ -415,8 +415,8 @@ class PayController extends Controller
         $orders['invoice_tou'] = '否';
         $orders['invoice_ors'] = '否';
       }
-      // $orders['total'] = $moenyss + $orders['risk'];
-      $orders['total'] = 0.01;
+      $orders['total'] = $moenyss + $orders['risk'];
+      // $orders['total'] = 200000;
       $orders['status'] = 0;
       $orders['zid'] = $ids;
       $orders['addtime'] = time();
@@ -448,21 +448,21 @@ class PayController extends Controller
             $total = (int) preg_replace('/\..*/','',$orderss->total * 100);
            
             $wechat = new payInterface_native\request_wechat();
-            $wechat_url = $wechat->index(['_token'=>$orderss->_token,'addtime'=>$orderss->addtime,'total'=>$total],'submitOrderInfo')['code_img_url'];
+            $wechat_url = $wechat->index(['_token'=>$orderss->_token,'addtime'=>$orderss->addtime,'total'=>$total],'submitOrderInfo');
                 
             $alipay = new payInterface_alipay\request_alipay();
-            $alipay_url = $alipay->index(['_token'=>$orderss->_token,'addtime'=>$orderss->addtime,'total'=>$total],'submitOrderInfo')['code_img_url'];
+            $alipay_url = $alipay->index(['_token'=>$orderss->_token,'addtime'=>$orderss->addtime,'total'=>$total],'submitOrderInfo');
             
-            if( empty($wechat_url) || empty($alipay_url) )
+            if( !isset($wechat_url['code_img_url']) || !isset($alipay_url['code_img_url']) )
             {   
-                \DB::table('orders')->delete($res->id);
-                \DB::table('detail')->where('orderid',$res->id)->delete();
+                \DB::table('orders')->delete($res);
+                \DB::table('detail')->where('orderid',$res)->delete();
                 echo "<script> alert('订单创建失败！'); window.location.href='/newpro/shoppingcart' </script>";
                 return false;
             }
 
-            \DB::table('orders')->where('id',$res)->update(['weixinimg'=>$wechat_url,'zhifubaoimg'=>$alipay_url]);
-            return view('Newpro.Home.Pay.payments',['title'=>$title,'orders'=>$orderss,'weixin'=>$wechat_url,'zhifubao'=>$alipay_url]);
+            \DB::table('orders')->where('id',$res)->update(['weixinimg'=>$wechat_url['code_img_url'],'zhifubaoimg'=>$alipay_url['code_img_url']]);
+            return view('Newpro.Home.Pay.payments',['title'=>$title,'orders'=>$orderss,'weixin'=>$wechat_url['code_img_url'],'zhifubao'=>$alipay_url['code_img_url']]);
       }else
       {
             echo "<script> alert('订单创建失败！'); window.location.href='/newpro/shoppingcart' </script>";
