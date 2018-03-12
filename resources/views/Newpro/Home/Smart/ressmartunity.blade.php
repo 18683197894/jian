@@ -18,7 +18,7 @@
     <div class="system">
         <div class="system_auto">
             <a href="javascript:;">
-                <img src="{{ asset('new/home/smart/ressmartunity/img/Access.png.png') }}" alt=""/>
+                <img src="{{ asset('new/home/smart/ressmartunity/img/Access.png') }}" alt=""/>
                 <div class="name">社区门禁系统</div>
             </a>
             <a href="javascript:;">

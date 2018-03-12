@@ -2,8 +2,7 @@
 *{
     margin: 0;
     padding: 0;
--webkit-text-size-adjust:none;
-    
+   
 }
 body{
     font-family: 微软雅黑;
@@ -86,9 +85,9 @@ li{
         background-color: #ffffff;
         height: 480px;
         border-bottom: 1px solid #E7E7E7;
-        -webkit-transition: margin-top 1s;
-        -moz-transition: margin-top 1s;
-        -o-transition: margin-top 1s;
+        -webkit-transition: margin-top 2s;
+        -moz-transition: margin-top 2s;
+        -o-transition: margin-top 2s;
     }
     .header_atou .nav li{
         width: 100%;
@@ -104,3 +103,8 @@ li{
         width: 100%;
     }
 }
+@media screen and (max-width: 800px){
+        *{
+             -webkit-text-size-adjust:none;
+        }
+    }

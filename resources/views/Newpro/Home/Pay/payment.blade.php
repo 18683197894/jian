@@ -36,7 +36,7 @@
 </div>
 <div class="contact">
     <div class="contact_logo">
-        <img src="{{ asset('/home/images/logo.png') }}" alt="" class="logo"/>
+        <a href="{{ url('/') }}"><img src="{{ asset('/home/images/logo.png') }}" alt="" class="logo"/></a>
         <div class="contact_logo_r">
             <a href="javascript:;">
                 <img src="{{ asset('/new/home/publicused/img/header_gg.png') }}" alt=""/>

@@ -3,7 +3,6 @@
 *{
     margin: 0;
     padding: 0;
--webkit-text-size-adjust:none;
     
 }
 body{
@@ -203,3 +202,9 @@ body{
         display: block;
     }
 }
+
+@media screen and (max-width: 800px){
+        *{
+             -webkit-text-size-adjust:none;
+        }
+    }

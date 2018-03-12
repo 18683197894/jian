@@ -1,8 +1,6 @@
 *{
     margin: 0;
     padding: 0;
--webkit-text-size-adjust:none;
-
 }
 body{
     font-family: 微软雅黑;
@@ -232,3 +230,9 @@ font-family: 'Microsoft YaHei';
     .page li:last-child{
       width: 75px;
     }
+    @media screen and (max-width: 800px){
+        *{
+             -webkit-text-size-adjust:none;
+        }
+    }
+   
