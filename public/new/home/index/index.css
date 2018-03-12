@@ -260,7 +260,7 @@ body{
 }
 .News_show a .content{
     width: 90%;
-    height: 120px;
+    overflow: hidden;
     margin: auto;
 }
 .News_show a .content .titlel{
@@ -272,7 +272,7 @@ body{
 .News_show a .content .brief1{
     font-size: 12px;
     line-height: 20px;
-    height:80px;
+    margin-bottom: 10px;
     overflow: hidden;
 }
 .News_show a .content .See{
@@ -452,12 +452,18 @@ body{
         top: 30%;
         right: 30px;
     }
-    .Intelligence {
+    .Intelligence{
         width: 100%;
-        margin-top: 30px;
+        margin-top: 0;
         overflow: hidden;
     }
     .hide .connet span{
       display: none;
+    }
+    .hide_aout .title{
+        margin-top: 15px;
+    }
+    .hide_aout .content{
+        line-height: 20px;
     }
 }
