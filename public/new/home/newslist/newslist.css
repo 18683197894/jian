@@ -34,39 +34,39 @@ body{
     margin: auto;
 }
 /*.headlines_l{*/
-    /*width: 495px;*/
-    /*height: 360px;*/
-    /*overflow: hidden;*/
-    /*float: left;*/
-    /*position: relative;*/
+/*width: 495px;*/
+/*height: 360px;*/
+/*overflow: hidden;*/
+/*float: left;*/
+/*position: relative;*/
 /*}*/
 /*.headlines_l img{*/
-    /*width: 495px;*/
-    /*height: 360px;*/
+/*width: 495px;*/
+/*height: 360px;*/
 /*}*/
 /*.headlines_a{*/
-    /*width: 265px;*/
-    /*height: 360px;*/
-    /*float: left;*/
-    /*margin-left: 8px;*/
-    /*margin-right: 8px;*/
-    /*position: relative;*/
+/*width: 265px;*/
+/*height: 360px;*/
+/*float: left;*/
+/*margin-left: 8px;*/
+/*margin-right: 8px;*/
+/*position: relative;*/
 /*}*/
 /*.headlines_r{*/
-    /*width: 420px;*/
-    /*height: 360px;*/
-    /*overflow: hidden;*/
-    /*float: left;*/
-    /*position: relative;*/
+/*width: 420px;*/
+/*height: 360px;*/
+/*overflow: hidden;*/
+/*float: left;*/
+/*position: relative;*/
 /*}*/
 /*.layer{*/
-    /*width: 100%;*/
-    /*height: 50px;*/
-    /*background-color: #010101;*/
-    /*opacity: 0.2;*/
-    /*position: absolute;*/
-    /*left: 0;*/
-    /*bottom: 0;*/
+/*width: 100%;*/
+/*height: 50px;*/
+/*background-color: #010101;*/
+/*opacity: 0.2;*/
+/*position: absolute;*/
+/*left: 0;*/
+/*bottom: 0;*/
 /*}*/
 .Nws{
     width: 1200px;
@@ -282,6 +282,31 @@ body{
     background-color: #E12E32;
     color: #ffffff;
 }
+.pagination{
+    width: 100%;
+    overflow: hidden;
+}
+.pagination li{
+    float: left;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.pagination li span{
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.pagination li span:hover{
+    color: red;
+}
+.pagination li a{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.pagination li a:hover{
+    color: red;
+}
 @media screen and (max-width: 1200px){
     .information .Nws{
         width: 100%;
@@ -304,11 +329,11 @@ body{
         display: none;
     }
     .paging{
-        width: 375px;
+        width:100%;
         height: 30px;
         margin: auto;
         margin-top: 50px;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
     }
     .paging_r{
         margin-right:0;
@@ -324,5 +349,25 @@ body{
     .loop_right{
         width: 75%;
     }
-
+    .pagination li{
+        float: left;
+        cursor: pointer;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .pagination li span{
+        display: block;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .pagination li span:hover{
+        color: red;
+    }
+    .pagination li a{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .pagination li a:hover{
+        color: red;
+    }
 }

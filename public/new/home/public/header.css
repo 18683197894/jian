@@ -13,7 +13,6 @@ li{
 .header{
     width: 100%;
     height: 75px;
-    background-color: #fff;
     position: fixed;
     top: 0;
     left: 0;
@@ -49,25 +48,12 @@ li{
 .nav li:hover{
     color: #c63232;
 }
-
-@media screen and (min-width: 980px) and (max-width: 1120px){
-
-    .nav li{
-        margin-right: 20px;
-    }
-}
- 
-@media screen and (min-width: 1120px){
-    .nav li{
-        margin-right: 30px;
-    }
-}
 @media screen and (max-width: 1200px){
     .header_atou{
         width: 100%;
     }
 }
-@media screen and (max-width: 980px){
+@media screen and (max-width: 1045px){
     .header_atou{
         width: 100%;
         position: relative;
@@ -98,9 +84,9 @@ li{
         background-color: #ffffff;
         height: 480px;
         border-bottom: 1px solid #E7E7E7;
-        -webkit-transition: margin-top 1s;
-        -moz-transition: margin-top 1s;
-        -o-transition: margin-top 1s;
+        -webkit-transition: margin-top 5s;
+        -moz-transition: margin-top 5s;
+        -o-transition: margin-top 5s;
     }
     .header_atou .nav li{
         width: 100%;
@@ -110,6 +96,9 @@ li{
     }
     .header_atou .nav.avtive{
         margin-top: 575px;
-
+    }
+    .header_atou .nav li a{
+        display: block;
+        width: 100%;
     }
 }

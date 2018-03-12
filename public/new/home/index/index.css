@@ -26,21 +26,18 @@ body{
     background-color: #F2AB2B;
     padding-top: 70px;
     padding-bottom: 70px;
-    border-right: 7px solid #fff;
     box-sizing: border-box;
 }
 .Intelligence a:nth-child(2){
     background-color: #E13E32;
     padding-top: 70px;
     padding-bottom: 70px;
-    border-right: 7px solid #fff;
     box-sizing: border-box;
 }
 .Intelligence a:nth-child(3){
     background-color: #5AA6B2;
     padding-top: 70px;
     padding-bottom: 70px;
-    border-right: 7px solid #fff;
     box-sizing: border-box;
 }
 .Intelligence a:nth-child(4){
@@ -447,5 +444,20 @@ body{
     .Case_loop a .hide{
         background:rgba(0,0,0,0.5);
         opacity:1;
+    }
+    .left-btn,.right-btn {
+        width: 61px;
+        height: 61px;
+        position: absolute;
+        top: 30%;
+        right: 30px;
+    }
+    .Intelligence {
+        width: 100%;
+        margin-top: 30px;
+        overflow: hidden;
+    }
+    .hide .connet span{
+      display: none;
     }
 }

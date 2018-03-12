@@ -228,3 +228,28 @@ body{
         width: 100%;
     }
 }
+@media screen and (max-width: 800px){
+    .Property_left{
+        width: 100%;
+        border-bottom: 1px solid #5A646C;
+    }
+    .Service .contact a{
+        width: 50%;
+    }
+    .Service_right {
+        width: 100%;
+        height: 180px;
+        float: left;
+        overflow: hidden;
+    }
+    .Service .contact{
+        padding-bottom: 50px;
+    }
+    .Property_js .biaoti{
+        font-size: 20px;
+        color: #999999;
+        width: 80%;
+        margin: auto;
+        margin-top: 65px;
+    }
+}
