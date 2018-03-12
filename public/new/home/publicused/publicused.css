@@ -1,10 +1,12 @@
 *{
     margin: 0;
     padding: 0;
+-webkit-text-size-adjust:none;
+
 }
 body{
-    font-family: 微软雅黑；
-font-family: “Microsoft YaHei;
+    font-family: 微软雅黑;
+font-family: 'Microsoft YaHei';
 }
 .header{
     width: 100%;
@@ -160,9 +162,9 @@ font-family: “Microsoft YaHei;
         background-color: #ffffff;
         height: 480px;
         border-bottom: 1px solid #E7E7E7;
-        -webkit-transition: all 5s;
-        -moz-transition: all 5s;
-        -o-transition: all 5s;
+        -webkit-transition: all 1s;
+        -moz-transition: all 1s;
+        -o-transition: all 1s;
     }
     .header{
         height: 75px;
