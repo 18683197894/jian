@@ -379,7 +379,11 @@ body{
     margin: auto;
     width: 127px;
 }
-
+@media screen and (min-width: 1200px){
+    .News_show a .content .brief1{
+        height: 80px;
+    }
+}
 @media screen and (max-width: 1700px){
     .hide .connet span{
         background-color: #999999;

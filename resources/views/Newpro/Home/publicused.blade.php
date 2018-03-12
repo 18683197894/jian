@@ -41,7 +41,7 @@
     </div>
     <div class="header_atou">
         <div class=header_top>
-            <img src="{{ asset('/new/home/publicused/img/logo.png') }}" alt="" class="Logo"/>
+           <a href="{{ url('/') }}"><img src="{{ asset('/new/home/publicused/img/logo.png') }}" alt="" class="Logo"/></a> 
             <div class="search">
                 <a href="javascript:;" class="link">
                     <img src="{{ asset('/new/home/publicused/img/header_gg.png') }}" alt=""/>

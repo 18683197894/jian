@@ -30,7 +30,7 @@
 <!--头部-->
 <div class="header">
     <div class="header_atou">
-        <img src="{{ asset('/new/home/public/img/logo.png') }}" alt="" class="Logo"/>
+        <a href="{{ url('/') }}"><img src="{{ asset('/new/home/public/img/logo.png') }}" alt="" class="Logo"/></a>
         <ul class="nav">
 @php
 $nav =\DB::table('nav')
