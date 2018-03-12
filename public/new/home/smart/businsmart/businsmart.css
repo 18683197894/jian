@@ -95,7 +95,7 @@
     width: 50%;
     overflow: hidden;
     float: right;
-    background-color: rgba(102,153,204,0.8);/* IE9¡¢±ê×¼ä¯ÀÀÆ÷¡¢IE6ºÍ²¿·ÖIE7ÄÚºËµÄä¯ÀÀÆ÷(ÈçQQä¯ÀÀÆ÷)»á¶Á¶® */
+    background-color: rgba(102,153,204,0.8);/* IE9??㊣那℅??????‾??IE6????﹞?IE7???????????‾(??QQ?????‾)?芍???? */
     padding-bottom: 120px;
 }
 .Elevator_Modular .title{
@@ -180,6 +180,44 @@
     }
     .Parking_auto{
         width: 100%;
+    }
+}
+@media screen and (max-width: 800px){
+    .Access_text {
+        width: 100%;
+    }
+    .Access_img{
+        width: 100%;
+    }
+    .E_title {
+        font-size: 25px;
+        color: #6c9fde;
+        height: 40px;
+    }
+    .Access_a{
+        margin-bottom: 20px;
+    }
+    .Elevator_Modular{
+        width: 60%;
+        padding-bottom: 50px;
+    }
+    .Elevator_Modular a{
+        width: 100%;
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+    .Elevator_Modular i{
+        margin-bottom: 30px;
+    }
+    .Parking_auto a{
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    .Parking_auto a img{
+        width: 100%;
+    }
+    .energy{
+        margin-bottom: 30px;
     }
 }
 @media screen and (max-width: 600px){

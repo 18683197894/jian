@@ -207,6 +207,15 @@ body{
         float: left;
         margin-right: 35px;
     }
+    .con_con li span{
+        font-size: 12px;
+    }
+    .loop_img a{
+        width: 100%;
+    }
+    .building_contact .current{
+        font-size: 13px;
+    }
 }
 @media screen and (max-width: 755px){
     .case3con_img{
