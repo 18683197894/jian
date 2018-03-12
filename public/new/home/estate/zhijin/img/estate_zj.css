@@ -1,0 +1,622 @@
+
+
+body{
+    background-color: #ffffff;
+}
+
+.content{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 165px;
+}
+.estate_zj{
+    width: 100%;
+    background: url("../img/estate_zjbg.png");
+    background-size: 100% 100%;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+.estate_zj .auto{
+    width: 1100px;
+    border-left: 2px solid #516975;
+    margin: 0 auto;
+    /* position: relative; */
+    box-shadow: -10px -3px 10px #516975;
+    margin-top: 35px;
+    overflow: hidden;
+}
+.estate_zj .auto .img{
+    width: 750px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+}
+.estate_zj .auto .img .img_top{
+    width: 100%;
+    height: 430px;
+    overflow: hidden;
+}
+.estate_zj .auto .img .img_top a{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.estate_zj .auto .img .img_top a.avtive{
+    display: block;
+}
+.estate_zj .auto .img .img_top a img{
+    width: 100%;
+    height: 100%;
+}
+.img_click{
+    width: 95%;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 10px;
+}
+.img_click a{
+    display: block;
+    width: 70px;
+    height: 50px;
+    margin-right: 6px;
+    float: left;
+    border: 2px solid #DFE8E4;
+    background: #040303;
+    opacity: 0.7;
+}
+.img_click a img{
+    width: 100%;
+    height: 100%;
+}
+.img_click a.avtive{
+    border: 3px solid #fff;
+    box-sizing: border-box;
+    opacity: 1;
+}
+.loupan{
+    width: 348px;
+    height: 500px;
+    background: #fff;
+    float: left;
+}
+.loupan .top{
+    width: 290px;
+    height: 150px;
+    border-bottom: 2px solid #e5e5e5;
+    margin-left: 18px;
+}
+.loupan .top .name{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 18px;
+    color: #4b4b4b;
+    line-height: 50px;
+}
+.loupan .top p{
+    color: #c6c6c6;
+    margin-top: 5px;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+.loupan .top .nve{
+    width: 200px;
+    height: 25px;
+    /* border: 1px solid red; */
+    margin-top: 8px;
+}
+.loupan .top .nve div{
+    color: #B3AF99;
+    font-size: 12px;
+    background-color: #fff098;
+    margin-right: 10px;
+    float: left;
+}
+
+.loupan .top .jiage{
+    width: 100%;
+    margin-top: 5px;
+}
+.loupan .top .jiage span{
+    color: #c6c6c6;
+    font-size: 13px;
+}
+.loupan .top .jiage  .num{
+    font-size: 24px;
+    color: red;
+    font-weight: 600;
+}
+.loupan .time{
+    width: 290px;
+    height: 190px;
+    border-bottom: 1.5px solid #e5e5e5;
+    margin-left: 18px;
+    padding-top: 10px;
+}
+.time_loop{
+    width: 100%;
+    overflow: hidden;
+    font-size: 14px;
+    color: #848484;
+    margin-top: 13px;
+}
+.loupan .lianx{
+    width: 290px;
+    height: 70px;
+    /* border: 1px solid #e5e5e5; */
+    margin-left: 18px;
+}
+.loupan .lianx img{
+    display: block;
+    float: left;
+    margin-top: 15px;
+}
+.loupan .lianx span{
+    display: block;
+    float: left;
+    font-size: 16px;
+    color: red;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-left: 8px;
+}
+.dontai{
+    width: 1200px;
+    overflow: hidden;
+    background-color: #F5F5F5;
+    margin: auto;
+    margin-top: 20px;
+}
+.dontai .title{
+    width: 100%;
+    /* border: 1px solid red; */
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
+.dontai .title .boder{
+    width: 100%;
+    height: 35px;
+    border-bottom: 3px solid #dadada;
+}
+.dontai .title .boder .left{
+    width: 87px;
+    height: 35px;
+    margin-left: 20px;
+    border-bottom: 3px solid #000;
+    float: left;
+    line-height: 40px;
+    font-size: 19px;
+    font-weight: 600;
+    color: #4b4b4b;
+}
+.dontai .title .boder .right{
+    width: 160px;
+    height: 35px;
+    /* margin-left: 16px; */
+    border-bottom: 3px solid red;
+    float: left;
+    font-size: 18px;
+    font-weight: 600;
+    color: #747474;
+    line-height: 40px;
+}
+.dontai .tab{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 15px;
+}
+.dontai .tab a{
+    display: block;
+    width: 30%;
+    float: left;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 17px;
+    background-color: #E0E0E0;
+    color: #979797;
+    height: 50px;
+    font-weight: 600;
+    text-shadow: 0px 1px 0px #fff;
+    margin-left: 2.5%;
+    line-height: 50px;
+}
+.dontai .tab a.avtive{
+    color: #fff;
+    background-color: #CE0505;
+    font-weight: 500;
+}
+.dontai .mask{
+    width: 300%;
+    height: 110px;
+    margin-left: -100%;
+    margin-top: 20px;
+    overflow: hidden;
+    -webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -o-transition: all 2s;
+}
+.mask_loop{
+    width: 33.333%;
+    float: left;
+    height: 110px;
+}
+.mask_loop .auto{
+    width: 54%;
+    height: 100%;
+    margin: auto;
+}
+.mask_loop .auto a{
+    display: block;
+    width: 90px;
+    margin-left: 3%;
+    margin-right: 3%;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #E0E0E0;
+    border-radius: 50%;
+    height: 90px;
+    float: left;
+    margin-top: 10px;
+    line-height: 90px;
+    text-align: center;
+    color: #979797;
+}
+.mask_loop .auto2{
+    width: 40%;
+    height: 100%;
+    margin: auto;
+}
+.mask_loop .auto2 a{
+    display: block;
+    width: 90px;
+    margin-left: 3%;
+    margin-right: 3%;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #E0E0E0;
+    border-radius: 50%;
+    height: 90px;
+    float: left;
+    margin-top: 10px;
+    line-height: 90px;
+    text-align: center;
+    color: #979797;
+}
+.New{
+    width: 1200px;
+    background-color: #f5f5f5;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 35px;
+}
+.New .title{
+    width: 100%;
+    /* border: 1px solid red; */
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
+.New .title .boder{
+    width: 100%;
+    height: 35px;
+    border-bottom: 3px solid #dadada;
+}
+.New .title .boder .left{
+    width: 87px;
+    height: 35px;
+    margin-left: 20px;
+    border-bottom: 3px solid #000;
+    float: left;
+    line-height: 40px;
+    font-size: 19px;
+    font-weight: 600;
+    color: #4b4b4b;
+}
+.New .title .boder .right{
+    width: 160px;
+    height: 35px;
+    /* margin-left: 16px; */
+    border-bottom: 3px solid red;
+    float: left;
+    font-size: 18px;
+    font-weight: 600;
+    color: #747474;
+    line-height: 40px;
+}
+.New .title .boder .More{
+    display: block;
+    float: right;
+    font-size: 15px;
+    font-weight: 500;
+    color: #747474;
+    line-height: 35px;
+}
+.New .xinwen{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 15px;
+}
+.New .xinwen .loop{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    height: 35px;
+}
+.New .xinwen .loop span{
+    padding: 3px 8px;
+    background-color: #E12E32;
+    display: block;
+    float: left;
+    color: #fff;
+    margin-top: 5px;
+    font-size: 15px;
+    margin-left: 15px;
+}
+.New .xinwen .loop .name{
+    float: left;
+    color: #515151;
+    font-size: 17px;
+    line-height: 35px;
+    display: block;
+    margin-left: 20px;
+}
+.D_max{
+    width: 1200px;
+    margin: auto;
+    margin-top: 35px;
+    background-color: #f5f5f5;
+}
+.D_max .title{
+    width: 100%;
+    /* border: 1px solid red; */
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
+.D_max .title .boder{
+    width: 100%;
+    height: 35px;
+    border-bottom: 3px solid #dadada;
+}
+.D_max .title .boder .left{
+    width: 87px;
+    height: 35px;
+    margin-left: 20px;
+    border-bottom: 3px solid #000;
+    float: left;
+    line-height: 40px;
+    font-size: 19px;
+    font-weight: 600;
+    color: #4b4b4b;
+}
+.D_max .title .boder .right{
+    width: 160px;
+    height: 35px;
+    /* margin-left: 16px; */
+    border-bottom: 3px solid red;
+    float: left;
+    font-size: 18px;
+    font-weight: 600;
+    color: #747474;
+    line-height: 40px;
+}
+.D_max .huxintu{
+    margin-top: 20px;
+    width: 100%;
+    overflow: hidden;
+}
+.D_max .huxintu .loop{
+    width: 25%;
+    display: block;
+    float: left;
+    overflow: hidden;
+}
+.D_max .huxintu .loop img{
+    width: 95%;
+    overflow: hidden;
+    display: block;
+    margin: auto;
+    max-height: 213px;
+}
+.D_max .huxintu .loop i{
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: normal;
+    color: #333;
+    text-align: center;
+}
+.Drawing{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 30px;
+    background-color: #f5f5f5;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+.Drawing .title .boder{
+    width: 100%;
+    height: 35px;
+    border-bottom: 3px solid #dadada;
+}
+.Drawing .title .boder .left{
+    width: 87px;
+    height: 35px;
+    margin-left: 20px;
+    border-bottom: 3px solid #000;
+    float: left;
+    line-height: 40px;
+    font-size: 19px;
+    font-weight: 600;
+    color: #4b4b4b;
+}
+.Drawing .title .boder .right{
+    width: 160px;
+    height: 35px;
+    /* margin-left: 16px; */
+    border-bottom: 3px solid red;
+    float: left;
+    font-size: 18px;
+    font-weight: 600;
+    color: #747474;
+    line-height: 40px;
+}
+.Drawing_img{
+    width: 100%;
+    overflow: hidden;
+    display: block;
+}
+.Drawing_img a{
+    display: block;
+    width: 25%;
+    float: left;
+    overflow: hidden;
+}
+.Drawing_img a img{
+    display: block;
+    width: 98%;
+    margin: auto;
+    height: 230px;
+}
+.Drawing_img a .name{
+    display: block;
+    width: 98%;
+    margin: auto;
+    background-color: #adadab;
+    font-size: 18px;
+    font-weight: 500;
+    color: #f6f6f6;
+    text-align: center;
+    line-height: 30px;
+}
+.Drawing_img a .daxiao{
+    display: block;
+    width: 98%;
+    margin: auto;
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    line-height: 30px;
+    height: 30px;
+}
+.daxiao .left{
+    float: left;
+}
+.daxiao .right{
+    float: right;
+}
+.Drawing_img a .daishou{
+    width: 40px;
+    height: 23px;
+    background-color: #E12E32;
+    line-height: 23px;
+    text-align: center;
+    margin-left: 8px;
+    margin-top: 2px;
+    font-size: 15px;
+    color: #f6f6f6;
+    font-weight: 500;
+}
+@media screen and (max-width: 1200px){
+    .dontai{
+        width: 100%;
+    }
+    .estate_zj .auto{
+        width: 100%;
+    }
+    .estate_zj .auto .img{
+        width: 100%;
+    }
+    .Housing{
+        width: 100%;
+    }
+    .loupan{
+        display: none;
+    }
+    .mask_loop .auto{
+        width: 63%;
+    }
+    .mask_loop .auto2{
+        width: 45%;
+    }
+    .New{
+        width: 100%;
+    }
+    .New .xinwen .loop span{
+        width: 10%;
+        padding: 0;
+        line-height: 30px;
+        text-align: center;
+        margin-left: 2%;
+        overflow: hidden;
+        margin-top: 3px;
+    }
+    .New .xinwen .loop .name{
+        width: 86%;
+        margin-left: 2%;
+        overflow: hidden;
+    }
+    .New .xinwen{
+        padding-bottom: 10px;
+    }
+    .D_max{
+      width: 100%;
+    }
+    .Drawing{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1075px){
+    .mask_loop .auto2{
+        width: 48%;
+    }
+}
+@media screen and (max-width: 1050px){
+    .content{
+        margin-top: 75px;
+    }
+    .mask_loop .auto{
+        width: 70%;
+    }
+    .mask_loop .auto2{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 960px){
+    .mask_loop .auto{
+        width: 80%;
+    }
+    .mask_loop .auto2{
+        width: 60%;
+    }
+}
+@media screen and (max-width: 800px){
+    .mask_loop .auto{
+        width: 90%;
+    }
+    .mask_loop .auto2{
+        width: 70%;
+    }
+    .D_max .huxintu .loop{
+      width: 50%;
+    }
+    .Drawing_img a{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 740px){
+    .dontai .mask{
+        height: 210px;
+    }
+    .mask_loop{
+        height: 210px;
+    }
+}
+@media screen and (max-width: 580px){
+    .Drawing_img a{
+        width: 100%;
+    }
+    .D_max .huxintu .loop{
+        width: 100%;
+    }
+}

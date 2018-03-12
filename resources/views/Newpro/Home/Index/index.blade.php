@@ -129,19 +129,8 @@
     <div class="title">工程案列</div>
     <div class="brief">我们积累了各行业丰富的案例和经验</div>
     <div class="Case_loop">
-        <a href="javascript:;">
-            <img src="{{ asset('/new/home/index/img/Case1.png') }}" alt=""/>
-            <div class="hide">
-                <div class="hide_aout">
-                    <div class="title">孵化园项目</div>
-                    <i></i>
-                    <div class="content">
-
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="javascript:;">
+        
+        <a href="{{ url('/newpro/estate/zhijin') }}">
             <img src="{{ asset('/new/home/index/img/Case2.png') }}" alt=""/>
             <div class="hide">
                 <div class="hide_aout">
@@ -177,7 +166,18 @@
                 </div>
             </div>
         </a>
+        <a href="javascript:;">
+            <img src="{{ asset('/new/home/index/img/Case1.png') }}" alt=""/>
+            <div class="hide">
+                <div class="hide_aout">
+                    <div class="title">孵化园项目</div>
+                    <i></i>
+                    <div class="content">
 
+                    </div>
+                </div>
+            </div>
+        </a>
         <a href="javascript:;">
             <img src="{{ asset('/new/home/index/img/Case5.png') }}" alt=""/>
             <div class="hide">

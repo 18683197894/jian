@@ -54,6 +54,12 @@ Route::get('/newpro/estate/defu/details','Newpro\Home\EstateController@defudetai
 Route::get('/newpro/estate/zheshang','Newpro\Home\EstateController@zheshang');
 Route::get('/newpro/estate/zheshang/details','Newpro\Home\EstateController@zheshangdetails');
 
+Route::get('/newpro/estate/zhijin','Newpro\Home\EstateController@zhijin');
+Route::get('/newpro/estate/zhijin/details','Newpro\Home\EstateController@zhijindetails');
+Route::get('/newpro/estate/zhijin/inter/{id}','Newpro\Home\EstateController@zhijininter');
+Route::get('/newpro/estate/zhijin/newsplay/{id}','Newpro\Home\EstateController@zhijinnewsplay');
+Route::get('/newpro/estate/zhijin/newslist','Newpro\Home\EstateController@zhijinnewslist');
+
 //登入
 Route::get('newpro/login','Newpro\Home\LoginController@login');
 Route::post('/newpro/logins','Newpro\Home\LoginController@logins');

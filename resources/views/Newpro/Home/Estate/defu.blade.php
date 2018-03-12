@@ -79,7 +79,7 @@
                     <div class="time_loop">开盘时间: </div>
                     <div class="time_loop">入住时间: </div>
                     <div class="time_loop">物业类型: 商铺 住宅</div>
-                    <div class="time_loop">楼盘地址: 宜宾县城北新区君毅路德福公</div>
+                    <div class="time_loop">楼盘地址: 宜宾县城北新区君毅路德福公元</div>
                 </div>
                 <div class="lianx">
                     <img src="{{ asset('/new/home/estate/defu/img/estate_dian.gif')}}" alt=""/>
