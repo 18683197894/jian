@@ -369,7 +369,7 @@ body{
     }
     .introduce .neirong{
         width: 90%;
-        font-size: 14px;
+        font-size: 13px;
     }
     .banner .contact{
         width: 100%;
@@ -388,6 +388,34 @@ body{
     }
     .purchase_in{
         margin-bottom: 15px;
+    }
+    .perfect .title{
+        font-size: 17px;
+        height: 60px;
+        line-height: 60px;
+    }
+    .perfect_rb a .name{
+        font-size: 17px;
+    }
+    .perfect_rb a .contact{
+        font-size: 13px;
+        height: 35px;
+    }
+    .detailed_img ul li div{
+        font-size: 12px;
+        text-align: center;
+    }
+    .detailed_img ul li:first-child{
+        height: 35px;
+        overflow: hidden;
+        font-size: 14px;
+        line-height: 35px;
+    }
+    .detailed_img ul li:first-child div{
+        font-size: 13px;
+    }
+    .detailed_img ul li{
+        line-height: 20px;
     }
 }
 @media screen and (max-width: 700px){

@@ -471,9 +471,9 @@ body{
     color: #333333;
 }
 @media screen and (max-width: 1200px){
-   .Choice_a{
-       width: 90%;
-   }
+    .Choice_a{
+        width: 90%;
+    }
     .explain{
         width: 90%;
     }
@@ -553,7 +553,7 @@ body{
 @media screen and (max-width: 850px){
     .Choice_a{
         width:100%;
-        height: 180px;
+        height: 120px;
         border-bottom: 1px solid #f5f5f5;
     }
     .explain img{
@@ -591,9 +591,96 @@ body{
         width: 90%;
         margin-left: 10%;
     }
+    .Choice{
+        width: 100%;
+        height: 60px;
+        border-bottom: 1px solid #f5f5f5;
+    }
+    .Choice_a a{
+        display: block;
+        width: 100px;
+        height: 60px;
+        line-height: 60px;
+        color: #666;
+        text-align: center;
+        font-size: 17px;
+        float: left;
+        margin-right: 15px;
+    }
+    .linked{
+        padding-top: 20px;
+    }
+    .linked_top{
+        width: 90%;
+        margin-left: 5%;
+        font-size: 15px;
+        line-height: 25px;
+    }
     .linked_con{
         width: 90%;
-        margin-left: 10%;
+        margin: auto;
+        padding-top: 50px;
+    }
+    .zuzhi{
+        width: 100%;
+        overflow: hidden;
+        margin-top: 30px;
+        margin-bottom: 0px;
+    }
+    .Strategy{
+        margin-top: 25px;
+        font-size: 15px;
+        line-height: 30px;
+    }
+    .Strategy .title{
+        font-size: 20px;
+    }
+    .Economics_auto{
+        padding-top: 20px;
+    }
+    .Economics_auto .text span{
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .Economics_auto .text p{
+        font-size: 13px;
+        line-height: 25px;
+        text-indent: 19px;
+    }
+    .Economics{
+        padding-bottom: 30px;
+    }
+    .Promote{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .Promote_text span{
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .Promote_text p{
+        font-size: 13px;
+        line-height: 25px;
+        text-indent: 19px;
+    }
+    .Job{
+        padding-top: 30px;
+        padding-bottom: 0;
+    }
+    .Job .title{
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .Job_text{
+        font-size: 13px;
+        line-height: 25px;
+    }
+    .Job_img{
+        padding-top: 30px;
+    }
+    .Job_img img{
+        height: 181px;
+        margin-bottom: 10px;
     }
 }
 @media screen and (max-width: 550px){
