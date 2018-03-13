@@ -61,6 +61,9 @@
         </div>
         <div class="nav">
             <a href="{{ url('/') }}">首页</a>
+            <a href="{{ url('/newpro/smarthome') }}">智能家居</a>
+            <a href="{{ url('/newpro/ressmartunity') }}">智慧社区</a>
+            <a href="{{ url('/newpro/businsmart') }}">智慧商圈</a>
             <a href="{{ url('/newpro/style') }}">建商家装</a>
             <a href="{{ url('/newpro/case/index') }}">装修案例</a>
             <a href="javascript:;">精装房</a>
@@ -99,7 +102,7 @@
         <div class="about">
             <div class="title">建商服务</div>
             <i></i>
-            <a href="{{ url('/newpro/case/index') }}" class="about_loop">装修案例</a>
+            <a href="{{ url('/newpro/case/index') }}" class="about_loop">工程案例</a>
             <a href="{{ url('/newpro/style') }}" class="about_loop">建商家装</a>
         </div>
         <div class="contact">
