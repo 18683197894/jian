@@ -3,8 +3,8 @@
     padding: 0;
 }
 body{
-    font-family: 微软雅黑;
-font-family: 'Microsoft YaHei';
+    font-family: '微软雅黑';
+    font-family: 'Microsoft YaHei';
 }
 .header{
     width: 100%;
@@ -76,6 +76,7 @@ font-family: 'Microsoft YaHei';
     margin-top: 23px;
     border-radius: 10px;
     overflow: hidden;
+    display: none;
 }
 .search_i input{
     width: 170px;
@@ -178,61 +179,60 @@ font-family: 'Microsoft YaHei';
     }
 }
 .page{
-  width:100%;
-  margin:0 auto;
-  height:30px;
-   margin-bottom: 30px;
+    width:100%;
+    margin:0 auto;
+    height:30px;
+    margin-bottom: 30px;
 }
 .page ul{
-        width: 300px;
-        margin:auto;
+    width: 300px;
+    margin:auto;
 
+}
+.page li{
+    height: 30px;
+    float: left;
+    list-style-type:none;
+    width: 35px;
+    text-align: center;
+    border: 1px solid #F1F1F1;
+    font-size: 12px;
+    line-height: 30px;
+    cursor:pointer;
+}
+.page .pagers{
+    width: 65px;
+}
+.page .disabled > a,
+.page .disabled > a:hover,
+.page .disabled > a:focus,
+.page .disabled > span {
+    color: #777;
+    cursor: not-allowed;
+    background-color: #fff;
+}
+.page li a{
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: #666;
+    height: 100%;
+}
+.page li.active{
+    background-color: #E12E32;
+    color: #ffffff;
+}
+.page li.active span{
+    color: #ffffff;
+}
+.page li:first-child{
+    width: 75px;
+}
+.page li:last-child{
+    width: 75px;
+}
+@media screen and (max-width: 800px){
+    *{
+        -webkit-text-size-adjust:none;
     }
-    .page li{
-        height: 30px;
-        float: left;
-        list-style-type:none;
-        width: 35px;
-        text-align: center;
-        border: 1px solid #F1F1F1;
-        font-size: 12px;
-        line-height: 30px;
-        cursor:pointer;
-    }
-    .page .pagers{
-        width: 65px;
-    }
-    .page .disabled > a,
-    .page .disabled > a:hover,
-    .page .disabled > a:focus,
-    .page .disabled > span {
-        color: #777;
-        cursor: not-allowed;
-        background-color: #fff;
-      }
-    .page li a{
-        display: block;
-        width: 100%;
-        text-decoration: none;
-        color: #666;
-        height: 100%;
-    }
-    .page li.active{
-        background-color: #E12E32;
-        color: #ffffff;
-    }
-    .page li.active span{
-        color: #ffffff;
-    }
-    .page li:first-child{
-      width: 75px;
-    }
-    .page li:last-child{
-      width: 75px;
-    }
-    @media screen and (max-width: 800px){
-        *{
-             -webkit-text-size-adjust:none;
-        }
-    }
-   
+}

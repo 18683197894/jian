@@ -179,8 +179,23 @@ body{
     }
 }
 @media screen and (max-width: 800px){
+    .get_l .contact{
+        text-align: center;
+        font-size: 13px;
+        line-height: 20px;
+    }
     .pattern_auto{
         margin-bottom: 30px;
+    }
+    .get_l .title{
+        margin-top: 20px;
+    }
+    .from_r .contact{
+        font-size: 13px;
+        line-height: 20px;
+    }
+    .get_l{
+        font-size: 13px;
     }
 
 }

@@ -184,7 +184,7 @@ h2,h1,h3,h4,h5,h6{
         border-bottom: 15px solid transparent;
         position: absolute;
         left: 13px;
-        top: 16%;
+        top: 5.5%!important;
         cursor: pointer;
         -webkit-transition: margin-left 1s;
         -moz-transition: margin-left 1s;
@@ -196,4 +196,15 @@ h2,h1,h3,h4,h5,h6{
     .con_right.avtive{
         margin-left: 200px;
     }
+    .zhijin_page .top .left{
+        font-size: 17px;
+    }
+    .zhijin_page .top .right{
+        font-size: 16px;
+    }
+    .con_left p{
+        font-size: 17px;
+    }
 }
+
+
