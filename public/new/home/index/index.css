@@ -19,9 +19,15 @@ body{
     padding-top: 70px;
     padding-bottom: 70px;
 }
+.banner.mo{
+    display: none;
+}
 .banner > ul > li > a img{
     width: 100%;
 }
+.banner > ul > .mo{
+    display: none;
+} 
 .Intelligence a:nth-child(1){
     background-color: #F2AB2B;
     padding-top: 70px;
@@ -469,5 +475,13 @@ body{
     }
     .hide_aout .content{
         line-height: 20px;
+    }
+}
+@media screen and (max-width: 750px){
+    .banner.mo{
+        display: block;
+    }
+    .banner.pc{
+        display: none;
     }
 }

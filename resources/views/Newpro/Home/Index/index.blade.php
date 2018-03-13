@@ -8,10 +8,19 @@
 
 @section('content')
 <!--banner图 轮播-->
-<div class="banner">
+<div class="banner pc">
     <ul class="">
-        <li><a href="javascript:;"><img src="{{ asset('/new/home/index/img/banner3.png') }}" alt=""></a></li>
-        <li><a href="javascript:;"><img src="{{ asset('/new/home/index/img/banner2.png') }}" alt=""></a></li>
+        <li class="pc"><a href="javascript:;"><img src="{{ asset('/new/home/index/img/banner3.png') }}" alt=""></a></li>
+        <li class="pc"><a href="javascript:;"><img src="{{ asset('/new/home/index/img/banner2.png') }}" alt=""></a></li>
+    </ul>
+    <div class="left-btn"></div>
+    <div class="right-btn"></div>
+    <div class="img-btn-list"></div>
+</div>
+<div class="banner mo">
+    <ul class="">
+        <li class="pc"><a href="javascript:;"><img src="{{ asset('/new/home/index/img/3_1.png') }}" alt=""></a></li>
+        <li class="pc"><a href="javascript:;"><img src="{{ asset('/new/home/index/img/2_1.png') }}" alt=""></a></li>
     </ul>
     <div class="left-btn"></div>
     <div class="right-btn"></div>
@@ -255,5 +264,7 @@
 
 @section('js')
 <script src="{{ asset('new/home/index/index.js') }}"></script>
-
+// <script>
+//     $(".banner ul li:gt(1)").remove()
+// </script>
 @endsection('js')

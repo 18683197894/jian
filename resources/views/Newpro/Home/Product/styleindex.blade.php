@@ -8,7 +8,7 @@
 <div class="banner">
     <div class="contact">
         <div class="money">
-            <span class="Num">699</span>
+            <span class="Num">598</span>
             <span class="Company">元/㎡</span>
         </div>
         <div class="reach">从毛坯到精装</div>
@@ -50,6 +50,7 @@
     </div>
     @if(count($data) > 0)
     @foreach($data as $k => $v)
+    
     <div class="fashion one{{ $loop->index + 1 }}">
         <div class="title">{{ $v->title }}</div>
         <div class="contact">
@@ -120,12 +121,14 @@
                         </div>
                     </div>
                 </div>
+
                 @endforeach
                 @endif
                 
             </div>
         </div>
     </div>
+   
     @endforeach
     @endif
 </div>
@@ -141,7 +144,8 @@
             })
             $("input[type='radio']").on('click',function(){
                 var money = $(this).attr('feel');
-                $(this).parents('.fashion').find('.auto > span ').eq(1).html(money);
+                
+                $(this).parents('.detailed_img').find('.auto > span ').eq(1).html(money);
                 if($(this).attr('index') == 'qing')
                 {
                     $(this).parents('.fashion').find('.auto > input').css('display','block');
@@ -161,7 +165,7 @@
                     }
                     if(ors == 'qing')
                     {
-                        var num = $(this).parents('.fashion').find("input[type='text']").val();
+                        var num = $(this).parents('.detailed_img').find("input[type='text']").val();
                         var pre =/^[\d]{1,3}$/;
                         if(!pre.test(num) || num < 10)
                         {

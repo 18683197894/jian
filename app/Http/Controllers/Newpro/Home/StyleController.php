@@ -10,7 +10,7 @@ class StyleController extends Controller
     public function styleindex(Request $request)
     {	
     	$title = getwebpage($request->path());
-    	$data = \DB::table('packages')->select('id','title')->get();
+    	$data = \DB::table('packages')->select('id','title')->where('id',1)->get();
     	if($data->count() > 0)
     	{
     		foreach($data as $k => $v)
@@ -18,10 +18,18 @@ class StyleController extends Controller
     			$v->style = \DB::table('style')->select('id','title','con','content','img','status','time','pid')->where('pid',$v->id)->orderBY('time')->get();
     			foreach($v->style as $kk => $vv)
     			{	
-    			$vv->door = \DB::table('door')->select('id','title','pid','main','nomain','model','time','mains','nomains','models')->where('pid',$vv->id)->get();
-    			}
+    			 $vv->door = \DB::table('door')->select('id','title','pid','main','nomain','model','time','mains','nomains','models')->where('pid',$vv->id)->get();
+    			 // if($door->count() > 0)
+        //          {
+        //             $vv->door = $door;
+        //          }else
+        //          {
+        //             $vv->door = false;
+        //          }
+                }
     		}
     	}
+
     	$qing = \DB::table('qing')->select('money')->first()->money;
     	return view('Newpro.Home.Product.styleindex',['title'=>$title,'data'=>$data,'qing'=>$qing,'path'=>$request->path()]);
     }

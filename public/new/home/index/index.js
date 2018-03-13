@@ -1,12 +1,4 @@
-//bannerͼ
-bannerListFn(
-    $(".banner"),
-    $(".img-btn-list"),
-    $(".left-btn"),
-    $(".right-btn"),
-    2000,
-    true
-);
+
 function bannerListFn(a,b,c,d,e,f){
     var $bannerMaxWapDom=a;
     var windowWidth=$(window).width();
@@ -100,3 +92,20 @@ function bannerListFn(a,b,c,d,e,f){
         clearInterval(timeOff);
     },function(){(f) ? setTime() : setTime;});
 }
+//bannerͼ
+bannerListFn(
+    $(".banner.pc"),
+    $(".img-btn-list"),
+    $(".left-btn"),
+    $(".right-btn"),
+    2000,
+    true
+);
+bannerListFn(
+    $(".banner.mo"),
+    $(".img-btn-list"),
+    $(".left-btn"),
+    $(".right-btn"),
+    2000,
+    true
+);

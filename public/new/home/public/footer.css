@@ -1,4 +1,4 @@
-/*Î²²¿*/
+/*Â¦Ã‚??*/
 
 .footer{
     width: 100%;
@@ -204,6 +204,18 @@
     .footer .auto .contact{
         margin-left: 10%;
     }
+    .footer .auto .contact{
+        width: 350px;
+        border-right: none;
+        height: 190px;
+    }
+    .contact a{
+        padding-left: 15px;
+    }
+    .QR{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
 }
 @media screen and (max-width: 740px){
     .footer .auto .contact{
@@ -224,5 +236,12 @@
     }
     .footer .auto .code{
         margin-left: 22px;
+    }
+
+}
+@media screen and (max-width: 390px){
+    .copyright {
+        height: 60px;
+        line-height: 30px;
     }
 }
