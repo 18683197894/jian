@@ -190,24 +190,40 @@
         width: 100%;
     }
     .E_title {
-        font-size: 25px;
+        font-size: 20px;
         color: #6c9fde;
         height: 40px;
+    }
+    .Trading_Real_brief{
+        margin-bottom: 20px;
+    }
+    .Access_text_auto .titel{
+        font-size: 16px;
+    }
+    .Access_text_auto .contact{
+        font-size: 14px;
+    }
+    .Access_a span{
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .Access{
+        padding-bottom: 20px;
     }
     .Access_a{
         margin-bottom: 20px;
     }
     .Elevator_Modular{
         width: 60%;
-        padding-bottom: 50px;
+        padding-bottom: 20px;
     }
     .Elevator_Modular a{
         width: 100%;
-        margin-bottom: 20px;
-        font-size: 20px;
+        margin-bottom: 0;
+        font-size: 13px;
     }
     .Elevator_Modular i{
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     .Parking_auto a{
         width: 50%;
@@ -215,9 +231,24 @@
     }
     .Parking_auto a img{
         width: 100%;
+        height: 150px;
     }
     .energy{
-        margin-bottom: 30px;
+        margin-bottom: 10px;
+    }
+    .Elevator_Modular .title{
+        margin-top: 20px;
+        font-size: 20px;
+        height: 30px;
+    }
+    .Parking .title{
+        height: 60px;
+        line-height: 60px;
+        font-size: 20px;
+    }
+    .Parking_auto a .text{
+        height: 45px;
+        line-height: 45px;
     }
 }
 @media screen and (max-width: 600px){

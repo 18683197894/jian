@@ -560,7 +560,7 @@ body{
         padding-bottom: 10px;
     }
     .D_max{
-      width: 100%;
+        width: 100%;
     }
     .Drawing{
         width: 100%;
@@ -595,13 +595,57 @@ body{
         width: 90%;
     }
     .mask_loop .auto2{
-        width: 70%;
+        width: 60%;
+    }
+    .mask_loop .auto2 a{
+        font-size: 14px;
     }
     .D_max .huxintu .loop{
-      width: 50%;
+        width: 50%;
     }
     .Drawing_img a{
         width: 50%;
+    }
+    .estate_zj{
+        background: none;
+        padding-bottom: 0;
+    }
+    .img_click{
+        width: 100%;
+        padding-bottom: 10px;
+    }
+    .estate_zj .auto{
+        box-shadow: 1px -3px 10px  #516975;
+    }
+    .dontai .title .boder .left{
+        font-size: 16px;
+    }
+    .dontai .title .boder .right{
+        font-size: 16px;
+    }
+    .New .title .boder .left{
+        font-size: 16px;
+    }
+    .New .title .boder .right{
+        font-size: 16px;
+    }
+    .New .title .boder .More{
+        font-size: 13px;
+    }
+    .New .xinwen .loop span{
+        font-size: 13px;
+    }
+    .New .xinwen .loop .name{
+        font-size: 12px;
+    }
+    .D_max .title .boder .left{
+        font-size: 16px;
+    }
+    .D_max .title .boder .right{
+        font-size: 16px;
+    }
+    .daxiao .right{
+        margin-right: 5px;
     }
 }
 @media screen and (max-width: 740px){

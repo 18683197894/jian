@@ -65,7 +65,7 @@ body{
 }
 .neir .right{
     width: 490px;
-    height: 450px;
+    overflow: hidden;
     /* border: 1px solid red; */
     float: left;
     margin-top: 10px;
@@ -168,7 +168,7 @@ body{
 }
 @media screen and (max-width: 1200px){
     /*.content{*/
-        /*margin-top: 75px;*/
+    /*margin-top: 75px;*/
     /*}*/
     .estate_page{
         width: 100%;
@@ -197,5 +197,48 @@ body{
         margin-left: 0;
         float: right;
         margin-right: 5%;
+    }
+}
+@media screen and (max-width: 800px){
+    .estate_page .title .top .left{
+        font-size: 17px;
+    }
+    .estate_page .title .top .right{
+        font-size: 16px;
+    }
+    .estate_page .title{
+        height: 36px;
+    }
+    .neir .right .top .youshi{
+        margin-top: 5px;
+    }
+    .neir .right .top .youshi span{
+        font-size: 12px;
+    }
+    .neir .right .top .name{
+        font-size: 20px;
+    }
+    .neir .right .top p{
+        font-size: 14px;
+    }
+    /*.neir .right{*/
+        /*height: 600px;*/
+    /*}*/
+    .fenbu p{
+        font-size: 14px;
+    }
+    .jiage p{
+        font-size: 14px;
+    }
+    .jiedu span{
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .jiedu .jiedu_r{
+        width: 100%;
+    }
+    .jiedu .jiedu_r p{
+        line-height: 20px;
+        margin-bottom: 10px;
     }
 }
