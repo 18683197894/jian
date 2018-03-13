@@ -2,7 +2,7 @@
 *{
     margin: 0;
     padding: 0;
-   
+
 }
 body{
     font-family: 微软雅黑;
@@ -32,6 +32,7 @@ li{
     display: block;
     float: left;
     margin-top: 8px;
+    margin-left:  10px;
 }
 .nav{
     height: 75px;
@@ -104,7 +105,10 @@ li{
     }
 }
 @media screen and (max-width: 800px){
-        *{
-             -webkit-text-size-adjust:none;
-        }
+    *{
+        -webkit-text-size-adjust:none;
     }
+    .Logo{
+        margin-left: 10px;
+    }
+}
