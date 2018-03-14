@@ -2,6 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ asset('/new/home/public/base.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/new/home/login/login.css') }}"/>
     <script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
 
