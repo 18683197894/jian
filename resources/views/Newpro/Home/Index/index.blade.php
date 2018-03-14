@@ -264,7 +264,5 @@
 
 @section('js')
 <script src="{{ asset('new/home/index/index.js') }}"></script>
-// <script>
-//     $(".banner ul li:gt(1)").remove()
-// </script>
+
 @endsection('js')
