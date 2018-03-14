@@ -1,4 +1,4 @@
-/*¦Â??*/
+/*????*/
 
 .footer{
     width: 100%;
@@ -209,8 +209,8 @@
         border-right: none;
         height: 190px;
     }
-    .contact a{
-        padding-left: 15px;
+    .footer .contact a{
+        padding-left: 12px;
     }
     .QR{
         margin-left: 15px;
