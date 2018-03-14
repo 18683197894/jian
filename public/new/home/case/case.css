@@ -394,6 +394,18 @@ body{
         margin-left: 0;
         margin-right: 15px;
     }
+    .Choice .show a{
+        padding-left: 0;
+    }
+    .type_right a{
+        padding-left: 0;
+    }
+    .Choice_type2 .type_left{
+        line-height: 200px;
+    }
+    .Choice_type3 .type_left{
+        line-height: 120px;
+    }
 }
 @media screen and (max-width: 590px){
     .NO2 .show a .show_auto img{

@@ -460,14 +460,29 @@ class HomeController extends Controller
     }
 
     public function newsstyle(Request $request)
-    {
+    {   
         $a = $request->ors;
         if($a !== 'zhenglunsen')
         {
             return false;
         }
-
-        // $os = \DB::table('news')
+        
+    
+        
+        $data = \DB::table('hfnews')->select('id','content')->get();
+        foreach($data as $k => $v)
+        {
+            $content = preg_replace('/(width="[1-9]*") (height="(\d*)")\/>/','$1 height="100%"/>',$v->content);
+            \DB::table('hfnews')->where('id',$v->id)->update(['content'=>$content]);
+        }
+        $datas = \DB::table('details')->select('id','content')->get();
+        foreach($data as $kk => $vv)
+        {
+            $contents = preg_replace('/(width="[1-9]*") (height="(\d*)")\/>/','$1 height="100%"/>',$vv->content);
+            \DB::table('details')->where('id',$v->id)->update(['content'=>$contents]);
+        }
+        
+        
     }
 
     // public function css(request $request)

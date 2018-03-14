@@ -54,7 +54,8 @@
                 </div>
             </div>
             <div class="get_r">
-                <img src="{{ asset('new/home/smart/smarthome/img/get_home.png') }}" alt=""/>
+                <img src="{{ asset('new/home/smart/smarthome/img/get_home.png') }}" alt="" class="get_r_img1" />
+                <img src="{{ asset('new/home/smart/smarthome/img/from_home.png') }}" alt="" class="get_r_img2" />
             </div>
         </div>
     </div>

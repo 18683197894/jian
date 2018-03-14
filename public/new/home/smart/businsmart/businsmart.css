@@ -95,7 +95,7 @@
     width: 50%;
     overflow: hidden;
     float: right;
-    background-color: rgba(102,153,204,0.8);/* IE9??©IÄÇ¨G?????????IE6????©{?IE7????????????(??QQ??????)?ÉÖ???? */
+    background-color: rgba(102,153,204,0.8);/* IE9???I??“G?????????IE6?????{?IE7????????????(??QQ??????)??????? */
     padding-bottom: 120px;
 }
 .Elevator_Modular .title{
@@ -168,6 +168,11 @@
     overflow: hidden;
     margin-bottom: 100px;
 }
+.energy1{
+    width: 100%;
+    overflow: hidden;
+    display: none;
+}
 @media screen and (max-width: 1200px){
     .Access{
         width: 100%;
@@ -215,7 +220,7 @@
     }
     .Elevator_Modular{
         width: 60%;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
     }
     .Elevator_Modular a{
         width: 100%;
@@ -236,10 +241,10 @@
         height: 150px;
     }
     .energy{
-        margin-bottom: 10px;
+        display: none;
     }
     .Elevator_Modular .title{
-        margin-top: 10px;
+        margin-top: 20px;
         font-size: 20px;
         height: 30px;
     }
@@ -252,6 +257,16 @@
         height: 45px;
         line-height: 45px;
         font-size: 16px;
+    }
+    .Elevator {
+        width: 100%;
+        overflow: hidden;
+        background: url(/new/home/smart/businsmart/img/Elevator1.png);
+        background-size: 100% 100%;
+    }
+    .energy1{
+        display: block;
+        margin-bottom: 10px;
     }
 }
 @media screen and (max-width: 600px){

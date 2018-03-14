@@ -268,8 +268,8 @@ body{
     overflow: hidden;
 }
 .course .contact .loop em{
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     background-color: #63C99D;
     position: absolute;
     border-radius: 9999px;
@@ -418,8 +418,9 @@ body{
 }
 @media screen and (max-width: 600px){
     .loop_img{
-        width: 100%;
+        width: 83%;
         height: 100%;
+        margin-left: 65px;
     }
     .box div{
         height: 330px;
@@ -447,11 +448,15 @@ body{
     .Case_contact .current{
         font-size: 16px;
     }
+    .course .contact .loop em{
+        width: 60px;
+        height: 60px;
+    }
 
 }
 @media screen and (max-width: 500px){
     .loop_img{
-        width: 100%;
+        width: 80%;
         height: 100%;
     }
     .box div{

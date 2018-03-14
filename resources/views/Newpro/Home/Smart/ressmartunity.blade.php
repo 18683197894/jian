@@ -7,7 +7,8 @@
 @section('content')
 <!--banner图-->
 <div class="residence_banner">
-    <img src="{{ asset('new/home/smart/ressmartunity/img/residence_banner.png') }}" alt=""/>
+    <img src="{{ asset('new/home/smart/ressmartunity/img/residence_banner.png') }}" alt="" class="banner_img" />
+    <img src="{{ asset('new/home/smart/ressmartunity/img/residence_banner1.png') }}" alt="" class="banner_img1" />
 </div>
 <!--住宅地产智慧社区-->
 <div class="Real_estate">

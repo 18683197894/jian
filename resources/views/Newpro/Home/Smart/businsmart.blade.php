@@ -71,6 +71,7 @@
 </div>
 
 <img src="{{ asset('/new/home/smart/businsmart/img/energy.png') }}" alt="" class="energy"/>
+<img src="{{ asset('/new/home/smart/businsmart/img/energy1.png') }}" alt="" class="energy1"/>
 @endsection('content')
 
 @section('js')
