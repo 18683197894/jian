@@ -103,6 +103,15 @@ body{
     width: 100%;
     overflow: hidden;
 }
+.network_bg1{
+    width: 100%;
+    overflow: hidden;
+    display: none;
+}
+.network_bg img{
+    width: 100%;
+    overflow: hidden;
+}
 .Property{
     width: 1200px;;
     overflow: hidden;
@@ -302,5 +311,11 @@ body{
     .Service .brief{
         width: 94%;
         font-size: 14px;
+    }
+    .network_bg1{
+        display: block;
+    }
+    .network_bg{
+        display: none;
     }
 }

@@ -45,6 +45,9 @@
         <div class="network_bg">
             <img src="{{ asset('new/home/smart/ressmartunity/img/system_bg.png') }}" alt=""/>
         </div>
+        <div class="network_bg1">
+            <img src="{{ asset('new/home/smart/ressmartunity/img/system_bg1.png') }}" alt=""/>
+        </div>
         <div class="Property">
             <div class="Property_first opacity">
                 <div class="Property_left">

@@ -11,7 +11,7 @@
 </div>
 
 <div class="Trading_Real">
-    <div class="name">住宅地产智慧社区</div>
+    <div class="name">住宅地产智慧商圈</div>
     <div class="Trading_Real_brief">一站式智慧社区解决方案</div>
     <div class="Access">
         <div class="Access_text">
