@@ -382,7 +382,7 @@ body{
         height: 133px;
     }
     .banner1 .titlel{
-        font-size: 14px;
+        font-size: 13px;
     }
     .jsNav{
         width: 90px;
@@ -399,7 +399,7 @@ body{
     }
     .loop_right .time span{
         font-size: 12px;
-        margin-right: 5px;
+        margin-right: 10px;
     }
     .loop_right .content{
         line-height: 18px;

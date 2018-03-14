@@ -31,7 +31,7 @@ body{
 }
 .estate_df .auto .img .img_top{
     width: 100%;
-    height: 430px;
+    /* height: 430px; */
     overflow: hidden;
 }
 .estate_df .auto .img .img_top a{
@@ -302,7 +302,10 @@ body{
         font-size: 16px;
     }
     .pingmi .right{
-        margin-right: 5px;
+        margin-right: 10px;
+    }
+    .estate_df .auto .img .img_top{
+        height: 235px;
     }
 }
 @media screen and (max-width: 650px){

@@ -302,7 +302,7 @@ body{
     margin-right: 10px;
 }
 .loop_img img{
-   width: 100%;
+    width: 100%;
 }
 .loop_img{
     width:100%;
@@ -430,6 +430,24 @@ body{
     .win{
         height: 380px;
     }
+    .loop_img a{
+        padding-left: 0;
+        width: 325px;
+    }
+    .Case_contact .box1 .title{
+        text-indent: 12px;
+    }
+    .Case_contact .box1 .brief span{
+        margin-right: 0;
+        margin-left: 12px;
+    }
+    .Case_contact{
+        padding-top: 74px;
+    }
+    .Case_contact .current{
+        font-size: 16px;
+    }
+
 }
 @media screen and (max-width: 500px){
     .loop_img{

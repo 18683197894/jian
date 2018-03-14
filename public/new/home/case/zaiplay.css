@@ -240,6 +240,15 @@ body{
     }
     .conright title{
         font-size: 18px;
+        text-indent: 12px;
+    }
+    .con_span a{
+        margin-right: 0;
+        margin-left: 12px;
+    }
+    .loop_img a{
+        padding-left: 0;
+        width: 325px;
     }
 }
 @media screen and (max-width: 500px){

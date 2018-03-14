@@ -241,4 +241,7 @@ body{
         font-weight: normal;
         font-size: 18px;
     }
+    .Logo {
+        margin-left: 10px;
+    }
 }

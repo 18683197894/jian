@@ -95,7 +95,7 @@
     width: 50%;
     overflow: hidden;
     float: right;
-    background-color: rgba(102,153,204,0.8);/* IE9??㊣那℅??????‾??IE6????﹞?IE7???????????‾(??QQ?????‾)?芍???? */
+    background-color: rgba(102,153,204,0.8);/* IE9??©IÄÇ¨G?????????IE6????©{?IE7????????????(??QQ??????)?ÉÖ???? */
     padding-bottom: 120px;
 }
 .Elevator_Modular .title{
@@ -221,9 +221,11 @@
         width: 100%;
         margin-bottom: 0;
         font-size: 13px;
+        height: 25px;
+        line-height: 25px;
     }
     .Elevator_Modular i{
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     .Parking_auto a{
         width: 50%;
@@ -237,7 +239,7 @@
         margin-bottom: 10px;
     }
     .Elevator_Modular .title{
-        margin-top: 20px;
+        margin-top: 10px;
         font-size: 20px;
         height: 30px;
     }
@@ -249,6 +251,7 @@
     .Parking_auto a .text{
         height: 45px;
         line-height: 45px;
+        font-size: 16px;
     }
 }
 @media screen and (max-width: 600px){
