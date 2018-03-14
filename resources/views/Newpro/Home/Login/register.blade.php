@@ -2,6 +2,8 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <!--禁止手机自动缩放-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('/new/home/public/base.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/new/home/login/register.css') }}"/>
