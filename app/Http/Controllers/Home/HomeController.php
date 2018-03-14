@@ -479,7 +479,7 @@ class HomeController extends Controller
         foreach($datas as $kk => $vv)
         {
             $contents = preg_replace('/(width="[1-9]*") (height="(\d*)")\/>/','$1 height="100%"/>',$vv->content);
-            \DB::table('details')->where('id',$v->id)->update(['content'=>$contents]);
+            \DB::table('details')->where('id',$vv->id)->update(['content'=>$contents]);
         }
         
         
