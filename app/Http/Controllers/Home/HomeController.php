@@ -476,7 +476,7 @@ class HomeController extends Controller
             \DB::table('hfnews')->where('id',$v->id)->update(['content'=>$content]);
         }
         $datas = \DB::table('details')->select('id','content')->get();
-        foreach($data as $kk => $vv)
+        foreach($datas as $kk => $vv)
         {
             $contents = preg_replace('/(width="[1-9]*") (height="(\d*)")\/>/','$1 height="100%"/>',$vv->content);
             \DB::table('details')->where('id',$v->id)->update(['content'=>$contents]);
