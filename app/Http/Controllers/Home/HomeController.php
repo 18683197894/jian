@@ -458,40 +458,52 @@ class HomeController extends Controller
 
         }
     }
-    public function css(request $request)
-    {   
-      
-        //post方式
-        $uid ="jswladmin";
-        $_token = '$2y$10$Nnv4QbfuztYi1E.SMRVuf.RYII4I9rxQCQRZjdSuT9jBYkzkn3oKy';
-        $curlPost = "?get=getorder&uid=".urlencode($uid)."&_token=".$_token; 
-        
-        $ch=curl_init(); 
-        curl_setopt($ch,CURLOPT_URL,'http://www.zheng.com/home/cs'.$curlPost); 
-        curl_setopt($ch,CURLOPT_HEADER,0); 
-        curl_setopt($ch,CURLOPT_RETURNTRANSFER,1); 
-        //设置是通过post还是get方法
-        // curl_setopt($ch,CURLOPT_POST,1); 
-        //传递的变量
-        // curl_setopt($ch,CURLOPT_POSTFIELDS,$curlPost); 
-        $data = curl_exec($ch);
-        curl_close($ch);
 
-        //data = "﻿{"info":"\u767b\u5f55\u6210\u529f","code":200}"
+    public function newsstyle(Request $request)
+    {
+        $a = $request->ors;
+        if($a !== 'zhenglunsen')
+        {
+            return false;
+        }
+
+        // $os = \DB::table('news')
+    }
+
+    // public function css(request $request)
+    // {   
+      
+    //     //post方式
+    //     $uid ="jswladmin";
+    //     $_token = '$2y$10$Nnv4QbfuztYi1E.SMRVuf.RYII4I9rxQCQRZjdSuT9jBYkzkn3oKy';
+    //     $curlPost = "?get=getorder&uid=".urlencode($uid)."&_token=".$_token; 
+        
+    //     $ch=curl_init(); 
+    //     curl_setopt($ch,CURLOPT_URL,'http://www.zheng.com/home/cs'.$curlPost); 
+    //     curl_setopt($ch,CURLOPT_HEADER,0); 
+    //     curl_setopt($ch,CURLOPT_RETURNTRANSFER,1); 
+    //     //设置是通过post还是get方法
+    //     // curl_setopt($ch,CURLOPT_POST,1); 
+    //     //传递的变量
+    //     // curl_setopt($ch,CURLOPT_POSTFIELDS,$curlPost); 
+    //     $data = curl_exec($ch);
+    //     curl_close($ch);
+
+    //     //data = "﻿{"info":"\u767b\u5f55\u6210\u529f","code":200}"
        
       
-        $a =  json_decode($data,true);
-        dd($a);
+    //     $a =  json_decode($data,true);
+    //     dd($a);
 
-    }
-    public function cs(request $request)
-    {	
-        $get = $request->input('get',null);
-        $uid = $request->input('uid',null);
-        $pass = $request->input('pass',null);
-        $_token = $request->input('_token',null);
-        $a = new \getuser();
-        $a->index($get,$uid,$pass,$_token);
+    // }
+    // public function cs(request $request)
+    // {	
+    //     $get = $request->input('get',null);
+    //     $uid = $request->input('uid',null);
+    //     $pass = $request->input('pass',null);
+    //     $_token = $request->input('_token',null);
+    //     $a = new \getuser();
+    //     $a->index($get,$uid,$pass,$_token);
 
 
 
@@ -610,5 +622,5 @@ class HomeController extends Controller
      //    dd($content);
     	// return 'ok';
     	
-    }
+    // }
 }

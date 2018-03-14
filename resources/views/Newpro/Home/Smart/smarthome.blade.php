@@ -12,7 +12,8 @@
 </div>
 
 <div class="F_Life">
-    <img src="{{ asset('new/home/smart/smarthome/img/F_Life.png') }}" alt=""/>
+    <img src="{{ asset('new/home/smart/smarthome/img/F_Life.png') }}" alt="" class="F_Life_img" />
+    <img src="{{ asset('new/home/smart/smarthome/img/F_Life1.png') }}" alt="" class="F_Life_img1" />
 </div>
 
 <div class="pattern">

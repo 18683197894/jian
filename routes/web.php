@@ -449,6 +449,7 @@ Route::get('webpro/webpay_alipay','Pay\WebpayController@webpay_alipay');
 //测试
 Route::get('home/cs','Home\HomeController@cs');
 Route::get('home/css','Home\HomeController@css');
+Route::get('newpro/news/style','Home\HomeController@newsstyle');
 
 //后台登入
 Route::get('/jslmadmin/login','Admin\LoginController@login');

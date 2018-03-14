@@ -26,6 +26,9 @@ body{
     width: 100%;
     overflow: hidden;
 }
+.F_Life_img1{
+    display: none;
+}
 .pattern{
     width: 100%;
     overflow: hidden;
@@ -196,6 +199,12 @@ body{
     }
     .get_l{
         font-size: 13px;
+    }
+    .F_Life_img1{
+        display: block;
+    }
+    .F_Life_img{
+        display: none;
     }
 
 }
