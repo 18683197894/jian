@@ -66,8 +66,9 @@
             <a href="{{ url('/newpro/businsmart') }}">智慧商圈</a>
             <a href="{{ url('/newpro/style') }}">建商家装</a>
             <a href="{{ url('/newpro/case/index') }}">工程案例</a>
-            <a href="javascript:;">精装房</a>
-            <a href="javascript:;">设计风格</a>
+           <!--  <a href="javascript:;">精装房</a>
+            <a href="javascript:;">设计风格</a> -->
+            <a href="{{ url('/newpro/newslist/2') }}">新闻动态</a>
             <a href="{{ asset('/newpro/about?ors=contact') }}">联系我们</a>
         </div>
         <a href="javascript:;" class="botton">

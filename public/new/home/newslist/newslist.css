@@ -399,10 +399,20 @@ body{
     }
     .loop_right .time span{
         font-size: 12px;
-        margin-right: 10px;
+        float: left;
+        line-height: 30px;
     }
     .loop_right .content{
         line-height: 18px;
         display: none;
+    }
+    .loop_right .time .i{
+        float: left;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 10px;
+    }
+    .loop_right .name{
+        line-height: 17px;
     }
 }

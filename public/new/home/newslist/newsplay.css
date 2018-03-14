@@ -260,7 +260,7 @@ body{
         overflow: hidden;
     }
     .NewS_Left .time{
-        width: 90%;
+        width: 80%;
     }
     .NewS_Left .time{
         font-size: 9px;
@@ -268,7 +268,7 @@ body{
     }
     .NewS_Left .time span{
         font-size: 9px;
-        -webkit-text-size-adjust:none
+        -webkit-text-size-adjust:none;
     }
     .contact .position{
         font-size: 13px;
