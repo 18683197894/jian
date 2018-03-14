@@ -6931,7 +6931,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
                     'var _tmpScript = document.getElementById(\'_initialScript\');_tmpScript.parentNode.removeChild(_tmpScript);</script></html>';
                 container.appendChild(domUtils.createElement(document, 'iframe', {
                     id: 'ueditor_' + me.uid,
-                    width: "100%",
+                    width: "900",
                     height: "100%",
                     frameborder: "0",
                     //先注释掉了，加的原因忘记了，但开启会直接导致全屏模式下内容多时不会出现滚动条

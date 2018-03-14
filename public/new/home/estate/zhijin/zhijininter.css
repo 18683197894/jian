@@ -197,10 +197,11 @@ h2,h1,h3,h4,h5,h6{
         margin-left: 200px;
     }
     .zhijin_page .top .left{
-        font-size: 17px;
+        font-size: 12px;
     }
     .zhijin_page .top .right{
-        font-size: 16px;
+        font-size: 12px;
+        width: 40px;
     }
     .con_left p{
         font-size: 17px;
