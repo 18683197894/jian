@@ -110,7 +110,7 @@
             <i></i>
             <a href="javascript:;" class="about_loop">服务热线：0831-8888298</a>
             <a href="javascript:;" class="about_loop">电子邮箱：market@jianshanglianmeng.com</a>
-            <a href="javascript:;" class="about_loop">总部地址：四川省宜宾市临港经济开发区西南互联网基地522室</a>
+            <a href="javascript:;" class="about_loop">总部地址：宜宾市临港经济开发区西南互联网基地522室</a>
         </div>
         <div class="code">
             <div class="title">关注我们</div>
@@ -127,7 +127,7 @@
     </div>
 </div>
 <!--版权-->
-<div class="copyright">CopyRight 2017-2020 建商联盟版权所有 ICP备案：蜀ICP备17010220</div>
+<div class="copyright"><span>CopyRight 2017-2020 建商联盟版权所有 ICP备案：</span><i>蜀ICP备17010220</i></div>
 @yield('js')
 <script src="{{ asset('/new/home/public/header.js') }}"></script>
 </body>
