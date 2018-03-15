@@ -481,7 +481,7 @@ body{
 }
 .yj{
     display: block;
-     width: 100%;
+    width: 100%;
     overflow: hidden;
 }
 .yj1{
@@ -647,9 +647,11 @@ body{
         margin-bottom: 0px;
     }
     .Strategy{
-        margin-top: 25px;
         font-size: 15px;
         line-height: 30px;
+        width: 95%;
+        margin: auto;
+        margin-top: 25px;
     }
     .Strategy .title{
         font-size: 20px;
@@ -691,6 +693,8 @@ body{
         line-height: 30px;
     }
     .Job_text{
+        width: 95%;
+        margin: auto;
         font-size: 13px;
         line-height: 25px;
     }
@@ -716,6 +720,12 @@ body{
     }
     .yj{
         display: none;
+    }
+    .vision_auto .text{
+        width: 95%;
+        margin: auto;
+        margin-top: 30px;
+        padding-bottom: 30px;
     }
 }
 @media screen and (max-width: 550px){

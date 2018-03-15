@@ -11,7 +11,11 @@
 
 <div class="information">
     <div class="title">{{ $titles->title }} <img src="{{ asset('/new/home/newslist/img/red_x.png') }}" alt=""/></div>
-
+    <div class="inf_a"> 
+        <a href="{{ url('/newpro/newslist/1') }}" @if($titles->title == '公司公告') class="avtive" @endif>公司公告</a>
+        <a href="{{ url('/newpro/newslist/2') }}" @if($titles->title == '公司新闻') class="avtive" @endif>公司新闻</a>
+        <a href="{{ url('/newpro/newslist/6') }}" @if($titles->title == '行业动态') class="avtive" @endif>行业动态</a>
+    </div>
     <div class="Nws">
         <!--左边-->
         <div class="information_left">

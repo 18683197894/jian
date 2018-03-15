@@ -19,13 +19,7 @@ class StyleController extends Controller
     			foreach($v->style as $kk => $vv)
     			{	
     			 $vv->door = \DB::table('door')->select('id','title','pid','main','nomain','model','time','mains','nomains','models')->where('pid',$vv->id)->get();
-    			 // if($door->count() > 0)
-        //          {
-        //             $vv->door = $door;
-        //          }else
-        //          {
-        //             $vv->door = false;
-        //          }
+    	
                 }
     		}
     	}

@@ -36,3 +36,6 @@ $(function(){
 		$("#jsNav a.trigger").eq(go).click();
 	});
 });
+$(".inf_a a").click(function(){
+    $(".inf_a a").removeClass("avtive").eq($(this).index()).addClass("avtive");
+});

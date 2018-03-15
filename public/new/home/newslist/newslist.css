@@ -33,6 +33,9 @@ body{
     overflow: hidden;
     margin: auto;
 }
+.inf_a{
+   display: none;
+}
 /*.headlines_l{*/
 /*width: 495px;*/
 /*height: 360px;*/
@@ -376,10 +379,10 @@ body{
         color: red;
     }
     .banner1{
-        height: 133px;
+        height: 180px;
     }
     .information_left .area{
-        height: 133px;
+        height: 180px;
     }
     .banner1 .titlel{
         font-size: 13px;
@@ -415,4 +418,30 @@ body{
     .loop_right .name{
         line-height: 17px;
     }
+    .inf_a{
+        display: block;
+        width: 80%;
+        overflow: hidden;
+        margin: 0 auto;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    .inf_a a{
+        display: block;
+        float: left;
+        line-height: 40px;
+        font-size: 14px;
+        width: 33.33%;
+        text-align: center;
+    }
+    .information .title{
+        display: none;
+    }
+    .inf_a a.avtive{
+        color: #00AF62;
+    }
+    .inf_a a:hover{
+        color: #00AF62;
+    }
+
 }

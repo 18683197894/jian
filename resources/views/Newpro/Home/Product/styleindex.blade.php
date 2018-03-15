@@ -102,13 +102,13 @@
                             <div class="Price">{{ $vvvv->model }}元</div>
                         </li>
                         @endif
-                        <li>
-                            <div class="Choice"><input type="radio" value="{{ $vvvv->id }}" index="qing" feel="{{ $qing }}" name="Choice{{ $v->id }}"> </input></div>
-                            <div class="Housing">{{ $vvvv->title }}/清水房</div>
-                            <div class="Package">包含 主材 基础 软装 智能</div>
-                            <div class="Price">{{ $qing }}元 / 每平方</div>
-                        </li>
                         @endforeach
+                        <li>
+                            <div class="Choice"><input type="radio" value="{{ $vvvv->id }}" index="qing" feel="{{ $qing }}" name="qing"> </input></div>
+                            <div class="Housing">清水房</div>
+                            <div class="Package">包含 主材 基础 软装 智能</div>
+                            <div class="Price">{{ $qing }}元 / ㎡</div>
+                        </li>
                         @endif
                     </ul>
                     <div class="purchase">
