@@ -443,5 +443,12 @@ body{
     .inf_a a:hover{
         color: #00AF62;
     }
-
+    .information_left .titel{
+        font-size: 15px;
+        height: 40px;
+        line-height: 40px;
+    }
+    .information_left .brief{
+        margin-bottom: 0;
+    }
 }
