@@ -3,7 +3,9 @@
  */
 
 $(".auto a").click(function(){
-    $(".auto a").removeClass("avtive").eq($(this).index()).addClass("avtive");
+
+    $(".auto a").removeClass("avtive");
+    $(this).addClass('avtive');
     $('.contact .Choice').removeClass("avtive").eq($(this).index()).addClass("avtive");
 });
 
@@ -22,14 +24,7 @@ $(".auto a").click(function(){
 
     		$.ajax('/newpro/case/setajax',{
     			type : 'GET',
-    			data : {id:id},
-    			success : function(data)
-    			{
-    			},
-    			error:function(data)
-    			{
-    				alert('设置失败！');
-    			}
+    			data : {id:id}
     		})
     	})
 
