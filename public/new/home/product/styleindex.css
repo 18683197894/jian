@@ -382,9 +382,18 @@ body{
     }
     .Package{
         width: 50%;
+        border-left:1px solid #e1e1e1;
+        border-right:1px solid #e1e1e1;
+        box-sizing: border-box;
+        height: 40px;
+        overflow: hidden;
+        line-height: 40px;
     }
     .Price{
         width: 20%;
+        line-height: 40px;
+        overflow: hidden;
+        height: 40px;
     }
     .purchase_in{
         margin-bottom: 15px;
@@ -402,8 +411,9 @@ body{
         height: 35px;
     }
     .detailed_img ul li div{
-        font-size: 12px;
         text-align: center;
+        font-size: 10px;
+        -webkit-text-size-adjust: none;
     }
     .detailed_img ul li:first-child{
         height: 35px;

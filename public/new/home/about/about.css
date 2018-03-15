@@ -105,6 +105,15 @@ body{
     width: 100%;
     overflow: hidden;
 }
+.Location_bg_w{
+    width: 100%;
+    overflow: hidden;
+}
+.Location_bg_w1{
+    width: 100%;
+    overflow: hidden;
+    display: none;
+}
 .votes{
     width: 100%;
     overflow: hidden;
@@ -470,6 +479,16 @@ body{
     font-size: 14px;
     color: #333333;
 }
+.yj{
+    display: block;
+     width: 100%;
+    overflow: hidden;
+}
+.yj1{
+    display: none;
+    width: 100%;
+    overflow: hidden;
+}
 @media screen and (max-width: 1200px){
     .Choice_a{
         width: 90%;
@@ -681,6 +700,22 @@ body{
     .Job_img img{
         height: 181px;
         margin-bottom: 10px;
+    }
+    .Location_bg_w1{
+        width: 100%;
+        overflow: hidden;
+        display: block;
+    }
+    .Location_bg_w{
+        width: 100%;
+        overflow: hidden;
+        display: none;
+    }
+    .yj1{
+        display: block;
+    }
+    .yj{
+        display: none;
     }
 }
 @media screen and (max-width: 550px){

@@ -92,12 +92,14 @@
             </div>
             <div class="Culture">
                 <div class="title">企业文化 <img src="{{ asset('/new/home/about/img/sanjiao.jpg') }}" alt=""/></div>
-                <img src="{{ asset('/new/home/about/img/lianli.jpg') }}" alt="" class="Location_bg"/>
+                <img src="{{ asset('/new/home/about/img/lianli.jpg') }}" alt="" class="Location_bg_w"/>
+                 <img src="{{ asset('/new/home/about/img/lianli1.jpg') }}" alt="" class="Location_bg_w1"/>
             </div>
             <div class="vision">
                 <div class="title">企业愿景 <img src="{{ asset('/new/home/about/img/sanjiao.jpg') }}" alt=""/></div>
                 <div class="vision_auto">
-                    <img src="{{ asset('/new/home/about/img/yj.jpg') }}" alt=""/>
+                    <img src="{{ asset('/new/home/about/img/yj.jpg') }}" alt="" class="yj" />
+                    <img src="{{ asset('/new/home/about/img/yj1.jpg') }}" alt="" class="yj1" />
                     <div class="text">
                         <p>全面启动互联网+家居建材服务平台；</p>
                         <p>以互联网思维颠覆传统家居建材行业，打造一个把消费转化成为投资行为的家居建材平台；</p>

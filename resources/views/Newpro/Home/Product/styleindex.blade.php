@@ -105,7 +105,7 @@
                         <li>
                             <div class="Choice"><input type="radio" value="{{ $vvvv->id }}" index="qing" feel="{{ $qing }}" name="Choice{{ $v->id }}"> </input></div>
                             <div class="Housing">{{ $vvvv->title }}/清水房</div>
-                            <div class="Package">含硬装，厨房地柜，吊柜，卫生间洁柜</div>
+                            <div class="Package">包含 主材 基础 软装 智能</div>
                             <div class="Price">{{ $qing }}元 / 每平方</div>
                         </li>
                         @endforeach
