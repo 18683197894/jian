@@ -37,8 +37,13 @@ class StyleController extends Controller
         {
             return response()->json(3);
         }
-
-        $over = \DB::table('playgou')->where('uid',$user->id)->where('tus',$ors)->where('pid',$id)->first();
+        if($ors == 'qing')
+        {
+            $over = \DB::table('playgou')->where('uid',$user->id)->where('tus',$ors)->first();
+        }else
+        {
+            $over = \DB::table('playgou')->where('uid',$user->id)->where('tus',$ors)->where('pid',$id)->first();
+        }
         
         if($over)
         {   
@@ -53,17 +58,30 @@ class StyleController extends Controller
             return response()->json(1);
 
         }
-        
-        $data = [
-                    'pid'=>$id,
-                    'name' => \DB::table('door')->select('id','title')->where('id',$id)->first()->title,
+        if($ors == 'qing')
+        {
+            $data = [
+                    'pid'=>0,
+                    'name' => '清水房套餐',
                     'tus' => $ors,
                     'time'=>time(),
                     'num' => $num,
                     'status' => 0,
                     'uid'=>$user->id
                     ];
-        // return response()->json($data);
+        }else
+        {
+           $data = [
+                'pid'=>$id,
+                'name' => \DB::table('door')->select('id','title')->where('id',$id)->first()->title,
+                'tus' => $ors,
+                'time'=>time(),
+                'num' => $num,
+                'status' => 0,
+                'uid'=>$user->id
+                ]; 
+        }
+        
         $res = \DB::table('playgou')->insert($data);
         if($res)
         {

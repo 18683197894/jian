@@ -8,7 +8,7 @@
 		$.each($(" input[index='xuan']:checked "),function(){
 			id += $(this).attr('id')+',';
 		});
-		if(id == undefined)
+		if(id == undefined || id == '')
 		{
 			alert('请选中商品');
 			return false;

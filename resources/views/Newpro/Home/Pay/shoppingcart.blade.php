@@ -60,6 +60,25 @@
             <li class="jie">小计</li>
             <li class="cz">操作</li>
         </ul>
+        @if($qings)
+            <ul class="con">
+            <li><input index="xuan" type="checkbox" id="{{ $qings->id }}"><span>选择</span></li>
+            <li class="name">
+            <div class="name_top">{{ $qings->path }}</div>
+            <div class="name_bo">{{ $qings->name }}</div>
+            </li>
+            <li class="jiage">{{ $qings->money }}</li>
+            <li class="num" index="{{ $qings->tus }}">
+                <div class="divse">
+                <a href="javascript:;" class="jian">-</a>
+                <span class="box">{{ $qings->num }}</span>
+                <a href="javascript:;" class="jia">+</a>
+                </div>
+            </li>
+            <li class="jie">{{ $qings->money * $qings->num }}</li>
+            <li class="cz" ><i>×</i></li>
+        </ul>
+        @endif
         @if($data->count() > 0)
         @foreach($data as $k => $v)
         <ul class="con">
@@ -80,6 +99,7 @@
             <li class="cz" ><i>×</i></li>
         </ul>
         @endforeach
+        
         @endif
         <div class="Settlement">
             <div class="shop">共 <span>1</span> 件商品 已选择 <span>1</span> 件</div>
