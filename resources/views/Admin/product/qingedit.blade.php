@@ -46,6 +46,15 @@
                   <label for="exampleInputPassword1">报价（每平米）</label>
                   <input type="text" name="money" value="{{ $data->money  }}" class="form-control" id="exampleInputPassword1" placeholder="报价（每平米）">
                 </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">名称</label>
+                  <input type="text" name="name" value="{{ $data->name  }}" class="form-control" id="exampleInputPassword1" placeholder="名称">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">属性</label>
+                  <input type="text" name="path" value="{{ $data->path  }}" class="form-control" id="exampleInputPassword1" placeholder="属性">
+                </div>
+               
                  
 
               </div>

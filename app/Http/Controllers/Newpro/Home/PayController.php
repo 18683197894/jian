@@ -25,8 +25,8 @@ class PayController extends Controller
       $qings = \DB::table('playgou')->select('id','name','tus','time','status','num','uid')->where('uid',$uid)->where('tus','qing')->first();
       $yis = \DB::table('playgou')->select('id','name','tus','time','status','num','uid')->where('uid',$uid)->where('tus','yi')->first();
 
-      $qing = \DB::table('qing')->where('id',1)->first()->money;
-    	$yi = \DB::table('qing')->where('id',2)->first()->money;
+      $qing = \DB::table('qing')->select('id','name','money','path')->where('id',1)->first();
+    	$yi = \DB::table('qing')->select('id','name','money','path')->where('id',2)->first();
     	$style = \DB::table('style')
       ->join('packages','style.pid','=','packages.id')
       ->select('style.id','style.title','packages.title as titles')
@@ -45,10 +45,6 @@ class PayController extends Controller
           {
             $v->name = $v->name.' （样板间）';
             $v->money = $v->model;
-          }else if($v->tus == 'qing')
-          {
-            $v->name = $v->name.' （清水房）';
-            $v->money = $qing.'/每平方';
           }
           foreach($style as $kk => $vv)
           {
@@ -60,13 +56,13 @@ class PayController extends Controller
       }
       if($qings)
       {
-        $qings->path = '清水房';
-        $qings->money = $qing;
+        $qings->path = $qing->path;
+        $qings->money = $qing->money;
       }
       if($yis)
       {
-        $yis->path = '装修意向金';
-        $yis->money = $yi;
+        $yis->path = $yi->path;
+        $yis->money = $yi->money;
       }
     	return view('Newpro.Home.Pay.shoppingcart',['title'=>$title,'data'=>$data,'qings'=>$qings,'yis'=>$yis]);
     }
@@ -158,7 +154,8 @@ class PayController extends Controller
     	$id = Base64_decode($ids);
     	$id = substr($id,0,-1);
     	$id = explode(',',$id);
-
+      $qing = \DB::table('qing')->select('id','name','money','path')->where('id',1)->first();
+      $yi = \DB::table('qing')->select('id','name','money','path')->where('id',2)->first();
     	$title = getwebpage($request->path());
         $address = \DB::table('address')->select('status','id','shen','shi','qu','name','phone','tails','zipcode','lebel','uid')->where('uid',$uid)->get();
         $district = \DB::table('district')->select('id','name','level','upid')->where('level',1)->get();
@@ -176,6 +173,7 @@ class PayController extends Controller
 
         foreach($data as $kkk => $vvv)
         { 
+          
           if($vvv->tus !== 'qing' && $vvv->tus !== 'yi')
           {
             $doors = \DB::table('door')->select('id','main','nomain','pid as ppid','model','title as name')->where('id',$vvv->pid)->first();
@@ -185,10 +183,10 @@ class PayController extends Controller
             $vvv->ppid = $doors->ppid;
           }else if($vvv->tus =='qing')
           {
-            $vvv->path = '清水房';
+            $vvv->path = $qing->path;
           }else if($vvv->tus == 'yi')
           {
-            $vvv->path = '装修意向金';
+            $vvv->path = $yi->path;
           }
         }
         // dd($data);
@@ -197,8 +195,7 @@ class PayController extends Controller
             return redirect('/newpro/shoppingcart');
         }
 
-        $qing = \DB::table('qing')->where('id',1)->first()->money;
-        $yi = \DB::table('qing')->where('id',2)->first()->money;
+        
         $style = \DB::table('style')
       ->join('packages','style.pid','=','packages.id')
       ->select('style.id','style.title','packages.title as titles')
@@ -223,12 +220,12 @@ class PayController extends Controller
             $v->moneys = $v->money * $v->num;
           }else if($v->tus == 'qing')
           {
-            $v->money = $qing.'/每平方';
-            $v->moneys = $qing * $v->num;
+            $v->money = $qing->money.'/每平方';
+            $v->moneys = $qing->money * $v->num;
           }else if($v->tus == 'yi')
           {
-            $v->money = $yi;
-            $v->moneys = $yi * $v->num;
+            $v->money = $yi->money;
+            $v->moneys = $yi->money * $v->num;
           }
           $moenyss += $v->moneys;
           if($v->tus !== 'qing' && $v->tus !== 'yi')
@@ -441,7 +438,8 @@ class PayController extends Controller
             //   ->orderBy('time','desc')
             //   ->first();
         }
-
+        $qing = \DB::table('qing')->select('id','name','money','path')->where('id',1)->first();
+        $yi = \DB::table('qing')->select('id','name','money','path')->where('id',2)->first();
         foreach($data as $kkk => $vvv)
         { 
           if($vvv->tus !== 'qing' && $vvv->tus !== 'yi')
@@ -453,15 +451,14 @@ class PayController extends Controller
             $vvv->ppid = $doors->ppid;
           }else if($vvv->tus =='qing')
           {
-            $vvv->path = '清水房';
+            $vvv->path = $qing->path;
           }else if($vvv->tus =='yi')
           {
-            $vvv->path = '装修意向金';
+            $vvv->path = $yi->path;
           }
         }
 
-        $qing = \DB::table('qing')->where('id',1)->first()->money;
-        $yi = \DB::table('qing')->where('id',2)->first()->money;
+        
         $style = \DB::table('style')
         ->join('packages','style.pid','=','packages.id')
         ->select('style.id','style.title','packages.title as titles')
@@ -490,12 +487,12 @@ class PayController extends Controller
             $v->moneys = $v->money * $v->num;
           }else if($v->tus == 'qing')
           {
-            $v->money = $qing;
-            $v->moneys = $qing * $v->num;
+            $v->money = $qing->money;
+            $v->moneys = $qing->money * $v->num;
           }else if($v->tus == 'yi')
           {
-            $v->money = $yi;
-            $v->moneys = $yi * $v->num;
+            $v->money = $yi->money;
+            $v->moneys = $yi->money * $v->num;
           }
 
           $moenyss += $v->moneys;

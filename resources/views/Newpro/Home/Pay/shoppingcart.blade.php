@@ -64,8 +64,8 @@
             <ul class="con">
             <li><input index="xuan" type="checkbox" id="{{ $qings->id }}"><span>选择</span></li>
             <li class="name">
-            <div class="name_top">{{ $qings->path }}</div>
-            <div class="name_bo">{{ $qings->name }}</div>
+            <div class="name_top">{{ $qings->name }}</div>
+            <div class="name_bo">{{ $qings->path }}</div>
             </li>
             <li class="jiage">{{ $qings->money }}</li>
             <li class="num" index="{{ $qings->tus }}">
@@ -79,12 +79,12 @@
             <li class="cz" ><i>×</i></li>
         </ul>
         @endif
-        @if($qings)
+        @if($yis)
             <ul class="con">
             <li><input index="xuan" type="checkbox" id="{{ $yis->id }}"><span>选择</span></li>
             <li class="name">
-            <div class="name_top">{{ $yis->path }}</div>
-            <div class="name_bo">{{ $yis->name }}</div>
+            <div class="name_top">{{ $yis->name }}</div>
+            <div class="name_bo">{{ $yis->path }}</div>
             </li>
             <li class="jiage">{{ $yis->money }}</li>
             <li class="num" index="{{ $yis->tus }}">

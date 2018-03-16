@@ -188,12 +188,12 @@ class StyleController extends Controller
 
     public function qingedit()
     {
-    	$data = \DB::table('qing')->select('id','money')->where('id',1)->first();
+    	$data = \DB::table('qing')->select('id','money','name','path')->where('id',1)->first();
     	return view('Admin.product.qingedit',['title'=>'修改清水房报价','data'=>$data]);
     }
     public function yiedit()
     {
-        $data = \DB::table('qing')->select('id','money')->where('id',2)->first();
+        $data = \DB::table('qing')->select('id','money','name','path')->where('id',2)->first();
         return view('Admin.product.yiedit',['title'=>'修改意向金报价','data'=>$data]);
     }
 
@@ -201,12 +201,22 @@ class StyleController extends Controller
     {	
     	$this->validate($request,[
     		'money' => 'required|integer',
+            'name' => 'required|min:2|max:10',
+            'path' => 'required|min:2|max:20',
     		],[
     		'money.required' => '金额不能为空！',
-    		'money.integer' => '金额填写错误！'
+    		'money.integer' => '金额填写错误！',
+            'name.required' => '名称不能为空！',
+            'name.min' => '名称最小2位',
+            'name.max' => '名称最大10位',
+            'path.required' => '属性不能为空！',
+            'path.min' => '属性最小2位',
+            'path.max' => '属性最大20位'
     		]);
-    	$money = $request->money;
-    	$res = \DB::table('qing')->where('id',$id)->update(['money'=>$money]);
+        $money = $request->money;
+        $name = $request->name;
+    	$path = $request->path;
+    	$res = \DB::table('qing')->where('id',$id)->update(['money'=>$money,'name'=>$name,'path'=>$path]);
     	if($res)
     	{
     		return redirect('/admin/product/style/index')->with(['info'=>'修改成功!']);
@@ -220,12 +230,22 @@ class StyleController extends Controller
     {   
         $this->validate($request,[
             'money' => 'required|integer',
+            'name' => 'required|min:2|max:10',
+            'path' => 'required|min:2|max:20',
             ],[
             'money.required' => '金额不能为空！',
-            'money.integer' => '金额填写错误！'
+            'money.integer' => '金额填写错误！',
+            'name.required' => '名称不能为空！',
+            'name.min' => '名称最小2位',
+            'name.max' => '名称最大10位',
+            'path.required' => '属性不能为空！',
+            'path.min' => '属性最小2位',
+            'path.max' => '属性最大20位'
             ]);
         $money = $request->money;
-        $res = \DB::table('qing')->where('id',$id)->update(['money'=>$money]);
+        $name = $request->name;
+        $path = $request->path;
+        $res = \DB::table('qing')->where('id',$id)->update(['money'=>$money,'name'=>$name,'path'=>$path]);
         if($res)
         {
             return redirect('/admin/product/style/index')->with(['info'=>'修改成功!']);
