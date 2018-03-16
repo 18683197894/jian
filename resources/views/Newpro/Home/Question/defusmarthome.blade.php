@@ -9,7 +9,8 @@
     <title>智能家居市场调研问答卷</title>
 </head>
 <body>
-    <img src="{{ asset('/new/home/question/img/bg.jpg')}}" alt=""/>
+<img src="{{ asset('/new/home/question/img/bg.jpg')}}" alt="" class="bg" />
+
 <div class="title">智能家居市场调研问答卷</div>
 <div class="brief">品质生活 从这里开始</div>
 <div class="container-box">
