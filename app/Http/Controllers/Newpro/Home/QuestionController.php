@@ -814,7 +814,29 @@ class QuestionController extends Controller
             }
             
             return view('Newpro.Home.Question.zhijinors',['datas'=>$datas,'data'=>$data]);
+    }
 
-       
+    ///////////////////////////////////////////////
+    public function defusmartindex(Request $request)
+    {
+        return view('Newpro.Home.Question.defusmartindex');
+    }
+
+    public function defusmarthome(Request $request)
+    {
+        return view('Newpro.Home.Question.defusmarthome');
+    }
+
+    public function defusmarthomeajax(Request $request)
+    {
+        $data = $request->except("_token");
+        $res = \DB::table('smartquestion')->insert($data);
+        if($res)
+        {
+            return response()->json(1);
+        }else
+        {
+            return response()->json(2);
+        }
     }
 }

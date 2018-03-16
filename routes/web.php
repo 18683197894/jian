@@ -98,6 +98,10 @@ Route::get('/newpro/zhijin/questionnaire/door','Newpro\Home\QuestionController@z
 Route::get('/newpro/zhijin/questionnaire/feel','Newpro\Home\QuestionController@zhijinfeel');
 Route::get('/newpro/zhijin/questionnaire/ors','Newpro\Home\QuestionController@zhijinors');
 
+//德福智能家居调查问卷
+Route::get('/newpro/defu/smartquestionnaire/index','Newpro\Home\QuestionController@defusmartindex');
+Route::get('/newpro/defu/smartquestionnaire/home','Newpro\Home\QuestionController@defusmarthome');
+Route::post('/newpro/defu/smartquestionnaire/home/ajax','Newpro\Home\QuestionController@defusmarthomeajax');
 //楼盘
 Route::get('/propertieszshx','Home\PropertiesController@zshx');
 Route::get('/propertiesdfhx','Home\PropertiesController@dfhx');

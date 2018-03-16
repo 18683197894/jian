@@ -1,0 +1,392 @@
+
+
+
+.content{
+    width: 90%;
+    margin: auto;
+    display: none;
+}
+.content.avtive{
+    display: block;
+}
+.you{
+    width: 100%;
+    color: #0066FF;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.you span{
+    color: red !important;
+    margin: 2px 0 0 2px;
+}
+.box1 .name{
+    width:100%;
+    border: 1px solid #d5d5d5;
+    margin: 5px 0;
+    background-color: #fff;
+    padding: 0;
+    border-radius: 3px;
+    height: 35px;
+    outline: none;
+    text-indent: 30px;
+    font-size: 16px;
+}
+.Next{
+    width:100%;
+    display: block;
+    height: 50px;
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+}
+.Next a{
+    display: block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    width: 46%;
+    height: 50px;
+    margin: auto;
+    background-color: rgb(255, 153, 0);
+    color: #ffffff;
+    line-height: 50px;
+    border-radius: 10px;
+    float: left;
+}
+.Ok{
+    width: 100%;
+    height: 30px;
+    color:red ;
+    font-size: 14px;
+    display: none;
+}
+.Ok.active{
+    display: block;
+    line-height: 30px;
+}
+.box1 .Sex{
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+}
+.box1 .left{
+    width: 50%;
+    height: 100%;
+    line-height: 30px;
+    float: left;
+    font-size: 16px;
+    color: #010101;
+}
+.box1 .left input{
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    margin-right: 5px;
+    display: block;
+    float: left;
+    margin-left: 20%;
+}
+.box1 .left span{
+    font-size: 16px;
+    color: #010101;
+    line-height: 30px;
+    display: block;
+    float: left;
+}
+.box2_xuan{
+    width: 100%;
+    overflow: hidden;
+}
+.box2_r{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.box2_r input{
+    width: 20px;
+    height: 20px;
+    display: block;
+    float: left;
+}
+.box2_r span{
+    display: block;
+    float: left;
+    line-height: 20px;
+    margin-left: 15px;
+    font-size: 17px;
+}
+.box3_xuan{
+    width: 100%;
+    overflow: hidden;
+}
+.box3_r{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.box3_r input{
+    width: 15px;
+    height: 15px;
+    display: block;
+    float: left;
+    margin-top: 3px;
+}
+.box3_r span{
+    display: block;
+    float: left;
+    line-height: 20px;
+    margin-left: 12px;
+    font-size: 12px;
+}
+.box4_xuan{
+    width: 100%;
+    overflow: hidden;
+}
+.box4_r{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.box4_r input{
+    width: 20px;
+    height: 20px;
+    display: block;
+    float: left;
+}
+.box4_r span{
+    display: block;
+    float: left;
+    line-height: 20px;
+    margin-left: 15px;
+    font-size: 17px;
+}
+.box5_xuan{
+    width: 100%;
+    overflow: hidden;
+}
+.box5_r{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.box5_r input{
+    width: 20px;
+    height: 20px;
+    display: block;
+    float: left;
+}
+.box5_r span{
+    display: block;
+    float: left;
+    line-height: 20px;
+    margin-left: 15px;
+    font-size: 17px;
+}
+.box6_xuan{
+    width: 100%;
+    overflow: hidden;
+}
+.box6_r{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.box6_r input{
+    width: 20px;
+    height: 20px;
+    display: block;
+    float: left;
+}
+.box6_r span{
+    display: block;
+    float: left;
+    line-height: 20px;
+    margin-left: 15px;
+    font-size: 17px;
+}
+.box7_xuan{
+    width: 100%;
+    overflow: hidden;
+}
+.box7_r{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.box7_r input{
+    width: 20px;
+    height: 20px;
+    display: block;
+    float: left;
+}
+.box7_r span{
+    display: block;
+    float: left;
+    line-height: 20px;
+    margin-left: 15px;
+    font-size: 17px;
+}
+.box8_xuan{
+    width: 100%;
+    overflow: hidden;
+}
+.box8_r{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.box8_r input{
+    width: 20px;
+    height: 20px;
+    display: block;
+    float: left;
+}
+.box8_r span{
+    display: block;
+    float: left;
+    line-height: 20px;
+    margin-left: 15px;
+    font-size: 17px;
+}
+.box9_xuan{
+    width: 100%;
+    overflow: hidden;
+}
+.box9_r{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.box9_r input{
+    width: 20px;
+    height: 20px;
+    display: block;
+    float: left;
+}
+.box9_r span{
+    display: block;
+    float: left;
+    line-height: 20px;
+    margin-left: 15px;
+    font-size: 17px;
+}
+.box10_xuan{
+    width: 100%;
+    overflow: hidden;
+}
+.box10_r{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.box10_r input{
+    width: 20px;
+    height: 20px;
+    display: block;
+    float: left;
+}
+.box10_r span{
+    display: block;
+    float: left;
+    line-height: 20px;
+    margin-left: 15px;
+    font-size: 17px;
+}
+.box11_xuan{
+    width: 100%;
+    overflow: hidden;
+}
+.box11_r{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.box11_r input{
+    width: 20px;
+    height: 20px;
+    display: block;
+    float: left;
+}
+.box11_r span{
+    display: block;
+    float: left;
+    line-height: 20px;
+    margin-left: 15px;
+    font-size: 17px;
+}
+.box12_xuan{
+    width: 100%;
+    overflow: hidden;
+}
+.box12_r{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.box12_r input{
+    width: 20px;
+    height: 20px;
+    display: block;
+    float: left;
+}
+.box12_r span{
+    display: block;
+    float: left;
+    line-height: 20px;
+    margin-left: 15px;
+    font-size: 17px;
+}
+.box13_xuan{
+    width: 100%;
+    overflow: hidden;
+}
+.box13_r{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.box13_r input{
+    width: 20px;
+    height: 20px;
+    display: block;
+    float: left;
+}
+.box13_r span{
+    display: block;
+    float: left;
+    line-height: 20px;
+    margin-left: 15px;
+    font-size: 17px;
+}
+.content.box8 {
+    margin-bottom: 50px!important;
+}
+.Ok_oder{
+    width: 90%;
+    height: 30px;
+    font-size: 16px;
+    color: #0066FF;
+    margin: auto;
+}
+.Next .Upper_a.active{
+    display: none;
+}
+.Next .Next_a.active{
+    width: 96%;
+    margin-right: 2%;
+}
