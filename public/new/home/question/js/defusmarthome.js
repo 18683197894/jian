@@ -121,7 +121,7 @@ $(".Next_a").click(function(){
                 $(".container-box .content.box7").addClass("avtive");
             }//box7
         }else if(num == 6){
-            var box7=$('input:radio[name="box7"]:checked').val();
+            var box7=$('input:checkbox[name="box7"]:checked').val();
             if(box7==null){
                 $(".box7 .Ok").html("请选择您选购智能家居产品更注重哪种因素？").addClass("active");
                 setTimeout(function(){
@@ -218,9 +218,13 @@ $(".Next_a").click(function(){
                     nopurchase += $(this).val()+',';
                 })
                 datas['nopurchase'] = nopurchase.substr(0,nopurchase.length-1);
-                
-                datas['careabout'] = $(".box7_xuan input[type='radio']").val();
-                
+
+                var careabout = '';
+                $.each($(".box7_xuan input[type='checkbox']:checked"),function(){
+                    careabout += $(this).val()+',';
+                })
+                datas['careabout'] = careabout.substr(0,careabout.length-1);
+                                
                 var functions = '';
                 $.each($(".box8_xuan input[type='checkbox']:checked"),function(){
                     functions += $(this).val()+',';

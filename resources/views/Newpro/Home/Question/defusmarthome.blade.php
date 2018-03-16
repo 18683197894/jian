@@ -121,19 +121,19 @@
         <div class="you">7.您选购智能家居产品更注重以下哪种因素？</div>
         <div class="box7_xuan">
             <label class="box7_r">
-                <input type="radio" value="高档外观" name="box7"/> <span>高档外观 </span>
+                <input type="checkbox" value="高档外观" name="box7"/> <span>高档外观 </span>
             </label>
             <label class="box7_r">
-                <input type="radio" value="产品性能" name="box7"/> <span>产品性能</span>
+                <input type="checkbox" value="产品性能" name="box7"/> <span>产品性能</span>
             </label>
             <label class="box7_r">
-                <input type="radio" value="产品价格" name="box7"/> <span>产品价格</span>
+                <input type="checkbox" value="产品价格" name="box7"/> <span>产品价格</span>
             </label>
             <label class="box7_r">
-                <input type="radio" value="产品服务" name="box7"/> <span>产品服务</span>
+                <input type="checkbox" value="产品服务" name="box7"/> <span>产品服务</span>
             </label>
             <label class="box7_r">
-                <input type="radio" value="其他" name="box7"/> <span>其他</span>
+                <input type="checkbox" value="其他" name="box7"/> <span>其他</span>
             </label>
             <div class="Ok"></div>
         </div>
