@@ -3,14 +3,14 @@
     padding: 0;
 }
 body{
-    font-family: “Microsoft YaHei” ! important;
+    font-family: "Microsoft YaHei" ! important;
     position: relative;
+    width: 100%;
 }
 .bg{
     width: 100%;
     overflow: hidden;
     margin-bottom: 10px;
-    height: 100px;
 }
 .title{
     width: 100%;
@@ -30,7 +30,7 @@ body{
     margin-bottom: 20px;
 }
 .content{
-    margin-bottom: 80px!important;
+    margin-bottom: 60px!important;
     flex:1;-ms-flex:1;-webkit-flex:1
 }
 .bg.active{
