@@ -109,6 +109,12 @@
                             <div class="Package">包含 主材 基础 软装 智能</div>
                             <div class="Price">{{ $qing }}元 / ㎡</div>
                         </li>
+                        <li>
+                            <div class="Choice"><input type="radio" value="{{ $vvvv->id }}" index="yi" feel="{{ $yi }}" name="Choice{{ $v->id }}"> </input></div>
+                            <div class="Housing">意向金</div>
+                            <div class="Package">装修意向金</div>
+                            <div class="Price">{{ $yi }}元</div>
+                        </li>
                         @endif
                     </ul>
                     <div class="purchase">

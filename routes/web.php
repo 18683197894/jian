@@ -250,6 +250,8 @@ Route::post('/admin/product/style/styleedits/{id}','Admin\StyleController@stylee
 Route::post('/admin/product/style/styledel','Admin\StyleController@styledel');
 Route::get('/admin/product/style/qingedit','Admin\StyleController@qingedit');
 Route::post('/admin/product/style/qingedits/{id}','Admin\StyleController@qingedits');
+Route::get('/admin/product/style/yiedit','Admin\StyleController@yiedit');
+Route::post('/admin/product/style/yiedits/{id}','Admin\StyleController@yiedits');
 
 Route::get('/admin/product/style/doorindex/{id}','Admin\StyleController@doorindex');
 Route::get('/admin/product/style/dooradd/{id}','Admin\StyleController@dooradd');

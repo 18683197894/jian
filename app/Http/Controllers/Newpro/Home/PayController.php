@@ -23,8 +23,10 @@ class PayController extends Controller
               ->orderBy('time','desc')
               ->get();
       $qings = \DB::table('playgou')->select('id','name','tus','time','status','num','uid')->where('uid',$uid)->where('tus','qing')->first();
+      $yis = \DB::table('playgou')->select('id','name','tus','time','status','num','uid')->where('uid',$uid)->where('tus','yi')->first();
 
-    	$qing = \DB::table('qing')->first()->money;
+      $qing = \DB::table('qing')->where('id',1)->first()->money;
+    	$yi = \DB::table('qing')->where('id',2)->first()->money;
     	$style = \DB::table('style')
       ->join('packages','style.pid','=','packages.id')
       ->select('style.id','style.title','packages.title as titles')
@@ -61,7 +63,12 @@ class PayController extends Controller
         $qings->path = '清水房';
         $qings->money = $qing;
       }
-    	return view('Newpro.Home.Pay.shoppingcart',['title'=>$title,'data'=>$data,'qings'=>$qings]);
+      if($yis)
+      {
+        $yis->path = '装修意向金';
+        $yis->money = $yi;
+      }
+    	return view('Newpro.Home.Pay.shoppingcart',['title'=>$title,'data'=>$data,'qings'=>$qings,'yis'=>$yis]);
     }
     public function shoppingcartajax(Request $request)
     {
@@ -169,16 +176,19 @@ class PayController extends Controller
 
         foreach($data as $kkk => $vvv)
         { 
-          if($vvv->tus !== 'qing')
+          if($vvv->tus !== 'qing' && $vvv->tus !== 'yi')
           {
             $doors = \DB::table('door')->select('id','main','nomain','pid as ppid','model','title as name')->where('id',$vvv->pid)->first();
             $vvv->main = $doors->main;
             $vvv->model = $doors->model;
             $vvv->name = $doors->name;
             $vvv->ppid = $doors->ppid;
-          }else
+          }else if($vvv->tus =='qing')
           {
             $vvv->path = '清水房';
+          }else if($vvv->tus == 'yi')
+          {
+            $vvv->path = '装修意向金';
           }
         }
         // dd($data);
@@ -187,7 +197,8 @@ class PayController extends Controller
             return redirect('/newpro/shoppingcart');
         }
 
-        $qing = \DB::table('qing')->first()->money;
+        $qing = \DB::table('qing')->where('id',1)->first()->money;
+        $yi = \DB::table('qing')->where('id',2)->first()->money;
         $style = \DB::table('style')
       ->join('packages','style.pid','=','packages.id')
       ->select('style.id','style.title','packages.title as titles')
@@ -214,9 +225,13 @@ class PayController extends Controller
           {
             $v->money = $qing.'/每平方';
             $v->moneys = $qing * $v->num;
+          }else if($v->tus == 'yi')
+          {
+            $v->money = $yi;
+            $v->moneys = $yi * $v->num;
           }
           $moenyss += $v->moneys;
-          if($v->tus !== 'qing')
+          if($v->tus !== 'qing' && $v->tus !== 'yi')
           {
             foreach($style as $kk => $vv)
             {
@@ -429,20 +444,24 @@ class PayController extends Controller
 
         foreach($data as $kkk => $vvv)
         { 
-          if($vvv->tus !== 'qing')
+          if($vvv->tus !== 'qing' && $vvv->tus !== 'yi')
           {
             $doors = \DB::table('door')->select('id','main','nomain','pid as ppid','model','title as name')->where('id',$vvv->pid)->first();
             $vvv->main = $doors->main;
             $vvv->model = $doors->model;
             $vvv->name = $doors->name;
             $vvv->ppid = $doors->ppid;
-          }else
+          }else if($vvv->tus =='qing')
           {
             $vvv->path = '清水房';
+          }else if($vvv->tus =='yi')
+          {
+            $vvv->path = '装修意向金';
           }
         }
 
-        $qing = \DB::table('qing')->first()->money;
+        $qing = \DB::table('qing')->where('id',1)->first()->money;
+        $yi = \DB::table('qing')->where('id',2)->first()->money;
         $style = \DB::table('style')
         ->join('packages','style.pid','=','packages.id')
         ->select('style.id','style.title','packages.title as titles')
@@ -473,9 +492,14 @@ class PayController extends Controller
           {
             $v->money = $qing;
             $v->moneys = $qing * $v->num;
+          }else if($v->tus == 'yi')
+          {
+            $v->money = $yi;
+            $v->moneys = $yi * $v->num;
           }
+
           $moenyss += $v->moneys;
-          if($v->tus !== 'qing')
+          if($v->tus !== 'qing' && $v->tus !== 'yi')
           {
             foreach($style as $kk => $vv)
             { 

@@ -24,8 +24,9 @@ class StyleController extends Controller
     		}
     	}
 
-    	$qing = \DB::table('qing')->select('money')->first()->money;
-    	return view('Newpro.Home.Product.styleindex',['title'=>$title,'data'=>$data,'qing'=>$qing,'path'=>$request->path()]);
+        $qing = \DB::table('qing')->where('id',1)->select('money')->first()->money;
+    	$yi = \DB::table('qing')->where('id',2)->select('money')->first()->money;
+    	return view('Newpro.Home.Product.styleindex',['title'=>$title,'data'=>$data,'qing'=>$qing,'path'=>$request->path(),'yi'=>$yi]);
     }
     public function paygouajax(Request $request)
     {
@@ -40,10 +41,15 @@ class StyleController extends Controller
         if($ors == 'qing')
         {
             $over = \DB::table('playgou')->where('uid',$user->id)->where('tus',$ors)->first();
+        }else if($ors == 'yi')
+        {
+            $over = \DB::table('playgou')->where('uid',$user->id)->where('tus',$ors)->first();
         }else
         {
             $over = \DB::table('playgou')->where('uid',$user->id)->where('tus',$ors)->where('pid',$id)->first();
+
         }
+
         
         if($over)
         {   
@@ -63,6 +69,17 @@ class StyleController extends Controller
             $data = [
                     'pid'=>0,
                     'name' => '清水房套餐',
+                    'tus' => $ors,
+                    'time'=>time(),
+                    'num' => $num,
+                    'status' => 0,
+                    'uid'=>$user->id
+                    ];
+        }else if($ors == 'yi')
+        {
+            $data = [
+                    'pid'=>0,
+                    'name' => '装修意向金',
                     'tus' => $ors,
                     'time'=>time(),
                     'num' => $num,

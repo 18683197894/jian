@@ -188,8 +188,13 @@ class StyleController extends Controller
 
     public function qingedit()
     {
-    	$data = \DB::table('qing')->select('id','money')->first();
+    	$data = \DB::table('qing')->select('id','money')->where('id',1)->first();
     	return view('Admin.product.qingedit',['title'=>'修改清水房报价','data'=>$data]);
+    }
+    public function yiedit()
+    {
+        $data = \DB::table('qing')->select('id','money')->where('id',2)->first();
+        return view('Admin.product.yiedit',['title'=>'修改意向金报价','data'=>$data]);
     }
 
     public function qingedits(Request $request,$id)
@@ -204,12 +209,31 @@ class StyleController extends Controller
     	$res = \DB::table('qing')->where('id',$id)->update(['money'=>$money]);
     	if($res)
     	{
-    		return redirect('/admin/product/style/index')->with(['info'=>'修改清水房报价成功!']);
+    		return redirect('/admin/product/style/index')->with(['info'=>'修改成功!']);
     	}else
     	{
     		return redirect('/admin/product/style/index')->with(['info'=>'未作修改!']);
     		
     	}
+    }
+    public function yiedits(Request $request,$id)
+    {   
+        $this->validate($request,[
+            'money' => 'required|integer',
+            ],[
+            'money.required' => '金额不能为空！',
+            'money.integer' => '金额填写错误！'
+            ]);
+        $money = $request->money;
+        $res = \DB::table('qing')->where('id',$id)->update(['money'=>$money]);
+        if($res)
+        {
+            return redirect('/admin/product/style/index')->with(['info'=>'修改成功!']);
+        }else
+        {
+            return redirect('/admin/product/style/index')->with(['info'=>'未作修改!']);
+            
+        }
     }
 
     /////////////////////////////////////////////////////////////////////////

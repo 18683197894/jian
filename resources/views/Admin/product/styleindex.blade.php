@@ -18,6 +18,7 @@
             <div class="box-header" style="padding:0; padding-top:20px;">
               <h3 class="box-title col-xs-1"> <br><a href="{{ url('/admin/product/style/styleadd') }}">添加风格</a>  </h3>
               <h3 class="box-title col-xs-2"> <br> <a href="{{ url('/admin/product/style/qingedit') }}">修改清水房报价</a> </h3>
+              <h3 class="box-title col-xs-2"> <br> <a href="{{ url('/admin/product/style/yiedit') }}">修改意向金报价</a> </h3>
             <div class="form-group col-xs-2">
                   <form action="{{ url('/admin/product/style/index') }}" method="GET">
                   <label>筛选</label>

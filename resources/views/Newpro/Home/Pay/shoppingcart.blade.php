@@ -79,6 +79,25 @@
             <li class="cz" ><i>×</i></li>
         </ul>
         @endif
+        @if($qings)
+            <ul class="con">
+            <li><input index="xuan" type="checkbox" id="{{ $yis->id }}"><span>选择</span></li>
+            <li class="name">
+            <div class="name_top">{{ $yis->path }}</div>
+            <div class="name_bo">{{ $yis->name }}</div>
+            </li>
+            <li class="jiage">{{ $yis->money }}</li>
+            <li class="num" index="{{ $yis->tus }}">
+                <div class="divse">
+                <a href="javascript:;" class="jian">-</a>
+                <span class="box">{{ $yis->num }}</span>
+                <a href="javascript:;" class="jia">+</a>
+                </div>
+            </li>
+            <li class="jie">{{ $yis->money * $yis->num }}</li>
+            <li class="cz" ><i>×</i></li>
+        </ul>
+        @endif
         @if($data->count() > 0)
         @foreach($data as $k => $v)
         <ul class="con">
