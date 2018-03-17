@@ -395,9 +395,9 @@
 .Music{
     width: 30px;
     height: 30px;
-    position: fixed;
-    right: 20px;
-    top: 20%;
+    position: absolute;
+    right: 18px;
+    top: 0;
     background: url("/new/home/question/img/yiyue.png");
     background-size: 100% 100%;
     -webkit-transition-property: -webkit-transform;
