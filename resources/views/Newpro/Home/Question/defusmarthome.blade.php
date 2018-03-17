@@ -269,5 +269,8 @@
 
 <script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
 <script src="{{ asset('/new/home/question/js/defusmarthome.js')}}"></script>
+<script type="text/javascript">
+        document.getElementById('bgaudio').play();
+</script>
 </body>
 </html>

@@ -196,7 +196,7 @@ class NewsController extends Controller
     	$data = $request->except('_token');
 
 		$this->validate($request,[
-		    'title' => 'required|min:2|max:30',
+		    'title' => 'required|min:2|max:60',
 		    'yuan'	=> 'required',
 		    'leicon'=>'required|min:10|max:255',
 		    'titleimg'=>'image',
@@ -208,7 +208,7 @@ class NewsController extends Controller
  		],[
 			'title.required'=>'标题不能为空',
 			'title.min'=>'标题最少2位',
-			'title.max'=>'标题最大30位',
+			'title.max'=>'标题最大60位',
             'titles.required'=>'网页标题不能为空',
             'titles.min'=>'网页标题最少2位',
             'titles.max'=>'网页标题最大60位',
@@ -252,7 +252,10 @@ class NewsController extends Controller
         {
             $data['titleimg'] = 'default.jpg';
         }
-		
+
+        $data['content'] = preg_replace('/(width="[1-9]*") (height="[1-9]*")\/>/','$1 height="100%"/>',$data['content']);
+        $data['content'] = preg_replace('/(height="[1-9]*") (width="[1-9]*")\/>/','height="100%" $2/>',$data['content']);
+        $data['content'] = preg_replace('/(title=".*?") (alt=".*?"\/>)/','$1 height="100%" $2',$data['content']);
     	$res = \DB::table('news')->insert($data);
     	if($res){
     		return redirect('/jslmadmin/newslei/newsindex/'.$data['pid'])->with(['info'=>'添加成功']);
@@ -276,7 +279,7 @@ class NewsController extends Controller
     public function newsedits(Request $request){
     	$data = $request->except('_token');
 		$this->validate($request,[
-		    'title' => 'required|min:2|max:30',
+		    'title' => 'required|min:2|max:60',
 		    'yuan'	=> 'required',
 		    'leicon'=>'required|min:10|max:255',
 		    'content' =>'required|max:20000',
@@ -287,7 +290,7 @@ class NewsController extends Controller
  		],[
 			'title.required'=>'标题不能为空',
 			'title.min'=>'标题最少2位',
-			'title.max'=>'标题最大30位',
+			'title.max'=>'标题最大60位',
 			'yuan.required'=>'来源不能为空',
 			'leicon.required'=>'简介不能为空',
             'leicon.min'=>'简介最少10位',
@@ -319,7 +322,9 @@ class NewsController extends Controller
                 }
 			}
 		}
-    	
+        $data['content'] = preg_replace('/(width="[1-9]*") (height="[1-9]*")\/>/','$1 height="100%"/>',$data['content']);
+        $data['content'] = preg_replace('/(height="[1-9]*") (width="[1-9]*")\/>/','height="100%" $2/>',$data['content']);
+        $data['content'] = preg_replace('/(title=".*?") (alt=".*?"\/>)/','$1 height="100%" $2',$data['content']);
     	$res = \DB::table('news')->where('id',$request->id)->update($data);
 
     	if($res){

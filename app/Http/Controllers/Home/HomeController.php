@@ -467,20 +467,23 @@ class HomeController extends Controller
             return false;
         }
         
-    
-        
-        $data = \DB::table('hfnews')->select('id','content')->get();
-        foreach($data as $k => $v)
-        {
-            $content = preg_replace('/(width="[1-9]*") (height="(\d*)")\/>/','$1 height="100%"/>',$v->content);
-            \DB::table('hfnews')->where('id',$v->id)->update(['content'=>$content]);
-        }
-        $datas = \DB::table('details')->select('id','content')->get();
-        foreach($datas as $kk => $vv)
-        {
-            $contents = preg_replace('/(width="[1-9]*") (height="(\d*)")\/>/','$1 height="100%"/>',$vv->content);
-            \DB::table('details')->where('id',$vv->id)->update(['content'=>$contents]);
-        }
+        $data = \DB::table('news')->where('id','66')->first()->content;
+        $data = preg_replace('/(width="[1-9]*") (height="[1-9]*")\/>/','$1 height="100%"/>',$data);
+        $data = preg_replace('/(height="[1-9]*") (width="[1-9]*")\/>/','height="100%" $2/>',$data);
+        $data = preg_replace('/(title=".*?") (alt=".*?"\/>)/','$1 height="100%" $2',$data);
+        dd($data);
+        // $data = \DB::table('hfnews')->select('id','content')->get();
+        // foreach($data as $k => $v)
+        // {
+        //     $content = preg_replace('/(width="[1-9]*") (height="(\d*)")\/>/','$1 height="100%"/>',$v->content);
+        //     \DB::table('hfnews')->where('id',$v->id)->update(['content'=>$content]);
+        // }
+        // $datas = \DB::table('details')->select('id','content')->get();
+        // foreach($datas as $kk => $vv)
+        // {
+        //     $contents = preg_replace('/(width="[1-9]*") (height="(\d*)")\/>/','$1 height="100%"/>',$vv->content);
+        //     \DB::table('details')->where('id',$vv->id)->update(['content'=>$contents]);
+        // }
         
         
     }

@@ -101,7 +101,9 @@ Route::get('/newpro/zhijin/questionnaire/ors','Newpro\Home\QuestionController@zh
 //智能家居调查问卷
 Route::get('/newpro/defu/smartquestionnaire/index','Newpro\Home\QuestionController@defusmartindex');
 Route::get('/newpro/defu/smartquestionnaire/home','Newpro\Home\QuestionController@defusmarthome');
+//assas
 Route::post('/newpro/defu/smartquestionnaire/home/ajax','Newpro\Home\QuestionController@defusmarthomeajax');
+
 //楼盘
 Route::get('/propertieszshx','Home\PropertiesController@zshx');
 Route::get('/propertiesdfhx','Home\PropertiesController@dfhx');
