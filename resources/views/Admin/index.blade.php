@@ -530,7 +530,7 @@ class="active"
         </li>
 @endif
         <li class="
-@if($title == "织金调查问卷" || $title == "德福调查问卷")
+@if($title == "织金调查问卷" || $title == "德福调查问卷" || $title ='德福智能家居调查问卷')
 active
 @endif
         treeview">
@@ -553,6 +553,13 @@ class="active"
 class="active"
 @endif
             ><a href="{{ url('admin/question/defu/index') }}"><i class="fa fa-circle-o"></i>德福调查问卷</a>
+            </li>
+
+            <li
+@if($title == "智能家居调查问卷")
+class="active"
+@endif
+            ><a href="{{ url('admin/question/defu/smartindex') }}"><i class="fa fa-circle-o"></i>智能家居调查问卷</a>
             </li>
           </ul>
         </li> 

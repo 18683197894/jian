@@ -9,8 +9,8 @@
 </head>
 <body>
 <div class="home">
-    <img src="{{ asset('/new/home/question/img/defu.jpg')}}" alt=""/>
-    <div class="language">
+    <img src="{{ asset('/new/home/question/img/smart.jpg')}}" alt=""/>
+    <!-- <div class="language">
         <div class="title">尊敬的先生/女士：</div>
         <div class="content">
             您好！智能家居系统是近年来兴起的一种将全面改变我们生活方式的一种技术，目前，物联网被越来越多的人提到，其中智能家居更是深得人心。
@@ -19,7 +19,7 @@
             其发展的根本目的在于为生活提供方便。我们想通过一次这样的调查了解智能家居系统的发展前景，您的参与将给与我们极大的帮助。
             请您在百忙之中抽出几分钟时间填写！在此，我们表示由衷的感谢！！！请在下列问题您所选择的答案前打“√”或填写在“______”上，谢谢！
         </div>
-    </div>
+    </div> -->
 </div>
 
 <a href="{{ url('/newpro/defu/smartquestionnaire/home') }}" class="footer">开始填写</a>

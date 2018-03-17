@@ -98,7 +98,7 @@ Route::get('/newpro/zhijin/questionnaire/door','Newpro\Home\QuestionController@z
 Route::get('/newpro/zhijin/questionnaire/feel','Newpro\Home\QuestionController@zhijinfeel');
 Route::get('/newpro/zhijin/questionnaire/ors','Newpro\Home\QuestionController@zhijinors');
 
-//德福智能家居调查问卷
+//智能家居调查问卷
 Route::get('/newpro/defu/smartquestionnaire/index','Newpro\Home\QuestionController@defusmartindex');
 Route::get('/newpro/defu/smartquestionnaire/home','Newpro\Home\QuestionController@defusmarthome');
 Route::post('/newpro/defu/smartquestionnaire/home/ajax','Newpro\Home\QuestionController@defusmarthomeajax');
@@ -441,6 +441,7 @@ Route::get('/jslmadmin/userhome/orders/{id}','Admin\PayController@userhome_order
 //调查问卷
 Route::get('admin/question/zhijin/index','Admin\QuestionController@zhijinindex');
 Route::get('admin/question/defu/index','Admin\QuestionController@defuindex');
+Route::get('admin/question/defu/smartindex','Admin\QuestionController@defusmartindex');
 Route::post('admin/question/index/del','Admin\QuestionController@indexdel');
 });
 

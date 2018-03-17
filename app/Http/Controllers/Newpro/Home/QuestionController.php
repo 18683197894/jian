@@ -830,6 +830,7 @@ class QuestionController extends Controller
     public function defusmarthomeajax(Request $request)
     {
         $data = $request->except("_token");
+        $data['time'] = time();
         $res = \DB::table('smartquestion')->insert($data);
         if($res)
         {
