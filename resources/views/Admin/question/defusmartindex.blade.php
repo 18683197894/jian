@@ -70,7 +70,7 @@
     @endforeach($data as $k => $v)
 @else
                 <tr>
-                  <td style="text-align: center;vertical-align: middle" colspan="15">没有数据</td>
+                  <td style="text-align: center;vertical-align: middle" colspan="17">没有数据</td>
                 </tr>
 @endif
 
