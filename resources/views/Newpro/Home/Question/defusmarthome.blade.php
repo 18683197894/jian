@@ -49,7 +49,7 @@
         <div class="you">3.请描绘一下您眼中的智能家居系统。[多选题]   </div>
         <div class="box3_xuan">
             <label class="box3_r">
-                <input type="checkbox" value="有家有异常情况，系统能准确判断，及时通知并报警" name="box3"/> <span>有家有异常情况，系统能准确判断，及时通知并报警</span>
+                <input type="checkbox" value="家有异常情况，系统能准确判断，及时通知并报警" name="box3"/> <span>有家有异常情况，系统能准确判断，及时通知并报警</span>
             </label>
             <label class="box3_r">
                 <input type="checkbox" value="灯光和窗帘是感应或程控式，不需要手动控制开关" name="box3"> <span>灯光和窗帘是感应或程控式，不需要手动控制开关</span>
