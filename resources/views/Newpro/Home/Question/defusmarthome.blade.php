@@ -10,7 +10,7 @@
 </head>
 <body>
 <img src="{{ asset('/new/home/question/img/smartbj.jpg')}}" alt="" class="bg" />
-<audio src="{{ asset('/new/home/question/img/huijia.mp3') }}" autoplay></audio>
+
 <div class="title">智能家居市场调研问答卷</div>
 <div class="brief">品质生活 从这里开始</div>
 <div class="container-box">
@@ -266,11 +266,24 @@
     </div>
 </div>
 <div class="Ok_oder"></div>
-
+<div class="Music">
+    <audio id="bgMusic" src="{{ asset('/new/home/question/img/huijia.mp3') }}" autoplay="autoplay" loop="loop"></audio>
+</div>
 <script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
 <script src="{{ asset('/new/home/question/js/defusmarthome.js')}}"></script>
-<script type="text/javascript">
-        document.getElementById('bgaudio').play();
+<script>
+    var Mu = 0;
+    var music = $("#bgMusic");
+    $(".Music").click(function(){
+        Mu++;
+        if(Mu%2 == 0 ){
+            music[0].play();
+            $(".Music").removeClass("avtive");
+        }else{
+            music[0].pause();
+            $(".Music").addClass("avtive");
+        }
+    });
 </script>
 </body>
 </html>
