@@ -181,11 +181,11 @@ class NewsController extends Controller
     public function newsindex(Request $request,$id)
     {
         $key = isset($request->key) ? $request->key : '';
-        
-        $data = \DB::table('news')->select('id','title','time','yuan','pid','click','titleimg','zhi')->where('title','like','%'.$key.'%')->where('pid',$id)->orderBy('time','desc')->paginate(10);
+        $path = $request->path();
+        $data = \DB::table('news')->select('id','title','time','yuan','pid','click','titleimg','zhi','szhi')->where('title','like','%'.$key.'%')->where('pid',$id)->orderBy('time','desc')->paginate(10);
         $tit = \DB::table('newslei')->select('id','title')->where('id',$id)->first()->title;
         $data->appends(['key'=>$key]);
-        return view('Admin.news.index',['title'=>'新闻文章管理','data'=>$data,'request'=>$request->all(),'pid'=>$id,'tit'=>$tit]);
+        return view('Admin.news.index',['path'=>$path,'title'=>'新闻文章管理','data'=>$data,'request'=>$request->all(),'pid'=>$id,'tit'=>$tit]);
     }
 
     public function newsadd($id){
@@ -256,7 +256,8 @@ class NewsController extends Controller
         $data['content'] = preg_replace('/(width="[1-9]*") (height="[1-9]*")\/>/','$1 height="100%"/>',$data['content']);
         $data['content'] = preg_replace('/(height="[1-9]*") (width="[1-9]*")\/>/','height="100%" $2/>',$data['content']);
         $data['content'] = preg_replace('/(title=".*?") (alt=".*?"\/>)/','$1 height="100%" $2',$data['content']);
-    	$res = \DB::table('news')->insert($data);
+    	$data['szhi'] = 0;
+        $res = \DB::table('news')->insert($data);
     	if($res){
     		return redirect('/jslmadmin/newslei/newsindex/'.$data['pid'])->with(['info'=>'添加成功']);
     	}else{
@@ -341,7 +342,12 @@ class NewsController extends Controller
     	$res = \DB::table('news')->where('id',$id)->delete();
 
     	if($res){
-    		
+    		$ban = \DB::table('banimg')->select('id','pid','img')->where('pid',$id)->first();
+            if($ban)
+            {   
+                \DB::table('banig')->delete($ban->id);
+                @unlink('./uploads/news/banimg/'.$ban->img);
+            }
     		if(file_exists('./uploads/news/titleimg/'.$img && $img != 'default.jpg')){
     			unlink('./uploads/news/titleimg/'.$img);
     		}
@@ -584,6 +590,47 @@ class NewsController extends Controller
         {
             return response()->json(3);
         }
+    }
+
+    public function szhiadd(Request $request)
+    {
+        $id = $request->id;
+        $ors = $request->ors;
+        
+        if($ors == 0)
+        {   
+            $count = \DB::table('news')->select('id')->where('szhi',1)->get();
+            if($count->count() >= 8)
+            {
+                return response()->json(3);
+            }
+            $res = \DB::table('news')->where('id',$id)->update(['szhi'=>1]);
+            if($res)
+            {
+                return response()->json(1);
+            }else
+            {
+                return response()->json(2);
+            }
+        }
+        if($ors == 1)
+        {
+            $res = \DB::table('news')->where('id',$id)->update(['szhi'=>0]);
+            if($res)
+            {
+                return response()->json(1);
+            }else
+            {
+                return response()->json(2);
+            }
+        }
+    }
+
+    public function szhiindex(Request $request)
+    {   
+        $path = $request->input('path',null);
+        $data = \DB::table('news')->select('id','title','time','yuan','pid','click','titleimg','zhi','szhi')->where('szhi',1)->get();
+        return view('Admin.news.szhiindex',['path'=>$path,'data'=>$data,'title'=>'首页置顶管理']);
     }
 
 }

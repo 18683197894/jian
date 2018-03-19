@@ -37,9 +37,10 @@
            
             <div class="box-header">
            
-              <h3 class="box-title" style="width:300px;"><a href="{{ url('/jslmadmin/newslei/newsadd/') }}/{{ $pid }}">添加文章</a>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="{{ url('/jslmadmin/newslei/newszhiindex/') }}/{{ $pid }}">置顶文章管理</a></h3>
+              <h3 class="box-title" style="width:400px;"><a href="{{ url('/jslmadmin/newslei/newsadd/') }}/{{ $pid }}">添加文章</a>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="{{ url('/jslmadmin/newslei/newszhiindex/') }}/{{ $pid }}">管理列表置顶</a>&nbsp;&nbsp;
+              <a href="{{ url('/jslmadmin/newslei/newsszhiindex/index?path=') }}{{ $path }}">管理首页置顶</a></h3>
             </div>
             
           </div>
@@ -58,13 +59,13 @@
               <div class="row"><div class="col-sm-12"><table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
                 <thead>
                 <tr role="row">
-                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" style="width: 7%;">ID</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 15%; text-align:center;">标题</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 8%; text-align:center;">来源</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 20%; text-align:center;">展示图片</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 18%; text-align:center;">发表时间</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 10%; text-align:center;">点击率</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width: 15%; text-align:center;">操作</th>
+                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >ID</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style=" text-align:center;">标题</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style=" text-align:center;">来源</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style=" text-align:center;">展示图片</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style=" text-align:center;">发表时间</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style=" text-align:center;">点击率</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style=" text-align:center;">操作</th>
                 </tr>
                </thead>
 
@@ -79,7 +80,8 @@
                   <td style="text-align: center;vertical-align: middle">{{ $v->click }}</td>
                   <td style="text-align: center;vertical-align: middle"><a href="{{ url('/jslmadmin/newslei/newsedit') }}/{{ $v->id }}">编辑
                   </a>&nbsp;&nbsp;<a class="shan" href="#" onclick="return false;">删除&nbsp;</a>&nbsp;&nbsp;
-                  @if($v->zhi == 0)<a href="javascript:;" index="{{ $v->pid }}" class="zhi">移入列表置顶</a>@else <a href="javascript:;" index="{{ $v->pid }}" >已置顶 @endif
+                  @if($v->zhi == 0)<a href="javascript:;" index="{{ $v->pid }}" class="zhi">移入列表置顶</a>@else <a href="javascript:;" index="{{ $v->pid }}" >已置顶 @endif&nbsp;&nbsp;
+                  @if($v->szhi == 0)<a href="javascript:;" szhi="0" index="{{ $v->id }}" class="szhi">移入首页置顶</a>@else <a href="javascript:;" index="{{ $v->id }}" szhi="1" class="szhi"  >移出首页置顶 @endif
                   </td>
                 </tr>
 @endforeach
@@ -139,7 +141,59 @@
 
        })
 
+       $(".szhi").on('click',function(){
+        var id = $(this).attr('index');
+        var ors = $(this).attr('szhi');
+        th = $(this);
+         $.ajax('/jslmadmin/newslei/newsszhiindex/szhiadd',{
+            type:'post',
+            data:{id:id,ors:ors,_token:$('meta[name="csrf-token"]').attr('content')},
+            success:function(data){
+              if(ors == 0)
+              {
+                if(data == 1)
+              {
+                alert('置顶成功');
+                th.html('移出首页置顶');
+                th.attr('szhi',1)
+                return false;
 
+              }else if(data ==2)
+              {
+                alert('置顶失败！刷新页面后重试');
+                return false;
+              }else if(data == 3)
+              {
+                alert('置顶失败！置顶位已满');
+                return false;
+              }
+              }
+
+              if(ors == 1)
+              {
+                if(data == 1)
+              {
+                alert('取消置顶成功');
+                th.html('移入首页置顶');
+                th.attr('szhi',0)
+                return false;
+
+              }else if(data ==2)
+              {
+                alert('取消置顶失败！刷新页面后重试');
+                return false;
+              }
+
+              }
+              
+            },
+            error:function(data){
+              alert('数据异常！请稍后再试');
+            },
+            dataType:'json'
+         }) 
+
+       })
        $(".shan").on('click',function(){
        
         var id = $(this).parents('tr').find('td').eq(0).html();

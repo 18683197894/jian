@@ -11,12 +11,24 @@ class IndexController extends Controller
     {	
 
     	$news =\DB::table('news')
-    			->select('id','titleimg','title','leicon')
-    			->inRandomOrder()
-    			->offset(0)
-    			->limit(8)
-    			->get();
-    	
+                        ->select('id','titleimg','title','leicon','time')
+                        ->where('szhi',1)
+                        ->orderBy('time','desc')
+                        ->get()->toArray();
+
+    	$count =count($news);
+        if($count < 8)
+        {
+            $newss = \DB::table('news')
+                        ->select('id','titleimg','title','leicon','time')
+                        ->where('szhi',0)
+                        ->orderBy('time','desc')
+                        ->offset(0)
+                        ->limit(8 - $count)
+                        ->get()->toArray();
+            $news = array_merge($news,$newss);
+        }
+        //d
         $titles = getwebpage();
     	return view('Newpro.Home.Index.index',['title'=>$titles,'news'=>$news]);
     }

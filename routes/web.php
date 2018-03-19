@@ -238,6 +238,7 @@ Route::post('jslmadmin/newslei/newsedits','Admin\NewsController@newsedits');
 Route::post('/jslmadmin/newslei/newsdel','Admin\NewsController@newsdel');
 Route::post('/jslmadmin/newslei/newszhi','Admin\NewsController@newszhi');
 
+//文章列表置顶
 Route::get('/jslmadmin/newslei/newszhiindex/{id}','Admin\NewsController@newszhiindex');
 Route::get('/jslmadmin/newslei/newszhiindex/ban/{id}','Admin\NewsController@ban');
 Route::post('/jslmadmin/newslei/newszhiindex/bans','Admin\NewsController@bans');
@@ -246,6 +247,10 @@ Route::post('/jslmadmin/newslei/newszhiindex/zhiadds','Admin\NewsController@zhia
 Route::get('/jslmadmin/newslei/newszhiindex/zhiedit/{id}','Admin\NewsController@zhiedit');
 Route::post('/jslmadmin/newslei/newszhiindex/zhiedits','Admin\NewsController@zhiedits');
 Route::post('/jslmadmin/newslei/newszhiindex/zhidel','Admin\NewsController@zhidel');
+
+//文章首页置顶
+Route::post('jslmadmin/newslei/newsszhiindex/szhiadd','Admin\NewsController@szhiadd');
+Route::get('jslmadmin/newslei/newsszhiindex/index','Admin\NewsController@szhiindex');
 
 //Newpro 风格 包
 Route::get('/admin/product/style/index','Admin\StyleController@styleindex');
