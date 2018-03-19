@@ -44,14 +44,15 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {       
+            $path = $request->path()?$request->path():'/';
 
-            // if($exception instanceof \Illuminate\Validation\ValidationException) 
-            // { 
+            if($exception instanceof \Illuminate\Validation\ValidationException) 
+            { 
                 return parent::render($request, $exception); 
-            // }else
-            // {
-            //     return response()->view('error.404');
-            // }
+            }else
+            {
+                return response()->view('error.404',['path'=>$path]);
+            }
     }
 
     /**

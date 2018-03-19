@@ -20,6 +20,9 @@
 			<p>或者也许你只是键入错误了一些东西。</p>
 			请不要担心，这没事。如果该资源对你很重要，请与管理员联系。
 		</p>
+		<a href="{{ url($path) }}">
+			<button class="btn btn-default">刷新页面</button>
+		</a>
 		<a href="{{ url('/') }}">
 			<button class="btn btn-default">返回首页</button>
 		</a>
