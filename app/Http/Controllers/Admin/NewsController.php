@@ -317,8 +317,8 @@ class NewsController extends Controller
 				$newimg = time().mt_rand(100,900).'.'.$ext;
 				$request->file('titleimg')->move('./uploads/news/titleimg',$newimg);
 				$data['titleimg'] = $newimg;
-                if(file_exists('./uploads/news/titleimg/'.$img && $img != 'default.jpg'))
-                {
+                if($img !== 'default.jpg')
+                { 
                     @unlink('./uploads/news/titleimg/'.$img);
                 }
 			}
@@ -348,10 +348,10 @@ class NewsController extends Controller
                 \DB::table('banig')->delete($ban->id);
                 @unlink('./uploads/news/banimg/'.$ban->img);
             }
-    		if(file_exists('./uploads/news/titleimg/'.$img && $img != 'default.jpg')){
-    			unlink('./uploads/news/titleimg/'.$img);
+    		if( $img !== 'default.jpg'){
+    			@unlink('./uploads/news/titleimg/'.$img);
     		}
-    		 return response()->json(1);
+    		return response()->json(1);
     	}else{
     		return response()->json(2);
 
