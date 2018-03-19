@@ -54,6 +54,18 @@ class QuestionController extends Controller
     public function indexdel(Request $request)
     {
     	$id = $request->id;
+        $ors = $request->input('ors',null);
+        if($ors == 'smart')
+        {
+            $res = \DB::table('smartquestion')->delete($id);
+            if($res)
+            {
+                return response()->json(1);
+            }else
+            {
+                return response()->json(2);
+            }
+        }
     	$res = \DB::table('question')->delete($id);
     	if($res)
     	{

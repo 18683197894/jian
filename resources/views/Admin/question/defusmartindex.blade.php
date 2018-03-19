@@ -101,7 +101,7 @@
 
          $.ajax('/admin/question/index/del',{
             type : 'post',
-            data :{id:id},
+            data :{id:id,ors:'smart'},
             success : function(data){
              
               if(data ==1)
