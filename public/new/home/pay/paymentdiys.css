@@ -1,0 +1,189 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.method{
+    width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+.Personal_logo a{
+    display: block;
+    float: left;
+}
+.method.avtive{
+    display: none;
+}
+.method .Title{
+    width: 100%;
+    overflow: hidden;
+    font-size: 18px;
+    color: #222;
+    line-height: 80px;
+    border-bottom: 2px solid #EAEAEA;
+    margin: auto;
+}
+.method .Title.avtive{
+    display: none;
+}
+.method .Title span{
+    font-size: 14px;
+    color:#E12E32;
+}
+.Platform{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+    background-color: #F8F8F8;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+}
+.Platform .yinc{
+    display: block;
+    float: left;
+}
+.Platform .yinc.avtive{
+    display: none;
+}
+.Platform_float{
+    width: 250px;
+    overflow: hidden;
+    float: left;
+    margin-left: 30px;
+
+}
+.Platform_float img{
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+}
+.Platform_float .class_a{
+    width: 100%;
+    overflow: hidden;
+}
+.zhifu_Prompt{
+    width: 500px;
+    float: right;
+    margin: auto;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.zhifu_Prompt .Title{
+    width: 100%;
+    line-height: 35px;
+    overflow: hidden;
+    font-size: 16px;
+    color: #E12E32;
+}
+.zhifu_Prompt .information{
+    width: 100%;
+    overflow: hidden;
+}
+.information span{
+    width: 100%;
+    display: block;
+    float: left;
+    line-height: 40px;
+    margin-top: 10px;
+}
+.information span i{
+    color: #E12E32;
+}
+.Success{
+    width: 500px;
+    float: left;
+    padding-top: 200px;
+    margin-bottom: 50px;
+    overflow: hidden;
+    display: none;
+}
+.Success.avtive{
+    display: block;
+}
+.Success span{
+    display: block;
+    float: left;
+    line-height: 50px;
+    font-size: 20px;
+    margin-right: 30px;
+    margin-left: 150px;
+}
+.Success img{
+    float: left;
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+}
+.Success a{
+    display: block;
+    float: left;
+    width: 100px;
+    text-align: center;
+    background-color:#E12E32 ;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 35px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.Success a:hover{
+    background-color: #008CD6;
+}
+
+@media screen and (max-width: 1200px){
+    .method{
+        width: 100%;
+    }
+    .method .Title{
+        text-indent: 15px;
+    }
+    .zhifu_Prompt{
+        width: 100%;
+    }
+    .Success{
+        width: 98%;
+        margin-left: 2%;
+    }
+}
+@media screen and (max-width: 581px){
+    .Platform_float{
+        width: 90%;
+        margin-left: 5%;
+    }
+    .Platform{
+        padding-bottom: 30px;
+    }
+    .zhifu_Prompt{
+        width: 100%;
+        text-align: center;
+        margin: auto;
+        line-height: 35px;
+        margin-top: 20px;
+    }
+    .information span{
+        width: 100%;
+        margin-right: 0;
+    }
+    .Success{
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 0;
+        padding-top: 20px;
+    }
+    .Success span{
+        width: 100%;
+        text-align: left;
+        margin-right: 0;
+        margin-bottom: 10px;
+        margin-left: 0;
+    }
+    .Success a{
+        width: 90%;
+        margin-left: 5%;
+    }
+    .Success img{
+        margin-left: 40%;
+    }
+}

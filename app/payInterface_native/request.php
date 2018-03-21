@@ -317,8 +317,17 @@ Class Request_wechat{
 
                 if(!$res)
                 {
-                   return false; 
-                   exit;
+                    $res = \DB::table('orders_diy')->where('_token',$_token)->where('status',0)->first();
+                    if(!$res)
+                    {
+                        exit;  
+                    }else
+                    {
+                        $ors = 'orders_diy';
+                    }
+                }else
+                {
+                    $ors = 'orders';
                 }
                 $total = $res->total * 100;
                 $total = preg_replace('/\..*/','',$total);
@@ -328,8 +337,8 @@ Class Request_wechat{
 				if($total_fee == $total)
                 {
                         $time = $res->addtime.','.time();
-                        \DB::table('orders')->where('id',$res->id)->update(['create_id'=>$create_id,'status'=>1,'payors'=>'微信','addtime'=>$time]);
-                        $status = \DB::table('orders')->where('id',$res->id)->first()->status;
+                        \DB::table($ors)->where('id',$res->id)->update(['create_id'=>$create_id,'status'=>1,'payors'=>'微信','addtime'=>$time]);
+                        $status = \DB::table($ors)->where('id',$res->id)->first()->status;
                         if($status ==1)
                         {   
 
@@ -344,8 +353,6 @@ Class Request_wechat{
                         {   
                             exit;
                         }
-                        
-                    
 
                 }else
                 {

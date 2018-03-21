@@ -57,4 +57,22 @@ class PayController extends Controller
 
    	}
 
+    function paymentsdiyget(Request $request)
+    {
+
+      $id = $request->id;
+      $res = \DB::table('orders_diy')->select('id','_token','status','create_id','addtime')->where('id',$id)->first();
+      if($res)
+      {
+        if($res->status == 1 && !empty($res->create_id))
+        {
+            return response()->json(1);
+        }else
+        {
+            return response()->json(2);
+        } 
+      }
+
+    }
+
 }
