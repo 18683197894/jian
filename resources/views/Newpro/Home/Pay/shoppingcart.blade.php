@@ -27,7 +27,7 @@
 <body>
 <div class="nav_top">
     <div class="auto">
-        <a href="javascript:;">热线电话：0831-8888298</a>
+        <a href="javascript:;">热线电话：0831-8888598</a>
         <span></span>
         <a href="{{ url('/newpro/center/my_orders') }}">个人中心</a>
         <span></span>
@@ -159,7 +159,7 @@
         <div class="contact">
             <div class="title">联系我们</div>
             <i></i>
-            <a href="javascript:;" class="about_loop">服务热线：0831-8888298</a>
+            <a href="javascript:;" class="about_loop">服务热线：0831-8888598</a>
             <a href="javascript:;" class="about_loop">电子邮箱：market@jianshanglianmeng.com</a>
             <a href="javascript:;" class="about_loop">总部地址：宜宾市临港经济开发区西南互联网基地522室</a>
         </div>

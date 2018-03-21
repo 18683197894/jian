@@ -1,0 +1,193 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.New_payment{
+    width: 1200px;
+    margin: auto;
+    background-color: #F8F8F8;
+}
+.Personal_logo a{
+    display: block;
+    float: left;
+}
+.New_payment .Title{
+    width: 100%;
+    height: 80px;
+    line-height: 100px;
+    font-size: 30px;
+    color: #666666;
+    overflow: hidden;
+}
+.New_payment .Title i{
+    width: 2px;
+    background-color: #E12E32;
+    height: 34px;
+    display: block;
+    float: left;
+    margin-top:25px;
+    margin-right: 20px;
+}
+.New_payment .Title span{
+    display: block;
+    float: left;
+    height: 80px;
+    line-height: 80px;
+}
+.New_payment .Data{
+    width: 100%;
+    overflow: hidden;
+}
+.Data_NO1{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.D_input{
+    display: block;
+    float: left;
+    margin-left: 45px;
+    width: 225px;
+    position: relative;
+}
+.D_input span{
+    display: block;
+    font-size: 16px;
+    color: #666666;
+    line-height: 40px;
+}
+.D_input select{
+    width: 100%;
+    height: 37px;
+    border: 1px solid #DBDBDB;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 4px;
+    text-indent: 20px;
+    font-size: 16px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: #ffffff;
+    padding-right: 0 \9;
+    background: none \9;
+}
+.D_input i{
+    position: absolute;
+    width: 0;
+    height: 0;
+    box-sizing: border-box;
+    border-color: black transparent transparent transparent;
+    top: 50px;
+    bottom: 0;
+    border-style: solid;
+    border-width: 8px;
+    margin: auto;
+    right: 10px;
+}
+.D_input input{
+    width: 100%;
+    height: 37px;
+    border: 1px solid #DBDBDB;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 4px;
+    text-indent: 20px;
+    font-size: 16px;
+}
+.D_input .Money{
+    color: #E12E32;
+}
+.Data .bott{
+    width: 100%;
+    margin-top: 30px;
+    overflow: hidden;
+    padding-bottom: 30px;
+}
+.bott .Prompt{
+    display: block;
+    float: left;
+    margin-left: 45px;
+    font-size: 16px;
+    color: #E12E32;
+}
+.bott a{
+    display: block;
+    float: right;
+    margin-right: 45px;
+    width: 110px;
+    height: 35px;
+    color: #ffffff;
+    background-color: #E12E32;
+    border-radius: 5px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 16px;
+}
+.bott a:hover{
+    background-color: #008CD6;
+}
+.method{
+    width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    display: none;
+}
+.method.avtive{
+    display: block;
+}
+.method .Title{
+    width: 100%;
+    overflow: hidden;
+    font-size: 18px;
+    color: #222;
+    line-height: 80px;
+    border-bottom: 2px solid #EAEAEA;
+    margin: auto;
+}
+.Platform{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+    background-color: #F8F8F8;
+    margin-bottom: 30px;
+}
+.Platform_float{
+    width: 250px;
+    overflow: hidden;
+    float: left;
+    margin-left: 30px;
+
+}
+.Platform_float img{
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+}
+.Platform_float .class_a{
+    width: 100%;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1200px){
+    .New_payment{
+        width: 100%;
+    }
+    .method{
+        width: 100%;
+    }
+    .method .Title{
+        text-indent: 15px;
+    }
+}
+@media screen and (max-width: 581px){
+    .Platform_float{
+        width: 90%;
+        margin-left: 5%;
+    }
+    .Platform{
+        padding-bottom: 30px;
+    }
+}

@@ -536,6 +536,10 @@ Route::post('/home/package/softroll/gouajax','Home\PackageController@gouajax');
 
 });
 
+//自定义支付
+Route::get('/newspro/payment/diyindex','Home\HomeController@diyindex');
+Route::get('/newspro/payment/diyindexs','Home\HomeController@diyindexs');
+
 //支付回调
 Route::any('/payment/wechat/notify','Pay\PayController@wechatnotify');
 Route::any('/payment/alipay/notify','Pay\PayController@alipaynotify');
