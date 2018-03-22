@@ -143,7 +143,7 @@
             <img src="{{ asset('/new/home/index/img/Case2.png') }}" alt=""/>
             <div class="hide">
                 <div class="hide_aout">
-                    <div class="title">织金万都名城</div>
+                    <div class="title">织金万都铭城</div>
                     <i></i>
                     <div class="content">
                         贵州省5个100工程；贵州省100个城市综合体之一；织金县唯一城市综合体；织金县重点招商引资项目；织金指定返乡创业基地；县重点招商引资项目；

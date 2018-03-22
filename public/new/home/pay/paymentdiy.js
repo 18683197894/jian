@@ -34,7 +34,7 @@ function isfloat(oNum){
                     }else{
                         var to = isfloat($('.D_input .Money').val())
 
-                        if( !to ){
+                        if( !to || $('.D_input .Money').val() ==0 || $('.D_input .Money').val() =='0'){
                             $(".bott .Prompt").html("请输入您的订单金额！")
                         }else{
                             if(($('.D_input .Phone').val()=='')){
