@@ -1,4 +1,4 @@
-@extends('Newpro.Home.publicused')
+@extends('Newpro.Home.public')
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('/new/home/case/zaiplay.css') }}">
@@ -103,5 +103,5 @@
 @endsection('content')
 
 @section('js')
-<script src="{{ asset('/new/home/case/zaiplay.css') }}"></script>
+<script src="{{ asset('/new/home/case/zaiplay.js') }}"></script>
 @endsection('js')

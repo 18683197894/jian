@@ -10,7 +10,7 @@ class CaseController extends Controller
     public function index(Request $request)
     {	
     	$titles = getwebpage($request->path());
-      
+        
     	$wan = \DB::table('case')
     		->select('id','title','huxing','fengge','yusuan','or','time','effect2')
     		->where('or',5)
@@ -333,7 +333,7 @@ class CaseController extends Controller
             return response()->json($data);
     }
 
-    public function play($id)
+    public function play(Request $request,$id)
     {
         $data = \DB::table('case')
         ->select('id','title','huxing','fengge','yusuan','titles','keyworlds','description','or','img1','img2','img3','img4','time','effect1','effect2')
@@ -345,7 +345,7 @@ class CaseController extends Controller
         {
             return back()->with(['info'=>'数据不存在']);
         }
-        $title['titles'] = $data->titles;
+        $title['title'] = $data->titles;
         $title['keyworlds'] = $data->keyworlds;
         $title['description'] = $data->description;
         
@@ -357,9 +357,15 @@ class CaseController extends Controller
             $data->img4 = explode(',',$data->img4);
             $data->effect2 = explode(',',$data->effect2);
             $data->effect1 = explode(',',$data->effect1);
-
-            return view('Newpro.Home.Case.play',['title'=>$title,'data'=>$data]);
-       
+            $data->eff = array_combine($data->effect1,$data->effect2);
+            $a = $request->input('a',null);
+            $b = $request->input('b',null);
+            if(!in_array($a,$data->effect1) || !in_array($b,$data->effect2))
+            {
+                $a = null;$b=null;
+            }
+            return view('Newpro.Home.Case.play',['title'=>$title,'data'=>$data,'a'=>$a,'b'=>$b]);
+        
     }
 
     public function playindex(Request $request)
@@ -391,7 +397,7 @@ class CaseController extends Controller
         {
             return back()->with(['info'=>'数据不存在']);
         }
-        $title['titles'] = $data->titles;
+        $title['title'] = $data->titles;
         $title['keyworlds'] = $data->keyworlds;
         $title['description'] = $data->description;
         $data->img1 = $data->img1?explode(',',$data->img1):false;

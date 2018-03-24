@@ -85,4 +85,62 @@ class PayController extends Controller
     	}
     	return view('Admin.pay.userhome_orders',['title'=>$name.'的订单','name'=>$name,'data'=>$data]);
     }
+
+    public function diyindex(Request $request)
+    {   
+        $key = $request->key?$request->key:'';
+        $status = $request->input('status','A');
+      
+        if($status === 'A')
+        {   
+            
+            $data = \DB::table('orders_diy')
+            ->select('id','ors','phone','name','contract','_token','room','total','addtime','remarks','status','create_id','payors')
+            ->where('_token','like','%'.$key.'%')
+            ->orderBy('addtime','desc')
+            ->paginate(12);
+        }else
+        {   
+            
+            $data = \DB::table('orders_diy')
+            ->select('id','ors','phone','name','contract','_token','room','total','addtime','remarks','status','create_id','payors')
+            ->where('_token','like','%'.$key.'%')
+            ->where('status','=',$status)
+            ->orderBy('addtime','desc')
+            ->paginate(10);
+        }
+
+        foreach($data as $k => $v)
+        {
+            $v->time = explode(',',$v->addtime);
+        }
+        $data->appends(['key'=>$key,'status'=>$status]);
+        return view('Admin.pay.diyindex',['title'=>'建商支付','data'=>$data,'request'=>$request->all()]);
+    }
+
+    public function diyindexdel(Request $request)
+    {
+        $id = $request->id;
+        $data = \DB::table('orders_diy')->select('id','status','addtime')->where('id',$id)->first();
+        if(!$data)
+        {
+            return response()->json('订单不存在！');
+        }
+        $time = time() - $data->addtime;
+        if($time < 3600)
+        {   
+            $a = 3600 - $time;
+            return response()->json('删除失败 '.$a.'秒后重试！');
+        }
+        $res = \DB::table('orders_diy')->delete($id);
+        if($res)
+        {
+            return response()->json(1);
+
+        }else
+        {
+            return response()->json('删除失败 请重试！');
+        }
+        return response()->json($id);
+    }
 }

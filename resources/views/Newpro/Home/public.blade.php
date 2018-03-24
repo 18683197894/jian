@@ -29,10 +29,40 @@
 <body>
 <!--头部-->
 <div class="header">
+    <div class="Log_on">
+        <div class="auto">
+            <a href="javascript:;">热线电话：0831-8888598</a>
+            @if(!session('Home'))
+            <a href="{{ url('/newpro/register') }}">注册</a>
+            <a href="{{ url('/newpro/login') }}">登录</a>
+            @else 
+            <a href="{{ url('/newpro/center/my_orders') }}">个人中心</a>
+            <a href="javascript:;">{{ session('Home')->name }}</a>
+            @endif
+        </div>
+    </div>
     <div class="header_atou">
-        <a href="{{ url('/') }}"><img src="{{ asset('/new/home/public/img/logo.png') }}" alt="" class="Logo"/></a>
-        <ul class="nav">
-@php
+        <div class=header_top>
+        <a href="{{ url('/') }}" class="Logo_a"><img src="{{ asset('/new/home/publicused/img/logo.png') }}" alt="" class="Logo"/></a>
+            <div class="search">
+                <a href="javascript:;" class="link">
+                    <img src="{{ asset('/new/home/publicused/img/header_gg.png') }}" alt=""/>
+                    免费量房与报价
+                </a>
+                <a href="javascript:;" class="link">
+                    <img src="{{ asset('/new/home/login/img/hade_1.png') }}" alt=""/>
+                    免费量房与报价
+                </a>
+                <div class="search_i">
+                    <input type="text" placeholder="海量效果图任你选"/>
+                    <div class="click">
+                        <img src="{{ asset('/new/home/publicused/img/search_i.png') }}" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav">
+            @php
 $nav =\DB::table('nav')
 ->join('webpage','nav.pid','=','webpage.id')
 ->select('nav.id','nav.title','nav.status','webpage.url')
@@ -40,9 +70,9 @@ $nav =\DB::table('nav')
 ->get();
 @endphp     
             @foreach($nav as $i => $j)
-            <li><a href="{{ $j->url }}">{{ $j->title }}</a></li>
+            <a href="{{ $j->url }}" @if(isset($title) && $title['title'] == $j->title ) class="avtive" @endif>{{ $j->title }}</a>
             @endforeach
-        </ul>
+        </div>
         <a href="javascript:;" class="botton">
             <span></span>
             <span></span>
@@ -50,6 +80,7 @@ $nav =\DB::table('nav')
         </a>
     </div>
 </div>
+
 
 @yield('content')
 

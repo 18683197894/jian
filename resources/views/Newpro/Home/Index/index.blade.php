@@ -2,267 +2,371 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('/new/home/index/index.css') }}">
-    <link rel="stylesheet" href="{{ asset('/new/home/bannerList/bannerList.css') }}">
+<link rel="stylesheet" href="{{ asset('/new/home/bannerList/bannerList.css') }}">
 
 @endsection('css')
 
 @section('content')
 <!--banner图 轮播-->
-<div class="banner pc">
+<div class="banner">
     <ul class="">
-        <li class="pc"><a href="javascript:;"><img src="{{ asset('/new/home/index/img/banner3.png') }}" alt=""></a></li>
-        <li class="pc"><a href="javascript:;"><img src="{{ asset('/new/home/index/img/banner2.png') }}" alt=""></a></li>
+        <li><a href="javascript:;"><img src="{{ asset('/new/home/index/img/banner1.jpg') }}" alt=""></a></li>
     </ul>
     <div class="left-btn"></div>
     <div class="right-btn"></div>
     <div class="img-btn-list"></div>
 </div>
-<div class="banner mo">
-    <ul class="">
-        <li class="pc"><a href="javascript:;"><img src="{{ asset('/new/home/index/img/3_1.png') }}" alt=""></a></li>
-        <li class="pc"><a href="javascript:;"><img src="{{ asset('/new/home/index/img/2_1.png') }}" alt=""></a></li>
-    </ul>
-    <div class="left-btn"></div>
-    <div class="right-btn"></div>
-    <div class="img-btn-list"></div>
+
+<div class="index_interval">
+    <div class="Center">
+        <div class="fl">
+            <img src="{{ asset('/new/home/index/img/Center1.png') }}"  alt=""/>
+            <div class="Center_Text">
+                <span>省钱装修</span>
+                <span class="Small">全程６大免费服务</span>
+            </div>
+        </div>
+        <div class="fl">
+            <img src="{{ asset('/new/home/index/img/Center2.png') }}" alt=""/>
+            <div class="Center_Text">
+                <span>免费预算报价</span>
+                <span class="Small">预算看不懂，我帮你</span>
+            </div>
+        </div>
+        <div class="fl">
+            <img src="{{ asset('/new/home/index/img/Center3.png') }}" alt=""/>
+            <div class="Center_Text">
+                <span>建商装修包</span>
+                <span class="Small">装修界的金点子</span>
+            </div>
+        </div>
+        <div class="fl">
+            <img src="{{ asset('/new/home/index/img/Center4.png') }}" alt=""/>
+            <div class="Center_Text">
+                <span>装修分期</span>
+                <span class="Small">帮您搞定装修资金</span>
+            </div>
+        </div>
+    </div>
 </div>
-<!--智能社区-->
-<div class="Intelligence">
-    <a href="{{ url('/newpro/smarthome') }}">
-        <img src="{{ asset('/new/home/index/img/Furnishing.png') }}" alt=""/>
-        <span class="title">智能家居</span>
-        <span class="brief">健康智能家居系统</span>
-        <i></i>
-        <!--隐藏栏目-->
-        <div class="hide">
-            <div class="hide_title NO1">智能家居系统</div>
-            <div class="connet">
-                <span></span>
-                <em>智能灯光系统</em>
-            </div>
-            <div class="connet">
-                <span></span>
-                <em>智能安防系统</em>
-            </div>
-            <div class="connet">
-                <span></span>
-                <em>家电控制系统</em>
-            </div>
-            <div class="connet">
-                <span></span>
-                <em>影音娱乐系统</em>
-            </div>
+<!--工程案例-->
+<div class="Project">
+    <div class="Title">
+        <div class="top">Project case</div>
+        <div class="bar">
+            <div class="text">工程案列</div>
+            <div class="bar_l"></div>
+            <div class="bar_r"></div>
         </div>
-    </a>
-    <a href="{{ url('/newpro/ressmartunity') }}">
-        <img src="{{ asset('/new/home/index/img/Community.png') }}" alt=""/>
-        <span class="title">智慧社区</span>
-        <span class="brief">建商住宅智慧社区</span>
-        <i></i>
-        <!--隐藏栏目-->
-        <div class="hide">
-            <div class="hide_title NO2">智家智慧社区</div>
-            <div class="connet">
-                <span></span>
-                <em>智能家居</em>
-            </div>
-            <div class="connet">
-                <span></span>
-                <em>智慧物业</em>
-            </div>
-            <div class="connet">
-                <span></span>
-                <em>社区O2O</em>
-            </div>
-            <div class="connet">
-                <span></span>
-                <em>云数据管理</em>
-            </div>
-        </div>
-    </a>
-    <a href="{{ url('/newpro/businsmart') }}">
-        <img src="{{ asset('/new/home/index/img/Trading.png') }}" alt=""/>
-        <span class="title">智慧商圈</span>
-        <span class="brief">商业地产智慧管理系统</span>
-        <i></i>
-        <!--隐藏栏目-->
-        <div class="hide">
-            <div class="hide_title NO3">商业地产管理</div>
-            <div class="connet">
-                <span></span>
-                <em>智慧门禁管理</em>
-            </div>
-            <div class="connet">
-                <span></span>
-                <em>智慧电梯管理</em>
-            </div>
-            <div class="connet">
-                <span></span>
-                <em>智慧停车管理</em>
-            </div>
-            <div class="connet">
-                <span></span>
-                <em>智慧能源管理</em>
-            </div>
-        </div>
-    </a>
-    <a href="javascript:;">
-        <img src="{{ asset('/new/home/index/img/The_trip.png') }}" alt=""/>
-        <span class="title">智慧文旅</span>
-        <span class="brief">文旅地产智慧管理系统</span>
-        <i></i>
-        <!--隐藏栏目-->
-        <div class="hide">
-            <div class="hide_title NO4">文旅地产管理</div>
-            <div class="connet">
-                <span></span>
-                <em>旅游地产管理</em>
-            </div>
-            <div class="connet">
-                <span></span>
-                <em>旅游地产服务</em>
-            </div>
-            <div class="connet">
-                <span></span>
-                <em>O2O互动营销</em>
-            </div>
-            <div class="connet">
-                <span></span>
-                <em>云数据管理</em>
-            </div>
-        </div>
-    </a>
-</div>
-<!--案列-->
-<div class="Case">
-    <div class="title">工程案列</div>
-    <div class="brief">我们积累了各行业丰富的案例和经验</div>
-    <div class="Case_loop">
-        
-        <a href="{{ url('/newpro/estate/zhijin') }}">
-            <img src="{{ asset('/new/home/index/img/Case2.png') }}" alt=""/>
+        <div class="bottom">公司品质保障  放心服务  全包无忧</div>
+    </div>
+    <div class="Show">
+        <a href="{{ url('/newpro/estate/zheshang') }}">
+            <img src="{{ asset('/new/home/index/img/Project1.png') }}" alt=""/>
+            <span>浙商.临港新天地</span>
             <div class="hide">
-                <div class="hide_aout">
-                    <div class="title">织金万都铭城</div>
-                    <i></i>
-                    <div class="content">
-                        贵州省5个100工程；贵州省100个城市综合体之一；织金县唯一城市综合体；织金县重点招商引资项目；织金指定返乡创业基地；县重点招商引资项目；
-                    </div>
+                <div class="Center">
+                    浙商·临港新天地是由宜宾浙商西部金融科技城发展有限公司打造的集金融、科技、现代服务业、大型商业于一体的纯商业综合体项目。
                 </div>
             </div>
         </a>
         <a href="{{ url('/newpro/estate/defu') }}">
-            <img src="{{ asset('/new/home/index/img/Case3.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/index/img/Project2.png') }}" alt=""/>
+            <span>德福公元</span>
             <div class="hide">
-                <div class="hide_aout">
-                    <div class="title">德福公元</div>
-                    <i></i>
-                    <div class="content">
-                        宜宾德福公元项目位于四川省宜宾市宜宾县，地块位于金江大道南侧，场地内高差较大。本项目位于宜宾县城北新区，是未来宜宾县新的行政、商住、和金融中心。
-                    </div>
+                <div class="Center">
+                    宜宾德福公元项目位于四川省宜宾市宜宾县，地块位于金江大道南侧，场地内高差较大。本项目位于宜宾县城北新区，是未来宜宾县新的行政、商住、和金融中心。
                 </div>
             </div>
         </a>
-        <a href="{{ url('/newpro/estate/zheshang') }}">
-            <img src="{{ asset('/new/home/index/img/Case4.png') }}" alt=""/>
+        <a href="{{ url('/newpro/estate/zhijin') }}">
+            <img src="{{ asset('/new/home/index/img/Project3.png') }}" alt=""/>
+            <span>织金.万都铭城</span>
             <div class="hide">
-                <div class="hide_aout">
-                    <div class="title">浙商.临港新天地</div>
-                    <i></i>
-                    <div class="content">
-                        浙商·临港新天地是由宜宾浙商西部金融科技城发展有限公司打造的集金融、科技、现代服务业、大型商业于一体的纯商业综合体项目。
-                    </div>
+                <div class="Center">
+                    贵州省5个100工程；贵州省100个城市综合体之一；织金县唯一城市综合体；织金县重点招商引资项目；织金指定返乡创业基地；县重点招商引资项目；
                 </div>
             </div>
         </a>
-        <a href="javascript:;">
-            <img src="{{ asset('/new/home/index/img/Case1.png') }}" alt=""/>
+        <a href="#">
+            <img src="{{ asset('/new/home/index/img/Project4.png') }}" alt=""/>
+            <span>临港.会展中心</span>
             <div class="hide">
-                <div class="hide_aout">
-                    <div class="title">孵化园项目</div>
-                    <i></i>
-                    <div class="content">
+                <div class="Center">
 
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="javascript:;">
-            <img src="{{ asset('/new/home/index/img/Case5.png') }}" alt=""/>
-            <div class="hide">
-                <div class="hide_aout">
-                    <div class="title">丽雅置地（丽雅时代）</div>
-                    <i></i>
-                    <div class="content">
-                        丽雅时代，丽雅置地南溪一号作品，19万方超大综合体，傲立未来中央CBD上，聚合政务、首启多核建筑模式，即将创领一站式都会享受、助推新区跨越式发展。
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="javascript:;">
-            <img src="{{ asset('/new/home/index/img/Case6.png') }}" alt=""/>
-            <div class="hide">
-                <div class="hide_aout">
-                    <div class="title">鲁能山水原著</div>
-                    <i></i>
-                    <div class="content">
-                        “Garden city”花园城市的开发理念，依托七星山、凤凰溪、宋家坡公园、栖凤公园得天独厚的自然生态资源。
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="javascript:;">
-            <img src="{{ asset('/new/home/index/img/Case7.png') }}" alt=""/>
-            <div class="hide">
-                <div class="hide_aout">
-                    <div class="title">五粮液集团</div>
-                    <i></i>
-                    <div class="content">
-                        集团公司已发展成为以酒业为核心主业、多元化发展（现代机械制造、高分子材料、现代包装、现代物流为支柱产业）的产业格局。
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="javascript:;">
-            <img src="{{ asset('/new/home/index/img/Case8.png') }}" alt=""/>
-            <div class="hide">
-                <div class="hide_aout">
-                    <div class="title">远达房产</div>
-                    <i></i>
-                    <div class="content">
-                        简洁的造型和优雅的线条辅以国际流行的色调和非对称性的手法，彰显都市感和现代感，表现出居住者的品味。
-                    </div>
                 </div>
             </div>
         </a>
     </div>
 </div>
-<!--动态新闻-->
-@if(count($news) > 0)
-<div class="News">
-    <div class="title">动态新闻</div>
-    <div class="brief">记录我们成长的每一步</div>
-    <div class="News_show">
-    @foreach($news as $k => $v)
-        <a href="{{ url('/newpro/newslist/play') }}/{{ $v->id }}">
-            <img src="{{ asset('/uploads/news/titleimg') }}/{{ $v->titleimg }}" alt=""/>
-            <div class="content">
-                <div class="titlel">{{ mb_substr($v->title,0,24,'utf8')  }}</div>
-                <div class="brief1">
-                    @if(mb_strlen($v->leicon,'utf8') > 114) {{ mb_substr($v->leicon,0,114,'utf8')}} ... @else {{$v->leicon}} @endif
-                </div>
-                <span class="See">查看详情</span>
+<!--品质保证-->
+<div class="Quality">
+    <div class="Title">
+        <div class="top">Decoration service process</div>
+        <div class="bar">
+            <div class="text">德系工艺品质保障</div>
+            <div class="bar_l"></div>
+            <div class="bar_r"></div>
+        </div>
+        <div class="bottom">公司品质保障  放心服务  全包无忧</div>
+    </div>
+    <div class="Course">
+        <div class="fl">
+            <img src="{{ asset('/new/home/index/img/Quality1.png')}}" alt="" class="Quality_png"/>
+            <img src="{{ asset('/new/home/index/img/Quality_r.png')}}" alt="" class="Quality_r"/>
+        </div>
+        <div class="fl">
+            <img src="{{ asset('/new/home/index/img/Quality2.png')}}" alt="" class="Quality_png"/>
+            <img src="{{ asset('/new/home/index/img/Quality_r.png')}}" alt="" class="Quality_r"/>
+        </div>
+        <div class="fl">
+            <img src="{{ asset('/new/home/index/img/Quality3.png')}}" alt="" class="Quality_pnt"/>
+            <img src="{{ asset('/new/home/index/img/Quality_r.png')}}" alt="" class="Quality_t"/>
+        </div>
+        <div class="fl">
+            <img src="{{ asset('/new/home/index/img/Quality4.png')}}" alt="" class="Quality_png"/>
+        </div>
+        <div class="fl">
+            <img src="{{ asset('/new/home/index/img/Quality5.png')}}" alt="" class="Quality_png"/>
+            <img src="{{ asset('/new/home/index/img/Quality_r.png')}}" alt="" class="Quality_r"/>
+        </div>
+        <div class="fl">
+            <img src="{{ asset('/new/home/index/img/Quality6.png')}}" alt="" class="Quality_png"/>
+            <img src="{{ asset('/new/home/index/img/Quality_r.png')}}" alt="" class="Quality_r"/>
+        </div>
+        <div class="fl">
+            <img src="{{ asset('/new/home/index/img/Quality7.png')}}" alt=""/>
+            <img src="{{ asset('/new/home/index/img/Quality_r.png')}}" alt="" class="Quality_t"/>
+        </div>
+        <div class="fl">
+            <img src="{{ asset('/new/home/index/img/Quality8.png')}}" alt=""/>
+        </div>
+        
+    </div>
+</div>
+<!--装修套餐-->
+<div class="Package">
+    <div class="Title">
+        <div class="top">Decoration course</div>
+        <div class="bar">
+            <div class="text">装修套餐</div>
+            <div class="bar_l"></div>
+            <div class="bar_r"></div>
+        </div>
+        <div class="bottom">公司品质保障  放心服务  全包无忧</div>
+    </div>
+    <div class="Show">
+        <a href="#" class="Show_One">
+            <img src="{{ asset('/new/home/index/img/Package1.png') }}" alt="" class="Package_D"/>
+            <div class="text">
+                <span>基装主材包</span>
             </div>
         </a>
+        <a href="#" class="Show_Two">
+            <img src="{{ asset('/new/home/index/img/Package2.png') }}" alt="" class="Package_D"/>
+            <div class="text">
+                <span>精致软装包</span>
+            </div>
+        </a>
+        <a href="#" class="Show_Three">
+            <img src="{{ asset('/new/home/index/img/Package3.png') }}" alt="" class="Package_D"/>
+            <div class="text">
+                <span>智能家居包</span>
+            </div>
+        </a>
+    </div>
+</div>
+<!--装修案列-->
+@if(count($case) >0)
+<div class="Case">
+    <div class="Title">
+        <div class="top">Real case scenario</div>
+        <div class="bar">
+            <div class="text">装修案例</div>
+            <div class="bar_l"></div>
+            <div class="bar_r"></div>
+        </div>
+        <div class="bottom">发现小区真实案列  与邻居交流装修心得</div>
+    </div>
+    <div class="Show">
+    @foreach($case as $k => $v)
+        <div class="Show_a">
+            <a href="{{ url('/newpro/case/play/') }}/{{ $v->id }}" class="top">
+                <img src="{{ asset('uploads/case/img') }}/{{ $v->keting }}" alt=""/>
+                <div class="text">
+                    <div class="name">{{ $v->title }}</div>
+                    <div class="Label">
+                        <span>{{ $v->huxing }}</span>
+                        <span>{{ $v->fengge }}</span>
+                        <span>{{ $v->yusuan }}</span>
+                    </div>
+                </div>
+            </a>
+            <div class="Loop">
+            @foreach($v->eff as $kk => $vv)
+                <a href="{{ url('/newpro/case/play/') }}/{{ $v->id }}?a={{ $kk }}&b={{ $vv }}">
+                    <img src="{{ asset('uploads/case/img') }}/{{ $vv }}" alt=""/>
+                    <span>{{ $kk }}</span>
+                </a>
+            @endforeach
+            </div>
+        </div>
     @endforeach
+    </div>
+    <div class="Corner">
+
+
+
+
+    </div>
+</div>
+@endif
+<!--装修工艺-->
+<!-- <div class="Craf">
+    <div class="Title">
+        <div class="top">Decoration process</div>
+        <div class="bar">
+            <div class="text">装修工艺</div>
+            <div class="bar_l"></div>
+            <div class="bar_r"></div>
+        </div>
+        <div class="bottom">公司品质保障 放心服务 全包无忧</div>
+    </div>
+    <div class="Show">
+        <a href="#" class="left">
+            <img src="img/Craf1.png" alt=""/>
+            <div class="bg"></div>
+            <div class="text">
+                <div class="name">工友俱乐部</div>
+                <div class="resume">统一着装形象，统一施工标准，严格执行公司施工标准。</div>
+            </div>
+        </a>
+        <div class="right">
+            <a href="#" class="shot m_b">
+                <img src="img/shot1.png" alt=""/>
+                <div class="bg"></div>
+                <div class="text">
+                    <div class="name">墙地砖铺贴工艺</div>
+                    <div class="resume">十字缝线：十字缝线清晰，缝线均匀一致合格…</div>
+                </div>
+            </a>
+            <a href="#" class="shot m_b">
+                <img src="img/shot2.png" alt=""/>
+                <div class="bg"></div>
+                <div class="text">
+                    <div class="name">包管工艺</div>
+                    <div class="resume">下水管（排污管）包扎隔音棉，降低排污管…</div>
+                </div>
+            </a>
+            <a href="#" class="shot">
+                <img src="img/shot3.png" alt=""/>
+                <div class="bg"></div>
+                <div class="text">
+                    <div class="name">顶角线安装</div>
+                    <div class="resume">石膏线两沿平直，与墙体接触面一致…</div>
+                </div>
+            </a>
+            <a href="#" class="shot">
+                <img src="img/shot4.png" alt=""/>
+                <div class="bg"></div>
+                <div class="text">
+                    <div class="name">电路施工工艺</div>
+                    <div class="resume">石膏线两沿平直，与墙体接触面一致…</div>
+                </div>
+            </a>
         </div>
     </div>
-    @endif
+</div> -->
+<!--材料选购-->
+<div class="Choose">
+    <div class="Title">
+        <div class="top">Building materials to buy</div>
+        <div class="bar">
+            <div class="text">建材选购</div>
+            <div class="bar_l"></div>
+            <div class="bar_r"></div>
+        </div>
+        <div class="bottom">国内外知名厂家直供    品质生活从心开始</div>
+    </div>
+    <div class="Show">
+        <a href="javascript:;">
+            <img src="{{ asset('/new/home/index/img/Choose1.png')}}" alt=""/>
+        </a>
+        <a href="javascript:;">
+            <img src="{{ asset('/new/home/index/img/Choose2.png')}}" alt=""/>
+        </a>
+        <a href="javascript:;">
+            <img src="{{ asset('/new/home/index/img/Choose3.png')}}" alt=""/>
+        </a>
+        <a href="javascript:;">
+            <img src="{{ asset('/new/home/index/img/Choose4.png')}}" alt=""/>
+        </a>
+        <a href="javascript:;">
+            <img src="{{ asset('/new/home/index/img/Choose5.png')}}" alt=""/>
+        </a>
+        <a href="javascript:;">
+            <img src="{{ asset('/new/home/index/img/Choose6.png')}}" alt=""/>
+        </a>
+        <a href="javascript:;">
+            <img src="{{ asset('/new/home/index/img/Choose7.png')}}" alt=""/>
+        </a>
+        <a href="javascript:;">
+            <img src="{{ asset('/new/home/index/img/Choose8.png')}}" alt=""/>
+        </a>
+        <a href="javascript:;">
+            <img src="{{ asset('/new/home/index/img/Choose9.png')}}" alt=""/>
+        </a>
+        <a href="javascript:;">
+            <img src="{{ asset('/new/home/index/img/Choose10.png')}}" alt=""/>
+        </a>
+    </div>
 </div>
- 
+<!--知识学堂-->
+@if(count($plate) > 0)
+<div class="School">
+    <div class="Title">
+        <div class="top">Knowledge School</div>
+        <div class="bar">
+            <div class="text">新闻动态</div>
+            <div class="bar_l"></div>
+            <div class="bar_r"></div>
+        </div>
+        <div class="bottom">发现小区真实案列  与邻居交流装修心得</div>
+    </div>
+    <div class="Show">
+    @foreach($plate as $k => $v)
+        <div class="Loop">
+            <a href="{{ url('/newpro/newslist/') }}/{{ $v->id }}" class="Loop_img">
+                <img src="{{ asset('uploads/news/img/')}}/{{ $v->img }}" alt=""/>
+            </a>
+            <div class="text">
+            @foreach($v->news as $kk => $vv)
+                <a href="{{ url('/newpro/newslist/play/') }}/{{ $vv->id }}">{{ $vv->title }}</a>
+            @endforeach
+            </div>
+        </div>
+    @endforeach
+    </div>
+</div>
+@endif
 @endsection('content')
 
 @section('js')
 <script src="{{ asset('new/home/index/index.js') }}"></script>
+<script src="{{ asset('new/home/bannerList/bannerList.js') }}"></script>
+<script>
+    //bannerͼ
+    bannerListFn(
+            $(".banner"),
+            $(".img-btn-list"),
+            $(".left-btn"),
+            $(".right-btn"),
+            2000,
+            true
+    );
+    //    $(".banner ul li:gt(1)").remove()
+</script>
 
 @endsection('js')
+
+

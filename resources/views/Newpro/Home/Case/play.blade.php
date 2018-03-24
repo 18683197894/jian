@@ -1,4 +1,4 @@
-@extends('Newpro.Home.publicused')
+@extends('Newpro.Home.public')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('new/home/case/play.css') }}"/>
@@ -9,25 +9,36 @@
 <div class="Case_contact">
     <div class="current">当前位置：<a href="{{ url('/') }}">首页</a> > <a href="{{ url('/newpro/case/playindex?a=1') }}">完整案例</a> > <a href="#">案例详情</a></div>
     <div class="box1">
-        <div class="title">贵州织金万都铭城港式</div>
+        <div class="title">{{ $data->title }}</div>
         <div class="brief">
-            <span>小户型</span><span>现代</span><span>8万-12万</span>
+            <span>{{ $data->huxing }}</span><span>{{ $data->fengge }}</span><span>{{ $data->yusuan }}</span>
         </div>
         <div class="Carousel">
             <!--轮播-->
             <div class="win" index="{{ count($data->effect2) }}">
                 <div class="box">
-                    @foreach($data->effect2 as $k => $v)
+                    @if($a == null)
+                    @foreach($data->eff as $k => $v)
                     <div @if($loop->first) style="left:0" class="num1" @endif  index="{{ $loop->index }}"><img  src="{{ asset('/uploads/case/img/') }}/{{ $v }}" style="display: inline;"></div>
-                    
                     @endforeach
+                    @else
+                    @foreach($data->eff as $k => $v)
+                    <div @if($b == $v) style="left:0" class="num1" @endif index="{{ $loop->index }}"><img  src="{{ asset('/uploads/case/img/') }}/{{ $v }}" style="display: inline;"></div>
+                    @endforeach
+                    @endif
                 </div>
                 <div class="leftB">&lt;</div>
                 <div class="rightB">&gt;</div>
                 <ul class="con1_leftul">
-                @foreach($data->effect1 as $k => $v)
-                    <li id="index{{ $loop->index }}" @if($loop->first) style="display:block" @else style="display:none" @endif >{{ $v }}</li>
+                @if($a == null)
+                @foreach($data->eff as $kk => $vv)
+                    <li id="index{{ $loop->index }}" @if($loop->first) style="display:block" @else style="display:none" @endif >{{ $kk }}</li>
                 @endforeach
+                @else
+                @foreach($data->eff as $kk => $vv)
+                    <li id="index{{ $loop->index }}" @if($kk == $a) style="display:block" @else style="display:none" @endif >{{ $kk }}</li>
+                @endforeach
+                @endif
                 </ul>
             </div>
             <!--右边-->

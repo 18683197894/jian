@@ -450,6 +450,9 @@ Route::get('admin/question/zhijin/index','Admin\QuestionController@zhijinindex')
 Route::get('admin/question/defu/index','Admin\QuestionController@defuindex');
 Route::get('admin/question/defu/smartindex','Admin\QuestionController@defusmartindex');
 Route::post('admin/question/index/del','Admin\QuestionController@indexdel');
+
+Route::get('admin/paymentdiy/diyindex','Admin\PayController@diyindex');
+Route::post('admin/paymentdiy/diyindexdel','Admin\PayController@diyindexdel');
 });
 
 //web支付微信

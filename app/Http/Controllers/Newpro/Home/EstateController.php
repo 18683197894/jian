@@ -15,13 +15,17 @@ class EstateController extends Controller
 
     public function defudetails(Request $request)
     {
-    	$title = getwebpage($request->path());
+    	
     	$ors = $request->ors;
     	if( $ors != 'A1huxing' && $ors != 'A2huxing' && $ors != 'B1huxing' && $ors != 'B2huxing' && $ors != 'E1-1huxing' && $ors != 'E1-2huxing' && $ors != 'E1-3huxing')
     	{
     		return redirect('/newpro/estate/defu');
     	}
-    	return view('Newpro.Home.Estate.defudetails',['ors'=>$ors]);
+        $su = substr($ors,0,2);
+        $title['keyworlds'] = '建商联盟，精装房，建商网，德福公元'.$su.'户型' ;
+        $title['description'] = '建商联盟，精装房，建商网，德福公元'.$su.'户型' ;
+        $title['title'] = '德福公元'.$su.'户型' ;
+    	return view('Newpro.Home.Estate.defudetails',['ors'=>$ors,'title'=>$title]);
     }
     public function zheshang(Request $request)
     {
@@ -37,7 +41,11 @@ class EstateController extends Controller
     	{
     		return redirect('/newpro/estate/zheshang');
     	}
-    	return view('Newpro.Home.Estate.zheshangdetails',['ors'=>$ors]);
+        $su = substr($ors,0,1);
+        $title['keyworlds'] = '建商联盟，精装房，建商网，浙商新天地'.$su.'户型' ;
+        $title['description'] = '建商联盟，精装房，建商网，浙商新天地'.$su.'户型' ;
+        $title['title'] = '浙商新天地'.$su.'户型' ;
+    	return view('Newpro.Home.Estate.zheshangdetails',['ors'=>$ors,'title'=>$title]);
     }
      public function zhijin(Request $request)
     {
@@ -60,7 +68,11 @@ class EstateController extends Controller
     	{
     		return redirect('/newpro/estate/zhijin');
     	}
-    	return view('Newpro.Home.Estate.zhijindetails',['ors'=>$ors]);
+        $su = substr($ors,0,1);
+        $title['keyworlds'] = '建商联盟，精装房，建商网，织金万都铭城'.$su.'户型' ;
+        $title['description'] = '建商联盟，精装房，建商网，织金万都铭城'.$su.'户型' ;
+        $title['title'] = '织金万都铭城'.$su.'户型' ;
+    	return view('Newpro.Home.Estate.zhijindetails',['ors'=>$ors,'title'=>$title]);
     }
 
     public function zhijininter(Request $request)

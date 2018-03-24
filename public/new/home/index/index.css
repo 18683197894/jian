@@ -1,487 +1,902 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
 body{
-    background-color: #fff;
+    background-color: #ffffff;
+    font-family: '微软雅黑',Helvetica,sans-serif!important;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
 }
 .banner{
-    margin-top: 75px;
+    margin-top: 165px;
 }
-.Intelligence{
+.index_interval{
     width: 100%;
-    margin-top:50px;
     overflow: hidden;
-}
-.Intelligence a{
-    display: block;
-    text-decoration: none;
-    overflow: hidden;
-    float: left;
-    width: 25%;
-    position: relative;
-    padding-top: 70px;
-    padding-bottom: 70px;
-}
-.banner.mo{
-    display: none;
-}
-.banner > ul > li > a img{
-    width: 100%;
-}
-.banner > ul > .mo{
-    display: none;
-} 
-.Intelligence a:nth-child(1){
-    background-color: #F2AB2B;
-    padding-top: 70px;
-    padding-bottom: 70px;
-    box-sizing: border-box;
-}
-.Intelligence a:nth-child(2){
-    background-color: #E13E32;
-    padding-top: 70px;
-    padding-bottom: 70px;
-    box-sizing: border-box;
-}
-.Intelligence a:nth-child(3){
-    background-color: #5AA6B2;
-    padding-top: 70px;
-    padding-bottom: 70px;
-    box-sizing: border-box;
-}
-.Intelligence a:nth-child(4){
-    background-color: #7FC6B4;
-    padding-top: 70px;
-    padding-bottom: 70px;
-}
-.Intelligence a img{
-    display: block;
-    margin: auto;
-}
-.Intelligence a .title{
-    font-size: 25px;
-    color: #fff;
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin-top: 35px;
-    margin-bottom: 8px;
-}
-.Intelligence a .brief{
-    font-size: 20px;
-    color: #fff;
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
-}
-.Intelligence a i{
-    display: block;
-    width: 50px;
-    height: 4px;
-    background-color: #ffffff;
-    margin: auto;
-    margin-top: 15px;
-}
-.hide{
-    width: 100%;
-    height: 100%;
+    height: 140px;
     background-color: #F5F5F5;
-    position: absolute;
-    left: -100%;
-    top: 0;
-    -webkit-transition: margin-left 1s;
-    -moz-transition: margin-left 1s;
-    -o-transition: margin-left 1s;
 }
-.Intelligence a:hover .hide{
-    margin-left: 100%;
+.index_interval .Center{
+    width: 1200px;
+    margin: auto;
 }
-.hide_title{
+.Center .fl{
+    width: 25%;
+    cursor: pointer;
+}
+.Center .fl img{
+    display: block;
+    width: 90px;
+    height: 90px;
+    margin-top: 25px;
+    float: left;
+}
+.Center .fl img:hover{
+    transform:rotate(360deg);
+    -ms-transform:rotate(360deg); 	/* IE 9 */
+    -moz-transform:rotate(360deg); 	/* Firefox */
+    -webkit-transform:rotate(360deg); /* Safari 和 Chrome */
+    -o-transform:rotate(360deg);
+    transition: all 2s ease-in-out;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+}
+.Center_Text{
+    margin-left: 20px;
+    float: left;
+    width: 190px;
+    margin-top: 40px;
+}
+.Center_Text span{
+    display: block;
     width: 100%;
-    margin-top: 70px;
-    text-align: center;
-    font-size: 25px;
-    font-weight: 600;
-    margin-bottom: 50px;
-}
-.hide .NO1{
+    line-height: 30px;
+    font-size: 21px;
     color: #f2ab2b;
 }
-.hide .NO2{
-    color: #e13e32;
+.Center_Text .Small{
+    font-size: 18px;
 }
-.hide .NO3{
-    color: #5aa6b2;
+.Project{
+    width: 1200px;
+    padding-top: 60px;
+    margin: auto;
+    overflow: hidden;
 }
-.hide .NO4{
-    color: #7fc6b4;
+.Project .Title{
+    width: 100%;
 }
-.hide .connet{
-    display: block;
+.Project .Title .top{
+    width: 100%;
     text-align: center;
-    position: relative;
-    margin-top:15px;
+    font-size: 18px;
     color: #999999;
 }
-.hide .connet span{
-    background-color: #999999;
-    width: 8px;
-    height: 8px;
-    display: block;
+.Project .Title .bar{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    font-size: 22px;
+    color: #333333;
+    position: relative;
+ }
+.Project .Title .bar .text{
+    width: 100%;
+    overflow: hidden;
+    line-height: 40px;
+}
+.Project .bar_l{
+    width: 44%;
+    height: 40px;
+    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
     position: absolute;
-    top: 6px;
-    left: 35%;
+    top: 0;
+    left: 0;
 }
-.hide .connet em{
+.Project .bar_r{
+    width: 44%;
+    height: 40px;
+    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.Project .Title .bottom{
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
     color: #999999;
 }
-.Case{
+.Project .Show{
     width: 100%;
     overflow: hidden;
-    margin-top: 60px;
-    padding-bottom: 60px;
-    background-color: #ffffff;
+    margin-top: 20px;
 }
-.Case .title{
-    display: block;
-    width: 100%;
-    font-size: 25px;
-    text-align: center;
-    color: #666666;
-    line-height: 40px;
-}
-.Case .brief{
-    width: 100%;
-    line-height: 40px;
-    display: block;
-    font-size: 20px;
-    text-align: center;
-    color: #666666;
-}
-.Case_loop{
-    width: 100%;
-    overflow: hidden;
-    margin-top: 10px;
-}
-.Case_loop a{
-    display: block;
-    float: left;
+.Project .Show a{
     width: 25%;
-    position: relative;
+    float: left;
+    display: block;
     overflow: hidden;
+    border-left: 3px solid #ffffff;
+    border-right: 3px solid #ffffff;
+    box-sizing: border-box;
+    position: relative;
 }
-.Case_loop a img{
+.Project .Show a img{
     display: block;
     width: 100%;
+    overflow: hidden;
 }
-.Case_loop a .hide{
+.Project .Show a span{
+    display: block;
     width: 100%;
-    height: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #333333;
+}
+.Project .Show a .hide{
+    width: 100%;
+    height: 89%;
     position: absolute;
     left: 0;
     top: 0;
-    background:rgba(0,0,0,0);
+    background: rgba(0,0,0,0);
     transition: all 2s;
-    opacity:0;
-
+    opacity: 0;
+    margin: auto;
+    overflow: hidden;
 }
-.Case_loop a:hover .hide{
+.Project .Show a:hover .hide{
     background:rgba(0,0,0,0.5);
     opacity:1;
 }
-.hide_aout{
-    width: 90%;
-    height: 90%;
-    border: 1px solid #ffffff;
-    margin: auto;
-    margin-top: 3.2%;
+.Project .Show a .hide .Center{
+    width: 85%;
     overflow: hidden;
-}
-.hide_aout .title{
-    width: 100%;
-    margin-top: 30px;
-    font-size: 15px;
-    color: #fff;
-    text-align: center;
-    font-weight: 500;
-}
-.hide_aout i{
-    width: 20px;
-    height: 3px;
-    display: block;
     margin: auto;
-    background-color: #ffffff;
-}
-.hide_aout .content{
-    width: 80%;
-    overflow: hidden;
     line-height: 30px;
     color: #ffffff;
-    margin: auto;
-    margin-top: 15px;
-    font-size: 12px;
+    padding-top: 30%;
+    font-size: 16px;
 }
-.News{
+.Quality{
+    width: 1200px;
+    padding-top: 60px;
+    margin: auto;
+    overflow: hidden;
+}
+.Quality .Title{
+    width: 100%;
+}
+.Quality .Title .top{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: #999999;
+}
+.Quality .Title .bar{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    font-size: 22px;
+    color: #333333;
+    position: relative;
+}
+.Quality .Title .bar .text{
+    width: 100%;
+    overflow: hidden;
+    line-height: 40px;
+}
+.Quality .bar_l{
+    width: 41%;
+    height: 40px;
+    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.Quality .bar_r{
+    width: 41%;
+    height: 40px;
+    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.Quality .Title .bottom{
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: #999999;
+}
+.Quality .Course{
     width: 100%;
     overflow: hidden;
     background-color: #F5F5F5;
-    padding-bottom: 10px;
+    margin-top: 25px;
+    padding-bottom: 15px;
 }
-.News .title{
-    display: block;
-    width: 100%;
-    font-size: 25px;
-    text-align: center;
-    color: #666666;
-    line-height: 40px;
-    margin-top: 30px;
-}
-.News .brief{
-    width: 100%;
-    line-height: 40px;
-    display: block;
-    font-size: 20px;
-    text-align: center;
-    color: #666666;
-}
-.News_show{
-    width: 100%;
+.Quality .Course .fl{
+    width: 25%;
     overflow: hidden;
-    padding-bottom: 30px;
-    padding-top: 30px;
+    margin-top: 15px;
 }
-.News_show a{
+.Quality .Course .fl img{
     display: block;
     float: left;
-    width: 25%;
-    border-right: 7px solid #F5F5F5;
-    box-sizing: border-box;
-    background-color: #ffffff;
-    overflow: hidden;
-    padding-bottom: 10px;
 }
-.News_show a img{
+.Quality .Course .fl .Quality_r{
+    float: right;
+    margin-top: 20px;
+    margin-right: 32px;
+}
+.Quality_png{
+    margin-left: 10px;
+}
+.Quality .Course .fl .Quality_t{
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+.Quality_pnt{
+    margin-left: 0;
+}
+.Package{
+    width: 1200px;
+    padding-top: 60px;
+    margin: auto;
+    overflow: hidden;
+}
+.Package .Title{
+    width: 100%;
+}
+.Package .Title .top{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: #999999;
+}
+.Package .Title .bar{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    font-size: 22px;
+    color: #333333;
+    position: relative;
+}
+.Package .Title .bar .text{
+    width: 100%;
+    overflow: hidden;
+    line-height: 40px;
+}
+.Package .bar_l{
+    width: 44%;
+    height: 40px;
+    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.Package .bar_r{
+    width: 44%;
+    height: 40px;
+    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.Package .Title .bottom{
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: #999999;
+}
+.Package .Show{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+}
+.Package .Show a{
+    display: block;
+    width: 33.333%;
+    overflow: hidden;
+    float: left;
+    border-left: 4px solid #ffffff;
+    border-right: 4px solid #ffffff;
+    box-sizing: border-box;
+}
+.Package_D{
     display: block;
     width: 100%;
-    height:202px;
+    overflow: hidden;
     transition: all 0.6s;
 }
-.News_show a .content{
-    width: 90%;
-    overflow: hidden;
-    margin: auto;
-}
-.News_show a .content .titlel{
+.Package .Show a .text{
     width: 100%;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 30px;
+    height: 60px;
+    background-color: #F5F5F5;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
-.News_show a .content .brief1{
-    font-size: 12px;
-    line-height: 20px;
-    margin-bottom: 10px;
-    overflow: hidden;
-}
-.News_show a .content .See{
-    float: right;
-    display: block;
-    width: 60px;
-    height:20px;
 
-    border: 1px solid #999;
-    font-size: 12px;
+.Show_One .text{
+    background: url("/new/home/index/img/Package_x1.png") no-repeat left 115px top 15px;
+}
+.Show_Two .text{
+    background: url("/new/home/index/img/Package_x2.png") no-repeat left 115px top 15px;
+}
+.Show_Three .text{
+    background: url("/new/home/index/img/Package_x3.png") no-repeat left 115px top 15px;
+}
+.Package .Show a .text span{
+    display: block;
     text-align: center;
-    border-radius: 5px;
-    color: #999;
+    margin-left: 12px;
+    line-height: 60px;
+    color: #666666;
+    font-size: 25px;
+    text-indent: 20px;
 }
-.News_show a:hover img{
-    transform: scale(0.8);
+.Package .Show .Show_One:hover .text{
+    color: #E12E32;
+    background: url("/new/home/index/img/Package_x1h.png") no-repeat left 115px top 15px;
+    background-color: #F5F5F5;
 }
-.News_show a:hover .content .See{
-    border: 1px solid #E12E32;
+.Package .Show .Show_Two:hover .text{
+    color: #E12E32;
+    background: url("/new/home/index/img/Package_x2h.png") no-repeat left 115px top 15px;
+    background-color: #F5F5F5;
+}
+.Package .Show .Show_Three:hover .text{
+    color: #E12E32;
+    background: url("/new/home/index/img/Package_x3h.png") no-repeat left 115px top 15px;
+    background-color: #F5F5F5;
+}
+.Package .Show a:hover .text span{
     color: #E12E32;
 }
-.News_show a:hover .content .brief1{
-    color: #5AA6B2;
+.Package .Show a:hover .Package_D{
+    transform: scale(0.9);
 }
-.News_show a:hover .content .titlel{
-    color: #E13E32;
-}
-.cooperation{
-    width: 100%;
-    overflow: hidden;
-    background-color: #ffffff;
-}
-.cooperation .auto{
-    width: 90%;
+.Case{
+    width: 1200px;
+    padding-top: 60px;
     margin: auto;
     overflow: hidden;
 }
-.cooperation .auto .brief{
+.Case .Title{
     width: 100%;
-    line-height: 40px;
-    display: block;
-    font-size: 20px;
-    text-align: center;
-    color: #666666;
 }
-.cooperation .auto .title{
+.Case .Title .top{
     width: 100%;
     text-align: center;
-    display: block;
-    font-size: 25px;
-    color: #666666;
-    line-height: 40px;
-    margin-top: 30px;
+    font-size: 18px;
+    color: #999999;
 }
-.cooperation_logo{
+.Case .Title .bar{
     width: 100%;
     overflow: hidden;
-    border: 1px solid #DFDFDF;
-    box-sizing: border-box;
-    border-bottom: none;
-    margin-top: 30px;
-    margin-bottom: 300px;
+    text-align: center;
+    font-size: 22px;
+    color: #333333;
+    position: relative;
 }
-.cooperation_logo a{
-    width: 16.66666667%;
+.Case .Title .bar .text{
+    width: 100%;
     overflow: hidden;
-    border: 1px solid #DFDFDF;
-    box-sizing: border-box;
-    height: 70px;
+    line-height: 40px;
+}
+.Case .bar_l{
+    width: 44%;
+    height: 40px;
+    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.Case .bar_r{
+    width: 44%;
+    height: 40px;
+    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.Case .Title .bottom{
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: #999999;
+}
+.Case .Show{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+}
+.Case .Show a{
     display: block;
-    text-align:center;
-    vertical-align:middle;
+    width: 25%;
     float: left;
-    border-right: none;
-    border-top: none;
+    overflow: hidden;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    box-sizing: border-box;
 }
-.cooperation_logo .add_class{
+.Case{
+    width: 1200px;
+    padding-top: 60px;
+    margin: auto;
+    overflow: hidden;
+}
+.Case .Title{
+    width: 100%;
+}
+.Case .Title .top{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: #999999;
+}
+.Case .Title .bar{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    font-size: 22px;
+    color: #333333;
+    position: relative;
+}
+.Case .Title .bar .text{
+    width: 100%;
+    overflow: hidden;
+    line-height: 40px;
+}
+.Case .bar_l{
+    width: 44%;
+    height: 40px;
+    background: url("../img/bar_l.png") no-repeat right 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.Case .bar_r{
+    width: 44%;
+    height: 40px;
+    background: url("../img/bar_r.png") no-repeat left 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.Case .Title .bottom{
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: #999999;
+}
+.Case .Show{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+}
+.Case .Show .Show_a{
+    display: block;
+    width: 25%;
+    float: left;
+    overflow: hidden;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.Case .Show .Show_a a{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+.Case .Show .Show_a .top img{
+    display: block;
+    width: 100%;
+    height: 170px;
+    overflow: hidden;
+    transition: all 0.6s;
+}
+.Case .Show .Show_a .top:hover img{
+    transform: scale(0.9);
+}
+.Case .Show .Show_a .top:hover .text .name{
+    color: #E12E32;
+}
+.Case .Show .Show_a .top:hover .text .Label span{
+    color: #E12E32;
+}
+.Case .Show .Show_a .text{
+    width: 100%;
+    height: 80px;
+    background-color: #F5F5F5;
+}
+.Case .Show .Show_a .text .name{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    font-size: 18px;
+    color: #666666;
+    line-height: 45px;
+    text-indent: 15px;
+}
+.Case .Show .Show_a .text .Label{
+    width: 100%;
+    overflow: hidden;
+}
+.Case .Show .Show_a .text .Label span{
+    margin-left: 15px;
+    font-size: 14px;
+}
+.Case .Corner{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.Case .Loop{
+    display: block;
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    /*border-left: 1px solid #ffffff;*/
+    /*border-right: 1px solid #ffffff;*/
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+.Case .Show .Show_a .Loop a{
+    display: block;
+    width: 50%;
+    float: left;
+    overflow: hidden;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+    box-sizing: border-box;
+    height: 155px;
+    background-color:#F5F5F5;
+}
+.Case .Show .Show_a .Loop a:nth-child(2){
+    border-right: none;
+}
+.Case .Show .Show_a .Loop a:nth-child(1){
     border-left: none;
 }
-.cooperation_logo a .add_div{
-    width: 127px;
-    height: 70px;
-    display: table-cell;
-    vertical-align: middle;
+.Case .Show .Show_a .Loop a img{
+    display: block;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 10px;
+}
+.Case .Loop a span{
+    display: block;
+    width: 100%;
     text-align: center;
+    font-size: 16px;
+    color: #333333;
+    margin-top: 15px;
+}
+.Case .Loop a:hover span{
+    color: #E12E32;
+}
+.Craf{
+    width: 1200px;
+    padding-top: 60px;
     margin: auto;
+    overflow: hidden;
 }
-.cooperation_logo a img{
-    width: 127px;
-    height: 30px;
-    vertical-align: middle;
-    margin: auto;
+.Craf .Title{
+    width: 100%;
 }
-.img_hover{
-    display: none;
+.Craf .Title .top{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: #999999;
 }
-.cooperation_logo a:hover .img_hover{
+.Craf .Title .bar{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    font-size: 22px;
+    color: #333333;
+    position: relative;
+}
+.Craf .Title .bar .text{
+    width: 100%;
+    overflow: hidden;
+    line-height: 40px;
+}
+.Craf .bar_l{
+    width: 44%;
+    height: 40px;
+    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.Craf .bar_r{
+    width: 44%;
+    height: 40px;
+    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.Craf .Title .bottom{
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: #999999;
+}
+.Craf .Show{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+}
+.Craf .Show .left{
+    width: 50%;
+    float: left;
+    overflow: hidden;
+    border-right: 5px solid #ffffff;
+    box-sizing: border-box;
+    position: relative;
     display: block;
 }
-.cooperation_logo a:hover .img_od{
-    display: none;
+.Craf .Show .left img{
+    display: block;
+    width: 100%;
+    overflow: hidden;
 }
-.cooperation_logo a .vertical{
+.Craf .Show .left .bg{
+    width: 100%;
+    height: 90px;
+    background-color:#878F8E;
+    filter: blur(30px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+.Craf .Show .left .text{
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+}
+.Craf .Show .left .text .name{
+    color: #ffffff;
+    font-size: 18px;
+    text-indent: 20px;
+    line-height: 30px;
+}
+.Craf .Show .left .text .resume{
+    color: #ffffff;
+    font-size: 16px;
+    text-indent: 20px;
+}
+.Craf .Show .right{
+    width: 50%;
+    float: left;
+    overflow: hidden;
+    border-left: 3px solid #ffffff;
+    box-sizing: border-box;
+}
+.Craf .Show .right .shot{
+    width: 50%;
+    float: left;
+    overflow: hidden;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+}
+.Craf .Show .right .m_b{
+    margin-bottom: 10px;
+}
+.Craf .Show .right .shot .bg{
+    width: 100%;
+    height: 50px;
+    background-color:#878F8E;
+    filter: blur(25px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+.Craf .Show .right .shot .text{
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+}
+.Craf .Show .right .shot .text .name{
+    width: 100%;
+    font-size: 15px;
+    color: #ffffff;
+    text-indent: 10px;
+}
+.Craf .Show .right .shot .text .resume{
+    color: #ffffff;
+    font-size: 12px;
+    text-indent: 10px;
+}
+.Choose{
+    width: 1200px;
+    padding-top: 60px;
     margin: auto;
-    width: 127px;
+    overflow: hidden;
 }
-@media screen and (min-width: 1200px){
-    .News_show a .content .brief1{
-        height: 80px;
-    }
+.Choose .Title{
+    width: 100%;
 }
-@media screen and (max-width: 1700px){
-    .hide .connet span{
-        background-color: #999999;
-        width: 8px;
-        height: 8px;
-        display: block;
-        position: absolute;
-        top: 6px;
-        left: 28%;
-    }
+.Choose .Title .top{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: #999999;
 }
-@media screen and (max-width: 1020px){
-    .hide .connet span{
-        background-color: #999999;
-        width: 8px;
-        height: 8px;
-        display: block;
-        position: absolute;
-        top: 6px;
-        left: 36%;
-    }
-    .Intelligence a{
-        display: block;
-        text-decoration: none;
-        overflow: hidden;
-        float: left;
-        width: 100%;
-        position: relative;
-        padding-top: 70px;
-        padding-bottom: 70px;
-    }
-    .Case_loop a{
-        width: 100%;
-    }
-    .News_show a{
-        display: block;
-        float: left;
-        width: 100%;
-        border-right: 7px solid #F5F5F5;
-        box-sizing: border-box;
-        background-color: #ffffff;
-        overflow: hidden;
-        padding-bottom: 10px;
-    }
+.Choose .Title .bar{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    font-size: 22px;
+    color: #333333;
+    position: relative;
 }
-@media screen and (max-width: 880px){
-    .cooperation_logo{
-        margin-bottom: 30px;
-    }
-    .cooperation_logo a{
-        width: 100%;
-        height: 150px;
-    }
-    .cooperation_logo a .add_div{
-        width: 127px;
-        height: 150px;
-        display: table-cell;
-        vertical-align: middle;
-        text-align: center;
-        margin: auto;
-    }
-    .Case_loop a .hide{
-        background:rgba(0,0,0,0.5);
-        opacity:1;
-    }
-    .left-btn,.right-btn {
-        width: 61px;
-        height: 61px;
-        position: absolute;
-        top: 30%;
-        right: 30px;
-    }
-    .Intelligence{
-        width: 100%;
-        margin-top: 0;
-        overflow: hidden;
-    }
-    .hide .connet span{
-      display: none;
-    }
-    .hide_aout .title{
-        margin-top: 15px;
-    }
-    .hide_aout .content{
-        line-height: 20px;
-    }
+.Choose .Title .bar .text{
+    width: 100%;
+    overflow: hidden;
+    line-height: 40px;
 }
-@media screen and (max-width: 750px){
-    .banner.mo{
-        display: block;
-    }
-    .banner.pc{
-        display: none;
-    }
+.Choose .bar_l{
+    width: 44%;
+    height: 40px;
+    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.Choose .bar_r{
+    width: 44%;
+    height: 40px;
+    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.Choose .Title .bottom{
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: #999999;
+}
+.Choose .Show{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+}
+.Choose .Show a{
+    width: 20%;
+    overflow: hidden;
+    float: left;
+    display: block;
+    margin-bottom: 10px;
+}
+.Choose .Show a img{
+    display: block;
+    width: 95%;
+    margin: auto;
+}
+.School{
+    width: 1200px;
+    padding-top: 60px;
+    margin: auto;
+    overflow: hidden;
+    margin-bottom: 150px;
+}
+.School .Title{
+    width: 100%;
+}
+.School .Title .top{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: #999999;
+}
+.School .Title .bar{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    font-size: 22px;
+    color: #333333;
+    position: relative;
+}
+.School .Title .bar .text{
+    width: 100%;
+    overflow: hidden;
+    line-height: 40px;
+}
+.School .bar_l{
+    width: 44%;
+    height: 40px;
+    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.School .bar_r{
+    width: 44%;
+    height: 40px;
+    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.School .Title .bottom{
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: #999999;
+}
+.School .Show{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+}
+.School .Show .Loop{
+    width: 33.333%;
+    overflow: hidden;
+    border-left:4px solid #ffffff;
+    border-right: 4px solid #ffffff;
+    box-sizing: border-box;
+    float: left;
+}
+.School .Show .Loop .Loop_img{
+    width: 100%;
+    overflow: hidden;
+    display: block;
+}
+.School .Show  .Loop img{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+.School .Show .Loop .text{
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    background-color: #F5F5F5;
+}
+.School .Show .Loop .text a{
+    display: block;
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    color: #333333;
+    line-height: 40px;
+    text-indent: 12px;
+}
+.School .Show .Loop .text a:hover{
+    color: #E12E32;
 }

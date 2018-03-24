@@ -529,8 +529,9 @@ class="active"
           </ul>
         </li>
 @endif
-        <li class="
-@if($title == "织金调查问卷" || $title == "德福调查问卷" || $title ='德福智能家居调查问卷')
+        
+<li class="
+@if($title == "织金调查问卷" || $title == "德福调查问卷" || $title == "智能家居调查问卷")
 active
 @endif
         treeview">
@@ -554,12 +555,33 @@ class="active"
 @endif
             ><a href="{{ url('admin/question/defu/index') }}"><i class="fa fa-circle-o"></i>德福调查问卷</a>
             </li>
-
             <li
 @if($title == "智能家居调查问卷")
 class="active"
 @endif
             ><a href="{{ url('admin/question/defu/smartindex') }}"><i class="fa fa-circle-o"></i>智能家居调查问卷</a>
+            </li>
+          </ul>
+        </li>
+
+
+        <li class="
+@if($title == "建商支付")
+active
+@endif
+        treeview">
+          <a href="#">
+            <i class="fa fa-calendar"></i> <span>建商支付</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li
+@if($title == "建商支付")
+class="active"
+@endif
+            ><a href="{{ url('admin/paymentdiy/diyindex') }}"><i class="fa fa-circle-o"></i>建商支付</a>
             </li>
           </ul>
         </li> 

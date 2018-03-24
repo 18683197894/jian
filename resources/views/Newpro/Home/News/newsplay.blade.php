@@ -1,4 +1,4 @@
-@extends('Newpro.Home.publicused')
+@extends('Newpro.Home.public')
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('/new/home/newslist/newsplay.css') }}">

@@ -1,67 +1,152 @@
-
 *{
     margin: 0;
     padding: 0;
-
 }
 body{
-    font-family: 微软雅黑;
-    font-family: 'Microsoft YaHei';
-}
-li{
-    list-style-type:none;
+    font-family: 微软雅黑；
+font-family: "Microsoft YaHei";
 }
 .header{
     width: 100%;
-    height: 75px;
+    height: 165px;
     position: fixed;
     top: 0;
     left: 0;
     background: #fff;
-    opacity:1;
+    opacity: 1;
     z-index: 9999999999;
+    border-bottom: 2px solid #000000;
+}
+.Log_on{
+    width:100%;
+    height: 35px;
+    background-color: #f5f5f5;
+}
+.Log_on .auto{
+    width: 1200px;
+    margin: auto;
+    height: 100%;
+}
+.Log_on .auto a{
+    display: block;
+    float: right;
+    margin-left: 10px;
+    line-height: 20px;
+    font-size: 16px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-right: 1px solid #ccc;
+    height: 20px;
+    margin-top: 8px;
 }
 .header_atou{
     width: 1200px;
     height: 75px;
     margin: auto;
 }
+.header_atou{
+    width: 1200px;
+    height: 75px;
+    margin: auto;
+}
+.Logo_a{
+    display: block;
+    float: left;
+
+}
 .Logo{
     width: 177px;
     height: 59px;
     display: block;
-    float: left;
     margin-top: 8px;
-    margin-left:  10px;
 }
-.nav{
-    height: 75px;
-    line-height: 75px;
-    font-size: 20px;
-    color: #333333;
+.header_top{
+    width: 100%;
+    height: 80px;
+}
+.search{
     float: right;
 }
-.nav li{
-    display: block;
+.link{
     float: left;
     margin-right: 30px;
+    display: block;
+    margin-top: 30px;
+    color: #E85E61;
+}
+.search_i{
+    height: 30px;
+    border: 1px solid #CDCDCD;
+    float: left;
+    margin-top: 23px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.search_i input{
+    width: 170px;
+    display: block;
+    height: 30px;
+    border: none;
+    outline: none;
+    text-indent: 15px;
+    line-height: 30px;
+    float: left;
+}
+.search_i .click{
+    width: 37px;
+    height: 30px;
+    float: right;
+    background-color: #999999;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
     cursor: pointer;
 }
-.nav li:hover{
-    color: #c63232;
+.search_i .click img{
+    width: 16px;
+    height: 17px;
+    vertical-align:middle
 }
+.nav{
+    height: 50px;
+    line-height: 48px;
+    margin-left: 210px;
+}
+.nav a{
+    display: block;
+    float: left;
+    margin-left: 17px;
+    margin-right: 17px;
+    padding-left: 3px;
+    padding-right: 3px;
+    font-size: 20px;
+    color: #333333;
+}
+.nav a.avtive{
+    border-bottom: 2px solid #E12E32;
+}
+
 @media screen and (max-width: 1200px){
     .header_atou{
         width: 100%;
     }
+    .search{
+        margin-right: 10%;
+    }
+    .Log_on{
+        display: none;
+    }
 }
-@media screen and (max-width: 1045px){
+@media screen and (max-width: 1050px){
     .header_atou{
         width: 100%;
         position: relative;
         border-bottom: 1px solid #E7E7E7;
     }
-    .header_atou .botton{
+    .search{
+        display: none;
+    }
+    .botton{
         position: absolute;
         right: 30px;
         top: 15px;
@@ -70,7 +155,7 @@ li{
         border: 1px solid #DDDDDD;
         border-radius: 5px;
     }
-    .header_atou .botton span{
+    .botton span{
         display: block;
         width: 22px;
         height: 2px;
@@ -80,35 +165,27 @@ li{
         margin-top: 8px;
     }
     .header_atou .nav{
+        width: 100%;
         position: absolute;
         top: -500px;
         left: 0;
         background-color: #ffffff;
         height: 480px;
         border-bottom: 1px solid #E7E7E7;
-        -webkit-transition: margin-top 2s;
-        -moz-transition: margin-top 2s;
-        -o-transition: margin-top 2s;
+        -webkit-transition: all 5s;
+        -moz-transition: all 5s;
+        -o-transition: all 5s;
     }
-    .header_atou .nav li{
-        width: 100%;
-        line-height: 60px;
-        z-index: 99999;
-        text-indent: 50px;
+    .header{
+        height: 75px;
     }
     .header_atou .nav.avtive{
         margin-top: 575px;
     }
-    .header_atou .nav li a{
-        display: block;
+    .header_atou .nav a{
         width: 100%;
-    }
-}
-@media screen and (max-width: 800px){
-    *{
-        -webkit-text-size-adjust:none;
-    }
-    .Logo{
-        margin-left: 10px;
+        line-height: 60px;
+        z-index: 99999;
+        text-indent: 50px;
     }
 }

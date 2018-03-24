@@ -20,7 +20,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 button,input,select,textarea {
     outline: 0;
     resize: none;
-    -webkit-appearance: none;
 }
 
 body,button,input,select,textarea {
