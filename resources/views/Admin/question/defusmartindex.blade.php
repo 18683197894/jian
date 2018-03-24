@@ -64,7 +64,7 @@
                   <td  style="text-align: center;vertical-align: middle">{{ $v->reasonableprice }}</td>
                   <td  style="text-align: center;vertical-align: middle">{{ $v->operation }}</td>
                   <td  style="text-align: center;vertical-align: middle">{{ date('Y-m-d H:i:s',$v->time) }}</td>
-                  <td  style="text-align: center;vertical-align: middle"><a class="del" href="javascript:;">删除</a></td>
+                  <td  style="text-align: center;vertical-align: middle">@if(session('Admin')->status == 1)<a class="del" href="javascript:;">删除</a>@endif</td>
                   
                 </tr>
     @endforeach($data as $k => $v)

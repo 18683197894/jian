@@ -10,24 +10,7 @@ class IndexController extends Controller
     public function index(Request $request)
     {	
 
-    	$news =\DB::table('news')
-                        ->select('id','titleimg','title','leicon','time')
-                        ->where('szhi',1)
-                        ->orderBy('time','desc')
-                        ->get()->toArray();
-
-    	$count =count($news);
-        if($count < 8)
-        {
-            $newss = \DB::table('news')
-                        ->select('id','titleimg','title','leicon','time')
-                        ->where('szhi',0)
-                        ->orderBy('time','desc')
-                        ->offset(0)
-                        ->limit(8 - $count)
-                        ->get()->toArray();
-            $news = array_merge($news,$newss);
-        }
+    	
         //d
         $titles = getwebpage();
         $case = \DB::table('case')
@@ -60,12 +43,12 @@ class IndexController extends Controller
                 $i ++;
             }
         }
-        $plate = \DB::table('newslei')->select('id','img','title','time')->orderby('time','desc')->offset(0)->limit(10)->get();
+        $plate = \DB::table('newslei')->select('id','img','title','time')->orderby('time')->offset(0)->limit(10)->get();
         foreach($plate as $k => $v)
         {
             $plate[$k]->news = \DB::table('news')->select('id','title','time')->where('pid',$v->id)->offset(0)->limit(4)->orderBy('time','desc')->get();
         }
-    	return view('Newpro.Home.Index.index',['title'=>$titles,'news'=>$news,'case'=>$case,'plate'=>$plate]);
+    	return view('Newpro.Home.Index.index',['title'=>$titles,'case'=>$case,'plate'=>$plate]);
     }
     public function shuffle_assoc($list) {  
             if (!is_array($list)) return $list;  
