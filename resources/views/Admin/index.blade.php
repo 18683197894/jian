@@ -275,11 +275,19 @@ active
             </span>
           </a>
           <ul class="treeview-menu">
-            <li
+            <!-- <li
 @if($title == "风格列表")
 class="active"
 @endif
-            ><a href="{{ url('/admin/product/style/index') }}"><i class="fa fa-circle-o"></i>风格列表</a></li>
+            ><a href="{{ url('/admin/product/style/index') }}"><i class="fa fa-circle-o"></i>风格列表</a>
+            </li> -->
+            <li
+@if($title == "包管理")
+class="active"
+@endif
+            ><a href="{{ url('newpro/index/package/packageindex') }}"><i class="fa fa-circle-o"></i>包管理</a>
+            </li>
+  
             <!-- <li
 @if($title == "质享包")
 class="active"
@@ -326,7 +334,7 @@ class="active"
 
 
         <li class="
-@if($title == "包管理" || $title == "套餐管理")
+@if($title == "包管理1" || $title == "套餐管理")
 active
 @endif
         treeview">
@@ -339,7 +347,7 @@ active
           </a>
           <ul class="treeview-menu">
             <li
-@if($title == "包管理")
+@if($title == "包管理1")
 class="active"
 @endif
             ><a href="{{ url('/admin/package/all') }}"><i class="fa fa-circle-o"></i>包管理</a></li>

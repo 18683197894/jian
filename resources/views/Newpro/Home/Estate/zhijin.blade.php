@@ -111,28 +111,26 @@
             
         </div>
     </div>
-    <div class="D_max">
-        <div class="title">
-            <div class="boder">
-                <div class="left">预览户型</div>
-                <div class="right">Real estate</div>
-            </div>
-        </div>
-        <div class="huxintu">
-            <a href="{{ url('http://720yun.com/t/185j5denun1?pano_id=7140817') }}" class="loop" target="_blank">
-                <img src="{{ asset('/new/home/estate/zhijin/img/huxin_A.png') }}" alt=""/>
-                <i>点击360度预览</i>
-            </a>
-            <a href="{{ url('http://720yun.com/t/901j5d4Ouk1?pano_id=7266428') }}" class="loop" target="_blank">
-                <img src="{{ asset('/new/home/estate/zhijin/img/huxin_B.png') }}" alt=""/>
-                <i>点击360度预览</i>
-            </a>
-            <a href="{{ url('http://vr.justeasy.cn/view/982727.html') }}" class="loop" target="_blank">
-                <img src="{{ asset('/new/home/estate/zhijin/img/huxin_C.jpg') }}" alt=""/>
-                <i>点击360度预览</i>
-            </a>
+<div class="D_max">
+    <div class="title">
+        <div class="boder">
+            <div class="left">预览户型</div>
+            <div class="right">Real estate</div>
         </div>
     </div>
+    <div class="huxintu">
+        <a href="https://yun.kujiale.com/design/3FO4M081RAXB/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/zhijin/img/zhijin_o.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>样板房-欧式</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LP5PMATP/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/zhijin/img/zhijin_m.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>样板房跃层-美式</span>
+        </a>
+    </div>
+</div>
     <div class="Drawing">
         <div class="title">
             <div class="boder">

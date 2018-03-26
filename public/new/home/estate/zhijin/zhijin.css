@@ -375,6 +375,7 @@ body{
     height: 35px;
     border-bottom: 3px solid #dadada;
 }
+
 .D_max .title .boder .left{
     width: 87px;
     height: 35px;
@@ -407,6 +408,34 @@ body{
     display: block;
     float: left;
     overflow: hidden;
+    position: relative;
+}
+.D_max .huxintu .loop span{
+    display: block;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    color: #ffffff;
+    font-size: 16px;
+}
+.D_max .huxintu .loop img{
+    width: 95%;
+    overflow: hidden;
+    display: block;
+    margin: auto;
+    max-height: 213px;
+}
+.D_max .huxintu .loop i{
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: normal;
+    color: #333;
+    text-align: center;
 }
 .D_max .huxintu .loop img{
     width: 95%;

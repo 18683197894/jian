@@ -213,6 +213,17 @@ Route::get('/jslmext','Admin\LoginController@jslmext');
 
 
 Route::group(['middleware'=>['Yxb']],function(){
+
+//产品管理
+Route::get('newpro/index/package/packageindex','Admin\PackageController@packageindex');
+Route::get('newpro/index/package/packageadd','Admin\PackageController@packageadd');
+Route::post('newpro/index/package/packageadds','Admin\PackageController@packageadds');
+Route::get('newpro/index/package/packageedit','Admin\PackageController@packageedit');
+Route::post('newpro/index/package/packageedits','Admin\PackageController@packageedits');
+Route::post('newpro/index/package/packagedel','Admin\PackageController@packagedel');
+
+
+
 //用户管理
 Route::get('/jslmadmin/userhome/index','Admin\HomeController@index');
 //用户的购物车

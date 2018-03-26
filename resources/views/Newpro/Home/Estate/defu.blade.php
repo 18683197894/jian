@@ -10,7 +10,7 @@
         <div class="auto">
             <div class="img">
                 <div class="img_top">
-                    <a href="javascript:;" class="avtive">
+                    <a href="javascript:;" class="avtive" >
                         <img src="{{ asset('/new/home/estate/defu/img/estate_df1.jpg')}}" alt=""/>
                     </a>
                     <a href="javascript:;" class="">
@@ -88,6 +88,51 @@
             </div>
         </div>
     </div>
+    <div class="D_max">
+    <div class="title">
+        <div class="boder">
+            <div class="left">预览户型</div>
+            <div class="right">Real estate</div>
+        </div>
+    </div>
+    <div class="huxintu">
+        <a href="https://yun.kujiale.com/design/3FO4LR54MUVI/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxA.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>A1户型-现代风格</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LR54M0S9/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxA2.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>A2户型-美式风格</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LPI8G9FO/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxB.png')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>B1户型-美式风格</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LR54M0S9/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxB2.png')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>B2户型-北欧风格</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LPILYPOA/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxC.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>C1户型-北欧风格</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LR53TEH0/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxC2.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>C2户型-现代风格</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LR67MS69/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxC3.png')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>C3户型-美式风格</span>
+        </a>
+    </div>
+</div>
     <div class="Housing">
         <div class="title">
             <div class="boder">
