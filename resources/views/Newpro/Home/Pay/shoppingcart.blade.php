@@ -53,77 +53,42 @@
     </div>
     <div  class="shopping">
         <ul class="top">
-            <li><input type="checkbox" id="" class="quan" ><span>全选</span></li>
-            <li class="name">商品名称</li>
-            <li class="jiage">单价</li>
-            <li class="num">数量</li>
-            <li class="jie">小计</li>
+            <li><!-- <input type="checkbox" id="" class="quan" ><span>全选</span> --></li>
+            <li class="mc">名称</li>
+            <li class="name">基装包</li>
+            <li class="name">软装包</li>
+            <li class="name">智能包</li>
             <li class="cz">操作</li>
         </ul>
-        @if($qings)
-            <ul class="con">
-            <li><input index="xuan" type="checkbox" id="{{ $qings->id }}"><span>选择</span></li>
-            <li class="name">
-            <div class="name_top">{{ $qings->name }}</div>
-            <div class="name_bo">{{ $qings->path }}</div>
-            </li>
-            <li class="jiage">{{ $qings->money }}</li>
-            <li class="num" index="{{ $qings->tus }}">
-                <div class="divse">
-                <a href="javascript:;" class="jian">-</a>
-                <span class="box">{{ $qings->num }}</span>
-                <a href="javascript:;" class="jia">+</a>
-                </div>
-            </li>
-            <li class="jie">{{ $qings->money * $qings->num }}</li>
-            <li class="cz" ><i>×</i></li>
-        </ul>
-        @endif
-        @if($yis)
-            <ul class="con">
-            <li><input index="xuan" type="checkbox" id="{{ $yis->id }}"><span>选择</span></li>
-            <li class="name">
-            <div class="name_top">{{ $yis->name }}</div>
-            <div class="name_bo">{{ $yis->path }}</div>
-            </li>
-            <li class="jiage">{{ $yis->money }}</li>
-            <li class="num" index="{{ $yis->tus }}">
-                <div class="divse">
-                <a href="javascript:;" class="jian">-</a>
-                <span class="box">{{ $yis->num }}</span>
-                <a href="javascript:;" class="jia">+</a>
-                </div>
-            </li>
-            <li class="jie">{{ $yis->money * $yis->num }}</li>
-            <li class="cz" ><i>×</i></li>
-        </ul>
-        @endif
+       
         @if($data->count() > 0)
         @foreach($data as $k => $v)
         <ul class="con">
-            <li><input index="xuan" type="checkbox" id="{{ $v->id }}"><span>选择</span></li>
+            <li><input index="xuan" id="{{ $v->id }}" name="asa" type="radio"><span>选择</span></li>
+            <li class="mc">{{ $v->name }}</li>
             <li class="name">
-            <div class="name_top">{{ $v->path }}</div>
-            <div class="name_bo">{{ $v->name }}</div>
+            <div class="name_top">{{ $v->datas[0]->name }}</div>
+            <div class="name_bo">{{ $v->datas[0]->money }}/㎡</div>
             </li>
-            <li class="jiage">{{ $v->money }}</li>
-            <li class="num" index="{{ $v->tus }}">
-            	<div class="divse">
-                <a href="javascript:;" class="jian">-</a>
-                <span class="box">{{ $v->num }}</span>
-                <a href="javascript:;" class="jia">+</a>
-                </div>
+             <li class="name">
+            <div class="name_top">{{ $v->datas[1]->name }}</div>
+            <div class="name_bo">{{ $v->datas[1]->money }}/㎡</div>
             </li>
-            <li class="jie">{{ $v->money * $v->num }}</li>
-            <li class="cz" ><i>×</i></li>
+             <li class="name">
+            @if(isset($v->datas[2]))
+            <div class="name_top">{{ $v->datas[2]->name }}</div>
+            <div class="name_bo">{{ $v->datas[2]->money }}/㎡</div>
+            @endif
+            </li>
+            <li class="cz"><i>×</i></li>
         </ul>
         @endforeach
         
         @endif
         <div class="Settlement">
-            <div class="shop">共 <span>1</span> 件商品 已选择 <span>1</span> 件</div>
+            <!-- <div class="shop">共 <span>1</span> 件商品 已选择 <span>1</span> 件</div> -->
             <div class="money">
-                <div class="Total">合计 <span>30652</span> 元</div>
+                <div class="Total">请输入房屋面积：<input type="text" name="rom" placeholder="单位/㎡"></div>
                 <button>去结算</button>
             </div>
         </div>

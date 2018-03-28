@@ -156,19 +156,19 @@
         <div class="bottom">公司品质保障  放心服务  全包无忧</div>
     </div>
     <div class="Show">
-        <a href="#" class="Show_One">
+        <a href="{{ url('newpro/package/jizhuang') }}" class="Show_One">
             <img src="{{ asset('/new/home/index/img/Package1.png') }}" alt="" class="Package_D"/>
             <div class="text">
                 <span>基装主材包</span>
             </div>
         </a>
-        <a href="#" class="Show_Two">
+        <a href="{{ url('/newpro/package/ruanzhuang') }}" class="Show_Two">
             <img src="{{ asset('/new/home/index/img/Package2.png') }}" alt="" class="Package_D"/>
             <div class="text">
                 <span>精致软装包</span>
             </div>
         </a>
-        <a href="#" class="Show_Three">
+        <a href="{{ url('/newpro/package/zhineng') }}" class="Show_Three">
             <img src="{{ asset('/new/home/index/img/Package3.png') }}" alt="" class="Package_D"/>
             <div class="text">
                 <span>智能家居包</span>

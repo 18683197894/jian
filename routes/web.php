@@ -28,6 +28,12 @@ Route::get('/newpro/about','Newpro\Home\UsedController@about');
 //新闻列表
 Route::get('/newpro/newslist/{id}','Newpro\Home\NewsController@newslist');
 Route::get('/newpro/newslist/play/{id}','Newpro\Home\NewsController@newsplay');
+
+//Package
+Route::get('/newpro/package/jizhuang','Newpro\Home\PackageController@jizhuangindex');
+Route::get('/newpro/package/ruanzhuang','Newpro\Home\PackageController@ruanzhuangindex');
+Route::get('/newpro/package/zhineng','Newpro\Home\PackageController@zhinengindex');
+Route::post('/newpro/package/playgou','Newpro\Home\PackageController@playgou');
 //案例列表
 Route::get('/newpro/case/index','Newpro\Home\CaseController@index');
 Route::get('/newpro/case/setajax','Newpro\Home\CaseController@setajax');

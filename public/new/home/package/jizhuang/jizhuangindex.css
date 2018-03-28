@@ -1,0 +1,559 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #ffffff;
+    font-family: '微软雅黑',Helvetica,sans-serif!important;
+}
+.banner{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 165px;
+}
+.banner img{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+.Basic_bag{
+    width: 100%;
+    height: 80px;
+    background-color: #F5F5F5;
+    box-shadow:0 0 10px 5px #aaa;
+    overflow: hidden;
+}
+.Basic_bag img{
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+}
+.Brand{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 50px;
+}
+.Title{
+    width: 100%;
+    font-size: 22px;
+    color: #333333;
+    line-height: 35px;
+    text-align: center;
+    background-color: #ffffff;
+    padding-bottom: 25px;
+}
+.Show{
+   width: 100%;
+    overflow: hidden;
+}
+.Brand .Show a{
+    display: block;
+    width: 25%;
+    overflow: hidden;
+    border-left: 3px solid #ffffff;
+    border-right: 3px solid #ffffff;
+    box-sizing: border-box;
+    float: left;
+}
+.Brand .Show a img{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.6s;
+}
+.Brand .Show a:hover img{
+    transform: scale(0.9);
+}
+.Brand .Show a .text{
+    width: 100%;
+    height: 105px;
+    border-radius:0 0 5px 5px;
+    background-color: #F5F5F5;
+}
+.Brand .Show a .text span{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #999999;
+    line-height: 25px;
+}
+.Brand .Show a .text .name{
+    font-size: 16px;
+    color: #666666;
+    height: 40px;
+    line-height: 50px;
+}
+.Brand .Show a:hover span{
+    color: #E12E32;
+}
+.Brand .Show a:hover .name{
+    color: #E12E32;
+}
+.Project{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 50px;
+    background-color: #F9F9F9;
+}
+.Project_img{
+    display: block;
+    overflow: hidden;
+    margin: auto;
+}
+.Good{
+    padding-top: 50px;
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+}
+.Good .Show .Left{
+    width: 364px;
+    overflow: hidden;
+    float: left;
+    border-right: 4px solid #ffffff;
+    box-sizing: border-box;
+}
+.Good .Show .Left .Top{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: block;
+}
+.Good .Show .Left .Top img{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+.Good .Show .Left .Top .text{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(183, 115, 99,0.5);
+    font-size: 15px;
+    color: #ffffff;
+    text-indent: 10px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    line-height: 40px;
+}
+.Good .Show .Left .Bottom{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    margin-top: 8px;
+}
+.Good .Show .Left .Bottom img{
+    width: 100%;
+    overflow: hidden;
+}
+.Good .Show .Left .Bottom .text{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(183, 115, 99,0.5);
+    font-size: 15px;
+    color: #ffffff;
+    text-indent: 10px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    line-height: 40px;
+}
+.Good .Show .Right{
+    width: 836px;
+    float: left;
+    overflow: hidden;
+    border-left: 4px solid #ffffff;
+    box-sizing: border-box;
+}
+.Good .Show .Right .Top{
+    width: 100%;
+    overflow: hidden;
+}
+.Good .Show .Right .Top .Top_l{
+    width: 465px;
+    overflow: hidden;
+    float: left;
+    border-right: 4px solid #ffffff;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+}
+.Good .Show .Right .Top .Top_l img{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+.Good .Show .Right .Top .Top_l .text{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(183, 115, 99,0.5);
+    font-size: 15px;
+    color: #ffffff;
+    text-indent: 10px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    line-height: 40px;
+}
+.Good .Show .Right .Top .Top_r{
+    width: 367px;
+    overflow: hidden;
+    float: left;
+    border-left: 4px solid #ffffff;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+}
+.Good .Show .Right .Top .Top_r img{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+.Good .Show .Right .Top .Top_r .text{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(183, 115, 99,0.5);
+    font-size: 15px;
+    color: #ffffff;
+    text-indent: 10px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    line-height: 40px;
+}
+.Good .Show .Right .bottom{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 8px;
+}
+.Good .Show .Right .bottom .Top_l{
+    width: 355px;
+    overflow: hidden;
+    float: left;
+    border-right: 4px solid #ffffff;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+}
+.Good .Show .Right .bottom .Top_l .text{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(183, 115, 99,0.5);
+    font-size: 15px;
+    color: #ffffff;
+    text-indent: 10px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    line-height: 40px;
+}
+.Good .Show .Right .bottom .Top_r{
+    width: 477px;
+    overflow: hidden;
+    float: left;
+    border-left: 4px solid #ffffff;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+}
+.Good .Show .Right .bottom .Top_r img{
+    width: 100%;
+    overflow: hidden;
+}
+.Good .Show .Right .bottom .Top_r .text{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(183, 115, 99,0.5);
+    font-size: 15px;
+    color: #ffffff;
+    text-indent: 10px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    line-height: 40px;
+}
+.Standard{
+    background: url("/new/home/package/jizhuang/img/Standard.jpg");
+    background-size: 100% 100%;
+    margin-top: 50px;
+    overflow: hidden;
+}
+.Standard .Name{
+    width: 100%;
+    text-align: center;
+    color: #E12E32;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    font-size: 22px;
+    line-height: 30px;
+}
+.con{
+    width: 100%;
+    text-align: center;
+    font-size: 21px;
+    color: #333333;
+    line-height: 30px;
+}
+.jiange{
+    width: 100%;
+    text-align: center;
+    font-size: 21px;
+    color: #333333;
+    line-height: 30px;
+    margin-top: 20px;
+}
+.bot{
+    width: 100%;
+    text-align: center;
+    font-size: 21px;
+    color: #333333;
+    line-height: 30px;
+    margin-bottom: 160px;
+}
+.Originality{
+    padding-top: 50px;
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+}
+.Originality .Title{
+    color: #666666;
+}
+.Originality .Show{
+    width: 100%;
+    overflow: hidden;
+}
+.Originality .Show a{
+    display: block;
+    width: 16.666666%;
+    float: left;
+    overflow: hidden;
+    margin-top: 40px;
+}
+.Originality .Show a img{
+    display: block;
+    margin: auto;
+    transition: all 0.6s;
+}
+.Originality .Show a img:hover{
+    /*transform:rotate(360deg);*/
+    /*-ms-transform:rotate(360deg); 	/!* IE 9 *!/*/
+    /*-moz-transform:rotate(360deg); 	/!* Firefox *!/*/
+    /*-webkit-transform:rotate(360deg); /!* Safari 和 Chrome *!/*/
+    /*-o-transform:rotate(360deg);*/
+    /*transition: all 2s ease-in-out;*/
+    /*-webkit-transition: all 2s ease-in-out;*/
+    /*-moz-transition: all 2s ease-in-out;*/
+    /*-o-transition: all 2s ease-in-out;*/
+    transform: scale(1.1);
+}
+.Package{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 50px;
+    background-color: #F5F5F5;
+    padding-bottom: 30px;
+}
+.Package .Name{
+    width: 100%;
+    overflow: hidden;
+    font-size: 22px;
+    color: #666666;
+    padding-top: 45px;
+    line-height: 35px;
+    text-align: center;
+}
+.Package .jie{
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    color: #666666;
+    line-height: 40px;
+}
+.Package .Show{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    padding-top: 20px;
+}
+.Package .Show .Loop{
+    width: 33.333%;
+    overflow: hidden;
+    float: left;
+}
+.Package .Show .Loop a{
+    display: block;
+    width: 300px;
+    height: 165px;
+    position: relative;
+    margin: auto;
+}
+.Package .Show .Loop a .P_img{
+    width: 185px;
+    height: 165px;
+    float: left;
+    display: block;
+}
+.Package .Show .Loop a .Contact{
+    float: left;
+    width: 115px;
+    height: 165px;
+    background: #ffffff;
+}
+.Basic_name{
+    width: 100%;
+    font-size: 13px;
+    color: #333333;
+    margin-top: 40px;
+    text-indent: 10px;
+    font-weight: 600;
+}
+.Package .Show .Loop a .Contact i{
+    width: 20px;
+    height: 2px;
+    background-color: #7A7A7A;
+    display: block;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+.Basic_Class{
+    width: 100%;
+    font-size: 15px;
+    color: #333333;
+    text-indent: 10px;
+    margin-top: 13px;
+    font-weight: 600;
+}
+.Package .Show .Loop a .Contact .Price{
+    font-size: 15px;
+    width: 100%;
+    color: #333333;
+    text-indent: 8px;
+    margin-top: 40px;
+    font-weight: 600;
+}
+.Contact .Price .Num{
+    font-size: 25px;
+    color: #E12E32;
+}
+.Contact .Price .danwei{
+    font-size: 15px;
+    color: #E12E32;
+    font-weight: 600;
+}
+.Basic_Selected{
+    width: 57px;
+    height: 49px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+}
+.Package .Show .Loop a.avtive .Basic_Selected{
+    display: block;
+}
+.zhi .Contact .Price .Num{
+    font-size: 22px;
+}
+.Package .Style{
+    width: 1100px;
+    overflow: hidden;
+    margin: auto;
+    padding-top: 45px;
+    display: none;
+}
+.Package .Style.avtive{
+    display: block;
+}
+.Style_top{
+    display: block;
+}
+.Style_Bot{
+    width: 100%;
+    overflow: hidden;
+    padding-top: 20px;
+}
+.Style_Bot a{
+    display: block;
+    float: left;
+    width: 90px;
+    height: 75px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    margin-right: 35px;
+    position: relative;
+}
+.Style_Bot a .feng{
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    color: #999999;
+    margin-top: 20px;
+}
+.Style_Bot a .jiner{
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    color: #666666;
+    margin-top: 10px;
+}
+.Style_Bot a .jiner span{
+    color: #E12E32;
+}
+.Style_Bot a .jiner .Num{
+    font-size: 20px;
+}
+.Basic_gou{
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    right: -7px;
+    top: -5px;
+    display: none;
+}
+.Style_Bot a.avtive .Basic_gou{
+    display: block;
+}
+.Package .Cart{
+    width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding-top: 30px;
+}
+.Package .Cart a{
+    display: block;
+    width: 200px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 22px;
+    color: #ffffff;
+    background-color: #E12E32;
+    border-radius: 5px;
+    float: right;
+}
+.Package .Cart a:hover{
+    background-color: #008CD6;
+}

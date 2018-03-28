@@ -57,13 +57,13 @@
                         <div class="name">订单提交成功</div>
                         <!-- <div class="neir">请于 <i>30分钟</i> 内完成支付 超时将取消订单</div> -->
                     </div>
-                    <div class="right">应付金额：<i>{{ $orders->total }} 元</i></div>
+                    <div class="right">应付金额：<i>{{ $orders->total }} 元</i><br>线下支付尾款：{{ $orders->totals - $orders->total }} 元</i></div>
                 </div>
             </div>
             <div class="Order" index="{{ $orders->id }}">
                 <p>订单号：<span>{{ $orders->_token }}</span></p>
                 <p>收货信息：<i>  {{ $orders->address }}</i></p>
-                <p>商品名称：<i></i></p>
+                <p>商品名称：<i>{{ $orders->name }}</i></p>
                 <p>配送时间：<i>不限收货时间</i></p>
                 <p>发票信息：<i>{{ $orders->invoice }}</i></p>
             </div>

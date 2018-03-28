@@ -430,12 +430,36 @@ body{
     line-height: 40px;
     /*border-bottom: 1px solid #B4D0FF;*/
     font-size: 16px;
+    margin-bottom: 15px;
+}
+.details .con.xiao{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+    line-height: 35px;
+    /*border-bottom: 1px solid #B4D0FF;*/
+    font-size: 16px;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+.details .con.xiao{
+    font-size: 15px;
+}
+.details .con.xiao .Subtotal{
+    font-size: 15px;
+}
+.details .con.xiao .shop{
+    height: 35px;
+}
+.details .con.xiao li{
+    height: 35px;
 }
 .details .shop{
     width: 21%;
     float: left;
     margin-right: 1%;
     color: #444444;
+    height: 40px;
 }
 .details .Attribute{
     width: 22%;
@@ -507,9 +531,15 @@ body{
     line-height: 40px;
     margin-left: 10px;
 }
-.fapiao{
+.jiesuan .fapiao{
     overflow: hidden;
-    width: 100%;
+    width: 40%;
+    float: left;
+    margin-right: 0;
+    margin-left: 10px;
+}
+.jiesuan .fapiao .input{
+    margin-top: 3px;
 }
 .fapiao .input{
     width: 100%;
@@ -529,6 +559,8 @@ body{
     float: left;
     margin-left: 2%;
     text-indent: 15px;
+    outline: none;
+    border: 1px;
 }
 .fapiao span{
     width: 240px;
@@ -570,6 +602,7 @@ body{
     overflow: hidden;
     color: #555;
 }
+
 .piao_ope{
     width: 200px;
     height: 30px;
@@ -589,7 +622,6 @@ body{
 .liuyan{
     width: 100%;
     overflow: hidden;
-    margin-top: 5px;
     background-color: #F2F6FF;
 }
 .liuyan .text{
@@ -602,9 +634,12 @@ body{
 .liuyan input{
     float: left;
     width: 250px;
-    height: 40px;
+    height: 35px;
     outline: none;
     text-indent: 15px;
+    outline: none;
+    border: 1px;
+    margin-top: 2px;
 }
 .Postage{
     width: 100%;
@@ -685,11 +720,13 @@ body{
     margin-top: 5px;
 }
 .jiesuan div{
-    float: right;
     line-height: 60px;
     font-size: 14px;
     color: #555;
     margin-right: 10px;
+}
+.jiesuan .hej{
+    float: right;
 }
 .jiesuan span{
     float: right;
@@ -773,6 +810,9 @@ body{
     background-color: #FE214D;
     margin-top: 20px;
     cursor: pointer;
+}
+.con li{
+    display: block;
 }
 @media screen and (max-width: 1200px){
     .nav_top .auto{

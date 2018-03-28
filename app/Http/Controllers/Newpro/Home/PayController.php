@@ -16,55 +16,23 @@ class PayController extends Controller
     {	
     	$title = getwebpage($request->path());
     	$uid = \session('Home')->id;
-    	$data = \DB::table('playgou')
-              ->join('door','playgou.pid','=','door.id')
-              ->select('playgou.id','playgou.pid','playgou.tus','playgou.time','playgou.num','playgou.uid','door.main','door.nomain','door.model','door.pid as ppid','door.title as name')
-              ->where('playgou.uid',$uid)
+      $data = \DB::table('playgou')
+              ->select('id','name','pid','uid','time','status','num','uid')
+              ->where('uid',$uid)
               ->orderBy('time','desc')
               ->get();
-      $qings = \DB::table('playgou')->select('id','name','tus','time','status','num','uid')->where('uid',$uid)->where('tus','qing')->first();
-      $yis = \DB::table('playgou')->select('id','name','tus','time','status','num','uid')->where('uid',$uid)->where('tus','yi')->first();
+      foreach($data as $k => $v)
+      {
+        $v->pids = explode(',',$v->pid);
+        $v->datas = [];
+        foreach($v->pids as $kk => $vv)
+        {
+          $v->datas[$kk] = \DB::table('package')->select('id','name','ors','money')->where('id',$vv)->first();
+        }
+      }
 
-      $qing = \DB::table('qing')->select('id','name','money','path')->where('id',1)->first();
-    	$yi = \DB::table('qing')->select('id','name','money','path')->where('id',2)->first();
-    	$style = \DB::table('style')
-      ->join('packages','style.pid','=','packages.id')
-      ->select('style.id','style.title','packages.title as titles')
-      ->get();
-        foreach($data as $k => $v)
-      {
-          if($v->tus == 'main')
-          {
-            $v->name = $v->name.' （主流品牌）';
-            $v->money = $v->main;
-          }else if($v->tus == 'nomain')
-          {
-            $v->name = $v->name.' （非主流品牌）';
-            $v->money = $v->nomain;
-          }else if($v->tus == 'model')
-          {
-            $v->name = $v->name.' （样板间）';
-            $v->money = $v->model;
-          }
-          foreach($style as $kk => $vv)
-          {
-            if($v->ppid == $vv->id)
-            {
-              $v->path = $vv->titles.' '.$vv->title;
-            }
-          }
-      }
-      if($qings)
-      {
-        $qings->path = $qing->path;
-        $qings->money = $qing->money;
-      }
-      if($yis)
-      {
-        $yis->path = $yi->path;
-        $yis->money = $yi->money;
-      }
-    	return view('Newpro.Home.Pay.shoppingcart',['title'=>$title,'data'=>$data,'qings'=>$qings,'yis'=>$yis]);
+   
+    	return view('Newpro.Home.Pay.shoppingcart',['title'=>$title,'data'=>$data]);
     }
     public function shoppingcartajax(Request $request)
     {
@@ -153,92 +121,44 @@ class PayController extends Controller
     	if(!$ids) return back();
     	$id = Base64_decode($ids);
     	$id = substr($id,0,-1);
-    	$id = explode(',',$id);
-      $qing = \DB::table('qing')->select('id','name','money','path')->where('id',1)->first();
-      $yi = \DB::table('qing')->select('id','name','money','path')->where('id',2)->first();
+    	// $id = explode(',',$id);
+
+      $rom = Base64_decode($request->rom);
+      $data = [];
+      $moenyss = 0;
+      
+        $data = \DB::table('playgou')->select('id','name','pid','uid','num')->where('id',$id)->first();
+        $data->data = explode(',',$data->pid);
+        $data->datas = [];
+        $data->path  = '';
+        $data->moneys  = 0;
+        // dd($data[$k]->data);
+
+        foreach($data->data as $kk => $vv)
+        { 
+
+          $data->datas[$kk] = \DB::table('package')->select('id','name','ors','money')->where('id',$vv)->first();
+          
+          if($kk <=1 )
+          { 
+            $data->datas[$kk]->moneys = $data->datas[$kk]->money * $rom;
+            $data->moneys += $data->datas[$kk]->moneys;
+          }else
+          {
+          $data->datas[$kk]->moneys = $data->datas[$kk]->money;
+          $data->moneys += $data->datas[$kk]->moneys;
+          }
+          $data->path = $data->path.'+'.$data->datas[$kk]->name;
+        }
+        
+        $moenyss = $data->moneys;
+      
+     
+    
     	$title = getwebpage($request->path());
         $address = \DB::table('address')->select('status','id','shen','shi','qu','name','phone','tails','zipcode','lebel','uid')->where('uid',$uid)->get();
         $district = \DB::table('district')->select('id','name','level','upid')->where('level',1)->get();
-        $data = [];
-        foreach($id as $k => $v)
-        {   
-            $data[$k] = \DB::table('playgou')->select('id','pid','tus','time','num','name','uid')->where('id',$v)->first();
-            // $data[$k] = \DB::table('playgou')
-            //   ->join('door','playgou.pid','=','door.id')
-            //   ->select('playgou.id','playgou.pid','playgou.tus','playgou.time','playgou.num','playgou.uid','door.main','door.nomain','door.model','door.pid as ppid','door.title as name')
-            //   ->where('playgou.id',$v)
-            //   ->orderBy('time','desc')
-            //   ->first();
-        }
-
-        foreach($data as $kkk => $vvv)
-        { 
-          
-          if($vvv->tus !== 'qing' && $vvv->tus !== 'yi')
-          {
-            $doors = \DB::table('door')->select('id','main','nomain','pid as ppid','model','title as name')->where('id',$vvv->pid)->first();
-            $vvv->main = $doors->main;
-            $vvv->model = $doors->model;
-            $vvv->name = $doors->name;
-            $vvv->ppid = $doors->ppid;
-          }else if($vvv->tus =='qing')
-          {
-            $vvv->path = $qing->path;
-          }else if($vvv->tus == 'yi')
-          {
-            $vvv->path = $yi->path;
-          }
-        }
-        // dd($data);
-        if( !isset( $data[0]->tus )  )
-        {
-            return redirect('/newpro/shoppingcart');
-        }
-
-        
-        $style = \DB::table('style')
-      ->join('packages','style.pid','=','packages.id')
-      ->select('style.id','style.title','packages.title as titles')
-      ->get();
-      $moenyss = 0;
-        foreach($data as $k => $v)
-      {
-          if($v->tus == 'main')
-          {
-            $v->name = $v->name.' （主流品牌）';
-            $v->money = $v->main;
-            $v->moneys = $v->money * $v->num;
-          }else if($v->tus == 'nomain')
-          {
-            $v->name = $v->name.' （非主流品牌）';
-            $v->money = $v->nomain;
-            $v->moneys = $v->money * $v->num;
-          }else if($v->tus == 'model')
-          {
-            $v->name = $v->name.' （样板间）';
-            $v->money = $v->model;
-            $v->moneys = $v->money * $v->num;
-          }else if($v->tus == 'qing')
-          {
-            $v->money = $qing->money.'/每平方';
-            $v->moneys = $qing->money * $v->num;
-          }else if($v->tus == 'yi')
-          {
-            $v->money = $yi->money;
-            $v->moneys = $yi->money * $v->num;
-          }
-          $moenyss += $v->moneys;
-          if($v->tus !== 'qing' && $v->tus !== 'yi')
-          {
-            foreach($style as $kk => $vv)
-            {
-              if($v->ppid == $vv->id)
-              {
-                $v->path = $vv->titles.' '.$vv->title;
-              }
-            }
-          }
-      }
+     
       $addressstatus= [];
         if($address->count() > 0)
         {
@@ -252,7 +172,8 @@ class PayController extends Controller
                 }
             }
         }
-    	return view('Newpro.Home.Pay.payment',['addressstatus'=>$addressstatus,'moenyss'=>$moenyss,'title'=>$title,'address'=>$address,'district'=>$district,'data'=>$data]);
+     
+    	return view('Newpro.Home.Pay.payment',['rom'=>$rom,'addressstatus'=>$addressstatus,'moenyss'=>$moenyss,'title'=>$title,'address'=>$address,'district'=>$district,'data'=>$data]);
     }
 
     public function addressajax(Request $request)
@@ -366,9 +287,8 @@ class PayController extends Controller
         $uid = \session('Home')->id;
         $datas = $request->except("_token");
         $ids = substr($datas['payid'],0,-1);
-        $idss = explode(',',$ids);
         $data = [];
-      
+ 
         if(!$ids)
         {
             echo "<script> alert('订单创建失败！'); window.location.href='/newpro/shoppingcart' </script>";
@@ -392,7 +312,7 @@ class PayController extends Controller
               if(!$update)
               {
                   \DB::table('orders')->delete($ress->id);
-                  \DB::table('detail')->where('orderid',$ress->id)->delete();
+                  \DB::table('detail')->where('orders',$ress->id)->delete();
                   echo "<script> alert('订单创建失败！'); window.location.href='/newpro/center/my_orders' </script>";
                   return false;
               }
@@ -406,7 +326,7 @@ class PayController extends Controller
               if( !isset($wechat_url['code_img_url']) || !isset($alipay_url['code_img_url']) )
               {   
                   \DB::table('orders')->delete($ress->id);
-                  \DB::table('detail')->where('orderid',$ress->id)->delete();
+                  \DB::table('detail')->where('orders',$ress->id)->delete();
                   echo "<script> alert('订单创建失败！'); window.location.href='/newpro/center/my_orders' </script>";
                   return false;
               }
@@ -419,102 +339,43 @@ class PayController extends Controller
             
         }
 
-        // foreach($idss as $k => $v)
-        // {   
-
-        //     $data[$k] = \DB::table('playgou')
-        //       ->join('door','playgou.pid','=','door.id')
-        //       ->select('playgou.id','playgou.pid','playgou.tus','playgou.num','playgou.uid','door.main','door.nomain','door.model','door.pid as ppid','door.title as name')
-        //       ->where('playgou.id',$v)
-        //       ->first();
-        // }
-        foreach($idss as $k => $v)
-        {   
-            $data[$k] = \DB::table('playgou')->select('id','pid','tus','time','num','name','uid')->where('id',$v)->first();
-            // $data[$k] = \DB::table('playgou')
-            //   ->join('door','playgou.pid','=','door.id')
-            //   ->select('playgou.id','playgou.pid','playgou.tus','playgou.time','playgou.num','playgou.uid','door.main','door.nomain','door.model','door.pid as ppid','door.title as name')
-            //   ->where('playgou.id',$v)
-            //   ->orderBy('time','desc')
-            //   ->first();
-        }
-        $qing = \DB::table('qing')->select('id','name','money','path')->where('id',1)->first();
-        $yi = \DB::table('qing')->select('id','name','money','path')->where('id',2)->first();
-        foreach($data as $kkk => $vvv)
-        { 
-          if($vvv->tus !== 'qing' && $vvv->tus !== 'yi')
-          {
-            $doors = \DB::table('door')->select('id','main','nomain','pid as ppid','model','title as name')->where('id',$vvv->pid)->first();
-            $vvv->main = $doors->main;
-            $vvv->model = $doors->model;
-            $vvv->name = $doors->name;
-            $vvv->ppid = $doors->ppid;
-          }else if($vvv->tus =='qing')
-          {
-            $vvv->path = $qing->path;
-          }else if($vvv->tus =='yi')
-          {
-            $vvv->path = $yi->path;
-          }
-        }
-
+          $rom = $request->rom;
+          $moenyss = 0;
         
-        $style = \DB::table('style')
-        ->join('packages','style.pid','=','packages.id')
-        ->select('style.id','style.title','packages.title as titles')
-        ->get();
-      $moenyss = 0;
-      if(!isset($data[0]->tus))
-      {
-        return redirect('/newpro/shoppingcart');
-      }
-        foreach($data as $k => $v)
-      {
-          if($v->tus == 'main')
-          {
-            $v->name = $v->name.' （主流品牌）';
-            $v->money = $v->main;
-            $v->moneys = $v->money * $v->num;
-          }else if($v->tus == 'nomain')
-          {
-            $v->name = $v->name.' （非主流品牌）';
-            $v->money = $v->nomain;
-            $v->moneys = $v->money * $v->num;
-          }else if($v->tus == 'model')
-          {
-            $v->name = $v->name.' （样板间）';
-            $v->money = $v->model;
-            $v->moneys = $v->money * $v->num;
-          }else if($v->tus == 'qing')
-          {
-            $v->money = $qing->money;
-            $v->moneys = $qing->money * $v->num;
-          }else if($v->tus == 'yi')
-          {
-            $v->money = $yi->money;
-            $v->moneys = $yi->money * $v->num;
-          }
+          $data  = \DB::table('playgou')->select('id','name','pid','uid','num')->where('id',$ids)->first();
+          $data->data = explode(',',$data->pid);
+          $data->datas = [];
+          $data->path  = '';
+          $data->moneys  = 0;
+          // dd($data[$k]->data);
+          foreach($data->data as $kk => $vv)
+          { 
 
-          $moenyss += $v->moneys;
-          if($v->tus !== 'qing' && $v->tus !== 'yi')
-          {
-            foreach($style as $kk => $vv)
+            $data->datas[$kk] = \DB::table('package')->select('id','name','ors','money')->where('id',$vv)->first();
+            
+            if($kk <=1 )
             { 
-                if($v->ppid == $vv->id)
-                {
-                  $v->path = $vv->titles.' '.$vv->title;
-                }
+              $data->datas[$kk]->moneys = $data->datas[$kk]->money * $rom;
+              $data->moneys += $data->datas[$kk]->moneys;
+            }else
+            {
+              $data->datas[$kk]->moneys = $data->datas[$kk]->money;
+              $data->moneys += $data->datas[$kk]->moneys;
             }
+              $data->path =$data->path.'+'.$data->datas[$kk]->name;
           }
-      }
+          $moenyss = $data->moneys;
+        
+      
       $address = \DB::table('address')->where('id',$datas['dizhiid'])->first();
 
       $orders['uid'] = $uid;
+      $orders['rom'] = $rom;
+      $orders['name'] = substr($data->path,1);
       $orders['linkman'] = $address->name;
       $orders['address'] = $address->shen.$address->shi.$address->qu.' '.$address->tails;
       $orders['code'] = $address->zipcode;
       $orders['remarks'] = $request->input('remarks')?$request->input('remarks'):'无备注';
-      $orders['risk'] = $request->input('risk')?200:0;
       $orders['invoice'] = $request->input('invoice')?'是':'否';
       if($orders['invoice'] == '是')
       {
@@ -525,7 +386,8 @@ class PayController extends Controller
         $orders['invoice_tou'] = '否';
         $orders['invoice_ors'] = '否';
       }
-      $orders['total'] = $moenyss + $orders['risk'];
+      $orders['total'] = 0.01;
+      $orders['totals'] = $moenyss;
       // $orders['total'] = 200000;
       $orders['status'] = 0;
       $orders['zid'] = $ids;
@@ -533,26 +395,33 @@ class PayController extends Controller
       $orders['phone'] = $address->phone;
       $orders['lebel'] = $address->lebel?$address->lebel:'无';
       $orders['_token'] = date("YmdHis",time()).rand(1000,9999);
-      
+    
       $res = \DB::table('orders')->insertGetid($orders);
+
       if($res)
-      {
-        foreach($data as $kkk => $vvv)
+      { 
+        foreach($data->datas as $kkk => $vvv)
         {   
             $arr = [];
             $arr['orderid'] = $res;
-            $arr['tus'] = $vvv->tus;
-            $arr['pid'] = $vvv->pid;
+            $arr['tus'] = '套餐包';
+            $arr['pid'] = $vvv->id;
             $arr['name'] = $vvv->name;
             $arr['prince'] = $vvv->money;
-            $arr['num'] = $vvv->num;
-            $arr['ors'] = $vvv->path;
-            \DB::table('detail')->insert($arr);
-        }
-            foreach($idss as $l => $j)
+            $arr['ors'] = $vvv->ors;
+            if($kkk <=1)
             {
-                \DB::table('playgou')->delete($j);
+            $arr['num'] = $rom;
+            }else
+            {
+            $arr['num'] = 1;
             }
+            \DB::table('detail')->insert($arr);
+        } 
+
+           
+            \DB::table('playgou')->delete($ids);
+            
             $orderss = \DB::table('orders')->where('id',$res)->first();
 
             $total = (int) preg_replace('/\..*/','',$orderss->total * 100);

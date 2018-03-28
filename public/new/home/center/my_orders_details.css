@@ -251,11 +251,16 @@
     overflow: hidden;
     margin-bottom: 10px;
 }
+.Shop_top.da .shop_loop{
+    font-size: 15px;
+}
 .shop_loop{
     float: left;
     width: 25%;
     font-size: 13px;
     text-align: center;
+    display: block;
+    height: 35px;
 }
 @media screen and (max-width: 650px){
     .contact_right{

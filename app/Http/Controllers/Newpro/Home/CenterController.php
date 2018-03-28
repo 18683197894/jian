@@ -32,7 +32,7 @@ class CenterController extends Controller
     public function my_orders_details(Request $request)
     {	
     	$id = $request->id;
-    	$data = \DB::table('orders')->select('id','address','linkman','phone','status','addtime','_token','total','zid','payors')->where('id',$id)->first();
+    	$data = \DB::table('orders')->select('id','address','linkman','phone','status','addtime','_token','total','zid','payors','name','totals')->where('id',$id)->first();
     	$data->times = explode(',',$data->addtime);
     	$data->detail = \DB::table('detail')->select('name','prince','num','ors')->where('orderid',$data->id)->get();
     	// dd($data);

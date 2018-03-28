@@ -483,19 +483,8 @@ $(".in_click input").click(function(){
 
 $(function(){
     $("input[name='invoice']").removeAttr('checked');
-    $("input[name='risk']").removeAttr('checked');
 })
-$("input[name='risk']").on('click',function(){
-    var money = parseFloat($('.payment_buttom_sub_1 > i').html());
-    if($(this).attr('checked'))
-    {
-        $('.moneyss').html(money + 200);
-    }else
-    {
-        $('.moneyss').html(money - 200);
 
-    }
-})
 
 $("input[name='remarks']").keyup(function(){
         var str = $(this).val();
@@ -519,7 +508,7 @@ $("input[name='invoice_tou']").keyup(function(){
 
         }
     })
-$("input[name='invoice_tou']").keyup(function(){
+$("input[name='invoice_ors']").keyup(function(){
         var str = $(this).val();
 
         if( str.length > 20)
@@ -535,7 +524,7 @@ $('.payment_buttom_sub_3 > button').on('click',function(){
     
     var dizhi = $(".payment_buttom_sub_3").attr('index');
     var payid = '';
-    $.each($('.details > .con'),function(){
+    $.each($('.details > .con.payid'),function(){
         payid += $(this).attr('index')+',';
     })
     

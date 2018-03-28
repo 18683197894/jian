@@ -8,26 +8,35 @@
 		$.each($(" input[index='xuan']:checked "),function(){
 			id += $(this).attr('id')+',';
 		});
+		var rom = $('.Total input[name="rom"]').val();
+		var reg = /^[\d]{1,3}$/;
+				
+		if(!reg.test(rom) || rom < 10)
+		{
+			alert('请输入正确的房屋面积 10~999');
+			return false;
+		}
 		if(id == undefined || id == '')
 		{
 			alert('请选中商品');
 			return false;
 		}
 		data = Base64.encode(id);
-		url = '/newpro/payment?data='+data;
+		rom = Base64.encode(rom);
+		url = '/newpro/payment?data='+data+'&rom='+rom;
 		window.location.href = url;
 	})
 	
-	$(".quan").click(function(){
-        if(this.checked){
-            $(".con :checkbox").prop("checked", true);
-        	zong();
+	// $(".quan").click(function(){
+ //        if(this.checked){
+ //            $(".con :checkbox").prop("checked", true);
+ //        	zong();
 
-        }else{
-            $(".con :checkbox").prop("checked", false);
-            zong();
-        }
-    });
+ //        }else{
+ //            $(".con :checkbox").prop("checked", false);
+ //            zong();
+ //        }
+ //    });
 
 
     $("input[index='xuan']").on('click',function(){ zong() });

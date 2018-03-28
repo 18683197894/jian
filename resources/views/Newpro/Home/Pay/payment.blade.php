@@ -137,15 +137,38 @@
             <li class="Number">数量</li>
             <li class="Subtotal">小计</li>
         </ul>
-        @foreach($data as $k=>$v)
-        <ul class="con" index="{{ $v->id }}">
-            <li class="shop">{{ $v->name }}</li>
-            <li class="Attribute">{{ $v->path }}</li>
-            <li class="Price">{{ $v->money }}</li>
-            <li class="Number">{{ $v->num }}</li>
-            <li class="Subtotal">{{ $v->moneys }}元</li>
+        
+        @if(count($data) > 0)
+        
+        <ul class="con payid" index="{{ $data->id }}">
+            <li class="shop">{{ $data->name }}</li>
+            <li class="Attribute">{{ substr($data->path,1) }}</li>
+            <li class="Price">--</li>
+            <li class="Number">{{ $data->num }}</li>
+            <li class="Subtotal">{{ $data->moneys }}元</li>
         </ul>
-        @endforeach
+            @foreach($data->datas as $kk => $vv)
+                @if($kk <= 1)
+                <ul class="con xiao" index="">
+                <li class="shop"></li>
+                <li class="Attribute">{{ $vv->name }}</li>
+                <li class="Price">{{ $vv->money }}/㎡</li>
+                <li class="Number">{{ $rom }}</li>
+                <li class="Subtotal">{{ $vv->moneys }}元</li>
+                </ul>
+                @else
+                <ul class="con xiao" index="">
+                <li class="shop"></li>
+                <li class="Attribute">{{ $vv->name }}</li>
+                <li class="Price">{{ $vv->money }}元</li>
+                <li class="Number">1</li>
+                <li class="Subtotal">{{ $vv->moneys }}元</li>
+                </ul>
+                @endif
+            @endforeach
+    
+        @endif
+
     </div>
     <div class="invoice">
     <form action="{{ url('/newpro/payments') }}" method="post">
@@ -155,20 +178,14 @@
                 <input type="checkbox" name="invoice"/>
                 <span>开具发票</span>
             </div>
-            <div class="fapiao">
-                <div class="input">
-                    <input type="text" name="invoice_tou" placeholder="输入发票抬头"/>
-                    <input type="text" name="invoice_ors" placeholder="输入纳税号"/>
-                </div>
-               
-                <div class="liuyan">
-                    <div class="text">给卖家留言</div>
-                    <input name="remarks" type="text" placeholder="选填：填写内容已和卖家协商确认"/>
-                </div>
-            </div>
+            
         </div>
         <div class="right">
-            <div class="Postage">
+            <div class="liuyan">
+                <div class="text">给卖家留言</div>
+                <input name="remarks" type="text" placeholder="选填：填写内容已和卖家协商确认"/>
+            </div>
+            <!-- <div class="Postage">
                 <span>运送方式：普通快递（免邮）</span>
                 <i>0.00</i>
             </div>
@@ -178,20 +195,28 @@
                 <i>运费险</i>
                 <div class="jies">卖家送，确认收货前可退可赔</div>
                 <div class="number">200.00</div>
-            </div>
+            </div> -->
         </div>
-        </form>
+        
     </div>
     <div class="jiesuan">
+        <div class="fapiao">
+            <div class="input">
+                <input type="hidden" name="rom" value="{{ $rom }}" placeholder="输入发票抬头"/>
+                <input type="text" name="invoice_tou" placeholder="输入发票抬头"/>
+                <input type="text" name="invoice_ors" placeholder="输入纳税号"/>
+            </div>
+        </div>
         <i>{{ $moenyss }}</i>
         <span>￥</span>
-        <div>合计（含运费）</div>
+        <div class="hej">合计（含运费）</div>
     </div>
+    </form>
     <div class="payment_buttom_sub">
         <div class="payment_buttom_sub_1">
-            <i class="moneyss">{{ $moenyss }}</i>
+            <i class="moneyss">8000</i>
             <span>￥</span>
-            <div>合计（含运费）</div>
+            <div>支付定金：</div>
         </div>
         <div class="payment_buttom_sub_2">寄送至：<span>@if(isset($addressstatus['dizhi'])) {{ $addressstatus['dizhi'] }} @endif</span></div>
         <div class="payment_buttom_sub_2">收货人：<span>@if(isset($addressstatus['name'])) {{ $addressstatus['name'] }} @endif</span></div>
