@@ -386,7 +386,7 @@ class PayController extends Controller
         $orders['invoice_tou'] = '否';
         $orders['invoice_ors'] = '否';
       }
-      $orders['total'] = 0.01;
+      $orders['total'] = 8000;
       $orders['totals'] = $moenyss;
       // $orders['total'] = 200000;
       $orders['status'] = 0;
