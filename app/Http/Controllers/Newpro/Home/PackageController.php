@@ -64,9 +64,9 @@ class PackageController extends Controller
 	function playgouors(Request $request)
 	{
 		$uid = \session('Home')->id;
-		$data = \DB::table('orders')->select('id','name','status')->where('status','>=',1)->where('uid',$uid)->get();
+		$data = \DB::table('orders')->select('id','name','status')->where('status','=',1)->where('uid',$uid)->get();
 		// return response()->json($data);		
-		if($data->count() > 0)
+		if(count($data) > 0)
 		{
 			return response()->json(true);
 		}else
