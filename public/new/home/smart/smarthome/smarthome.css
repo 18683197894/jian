@@ -16,6 +16,16 @@ body{
     width: 100%;
     overflow: hidden;
 }
+.ship{
+    width: 1200px;
+    overflow: hidden;
+    margin:auto;
+    margin-top: 30px;
+}
+.ship video{
+    width: 100%;
+    overflow:hidden;
+}
 .F_Life{
     width: 1200px;
     overflow: hidden;

@@ -96,13 +96,13 @@
                 </a>
                 <a href="javascript:;" class="Top_r">
                     <img src="{{ asset('/new/home/package/jizhuang/img/Good4.png') }}" alt=""/>
-                    <div class="text">专注家装十五年，寻找对生活有品质的你</div>
+                    <div class="text">轻钢龙骨纸面石膏板平顶</div>
                 </a>
             </div>
             <div class="bottom">
                 <a href="javascript:;" class="Top_l">
                     <img src="{{ asset('/new/home/package/jizhuang/img/Good5.png') }}" alt=""/>
-                    <div class="text">严苛门槛石铺贴</div>
+                    <div class="text">专注家装十五年，寻找对生活有品质的你</div>
                 </a>
                 <a href="javascript:;" class="Top_r">
                     <img src="{{ asset('/new/home/package/jizhuang/img/Good6.png') }}" alt=""/>
