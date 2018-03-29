@@ -65,9 +65,8 @@ class PackageController extends Controller
 	{
 		$uid = \session('Home')->id;
 		$data = \DB::table('orders')->select('id','name','status')->where('status','>=',1)->where('uid',$uid)->get();
-			return response()->json($data);
-		
-		if($data->count() > 0 || $data)
+		// return response()->json($data);		
+		if($data->count() > 0)
 		{
 			return response()->json(true);
 		}else
