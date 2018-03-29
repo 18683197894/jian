@@ -88,7 +88,8 @@
             </div>
         </div>
     </div>
-    <div class="D_max">
+<!--德福-->
+<div class="D_max">
     <div class="title">
         <div class="boder">
             <div class="left">预览户型</div>
@@ -101,35 +102,105 @@
             <i>点击360度预览</i>
             <span>A1户型-现代风格</span>
         </a>
+        <a href="https://yun.kujiale.com/design/3FO4LR54CN4G/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxA_m.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>A1户型-美式风格</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LR54FF3A/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxA_o.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>A1户型-北欧风格</span>
+        </a>
         <a href="https://yun.kujiale.com/design/3FO4LR54M0S9/show" class="loop" target="_blank">
             <img src="{{ asset('/new/home/estate/defu/img/df_hxA2.jpg')}}" alt=""/>
             <i>点击360度预览</i>
             <span>A2户型-美式风格</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LP7XDXQO/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxA2_o.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>A2户型-北欧风格</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LR546MGN/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxA2_x.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>A2户型-现代风格</span>
         </a>
         <a href="https://yun.kujiale.com/design/3FO4LPI8G9FO/show" class="loop" target="_blank">
             <img src="{{ asset('/new/home/estate/defu/img/df_hxB.png')}}" alt=""/>
             <i>点击360度预览</i>
             <span>B1户型-美式风格</span>
         </a>
-        <a href="https://yun.kujiale.com/design/3FO4LR54M0S9/show" class="loop" target="_blank">
-            <img src="{{ asset('/new/home/estate/defu/img/df_hxB2.png')}}" alt=""/>
+        <a href="https://yun.kujiale.com/design/3FO4LR55T8OV/show" class="loop">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxB_o.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>B1户型-北欧风格</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LP7XALPO/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxB_x.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>B1户型-现代风格</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LP7XN4QF/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxB2_o.jpg')}}" alt=""/>
             <i>点击360度预览</i>
             <span>B2户型-北欧风格</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LP7X2455/show" class="loop">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxB2_m.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>B2户型-美式风格</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LQQBIT2H/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxB2_x.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>B2户型-现代风格</span>
         </a>
         <a href="https://yun.kujiale.com/design/3FO4LPILYPOA/show" class="loop" target="_blank">
             <img src="{{ asset('/new/home/estate/defu/img/df_hxC.jpg')}}" alt=""/>
             <i>点击360度预览</i>
             <span>C1户型-北欧风格</span>
         </a>
+        <a href="https://yun.kujiale.com/design/3FO4LPHL330G/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxC_m.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>C1户型-美式风格</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LPHVP39P/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxC_x.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>C1户型-现代风格</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LR53MC1V/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxC2_o.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>C2户型-北欧风格</span>
+        </a>
         <a href="https://yun.kujiale.com/design/3FO4LR53TEH0/show" class="loop" target="_blank">
             <img src="{{ asset('/new/home/estate/defu/img/df_hxC2.jpg')}}" alt=""/>
             <i>点击360度预览</i>
             <span>C2户型-现代风格</span>
         </a>
+        <a href="https://yun.kujiale.com/design/3FO4LR53DCQ7/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxC2_m.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>C2户型-美式风格</span>
+        </a>
         <a href="https://yun.kujiale.com/design/3FO4LR67MS69/show" class="loop" target="_blank">
             <img src="{{ asset('/new/home/estate/defu/img/df_hxC3.png')}}" alt=""/>
             <i>点击360度预览</i>
             <span>C3户型-美式风格</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LR66KJ54/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxC3_x.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>C3户型-现代风格</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LR66RLK8/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/defu/img/df_hxC3_o.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>C3户型-北欧风格</span>
         </a>
     </div>
 </div>
