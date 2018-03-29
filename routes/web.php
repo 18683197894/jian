@@ -34,6 +34,7 @@ Route::get('/newpro/package/jizhuang','Newpro\Home\PackageController@jizhuangind
 Route::get('/newpro/package/ruanzhuang','Newpro\Home\PackageController@ruanzhuangindex');
 Route::get('/newpro/package/zhineng','Newpro\Home\PackageController@zhinengindex');
 Route::post('/newpro/package/playgou','Newpro\Home\PackageController@playgou');
+Route::post('/newpro/package/playgouors','Newpro\Home\PackageController@playgouors');
 //案例列表
 Route::get('/newpro/case/index','Newpro\Home\CaseController@index');
 Route::get('/newpro/case/setajax','Newpro\Home\CaseController@setajax');

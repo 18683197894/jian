@@ -148,7 +148,7 @@
             <li class="Subtotal">{{ $data->moneys }}元</li>
         </ul>
             @foreach($data->datas as $kk => $vv)
-                @if($kk <= 1)
+                @if($vv->ors !== '智能')
                 <ul class="con xiao" index="">
                 <li class="shop"></li>
                 <li class="Attribute">{{ $vv->name }}</li>

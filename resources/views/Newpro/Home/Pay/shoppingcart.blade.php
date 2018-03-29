@@ -67,18 +67,28 @@
             <li><input index="xuan" id="{{ $v->id }}" name="asa" type="radio"><span>选择</span></li>
             <li class="mc">{{ $v->name }}</li>
             <li class="name">
-            <div class="name_top">{{ $v->datas[0]->name }}</div>
-            <div class="name_bo">{{ $v->datas[0]->money }}/㎡</div>
-            </li>
-             <li class="name">
-            <div class="name_top">{{ $v->datas[1]->name }}</div>
-            <div class="name_bo">{{ $v->datas[1]->money }}/㎡</div>
-            </li>
-             <li class="name">
-            @if(isset($v->datas[2]))
-            <div class="name_top">{{ $v->datas[2]->name }}</div>
-            <div class="name_bo">{{ $v->datas[2]->money }}/㎡</div>
+            @foreach($v->datas as $kk => $vv)
+            @if($vv->ors == '基装')
+            <div class="name_top">{{ $vv->name }}</div>
+            <div class="name_bo">{{ $vv->money }}/㎡</div>
             @endif
+            @endforeach
+            </li>
+             <li class="name">
+            @foreach($v->datas as $kk => $vv)
+            @if($vv->ors == '软装')
+            <div class="name_top">{{ $vv->name }}</div>
+            <div class="name_bo">{{ $vv->money }}/㎡</div>
+            @endif
+            @endforeach
+            </li>
+             <li class="name">
+            @foreach($v->datas as $kk => $vv)
+            @if($vv->ors == '智能')
+            <div class="name_top">{{ $vv->name }}</div>
+            <div class="name_bo">{{ $vv->money }}/㎡</div>
+            @endif
+            @endforeach
             </li>
             <li class="cz"><i>×</i></li>
         </ul>

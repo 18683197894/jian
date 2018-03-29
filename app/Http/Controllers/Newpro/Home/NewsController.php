@@ -75,7 +75,7 @@ class NewsController extends Controller
             'keyworlds'=> $data->keyworlds,
             'description'=> $data->description,
         ];
-        \DB::table('news')->update(['click'=>$data->click + 1]);
+        \DB::table('news')->where('id',$data->id)->update(['click'=>$data->click + 1]);
         $ban = \DB::table('newslei')->select('id','title','img')->get();
         $pid = \DB::table('newslei')->select('id','title')->where('id',$data->pid)->first();
         $click = \DB::table('news')->select('titleimg','id','click','title')->orderBy('click','desc')->offset(0)->limit(10)->get();

@@ -31,7 +31,6 @@ class PayController extends Controller
         }
       }
 
-   
     	return view('Newpro.Home.Pay.shoppingcart',['title'=>$title,'data'=>$data]);
     }
     public function shoppingcartajax(Request $request)
@@ -128,18 +127,22 @@ class PayController extends Controller
       $moenyss = 0;
       
         $data = \DB::table('playgou')->select('id','name','pid','uid','num')->where('id',$id)->first();
+        if(!$data)
+        {
+          return redirect('/newpro/shoppingcart');
+        }
         $data->data = explode(',',$data->pid);
         $data->datas = [];
         $data->path  = '';
         $data->moneys  = 0;
         // dd($data[$k]->data);
-
+        
         foreach($data->data as $kk => $vv)
         { 
 
           $data->datas[$kk] = \DB::table('package')->select('id','name','ors','money')->where('id',$vv)->first();
           
-          if($kk <=1 )
+          if($data->datas[$kk]->ors !=='智能' )
           { 
             $data->datas[$kk]->moneys = $data->datas[$kk]->money * $rom;
             $data->moneys += $data->datas[$kk]->moneys;
@@ -153,9 +156,9 @@ class PayController extends Controller
         
         $moenyss = $data->moneys;
       
-     
+     // dd($data);
     
-    	$title = getwebpage($request->path());
+    	 $title = getwebpage($request->path());
         $address = \DB::table('address')->select('status','id','shen','shi','qu','name','phone','tails','zipcode','lebel','uid')->where('uid',$uid)->get();
         $district = \DB::table('district')->select('id','name','level','upid')->where('level',1)->get();
      
@@ -353,7 +356,7 @@ class PayController extends Controller
 
             $data->datas[$kk] = \DB::table('package')->select('id','name','ors','money')->where('id',$vv)->first();
             
-            if($kk <=1 )
+            if($data->datas[$kk]->ors !=='智能' )
             { 
               $data->datas[$kk]->moneys = $data->datas[$kk]->money * $rom;
               $data->moneys += $data->datas[$kk]->moneys;
@@ -409,7 +412,7 @@ class PayController extends Controller
             $arr['name'] = $vvv->name;
             $arr['prince'] = $vvv->money;
             $arr['ors'] = $vvv->ors;
-            if($kkk <=1)
+            if($vvv->ors !== '智能')
             {
             $arr['num'] = $rom;
             }else

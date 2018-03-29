@@ -37,13 +37,15 @@ class PackageController extends Controller
 			return response()->json('添加失败！请先登入');
 		}
 		$ids = $request->except("_token");
-		if(isset($ids['zid']))
+		$data['pid'] = '';
+
+		if(isset($data))
+
+		foreach($ids as $k => $v)
 		{
-			$data['pid'] = $ids['jid'].','.$ids['rid'].','.$ids['zid'];
-		}else
-		{
-			$data['pid'] = $ids['jid'].','.$ids['rid'];
+			$data['pid'] .= $v.',';
 		}
+		$data['pid'] = substr($data['pid'],0,-1);
 		$data['uid'] = $uid;
 		$data['name'] = '自定义套餐包';
 		$data['time'] = time();
@@ -56,6 +58,21 @@ class PackageController extends Controller
 			return response()->json(1);
 		}{
 			return response()->json('添加失败！');
+		}
+	}
+
+	function playgouors(Request $request)
+	{
+		$uid = \session('Home')->id;
+		$data = \DB::table('orders')->select('id','name','status')->where('status','>=',1)->where('uid',$uid)->get();
+			return response()->json($data);
+		
+		if($data->count() > 0 || !$data)
+		{
+			return response()->json(true);
+		}else
+		{
+			return response()->json(false);
 		}
 	}
 }

@@ -33,10 +33,15 @@ class CenterController extends Controller
     {	
     	$id = $request->id;
     	$data = \DB::table('orders')->select('id','address','linkman','phone','status','addtime','_token','total','zid','payors','name','totals')->where('id',$id)->first();
-    	$data->times = explode(',',$data->addtime);
+    	if(!$data)
+        {
+            return redirect('/newpro/center/my_orders');
+        }
+        $data->times = explode(',',$data->addtime);
     	$data->detail = \DB::table('detail')->select('name','prince','num','ors')->where('orderid',$data->id)->get();
     	// dd($data);
     	$title = getwebpage($request->path());
+        dd($data);
     	return view('Newpro.Home.Center.my_orders_details',['data'=>$data,'title'=>$title,'ors'=>'my_orders_details']);
     }
 

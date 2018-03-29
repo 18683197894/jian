@@ -96,7 +96,7 @@
                 </a>
                 <a href="javascript:;" class="Top_r">
                     <img src="{{ asset('/new/home/package/jizhuang/img/Good4.png') }}" alt=""/>
-                    <div class="text">轻钢龙骨纸面石膏板平顶</div>
+                    <div class="text">专注家装十五年，寻找对生活有品质的你</div>
                 </a>
             </div>
             <div class="bottom">
@@ -106,7 +106,7 @@
                 </a>
                 <a href="javascript:;" class="Top_r">
                     <img src="{{ asset('/new/home/package/jizhuang/img/Good6.png') }}" alt=""/>
-                    <div class="text">轻钢龙骨纸面石膏板平顶</div>
+                    <div class="text">以家为核心，实力见证  匠心品质</div>
                 </a>
             </div>
         </div>
@@ -199,7 +199,7 @@
                     <div class="Basic_name">Package C</div>
                     <i></i>
                     <div class="Basic_Class">智能家居包</div>
-                    <div class="Price">￥<span class="Num">21124.6</span></div>
+                    <div class="Price">￥<span class="Num">25880</span></div>
                 </div>
                 <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Selected.png') }}" alt="" class="Basic_Selected"/>
             </a>
@@ -263,7 +263,7 @@
     @if(session('Home'))
         <a href="javascript:;" class="playgou">加入购物车</a>
     @else
-        <a href="{{ url('/newpro/login?path=') }}{{ $path }}" class="playgou">加入购物车</a>
+        <a href="{{ url('/newpro/login?path=') }}{{ $path }}">加入购物车</a>
     @endif
     </div>
 </div>

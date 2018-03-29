@@ -69,24 +69,50 @@ $(".My_Choice .Choice_Bot a").live('click',function(){
     if($(this).hasClass('zhin')){
         $(this).remove();
         $(".Ai .Style_Bot a").removeClass("avtive");
-    }
+    };
+    if($(this).hasClass('fg')){
+        $(this).remove();
+        $(".Ai .Style_Bot a").removeClass("avtive");
+    };
 });
 
 $('.playgou').on('click',function(){
     var jizhuang = $('.Choice_Bot > .jz').attr('index');
     var ruanzhuang = $('.Choice_Bot > .fg').attr('index');
     var zhineng = $('.Choice_Bot > .zhin').attr('index');
+    init = false;
     if(jizhuang == undefined)
+    {   
+        $.ajax('/newpro/package/playgouors',{
+        type : 'post',
+        async : false,
+        data : {_token:$("meta[name='csrf-token']").attr('content')},
+        success : function(data)
+        {
+            if(data == false)
+            {   
+                idit = false;
+                alert('加入失败！请选择基装包');
+                return false;
+            }else
+            {
+                init = true;
+            }
+        },
+        error : function(data)
+        {
+            alert('添加失败！');
+        }
+    })
+        
+    }else
     {
-        alert('加入失败！请选择基装包');
+        init = true;
+    }
+    if(!init)
+    {
         return false;
     }
-    if(ruanzhuang == undefined)
-    {
-        alert('加入失败！请选择软装包');
-        return false;
-    }
-
     $.ajax('/newpro/package/playgou',{
         type : 'post',
         data : {jid:jizhuang,rid:ruanzhuang,zid:zhineng,_token:$("meta[name='csrf-token']").attr('content')},
@@ -106,3 +132,4 @@ $('.playgou').on('click',function(){
         }
     })
 })
+

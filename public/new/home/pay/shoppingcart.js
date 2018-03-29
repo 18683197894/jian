@@ -40,8 +40,14 @@
 
 
     $("input[index='xuan']").on('click',function(){ zong() });
+	
 	$('.cz i').on('click',function(){
-		var id = $(this).parents('.con').find("input[type='checkbox']").attr('id');
+		var id = $(this).parents('.con').find("input[type='radio']").attr('id');
+		if(id == undefined || !id)
+		{	
+			alert('删除失败！');
+			return false
+		}
 		var con = $(this).parents('.con');
 		$.ajax('/newpro/shoppingcart/ajax',{
 			type : 'get',
@@ -56,13 +62,13 @@
 				}else
 				{
 					alert('删除失败！');
-					return fasle;
+					return false;
 				}
 			},
 			error : function(data)
 			{
 				alert('删除失败！');
-				return fasle;
+				return false;
 			}
 		})
 	})
