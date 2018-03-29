@@ -89,14 +89,14 @@ $('.playgou').on('click',function(){
         data : {_token:$("meta[name='csrf-token']").attr('content')},
         success : function(data)
         {
-            if(data == false)
+            if(data == 1)
             {   
+                init = true;
+            }else
+            {
                 idit = false;
                 alert('加入失败！请选择基装包');
                 return false;
-            }else
-            {
-                init = true;
             }
         },
         error : function(data)
