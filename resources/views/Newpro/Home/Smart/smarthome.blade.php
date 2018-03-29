@@ -11,7 +11,7 @@
     <img src="{{ asset('new/home/smart/smarthome/img/Furnishing_banner.png') }}" alt=""/>
 </div>
 <div class="ship">
-    <video src="{{ asset('http://121.43.168.49/index.php?share/fileProxy&path=%7BuserShare%7D%3A100%2Fzhineng.mp4') }}" autoplay="autoplay" controls="controls">
+    <video src="{{ asset('http://121.43.168.49/index.php?share/fileProxy&path=%7BuserShare%7D%3A100%2Fzhineng.mp4') }}"  controls="controls">
     </video>
 </div>    
 <div class="F_Life">
