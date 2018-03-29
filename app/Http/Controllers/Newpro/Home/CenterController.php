@@ -41,7 +41,6 @@ class CenterController extends Controller
     	$data->detail = \DB::table('detail')->select('name','prince','num','ors')->where('orderid',$data->id)->get();
     	// dd($data);
     	$title = getwebpage($request->path());
-        dd($data);
     	return view('Newpro.Home.Center.my_orders_details',['data'=>$data,'title'=>$title,'ors'=>'my_orders_details']);
     }
 
