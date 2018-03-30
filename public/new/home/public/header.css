@@ -3,8 +3,8 @@
     padding: 0;
 }
 body{
-    font-family: 微软雅黑；
-font-family: "Microsoft YaHei";
+    font-family: 微软雅黑;
+font-family: 'Microsoft YaHei';
 }
 .header{
     width: 100%;
@@ -172,9 +172,9 @@ font-family: "Microsoft YaHei";
         background-color: #ffffff;
         height: 480px;
         border-bottom: 1px solid #E7E7E7;
-        -webkit-transition: all 5s;
-        -moz-transition: all 5s;
-        -o-transition: all 5s;
+        -webkit-transition: all 3s;
+        -moz-transition: all 3s;
+        -o-transition: all 3s;
     }
     .header{
         height: 75px;
@@ -187,5 +187,13 @@ font-family: "Microsoft YaHei";
         line-height: 60px;
         z-index: 99999;
         text-indent: 50px;
+    }
+}
+@media screen and (max-width: 750px){
+    .nav{
+        margin-left: 0;
+    }
+    .nav a.avtive{
+        border-bottom: none;
     }
 }

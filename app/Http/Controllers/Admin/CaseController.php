@@ -195,7 +195,7 @@ class CaseController extends Controller
 
             
 		]); 
-
+        
 		if($request->hasFile('keting'))
     	{
     		if($request->file('keting')->isValid())

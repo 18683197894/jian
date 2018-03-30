@@ -19,7 +19,6 @@ body{
 .index_interval{
     width: 100%;
     overflow: hidden;
-    height: 140px;
     background-color: #F5F5F5;
 }
 .index_interval .Center{
@@ -39,8 +38,8 @@ body{
 }
 .Center .fl img:hover{
     transform:rotate(360deg);
-    -ms-transform:rotate(360deg); 	/* IE 9 */
-    -moz-transform:rotate(360deg); 	/* Firefox */
+    -ms-transform:rotate(360deg);   /* IE 9 */
+    -moz-transform:rotate(360deg);  /* Firefox */
     -webkit-transform:rotate(360deg); /* Safari 和 Chrome */
     -o-transform:rotate(360deg);
     transition: all 2s ease-in-out;
@@ -95,7 +94,7 @@ body{
 .Project .bar_l{
     width: 44%;
     height: 40px;
-    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
+    background: url("../img/bar_l.png") no-repeat right 20px;
     position: absolute;
     top: 0;
     left: 0;
@@ -103,7 +102,7 @@ body{
 .Project .bar_r{
     width: 44%;
     height: 40px;
-    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
+    background: url("../img/bar_r.png") no-repeat left 20px;
     position: absolute;
     top: 0;
     right: 0;
@@ -198,7 +197,7 @@ body{
 .Quality .bar_l{
     width: 41%;
     height: 40px;
-    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
+    background: url("../img/bar_l.png") no-repeat right 20px;
     position: absolute;
     top: 0;
     left: 0;
@@ -206,7 +205,7 @@ body{
 .Quality .bar_r{
     width: 41%;
     height: 40px;
-    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
+    background: url("../img/bar_r.png") no-repeat left 20px;
     position: absolute;
     top: 0;
     right: 0;
@@ -280,7 +279,7 @@ body{
 .Package .bar_l{
     width: 44%;
     height: 40px;
-    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
+    background: url("../img/bar_l.png") no-repeat right 20px;
     position: absolute;
     top: 0;
     left: 0;
@@ -288,7 +287,7 @@ body{
 .Package .bar_r{
     width: 44%;
     height: 40px;
-    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
+    background: url("../img/bar_r.png") no-repeat left 20px;
     position: absolute;
     top: 0;
     right: 0;
@@ -328,13 +327,13 @@ body{
 }
 
 .Show_One .text{
-    background: url("/new/home/index/img/Package_x1.png") no-repeat left 115px top 15px;
+    background: url("../img/Package_x1.png") no-repeat left 115px top 15px;
 }
 .Show_Two .text{
-    background: url("/new/home/index/img/Package_x2.png") no-repeat left 115px top 15px;
+    background: url("../img/Package_x2.png") no-repeat left 115px top 15px;
 }
 .Show_Three .text{
-    background: url("/new/home/index/img/Package_x3.png") no-repeat left 115px top 15px;
+    background: url("../img/Package_x3.png") no-repeat left 115px top 15px;
 }
 .Package .Show a .text span{
     display: block;
@@ -347,17 +346,17 @@ body{
 }
 .Package .Show .Show_One:hover .text{
     color: #E12E32;
-    background: url("/new/home/index/img/Package_x1h.png") no-repeat left 115px top 15px;
+    background: url("../img/Package_x1h.png") no-repeat left 115px top 15px;
     background-color: #F5F5F5;
 }
 .Package .Show .Show_Two:hover .text{
     color: #E12E32;
-    background: url("/new/home/index/img/Package_x2h.png") no-repeat left 115px top 15px;
+    background: url("../img/Package_x2h.png") no-repeat left 115px top 15px;
     background-color: #F5F5F5;
 }
 .Package .Show .Show_Three:hover .text{
     color: #E12E32;
-    background: url("/new/home/index/img/Package_x3h.png") no-repeat left 115px top 15px;
+    background: url("../img/Package_x3h.png") no-repeat left 115px top 15px;
     background-color: #F5F5F5;
 }
 .Package .Show a:hover .text span{
@@ -365,70 +364,6 @@ body{
 }
 .Package .Show a:hover .Package_D{
     transform: scale(0.9);
-}
-.Case{
-    width: 1200px;
-    padding-top: 60px;
-    margin: auto;
-    overflow: hidden;
-}
-.Case .Title{
-    width: 100%;
-}
-.Case .Title .top{
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
-    color: #999999;
-}
-.Case .Title .bar{
-    width: 100%;
-    overflow: hidden;
-    text-align: center;
-    font-size: 22px;
-    color: #333333;
-    position: relative;
-}
-.Case .Title .bar .text{
-    width: 100%;
-    overflow: hidden;
-    line-height: 40px;
-}
-.Case .bar_l{
-    width: 44%;
-    height: 40px;
-    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.Case .bar_r{
-    width: 44%;
-    height: 40px;
-    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-.Case .Title .bottom{
-    width: 100%;
-    text-align: center;
-    font-size: 13px;
-    color: #999999;
-}
-.Case .Show{
-    width: 100%;
-    overflow: hidden;
-    margin-top: 30px;
-}
-.Case .Show a{
-    display: block;
-    width: 25%;
-    float: left;
-    overflow: hidden;
-    border-left: 2px solid #ffffff;
-    border-right: 2px solid #ffffff;
-    box-sizing: border-box;
 }
 .Case{
     width: 1200px;
@@ -503,9 +438,9 @@ body{
 .Case .Show .Show_a .top img{
     display: block;
     width: 100%;
-    height: 170px;
     overflow: hidden;
     transition: all 0.6s;
+    height: 260px;
 }
 .Case .Show .Show_a .top:hover img{
     transform: scale(0.9);
@@ -620,7 +555,7 @@ body{
 .Craf .bar_l{
     width: 44%;
     height: 40px;
-    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
+    background: url("../img/bar_l.png") no-repeat right 20px;
     position: absolute;
     top: 0;
     left: 0;
@@ -628,7 +563,7 @@ body{
 .Craf .bar_r{
     width: 44%;
     height: 40px;
-    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
+    background: url("../img/bar_r.png") no-repeat left 20px;
     position: absolute;
     top: 0;
     right: 0;
@@ -769,7 +704,7 @@ body{
 .Choose .bar_l{
     width: 44%;
     height: 40px;
-    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
+    background: url("../img/bar_l.png") no-repeat right 20px;
     position: absolute;
     top: 0;
     left: 0;
@@ -777,7 +712,7 @@ body{
 .Choose .bar_r{
     width: 44%;
     height: 40px;
-    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
+    background: url("../img/bar_r.png") no-repeat left 20px;
     position: absolute;
     top: 0;
     right: 0;
@@ -837,7 +772,7 @@ body{
 .School .bar_l{
     width: 44%;
     height: 40px;
-    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
+    background: url("../img/bar_l.png") no-repeat right 20px;
     position: absolute;
     top: 0;
     left: 0;
@@ -845,7 +780,7 @@ body{
 .School .bar_r{
     width: 44%;
     height: 40px;
-    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
+    background: url("../img/bar_r.png") no-repeat left 20px;
     position: absolute;
     top: 0;
     right: 0;
@@ -899,4 +834,142 @@ body{
 }
 .School .Show .Loop .text a:hover{
     color: #E12E32;
+}
+@media screen and (max-width: 750px){
+    .banner{
+        margin-top: 75px;
+    }
+    .index_interval{
+        width: 100%;
+    }
+    .index_interval .Center{
+        width: 100%;
+        overflow: hidden;
+    }
+    .Center .fl{
+        width: 50%;
+        overflow:hidden;
+    }
+    .Center .fl img{
+        margin-left: 25%;
+    }
+    .Center_Text{
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .Project{
+        width: 100%;
+    }
+    .Project .bar_l{
+        width: 39%;
+    }
+    .Project .bar_r{
+        width: 39%;
+    }
+    .Project .Show a{
+        width: 100%;
+    }
+    .Project .Show a .hide{
+        background:rgba(0,0,0,0.5);
+        opacity:1;
+    }
+    .Quality{
+        width: 100%;
+        display: none;
+    }
+    .Package{
+        width: 100%;
+    }
+    .Package .bar_l{
+        width: 39%;
+    }
+    .Package .bar_r{
+        width: 39%;
+    }
+    .Package .Show a{
+        width: 100%;
+    }
+    .Case{
+        width: 100%;
+    }
+    .Case .bar_l{
+        width: 39%;
+    }
+    .Case .bar_r{
+        width: 39%;
+    }
+    .Case .Show .Show_a{
+        width: 100%;
+    }
+    .Craf{
+        width: 100%;
+    }
+    .Craf .bar_l{
+        width: 39%;
+    }
+    .Craf .bar_r{
+        width: 39%;
+    }
+    .Craf .Show .left{
+        width: 100%;
+        border: none;
+    }
+    .Craf .Show .left .text .resume{
+        font-size: 15px;
+    }
+    .Craf .Show .right{
+        width: 100%;
+        border: none;
+    }
+    .Craf .Show .right .m_b{
+        width: 100%;
+        border: none;
+    }
+    .Craf .Show .right .m_b img{
+        width: 100%;
+    }
+    .Craf .Show .right .shot{
+        width: 100%;
+    }
+    .Craf .Show .right .shot img{
+        width: 100%;
+    }
+    .Craf .Show .right .shot .text{
+        height: 60px;
+    }
+    .Craf .Show .right .shot .text .name{
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .Craf .Show .right .shot .text .resume{
+        font-size: 15px;
+    }
+    .Choose{
+        width: 100%;
+    }
+    .Choose .bar_l{
+        width: 39%;
+    }
+    .Choose .bar_r{
+        width: 39%;
+    }
+    .Choose .Show a{
+        width: 50%;
+    }
+    .School{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .School .bar_l{
+        width: 39%;
+    }
+    .School .bar_r{
+        width: 39%;
+    }
+    .School .Show .Loop{
+        width: 100%;
+    }
+
 }
