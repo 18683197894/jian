@@ -793,4 +793,10 @@ body{
     .Style_Bot a:nth-child(3){
         margin-right: 0;
     }
+    .Package .Cart{
+        width: 100%;
+    }
+    .Package .Cart a{
+        margin-right: 20px;
+    }
 }
