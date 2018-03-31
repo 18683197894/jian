@@ -45,7 +45,7 @@ body{
     padding-bottom: 25px;
 }
 .Show{
-   width: 100%;
+    width: 100%;
     overflow: hidden;
 }
 .Brand .Show a{
@@ -359,9 +359,9 @@ body{
 }
 .Originality .Show a img:hover{
     /*transform:rotate(360deg);*/
-    /*-ms-transform:rotate(360deg); 	/!* IE 9 *!/*/
-    /*-moz-transform:rotate(360deg); 	/!* Firefox *!/*/
-    /*-webkit-transform:rotate(360deg); /!* Safari 和 Chrome *!/*/
+    /*-ms-transform:rotate(360deg);     /!* IE 9 *!/*/
+    /*-moz-transform:rotate(360deg);    /!* Firefox *!/*/
+    /*-webkit-transform:rotate(360deg); /!* Safari å’Œ Chrome *!/*/
     /*-o-transform:rotate(360deg);*/
     /*transition: all 2s ease-in-out;*/
     /*-webkit-transition: all 2s ease-in-out;*/
@@ -556,4 +556,94 @@ body{
 }
 .Package .Cart a:hover{
     background-color: #008CD6;
+}
+@media screen and (max-width: 750px){
+    .banner{
+        margin-top: 75px;
+    }
+    .Brand{
+        width: 100%;
+        margin-top: 30px;
+    }
+    .Brand .Show a{
+        width: 100%;
+    }
+    .Project{
+        margin-top: 30px;
+    }
+    .Project_img{
+        width: 100%;
+    }
+    .Good{
+        width: 100%;
+        margin-top: 30px;
+    }
+    .Good .Show .Left{
+        width: 100%;
+        border-right: none;
+        margin-bottom: 10px;
+    }
+    .Good .Show .Left .Bottom{
+        margin-top: 10px;
+    }
+    .Good .Show .Right{
+        border: none;
+    }
+    .Good .Show .Right .bottom{
+        margin-top: 10px;
+    }
+    .Good .Show .Right .bottom .Top_l{
+        width: 100%;
+        display: none;
+    }
+    .Good .Show .Right .bottom .Top_l img{
+        width: 100%;
+    }
+    .Good .Show .Right .bottom .Top_r{
+        width: 100%;
+        border: none;
+    }
+    .Standard{
+        margin-top: 30px;
+    }
+    .Originality{
+        width: 100%;
+    }
+    .Package{
+        width: 100%;
+    }
+    .Originality .Show a{
+        width: 50%;
+    }
+    .Package .Show{
+        width: 100%;
+    }
+    .Package .Show .Loop{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .Package .Style{
+        width: 95%;
+    }
+    .Style_Bot a{
+        margin-right: 30px;
+    }
+    .Style_Bot a:nth-child(3){
+        margin-right: 0;
+    }
+    .Package .Cart{
+        width: 100%;
+    }
+    .Package .Cart a{
+        margin-right: 20px;
+    }
+    .My_Choice{
+        width: 95%;
+    }
+    .My_Choice .Choice_Bot a{
+        margin-right: 30px;
+    }
+    .My_Choice .Choice_Bot a:nth-child(3){
+        margin-right: 0;
+    }
 }

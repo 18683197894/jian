@@ -123,3 +123,31 @@
 .Basic_bag .juzhong .avtive .av{
     display: block;
 }
+@media screen and (max-width: 750px){
+    .Package .jizhuang{
+        width: 95%;
+    }
+    .Package .Ai{
+        width: 95%;
+    }
+    .My_Choice{
+        width: 95%;
+    }
+    .Basic_bag .juzhong{
+        width: 100%;
+    }
+    .Basic_bag .juzhong a{
+        width:100%;
+        margin-right: 0!important;
+        margin-bottom: 15px;
+    }
+    .Basic_bag .juzhong a:first-child{
+        margin-top: 20px;
+    }
+    .Basic_bag .juzhong a img{
+        margin: auto;
+    }
+    .Basic_bag{
+        height: 180px;
+    }
+}
