@@ -360,3 +360,437 @@ body{
 .Propaganda_Top img{
     float: left;
 }
+@media screen and (max-width: 750px){
+    .Banner{
+        margin-top: 75px;
+    }
+    .Propaganda{
+        width: 100%;
+        padding-top: 30px;
+    }
+    .Propaganda_l{
+        width: 100%;
+    }
+    .Propaganda_r{
+        width: 100%;
+    }
+    .Propaganda_Top img{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #ffffff;
+    font-family: '寰蒋闆呴粦',Helvetica,sans-serif!important;
+}
+.Banner{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 165px;
+}
+.Banner img{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+.Basic_bag{
+    width: 100%;
+    height: 80px;
+    background-color: #F5F5F5;
+    box-shadow:0 0 10px 5px #aaa;
+    overflow: hidden;
+}
+.Basic_bag img{
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+}
+.Propaganda{
+    width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding-top: 50px;
+}
+.Propaganda_l{
+    width: 332px;
+    float: left;
+    overflow: hidden;
+}
+.Propaganda_l img{
+    width: 100%;
+    overflow: hidden;
+}
+.Propaganda_r{
+    float: left;
+    width: 868px;
+    overflow: hidden;
+}
+.Propaganda_Top{
+    width: 100%;
+    overflow: hidden;
+}
+.Propaganda_Top img{
+    float: left;
+}
+.Plan{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 50px;
+}
+.Title{
+    width: 100%;
+    font-size: 22px;
+    color: #333333;
+    line-height: 35px;
+    text-align: center;
+    background-color: #ffffff;
+    padding-bottom: 25px;
+}
+.Plan .Icon{
+    width: 665px;
+    overflow: hidden;
+    margin: auto;
+}
+.Plan .Icon img{
+    float: left;
+    display: block;
+    margin-right: 100px;
+}
+.Plan .Icon .none{
+    margin-right: 0;
+}
+.Plan .banner{
+    width: 100%;
+    margin-top: 30px;
+}
+.Brand{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 50px;
+}
+.Show{
+    width: 100%;
+    overflow: hidden;
+}
+.Brand .Show a{
+    display: block;
+    width: 25%;
+    overflow: hidden;
+    border-left: 3px solid #ffffff;
+    border-right: 3px solid #ffffff;
+    box-sizing: border-box;
+    float: left;
+}
+.Brand .Show a img{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.6s;
+}
+.Brand .Show a:hover img{
+    transform: scale(0.9);
+}
+.Brand .Show a .text{
+    width: 100%;
+    height: 105px;
+    border-radius:0 0 5px 5px;
+    background-color: #F5F5F5;
+}
+.Brand .Show a .text span{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #999999;
+    line-height: 25px;
+}
+.Brand .Show a .text .name{
+    font-size: 16px;
+    color: #666666;
+    height: 40px;
+    line-height: 50px;
+}
+.Brand .Show a:hover span{
+    color: #E12E32;
+}
+.Brand .Show a:hover .name{
+    color: #E12E32;
+}
+
+.Package{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 50px;
+    background-color: #F5F5F5;
+    padding-bottom: 30px;
+}
+.Package .Name{
+    width: 100%;
+    overflow: hidden;
+    font-size: 22px;
+    color: #666666;
+    padding-top: 45px;
+    line-height: 35px;
+    text-align: center;
+}
+.Package .jie{
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    color: #666666;
+    line-height: 40px;
+}
+.Package .Show{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    padding-top: 20px;
+}
+.Package .Show .Loop{
+    width: 33.333%;
+    overflow: hidden;
+    float: left;
+}
+.Package .Show .Loop a{
+    display: block;
+    width: 300px;
+    height: 165px;
+    position: relative;
+    margin: auto;
+}
+.Package .Show .Loop a .P_img{
+    width: 185px;
+    height: 165px;
+    float: left;
+    display: block;
+}
+.Package .Show .Loop a .Contact{
+    float: left;
+    width: 115px;
+    height: 165px;
+    background: #ffffff;
+}
+.Basic_name{
+    width: 100%;
+    font-size: 13px;
+    color: #333333;
+    margin-top: 40px;
+    text-indent: 10px;
+    font-weight: 600;
+}
+.Package .Show .Loop a .Contact i{
+    width: 20px;
+    height: 2px;
+    background-color: #7A7A7A;
+    display: block;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+.Basic_Class{
+    width: 100%;
+    font-size: 15px;
+    color: #333333;
+    text-indent: 10px;
+    margin-top: 13px;
+    font-weight: 600;
+}
+.Package .Show .Loop a .Contact .Price{
+    font-size: 15px;
+    width: 100%;
+    color: #333333;
+    text-indent: 8px;
+    margin-top: 40px;
+    font-weight: 600;
+}
+.Contact .Price .Num{
+    font-size: 25px;
+    color: #E12E32;
+}
+.Contact .Price .danwei{
+    font-size: 15px;
+    color: #E12E32;
+    font-weight: 600;
+}
+.Basic_Selected{
+    width: 57px;
+    height: 49px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+}
+.Package .Show .Loop a.avtive .Basic_Selected{
+    display: block;
+}
+.zhi .Contact .Price .Num{
+    font-size: 22px;
+}
+.Package .Style{
+    width: 1100px;
+    overflow: hidden;
+    margin: auto;
+    padding-top: 45px;
+    display: none;
+}
+.Package .Style.avtive{
+    display: block;
+}
+.Style_top{
+    display: block;
+}
+.Style_Bot{
+    width: 100%;
+    overflow: hidden;
+    padding-top: 20px;
+}
+.Style_Bot a{
+    display: block;
+    float: left;
+    width: 90px;
+    height: 75px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    margin-right: 35px;
+    position: relative;
+}
+.Style_Bot a .feng{
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    color: #999999;
+    margin-top: 20px;
+}
+.Style_Bot a .jiner{
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    color: #666666;
+    margin-top: 10px;
+}
+.Style_Bot a .jiner span{
+    color: #E12E32;
+}
+.Style_Bot a .jiner .Num{
+    font-size: 20px;
+}
+.Basic_gou{
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    right: -7px;
+    top: -5px;
+    display: none;
+}
+.Style_Bot a.avtive .Basic_gou{
+    display: block;
+}
+.Package .Cart{
+    width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding-top: 30px;
+}
+.Package .Cart a{
+    display: block;
+    width: 200px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 22px;
+    color: #ffffff;
+    background-color: #E12E32;
+    border-radius: 5px;
+    float: right;
+}
+.Package .Cart a:hover{
+    background-color: #008CD6;
+}
+
+.Propaganda{
+    width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding-top: 50px;
+}
+.Propaganda_l{
+    width: 332px;
+    float: left;
+    overflow: hidden;
+}
+.Propaganda_l img{
+    width: 100%;
+    overflow: hidden;
+}
+.Propaganda_r{
+    float: left;
+    width: 868px;
+    overflow: hidden;
+}
+.Propaganda_Top{
+    width: 100%;
+    overflow: hidden;
+}
+.Propaganda_Top img{
+    float: left;
+}
+@media screen and (max-width: 750px){
+    .Banner{
+        margin-top: 75px;
+    }
+    .Propaganda{
+        width: 100%;
+        padding-top: 30px;
+    }
+    .Propaganda_l{
+        width: 100%;
+    }
+    .Propaganda_r{
+        width: 100%;
+    }
+    .Propaganda_Top img{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .Plan .Icon{
+        width: 100%;
+    }
+    .Plan .Icon img{
+        margin-left:20%;
+        margin-right: 15%;
+        margin-bottom: 30px;
+        height: 68px;
+    }
+    .Brand{
+        width: 100%;
+        margin-top: 30px;
+    }
+    .Brand .Show a{
+        width: 100%;
+        border: none;
+    }
+    .Package .Show{
+        width: 100%;
+    }
+    .Package .Show .Loop{
+        width: 100%;
+    }
+    .Package .Show .Loop a{
+        margin-bottom: 10px;
+    }
+    .Package .Style{
+        width: 95%;
+    }
+    .Style_Bot a{
+        margin-right: 30px;
+    }
+    .Style_Bot a:nth-child(3){
+        margin-right: 0;
+    }
+}
