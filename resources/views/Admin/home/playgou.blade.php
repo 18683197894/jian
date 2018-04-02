@@ -47,13 +47,10 @@
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                  <th width="10%"  style=" text-align:center;">ID</th>
-                  <th width="25%"  style="text-align:center;">包名称</th>
-                  <th width="15%"  style="text-align:center;">所属风格</th>
-                  <th width="10%"  style="text-align:center;">价格</th>
-                  <th width="10%"  style="text-align:center;">数量</th>
-                  <th width="20%"  style="text-align:center;">创建时间</th>
-                  <th width="10%"  style="text-align:center;">操作</th>
+                  <th style=" text-align:center;">ID</th>
+                  <th style="text-align:center;">包名称</th>
+                  <th style="text-align:center;">属性</th>
+                  <th style="text-align:center;">创建时间</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -63,8 +60,6 @@
                   <td class="id" style="text-align: center;vertical-align: middle">{{ $v->id }}</td>
                   <td class="id" style="text-align: center;vertical-align: middle">{{ $v->name }}</td>
                   <td class="id" style="text-align: center;vertical-align: middle">{{ $v->path }}</td>
-                  <td class="id" style="text-align: center;vertical-align: middle">{{ $v->money }}</td>
-                  <td class="id" style="text-align: center;vertical-align: middle">{{ $v->num }}</td>
                   <td class="id" style="text-align: center;vertical-align: middle">{{ date('Y-m-d H:i:s',$v->time) }}</td>
                   <td class="id" style="text-align: center;vertical-align: middle"></td>
                  

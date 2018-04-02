@@ -39,9 +39,9 @@
                 <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >ID</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">名称</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">分类</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">路径</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">单价</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">数量</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">小计</th>
                 </tr>
                </thead>
 
@@ -50,10 +50,10 @@
                 <tr role="row" class="odd">
                   <td style="text-align: center;vertical-align: middle">{{ $v->id }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->name }}</td>
-                  <td style="text-align: center;vertical-align: middle">{{ $v->tus }}</td>
-                  <td style="text-align: center;vertical-align: middle"> <a href="{{ url('admin/package/ruan/fg/column/subclass/') }}/{{ $v->sub_id }}" target="_blank">{{ $v->path }}</a></td>
+                  <td style="text-align: center;vertical-align: middle">{{ $v->ors }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->prince }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->num }}</td>
+                  <td style="text-align: center;vertical-align: middle">{{ $v->num * $v->prince }}</td>
                 </tr>
 @endforeach
 @else

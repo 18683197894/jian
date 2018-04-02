@@ -35,49 +35,22 @@ class HomeController extends Controller
     	$tit = \DB::table('user_home')->where('id',$id)->first()->name.'的购物车';
     	$qing = \DB::table('qing')->first()->money;
     	$data = \DB::table('playgou')
-              ->join('door','playgou.pid','=','door.id')
-              ->select('playgou.id','playgou.pid','playgou.tus','playgou.time','playgou.num','playgou.uid','door.main','door.nomain','door.model','door.pid as ppid','door.title as name')
-              ->where('playgou.uid',$id)
+              ->select('id','pid','tus','time','num','uid','name')
+              ->where('uid',$id)
               ->orderBy('time','desc')
               ->paginate(15);
-
-      $style = \DB::table('style')
-      ->join('packages','style.pid','=','packages.id')
-      ->select('style.id','style.title','packages.title as titles')
-      ->get();
-      if($data->count() > 0)
-      {
-
       foreach($data as $k => $v)
       {
-          if($v->tus == 'main')
-          {
-            $v->name = $v->name.' （主流品牌）';
-            $v->money = $v->main;
-          }else if($v->tus == 'nomain')
-          {
-            $v->name = $v->name.' （非主流品牌）';
-            $v->money = $v->nomain;
-          }else if($v->tus == 'model')
-          {
-            $v->name = $v->name.' （样板间）';
-            $v->money = $v->model;
-          }else if($v->tus == 'qing')
-          {
-            $v->name = $v->name.' （清水房）';
-            $v->money = $qing.'/每平方';
-          }
-
-          foreach($style as $kk => $vv)
-          {
-            if($v->ppid == $vv->id)
-            {
-              $v->path = $vv->titles.' '.$vv->title;
-            }
-          }
-
-      }
-      }
+        $v->pid = explode(',',$v->pid);
+        $v->pids =[];
+        $v->path = '';
+        foreach($v->pid as $kk => $vv)
+        {
+          $v->pids[$kk] = \DB::table('package')->select('name','ors','money')->where('id',$vv)->first();
+          $v->path .= $v->pids[$kk]->name.'+';
+        }
+         $v->path = substr($v->path,0,-1);
+      }      
     	return view('Admin.home.playgou',['data'=>$data,'title'=>$tit]);
     }
 

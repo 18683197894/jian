@@ -35,35 +35,38 @@
               <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
               <div class="row"><div class="col-sm-12"><table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
                 <thead>
-                <tr role="row">
+                 <tr role="row">
                 <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >ID</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">订单号</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">创建人</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">属性</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">备注</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style=" width:20%;text-align:center;">收货人信息</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">发票</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">运费险</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">平台订单号</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">创建时间</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">金额</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">状态</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">支付方式</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">创建时间</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">支付时间</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="width:5%;text-align:center;">状态</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"  style="text-align:center;">操作</th>
                 </tr>
                </thead>
 
 @if( isset($data) and count($data) > 0)                
 @foreach($data as $k => $v)     
+               
                 <tr role="row" class="odd">
                   <td style="text-align: center;vertical-align: middle">{{ $v->id }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->_token }}</td>
-                  <td style="text-align: center;vertical-align: middle">{{ $name }}</td>
+                  <td style="text-align: center;vertical-align: middle">{{ $v->name }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->remarks }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->linkman }} {{ $v->phone }} {{ $v->address }}</td>
                   <td style="text-align: center;vertical-align: middle">@if($v->invoice == 0) 无 @else 是 @endif</td>
-                  <td style="text-align: center;vertical-align: middle">@if($v->risk == 0) 无 @else 是 @endif</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->create_id }}</td>
-                  <td style="text-align: center;vertical-align: middle">{{ date('Y-m-d H:i:s',$v->addtime) }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->total }}</td>
+                  <td style="text-align: center;vertical-align: middle">{{ $v->payors }}</td>
+                  <td style="text-align: center;vertical-align: middle">{{ date('Y-m-d H:i:s',$v->addtime[0]) }}</td>
+                  <td style="text-align: center;vertical-align: middle">@if(isset($v->addtime[1])){{ date('Y-m-d H:i:s',$v->addtime[1]) }} @endif</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->status }}</td>
                   <td style="text-align: center;vertical-align: middle"><a target="_blank" href="{{ url('/jslmadmin/payment/index/shopping/') }}/{{ $v->id }}">商品详情</a></td>
                 </tr>
