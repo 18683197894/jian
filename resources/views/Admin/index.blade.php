@@ -300,7 +300,7 @@ class="active"
             ><a href="{{ url('/admin/package/ruan/peghid') }}"><i class="fa fa-circle-o"></i>臻藏包</a></li> -->
           </ul>
         </li>
-        <li class="
+        <!-- <li class="
 @if($title == "时尚包" || $title == "质享包" || $title == "臻藏包")
 active
 @endif
@@ -329,11 +329,11 @@ class="active"
 @endif
             ><a href="{{ url('/admin/package/ruan/peghid') }}"><i class="fa fa-circle-o"></i>臻藏包</a></li>
           </ul>
-        </li>
+        </li> -->
 
 
 
-        <li class="
+        <!-- <li class="
 @if($title == "包管理1" || $title == "套餐管理")
 active
 @endif
@@ -356,15 +356,11 @@ class="active"
 class="active"
 @endif
             ><a href="{{ url('/admin/package/all/pack') }}"><i class="fa fa-circle-o"></i>套餐管理</a></li>
-            <!-- <li
-@if($title == "臻藏包1")
-class="active"
-@endif
-            ><a href="{{ url('/admin/package/ruan/peghid') }}"><i class="fa fa-circle-o"></i>臻藏包</a></li> -->
+       
           </ul>
-        </li>
+        </li> -->
 
-        <li class="
+        <!-- <li class="
 @if($title == "添加工艺" || $title == "工艺列表")
 active
 @endif
@@ -388,8 +384,8 @@ class="active"
 @endif
             ><a href="{{ url('/admin/gongyi/lei/list') }}"><i class="fa fa-circle-o"></i>工艺列表</a></li>
           </ul>
-        </li>
-        <li class="
+        </li> -->
+        <!-- <li class="
 @if($title == "添加板块" || $title == "板块管理")
 active
 @endif
@@ -414,7 +410,7 @@ class="active"
             ><a href="{{ url('admin/plate/index') }}"><i class="fa fa-circle-o"></i> 板块管理</a></li>
             
           </ul>
-        </li>
+        </li> -->
         <li class="
 @if($title == "添加案例" || $title == "案例管理")
 active

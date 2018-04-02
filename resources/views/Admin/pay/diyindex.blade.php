@@ -37,7 +37,7 @@
         <div class="col-md-5 col-md-offset-7">
         <div class="form-group col-md-4" >
                   <select name="status" class="form-control">
-                    <option value="A" @if(isset($request['status']) && $request['status']  == 'A' ) selected="selected" @endif >所以订单</option>
+                    <option value="A" @if(isset($request['status']) && $request['status']  == 'A' ) selected="selected" @endif >所有订单</option>
                     <option value="1" @if(isset($request['status']) && $request['status']  == '1' ) selected="selected" @endif >已支付</option>
                     <option value="0" @if(isset($request['status']) && $request['status']  == '0' ) selected="selected" @endif>未支付</option>
                   </select>
