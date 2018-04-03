@@ -105,6 +105,7 @@ font-family: 'Microsoft YaHei';
 .search_i .click img{
     width: 16px;
     height: 17px;
+    margin-top: 5px;
     vertical-align:middle
 }
 .nav{
