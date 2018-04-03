@@ -20,3 +20,15 @@ function nav(){
         }
     })
 }nav();
+
+$('.click > a').on('click',function()
+{
+    var val = $(this).parents('form').find('input').val();
+    if(val == '' || val == undefined)
+    {
+        return false;
+    }else
+    {
+        $(this).parents('form').submit();
+    }
+})

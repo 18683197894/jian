@@ -83,5 +83,48 @@ class NewsController extends Controller
         return view('Newpro.Home.News.newsplay',['data'=>$data,'title'=>$title,'pid'=>$pid,'ban'=>$ban,'click'=>$click]);
     }
 
-    
+    public function sou(Request $request)
+    {
+        $key = $request->input('sou');
+        $data = \DB::table('news')->select('id','title','leicon','time','click','titleimg','pid','zhi')
+                ->where('title','like','%'.$key.'%')
+                // ->where('zhi','!=',1)
+                ->orderBy('time','desc')
+                ->paginate(8);
+        
+        $data->appends(['sou'=>$key]);
+        $tus = [];
+        if($data->count() <= 0)
+        {
+            $tus = \DB::table('news')->select('id','title','leicon','time','click','titleimg','pid','zhi')
+                    // ->where('zhi','!=',1)
+                    ->orderBy('time','desc')
+                    ->offset(0)
+                    ->limit(8)
+                    ->get();
+        }else
+        {
+            foreach($data as $k => $v)
+            {
+                $v->title = preg_replace('/'.$key.'/','<b style="color:#E12E32">'.$key.'</b>',$v->title);
+            }
+        }
+        $ors = \DB::table('newslei')
+                ->select('id','title')
+                ->get();
+        if( count($ors) > 0 )
+        {   
+            foreach($ors as $k => $v)
+            {
+                $v->data = \DB::table('news')
+                            ->select('id','title','leicon','click')
+                            ->where('pid',$v->id)
+                            ->orderBy('click','desc')
+                            ->offset(0)
+                            ->limit(5)
+                            ->get();
+            }
+        }
+        return view('Newpro.Home.News.sou',['data'=>$data,'tus'=>$tus,'ors'=>$ors,'request'=>$request->all()]);
+    }
 }

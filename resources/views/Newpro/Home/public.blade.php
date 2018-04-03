@@ -54,10 +54,12 @@
                     免费量房与报价
                 </a>
                 <div class="search_i">
-                    <input type="text" placeholder="海量效果图任你选"/>
+                    <form action="{{ asset('/newpro/home/sou') }}" method="get" name="sou">
+                    <input type="text" name="sou" value="@if(isset($request['sou'])){{$request['sou']}}@endif" placeholder="海量效果图任你选"/>
                     <div class="click">
-                        <img src="{{ asset('/new/home/publicused/img/search_i.png') }}" alt=""/>
+                        <a href="javascript:;"><img src="{{ asset('/new/home/publicused/img/search_i.png') }}" alt=""/></a>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>

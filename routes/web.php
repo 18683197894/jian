@@ -29,6 +29,8 @@ Route::get('/newpro/about','Newpro\Home\UsedController@about');
 Route::get('/newpro/newslist/{id}','Newpro\Home\NewsController@newslist');
 Route::get('/newpro/newslist/play/{id}','Newpro\Home\NewsController@newsplay');
 
+Route::get('/newpro/home/sou','Newpro\Home\NewsController@sou');
+
 //Package
 Route::get('/newpro/package/jizhuang','Newpro\Home\PackageController@jizhuangindex');
 Route::get('/newpro/package/ruanzhuang','Newpro\Home\PackageController@ruanzhuangindex');
