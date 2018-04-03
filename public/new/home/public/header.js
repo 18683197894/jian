@@ -32,3 +32,20 @@ $('.click > a').on('click',function()
         $(this).parents('form').submit();
     }
 })
+$('input[name="sou"]').keydown(function(event)
+{
+    var code = event.keyCode;
+    var val = $(this).val();
+
+    if(code == 13)
+    {
+        if(val == '' || val == undefined)
+        {
+            return false;
+        }else
+        {
+            $(this).parents('form').submit();
+        }
+    }
+    
+})
