@@ -300,117 +300,7 @@ class="active"
             ><a href="{{ url('/admin/package/ruan/peghid') }}"><i class="fa fa-circle-o"></i>臻藏包</a></li> -->
           </ul>
         </li>
-        <!-- <li class="
-@if($title == "时尚包" || $title == "质享包" || $title == "臻藏包")
-active
-@endif
-        treeview">
-          <a href="#">
-            <i class="fa fa-files-o"></i>
-            <span>软包套餐</span>
-            <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li
-@if($title == "时尚包")
-class="active"
-@endif
-            ><a href="{{ url('/admin/package/ruan/fashion') }}"><i class="fa fa-circle-o"></i>时尚包</a></li>
-            <li
-@if($title == "质享包")
-class="active"
-@endif
-            ><a href="{{ url('/admin/package/ruan/joylity') }}"><i class="fa fa-circle-o"></i>质享包</a></li>
-            <li
-@if($title == "臻藏包")
-class="active"
-@endif
-            ><a href="{{ url('/admin/package/ruan/peghid') }}"><i class="fa fa-circle-o"></i>臻藏包</a></li>
-          </ul>
-        </li> -->
-
-
-
-        <!-- <li class="
-@if($title == "包管理1" || $title == "套餐管理")
-active
-@endif
-        treeview">
-          <a href="#">
-            <i class="fa fa-files-o"></i>
-            <span>全包套餐</span>
-            <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li
-@if($title == "包管理1")
-class="active"
-@endif
-            ><a href="{{ url('/admin/package/all') }}"><i class="fa fa-circle-o"></i>包管理</a></li>
-            <li
-@if($title == "套餐管理")
-class="active"
-@endif
-            ><a href="{{ url('/admin/package/all/pack') }}"><i class="fa fa-circle-o"></i>套餐管理</a></li>
-       
-          </ul>
-        </li> -->
-
-        <!-- <li class="
-@if($title == "添加工艺" || $title == "工艺列表")
-active
-@endif
-        treeview">
-          <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span>装修工艺</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li
-@if($title == "添加工艺")
-class="active"
-@endif
-            ><a href="{{ url('/admin/gongyi/lei/add') }}"><i class="fa fa-circle-o"></i>添加工艺</a></li>
-            <li
-@if($title == "工艺列表")
-class="active"
-@endif
-            ><a href="{{ url('/admin/gongyi/lei/list') }}"><i class="fa fa-circle-o"></i>工艺列表</a></li>
-          </ul>
-        </li> -->
-        <!-- <li class="
-@if($title == "添加板块" || $title == "板块管理")
-active
-@endif
-        treeview">
-          <a href="#">
-            <i class="fa fa-laptop"></i>
-            <span>知识学堂</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li
-@if($title == "添加板块")
-class="active"
-@endif
-            ><a href="{{ url('admin/plate/add') }}"><i class="fa fa-circle-o"></i>添加板块</a></li>
-            <li
-@if($title == "板块管理")
-class="active"
-@endif
-            ><a href="{{ url('admin/plate/index') }}"><i class="fa fa-circle-o"></i> 板块管理</a></li>
-            
-          </ul>
-        </li> -->
+        
         <li class="
 @if($title == "添加案例" || $title == "案例管理")
 active
@@ -436,7 +326,7 @@ class="active"
           </ul>
         </li>
         <li class="
-@if($title == "首页楼盘看房预约" || $title == "首页装修报价预约" || $title == "合作伙伴招募" || $title == "案例页装修设计预约")
+@if($title == "合作伙伴招募" || $title == "案例页装修设计预约")
 active
 @endif
         treeview">
@@ -447,21 +337,8 @@ active
             </span>
           </a>
           <ul class="treeview-menu">
-            <li
-@if($title == "首页楼盘看房预约")
-class="active"
-@endif
-            ><a href="{{ url('admin/indexpropermake') }}"><i class="fa fa-circle-o"></i>首页装修报价预约</a></li>
-            <li
-@if($title == "首页装修报价预约")
-class="active"
-@endif
-            ><a href="{{ url('admin/indexationmake') }}"><i class="fa fa-circle-o"></i>首页楼盘看房预约</a></li>
-            <li
-@if($title == "合作伙伴招募")
-class="active"
-@endif
-            ><a href="{{ url('admin/franchisezm') }}"><i class="fa fa-circle-o"></i>合作伙伴招募</a></li>
+           
+    
             <li
 @if($title == "合作伙伴招募")
 class="active"

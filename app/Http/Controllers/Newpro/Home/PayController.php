@@ -476,4 +476,60 @@ class PayController extends Controller
          
 
     }
+
+    public function diyindex(Request $request)
+    {
+        $title = getwebpage($request->path());
+        return view('Newpro.Home.Pay.paymentdiy',['title'=>$title]);
+
+    }
+
+    public function diyindexs(Request $request)
+    {
+        $this->validate($request,[
+            'contract'=>'required|max:255',
+            'remarks'=>'max:255',
+            'name'=>'required|max:8',
+            'room'=>'required|max:30',
+            ],[
+            'contract.required'=>'合同号不能为空！',
+            'contract.max'=>'合同号输入最大255位！',
+            'remarks.max'=>'备注输入最大255位！',
+            'name.required'=>'姓名不能为空！',
+            'name.max'=>'姓名输入最大8位！',
+            'room.required'=>'房号不能为空！',
+            'room.max'=>'房号输入最大8位！',
+            ]);
+        $data = $request->except("_token");
+        $data['addtime'] = time();
+        $data['status'] = 0;
+        $data['_token'] = date('YmdHms',time()).rand(100000,999999);
+
+        $total = $data['total'] * 100;
+        $total = (int) preg_replace('/\..*/','',$total);
+
+        $wechat = new payInterface_native\request_wechat();
+        $wechat_url = $wechat->index(['_token'=>$data['_token'],'addtime'=>$data['addtime'],'total'=>$total],'submitOrderInfo');
+                
+        $alipay = new payInterface_alipay\request_alipay();
+        $alipay_url = $alipay->index(['_token'=>$data['_token'],'addtime'=>$data['addtime'],'total'=>$total],'submitOrderInfo');
+
+        if( empty($wechat_url) || empty($alipay_url) )
+        {   
+            echo "<script> alert('订单创建失败！'); window.location.href='/newspro/payment/diyindex' </script>";
+            return false;
+        }
+        $res = \DB::table('orders_diy')->insertGetId($data);
+
+        if($res)
+        {   
+            $data['id'] = $res;
+            $data['wechat_url'] = $wechat_url['code_img_url'];
+            $data['alipay_url'] = $alipay_url['code_img_url'];
+            return view('Newpro.Home.Pay.paymentdiys',['data'=>$data]);
+        }else
+        {
+            echo "<script> alert('订单创建失败！'); window.location.href='/newspro/payment/diyindex' </script>";
+        }
+    }
 }
