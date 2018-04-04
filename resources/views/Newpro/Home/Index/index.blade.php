@@ -8,10 +8,18 @@
 
 @section('content')
 <!--banner图 轮播-->
-<div class="banner">
+<div class="banner Pc">
     <ul class="">
         <li><a href="javascript:;"><img src="{{ asset('/new/home/index/img/banner1.jpg') }}" alt=""></a></li>
     </ul>
+    <div class="left-btn"></div>
+    <div class="right-btn"></div>
+    <div class="img-btn-list"></div>
+</div>
+<!--banner图 轮播-->
+<div class="banner Mo">
+    <ul class="">
+        <li><a href="javascript:;"><img src="{{ asset('/new/home/index/img/banner_mo.jpg') }}" alt=""></a></li>
     <div class="left-btn"></div>
     <div class="right-btn"></div>
     <div class="img-btn-list"></div>
