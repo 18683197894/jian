@@ -65,7 +65,7 @@ $(function(){
            var inp1 = $(this).prevAll('label').eq(1).find('input');
            var inp2 = $(this).prevAll('label').eq(0).find('input');
            $.ajax({
-            url : '/home/case/play/ajax',
+            url : '/newpro/case/playajax',
             type : 'post',
             data : {uid:uid,name:name,phone:phone,_token:$('meta[name="csrf-token"]').attr('content')},
             success : function(data)

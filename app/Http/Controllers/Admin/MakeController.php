@@ -22,11 +22,12 @@ class MakeController extends Controller
 
     	if( count($data) <= 0 )
     	{
-    	$data = \DB::table('caseplay')
-    	->join('case','caseplay.uid','=','case.id')
-    	->select('caseplay.id','caseplay.phone','caseplay.name','caseplay.time','caseplay.content','case.id as uid','case.title')
-    	->where('caseplay.phone','like','%'.$key.'%')
-    	->orderBy('time','desc')->paginate(10);
+
+    	   $data = \DB::table('caseplay')
+    	   ->join('case','caseplay.uid','=','case.id')
+    	   ->select('caseplay.id','caseplay.phone','caseplay.name','caseplay.time','caseplay.content','case.id as uid','case.title')
+    	   ->where('caseplay.phone','like','%'.$key.'%')
+    	   ->orderBy('time','desc')->paginate(10);
     	}
 
     	return view('Admin.make.caseplay',['title'=>'案例页装修设计预约','data'=>$data,'request'=>$request->all()]);

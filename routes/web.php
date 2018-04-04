@@ -47,6 +47,7 @@ Route::post('/newpro/case/wanajax','Newpro\Home\CaseController@wanajax');
 //完整案例
 Route::get('/newpro/case/play/{id}','Newpro\Home\CaseController@play');
 Route::get('/newpro/case/playindex','Newpro\Home\CaseController@playindex');
+Route::post('/newpro/case/playajax','Newpro\Home\CaseController@playajax');
 
 //在建案例
 Route::get('/newpro/case/zaiplay/{id}','Newpro\Home\CaseController@zaiplay');
@@ -248,7 +249,9 @@ Route::any('/webpro/weixinweb/wechat_notify','Pay\WebpayController@wechat_notify
 
 Route::get('webpro/webpay_alipay','Pay\WebpayController@webpay_alipay');
 
-
+//后台登入
+Route::get('/jslmadmin/login','Admin\LoginController@login');
+Route::post('jslmindex/dologin','Admin\LoginController@dologin');
 //前台登录中间间
 Route::group(['middleware'=>['HomeLogin']],function(){
 

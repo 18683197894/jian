@@ -423,6 +423,27 @@ class CaseController extends Controller
        
         return view('Newpro.Home.Case.zaiplay',['title'=>$title,'data'=>$data]);
     }
+
+    public function playajax(Request $request)
+    {
+        $data = $request->except('_token');
+        $res = \DB::table('caseplay')->select('id')->where('phone',$data['phone'])->first();
+        if($res)
+        {
+            return response()->json(3);
+        }
+        $data['status'] = 1;
+        $data['time'] = time();
+        
+        $res_s = \DB::table('caseplay')->insert($data);
+        if($res_s)
+        {
+            return response()->json(1);
+        }else
+        {
+            return response()->json(2);
+        }
+    }
 }
     
 
