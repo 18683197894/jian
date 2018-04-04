@@ -6,7 +6,7 @@
     overflow: hidden;
 }
 .Basic_bag .juzhong{
-    width: 650px;
+    width: 770px;
     margin: auto;
     overflow: hidden;
     display: block;
@@ -16,10 +16,10 @@
     float: left;
 }
 .Basic_bag .juzhong .Bas{
-    margin-right: 30px;
+    margin-right: 70px;
 }
 .Basic_bag .juzhong .Sof{
-    margin-right: 30px;
+    /*margin-right: 30px;*/
     margin-top: 3px;
 }
 .Basic_bag img{
@@ -102,7 +102,7 @@
     margin-top: 20px;
 }
 .Basic_bag .juzhong{
-    width: 650px;
+    width: 770px;
     margin: auto;
     overflow: hidden;
     display: block;

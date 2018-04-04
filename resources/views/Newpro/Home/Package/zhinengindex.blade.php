@@ -17,11 +17,11 @@
         <img src="{{ asset('/new/home/package/jizhuang/img/Basic_baga.png')}}" alt="" class="av"/>
     </a>
     <a href="{{ url('/newpro/package/ruanzhuang') }}" class="Sof">
-        <img src="{{ asset('/new/home/package/ruanzhuang/img/Soft_bag.png')}}" alt="" class="No"/>
+        <img src="{{ asset('/new/home/package/jizhuang/img/Soft_bag.png')}}" alt="" class="No"/>
         <img src="{{ asset('/new/home/package/jizhuang/img/Soft_baga.png')}}" alt="" class="av"/>
     </a>
     <a href="{{ url('/newpro/package/zhineng') }}" class="avtive">
-        <img src="{{ asset('/new/home/package/zhineng/img/Intelligence_bag.png')}}" alt="" class="No"/>
+        <img src="{{ asset('/new/home/package/jizhuang/img/Intelligence_bag.png')}}" alt="" class="No"/>
         <img src="{{ asset('/new/home/package/jizhuang/img/Intelligence_baga.png')}}" alt="" class="av"/>
     </a>
     </div>
