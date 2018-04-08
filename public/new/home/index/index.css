@@ -97,7 +97,7 @@ body{
 .Project .bar_l{
     width: 44%;
     height: 40px;
-    background: url("../img/bar_l.png") no-repeat right 20px;
+    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
     position: absolute;
     top: 0;
     left: 0;
@@ -105,7 +105,7 @@ body{
 .Project .bar_r{
     width: 44%;
     height: 40px;
-    background: url("../img/bar_r.png") no-repeat left 20px;
+    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
     position: absolute;
     top: 0;
     right: 0;
@@ -200,7 +200,7 @@ body{
 .Quality .bar_l{
     width: 41%;
     height: 40px;
-    background: url("../img/bar_l.png") no-repeat right 20px;
+    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
     position: absolute;
     top: 0;
     left: 0;
@@ -208,7 +208,7 @@ body{
 .Quality .bar_r{
     width: 41%;
     height: 40px;
-    background: url("../img/bar_r.png") no-repeat left 20px;
+    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
     position: absolute;
     top: 0;
     right: 0;
@@ -282,7 +282,7 @@ body{
 .Package .bar_l{
     width: 44%;
     height: 40px;
-    background: url("../img/bar_l.png") no-repeat right 20px;
+    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
     position: absolute;
     top: 0;
     left: 0;
@@ -290,7 +290,7 @@ body{
 .Package .bar_r{
     width: 44%;
     height: 40px;
-    background: url("../img/bar_r.png") no-repeat left 20px;
+    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
     position: absolute;
     top: 0;
     right: 0;
@@ -330,13 +330,13 @@ body{
 }
 
 .Show_One .text{
-    background: url("../img/Package_x1.png") no-repeat left 115px top 15px;
+    background: url("/new/home/index/img/Package_x1.png") no-repeat left 115px top 15px;
 }
 .Show_Two .text{
-    background: url("../img/Package_x2.png") no-repeat left 115px top 15px;
+    background: url("/new/home/index/img/Package_x2.png") no-repeat left 115px top 15px;
 }
 .Show_Three .text{
-    background: url("../img/Package_x3.png") no-repeat left 115px top 15px;
+    background: url("/new/home/index/img/Package_x3.png") no-repeat left 115px top 15px;
 }
 .Package .Show a .text span{
     display: block;
@@ -349,17 +349,17 @@ body{
 }
 .Package .Show .Show_One:hover .text{
     color: #E12E32;
-    background: url("../img/Package_x1h.png") no-repeat left 115px top 15px;
+    background: url("/new/home/index/img/Package_x1h.png") no-repeat left 115px top 15px;
     background-color: #F5F5F5;
 }
 .Package .Show .Show_Two:hover .text{
     color: #E12E32;
-    background: url("../img/Package_x2h.png") no-repeat left 115px top 15px;
+    background: url("/new/home/index/img/Package_x2h.png") no-repeat left 115px top 15px;
     background-color: #F5F5F5;
 }
 .Package .Show .Show_Three:hover .text{
     color: #E12E32;
-    background: url("../img/Package_x3h.png") no-repeat left 115px top 15px;
+    background: url("/new/home/index/img/Package_x3h.png") no-repeat left 115px top 15px;
     background-color: #F5F5F5;
 }
 .Package .Show a:hover .text span{
@@ -399,7 +399,7 @@ body{
 .Case .bar_l{
     width: 44%;
     height: 40px;
-    background: url("../img/bar_l.png") no-repeat right 20px;
+    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
     position: absolute;
     top: 0;
     left: 0;
@@ -407,7 +407,7 @@ body{
 .Case .bar_r{
     width: 44%;
     height: 40px;
-    background: url("../img/bar_r.png") no-repeat left 20px;
+    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
     position: absolute;
     top: 0;
     right: 0;
@@ -558,7 +558,7 @@ body{
 .Craf .bar_l{
     width: 44%;
     height: 40px;
-    background: url("../img/bar_l.png") no-repeat right 20px;
+    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
     position: absolute;
     top: 0;
     left: 0;
@@ -566,7 +566,7 @@ body{
 .Craf .bar_r{
     width: 44%;
     height: 40px;
-    background: url("../img/bar_r.png") no-repeat left 20px;
+    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
     position: absolute;
     top: 0;
     right: 0;
@@ -707,7 +707,7 @@ body{
 .Choose .bar_l{
     width: 44%;
     height: 40px;
-    background: url("../img/bar_l.png") no-repeat right 20px;
+    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
     position: absolute;
     top: 0;
     left: 0;
@@ -715,7 +715,7 @@ body{
 .Choose .bar_r{
     width: 44%;
     height: 40px;
-    background: url("../img/bar_r.png") no-repeat left 20px;
+    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
     position: absolute;
     top: 0;
     right: 0;
@@ -775,7 +775,7 @@ body{
 .School .bar_l{
     width: 44%;
     height: 40px;
-    background: url("../img/bar_l.png") no-repeat right 20px;
+    background: url("/new/home/index/img/bar_l.png") no-repeat right 20px;
     position: absolute;
     top: 0;
     left: 0;
@@ -783,7 +783,7 @@ body{
 .School .bar_r{
     width: 44%;
     height: 40px;
-    background: url("../img/bar_r.png") no-repeat left 20px;
+    background: url("/new/home/index/img/bar_r.png") no-repeat left 20px;
     position: absolute;
     top: 0;
     right: 0;
