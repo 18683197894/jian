@@ -7,10 +7,12 @@
 
 @section('content')
 <!--banner-->
-<div class="banner">
+<div class="banner PC">
     <img src="{{ asset('/new/home/package/jizhuang/img/Basic_banner.jpg')}}" alt=""/>
 </div>
-
+<div class="banner MO">
+    <img src="{{ asset('/new/home/package/jizhuang/img/Basic_banner1.jpg')}}" alt=""/>
+</div>
 <div class="Basic_bag">
     <div class="juzhong">
     <a href="{{ url('/newpro/package/jizhuang') }}" class="Bas avtive">

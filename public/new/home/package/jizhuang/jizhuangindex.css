@@ -12,6 +12,9 @@ body{
     overflow: hidden;
     margin-top: 165px;
 }
+.banner.MO{
+    display: none;
+}
 .banner img{
     display: block;
     width: 100%;
@@ -560,6 +563,12 @@ body{
 @media screen and (max-width: 750px){
     .banner{
         margin-top: 75px;
+    }
+    .banner.MO{
+        display: block;
+    }
+    .banner.PC{
+        display: none;
     }
     .Brand{
         width: 100%;

@@ -13,6 +13,9 @@ body{
     overflow: hidden;
     margin-top: 165px;
 }
+.Banner.MO{
+    display: none;
+}
 .Banner img{
     display: block;
     width: 100%;
@@ -355,6 +358,12 @@ body{
 @media screen and (max-width: 750px){
     .Banner{
         margin-top: 75px;
+    }
+    .Banner.PC{
+        display: none;
+    }
+    .Banner.MO{
+        display: block;
     }
     .Scene{
         width: 100%;

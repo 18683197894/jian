@@ -8,8 +8,11 @@
 
 @section('content')
 <!--banner-->
-<div class="Banner">
+<div class="Banner PC">
     <img src="{{ asset('/new/home/package/ruanzhuang/img/Soft_Banner.jpg') }}" alt=""/>
+</div>
+<div class="Banner MO">
+    <img src="{{ asset('/new/home/package/ruanzhuang/img/Soft_Banner1.jpg') }}" alt=""/>
 </div>
 
 <div class="Basic_bag">

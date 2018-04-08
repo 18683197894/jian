@@ -6,8 +6,11 @@
 @endsection('css')
 
 @section('content')
-<div class="Banner">
+<div class="Banner PC">
     <img src="{{ asset('/new/home/package/zhineng/img/Intelligence_Banner.jpg') }}" alt=""/>
+</div>
+<div class="Banner MO">
+    <img src="{{ asset('/new/home/package/zhineng/img/Intelligence_Banner1.jpg') }}" alt=""/>
 </div>
 
 <div class="Basic_bag">
