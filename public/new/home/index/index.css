@@ -16,6 +16,9 @@ body{
 .banner{
     margin-top: 165px;
 }
+.banner.Mo{
+    display: none;
+}
 .index_interval{
     width: 100%;
     overflow: hidden;

@@ -20,6 +20,7 @@
 <div class="banner Mo">
     <ul class="">
         <li><a href="javascript:;"><img src="{{ asset('/new/home/index/img/banner_mo.jpg') }}" alt=""></a></li>
+    </ul>
     <div class="left-btn"></div>
     <div class="right-btn"></div>
     <div class="img-btn-list"></div>
@@ -365,11 +366,20 @@
 <script>
     //bannerͼ
     bannerListFn(
-            $(".banner"),
+            $(".banner.Pc"),
             $(".img-btn-list"),
             $(".left-btn"),
             $(".right-btn"),
-            2000,
+            4000,
+            true
+    );
+       //bannerͼ
+    bannerListFn(
+            $(".banner.Mo"),
+            $(".img-btn-list"),
+            $(".left-btn"),
+            $(".right-btn"),
+            4000,
             true
     );
     //    $(".banner ul li:gt(1)").remove()

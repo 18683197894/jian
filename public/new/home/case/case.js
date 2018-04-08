@@ -199,8 +199,8 @@ $(document).on("click",'.pagination > li > a',function(){
   	var huxing = $('.wan1 > .type_right > .avtive').html();
 	var fengge = $('.wan2 > .type_right > .avtive').html();
 	var yusuan = $('.wan3 > .type_right > .avtive').html();
-
 	var page = $(this).attr('href');
+
 	if(!page)
 	{
 		return false; 
