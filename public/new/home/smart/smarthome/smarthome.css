@@ -36,127 +36,365 @@ body{
     width: 100%;
     overflow: hidden;
 }
-.pattern{
+.Pattern{
     width: 100%;
     overflow: hidden;
+    margin-top: 50px;
+    height: 900px;
+    background: url("../img/Pattern_bg.jpg");
+    background-position:center;
+    background-repeat:no-repeat;
 }
-.F_Life_img1{
-    display: none;
-}
-.pattern .fl{
-    float: left;
-    width: 18.75%;
-    overflow: hidden;
-    line-height: 1100px;
-
-}
-.pattern .fl img{
-    width: 100%;
-    overflow: hidden;
-    display: inline-block;
-    vertical-align: middle;
-}
-.pattern_auto{
-    width: 60.25%;
-    float: left;
-    overflow: hidden;
-    box-shadow: 1px 1px 1px 1px #EEEEEE;
-    box-sizing:border-box;
-    margin-bottom: 200px;
-}
-.get_home{
-    width: 100%;
-    overflow: hidden;
-}
-.get_l{
-    width: 40%;
-    height: 100%;
-    float: left;
-    margin-bottom: 30px;
-}
-.get_r{
-    width: 60%;
-    height: 100%;
-    float: left;
-    overflow: hidden;
-}
-.get_l .title{
-    width: 100%;
-    text-align: center;
-    font-size: 20px;
-    color: #666666;
-    margin-top: 70px;
-}
-.get_l i{
-    display: block;
-    width: 15px;
-    height: 2px;
-    background-color: #666666;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-.get_l .contact{
-    width: 85%;
+.Pattern .Auto{
+    width: 1200px;
     overflow: hidden;
     margin: auto;
-    line-height: 25px;
-    font-size: 15px;
 }
-.get_r img{
-    width: 100%;
-    height: 100%
-}
-.get_r .get_r_img2{
-    display: none;
-}
-.from_home{
+.Pattern .Auto .Loop{
     width: 100%;
     height: 300px;
 }
-.from_l{
-    width: 60%;
-    overflow: hidden;
+.Pattern .Auto .Loop .fl{
     float: left;
-}
-.from_r{
-    width: 40%;
+    width: 737px;
     overflow: hidden;
-    float: left;
 }
-.from_l img{
-    width: 100%;
+.Pattern .Auto .Loop .text{
+    width: 463px;
     height: 100%;
+    float: left;
+    background-color: #ffffff;
 }
-.from_r .title{
+.Pattern .Auto .Loop .text .name{
+    font-size: 20px;
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+    color: #666666;
+    margin-bottom: 10px;
+}
+.Pattern .Auto .Loop .text .bd{
+    width: 20px;
+    height: 2px;
+    background-color: #666666;
+    display: block;
+    margin: auto;
+}
+.Pattern .Auto .Loop .text .Contact{
+    width: 80%;
+    overflow: hidden;
+    margin: auto;
+    font-size: 15px;
+    color: #666666;
+    padding-top: 30px;
+    line-height: 25px;
+}
+.Pattern .Auto .Loop .text2{
+    width: 463px;
+    height: 100%;
+    float: right;
+    background-color: #ffffff;
+}
+.Pattern .Auto .Loop .text2 .name{
+    font-size: 20px;
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+    color: #666666;
+    margin-bottom: 10px;
+}
+.Pattern .Auto .Loop .text2 .bd{
+    width: 20px;
+    height: 2px;
+    background-color: #666666;
+    display: block;
+    margin: auto;
+}
+.Pattern .Auto .Loop .text2 .Contact{
+    width: 80%;
+    overflow: hidden;
+    margin: auto;
+    font-size: 15px;
+    color: #666666;
+    padding-top: 30px;
+    line-height: 25px;
+}
+
+.Choice{
+        width:100%;
+        overflow: hidden;
+        padding-top: 50px;
+    }
+    .Choice .top{
+        width: 1200px;
+        margin: auto;
+        height: 60px;
+    }
+    .Choice .top span{
+        width: 25%;
+        display: block;
+        float: left;
+    }
+    .Choice .top span a{
+        display: block;
+        width: 90px;
+        height: 60px;
+        margin: auto;
+        text-align: center;
+        line-height: 60px;
+        color: #000000;
+    }
+    .Choice .top span.avtive a{
+        border-bottom: 2px solid #e50012;
+        box-sizing: border-box;
+    }
+    .Choice .tabpanel{
+        width: 100%;
+        overflow: hidden;
+    }
+    .Choice .tabpanel .Loop{
+        width: 100%;
+        overflow: hidden;
+        display: none;
+    }
+    .Choice .tabpanel .Loop.avtive{
+        display: block;
+    }
+    .Choice .pleasure{
+        width: 1200px;
+        margin: auto;
+        padding-bottom: 50px;
+    }
+    .layout{
+        width: 100%;
+        overflow: hidden;
+        height: 475px;
+    }
+    .layout img{
+        display: block;
+        width: 50%;
+        float: left;
+        height: 100%;
+    }
+    .layout .Choice_img{
+        float: right;
+    }
+    .layout .layout_div{
+        float: left;
+        width: 50%;
+        background-color: #F2F2F2;
+        height: 100%;
+    }
+    .layout_bt{
+        width: 600px;
+        font-size: 34px;
+        height: 40px;
+        font-weight: normal;
+        margin: 140px 0 20px 0;
+        color: #333;
+        padding-left: 50px;
+    }
+    .layout_bot{
+        width: 600px;
+        font-size: 34px;
+        height: 40px;
+        font-weight: normal;
+        margin: 140px 0 20px 0;
+        color: #333;
+        float: right;
+    }
+    .layout_div .la_p{
+        float: right;
+        width: 600px;
+        font-size: 18px;
+        line-height: 35px;
+        padding-left: 0;
+        padding-right: 35px;
+    }
+    .layout_div p{
+        padding-left: 50px;
+        width: 600px;
+        font-size: 18px;
+        line-height: 35px;
+    }
+    .Choice .pleasure .name{
+        font-size: 55px;
+        font-weight: normal;
+        color: #333;
+        padding: 0 30px;
+        margin: 150px 0 60px 0;
+    }
+    .Choice .pleasure p{
+        padding: 0 30px;
+        font-size: 24px;
+        color: #000;
+        line-height: 50px;
+    }
+    .Core{
+        width: 100%;
+        height: 700px;
+        overflow: hidden;
+        background: url("/new/home/smart/smarthome/img/Intelligence_bg1.jpg");
+        background-size: 100% 100%;
+        margin-top: 50px;
+    }
+   .biaoti{
+        width: 100%;
+        overflow: hidden;
+        font-size: 38px;
+        color: #fff;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        margin-top: 100px;
+        font-weight: normal;
+    }
+    .Core_p{
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+        color: #fff;
+        font-size: 20px;
+        margin-top: 60px;
+        line-height: 40px;
+    }
+    .Core_p p{
+        color: #ffffff;
+        line-height: 35px;
+    }
+    .Passive{
+        width: 100%;
+        height: 700px;
+        overflow: hidden;
+        background: url("/new/home/smart/smarthome/img/Intelligence_bg2.jpg");
+        background-size: 100% 100%;
+        margin-top: 10px;
+    }
+    .Bus{
+        width: 100%;
+        height: 700px;
+        overflow: hidden;
+        background: url("/new/home/smart/smarthome/img//Intelligence_bg3.jpg");
+        background-size: 100% 100%;
+        margin-top: 10px;
+    }
+    .Bus .about{
+        width: 1200px;
+        overflow: hidden;
+        margin: auto;
+    }
+    .Bus .about img{
+        width: 530px;
+        float: left;
+        margin-top: 70px;
+    }
+    .Bus_fr{
+        width: 630px;
+        float: right;
+    }
+    .Bus_fr .biaoti{
+        text-align: left;
+    }
+    .Bus_fr .Core_p{
+        text-align: left;
+    }
+    .Experience{
+        width: 100%;
+        height: 700px;
+        overflow: hidden;
+        background: url("/new/home/smart/smarthome/img/Intelligence_bg4.jpg");
+        background-size: 100% 100%;
+        margin-top: 10px;
+    }
+    .Advantage{
+        width: 1200px;
+        overflow: hidden;
+        margin: auto;
+        padding-top: 90px;
+        padding-bottom: 50px;
+    }
+    .Advantage .baioti{
+        text-align: center;
+        font-size: 42px;
+        line-height: 42px;
+        color: #333;
+        font-weight: normal;
+    }
+    .Advantage .xian{
+        display: block;
+        width: 107px;
+        height: 1px;
+        background: #e50012;
+        margin: 10px auto 25px auto;
+    }
+    .xiaobt{
+        text-align: center;
+        color: #666;
+        font-size: 20px;
+        display: block;
+        padding-bottom: 10px;
+    }
+    .jieshao{
+        width: 100%;
+        overflow: hidden;
+        margin-top: 90px;
+    }
+    .jieshao a{
+        display: block;
+        float: left;
+        width: 25%;
+        overflow: hidden;
+    }
+    .jieshao a img{
+        display: block;
+        margin: auto;
+    }
+    .jieshao_bt{
+        font-size: 26px;
+        color: #333;
+        font-weight: normal;
+        margin: 50px 0;
+        width: 100%;
+        text-align: center;
+    }
+    .jieshao a p{
+        font-size: 18px;
+        color: #666;
+        line-height: 30px;
+        width: 90%;
+        margin: auto;
+        text-align: center;
+    }
+    .Remote{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    padding-top: 50px;
+}
+.Remote .Title{
+    font-size: 25px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    text-align: center;
+}
+.Remote .Brief{
     width: 100%;
     text-align: center;
     font-size: 20px;
     color: #666666;
-    margin-top: 70px;
+    margin-bottom: 40px;
 }
-.from_r i{
+.Remote .Show a{
     display: block;
-    width: 15px;
-    height: 2px;
-    background-color: #666666;
+    width: 25%;
+    float: left;
+}
+.Remote .Show a img{
+    display: block;
     margin: auto;
-    margin-top: 10px;
-    margin-bottom: 20px;
 }
-.from_r .contact{
-    width: 85%;
-    overflow: hidden;
-    margin: auto;
-    line-height: 25px;
-    font-size: 15px;
-}
-.pattern_auto img{
-    transition: all 1s;
-    cursor: pointer;
-}
-.pattern_auto img:hover{
-    transform: scale(1.5);
+.F_Life_img1{
+    display: none;
 }
 @media screen and (max-width: 1200px){
     .F_Life {
