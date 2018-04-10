@@ -134,6 +134,6 @@
 <div class="copyright"><span>CopyRight 2017-2020 建商联盟版权所有 ICP备案：</span><i>蜀ICP备17010220</i></div>
 @yield('js')
 <script src="{{ asset('/new/home/public/header.js') }}"></script>
-<script src="https://s13.cnzz.com/z_stat.php?id=1273388296&web_id=1273388296" language="JavaScript"></script>
+<a href="#" style="display:none"> <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1273388296'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1273388296' type='text/javascript'%3E%3C/script%3E"));</script></a>
 </body>
 </html>
