@@ -51,7 +51,7 @@
                 </a>
                 <a href="javascript:;" class="link">
                     <img src="{{ asset('/new/home/login/img/hade_1.png') }}" alt=""/>
-                    免费量房与报价
+                    装修公司实力认证
                 </a>
                 <div class="search_i">
                     <form action="{{ asset('/newpro/home/sou') }}" method="get" name="sou">
