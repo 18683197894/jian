@@ -16,7 +16,7 @@ body{
 }
 .Banner.MO{
     display: none;
-}                                          
+}
 .Banner img{
     display: block;
     width: 100%;
@@ -743,6 +743,12 @@ body{
 .Propaganda_Top img{
     float: left;
 }
+.banner.Mo{
+    display: none;
+}
+.banner.Pc{
+    display: block;
+}
 @media screen and (max-width: 750px){
     .Banner{
         margin-top: 75px;
@@ -807,5 +813,11 @@ body{
     }
     .Package .Cart a{
         margin-right: 20px;
+    }
+    .banner.Mo{
+        display: block;
+    }
+    .banner.Pc{
+        display: none;
     }
 }

@@ -67,6 +67,16 @@
         <div class="right-btn"></div>
         <div class="img-btn-list"></div>
     </div>
+    <div class="banner Mo">
+    <ul class="">
+        <li><a href=" "><img src="{{ asset('/new/home/package/ruanzhuang/img/Plan_mo1.jpg') }}" alt=""></a></li>
+        <li><a href="javascript:;"><img src="{{ asset('/new/home/package/ruanzhuang/img/Plan_mo2.jpg') }}" alt=""></a></li>
+        <li><a href="javascript:;"><img src="{{ asset('/new/home/package/ruanzhuang/img/Plan_mo3.jpg') }}" alt=""></a></li>
+    </ul>
+    <div class="left-btn"></div>
+    <div class="right-btn"></div>
+    <div class="img-btn-list"></div>
+</div>
 </div>
 <!--严苛进行基装　严选主材品牌-->
 <div class="Brand">
@@ -219,7 +229,15 @@
 <script>
     //bannerͼ
     bannerListFn(
-            $(".banner"),
+            $(".banner.package"),
+            $(".img-btn-list"),
+            $(".left-btn"),
+            $(".right-btn"),
+            2000,
+            true
+    );
+     bannerListFn(
+            $(".banner.Mo"),
             $(".img-btn-list"),
             $(".left-btn"),
             $(".right-btn"),
