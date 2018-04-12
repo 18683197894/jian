@@ -43,7 +43,7 @@ body{
     transform:rotate(360deg);
     -ms-transform:rotate(360deg);   /* IE 9 */
     -moz-transform:rotate(360deg);  /* Firefox */
-    -webkit-transform:rotate(360deg); /* Safari 和 Chrome */
+    -webkit-transform:rotate(360deg); /* Safari å’Œ Chrome */
     -o-transform:rotate(360deg);
     transition: all 2s ease-in-out;
     -webkit-transition: all 2s ease-in-out;
@@ -218,6 +218,55 @@ body{
     text-align: center;
     font-size: 13px;
     color: #999999;
+}
+.Quality .Show{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 30px;
+}
+.Quality .Show a{
+    width: 14.28%;
+    display: block;
+    position: relative;
+    float: left;
+}
+.Quality .Show a:hover span{
+    background: #A3A3A3;
+}
+.Quality .Show a img{
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+}
+.Quality .Show a .name{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 19px;
+    line-height: 50px;
+    color: #666666;
+}
+.Quality .Show a span{
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border-radius: 50px;
+    border: 1px solid #A3A3A3;
+    position: absolute;
+    left: 48%;
+    top: 46px;
+    z-index: 2;
+}
+.Quality .Show .xian{
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    height: 1px;
+    background-color: #A3A3A3;
+    z-index: 1;
 }
 .Quality .Course{
     width: 100%;

@@ -148,15 +148,16 @@ function wanajax(th)
 					var str = "";
 					$.each(data,function(i,n){
 					var zai = $('#wan > .show > a').eq(0).clone(true);
-						zai.find('.show_name_title').html(n['title']);
-						zai.find('.con_span > span').eq(0).html(n['huxing']);
-						zai.find('.con_span > span').eq(1).html(n['fengge']);
-						zai.find('.con_span > span').eq(2).html(n['yusuan']);
+						zai.find('.name').html(n['title']);
+						zai.find('.norms > span').eq(0).html(n['huxing']);
+						zai.find('.norms > span').eq(1).html(n['fengge']);
+						zai.find('.norms > span').eq(2).html(n['yusuan']);
 						zai.find('.show_auto > img').attr('src','/uploads/case/img/'+n['img'])
 						zai.attr('href','/newpro/case/play/'+n['id']);
 
 						str +=zai[0].outerHTML;
 					})
+					console.log(str);
 					$('#wan > .show > a').remove();
 					$('#wan > .show').append(str);
 					if(data[0]['ors'] == 1)

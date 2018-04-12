@@ -113,44 +113,50 @@
     <div class="Title">
         <div class="top">Decoration service process</div>
         <div class="bar">
-            <div class="text">德系工艺品质保障</div>
+            <div class="text">服务流程</div>
             <div class="bar_l"></div>
             <div class="bar_r"></div>
         </div>
-        <div class="bottom">公司品质保障  放心服务  全包无忧</div>
+        <div class="bottom">服务一体化 选材一键式</div>
     </div>
-    <div class="Course">
-        <div class="fl">
-            <img src="{{ asset('/new/home/index/img/Quality1.png')}}" alt="" class="Quality_png"/>
-            <img src="{{ asset('/new/home/index/img/Quality_r.png')}}" alt="" class="Quality_r"/>
-        </div>
-        <div class="fl">
-            <img src="{{ asset('/new/home/index/img/Quality2.png')}}" alt="" class="Quality_png"/>
-            <img src="{{ asset('/new/home/index/img/Quality_r.png')}}" alt="" class="Quality_r"/>
-        </div>
-        <div class="fl">
-            <img src="{{ asset('/new/home/index/img/Quality3.png')}}" alt="" class="Quality_pnt"/>
-            <img src="{{ asset('/new/home/index/img/Quality_r.png')}}" alt="" class="Quality_t"/>
-        </div>
-        <div class="fl">
-            <img src="{{ asset('/new/home/index/img/Quality4.png')}}" alt="" class="Quality_png"/>
-        </div>
-        <div class="fl">
-            <img src="{{ asset('/new/home/index/img/Quality5.png')}}" alt="" class="Quality_png"/>
-            <img src="{{ asset('/new/home/index/img/Quality_r.png')}}" alt="" class="Quality_r"/>
-        </div>
-        <div class="fl">
-            <img src="{{ asset('/new/home/index/img/Quality6.png')}}" alt="" class="Quality_png"/>
-            <img src="{{ asset('/new/home/index/img/Quality_r.png')}}" alt="" class="Quality_r"/>
-        </div>
-        <div class="fl">
-            <img src="{{ asset('/new/home/index/img/Quality7.png')}}" alt=""/>
-            <img src="{{ asset('/new/home/index/img/Quality_r.png')}}" alt="" class="Quality_t"/>
-        </div>
-        <div class="fl">
-            <img src="{{ asset('/new/home/index/img/Quality8.png')}}" alt=""/>
-        </div>
-        
+    <div class="Show">
+        <div class="xian"></div>
+        <a href="#">
+            <div class="name">在线预约</div>
+            <span></span>
+            <img src="{{ asset('/new/home/index/img/flow1.png') }}" alt=""/>
+        </a>
+        <a href="#">
+            <div class="name">实景体验</div>
+            <span></span>
+            <img src="{{ asset('/new/home/index/img/flow2.png') }}" alt=""/>
+        </a>
+        <a href="#">
+            <div class="name">签约下订</div>
+            <span></span>
+            <img src="{{ asset('/new/home/index/img/flow3.png') }}" alt=""/>
+        </a>
+        <a href="#">
+            <div class="name">确认方案</div>
+            <span></span>
+            <img src="{{ asset('/new/home/index/img/flow4.png') }}" alt=""/>
+        </a>
+        <a href="#">
+            <div class="name">标准化施工</div>
+            <span></span>
+            <img src="{{ asset('/new/home/index/img/flow5.png') }}" alt=""/>
+        </a>
+        <a href="#">
+            <div class="name">五星质检验收</div>
+            <span></span>
+            <img src="{{ asset('/new/home/index/img/flow6.png') }}" alt=""/>
+        </a>
+        <a href="#">
+            <div class="name">金牌质保 售后无忧</div>
+            <span></span>
+            <img src="{{ asset('/new/home/index/img/flow7.png') }}" alt=""/>
+        </a>
+
     </div>
 </div>
 <!--装修套餐-->
