@@ -57,7 +57,7 @@
         <img src="{{ asset('/new/home/package/ruanzhuang/img/Icon5.png') }}" alt="" class="none"/>
     </div>
     <!--软装方案图 轮播-->
-    <div class="banner">
+    <div class="banner Pc">
         <ul class="">
             <li><a href="javascript:;"><img src="{{ asset('/new/home/package/ruanzhuang/img/Plan_banner1.jpg') }}" alt=""></a></li>
             <li><a href="javascript:;"><img src="{{ asset('/new/home/package/ruanzhuang/img/Plan_banner2.jpg') }}" alt=""></a></li>
@@ -229,7 +229,7 @@
 <script>
     //bannerͼ
     bannerListFn(
-            $(".banner.package"),
+            $(".banner.Pc"),
             $(".img-btn-list"),
             $(".left-btn"),
             $(".right-btn"),
