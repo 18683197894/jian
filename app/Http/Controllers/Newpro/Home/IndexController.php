@@ -16,7 +16,7 @@ class IndexController extends Controller
         $case = \DB::table('case')
         ->select('id','title','effect1','effect2','huxing','fengge','yusuan')
         ->where('or',5)
-        ->orderBy(\DB::raw('RAND()'))
+        ->orderBy('time','desc')
         ->take(4)
         ->get();
 
