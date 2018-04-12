@@ -80,6 +80,7 @@
                     <option  value="北欧">北欧</option>
                     <option  value="简欧">简欧</option>
                     <option  value="简约">简约</option>
+                    <option  value="简约">简美</option>
                     <option  value="韩式">韩式</option>
                     <option  value="法式">法式</option>
                     <option  value="工业风">工业风</option>
