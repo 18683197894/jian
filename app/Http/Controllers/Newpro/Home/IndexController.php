@@ -50,7 +50,8 @@ class IndexController extends Controller
         }
     	return view('Newpro.Home.Index.index',['title'=>$titles,'case'=>$case,'plate'=>$plate]);
     }
-    public function shuffle_assoc($list) {  
+    public function shuffle_assoc($list)
+    {  
             if (!is_array($list)) return $list;  
                
             $keys = array_keys($list);  
@@ -59,5 +60,36 @@ class IndexController extends Controller
             foreach ($keys as $key)  
             $random[$key] = $this->shuffle_assoc($list[$key]);  
             return $random;  
-         }
+    }
+
+    public function cs()
+    {
+        $str = 'ssadjian;;aasasd';
+        $res = preg_match('/jian/',$str);
+        dd($res);
+
+    }
+
+    public function arrs($arr)
+    {
+        $count = count($arr);
+        if($count <= 0)
+        {
+            return false;
+        }
+        for($i=1; $i<$count; $i++)
+        {
+            for($j=0; $j<$count-$i; $j++)
+            {
+                if($arr[$j] > $arr[$j+1])
+                {
+                    $tmp = $arr[$j+1];
+                    $arr[$j+1] = $arr[$j];
+                    $arr[$j] = $tmp;
+
+                }
+            }
+        }
+        return $arr;
+    }
 }

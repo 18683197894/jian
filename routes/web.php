@@ -14,6 +14,7 @@
 // Route::get('/', function () {
 //     return view('heads');
 // });
+Route::get('/newpro/cs','Newpro\Home\IndexController@cs');
 Route::get('/','Newpro\Home\IndexController@index');
 //智能家居
 Route::get('/newpro/smarthome','Newpro\Home\SmartController@smarthome');
@@ -133,15 +134,12 @@ Route::get('newpro/index/package/packageedit','Admin\PackageController@packageed
 Route::post('newpro/index/package/packageedits','Admin\PackageController@packageedits');
 Route::post('newpro/index/package/packagedel','Admin\PackageController@packagedel');
 
-
-
 //用户管理
 Route::get('/jslmadmin/userhome/index','Admin\HomeController@index');
 //用户的购物车
 Route::get('/jslmadmin/userhome/playgou/{id}','Admin\HomeController@playgou');
 
 Route::post('/jslmadmin/userhome/index/statusajax','Admin\HomeController@statusajax');
-
 
 
 //新闻动态
