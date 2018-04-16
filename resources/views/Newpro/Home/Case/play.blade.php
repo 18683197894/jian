@@ -74,6 +74,7 @@
         <div class="course">
             <div class="title">施工流程</div>
             <div class="contact">
+                @if($data->img1[0] != null)
                 <div class="loop">
                     <em>
                         <span>准备开工</span>
@@ -84,6 +85,8 @@
                         @endforeach
                     </div>
                 </div>
+                @endif
+                @if($data->img2[0] != null)
                 <div class="loop">
                     <em>
                         <span>水电阶段</span>
@@ -94,6 +97,8 @@
                         @endforeach
                     </div>
                 </div>
+                @endif
+                @if($data->img3[0] != null)
                 <div class="loop">
                     <em>
                         <span>泥木阶段</span>
@@ -104,6 +109,8 @@
                         @endforeach
                     </div>
                 </div>
+                @endif
+                @if($data->img4[0] != null)
                 <div class="loop">
                     <em>
                         <span>油漆阶段</span>
@@ -114,6 +121,7 @@
                         @endforeach                        
                     </div>
                 </div>
+                @endif
                 <div class="xian"></div>
             </div>
         </div>

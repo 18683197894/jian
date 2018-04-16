@@ -182,7 +182,7 @@ Route::get('admin/case/edit/{id}','Admin\CaseController@edit');
 Route::post('admin/case/edits','Admin\CaseController@edits');
 Route::post('admin/case/upds','Admin\CaseController@upds');
 Route::post('admin/case/del','Admin\CaseController@del');
-
+Route::get('/admin/case/tedit/{id}','Admin\CaseController@tedit');
 
 //案例页装修设计预约
 Route::get('admin/caseplay','Admin\MakeController@caseplay');

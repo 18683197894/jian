@@ -83,17 +83,17 @@
                   <td style="width: 10%;text-align: center;vertical-align: middle">{{ $v->yusuan }}</td>
                   <td style="width: 12%;text-align: center;vertical-align: middle">{{ date("Y年m月d日",$v->time) }}</td>
                   <td style="width: 15%;text-align: center;vertical-align: middle">
-                    <a href="{{ url('admin/case/edit') }}/{{ $v->id }}">
                     @if($v->or != 5)
-                    更新进度
+                    <a href="{{ url('admin/case/edit') }}/{{ $v->id }}">更新进度</a>&nbsp;&nbsp;
+                    <a href="{{ url('admin/case/tedit') }}/{{ $v->id }}">跳过更新</a>
                     @endif
-                    </a>&nbsp;&nbsp;
+                    &nbsp;&nbsp;
                   	<a href="#" class="del">删除</a>&nbsp;&nbsp;
                     @if( $v->or >=1 & $v->or < 5 )
-                    <a href="{{ url('home/case/zaiindex/play') }}/{{ $v->id }}" target="_blank">预览</a>
+                    <a href="{{ url('/newpro/case/zaiplay/') }}/{{ $v->id }}" target="_blank">预览</a>
                       
                     @elseif( $v->or == 5 )
-                    <a href="{{ url('home/case/index/play') }}/{{ $v->id }}" target="_blank">预览</a>
+                    <a href="{{ url('/newpro/case/play/') }}/{{ $v->id }}" target="_blank">预览</a>
                     
                     @endif
                   </td>

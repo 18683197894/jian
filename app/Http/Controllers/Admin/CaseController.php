@@ -414,7 +414,7 @@ class CaseController extends Controller
             {
                 if(file_exists('./uploads/case/img/'.$v))
                 {
-                    unlink('./uploads/case/img/'.$v);
+                    @unlink('./uploads/case/img/'.$v);
                 }
             }  
         }
@@ -427,7 +427,7 @@ class CaseController extends Controller
             {
                 if(file_exists('./uploads/case/img/'.$vv))
                 {
-                    unlink('./uploads/case/img/'.$vv);
+                    @unlink('./uploads/case/img/'.$vv);
                 }
             }
         }
@@ -442,6 +442,17 @@ class CaseController extends Controller
     	{
     		return response()->json(2);
     	}
+    }
+
+    public function tedit(Request $request,$id)
+    {
+        $data = \DB::table('case')->select('id','title','or')->where('id',$id)->first();
+        if(!$data || $data->or >=5)
+        {
+            return redirect('/admin/case/index')->with(['info'=>'数据不存在！']);
+        }
+        $data->ors = '跳过进度更新';
+        return view('Admin.case.upd',['title'=>'更新','data'=>$data]);
     }
 
 }

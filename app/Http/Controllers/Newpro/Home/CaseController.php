@@ -364,6 +364,7 @@ class CaseController extends Controller
             {
                 $a = null;$b=null;
             }
+            
             return view('Newpro.Home.Case.play',['title'=>$title,'data'=>$data,'a'=>$a,'b'=>$b]);
         
     }
