@@ -17,7 +17,8 @@ class IndexController extends Controller
         ->select('id','title','effect1','effect2','huxing','fengge','yusuan')
         ->where('or',5)
         ->orderBy('time','desc')
-        ->take(4)
+        ->offset(0)
+        ->limit(4)
         ->get();
 
         foreach ($case as $kk => $vv) 
