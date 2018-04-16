@@ -64,9 +64,7 @@ class IndexController extends Controller
 
     public function cs()
     {
-        $str = 'ssadjian;;aasasd';
-        $res = preg_match('/jian/',$str);
-        dd($res);
+        
 
     }
 
