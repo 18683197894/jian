@@ -49,6 +49,7 @@ class IndexController extends Controller
         {
             $plate[$k]->news = \DB::table('news')->select('id','title','time')->where('pid',$v->id)->offset(0)->limit(4)->orderBy('time','desc')->get();
         }
+        
     	return view('Newpro.Home.Index.index',['title'=>$titles,'case'=>$case,'plate'=>$plate]);
     }
     public function shuffle_assoc($list)

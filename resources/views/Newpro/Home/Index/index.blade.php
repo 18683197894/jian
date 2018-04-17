@@ -236,62 +236,7 @@
     </div>
 </div>
 @endif
-<!--装修工艺-->
-<!-- <div class="Craf">
-    <div class="Title">
-        <div class="top">Decoration process</div>
-        <div class="bar">
-            <div class="text">装修工艺</div>
-            <div class="bar_l"></div>
-            <div class="bar_r"></div>
-        </div>
-        <div class="bottom">公司品质保障 放心服务 全包无忧</div>
-    </div>
-    <div class="Show">
-        <a href="#" class="left">
-            <img src="img/Craf1.png" alt=""/>
-            <div class="bg"></div>
-            <div class="text">
-                <div class="name">工友俱乐部</div>
-                <div class="resume">统一着装形象，统一施工标准，严格执行公司施工标准。</div>
-            </div>
-        </a>
-        <div class="right">
-            <a href="#" class="shot m_b">
-                <img src="img/shot1.png" alt=""/>
-                <div class="bg"></div>
-                <div class="text">
-                    <div class="name">墙地砖铺贴工艺</div>
-                    <div class="resume">十字缝线：十字缝线清晰，缝线均匀一致合格…</div>
-                </div>
-            </a>
-            <a href="#" class="shot m_b">
-                <img src="img/shot2.png" alt=""/>
-                <div class="bg"></div>
-                <div class="text">
-                    <div class="name">包管工艺</div>
-                    <div class="resume">下水管（排污管）包扎隔音棉，降低排污管…</div>
-                </div>
-            </a>
-            <a href="#" class="shot">
-                <img src="img/shot3.png" alt=""/>
-                <div class="bg"></div>
-                <div class="text">
-                    <div class="name">顶角线安装</div>
-                    <div class="resume">石膏线两沿平直，与墙体接触面一致…</div>
-                </div>
-            </a>
-            <a href="#" class="shot">
-                <img src="img/shot4.png" alt=""/>
-                <div class="bg"></div>
-                <div class="text">
-                    <div class="name">电路施工工艺</div>
-                    <div class="resume">石膏线两沿平直，与墙体接触面一致…</div>
-                </div>
-            </a>
-        </div>
-    </div>
-</div> -->
+
 <!--材料选购-->
 <div class="Choose">
     <div class="Title">
@@ -356,7 +301,10 @@
             </a>
             <div class="text">
             @foreach($v->news as $kk => $vv)
-                <a href="{{ url('/newpro/newslist/play/') }}/{{ $vv->id }}">{{ $vv->title }}</a>
+                <a href="{{ url('/newpro/newslist/play/') }}/{{ $vv->id }}">
+                <span>@if(mb_strlen($vv->title,'utf8') < 24  ) {{ $vv->title }} @else {{ mb_substr($vv->title,0,20,'utf8') }}... @endif</span>
+                @if(time() - $vv->time < 259200) &nbsp;&nbsp;<img src="{{ asset('/new/home/index/img/new.png') }}" alt="" class="new">@endif
+                </a>
             @endforeach
             </div>
         </div>
