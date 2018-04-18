@@ -12,7 +12,7 @@ class CaseController extends Controller
     	$titles = getwebpage($request->path());
         
     	$wan = \DB::table('case')
-    		->select('id','title','huxing','fengge','yusuan','or','time','effect2')
+    		->select('id','title','huxing','fengge','yusuan','or','time','effect2','suoimg')
     		->where('or',5)
     		->orderBy('time','desc')
     		->Paginate(8);
@@ -76,10 +76,15 @@ class CaseController extends Controller
     		}
     	
     		foreach($wan as $k => $v)
-    		{
-    			$v->img = explode(',',$v->effect2)[0];
+    		{     
+                if($v->suoimg == null)
+                {
+                    $v->img = explode(',',$v->effect2)[0];
+                }else
+                {
+                    $v->img = $v->suoimg;
+                }
     		}
-
     	$arr[0] = array('全部','小户型','二室','三室','四室','公寓','别墅','复式','自建','其他');
     	$arr[1] = array('全部','简欧','简美','港式','美式','欧式','混搭','田园','现代','新古典','东南亚','日式','宜家','北欧','简约','韩式','地中海','中式','法式','工业风','新中式','其他');
     	$arr[2] = array('全部','5万以下','5万-8万','8万-12万','12万-18万','18万-30万','30万-50万','50万以上','其他');
@@ -258,7 +263,7 @@ class CaseController extends Controller
         }
 
         $res = \DB::table('case')
-            ->select('id','title','huxing','fengge','yusuan','or','time','effect2')
+            ->select('id','title','huxing','fengge','yusuan','or','time','effect2','suoimg')
             ->where('or',5)
             ->where('huxing',$a,$huxing)
             ->where('fengge',$b,$fengge)
@@ -267,7 +272,13 @@ class CaseController extends Controller
             ->Paginate(8,['*'],'page',$page);
             foreach($res as $k => $v)
             {
-                $v->img = explode(',',$v->effect2)[0];
+                if($v->suoimg == null)
+                {
+                    $v->img = explode(',',$v->effect2)[0];
+                }else
+                {
+                    $v->img = $v->suoimg;
+                }
             }
         $res->setPath("http://www.jianshanglianmeng.com/newpro/case/index");
         $data['url'] = htmlspecialchars_decode($res->links());
@@ -298,7 +309,7 @@ class CaseController extends Controller
         }
 
         $wan = \DB::table('case')
-            ->select('id','title','huxing','fengge','yusuan','or','time','effect2')
+            ->select('id','title','huxing','fengge','yusuan','or','time','effect2','suoimg')
             ->where('or',5)
             ->where('huxing',$a,$huxing)
             ->where('fengge',$b,$fengge)
@@ -311,7 +322,7 @@ class CaseController extends Controller
             if($countwan <= 0 )
             {
                 $data = \DB::table('case')
-                ->select('id','title','huxing','fengge','yusuan','or','time','effect2')
+                ->select('id','title','huxing','fengge','yusuan','or','time','effect2','suoimg')
                 ->where('or',5)
                 ->inRandomOrder()
                 ->skip(0)
@@ -328,7 +339,13 @@ class CaseController extends Controller
             }
             foreach($data as $k => $v)
             {
-                $v->img = explode(',',$v->effect2)[0];
+                if($v->suoimg == null)
+                {
+                    $v->img = explode(',',$v->effect2)[0];
+                }else
+                {
+                    $v->img = $v->suoimg;
+                }
             }
             return response()->json($data);
     }

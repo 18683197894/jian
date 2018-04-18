@@ -18,7 +18,7 @@ class CaseController extends Controller
     	$data = $request->except("_token");
     	$this->validate($request,[
 		    'title' => 'required|min:2|max:20',
-            'titles' => 'required|min:2|max:50',
+            'titles' => 'required|min:2|max:20',
             'keyworlds' => 'required|min:6|max:120',
             'description' => 'required|min:10|max:255'
  		],[
@@ -167,7 +167,8 @@ class CaseController extends Controller
             'yangtai'=>'image|file',
             'shufang'=>'image|file',
             'ertong'=>'image|file',
-		    'laor'=>'image|file'
+            'laor'=>'image|file',
+		    'suoimg'=>'image|file'
 		    
  		],[
 			'keting.required'=>'未上传图片(客厅)',
@@ -191,27 +192,43 @@ class CaseController extends Controller
             'ertong.image'=>'请上传图片类型的文件(儿童房)',
             'laor.file'=>'上传失败(老人房)',
             'laor.image'=>'请上传图片类型的文件(老人房)',
-
-
+            'laor.file'=>'上传失败(展示图片)',
+            'laor.image'=>'请上传图片类型的文件(展示图片)'
             
 		]); 
         
-		if($request->hasFile('keting'))
+		if($request->hasFile('suoimg'))
     	{
-    		if($request->file('keting')->isValid())
+    		if($request->file('suoimg')->isValid())
     		{ 
           //获取后缀名
-    			$ext=$request->file('keting')->extension();
+    			$ext=$request->file('suoimg')->extension();
     			
           //获取新名
     			$fileName=time().mt_rand(10000,99999).'.'.$ext;
           //执行移动
-    			$request->file('keting')->move('./uploads/case/img/',$fileName);
+    			$request->file('suoimg')->move('./uploads/case/img/',$fileName);
           //添加数据
-                $data['effect1']='客厅';
-    			$data['effect2']=$fileName;
+                $data['suoimg']=$fileName;
     		}
     	}
+
+        if($request->hasFile('keting'))
+        {
+            if($request->file('keting')->isValid())
+            { 
+          //获取后缀名
+                $ext=$request->file('keting')->extension();
+                
+          //获取新名
+                $fileName=time().mt_rand(10000,99999).'.'.$ext;
+          //执行移动
+                $request->file('keting')->move('./uploads/case/img/',$fileName);
+          //添加数据
+                $data['effect1']='客厅';
+                $data['effect2']=$fileName;
+            }
+        }
 
     	if($request->hasFile('woshi'))
     	{
@@ -383,6 +400,11 @@ class CaseController extends Controller
 
     	$data = \DB::table('case')->where('id',$id)->first();
     	$arr = array();
+        if($data->suoimg !== null)
+        {
+            @unlink('./uploads/case/img/'.$data->suoimg);
+        }
+
     	if($data->img1 != null)
     	{	
     		
@@ -432,6 +454,7 @@ class CaseController extends Controller
             }
         }
 
+        
 
     	$res = \DB::table('case')->delete($id);
 

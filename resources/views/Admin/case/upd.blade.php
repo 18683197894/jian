@@ -42,7 +42,11 @@
             <form role="form" action="{{ url('admin/case/upds') }}" method="post" enctype="multipart/form-data">
 				{{ csrf_field() }}
               <div class="box-body">
-               
+                <div class="form-group">
+                  <label for="exampleInputFile">展示效果图（可选 &nbsp;默认客厅效果图）</label>
+                  <input type="file" name="suoimg" id="exampleInputFile">
+                </div>
+                <br>
                 <div class="form-group">
                   <label for="exampleInputFile">客厅效果图（必选）</label>
                   <input type="file" name="keting" id="exampleInputFile">
@@ -59,6 +63,7 @@
                   <label for="exampleInputFile">洗手间效果图（必选）</label>
                   <input type="file" name="xishou" id="exampleInputFile">
                 </div>
+                <br>
                 <div class="form-group">
                   <label for="exampleInputFile">次卧效果图（可选）</label>
                   <input type="file" name="ciwo" id="exampleInputFile">

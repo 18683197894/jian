@@ -14,7 +14,7 @@ class IndexController extends Controller
         //d
         $titles = getwebpage();
         $case = \DB::table('case')
-        ->select('id','title','effect1','effect2','huxing','fengge','yusuan')
+        ->select('id','title','effect1','effect2','huxing','fengge','yusuan','suoimg')
         ->where('or',5)
         ->orderBy('time','desc')
         ->offset(0)
@@ -24,7 +24,13 @@ class IndexController extends Controller
         foreach ($case as $kk => $vv) 
         {   
             $vv->eff = array();
-            $vv->keting = explode(',', $vv->effect2)[0];
+            if($vv->suoimg == null)
+            {
+                $vv->keting = explode(',', $vv->effect2)[0];
+            }else
+            {
+                $vv->keting = $vv->suoimg;
+            }
             
             $ass1 = explode(',', $vv->effect1);
             $ass2 = explode(',', $vv->effect2);
@@ -65,9 +71,11 @@ class IndexController extends Controller
     }
 
     public function cs()
-    {
-        
-
+    {   
+    
+     $a = 9;
+     print_r("${a}");
+      
     }
 
     public function arrs($arr)
