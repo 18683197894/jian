@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Newpro\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
 class CaseController extends Controller
 {
     public function index(Request $request)
     {	
+        
     	$titles = getwebpage($request->path());
         
     	$wan = \DB::table('case')
@@ -16,7 +16,6 @@ class CaseController extends Controller
     		->where('or',5)
     		->orderBy('time','desc')
     		->Paginate(8);
-        
     	$zai = \DB::table('case')
     			->select('id','title','huxing','fengge','yusuan','or','time','img1','img2','img3','img4')
     			->whereBetween('or',[1,4])
@@ -24,12 +23,9 @@ class CaseController extends Controller
     			->skip(0)
     			->take(8)
     			->get();
+    	
 
-    	$request->setTrustedProxies(array('10.32.0.1/16'));  
-		$ip = $request->getClientIp();
-
-		$set = \Cache::get($ip.'case',1);
-		
+		$set = \Cookie::get('case',1);
     	
     	$countwan = $wan->total();
     	$countzai = \DB::table('case')->select('id')->whereBetween('or',[1,4])->count();
@@ -85,12 +81,12 @@ class CaseController extends Controller
                     $v->img = $v->suoimg;
                 }
     		}
-    	$arr[0] = array('全部','小户型','二室','三室','四室','公寓','别墅','复式','自建','其他');
-    	$arr[1] = array('全部','简欧','简美','港式','美式','欧式','混搭','田园','现代','新古典','东南亚','日式','宜家','北欧','简约','韩式','地中海','中式','法式','工业风','新中式','其他');
-    	$arr[2] = array('全部','5万以下','5万-8万','8万-12万','12万-18万','18万-30万','30万-50万','50万以上','其他');
-    	return view('Newpro.Home.Case.index',['set'=>$set,'arr'=>$arr,'title'=>$titles,'wan'=>$wan,'zai'=>$zai,'countwan'=>$countwan,'countzai'=>$countzai]);
+    	$arr[0] = array('小户型','二室','三室','四室','公寓','别墅','复式','自建','其他');
+    	$arr[1] = array('简欧','简美','港式','美式','欧式','混搭','田园','现代','新古典','东南亚','日式','宜家','北欧','简约','韩式','地中海','中式','法式','工业风','新中式','其他');
+    	$arr[2] = array('5万以下','5万-8万','8万-12万','12万-18万','18万-30万','30万-50万','50万以上','其他');
+    	return \View::make('Newpro.Home.Case.index',['set'=>$set,'arr'=>$arr,'title'=>$titles,'wan'=>$wan,'zai'=>$zai,'countwan'=>$countwan,'countzai'=>$countzai]);
     }
-
+   
     function setajax(Request $request)
     {	
     	$request->setTrustedProxies(array('10.32.0.1/16'));  
@@ -98,8 +94,8 @@ class CaseController extends Controller
 
     	$id = $request->id;
     	if($id==1 || $id ==2)
-    	{
-    		\Cache::put($ip.'case',$id,50);
+    	{  
+            \Cookie::queue('case',$id,60);
     	}
     	
     }
@@ -174,15 +170,15 @@ class CaseController extends Controller
         $a='=';
         $b='=';
         $c='=';
-        if($huxing == '全部')
+        if($huxing == null)
         {
             $a='!=';
         }
-        if($fengge == '全部')
+        if($fengge == null)
         {
             $b='!=';
         }
-        if($yusuan == '全部')
+        if($yusuan == null)
         {
             $c='!=';
         }
@@ -249,15 +245,15 @@ class CaseController extends Controller
         $a='=';
         $b='=';
         $c='=';
-        if($huxing == '全部')
+        if($huxing == null)
         {
             $a='!=';
         }
-        if($fengge == '全部')
+        if($fengge == null)
         {
             $b='!=';
         }
-        if($yusuan == '全部')
+        if($yusuan == null)
         {
             $c='!=';
         }
@@ -292,20 +288,20 @@ class CaseController extends Controller
         $huxing = $request->huxing;
         $fengge = $request->fengge;
         $yusuan = $request->yusuan;
-        $a='=';
-        $b='=';
-        $c='=';
-        if($huxing == '全部')
+        $a = '=';
+        $b = '=';
+        $c = '=';
+        if($huxing == null)
         {
-            $a='!=';
+            $a = '!=';
         }
-        if($fengge == '全部')
+        if($fengge == null)
         {
-            $b='!=';
+            $b = '!=';
         }
-        if($yusuan == '全部')
+        if($yusuan == null)
         {
-            $c='!=';
+            $c = '!=';
         }
 
         $wan = \DB::table('case')

@@ -53,7 +53,7 @@ class IndexController extends Controller
         $plate = \DB::table('newslei')->select('id','img','title','time')->orderby('time')->offset(0)->limit(10)->get();
         foreach($plate as $k => $v)
         {
-            $plate[$k]->news = \DB::table('news')->select('id','title','time')->where('pid',$v->id)->offset(0)->limit(4)->orderBy('time','desc')->get();
+            $plate[$k]->news = \DB::table('news')->select('id','title','time')->where('pid',$v->id)->orderBy('time','desc')->offset(0)->limit(8)->get();
         }
         
     	return view('Newpro.Home.Index.index',['title'=>$titles,'case'=>$case,'plate'=>$plate]);

@@ -20,7 +20,7 @@
                     <div class="type_left">户型</div>
                     <div class="type_right">
                     	@foreach($arr[0] as $k => $v)
-                        <a href="javascript:;" @if($loop->first) class="avtive" @endif >{{ $v }}</a>
+                        <a href="javascript:;"  >{{ $v }}</a>
                         @endforeach
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                     <div class="type_left">风格</div>
                     <div class="type_right">
                         @foreach($arr[1] as $k => $v)
-                        <a href="javascript:;" @if($loop->first) class="avtive" @endif >{{ $v }}</a>
+                        <a href="javascript:;"  >{{ $v }}</a>
                         @endforeach
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                     <div class="type_left">预算</div>
                     <div class="type_right">
                         @foreach($arr[2] as $k => $v)
-                        <a href="javascript:;" @if($loop->first) class="avtive" @endif >{{ $v }}</a>
+                        <a href="javascript:;"  >{{ $v }}</a>
                         @endforeach
                     </div>
                 </div>

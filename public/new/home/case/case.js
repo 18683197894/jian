@@ -30,41 +30,51 @@ $(".auto a").click(function(){
 
 
 var color = $(".contact #wan .Choice_type .Choice_type1 .type_right a");
+var color1 = $(".contact #wan .Choice_type .Choice_type2 .type_right a");
+var color2 = $(".contact #wan .Choice_type .Choice_type3 .type_right a");
 color.click(function(){
     color.removeClass("avtive").eq($(this).index()).addClass("avtive");
+    color1.removeClass("avtive");
+    color2.removeClass("avtive");
 	wanajax($(this));
 
 });
-var color1 = $(".contact #wan .Choice_type .Choice_type2 .type_right a");
 color1.click(function(){
     color1.removeClass("avtive").eq($(this).index()).addClass("avtive");
+    color.removeClass("avtive");
+    color2.removeClass("avtive");
 	wanajax($(this));
-
 });
-var color2 = $(".contact #wan .Choice_type .Choice_type3 .type_right a");
 color2.click(function(){
     color2.removeClass("avtive").eq($(this).index()).addClass("avtive");
+    color.removeClass("avtive");
+    color1.removeClass("avtive");
 	wanajax($(this));
 
 });
 
 var color3 = $(".contact .NO2 .Choice_type .Choice_type1 .type_right a");
+var color4 = $(".contact .NO2 .Choice_type .Choice_type2 .type_right a");
+var color5 = $(".contact .NO2 .Choice_type .Choice_type3 .type_right a");
 color3.click(function(){
     color3.removeClass("avtive").eq($(this).index()).addClass("avtive");
+    color4.removeClass("avtive");
+    color5.removeClass("avtive");
 	zaiajax($(this));
-
 });
-var color4 = $(".contact .NO2 .Choice_type .Choice_type2 .type_right a");
+
 color4.click(function(){
     color4.removeClass("avtive").eq($(this).index()).addClass("avtive");
+    color3.removeClass("avtive");
+    color5.removeClass("avtive");
 	zaiajax($(this));
-
 });
-var color5 = $(".contact .NO2 .Choice_type .Choice_type3 .type_right a");
+
 color5.click(function(){
     color5.removeClass("avtive").eq($(this).index()).addClass("avtive");
+    color3.removeClass("avtive");
+    color4.removeClass("avtive");
 	zaiajax($(this));
-
 });
 
 	function zaiajax(th)
@@ -72,6 +82,7 @@ color5.click(function(){
 		var huxing = $('.zai1 > .type_right > .avtive').html();
 		var fengge = $('.zai2 > .type_right > .avtive').html();
 		var yusuan = $('.zai3 > .type_right > .avtive').html();
+	
 		$.ajax('/newpro/case/zaiajax',{
 			type : 'POST',
 			dataType: 'json',
