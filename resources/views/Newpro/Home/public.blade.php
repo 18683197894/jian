@@ -69,7 +69,7 @@
             <a href="/newpro/package/jizhuang" @if(isset($title) && $title['title'] == '基装主材包' ) class="avtive" @endif>建商家装</a>
             <a href="/newpro/case/index" @if(isset($title) && $title['title'] == '工程案例' ) class="avtive" @endif>工程案例</a>
             <a href="/newpro/smarthome" @if(isset($title) && $title['title'] == '智能家居' ) class="avtive" @endif>智能家居</a>
-            <a href="/newpro/newslist/1" @if(isset($title) && $title['title'] == '公司新闻' ) class="avtive" @endif>新闻资讯</a>
+            <a href="/newpro/newslist" @if(isset($title) && $title['title'] == '新闻资讯' ) class="avtive" @endif>新闻资讯</a>
             <a href="/newpro/about" @if(isset($title) && $title['title'] == '关于建商' ) class="avtive" @endif>关于建商</a>
             <a href="/newspro/payment/diyindex" @if(isset($title) && $title['title'] == '建商支付') class="avtive" @endif>建商支付</a>
         </div>
