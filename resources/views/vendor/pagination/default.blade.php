@@ -16,24 +16,28 @@
             
             {{-- Array Of Links --}}
             @if (is_array($element))
-               
+            <?php 
+            $a = 3;
+            $b = 3;
+            $co = count($element);
+            if(($co - $paginator->currentPage()) < 2)
+            {
+                $a = 5 - ($co - $paginator->currentPage());
+            }
+            if($paginator->currentPage() <= 2 )
+            {
+                $b = 6 - $paginator->currentPage();
+            }
+            ?>
                 @foreach ($element as $page => $url)
           
-                    @if(count($element) <=5)
                     
-                        @if ($page == $paginator->currentPage())
-                            <li class="active"><span>{{ $page }}</span></li>
-                        @else
-                            <li><a href="{{ $url }}">{{ $page }}</a></li>
-                        @endif
-                    @else
-                        @if ($page > ($paginator->currentPage() - 3) && $page < ($paginator->currentPage() +3) && $page !== $paginator->currentPage())
+                        @if ($page > ($paginator->currentPage() - $a) && $page < ($paginator->currentPage() + $b) && $page !== $paginator->currentPage())
                             <li><a href="{{ $url }}">{{ $page }}</a></li>
                         @elseif($page == $paginator->currentPage())
                             <li class="active"><span>{{ $page }}</span></li>
                         @endif
-                    @endif
-
+                 
                             <!-- <li class="active"><span>{{ $page }}</span></li>
                             <li><a href="{{ $url }}">{{ $page }}</a></li> -->
                 @endforeach

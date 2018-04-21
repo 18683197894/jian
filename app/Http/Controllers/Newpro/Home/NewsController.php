@@ -14,7 +14,7 @@ class NewsController extends Controller
         $data = \DB::table('news')
                 ->select('id','title','leicon','time','click','titleimg','pid','zhi')
                 ->orderBy('time','desc')
-                ->paginate(8);
+                ->paginate(5);
 
         $ors = \DB::table('newslei')
                 ->select('id','title')
