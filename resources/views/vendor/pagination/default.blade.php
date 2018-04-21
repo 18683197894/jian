@@ -8,21 +8,36 @@
         @endif
 
         {{-- Pagination Elements --}}
-        @foreach ($elements as $element)
+        @foreach ($elements as $k => $element)
             {{-- "Three Dots" Separator --}}
             @if (is_string($element))
                 <li class="disabled"><span>{{ $element }}</span></li>
             @endif
-
+            
             {{-- Array Of Links --}}
             @if (is_array($element))
+               
                 @foreach ($element as $page => $url)
-                    @if ($page == $paginator->currentPage())
-                        <li class="active"><span>{{ $page }}</span></li>
+          
+                    @if(count($element) <=5)
+                    
+                        @if ($page == $paginator->currentPage())
+                            <li class="active"><span>{{ $page }}</span></li>
+                        @else
+                            <li><a href="{{ $url }}">{{ $page }}</a></li>
+                        @endif
                     @else
-                        <li><a href="{{ $url }}">{{ $page }}</a></li>
+                        @if ($page > ($paginator->currentPage() - 3) && $page < ($paginator->currentPage() +3) && $page !== $paginator->currentPage())
+                            <li><a href="{{ $url }}">{{ $page }}</a></li>
+                        @elseif($page == $paginator->currentPage())
+                            <li class="active"><span>{{ $page }}</span></li>
+                        @endif
                     @endif
+
+                            <!-- <li class="active"><span>{{ $page }}</span></li>
+                            <li><a href="{{ $url }}">{{ $page }}</a></li> -->
                 @endforeach
+
             @endif
         @endforeach
 

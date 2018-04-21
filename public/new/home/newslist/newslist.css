@@ -152,6 +152,7 @@ body{
 .data{
     width: 100%;
     overflow: hidden;
+    margin-bottom: 30px;
 }
 .data .loop{
     width: 100%;
@@ -256,60 +257,7 @@ body{
 .Notice_first .loop:last-child{
     margin-bottom: 30px;
 }
-.paging{
-    width: 100%;
-    height: 30px;
-    margin-top: 50px;
-    margin-bottom: 100px;
-}
-.paging_r{
-    width: 375px;
-    height: 30px;
-    float: right;
-    margin-right: 60px;
-}
-.paging_r a{
-    display: block;
-    height: 30px;
-    border: 1px solid #F1F1F1;
-    font-size: 12px;
-    line-height: 30px;
-    width: 35px;
-    text-align: center;
-    float: left;
-}
-.paging_r .Previous{
-    width: 65px;
-}
-.paging_r a.avtive{
-    background-color: #E12E32;
-    color: #ffffff;
-}
-.pagination{
-    width: 100%;
-    overflow: hidden;
-}
-.pagination li{
-    float: left;
-    cursor: pointer;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.pagination li span{
-    display: block;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.pagination li span:hover{
-    color: red;
-}
-.pagination li a{
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.pagination li a:hover{
-    color: red;
-}
+
 @media screen and (max-width: 1200px){
     .information .Nws{
         width: 100%;

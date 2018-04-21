@@ -10,54 +10,15 @@
 </div>
 
 <div class="information">
-    <div class="title">{{ $titles->title }} <img src="{{ asset('/new/home/newslist/img/red_x.png') }}" alt=""/></div>
+    <div class="title">新闻动态<img src="{{ asset('/new/home/newslist/img/red_x.png') }}" alt=""/></div>
     <div class="inf_a"> 
-        <a href="{{ url('/newpro/newslist/1') }}" @if($titles->title == '公司公告') class="avtive" @endif>公司公告</a>
-        <a href="{{ url('/newpro/newslist/2') }}" @if($titles->title == '公司新闻') class="avtive" @endif>公司新闻</a>
-        <a href="{{ url('/newpro/newslist/6') }}" @if($titles->title == '行业动态') class="avtive" @endif>行业动态</a>
+        <a href="{{ url('/newpro/newslist/1') }}" >公司公告</a>
     </div>
     <div class="Nws">
         <!--左边-->
         <div class="information_left">
             <i></i>
-            @if(count($zhi) > 0)
-            <div class="titel">{{ $zhis->title or '推荐新闻' }}</div>
-            <div class="brief ">{{ $zhis->title or '' }}</div>
-            <!--轮播-->
-            <div class="area">
-
-                <a id="prev" class="prevBtn qq" href="javascript:void(0)"></a>
-
-                <a id="next" class="nextBtn qq" href="javascript:void(0)"></a>
-
-                <div id="js" class="js">
-
-                    <div class="box01">
-                    @foreach($zhi as $i => $j)
-                        <div class="banner1">
-                            <img onClick="location.href='{{ url('/newpro/newslist/play/'.$j->id) }}'"  width="100%" height="100%" src="{{ asset('uploads/news/banimg') }}/{{ $j->img }}">
-                            <a href="{{ url('/newpro/newslist/play/'.$j->id) }}"><div class="titlel">{{ $j->title }}</div></a>
-                        </div>
-                    @endforeach
-                    </div>
-                    <div class="bg"></div>
-
-                    <div id="jsNav" class="jsNav">
-
-                        <a class="trigger imgSelected" href="javascript:void(0)"></a>
-
-                        <a class="trigger" href="javascript:void(0)"></a>
-
-                        <a class="trigger" href="javascript:void(0)"></a>
-
-                        <a class="trigger" href="javascript:void(0)"></a>
-
-                    </div>
-
-                </div>
-
-            </div>
-            @endif
+            
             <!--循环的资料-->
             <div class="data">
                 @if(count($data) > 0)

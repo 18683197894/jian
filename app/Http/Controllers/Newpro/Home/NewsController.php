@@ -6,7 +6,35 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class NewsController extends Controller
-{
+{   
+    public function newslistall(Request $request)
+    {
+        $title = getwebpage($request->path());
+
+        $data = \DB::table('news')
+                ->select('id','title','leicon','time','click','titleimg','pid','zhi')
+                ->orderBy('time','desc')
+                ->paginate(8);
+
+        $ors = \DB::table('newslei')
+                ->select('id','title')
+                ->get();
+
+        if( count($ors) > 0 )
+        {   
+            foreach($ors as $k => $v)
+            {
+                $v->data = \DB::table('news')
+                            ->select('id','title','leicon','click')
+                            ->where('pid',$v->id)
+                            ->orderBy('click','desc')
+                            ->offset(0)
+                            ->limit(5)
+                            ->get();
+            }
+        }
+        return view('Newpro.Home.News.newslistall',['title'=>$title,'data'=>$data,'ors'=>$ors]);
+    }
     public function newslist(Request $request,$id)
     {
     	$titles = \DB::table('newslei')
@@ -15,7 +43,7 @@ class NewsController extends Controller
     		->first();
     	if(!$titles)
     	{
-    		return back()->with(['info'=>'列表不存在']);
+    		return redirect('/newpro/newslist');
     	}
         $title = [
             'title'=> $titles->title,

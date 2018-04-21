@@ -26,6 +26,7 @@ Route::get('/newpro/businsmart','Newpro\Home\SmartController@businsmart');
 //关于我们
 Route::get('/newpro/about','Newpro\Home\UsedController@about');
 //新闻列表
+Route::get('/newpro/newslist','Newpro\Home\NewsController@newslistall');
 Route::get('/newpro/newslist/{id}','Newpro\Home\NewsController@newslist');
 Route::get('/newpro/newslist/play/{id}','Newpro\Home\NewsController@newsplay');
 
