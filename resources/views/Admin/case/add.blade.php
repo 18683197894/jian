@@ -50,56 +50,56 @@
                 <div class="form-group">
                   <label id="lei">户型选择</label>
                   <select name="huxing" class="form-control">
-                    <option value="小户型">小户型</option>
-                    <option  value="二室">二室</option>
-                    <option  value="三室">三室</option>
-                    <option  value="四室">四室</option>
-                    <option  value="公寓">公寓</option>
-                    <option  value="别墅">别墅</option>
-                    <option  value="复式">复式</option>
-                    <option  value="自建">自建</option>
-                    <option  value="其他">其他</option>
+                    <option value="小户型" @if(old('huxing') =='小户型') selected="selected" @endif>小户型</option>
+                    <option  value="二室" @if(old('huxing') =='二室') selected="selected" @endif>二室</option>
+                    <option  value="三室" @if(old('huxing') =='三室') selected="selected" @endif>三室</option>
+                    <option  value="四室" @if(old('huxing') =='四室') selected="selected" @endif>四室</option>
+                    <option  value="公寓" @if(old('huxing') =='公寓') selected="selected" @endif>公寓</option>
+                    <option  value="别墅" @if(old('huxing') =='别墅') selected="selected" @endif>别墅</option>
+                    <option  value="复式" @if(old('huxing') =='复式') selected="selected" @endif>复式</option>
+                    <option  value="自建" @if(old('huxing') =='自建') selected="selected" @endif>自建</option>
+                    <option  value="其他" @if(old('huxing') =='其他') selected="selected" @endif>其他</option>
                   </select>
                 </div>
   
                 <div class="form-group">
                   <label id="lei">风格选择</label>
                   <select name="fengge" class="form-control">
-                    <option value="地中海">地中海</option>
-                    <option  value="中式">中式</option>
-                    <option  value="港式">港式</option>
-                    <option  value="美式">美式</option>
-                    <option  value="欧式">欧式</option>
-                    <option  value="混搭">混搭</option>
-                    <option  value="田园">田园</option>
-                    <option  value="现代">现代</option>
-                    <option  value="新古典">新古典</option>
-                    <option  value="东南亚">东南亚</option>
-                    <option  value="日式">日式</option>
-                    <option  value="宜家">宜家</option>
-                    <option  value="北欧">北欧</option>
-                    <option  value="简欧">简欧</option>
-                    <option  value="简约">简约</option>
-                    <option  value="简约">简美</option>
-                    <option  value="韩式">韩式</option>
-                    <option  value="法式">法式</option>
-                    <option  value="工业风">工业风</option>
-                    <option  value="新中式">新中式</option>
-                    <option  value="其他">其他</option>
+                    <option value="地中海" @if(old('fengge') =='地中海') selected="selected" @endif>地中海</option>
+                    <option  value="中式" @if(old('fengge') =='中式') selected="selected" @endif>中式</option>
+                    <option  value="港式" @if(old('fengge') =='港式') selected="selected" @endif>港式</option>
+                    <option  value="美式" @if(old('fengge') =='美式') selected="selected" @endif>美式</option>
+                    <option  value="欧式" @if(old('fengge') =='欧式') selected="selected" @endif>欧式</option>
+                    <option  value="混搭" @if(old('fengge') =='混搭') selected="selected" @endif>混搭</option>
+                    <option  value="田园" @if(old('fengge') =='田园') selected="selected" @endif>田园</option>
+                    <option  value="现代" @if(old('fengge') =='现代') selected="selected" @endif>现代</option>
+                    <option  value="新古典" @if(old('fengge') =='新古典') selected="selected" @endif>新古典</option>
+                    <option  value="东南亚" @if(old('fengge') =='东南亚') selected="selected" @endif>东南亚</option>
+                    <option  value="日式" @if(old('fengge') =='日式') selected="selected" @endif>日式</option>
+                    <option  value="宜家" @if(old('fengge') =='宜家') selected="selected" @endif>宜家</option>
+                    <option  value="北欧" @if(old('fengge') =='北欧') selected="selected" @endif>北欧</option>
+                    <option  value="简欧" @if(old('fengge') =='简欧') selected="selected" @endif>简欧</option>
+                    <option  value="简约" @if(old('fengge') =='简约') selected="selected" @endif>简约</option>
+                    <option  value="简约" @if(old('fengge') =='简美') selected="selected" @endif>简美</option>
+                    <option  value="韩式" @if(old('fengge') =='韩式') selected="selected" @endif>韩式</option>
+                    <option  value="法式" @if(old('fengge') =='法式') selected="selected" @endif>法式</option>
+                    <option  value="工业风" @if(old('fengge') =='工业风') selected="selected" @endif>工业风</option>
+                    <option  value="新中式" @if(old('fengge') =='新中式') selected="selected" @endif>新中式</option>
+                    <option  value="其他" @if(old('fengge') =='其他') selected="selected" @endif>其他</option>
                   </select>
                 </div>
 
                 <div class="form-group">
                   <label id="lei">预算选择</label>
                   <select name="yusuan" class="form-control">
-                    <option value="5万以下">5万以下</option>
-                    <option  value="5万-8万">5万-8万</option>
-                    <option  value="8万-12万">8万-12万</option>
-                    <option  value="12万-18万">12万-18万</option>
-                    <option  value="18万-30万">18万-30万</option>
-                    <option  value="30万-50万">30万-50万</option>
-                    <option  value="50万以上">50万以上</option>
-                    <option  value="其他">其他</option>
+                    <option value="5万以下" @if(old('yusuan') =='5万以下') selected="selected" @endif>5万以下</option>
+                    <option  value="5万-8万" @if(old('yusuan') =='5万-8万') selected="selected" @endif>5万-8万</option>
+                    <option  value="8万-12万" @if(old('yusuan') =='8万-12万') selected="selected" @endif>8万-12万</option>
+                    <option  value="12万-18万" @if(old('yusuan') =='>12万-18万') selected="selected" @endif>12万-18万</option>
+                    <option  value="18万-30万" @if(old('yusuan') =='18万-30万') selected="selected" @endif>18万-30万</option>
+                    <option  value="30万-50万" @if(old('yusuan') =='30万-50万') selected="selected" @endif>30万-50万</option>
+                    <option  value="50万以上" @if(old('yusuan') =='50万以上') selected="selected" @endif>50万以上</option>
+                    <option  value="其他" @if(old('yusuan') =='其他') selected="selected" @endif>其他</option>
                     
                     
                   </select>
