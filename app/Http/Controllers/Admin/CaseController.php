@@ -156,7 +156,7 @@ class CaseController extends Controller
 
     public function upds(Request $request)
     {
-    	$data = $request->except("_token","keting","woshi","cufang","xishou","ciwo","yangtai","shufang","ertong","laor");
+    	$data = $request->except("_token","keting","woshi","cufang","xishou","ciwo","yangtai","shufang","ertong","laor","custom_img1","custom_img2","custom_title1","custom_title2");
     	$this->validate($request,[
 		   
 		    'keting'=>'required|image|file',
@@ -168,7 +168,11 @@ class CaseController extends Controller
             'shufang'=>'image|file',
             'ertong'=>'image|file',
             'laor'=>'image|file',
-		    'suoimg'=>'image|file'
+		    'suoimg'=>'image|file',
+            'custom_title1'=>'max:10',
+            'custom_title2'=>'max:10',
+            'custom_img1'=>'image|file',
+            'custom_img2'=>'image|file',
 		    
  		],[
 			'keting.required'=>'未上传图片(客厅)',
@@ -192,8 +196,12 @@ class CaseController extends Controller
             'ertong.image'=>'请上传图片类型的文件(儿童房)',
             'laor.file'=>'上传失败(老人房)',
             'laor.image'=>'请上传图片类型的文件(老人房)',
-            'laor.file'=>'上传失败(展示图片)',
-            'laor.image'=>'请上传图片类型的文件(展示图片)'
+            'custom_img1.file'=>'上传失败(自定义效果图1)',
+            'custom_img1.image'=>'请上传图片类型的文件(自定义效果图1)',
+            'custom_img2.file'=>'上传失败(自定义效果图2)',
+            'custom_img2.image'=>'请上传图片类型的文件(自定义效果图2)',
+            'custom_title1.max'=>'自定义效果图1 标题最大10位',
+            'custom_title2.max'=>'自定义效果图2 标题最大10位'
             
 		]); 
         
@@ -359,6 +367,41 @@ class CaseController extends Controller
                 $request->file('laor')->move('./uploads/case/img/',$fileName);
           //添加数据
                 $data['effect1'] .=',老人房';
+                $data['effect2'] .=','.$fileName;
+            }
+        }
+
+        if($request->hasFile('custom_img1'))
+        {
+            if($request->file('custom_img1')->isValid())
+            { 
+                $name = $request->input('custom_title1','效果图');
+          //获取后缀名
+                $ext=$request->file('custom_img1')->extension();
+                
+          //获取新名
+                $fileName=time().mt_rand(10000,99999).'.'.$ext;
+          //执行移动
+                $request->file('custom_img1')->move('./uploads/case/img/',$fileName);
+          //添加数据
+                $data['effect1'] .=','.$name;
+                $data['effect2'] .=','.$fileName;
+            }
+        }
+        if($request->hasFile('custom_img2'))
+        {
+            if($request->file('custom_img2')->isValid())
+            { 
+                $name = $request->input('custom_title2','效果图');
+          //获取后缀名
+                $ext=$request->file('custom_img2')->extension();
+                
+          //获取新名
+                $fileName=time().mt_rand(10000,99999).'.'.$ext;
+          //执行移动
+                $request->file('custom_img2')->move('./uploads/case/img/',$fileName);
+          //添加数据
+                $data['effect1'] .=','.$name;
                 $data['effect2'] .=','.$fileName;
             }
         }

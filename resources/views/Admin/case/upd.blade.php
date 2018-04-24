@@ -84,6 +84,23 @@
                   <label for="exampleInputFile">老人房效果图（可选）</label>
                   <input type="file" name="laor" id="exampleInputFile">
                 </div>
+                  
+                  <br>
+                  
+                  <div class="form-group">
+                  <label for="exampleInputEmail1">自定义效果图1（可选）</label>
+                  <input type="text"  name="custom_title1" value="{{ old('title') }}" class="form-control" id="exampleInputEmail1" placeholder="标题">
+                  <label for="exampleInputFile">效果图1</label>
+                  <input type="file" name="custom_img1" id="exampleInputFile">
+                  </div>
+
+                  <div class="form-group">
+                  <label for="exampleInputEmail1">自定义效果图2（可选）</label>
+                  <input type="text"  name="custom_title2" value="{{ old('title') }}" class="form-control" id="exampleInputEmail1" placeholder="标题">
+                  <label for="exampleInputFile">效果图2</label>
+                  <input type="file" name="custom_img2" id="exampleInputFile">
+                  </div>
+      
 
                  <input type="hidden" name="id" value="{{ $data->id }}">
                  <input type="hidden" name="or" value="{{ $data->or }}">
