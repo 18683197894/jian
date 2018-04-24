@@ -291,15 +291,15 @@ class CaseController extends Controller
         $a = '=';
         $b = '=';
         $c = '=';
-        if($huxing == null)
+        if(!$huxing)
         {
             $a = '!=';
         }
-        if($fengge == null)
+        if(!$fengge)
         {
             $b = '!=';
         }
-        if($yusuan == null)
+        if(!$yusuan)
         {
             $c = '!=';
         }
