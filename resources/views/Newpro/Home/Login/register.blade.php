@@ -13,7 +13,7 @@
 <body>
 <div class="register">
     <div class="logins_top">
-        <a href="{{ url('/') }}"> <img src="{{ asset('/home/images/logo.png') }}" alt="" class="Logo"/></a>
+        <a href="{{ url('/') }}"> <img src="{{ asset('/new/home/publicused/img/logo.png') }}" alt="" class="Logo"/></a>
         <div class="search">
             <a href="javascript:;" class="link">
                 <img src="{{ asset('/new/home/publicused/img/header_gg.png') }}" alt=""/>
