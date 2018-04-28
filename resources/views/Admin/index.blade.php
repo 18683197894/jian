@@ -263,7 +263,7 @@ class="active"
         </li>
 
         <li class="
-@if($title == "包管理")
+@if($title == "包管理" || $title == '产品管理')
 active
 @endif
         treeview">
@@ -288,16 +288,12 @@ class="active"
             ><a href="{{ url('newpro/index/package/packageindex') }}"><i class="fa fa-circle-o"></i>包管理</a>
             </li>
   
-            <!-- <li
-@if($title == "质享包")
-class="active"
-@endif
-            ><a href="{{ url('/admin/package/ruan/joylity') }}"><i class="fa fa-circle-o"></i>质享包</a></li>
             <li
-@if($title == "臻藏包")
+@if($title == "产品管理")
 class="active"
 @endif
-            ><a href="{{ url('/admin/package/ruan/peghid') }}"><i class="fa fa-circle-o"></i>臻藏包</a></li> -->
+            ><a href="{{ url('/newpro/index/package/productindex') }}"><i class="fa fa-circle-o"></i>产品管理</a></li>
+           
           </ul>
         </li>
         

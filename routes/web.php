@@ -135,6 +135,11 @@ Route::get('newpro/index/package/packageedit','Admin\PackageController@packageed
 Route::post('newpro/index/package/packageedits','Admin\PackageController@packageedits');
 Route::post('newpro/index/package/packagedel','Admin\PackageController@packagedel');
 
+Route::get('/newpro/index/package/productindex','Admin\ProductController@productindex');
+Route::get('/newpro/index/package/productadd','Admin\ProductController@productadd');
+Route::post('/newpro/index/package/productadds','Admin\ProductController@productadds');
+Route::get('/newpro/index/package/productedit/{id}','Admin\ProductController@productedit');
+Route::post('/newpro/index/package/productedits','Admin\ProductController@productedits');
 //用户管理
 Route::get('/jslmadmin/userhome/index','Admin\HomeController@index');
 //用户的购物车

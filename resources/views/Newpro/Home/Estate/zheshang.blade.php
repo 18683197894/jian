@@ -98,16 +98,78 @@
         </div>
     </div>
     <div class="huxintu">
-        <a href="https://yun.kujiale.com/design/3FO4M0VAOCL0/show" class="loop" target="_blank">
-            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_xd.jpg')}}" alt=""/>
+
+        <a href="https://yun.kujiale.com/design/3FO4L73CL22I/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_1.jpg')}}" alt=""/>
             <i>点击360度预览</i>
-            <span>浙商54平米-现代</span>
+            <span>浙商52平米-现代</span>
         </a>
-        <a href="https://yun.kujiale.com/design/3FO4M0V1Q71C/show" class="loop" target="_blank">
-            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_gs.jpg')}}" alt=""/>
+        <a href="https://yun.kujiale.com/design/3FO4L6Y0V0NF/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_2.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>浙商52平米-港式</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LXEDFJG5/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_3.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>浙商52平米-清水房</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4L6XPFOG6/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_4.jpg')}}" alt=""/>
             <i>点击360度预览</i>
             <span>浙商54平米-港式</span>
         </a>
+        <a href="https://yun.kujiale.com/design/3FO4L70GB6PC/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_5.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>浙商54平米-现代</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LX4NTTNG/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_6.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>浙商54平米-清水房</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4L6W4EKIN/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_7.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>浙商64平米-两居港式</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4L7EXWCYP/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_8.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>浙商64平米-两居现代</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4L6SOOABG/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_9.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>浙商64平米-三居港式</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4L7DRJMXQ/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_10.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>浙商64平米-三居现代</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4L7DRJMXQ/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_11.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>浙商64平米-清水房</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4L7VBMHKN/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_12.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>浙商109平米-北欧</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4L7VIG1Q0/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_13.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>浙商109平米-美式</span>
+        </a>
+        <a href="https://yun.kujiale.com/design/3FO4LX4NTGAC/show" class="loop" target="_blank">
+            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_14.jpg')}}" alt=""/>
+            <i>点击360度预览</i>
+            <span>浙商109平米-清水房</span>
+        </a>
+
     </div>
 </div>
     <div class="Housing">
