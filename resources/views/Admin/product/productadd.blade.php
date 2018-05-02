@@ -7,13 +7,13 @@
 @section('content')
 <section class="content-header">
       <h1>
-        产品添加
+        大类添加
         <!-- <small>Control panel</small> -->
 
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{ url('/newpro/index/package/productindex') }}"><i class="fa fa-dashboard"></i>产品列表</a></li>
-        <li class="active">添加产品</li>
+        <li><a href="{{ url('/newpro/index/package/productindex') }}"><i class="fa fa-dashboard"></i>大类列表</a></li>
+        <li class="active">添加大类</li>
       </ol>
     </section>
 
@@ -43,7 +43,7 @@
               <div class="box-body">
                
                 <div class="form-group">
-                  <label for="exampleInputEmail1">产品标题：</label>
+                  <label for="exampleInputEmail1">大类标题：</label>
                   <input type="text"  name="title" value="{{ old('title') }}" class="form-control" id="exampleInputEmail1" placeholder="包名称">
                 </div>
       

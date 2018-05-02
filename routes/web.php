@@ -140,6 +140,16 @@ Route::get('/newpro/index/package/productadd','Admin\ProductController@productad
 Route::post('/newpro/index/package/productadds','Admin\ProductController@productadds');
 Route::get('/newpro/index/package/productedit/{id}','Admin\ProductController@productedit');
 Route::post('/newpro/index/package/productedits','Admin\ProductController@productedits');
+Route::post('/newpro/index/package/productdel','Admin\ProductController@productdel');
+
+Route::get('/newpro/index/package/product/classindex/{id}','Admin\ProductController@calssindex');
+Route::get('/newpro/index/package/product/classadd/{id}','Admin\ProductController@classadd');
+Route::post('/newpro/index/package/product/classadds','Admin\ProductController@classadds');
+Route::get('/newpro/index/package/product/classedit/{id}','Admin\ProductController@classedit');
+Route::post('/newpro/index/package/product/classedits','Admin\ProductController@classedits');
+Route::post('/newpro/index/package/product/classdel','Admin\ProductController@classdel');
+
+
 //用户管理
 Route::get('/jslmadmin/userhome/index','Admin\HomeController@index');
 //用户的购物车

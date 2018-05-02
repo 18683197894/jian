@@ -7,13 +7,13 @@
 @section('content')
 <section class="content-header" style="text-align:center">
       <h1>
-        大类管理
+        {{ $pdata->title }} -- 分类管理
         <!-- <small>Control panel</small> -->
 
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i>大类管理</a></li>
-        <li class="active">大类</li>
+        <li><a href="{{url('/newpro/index/package/productindex')}}"><i class="fa fa-dashboard"></i>大类管理</a></li>
+        <li class="active">分类</li>
       </ol>
     </section>
   
@@ -22,7 +22,7 @@
   <div class="box">
   <div class="box-header">
            
-              <h3 class="box-title"> <br> <a href="{{ url('/newpro/index/package/productadd') }}">添加大类</a></h3>
+              <h3 class="box-title"> <br> <a href="{{ url('/newpro/index/package/product/classadd/') }}/{{ $pdata->id }}">添加分类</a></h3>
             </div>
             <div class="box-header">
        @if (session('info'))
@@ -55,13 +55,13 @@
                   <td style="text-align: center;vertical-align: middle">{{ $v->title }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ date('Y-m-d H:i:s',$v->time) }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ date('Y-m-d H:i:s',$v->uptime) }}</td>
-                  <td style="text-align: center;vertical-align: middle"> <a href="{{ url('/newpro/index/package/productedit') }}/{{$v->id}}">修改</a>&nbsp;&nbsp;&nbsp;<a class="del" href="javascript:;">删除</a>&nbsp;&nbsp;&nbsp;<a href="{{ url('/newpro/index/package/product/classindex/') }}/{{ $v->id }}">分类管理</a> </td>
+                  <td style="text-align: center;vertical-align: middle"> <a href="{{ url('/newpro/index/package/product/classedit') }}/{{$v->id}}">修改</a>&nbsp;&nbsp;&nbsp;<a class="del" href="javascript:;">删除</a>&nbsp;&nbsp;&nbsp;<a href="{{ url('/newpro/index/package/product/classindex/') }}/{{ $v->id }}">子类管理</a> </td>
                 
                 </tr>
 @endforeach
 @else
 <tr role="row" class="odd">
-  <td style="text-align: center;vertical-align: middle" colspan="5">未找到大类</td>
+  <td style="text-align: center;vertical-align: middle" colspan="5">未找到分类</td>
 </tr>
 @endif
               </table>
@@ -75,15 +75,15 @@
 
 @section('js')
 <script>
-	$('.del').on('click',function(){
-		var tr = $(this).parents('tr');
-		id = tr.attr('index');
-		$.ajax('/newpro/index/package/productdel',{
-			type:'post',
-			data:{id:id,_token:$("meta[name='csrf-token']").attr('content')},
-			success:function(data)
-			{
-				if(data == 1)
+  $('.del').on('click',function(){
+    var tr = $(this).parents('tr');
+    id = tr.attr('index');
+    $.ajax('/newpro/index/package/product/classdel',{
+      type:'post',
+      data:{id:id,_token:$("meta[name='csrf-token']").attr('content')},
+      success:function(data)
+      {
+        if(data == 1)
         {
           alert('删除成功！');
           tr.css('display','none');
@@ -92,17 +92,17 @@
           alert('删除失败！');
         }else if(data == 3)
         {
-          alert('请先删除大类下所有分类后再删除此大类！');
+          alert('请先删除分类下所有产品后再删除此分类！');
         }else
         {
           alert('删除失败！');
         }
-			},
-			error:function(data)
-			{
-				alert('删除失败！');
-			}
-		})
-	})
+      },
+      error:function(data)
+      {
+        alert('删除失败！');
+      }
+    })
+  })
 </script>
 @endsection('js')
