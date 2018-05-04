@@ -46,8 +46,8 @@
                 <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >型号</th>
                 <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >规格</th>
                 <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >数量</th>
-                <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >备注</th>
-                <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >展示图片</th>
+                <th style="text-align:center;width:20%" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >描述</th>
+                <th style="text-align:center;width:15%" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >展示图片</th>
                 <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >最后操作时间</th>
                 <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >操作</th>
                </thead>
@@ -62,7 +62,7 @@
                   <td style="text-align: center;vertical-align: middle">{{ $v->model }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->spec }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->num }}</td>
-                  <td style="text-align: center;vertical-align: middle">{{ $v->remarks }}</td>
+                  <td style="text-align: left;  vertical-align: middle">{{ $v->remarks }}</td>
                   <td style="text-align: center;vertical-align: middle"><a target="_blank" href="{{ url('/uploads/product/img') }}/{{ $v->titleimg }}"> <img width="80px" height="100px" src="{{ asset('/uploads/product/img') }}/{{ $v->titleimg }}" alt=""> </a></td>
                   <td style="text-align: center;vertical-align: middle">{{ date('Y-m-d H:i:s',$v->uptime) }}</td>
                   <td style="text-align: center;vertical-align: middle"> <a href="{{ url('/newpro/index/package/product/goodsedit') }}/{{$v->id}}">修改</a>&nbsp;&nbsp;&nbsp;<a class="del" href="javascript:;">删除</a></td>

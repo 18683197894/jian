@@ -47,8 +47,8 @@
                   <td style="text-align: center;vertical-align: middle">{{ $v->title }}</td>
                   <td style="text-align: center;vertical-align: middle"><a href="{{ url( $v->url ) }}" target="_blank">{{ $v->url }}</a></td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->titles }}</td>
-                  <td style="text-align: center;vertical-align: middle">{{ $v->keyworlds }}</td>
-                  <td class="content" style="width:120px;height:30px; text-align: center;vertical-align: middle">{{ $v->description }}</td>
+                  <td style="text-align: center;vertical-align: left">{{ $v->keyworlds }}</td>
+                  <td class="content" style="width:120px;height:30px; text-align: left;vertical-align: middle">{{ $v->description }}</td>
                   <td style="text-align: center;vertical-align: middle">
                   	<a href="{{ url('admin/config/webpage/edit/') }}/{{ $v->id }}" class="del">编辑</a>
                   	

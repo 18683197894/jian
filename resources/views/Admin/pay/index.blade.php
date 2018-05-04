@@ -75,7 +75,7 @@
                   <td style="text-align: center;vertical-align: middle">{{ $v->name }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->names }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->remarks }}</td>
-                  <td style="text-align: center;vertical-align: middle">{{ $v->linkman }} {{ $v->phone }} {{ $v->address }}</td>
+                  <td style="text-align: left;vertical-align: middle">{{ $v->linkman }} {{ $v->phone }} {{ $v->address }}</td>
                   <td style="text-align: center;vertical-align: middle">@if($v->invoice == 0) 无 @else 是 @endif</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->create_id }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->total }}</td>

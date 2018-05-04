@@ -62,7 +62,7 @@
                   <td style="text-align: center;vertical-align: middle">{{ $v->pidname }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ date('Y-m-d H:i:s',$v->time) }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->titles }}</td>
-                  <td style="text-align: center;vertical-align: middle">{{ $v->keyworlds }}</td>
+                  <td style="text-align: left;vertical-align: middle">{{ $v->keyworlds }}</td>
                   <td style="text-align: center;vertical-align: middle"><a href="{{ url('/admin/properties/detailsedit') }}/{{ $v->id }}">编辑</a> &nbsp;&nbsp;<a  class="shan" href="#" onclick="return false;">删除</a></td>
                 </tr>
 @endforeach

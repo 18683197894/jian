@@ -69,8 +69,8 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputEmail1">备注：</label>
-                  <input type="text"  name="remarks" value="{{ old('remarks') }}" class="form-control" id="exampleInputEmail1" placeholder="备注">
+                  <label for="exampleInputEmail1">描述：</label>
+                  <input type="text"  name="remarks" value="{{ old('remarks') }}" class="form-control" id="exampleInputEmail1" placeholder="描述">
                 </div>
 
                 <div class="form-group">

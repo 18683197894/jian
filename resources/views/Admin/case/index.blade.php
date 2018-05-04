@@ -47,23 +47,23 @@
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                  <th style="width: 8%;  text-align:center;">ID</th>
-                  <th style="width: 8%; text-align:center;">标题</th>
-                  <th style="width: 20%; text-align:center;">当前进度</th>
-                  <th style="width: 10%; text-align:center;">户型</th>
-                  <th style="width: 10%; text-align:center;">风格</th>
-                  <th style="width: 10%; text-align:center;">预算</th>
-                  <th style="width: 12%; text-align:center;">创建时间</th>
-                  <th style="width: 15%; text-align:center;">操作</th>
+                  <th style=" text-align:center;">ID</th>
+                  <th style="width:18%; text-align:center;">标题</th>
+                  <th style=" text-align:center;">当前进度</th>
+                  <th style=" text-align:center;">户型</th>
+                  <th style=" text-align:center;">风格</th>
+                  <th style=" text-align:center;">预算</th>
+                  <th style=" text-align:center;">创建时间</th>
+                  <th style=" text-align:center;">操作</th>
                 </tr>
                 </thead>
                 <tbody>
 @if(isset($data) and count($data) > 0 )
 	@foreach($data as $k => $v)
                 <tr>
-                  <td class="id" style="width: 8%;text-align: center;vertical-align: middle">{{ $v->id }}</td>
-                  <td style="width: 8%;text-align: center;vertical-align: middle">{{ $v->title }}</td>
-                  <td style="width: 20%;text-align: center;vertical-align: middle">
+                  <td class="id" style="text-align: center;vertical-align: middle">{{ $v->id }}</td>
+                  <td style="text-align: center;vertical-align: middle">{{ $v->title }}</td>
+                  <td style="text-align: center;vertical-align: middle">
                     @if( $v->or ==0 )
                         待更新
                     @elseif($v->or ==1)
@@ -78,11 +78,11 @@
                         已竣工
                     @endif
                   </td>
-                  <td style="width: 10%;text-align: center;vertical-align: middle">{{ $v->huxing }}</td>
-                  <td style="width: 10%;text-align: center;vertical-align: middle">{{ $v->fengge }}</td>
-                  <td style="width: 10%;text-align: center;vertical-align: middle">{{ $v->yusuan }}</td>
-                  <td style="width: 12%;text-align: center;vertical-align: middle">{{ date("Y年m月d日",$v->time) }}</td>
-                  <td style="width: 15%;text-align: center;vertical-align: middle">
+                  <td style="text-align: center;vertical-align: middle">{{ $v->huxing }}</td>
+                  <td style="text-align: center;vertical-align: middle">{{ $v->fengge }}</td>
+                  <td style="text-align: center;vertical-align: middle">{{ $v->yusuan }}</td>
+                  <td style="text-align: center;vertical-align: middle">{{ date("Y年m月d日",$v->time) }}</td>
+                  <td style="text-align: center;vertical-align: middle">
                     @if($v->or != 5)
                     <a href="{{ url('admin/case/edit') }}/{{ $v->id }}">更新进度</a>&nbsp;&nbsp;
                     <a href="{{ url('admin/case/tedit') }}/{{ $v->id }}">跳过更新</a>
