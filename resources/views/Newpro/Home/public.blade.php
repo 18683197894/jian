@@ -123,10 +123,10 @@
                 <img src="{{ asset('/new/home/public/img/QR1.png') }}" alt=""/>
                 <span>建商官网订阅号</span>
             </div>
-            <div class="QR">
+            <!-- <div class="QR">
                 <img src="{{ asset('/new/home/public/img/QR2.png') }}" alt=""/>
                 <span>建商官网服务号</span>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

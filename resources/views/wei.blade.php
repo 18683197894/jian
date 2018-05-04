@@ -37,4 +37,6 @@
 	</div>
 </div>
 </body>
+<script src="{{ asset('home/lazyload/jquery.lazyload.js?v=1.9.1') }}"></script>
+
 </html>

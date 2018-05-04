@@ -33,7 +33,6 @@ class HomeController extends Controller
     public function playgou($id)
     {
     	$tit = \DB::table('user_home')->where('id',$id)->first()->name.'的购物车';
-    	$qing = \DB::table('qing')->first()->money;
     	$data = \DB::table('playgou')
               ->select('id','pid','tus','time','num','uid','name')
               ->where('uid',$id)

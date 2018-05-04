@@ -115,10 +115,10 @@
                 <img src="{{ asset('/new/home/public/img/QR1.png') }}" alt=""/>
                 <span>建商官网订阅号</span>
             </div>
-            <div class="QR">
+           <!--  <div class="QR">
                 <img src="{{ asset('/new/home/public/img/QR2.png') }}" alt=""/>
                 <span>建商官网服务号</span>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
@@ -126,5 +126,8 @@
 <div class="copyright"><span>CopyRight 2017-2020 建商联盟版权所有 ICP备案：</span><i>蜀ICP备17010220</i></div>
 <script src="{{ asset('/new/home/publiccenter/publiccenter.js') }}"></script>
 @yield('js')
+<a href="#" style="display:none"> <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1273388296'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1273388296' type='text/javascript'%3E%3C/script%3E"));</script></a>
+
 </body>
+
 </html>
