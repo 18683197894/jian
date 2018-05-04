@@ -44,7 +44,7 @@
                
                 <div class="form-group">
                   <label for="exampleInputEmail1">大类标题：</label>
-                  <input type="text"  name="title" value="{{ old('title') }}" class="form-control" id="exampleInputEmail1" placeholder="包名称">
+                  <input type="text"  name="title" value="{{ old('title') }}" class="form-control" id="exampleInputEmail1" placeholder="大类名称">
                 </div>
       
               </div>

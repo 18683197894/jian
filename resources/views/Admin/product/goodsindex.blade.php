@@ -7,13 +7,13 @@
 @section('content')
 <section class="content-header" style="text-align:center">
       <h1>
-        {{ $pdata->title }} -- 分类管理
+        {{ $pdata->title }} -- 产品管理
         <!-- <small>Control panel</small> -->
 
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{url('/newpro/index/package/productindex')}}"><i class="fa fa-dashboard"></i>大类管理</a></li>
-        <li class="active">分类</li>
+        <li><a href="{{url('/newpro/index/package/product/classindex/')}}/{{ $pdata->pid }}"><i class="fa fa-dashboard"></i>分类管理</a></li>
+        <li class="active">产品</li>
       </ol>
     </section>
   
@@ -22,7 +22,7 @@
   <div class="box">
   <div class="box-header">
            
-              <h3 class="box-title"> <br> <a href="{{ url('/newpro/index/package/product/classadd/') }}/{{ $pdata->id }}">添加分类</a></h3>
+              <h3 class="box-title"> <br> <a href="{{ url('/newpro/index/package/product/goodsadd/') }}/{{ $pdata->id }}">添加产品</a></h3>
             </div>
             <div class="box-header">
        @if (session('info'))
@@ -41,8 +41,13 @@
                 <thead>
                 <tr role="row">
                 <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >ID</th>
-                <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >标题</th>
-                <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >创建时间</th>
+                <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >名称</th>
+                <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >品牌</th>
+                <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >型号</th>
+                <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >规格</th>
+                <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >数量</th>
+                <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >备注</th>
+                <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >展示图片</th>
                 <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >最后操作时间</th>
                 <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >操作</th>
                </thead>
@@ -53,15 +58,20 @@
 
                   <td style="text-align: center;vertical-align: middle">{{ $v->id }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->title }}</td>
-                  <td style="text-align: center;vertical-align: middle">{{ date('Y-m-d H:i:s',$v->time) }}</td>
+                  <td style="text-align: center;vertical-align: middle">{{ $v->brand }}</td>
+                  <td style="text-align: center;vertical-align: middle">{{ $v->model }}</td>
+                  <td style="text-align: center;vertical-align: middle">{{ $v->spec }}</td>
+                  <td style="text-align: center;vertical-align: middle">{{ $v->num }}</td>
+                  <td style="text-align: center;vertical-align: middle">{{ $v->remarks }}</td>
+                  <td style="text-align: center;vertical-align: middle"><a target="_blank" href="{{ url('/uploads/product/img') }}/{{ $v->titleimg }}"> <img width="80px" height="100px" src="{{ asset('/uploads/product/img') }}/{{ $v->titleimg }}" alt=""> </a></td>
                   <td style="text-align: center;vertical-align: middle">{{ date('Y-m-d H:i:s',$v->uptime) }}</td>
-                  <td style="text-align: center;vertical-align: middle"> <a href="{{ url('/newpro/index/package/product/classedit') }}/{{$v->id}}">修改</a>&nbsp;&nbsp;&nbsp;<a class="del" href="javascript:;">删除</a>&nbsp;&nbsp;&nbsp;<a href="{{ url('/newpro/index/package/product/goodsindex/') }}/{{ $v->id }}">产品管理</a> </td>
+                  <td style="text-align: center;vertical-align: middle"> <a href="{{ url('/newpro/index/package/product/goodsedit') }}/{{$v->id}}">修改</a>&nbsp;&nbsp;&nbsp;<a class="del" href="javascript:;">删除</a></td>
                 
                 </tr>
 @endforeach
 @else
 <tr role="row" class="odd">
-  <td style="text-align: center;vertical-align: middle" colspan="5">未找到分类</td>
+  <td style="text-align: center;vertical-align: middle" colspan="10">未找到产品</td>
 </tr>
 @endif
               </table>
@@ -78,7 +88,7 @@
   $('.del').on('click',function(){
     var tr = $(this).parents('tr');
     id = tr.attr('index');
-    $.ajax('/newpro/index/package/product/classdel',{
+    $.ajax('/newpro/index/package/product/goodsdel',{
       type:'post',
       data:{id:id,_token:$("meta[name='csrf-token']").attr('content')},
       success:function(data)
@@ -87,12 +97,6 @@
         {
           alert('删除成功！');
           tr.css('display','none');
-        }else if(data == 2)
-        {
-          alert('删除失败！');
-        }else if(data == 3)
-        {
-          alert('请先删除分类下所有产品后再删除此分类！');
         }else
         {
           alert('删除失败！');

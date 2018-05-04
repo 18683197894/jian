@@ -55,7 +55,7 @@
                 </a>
                 <div class="search_i">
                     <form action="{{ asset('/newpro/home/sou') }}" method="get" name="sou">
-                    <input type="text" name="sou" value="@if(isset($request['sou'])){{$request['sou']}}@endif" placeholder="海量效果图任你选"/>
+                    <input type="text" name="sou" value="@if(isset($request['sou'])){{$request['sou']}}@endif" placeholder="搜索新闻动态"/>
                     <div class="click">
                         <a href="javascript:;"><img src="{{ asset('/new/home/publicused/img/search_i.png') }}" alt=""/></a>
                     </div>

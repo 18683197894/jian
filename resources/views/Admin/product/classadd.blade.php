@@ -45,7 +45,7 @@
                 <div class="form-group">
                   <label for="exampleInputEmail1">分类标题：</label>
                   <input type="hidden" name="pid" value="{{ $pdata->id }}">
-                  <input type="text"  name="title" value="{{ old('title') }}" class="form-control" id="exampleInputEmail1" placeholder="包名称">
+                  <input type="text"  name="title" value="{{ old('title') }}" class="form-control" id="exampleInputEmail1" placeholder="分类名称">
                 </div>
       
               </div>

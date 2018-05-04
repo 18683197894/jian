@@ -149,6 +149,12 @@ Route::get('/newpro/index/package/product/classedit/{id}','Admin\ProductControll
 Route::post('/newpro/index/package/product/classedits','Admin\ProductController@classedits');
 Route::post('/newpro/index/package/product/classdel','Admin\ProductController@classdel');
 
+Route::get('/newpro/index/package/product/goodsindex/{id}','Admin\ProductController@goodsindex');
+Route::get('/newpro/index/package/product/goodsadd/{id}','Admin\ProductController@goodsadd');
+Route::post('/newpro/index/package/product/goodsadds','Admin\ProductController@goodsadds');
+Route::get('/newpro/index/package/product/goodsedit/{id}','Admin\ProductController@goodsedit');
+Route::post('/newpro/index/package/product/goodsedits','Admin\ProductController@goodsedits');
+Route::post('/newpro/index/package/product/goodsdel','Admin\ProductController@goodsdel');
 
 //用户管理
 Route::get('/jslmadmin/userhome/index','Admin\HomeController@index');
