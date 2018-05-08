@@ -12,7 +12,7 @@
 
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{url('/newpro/index/package/product/classindex/')}}/{{ $pdata->pid }}"><i class="fa fa-dashboard"></i>分类管理</a></li>
+        <li><a href="{{url('/newpro/index/package/productindex')}}"><i class="fa fa-dashboard"></i>分类管理</a></li>
         <li class="active">产品</li>
       </ol>
     </section>
@@ -57,13 +57,13 @@
                 <tr role="row" class="odd" index="{{$v->id}}">
 
                   <td style="text-align: center;vertical-align: middle">{{ $v->id }}</td>
-                  <td style="text-align: center;vertical-align: middle">{{ $v->title }}</td>
+                  <td style="width:18%;text-align: left;vertical-align: middle">{{ $v->title }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->brand }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->model }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->spec }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->num }}</td>
-                  <td style="text-align: left;  vertical-align: middle">{{ $v->remarks }}</td>
-                  <td style="text-align: center;vertical-align: middle"><a target="_blank" href="{{ url('/uploads/product/img') }}/{{ $v->titleimg }}"> <img width="80px" height="100px" src="{{ asset('/uploads/product/img') }}/{{ $v->titleimg }}" alt=""> </a></td>
+                  <td style="width:20%;text-align: left;  vertical-align: middle">{{ $v->remarks }}</td>
+                  <td style="text-align: center;vertical-align: middle"><a target="_blank" href="{{ url('/uploads/product/img') }}/{{ $v->imgs[0] }}"> <img width="80px" height="100px" src="{{ asset('/uploads/product/img') }}/{{ $v->imgs[0] }}" alt=""> </a></td>
                   <td style="text-align: center;vertical-align: middle">{{ date('Y-m-d H:i:s',$v->uptime) }}</td>
                   <td style="text-align: center;vertical-align: middle"> <a href="{{ url('/newpro/index/package/product/goodsedit') }}/{{$v->id}}">修改</a>&nbsp;&nbsp;&nbsp;<a class="del" href="javascript:;">删除</a></td>
                 

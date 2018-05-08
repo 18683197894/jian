@@ -7,13 +7,13 @@
 @section('content')
 <section class="content-header">
       <h1>
-        大类添加
+        分类添加
         <!-- <small>Control panel</small> -->
 
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{ url('/newpro/index/package/productindex') }}"><i class="fa fa-dashboard"></i>大类列表</a></li>
-        <li class="active">添加大类</li>
+        <li><a href="{{ url('/newpro/index/package/productindex') }}"><i class="fa fa-dashboard"></i>分类列表</a></li>
+        <li class="active">添加分类</li>
       </ol>
     </section>
 
@@ -43,10 +43,20 @@
               <div class="box-body">
                
                 <div class="form-group">
-                  <label for="exampleInputEmail1">大类标题：</label>
-                  <input type="text"  name="title" value="{{ old('title') }}" class="form-control" id="exampleInputEmail1" placeholder="大类名称">
+                  <label for="exampleInputEmail1">分类标题：</label>
+                  <input type="text"  name="title" value="{{ old('title') }}" class="form-control" id="exampleInputEmail1" placeholder="分类名称">
                 </div>
-      
+                
+                <div class="form-group">
+                  <label for="exampleInputFile">图标（必选）</label>
+                  <input type="file" name="titleimg1" id="exampleInputFile">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputFile">反转图标（必选）</label>
+                  <input type="file" name="titleimg2" id="exampleInputFile">
+                </div>
+
               </div>
               <!-- /.box-body -->
 	

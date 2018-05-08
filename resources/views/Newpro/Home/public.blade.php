@@ -66,12 +66,13 @@
    
         <div class="nav">
             <a href="/" @if(isset($title) && $title['title'] == '建商联盟' ) class="avtive" @endif>首页</a>
-            <a href="/newpro/package/jizhuang" @if(isset($title) && $title['title'] == '基装主材包' ) class="avtive" @endif>建商家装</a>
-            <a href="/newpro/case/index" @if(isset($title) && $title['title'] == '工程案例' ) class="avtive" @endif>工程案例</a>
-            <a href="/newpro/smarthome" @if(isset($title) && $title['title'] == '智能家居' ) class="avtive" @endif>智能家居</a>
-            <a href="/newpro/newslist" @if(isset($title) && $title['title'] == '新闻动态' ) class="avtive" @endif>新闻动态</a>
-            <a href="/newpro/about" @if(isset($title) && $title['title'] == '关于建商' ) class="avtive" @endif>关于建商</a>
-            <a href="/newspro/payment/diyindex" @if(isset($title) && $title['title'] == '建商支付') class="avtive" @endif>建商支付</a>
+            <a href="{{ url('/newpro/package/jizhuang') }}" @if(isset($title) && $title['title'] == '基装主材包' ) class="avtive" @endif>建商家装</a>
+            <a href="{{ url('/newpro/case/index') }}" @if(isset($title) && $title['title'] == '工程案例' ) class="avtive" @endif>工程案例</a>
+            <a href="{{ url('/newpro/smarthome') }}" @if(isset($title) && $title['title'] == '智能家居' ) class="avtive" @endif>智能家居</a>
+            <a href="{{ url('/newpro/product') }}" @if(isset($title) && $title['title'] == '产品展示' ) class="avtive" @endif>产品展示</a>
+            <a href="{{ url('/newpro/newslist') }}" @if(isset($title) && $title['title'] == '新闻动态' ) class="avtive" @endif>新闻动态</a>
+            <a href="{{ url('/newpro/about') }}" @if(isset($title) && $title['title'] == '关于建商' ) class="avtive" @endif>关于建商</a>
+            <a href="{{ url('/newspro/payment/diyindex') }}" @if(isset($title) && $title['title'] == '建商支付') class="avtive" @endif>建商支付</a>
         </div>
         <a href="javascript:;" class="botton">
             <span></span>
@@ -131,9 +132,13 @@
     </div>
 </div>
 <!--版权-->
-<div class="copyright"><span>CopyRight 2017-2020 建商联盟版权所有 ICP备案：</span><i>蜀ICP备17010220</i></div>
+<div class="copyright">
+<span>CopyRight 2017-2020 建商联盟版权所有 ICP备案：</span><i>蜀ICP备17010220 </i>&nbsp;&nbsp;
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1273388296'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1273388296%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+</div>
+
 @yield('js')
 <script src="{{ asset('/new/home/public/header.js') }}"></script>
-<a href="#" style="display:none"> <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1273388296'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1273388296' type='text/javascript'%3E%3C/script%3E"));</script></a>
 </body>
 </html>

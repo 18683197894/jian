@@ -47,7 +47,15 @@
                   <input type="hidden" name="id" value="{{ $data->id }}">
                   <input type="text"  name="title" value="{{ $data->title }}" class="form-control" id="exampleInputEmail1" placeholder="包名称">
                 </div>
-      
+                <div class="form-group">
+                  <label for="exampleInputFile">图标（必选）</label>
+                  <input type="file" name="titleimg1" id="exampleInputFile">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputFile">反转图标（必选）</label>
+                  <input type="file" name="titleimg2" id="exampleInputFile">
+                </div>
               </div>
               <!-- /.box-body -->
 	

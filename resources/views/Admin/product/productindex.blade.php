@@ -7,13 +7,13 @@
 @section('content')
 <section class="content-header" style="text-align:center">
       <h1>
-        大类管理
+        分类管理
         <!-- <small>Control panel</small> -->
 
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i>大类管理</a></li>
-        <li class="active">大类</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i>分类管理</a></li>
+        <li class="active">分类</li>
       </ol>
     </section>
   
@@ -22,7 +22,7 @@
   <div class="box">
   <div class="box-header">
            
-              <h3 class="box-title"> <br> <a href="{{ url('/newpro/index/package/productadd') }}">添加大类</a></h3>
+              <h3 class="box-title"> <br> <a href="{{ url('/newpro/index/package/productadd') }}">添加分类</a></h3>
             </div>
             <div class="box-header">
        @if (session('info'))
@@ -42,7 +42,8 @@
                 <tr role="row">
                 <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >ID</th>
                 <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >标题</th>
-                <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >创建时间</th>
+                <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >图标</th>
+                <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >反转图标</th>
                 <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >最后操作时间</th>
                 <th style="text-align:center" class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" >操作</th>
                </thead>
@@ -53,15 +54,16 @@
 
                   <td style="text-align: center;vertical-align: middle">{{ $v->id }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->title }}</td>
-                  <td style="text-align: center;vertical-align: middle">{{ date('Y-m-d H:i:s',$v->time) }}</td>
+                  <td style="text-align: center;vertical-align: middle">@if($v->titleimg)<a target="_blank" href="{{ url('/uploads/product/img') }}/{{ $v->imgs[0] }}"> <img  src="{{ asset('/uploads/product/img') }}/{{ $v->imgs[0] }}" alt=""> </a>@endif</td>
+                  <td style="text-align: center;vertical-align: middle">@if($v->titleimg)<a target="_blank" href="{{ url('/uploads/product/img') }}/{{ $v->imgs[1] }}"> <img  src="{{ asset('/uploads/product/img') }}/{{ $v->imgs[1] }}" alt=""> </a>@endif</td>
                   <td style="text-align: center;vertical-align: middle">{{ date('Y-m-d H:i:s',$v->uptime) }}</td>
-                  <td style="text-align: center;vertical-align: middle"> <a href="{{ url('/newpro/index/package/productedit') }}/{{$v->id}}">修改</a>&nbsp;&nbsp;&nbsp;<a class="del" href="javascript:;">删除</a>&nbsp;&nbsp;&nbsp;<a href="{{ url('/newpro/index/package/product/classindex/') }}/{{ $v->id }}">分类管理</a> </td>
+                  <td style="text-align: center;vertical-align: middle"> <a href="{{ url('/newpro/index/package/productedit') }}/{{$v->id}}">修改</a>&nbsp;&nbsp;&nbsp;<a class="del" href="javascript:;">删除</a>&nbsp;&nbsp;&nbsp;<a href="{{ url('/newpro/index/package/product/goodsindex/') }}/{{ $v->id }}">产品管理</a> </td>
                 
                 </tr>
 @endforeach
 @else
 <tr role="row" class="odd">
-  <td style="text-align: center;vertical-align: middle" colspan="5">未找到大类</td>
+  <td style="text-align: center;vertical-align: middle" colspan="6">未找到分类</td>
 </tr>
 @endif
               </table>
@@ -92,7 +94,7 @@
           alert('删除失败！');
         }else if(data == 3)
         {
-          alert('请先删除大类下所有分类后再删除此大类！');
+          alert('请先删除分类下所有产品后再删除此分类！');
         }else
         {
           alert('删除失败！');

@@ -23,6 +23,10 @@ Route::get('/newpro/ressmartunity','Newpro\Home\SmartController@ressmartunity');
 //商业智慧商圈
 Route::get('/newpro/businsmart','Newpro\Home\SmartController@businsmart');
 
+//产品展示
+Route::get('/newpro/product','Newpro\Home\ProductController@product');
+Route::get('/newpro/product/play/{id}','Newpro\Home\ProductController@productplay');
+
 //关于我们
 Route::get('/newpro/about','Newpro\Home\UsedController@about');
 //新闻列表
@@ -141,13 +145,6 @@ Route::post('/newpro/index/package/productadds','Admin\ProductController@product
 Route::get('/newpro/index/package/productedit/{id}','Admin\ProductController@productedit');
 Route::post('/newpro/index/package/productedits','Admin\ProductController@productedits');
 Route::post('/newpro/index/package/productdel','Admin\ProductController@productdel');
-
-Route::get('/newpro/index/package/product/classindex/{id}','Admin\ProductController@calssindex');
-Route::get('/newpro/index/package/product/classadd/{id}','Admin\ProductController@classadd');
-Route::post('/newpro/index/package/product/classadds','Admin\ProductController@classadds');
-Route::get('/newpro/index/package/product/classedit/{id}','Admin\ProductController@classedit');
-Route::post('/newpro/index/package/product/classedits','Admin\ProductController@classedits');
-Route::post('/newpro/index/package/product/classdel','Admin\ProductController@classdel');
 
 Route::get('/newpro/index/package/product/goodsindex/{id}','Admin\ProductController@goodsindex');
 Route::get('/newpro/index/package/product/goodsadd/{id}','Admin\ProductController@goodsadd');

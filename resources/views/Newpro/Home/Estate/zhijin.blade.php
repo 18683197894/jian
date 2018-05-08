@@ -37,7 +37,7 @@
                         <div>改善盘</div>
                     </div>
                     <div class="jiage">
-                        <span>楼盘均价</span><span class="num">3800/m²</span><span>(2017年参考价)</span>
+                        <span>楼盘均价</span><!-- <span class="num">3800/m²</span><span>(2017年参考价)</span> -->
                     </div>
                 </div>
                 <div class="time">

@@ -38,6 +38,13 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
+            <div class="file_add" style="display:none">
+            <div class="form-group" index="{{ $count }}">
+                  <label for="exampleInputFile">展示图片1（必选 默认为列表展示图片）</label>
+                  <input type="file" name="titleimg1" id="exampleInputFile">
+                </div>
+              
+            </div>
             <form role="form" action="{{ url('/newpro/index/package/product/goodsedits') }}" method="post" enctype="multipart/form-data">
 				{{ csrf_field() }}
               <div class="box-body">
@@ -70,20 +77,45 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputEmail1">备注：</label>
+                  <label for="exampleInputEmail1">描述：</label>
                   <input type="text"  name="remarks" value="{{ $data->remarks }}" class="form-control" id="exampleInputEmail1" placeholder="备注">
+                </div>
+                
+                <div class="form-group">
+                  <label for="exampleInputEmail1">网页标题</label>
+                  <input type="text"  name="titles" value="{{ $data->titles }}" class="form-control" id="exampleInputEmail1" placeholder="网页标题">
+                </div>
+                
+                 <div class="form-group">
+                  <label for="exampleInputEmail1">网页关键字</label>
+                  <input type="text"  name="keyworlds" value="{{ $data->keyworlds }}" class="form-control" id="exampleInputEmail1" placeholder="网页关键字">
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputFile">展示图片（可选）</label>
-                  <input type="file" name="titleimg" id="exampleInputFile">
+                  <label for="exampleInputEmail1">网页内容描述</label>
+                  <input type="text"  name="description" value="{{ $data->description }}" class="form-control" id="exampleInputEmail1" placeholder="网页内容描述">
                 </div>
-      
+
+                <div class="form-group">
+                  <label for="exampleInputFile">列表展示图片（可选）</label>
+                  <input type="file" name="titleimg1" id="exampleInputFile">
+                </div>
+                <div class="form-group"><label for="exampleInputFile">追加展示图片:</label></div>
+                <div class="form-group add"><label for="exampleInputFile"><button Onclick="return false">+</button></label></div>
+              
               </div>
               <!-- /.box-body -->
+              <div style="width:900px">
+                @include('UEditor::head')
+                <script id="container" name="content" type="text/plain" >
+                <?php
+                  echo $data->content;
+                ?>
+                </script> 
+            </div>
 	
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">添加</button>
+                <button type="submit" class="btn btn-primary">更新</button>
               </div>
             </form>
           </div>
@@ -91,5 +123,28 @@
 @endsection('content')
 
 @section('js')
-
+<script type="text/javascript">
+    var ue = UE.getEditor('container')
+        ue.ready(function() {
+        ue.execCommand('serverparam', '_token', '{{ csrf_token() }}');//此处为支持laravel5 csrf ,根据实际情况修改,目的就是设置 _token 值.    
+        
+    });
+</script> 
+<script>
+  $(".add").on('click',function(){
+    var div = $('.file_add > .form-group').clone(true);
+    var index = Number(div.attr('index')) + 1;
+    $('.file_add > .form-group').attr('index',index);
+    if(index >= 9)
+    {
+      alert('超出限制！');
+      return false;
+    }
+    div.attr('index',index)
+    div.find('label').html('展示图片'+index+'（可选）');
+    div.find('input').attr('name','titleimg'+index);
+    div.css('display','block');
+    $(this).before(div);
+  })
+</script>
 @endsection('js')

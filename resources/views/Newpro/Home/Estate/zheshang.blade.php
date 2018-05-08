@@ -74,7 +74,7 @@
                         <div>商业区</div>
                     </div>
                     <div class="jiage">
-                        <span>楼盘均价</span><span class="num">9900/m²</span><span>(2015年参考价)</span>
+                        <span>楼盘均价</span><!-- <span class="num">9900/m²</span><span>(2015年参考价)</span> -->
                     </div>
                 </div>
                 <div class="time">
