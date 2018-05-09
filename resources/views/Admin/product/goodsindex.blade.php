@@ -65,7 +65,7 @@
                   <td style="width:20%;text-align: left;  vertical-align: middle">{{ $v->remarks }}</td>
                   <td style="text-align: center;vertical-align: middle"><a target="_blank" href="{{ url('/uploads/product/img') }}/{{ $v->imgs[0] }}"> <img width="80px" height="100px" src="{{ asset('/uploads/product/img') }}/{{ $v->imgs[0] }}" alt=""> </a></td>
                   <td style="text-align: center;vertical-align: middle">{{ date('Y-m-d H:i:s',$v->uptime) }}</td>
-                  <td style="text-align: center;vertical-align: middle"> <a href="{{ url('/newpro/index/package/product/goodsedit') }}/{{$v->id}}">修改</a>&nbsp;&nbsp;&nbsp;<a class="del" href="javascript:;">删除</a></td>
+                  <td style="text-align: center;vertical-align: middle"> <a href="{{ url('/newpro/index/package/product/goodsedit') }}/{{$v->id}}?page={{ $page }}">修改</a>&nbsp;&nbsp;&nbsp;<a class="del" href="javascript:;">删除</a></td>
                 
                 </tr>
 @endforeach
@@ -73,11 +73,25 @@
 <tr role="row" class="odd">
   <td style="text-align: center;vertical-align: middle" colspan="10">未找到产品</td>
 </tr>
-@endif
+@endif 
+
               </table>
+               <div class="row">
+               <div class="col-sm-5">
+               </div>
+               <div class="col-sm-7">
+              <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
+                {{ $data->links() }}
+              </div>
+              </div>
+              </div>
+            
+            </div>
+            <!-- /.box-body -->
+          
 
               </div>
-            </div>
+            
             <!-- /.box-body -->
           </div>
   </section>

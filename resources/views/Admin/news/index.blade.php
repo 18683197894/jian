@@ -78,7 +78,7 @@
                   <td style="text-align: center;vertical-align: middle"><a href="{{ url('/uploads/news/titleimg/') }}/{{$v->titleimg }}"><img src="{{ asset('/uploads/news/titleimg/') }}/{{$v->titleimg }}" width="170px" height="70px" alt=""></a></td>
                   <td style="text-align: center;vertical-align: middle">{{ date("Y-m-d H:i:s",$v->time) }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->click }}</td>
-                  <td style="text-align: center;vertical-align: middle"><a href="{{ url('/jslmadmin/newslei/newsedit') }}/{{ $v->id }}">编辑
+                  <td style="text-align: center;vertical-align: middle"><a href="{{ url('/jslmadmin/newslei/newsedit') }}/{{ $v->id }}?page={{ $page }}">编辑
                   </a>&nbsp;&nbsp;<a class="shan" href="#" onclick="return false;">删除&nbsp;</a>&nbsp;&nbsp;
                   @if($v->zhi == 0)<a href="javascript:;" index="{{ $v->pid }}" class="zhi">移入列表置顶</a>@else <a href="javascript:;" index="{{ $v->pid }}" >已置顶 @endif&nbsp;&nbsp;
                   @if($v->szhi == 0)<a href="javascript:;" szhi="0" index="{{ $v->id }}" class="szhi">移入首页置顶</a>@else <a href="javascript:;" index="{{ $v->id }}" szhi="1" class="szhi"  >移出首页置顶 @endif
@@ -91,11 +91,17 @@
 </tr>
 @endif
               </table>
-
-              </div></div><div class="row"><div class="col-sm-5"></div><div class="col-sm-7">
+              
+              <div class="row">
+               <div class="col-sm-5">
+               </div>
+               <div class="col-sm-7">
               <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
                 {{ $data->links() }}
-              </div></div></div></div>
+              </div>
+              </div>
+              </div>
+              
             </div>
             <!-- /.box-body -->
           </div>

@@ -47,6 +47,7 @@
                   <input type="text"  name="title" value="{{ $data->title }}" class="form-control" id="exampleInputEmail1" placeholder="新闻标题">
                 </div>
                 <input type="hidden" name="id" value="{{ $data->id }}">
+                <input type="hidden" name="page" value="{{ $page }}">
                 <div class="form-group">
                   <label for="exampleInputPassword1">新闻来源</label>
                   <input type="text" name="yuan" value="{{ $data->yuan  }}" class="form-control" id="exampleInputPassword1" placeholder="新闻来源">
@@ -82,13 +83,14 @@
               </div>
               <!-- /.box-body -->
 @include('UEditor::head')
-
+<div style="width:715px">
 <script id="container" name="content" type="text/plain" >
 
 @php
  echo $data->content;
 @endphp
 </script>			
+</div>
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">更新</button>
               </div>

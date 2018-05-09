@@ -72,7 +72,7 @@ class NewsController extends Controller
     }
 
     public function newsleiindex()
-    {
+    {   
         $data = \DB::table('newslei')->select('id','title','time','img')->orderBy('time','desc')->paginate(10);
         return view('Admin.news.newsleiindex',['title'=>'板块列表','data'=>$data]);
     }
@@ -179,13 +179,15 @@ class NewsController extends Controller
     }
 
     public function newsindex(Request $request,$id)
-    {
+    {   
+        $page = $request->input('page',1);
+
         $key = isset($request->key) ? $request->key : '';
         $path = $request->path();
         $data = \DB::table('news')->select('id','title','time','yuan','pid','click','titleimg','zhi','szhi')->where('title','like','%'.$key.'%')->where('pid',$id)->orderBy('time','desc')->paginate(10);
         $tit = \DB::table('newslei')->select('id','title')->where('id',$id)->first()->title;
         $data->appends(['key'=>$key]);
-        return view('Admin.news.index',['path'=>$path,'title'=>'新闻文章管理','data'=>$data,'request'=>$request->all(),'pid'=>$id,'tit'=>$tit]);
+        return view('Admin.news.index',['path'=>$path,'page'=>$page,'title'=>'新闻文章管理','data'=>$data,'request'=>$request->all(),'pid'=>$id,'tit'=>$tit]);
     }
 
     public function newsadd($id){
@@ -272,13 +274,14 @@ class NewsController extends Controller
     }
     
 
-    public function newsedit($id){
+    public function newsedit(Request $request,$id){
+        $page = $request->input('page',1);
         $data = \DB::table('news')->where('id',$id)->first();
-        return view('Admin.news.edit',['title'=>'新闻文章更新','data'=>$data]);
+        return view('Admin.news.edit',['title'=>'新闻文章更新','data'=>$data,'page'=>$page]);
     	
     }
     public function newsedits(Request $request){
-    	$data = $request->except('_token');
+    	$data = $request->except('_token','page');
 		$this->validate($request,[
 		    'title' => 'required|min:2|max:60',
 		    'yuan'	=> 'required',
@@ -329,7 +332,7 @@ class NewsController extends Controller
     	$res = \DB::table('news')->where('id',$request->id)->update($data);
 
     	if($res){
-    		return redirect('jslmadmin/newslei/newsindex/'.$data['pid'])->with('info','更新成功');
+    		return redirect('jslmadmin/newslei/newsindex/'.$data['pid'].'?page='.$request->input('page',1))->with('info','更新成功');
     	}else{
     		return back()->with('info','更新失败 内容未更改！');
     	}

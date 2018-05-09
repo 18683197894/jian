@@ -84,12 +84,13 @@
               </div>
               <!-- /.box-body -->
 @include('UEditor::head')
-
+<div style="width:715px">
 <script id="container" name="content" type="text/plain" >
 @php
  echo old('content');
 @endphp
-</script>			
+</script>
+</div>			
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">添加</button>
               </div>

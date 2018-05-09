@@ -53,6 +53,7 @@
                   <label for="exampleInputEmail1">产品名称：</label>
                   <input type="hidden" name="id" value="{{ $data->id }}">
                   <input type="hidden" name="pid" value="{{ $data->pid }}">
+                  <input type="hidden" name="page" value="{{ $page }}">
                   <input type="text"  name="title" value="{{ $data->title }}" class="form-control" id="exampleInputEmail1" placeholder="产品名称">
                 </div>
 

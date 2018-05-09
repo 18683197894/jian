@@ -238,9 +238,9 @@ class ProductController extends Controller
 
 
 
-    public function goodsindex($id)
+    public function goodsindex(Request $request,$id)
     {	
-    
+        $page = $request->input('page',1);
     	$pdata = \DB::table('product_l')->select('id','pid','title')->where('id',$id)->first();
     	if(!$pdata)
     	{
@@ -251,13 +251,13 @@ class ProductController extends Controller
     			->select('id','title','pid','time','uptime','level','model','brand','spec','num','remarks','titleimg')
     			->where('pid',$id)
     			->orderBy('time','desc')
-    			->get();
+    			->paginate(4);
     	foreach($data as $k => $v)
     	{
     		$v->imgs = explode(',',$v->titleimg);
     	}
 
-    	return view('Admin.product.goodsindex',['title'=>'产品管理','pdata'=>$pdata,'data'=>$data]);
+    	return view('Admin.product.goodsindex',['title'=>'产品管理','pdata'=>$pdata,'data'=>$data,'page'=>$page]);
     }
 
     public function goodsadd($id)
@@ -396,8 +396,10 @@ class ProductController extends Controller
     	}
     }
 
-    public function goodsedit($id)
-    {
+    public function goodsedit(Request $request,$id)
+    {   
+        $page = $request->input('page',1);
+
     	$data = \DB::table('product_l')
     			->select('id','title','pid','keyworlds','titles','description','content','time','uptime','level','model','brand','spec','num','remarks','titleimg')
     			->where('id',$id)
@@ -408,14 +410,14 @@ class ProductController extends Controller
     	}
 
     	$count = count(explode(',',$data->titleimg));
-    	return view('Admin.product.goodsedit',['title'=>'产品修改','data'=>$data,'count'=>$count]);
+    	return view('Admin.product.goodsedit',['title'=>'产品修改','data'=>$data,'count'=>$count,'page'=>$page]);
 
     }
 
     public function goodsedits(Request $request)
     {
     	$data = $request->except("_token",'titleimg1','titleimg2','titleimg3','titleimg4','titleimg5','titleimg6',
-    		'titleimg7','titleimg8');
+    		'titleimg7','titleimg8','page');
 
     	$this->validate($request,[
     		'title'=>'required|max:30',
@@ -531,7 +533,7 @@ class ProductController extends Controller
     				@unlink('./uploads/product/img/'.$img1);
     			}
     		}
-    		return redirect('/newpro/index/package/product/goodsindex/'.$data['pid'])->with('info','更新成功！');
+    		return redirect('/newpro/index/package/product/goodsindex/'.$data['pid'].'?page='.$request->input('page',1))->with('info','更新成功！');
     	}else
     	{
     		if($init !== false)
