@@ -43,9 +43,13 @@
                         </div>
                     </a>
                     @endforeach
+                <div class="more" @if(count($v->news) < 12) style="display:block" @else style="display:none" @endif>暂无更多</div>
+
                 </div>
                 @endforeach
+
             </div>
+
         </div>
 
 

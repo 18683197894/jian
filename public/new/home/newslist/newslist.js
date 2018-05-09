@@ -46,7 +46,7 @@ function debounce(func, wait, immediate) {
     };
     var myEfficientFn = debounce(function() {
         // 滚动中的真正的操作
-        var jian = 500;
+        var jian = 700;
         if (getScrollTop() + getClientHeight() + jian >= getScrollHeight()){
 //            //dosomething
             aaa();
@@ -77,6 +77,7 @@ function debounce(func, wait, immediate) {
                     if(data[0].init == false)
                     {
                         tr.attr('init','false');
+                        tr.find('.more').css('display','block');
                     }
                     var str = "";
                     $.each(data,function(i,n){
@@ -89,7 +90,7 @@ function debounce(func, wait, immediate) {
                         a.find('.time > span').eq(2).html(n.date);
                         str += a[0].outerHTML;
                     })
-                    tr.append(str);
+                    tr.find('.more').before(str);
                     
                 }
             },

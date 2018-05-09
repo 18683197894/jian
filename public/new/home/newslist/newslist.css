@@ -36,6 +36,15 @@ body{
 .inf_a{
    display: none;
 }
+.data .more{
+    width: 100px;
+    height: 30px;
+    line-height: 70px;
+    color: #666666;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 30px;
+}
 /*.headlines_l{*/
 /*width: 495px;*/
 /*height: 360px;*/
@@ -86,7 +95,7 @@ body{
         }
         .data .xuanx{
             display: none;
-            margin-bottom: 80px;
+            margin-bottom: 50px;
         }
         .data .xuanx.avtive{
             display: block;
