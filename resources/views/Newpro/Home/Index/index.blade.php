@@ -138,10 +138,9 @@
             <i>点击360度预览</i>
             <span>浙商109平米-北欧</span>
         </a>
-
     </div>
 </div>
-
+<a href="{{ url('/newpro/estate/zheshang') }}" class="max_more">更多</a>
 <!--品质保证-->
 <div class="Quality">
     <div class="Title">
@@ -315,7 +314,6 @@
         </a>
     </div>
 </div>
-<!--知识学堂-->
 @if(count($plate) > 0)
 <div class="School">
     <div class="Title">
@@ -330,7 +328,7 @@
     <div class="Show">
     @foreach($plate as $k => $v)
         <div class="Loop">
-            <a href="{{ url('/newpro/newslist/') }}/{{ $v->id }}" class="Loop_img">
+            <a href="{{ url('/newpro/newslist?pid=') }}{{ $v->title }}" class="Loop_img">
                 <img src="{{ asset('uploads/news/img/')}}/{{ $v->img }}" alt=""/>
             </a>
             <div class="text">

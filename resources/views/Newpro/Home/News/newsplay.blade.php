@@ -11,7 +11,7 @@
 
 <div class="contact">
     <div class="position">
-        当前位置：<a href="{{ url('/') }}">首页</a>><a href="{{ url('/newpro/newslist/') }}/{{ $pid->id }}">{{ $pid->title }}</a>><a href="javascript:;">新闻详情</a>
+        当前位置：<a href="{{ url('/') }}">首页</a>><a href="{{ url('/newpro/newslist?pid=') }}{{ $pid->title }}">{{ $pid->title }}</a>><a href="javascript:;">新闻详情</a>
     </div>
     <div class="NewS">
         <div class="NewS_Left">
@@ -31,7 +31,7 @@
                 <ul>
                 	@foreach($ban as $k => $v)
                     <li>
-                        <a href="{{ url('/newpro/newslist/') }}/{{ $v->id }}">
+                        <a href="{{ url('/newpro/newslist?pid=') }}{{ $v->title }}">
                             <img src="{{ asset('/uploads/news/img/') }}/{{ $v->img }}" alt=""/>
                             <span>{{ $v->title }}</span>
                         </a>

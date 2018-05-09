@@ -71,26 +71,6 @@ body{
 /*left: 0;*/
 /*bottom: 0;*/
 /*}*/
- .title .auto{
-            display: block;
-            width: 500px;
-            margin: auto;
-        }
-        .title .auto a{
-            display: block;
-            width: 150px;
-            float: left;
-        }
-        .title .auto a.avtive{
-            color: #E12E32;
-        }
-        .data .xuanx{
-            display: none;
-            margin-bottom: 80px;
-        }
-        .data .xuanx.avtive{
-            display: block;
-        }
 .Nws{
     width: 1200px;
     overflow: hidden;
@@ -277,89 +257,6 @@ body{
 .Notice_first .loop:last-child{
     margin-bottom: 30px;
 }
-
-
-.Hotspot{
-    width: 360px;
-    overflow: hidden;
-    background-color: #ffffff;
-    border: 1px solid #f3f3f3;
-    box-sizing: border-box;
-    float: right;
-}
-.Hotspot_name{
-    padding: 0;
-    margin: 0;
-    width: 176px;
-    height: 40px;
-    line-height: 40px;
-    color: #fff;
-    background: #008CD6;
-    text-align: center;
-    display: block;
-    font-size: 18px;
-}
-.Hotspot_loop{
-    padding: 0;
-    width: 100%;
-    border-top: 1px solid #f3f3f3;
-    margin-bottom: 15px;
-    display: block;
-    padding-top: 15px;
-    overflow: hidden;
-}
-.Hotspot_loop a{
-    display: block;
-    padding: 0;
-    width: 100%;
-    height: 33px;
-    line-height: 33px;
-    font-size: 14px;
-}
-.Hotspot_loop a .num{
-    display: block;
-    float: left;
-    width: 18px;
-    height: 18px;
-    text-align: center;
-    border-radius: 50%;
-    background-color: #A6AEB9;
-    color: #ffffff;
-    margin-top: 8px;
-    margin-left: 30px;
-    line-height: 18px;
-}
-.Hotspot_loop a:nth-child(1) .num{
-    background-color: #FF6E04;
-}
-.Hotspot_loop a:nth-child(2) .num{
-    background-color: #FF6E04;
-}
-.Hotspot_loop a:nth-child(3) .num{
-    background-color: #FF6E04;
-}
-.Hotspot_loop a .name{
-    float: left;
-    width: 70%;
-    margin-left: 20px;
-    overflow: hidden;
-    text-overflow:ellipsis;
-    white-space: nowrap;
-}
-.Hotspot_loop a i{
-    display: block;
-    float: right;
-    margin-right: 20px;
-    color: #909DA5;
-    font-size: 20px;
-}
-.Hotspot_loop a:hover .name{
-    color: #fe6c00;
-}
-.Hotspot_loop a:hover i{
-    color: #fe6c00;
-}
-
 
 @media screen and (max-width: 1200px){
     .information .Nws{

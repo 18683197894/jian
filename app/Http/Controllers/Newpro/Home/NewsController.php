@@ -10,82 +10,49 @@ class NewsController extends Controller
     public function newslistall(Request $request)
     {
         $title = getwebpage($request->path());
-
-        $data = \DB::table('news')
-                ->select('id','title','leicon','time','click','titleimg','pid','zhi')
-                ->orderBy('time','desc')
-                ->paginate(8);
-
-        $ors = \DB::table('newslei')
-                ->select('id','title')
-                ->get();
-
-        if( count($ors) > 0 )
+        $lei = \DB::table('newslei')->select('id','title')->get();
+        foreach($lei as $k => $v)
         {   
-            foreach($ors as $k => $v)
-            {
-                $v->data = \DB::table('news')
-                            ->select('id','title','leicon','click')
-                            ->where('pid',$v->id)
-                            ->orderBy('click','desc')
-                            ->offset(0)
-                            ->limit(5)
-                            ->get();
-            }
+            $lei_s[$k] = $v->title; 
+            $v->news = \DB::table('news')->select('id','pid','title','titleimg','leicon','time','click')->where('pid',$v->id)->orderBy('time','desc')->offset(0)->limit(12)->get();
         }
-        return view('Newpro.Home.News.newslistall',['title'=>$title,'data'=>$data,'ors'=>$ors]);
-    }
-    public function newslist(Request $request,$id)
-    {
-    	$titles = \DB::table('newslei')
-    		->select('id','title','img','titles','keyworlds','description')
-    		->where('id',$id)
-    		->first();
-    	if(!$titles)
-    	{
-    		return redirect('/newpro/newslist');
-    	}
-        $title = [
-            'title'=> $titles->title,
-            'keyworlds'=> $titles->keyworlds,
-            'description'=> $titles->description,
-        ];
-    	$data = \DB::table('news')
-    			->select('id','title','leicon','time','click','titleimg','pid','zhi')
-    			->where('pid',$id)
-    			// ->where('zhi','!=',1)
-    			->orderBy('time','desc')
-    			->paginate(8);
-    	
-    	$ors = \DB::table('newslei')
-    			->select('id','title')
-    			->where('id','!=',$id)
-    			->get();
-    	if( count($ors) > 0 )
-    	{	
-    		foreach($ors as $k => $v)
-    		{
-    			$v->data = \DB::table('news')
-    						->select('id','title','leicon','click')
-    						->where('pid',$v->id)
-    						->orderBy('click','desc')
-    						->offset(0)
-    						->limit(5)
-    						->get();
-    		}
-    	}
-    	$zhi = \DB::table('news')
-    			->join('banimg','news.id','=','banimg.pid')
-    			->select('news.id','news.title','news.pid','banimg.img')
-    			->where('news.pid',$id)
-    			->offset(0)
-    			->limit(4)
-    			->get();
-    	$zhis = \DB::table('newsban')->select('title','con')->where('pid',$id)->get();
+        $hot = \DB::table('news')->select('id','pid','title','titleimg','leicon','time','click')->orderBy('click','desc')->offset(0)->limit(10)->get();
+        $avtive = $request->input('pid',false);
 
+        if(!in_array($avtive,$lei_s))
+        {   
+            $avtive = $lei_s[0];
+        }
 
-    	return view('Newpro.Home.News.newslist',['title'=>$title,'titles'=>$titles,'data'=>$data,'ors'=>$ors,'zhis'=>$zhis,'zhi'=>$zhi]);
+        return view('Newpro.Home.News.newslistall',['title'=>$title,'lei'=>$lei,'hot'=>$hot,'avtive'=>$avtive]);
     }
+
+    function newslistget(Request $request)
+    {   
+        $pid = $request->pid;
+        $index = $request->index;
+        $data = \DB::table('news')->select('id','pid','title','titleimg','leicon','time','click')->where('pid',$pid)->orderBy('time','desc')->offset($index)->limit(12)->get();
+        if($data)
+        {
+            $data[0]->count = count($data);
+            if($data[0]->count < 12)
+            {
+                $data[0]->init = false;
+            }
+            $data[0]->index = $data[0]->count +$index ;
+            foreach($data as $k => $v)
+            {
+                $v->date = date('Y-m-d',$v->time);
+            }
+            return response()->json($data);
+
+        }else
+        {
+            return response()->json(false);
+        }
+    }
+
+   
 
     public function newsplay($id)
     {
@@ -118,7 +85,7 @@ class NewsController extends Controller
                 ->where('title','like','%'.$key.'%')
                 // ->where('zhi','!=',1)
                 ->orderBy('time','desc')
-                ->paginate(8);
+                ->paginate(12);
         
         $data->appends(['sou'=>$key]);
         $tus = [];

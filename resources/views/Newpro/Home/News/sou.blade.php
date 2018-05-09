@@ -1,7 +1,7 @@
 @extends('Newpro.Home.public')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('/new/home/newslist/newslist.css') }}">
+<link rel="stylesheet" href="{{ asset('/new/home/newslist/sou.css') }}">
 @endsection('css')
 
 @section('content')
@@ -69,7 +69,7 @@
                 @endforeach
                 @endif
             </div>
-            <div class="paging">
+            <div class="page">
             	{{ $data->links() }}
                 <!-- <div class="paging_r">
                     <a href="javascript:;" class="Previous">上一页</a>
@@ -90,7 +90,7 @@
         	@foreach($ors as $key => $val)
             <div class="Notice_first">
                 <i></i>
-                <div class="name"><a href="{{ url('/newpro/newslist/') }}/{{ $val->id }}">{{ $val->title }}</a></div>
+                <div class="name"><a href="{{ url('/newpro/newslist?pid=') }}{{ $val->title }}">{{ $val->title }}</a></div>
                 @if(count($val->data) > 0 )
                 @foreach($val->data as $keys => $value)
                 <a href="{{ url('/newpro/newslist/play/'.$value->id) }}" class="loop">
@@ -112,5 +112,5 @@
 @endsection('content')
 
 @section('js')
-<script src="{{ asset('/new/home/newslist/newslist.js') }}"></script>
+<script src="{{ asset('/new/home/newslist/sou.js') }}"></script>
 @endsection('js')

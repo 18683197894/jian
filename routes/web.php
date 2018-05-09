@@ -31,7 +31,8 @@ Route::get('/newpro/product/play/{id}','Newpro\Home\ProductController@productpla
 Route::get('/newpro/about','Newpro\Home\UsedController@about');
 //新闻列表
 Route::get('/newpro/newslist','Newpro\Home\NewsController@newslistall');
-Route::get('/newpro/newslist/{id}','Newpro\Home\NewsController@newslist');
+Route::post('/newpro/newslistget','Newpro\Home\NewsController@newslistget');
+// Route::get('/newpro/newslist/{id}','Newpro\Home\NewsController@newslist');
 Route::get('/newpro/newslist/play/{id}','Newpro\Home\NewsController@newsplay');
 
 Route::get('/newpro/home/sou','Newpro\Home\NewsController@sou');
