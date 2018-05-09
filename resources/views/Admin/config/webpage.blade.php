@@ -30,13 +30,13 @@
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                  <th style="width:10%;text-align:center;">ID</th>
-                  <th style="width:10%;text-align:center;">网页</th>
-                  <th style="width:15%;text-align:center;">URL</th>
-                  <th style="width:15%;text-align:center;">网页标题</th>
-                  <th style="width:20%;text-align:center;">网页关键字</th>
-                  <th style="width:20%;text-align:center;">网页内容描述</th>
-                  <th style="width:10%;text-align:center;">操作</th>
+                  <th style="text-align:center;">ID</th>
+                  <th style="text-align:center;">网页</th>
+                  <th style="text-align:center;">URL</th>
+                  <th style="text-align:center;">网页标题</th>
+                  <th style="width:25%;text-align:center;">网页关键字</th>
+                  <th style="width:25%;text-align:center;">网页内容描述</th>
+                  <th style="text-align:center;">操作</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -47,10 +47,11 @@
                   <td style="text-align: center;vertical-align: middle">{{ $v->title }}</td>
                   <td style="text-align: center;vertical-align: middle"><a href="{{ url( $v->url ) }}" target="_blank">{{ $v->url }}</a></td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->titles }}</td>
-                  <td style="text-align: center;vertical-align: left">{{ $v->keyworlds }}</td>
-                  <td class="content" style="width:120px;height:30px; text-align: left;vertical-align: middle">{{ $v->description }}</td>
+                  <td style="text-align: left;vertical-align: middle">{{ $v->keyworlds }}</td>
+                  <td class="content" style=" text-align: left;vertical-align: middle">{{ $v->description }}</td>
                   <td style="text-align: center;vertical-align: middle">
-                  	<a href="{{ url('admin/config/webpage/edit/') }}/{{ $v->id }}" class="del">编辑</a>
+                    <a href="{{ url('admin/config/webpage/edit/') }}/{{ $v->id }}?page={{ $page }}" >编辑</a>&nbsp;&nbsp;
+                  	<a href="javascript:;" class="del">删除</a>
                   	
                   </td>
                 </tr>
@@ -74,5 +75,39 @@
 @endsection('content')
 
 @section('js')
+<script>
+  
+   $(".del").on('click',function(){
+          var tr = $(this).parents('tr');
+          var id = $(this).parents('tr').find('.id').html();
 
+         $.ajaxSetup({
+          headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+          
+          });
+
+         $.ajax('/admin/config/webpage/del',{
+            type : 'post',
+            data :{id:id},
+            success : function(data){
+             
+              if(data ==1)
+              {
+                tr.css('display','none');
+                alert('删除成功！');
+              }else 
+              {
+                alert('删除失败！');
+              }
+            },
+            error : function(data){
+              alert('删除失败 请重试!');
+            },
+            dateType : 'json'
+         })
+  })
+
+</script>
 @endsection('js')

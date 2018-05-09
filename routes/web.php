@@ -215,6 +215,7 @@ Route::get('admin/config/webpage/edit/{id}','Admin\ConfigController@webpageedit'
 Route::post('admin/config/webpage/edits','Admin\ConfigController@webpageedits');
 Route::get('/admin/config/wepage/add','Admin\ConfigController@add');
 Route::post('/admin/config/webpage/adds','Admin\ConfigController@adds');
+Route::post('/admin/config/webpage/del','Admin\ConfigController@webpagedel');
 
 //导航栏目
 Route::get('admin/config/nav','Admin\ConfigController@nav');

@@ -43,6 +43,7 @@
               <div class="box-body">
 
                <input type="hidden" name="id" value="{{ $data->id }}">
+               <input type="hidden" name="page" value="{{ $page }}">
                <div class="form-group">
                   <label for="exampleInputEmail1">URL地址</label>
                   <input type="text"  name="url" value="{{ $data->url  }}" class="form-control" id="exampleInputEmail1" placeholder="URL地址">
@@ -67,7 +68,7 @@
                   <input type="text"  name="description" value="{{ $data->description  }}" class="form-control" id="exampleInputEmail1" placeholder="网页内容描述">
                 </div>
                  
-
+        
               </div>
               <!-- /.box-body -->
 	

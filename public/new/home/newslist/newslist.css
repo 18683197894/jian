@@ -511,4 +511,8 @@ body{
     .information_left .brief{
         margin-bottom: 0;
     }
+    .Hotspot{
+        display: none;
+    }
 }
+

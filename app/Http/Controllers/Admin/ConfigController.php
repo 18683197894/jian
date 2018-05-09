@@ -16,8 +16,8 @@ class ConfigController extends Controller
         $data = $request->except('_token');
         $this->validate($request,[
             'titles' => 'required|min:2|max:30',
-            'keyworlds' => 'required|min:6|max:120',
-            'description' => 'required|min:10|max:120',
+            'keyworlds' => 'required|min:6|max:255',
+            'description' => 'required|min:10|max:255',
             'url' => 'required|min:1|max:255',
             'title' => 'required|min:1|max:30'
         ],[
@@ -26,7 +26,7 @@ class ConfigController extends Controller
             'titles.max'=>'网页标题最少2位最大30位',
             'keyworlds.required'=>'网页关键字不能为空',
             'keyworlds.min'=>'网页关键字最少6位',
-            'keyworlds.max'=>'网页关键字最大120位',
+            'keyworlds.max'=>'网页关键字最大255位',
             'description.required'=>'网页内容描述不能为空',
             'description.min'=>'网页内容描述最少10位',
             'description.max'=>'网页内容描述最大120位',
@@ -38,7 +38,8 @@ class ConfigController extends Controller
             'title.max'=>'网页名称最大30位'
         ]);
         $data['time'] = time();
-
+        $data['uptime'] = time();
+        
         $res = \DB::table('webpage')->insert($data);
         if($res)
         {
@@ -48,25 +49,28 @@ class ConfigController extends Controller
             return back()->withInput()->with(['info'=>'数据库写入失败！']);
         }
     }
-    public function webpage()
+    public function webpage(Request $request)
     {	
-    	$data = \DB::table('webpage')->orderBy('time','desc')->paginate(13);
-    	return view('Admin.config.webpage',['title'=>'网页关键字','data'=>$data]);
+        $page = $request->input('page',1);
+
+    	$data = \DB::table('webpage')->orderBy('time','desc')->paginate(12);
+    	return view('Admin.config.webpage',['title'=>'网页关键字','data'=>$data,'page'=>$page]);
     }
     
-    public function webpageedit($id)
+    public function webpageedit(Request $request,$id)
     {
     	$data = \DB::table('webpage')->where('id',$id)->first();
-    	return view('Admin.config.webpageedit',['title'=>'网页关键字更新','data'=>$data]);
+        $page = $request->input('page',1);
+    	return view('Admin.config.webpageedit',['title'=>'网页关键字更新','data'=>$data,'page'=>$page]);
     }
 
     public function webpageedits(Request $request)
     {
-    	$data = $request->except('_token');
+    	$data = $request->except('_token','page');
     	$this->validate($request,[
             'titles' => 'required|min:2|max:30',
-            'keyworlds' => 'required|min:6|max:120',
-            'description' => 'required|min:10|max:120',
+            'keyworlds' => 'required|min:6|max:255',
+            'description' => 'required|min:10|max:255',
             'url' => 'required|min:1|max:255',
             'title' => 'required|min:1|max:30'
  		],[
@@ -75,10 +79,10 @@ class ConfigController extends Controller
             'titles.max'=>'网页标题最少2位最大30位',
             'keyworlds.required'=>'网页关键字不能为空',
             'keyworlds.min'=>'网页关键字最少6位',
-            'keyworlds.max'=>'网页关键字最大120位',
+            'keyworlds.max'=>'网页关键字最大255位',
             'description.required'=>'网页内容描述不能为空',
             'description.min'=>'网页内容描述最少10位',
-            'description.max'=>'网页内容描述最大120位',
+            'description.max'=>'网页内容描述最大255位',
             'url.required'=>'url不能为空',
             'url.min'=>'url最少1位',
             'url.max'=>'url最大255位',
@@ -86,16 +90,29 @@ class ConfigController extends Controller
             'title.min'=>'网页名称最少1位',
             'title.max'=>'网页名称最大30位'
 		]);
-
+        $data['uptime'] = time();
 		$res = \DB::table('webpage')->where('id',$data['id'])->update($data);
 
 		if($res)
 		{
-			return redirect('/admin/config/webpage')->with('info','更新成功');
+			return redirect('/admin/config/webpage?page='.$request->page)->with('info','更新成功');
 		}else
 		{
 			return back()->with('info','更新失败');
 		}
+    }
+
+    function webpagedel(Request $request)
+    {
+        $id = $request->id;
+        $res = \DB::table('webpage')->delete($id);
+        if($res)
+        {
+            return response()->json(1);
+        }else
+        {
+            return response()->json(2);
+        }
     }
 
     public function nav()

@@ -18,7 +18,7 @@ class NewsController extends Controller
             'title' => 'required|min:2|max:10',
             'img'=>'required|image',
             'titles' => 'required|min:2|max:60',
-            'keyworlds' => 'required|min:6|max:120',
+            'keyworlds' => 'required|min:6|max:255',
             'description' => 'required|min:10|max:255'
         ],[
             'title.required'=>'标题不能为空',
@@ -31,7 +31,7 @@ class NewsController extends Controller
             'titles.max'=>'网页标题最大60位',
             'keyworlds.required'=>'网页关键字不能为空',
             'keyworlds.min'=>'网页关键字最少6位',
-            'keyworlds.max'=>'网页关键字最大120位',
+            'keyworlds.max'=>'网页关键字最大255位',
             'description.required'=>'网页内容描述不能为空',
             'description.min'=>'网页内容描述最少10位',
             'description.max'=>'网页内容描述最大255位'
@@ -91,7 +91,7 @@ class NewsController extends Controller
             'title' => 'required|min:2|max:10',
             'img'   => 'image',
             'titles' => 'required|min:2|max:60',
-            'keyworlds' => 'required|min:6|max:120',
+            'keyworlds' => 'required|min:6|max:255',
             'description' => 'required|min:10|max:255'
         ],[
             'title.required'=>'标题不能为空',
@@ -103,7 +103,7 @@ class NewsController extends Controller
             'titles.max'=>'网页标题最大60位',
             'keyworlds.required'=>'网页关键字不能为空',
             'keyworlds.min'=>'网页关键字最少6位',
-            'keyworlds.max'=>'网页关键字最大120位',
+            'keyworlds.max'=>'网页关键字最大255位',
             'description.required'=>'网页内容描述不能为空',
             'description.min'=>'网页内容描述最少10位',
             'description.max'=>'网页内容描述最大255位'
@@ -202,7 +202,7 @@ class NewsController extends Controller
 		    'titleimg'=>'image',
 		    'content' =>'required|max:20000',
             'titles' => 'required|min:2|max:60',
-            'keyworlds' => 'required|min:6|max:120',
+            'keyworlds' => 'required|min:6|max:255',
             'description' => 'required|min:10|max:255'
 
  		],[
@@ -214,7 +214,7 @@ class NewsController extends Controller
             'titles.max'=>'网页标题最大60位',
             'keyworlds.required'=>'网页关键字不能为空',
             'keyworlds.min'=>'网页关键字最少6位',
-            'keyworlds.max'=>'网页关键字最大120位',
+            'keyworlds.max'=>'网页关键字最大255位',
             'description.required'=>'网页内容描述不能为空',
             'description.min'=>'网页内容描述最少10位',
             'description.max'=>'网页内容描述最大255位',
@@ -286,7 +286,7 @@ class NewsController extends Controller
 		    'content' =>'required|max:20000',
             'titimg' => 'image',
             'titles' => 'required|min:2|max:60',
-            'keyworlds' => 'required|min:6|max:120',
+            'keyworlds' => 'required|min:6|max:255',
             'description' => 'required|min:10|max:255'
  		],[
 			'title.required'=>'标题不能为空',
@@ -300,7 +300,7 @@ class NewsController extends Controller
             'titles.max'=>'网页标题最大60位',
             'keyworlds.required'=>'网页关键字不能为空',
             'keyworlds.min'=>'网页关键字最少6位',
-            'keyworlds.max'=>'网页关键字最大120位',
+            'keyworlds.max'=>'网页关键字最大255位',
             'description.required'=>'网页内容描述不能为空',
             'description.min'=>'网页内容描述最少10位',
             'titleimg.image'=>'请上传图片类型的文件',

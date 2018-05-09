@@ -19,7 +19,7 @@ class PropertiesController extends Controller
         'title' => 'required|max:20|min:2',
         'pidname' => 'required',
         'titles' => 'required|max:60|min:2',
-        'keyworlds' => 'required|max:120|min:10',
+        'keyworlds' => 'required|max:255|min:10',
         'description' => 'required|max:255|min:10',
         'content' => 'required|max:20000'
     ],[
@@ -31,7 +31,7 @@ class PropertiesController extends Controller
     	'titles.min' => '网页标题长度最小2位',
     	'pidname.required' => '所属父类不能为空',
     	'keyworlds.required' => '网页关键字不能为空',
-    	'keyworlds.max' => '网页关键字长度最大120位',
+    	'keyworlds.max' => '网页关键字长度最大255位',
     	'keyworlds.min' => '网页关键字长度最小10位',
     	'description.required' => '网页内容描述不能为空',
     	'description.max' => '网页内容描述长度最大255位',
@@ -62,7 +62,7 @@ class PropertiesController extends Controller
         'title' => 'required|max:30|min:2',
         'pidname' => 'required',
         'titles' => 'required|max:60|min:2',
-        'keyworlds' => 'required|max:120|min:10',
+        'keyworlds' => 'required|max:255|min:10',
         'description' => 'required|max:255|min:10',
         'content' => 'required|max:20000',
         'leicon' => 'required|max:255|min:10'
@@ -75,7 +75,7 @@ class PropertiesController extends Controller
         'titles.min' => '网页标题长度最小2位',
         'pidname.required' => '所属父类不能为空',
         'keyworlds.required' => '网页关键字不能为空',
-        'keyworlds.max' => '网页关键字长度最大120位',
+        'keyworlds.max' => '网页关键字长度最大255位',
         'keyworlds.min' => '网页关键字长度最小10位',
         'description.required' => '网页内容描述不能为空',
         'description.max' => '网页内容描述长度最大255位',
@@ -116,7 +116,7 @@ class PropertiesController extends Controller
         'title' => 'required|max:30|min:2',
         'pidname' => 'required',
         'titles' => 'required|max:30|min:2',
-        'keyworlds' => 'required|max:120|min:10',
+        'keyworlds' => 'required|max:255|min:10',
         'description' => 'required|max:255|min:10',
         'content' => 'required|max:20000'
     ],[
@@ -128,7 +128,7 @@ class PropertiesController extends Controller
         'titles.min' => '网页标题长度最小2位',
         'pidname.required' => '所属父类不能为空',
         'keyworlds.required' => '网页关键字不能为空',
-        'keyworlds.max' => '网页关键字长度最大120位',
+        'keyworlds.max' => '网页关键字长度最大255位',
         'keyworlds.min' => '网页关键字长度最小10位',
         'description.required' => '网页内容描述不能为空',
         'description.max' => '网页内容描述长度最大255位',
@@ -178,7 +178,7 @@ class PropertiesController extends Controller
         'title' => 'required|max:30|min:2',
         'pidname' => 'required',
         'titles' => 'required|max:60|min:2',
-        'keyworlds' => 'required|max:120|min:10',
+        'keyworlds' => 'required|max:255|min:10',
         'description' => 'required|max:255|min:10',
         'content' => 'required|max:20000',
         'leicon' => 'required|max:255|min:10'
@@ -191,7 +191,7 @@ class PropertiesController extends Controller
         'titles.min' => '网页标题长度最小2位',
         'pidname.required' => '所属父类不能为空',
         'keyworlds.required' => '网页关键字不能为空',
-        'keyworlds.max' => '网页关键字长度最大120位',
+        'keyworlds.max' => '网页关键字长度最大255位',
         'keyworlds.min' => '网页关键字长度最小10位',
         'description.required' => '网页内容描述不能为空',
         'description.max' => '网页内容描述长度最大255位',
