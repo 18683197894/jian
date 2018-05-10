@@ -59,9 +59,6 @@ Route::post('/newpro/case/playajax','Newpro\Home\CaseController@playajax');
 //在建案例
 Route::get('/newpro/case/zaiplay/{id}','Newpro\Home\CaseController@zaiplay');
 
-//软包
-Route::get('/newpro/style','Newpro\Home\StyleController@styleindex');
-Route::post('/newpro/style/paygouajax','Newpro\Home\StyleController@paygouajax');
 
 //楼盘
 Route::get('/newpro/estate/defu','Newpro\Home\EstateController@defu');

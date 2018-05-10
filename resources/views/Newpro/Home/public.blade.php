@@ -63,16 +63,28 @@
                 </div>
             </div>
         </div>
-   
+        <?php 
+
+            $navs = \DB::table('nav')
+            ->select('nav.id','nav.title','nav.pid','webpage.url','webpage.titles')
+            ->join('webpage','nav.pid','=','webpage.id')
+            ->orderBy('status')
+            ->get();
+            
+
+       ?>
         <div class="nav">
-            <a href="/" @if(isset($title) && $title['title'] == '建商联盟' ) class="avtive" @endif>首页</a>
-            <a href="{{ url('/newpro/package/jizhuang') }}" @if(isset($title) && $title['title'] == '基装主材包' ) class="avtive" @endif>建商家装</a>
+            @foreach($navs as $k => $v)
+            <a href="{{ $v->url }}" @if(isset($title) && $title['title'] == $v->titles ) class="avtive" @endif>{{ $v->title }}</a>
+            @endforeach
+            <!-- <a href="/" @if(isset($title) && $title['title'] == '建商联盟' ) class="avtive" @endif>首页</a> -->
+            <!-- <a href="{{ url('/newpro/package/jizhuang') }}" @if(isset($title) && $title['title'] == '基装主材包' ) class="avtive" @endif>建商家装</a>
             <a href="{{ url('/newpro/case/index') }}" @if(isset($title) && $title['title'] == '工程案例' ) class="avtive" @endif>工程案例</a>
             <a href="{{ url('/newpro/smarthome') }}" @if(isset($title) && $title['title'] == '智能家居' ) class="avtive" @endif>智能家居</a>
             <a href="{{ url('/newpro/product') }}" @if(isset($title) && $title['title'] == '产品展示' ) class="avtive" @endif>产品展示</a>
             <a href="{{ url('/newpro/newslist') }}" @if(isset($title) && $title['title'] == '新闻动态' ) class="avtive" @endif>新闻动态</a>
             <a href="{{ url('/newpro/about') }}" @if(isset($title) && $title['title'] == '关于建商' ) class="avtive" @endif>关于建商</a>
-            <a href="{{ url('/newspro/payment/diyindex') }}" @if(isset($title) && $title['title'] == '建商支付') class="avtive" @endif>建商支付</a>
+            <a href="{{ url('/newspro/payment/diyindex') }}" @if(isset($title) && $title['title'] == '建商支付') class="avtive" @endif>建商支付</a> -->
         </div>
         <a href="javascript:;" class="botton">
             <span></span>
