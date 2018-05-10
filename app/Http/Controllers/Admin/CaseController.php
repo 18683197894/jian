@@ -51,12 +51,60 @@ class CaseController extends Controller
     }
 
     public function index(Request $request)
-    {
+    {   
     	$key = isset($request->key) ? $request->key : '';
-    	
+    	$page = $request->input('page',1);
     	$data = \DB::table('case')->where('title','like','%'.$key.'%')->select('id','title','huxing','fengge','yusuan','or','time')->orderBy('time','desc')->paginate(13);
     	
-    	return view('Admin.case.index',['title'=>'案例管理','data'=>$data,'request'=>$request->all()]);
+    	return view('Admin.case.index',['title'=>'案例管理','data'=>$data,'request'=>$request->all(),'page'=>$page]);
+    }
+
+    function case_edit(Request $request,$id)
+    {   
+        $page = $request->input('page',1);
+
+        $data = \DB::table('case')->select('id','title','huxing','fengge','yusuan','titles','keyworlds','description')->where('id',$id)->first();
+        if(!$data)
+        {
+            return redirect('/admin/case/index?page='.$page)->with('info','数据不存在!');
+        }
+
+        return view('Admin.case.case_edit',['title'=>'案例修改','data'=>$data,'page'=>$page]);
+
+    }
+
+    function case_edits(Request $request)
+    {
+        $data = $request->except('_token','page');
+        $this->validate($request,[
+            'title' => 'required|min:2|max:20',
+            'titles' => 'required|min:2|max:20',
+            'keyworlds' => 'required|min:6|max:255',
+            'description' => 'required|min:10|max:255'
+        ],[
+            'title.required'=>'标题不能为空',
+            'title.min'=>'标题最少2位',
+            'title.max'=>'标题最大20位',
+            'titles.required'=>'网页标题不能为空',
+            'titles.min'=>'网页标题最少2位',
+            'titles.max'=>'网页标题最大20位',
+            'keyworlds.required'=>'网页关键字不能为空',
+            'keyworlds.min'=>'网页关键字最少6位',
+            'keyworlds.max'=>'网页关键字最大255位',
+            'description.required'=>'网页内容描述不能为空',
+            'description.min'=>'网页内容描述最少10位',
+            'description.max'=>'网页内容描述最大255位'
+        ]); 
+        $data['uptime'] = time();
+        $res = \DB::table('case')->where('id',$data['id'])->update($data);
+        if($res)
+        {
+            return redirect('/admin/case/index?page='.$request->input('page',1))->with('info','修改成功！');
+        }else
+        {
+            return back()->with('info','修改失败！');
+        }
+        dd($data);
     }
 
     public function edit($id)

@@ -87,8 +87,7 @@
                     <a href="{{ url('admin/case/edit') }}/{{ $v->id }}">更新进度</a>&nbsp;&nbsp;
                     <a href="{{ url('admin/case/tedit') }}/{{ $v->id }}">跳过更新</a>
                     @endif
-                    &nbsp;&nbsp;
-                  	<a href="#" class="del">删除</a>&nbsp;&nbsp;
+                    
                     @if( $v->or >=1 & $v->or < 5 )
                     <a href="{{ url('/newpro/case/zaiplay/') }}/{{ $v->id }}" target="_blank">预览</a>
                       
@@ -96,6 +95,10 @@
                     <a href="{{ url('/newpro/case/play/') }}/{{ $v->id }}" target="_blank">预览</a>
                     
                     @endif
+                    &nbsp;&nbsp;
+                    <a href="{{ url('admin/case/index/case_edit/') }}/{{ $v->id }}?page={{ $page }}">编辑</a>&nbsp;&nbsp;
+                    <a href="#" class="del">删除</a>&nbsp;&nbsp;
+
                   </td>
                 </tr>
     @endforeach($data as $k => $v)

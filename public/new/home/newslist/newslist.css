@@ -18,12 +18,13 @@ body{
     background-color: #ffffff;
 }
 .information .title{
-    width: 100%;
+    width: 1200px;
     overflow: hidden;
     text-align: center;
     line-height: 95px;
     color: #010101;
     font-size: 20px;
+    margin: auto;
 }
 .information .title img{
     margin-left: 5px;
@@ -82,7 +83,7 @@ body{
 /*}*/
  .title .auto{
             display: block;
-            width: 500px;
+            width: 820px;
             margin: auto;
         }
         .title .auto a{
@@ -514,5 +515,11 @@ body{
     .Hotspot{
         display: none;
     }
+    .information .title{
+        width: 100%;
+    }
+     .title .auto{
+        width: 100%;
+     }
 }
 

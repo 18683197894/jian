@@ -203,6 +203,8 @@ Route::post('admin/case/edits','Admin\CaseController@edits');
 Route::post('admin/case/upds','Admin\CaseController@upds');
 Route::post('admin/case/del','Admin\CaseController@del');
 Route::get('/admin/case/tedit/{id}','Admin\CaseController@tedit');
+Route::get('/admin/case/index/case_edit/{id}','Admin\CaseController@case_edit');
+Route::post('/admin/case/index/case_edits','Admin\CaseController@case_edits');
 
 //案例页装修设计预约
 Route::get('admin/caseplay','Admin\MakeController@caseplay');
