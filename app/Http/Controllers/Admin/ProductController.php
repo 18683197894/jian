@@ -276,7 +276,7 @@ class ProductController extends Controller
     		'titleimg7','titleimg8');
 
     	$this->validate($request,[
-    		'title'=>'required|max:30',
+    		'title'=>'required|max:120',
     		'brand'=>'required|max:15',
     		'model'=>'max:30',
     		'spec'=>'max:30',
@@ -296,7 +296,7 @@ class ProductController extends Controller
             'description' => 'required|min:10|max:255'
     		],[
     		'title.required'=>'产品名称不能为空！',
-    		'title.max'=>'产品名称最大30位！',
+    		'title.max'=>'产品名称最大120位！',
     		'brand.required'=>'品牌不能为空！',
     		'brand.max'=>'品牌最大15位！',
     		'model.max'=>'型号最大30位',
@@ -420,7 +420,7 @@ class ProductController extends Controller
     		'titleimg7','titleimg8','page');
 
     	$this->validate($request,[
-    		'title'=>'required|max:30',
+    		'title'=>'required|max:120',
     		'brand'=>'required|max:15',
     		'model'=>'max:30',
     		'spec'=>'max:30',
@@ -441,7 +441,7 @@ class ProductController extends Controller
 
     		],[
     		'title.required'=>'产品名称不能为空！',
-    		'title.max'=>'产品名称最大30位！',
+    		'title.max'=>'产品名称最大120位！',
     		'brand.required'=>'品牌不能为空！',
     		'brand.max'=>'品牌最大15位！',
     		'model.max'=>'型号最大30位',
