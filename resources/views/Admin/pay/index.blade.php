@@ -31,21 +31,28 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-      <form action="{{url('jslmadmin/payment/index')}}" method="get">
         <div class="row">
         
-        
-        <div class="col-md-4 col-md-offset-8">
-          <div class="input-group input-group-sm">
-            <input type="text" name="key" value="{{ $request['key'] or '' }}" class="form-control" placeholder="订单号搜索">
-               <span class="input-group-btn">
-                 <button type="submit" class="btn btn-info btn-flat">Go!</button>
-               </span>
-          </div>
+        <div class="col-md-2 col-md-offset-6"> 
+          <button id="dump_current" target="blank" class="btn btn-info">导出当前页</button>
+          &nbsp;&nbsp;&nbsp;
+          <!-- <a href="{{ url('/jslmadmin/payment/index/dump_all') }}" target="blank" class="btn btn-info">导出所有</a> -->
+          <button id="dump_all" class="btn btn-info">导出所有</button>
         </div>
+
+        <div class="col-md-4">
+          <form action="{{url('jslmadmin/payment/index')}}" method="get">
+              <div class="input-group input-group-sm">
+                <input id="input" type="text" name="key" page="{{ $page }}" key='{{ $key }}' value="{{ $request['key'] or '' }}" class="form-control" placeholder="订单号搜索">
+                   <span class="input-group-btn">
+                     <button type="submit" class="btn btn-info btn-flat">Go!</button>
+                   </span>
+              </div>
+            </div>
+          </form>
+
         </div>
         <br>
-      </form>
               <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
               <div class="row"><div class="col-sm-12"><table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
                 <thead>
@@ -103,5 +110,34 @@
   </section>
 @endsection('content')
 @section('js')
+<script>
+        $('#dump_all').on('click',function(){  
+            // url = '/jslmadmin/payment/index/dump_all';
+            // window.open(url);
+            // return false;
+            var $eleForm = $("<form method='get'></form>");  
+  
+            $eleForm.attr("action","/jslmadmin/payment/index/dump_all");  
+  
+            $(document.body).append($eleForm);  
+  
+            //提交表单，实现下载  
+            $eleForm.submit();  
+        });  
 
+        $('#dump_current').on('click',function(){
+          var page = $('#input').attr('page');
+          var key = $('#input').attr('key');
+
+          var $eleForm = $("<form method='get'> <input type='text' name='page' value='"+page+"' > <input type='text' name='key' value='"+key+"' > </form>");  
+  
+            $eleForm.attr("action","/jslmadmin/payment/index/dump_current");  
+  
+            $(document.body).append($eleForm);  
+  
+            //提交表单，实现下载  
+            $eleForm.submit();
+
+        })
+        </script>
 @endsection('js')

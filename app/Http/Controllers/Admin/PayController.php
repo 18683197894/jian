@@ -15,7 +15,7 @@ class PayController extends Controller
     	->select('orders.id','orders.name','orders.payors','orders._token','user_home.name as names','orders.uid','orders.linkman','orders.address','orders.lebel','orders.remarks','orders.invoice','orders.phone','orders.addtime','orders.create_id','orders.total','orders.status')
     	->where('orders._token','like','%'.$key.'%')
     	->paginate(12);
-    	
+    	$page = $request->input('page',1);
     	foreach($data as $k => $v)
     	{  
             $v->addtime = explode(',',$v->addtime);
@@ -35,7 +35,7 @@ class PayController extends Controller
     		}
     	}
     	$data->appends(['key'=>$key]);
-    	return view('Admin.pay.index',['title'=>'订单管理','data'=>$data,'request'=>$request->all()]);
+    	return view('Admin.pay.index',['title'=>'订单管理','data'=>$data,'request'=>$request->all(),'page'=>$page,'key'=>$key]);
     }
     public function shopping($id)
     {
@@ -81,7 +81,6 @@ class PayController extends Controller
     {   
         $key = $request->key?$request->key:'';
         $status = $request->input('status','A');
-      
         if($status === 'A')
         {   
             
@@ -98,7 +97,7 @@ class PayController extends Controller
             ->where('_token','like','%'.$key.'%')
             ->where('status','=',$status)
             ->orderBy('addtime','desc')
-            ->paginate(10);
+            ->paginate(12);
         }
 
         foreach($data as $k => $v)
@@ -133,5 +132,150 @@ class PayController extends Controller
             return response()->json('删除失败 请重试！');
         }
         return response()->json($id);
+    }
+
+    function dump_all()
+    {   
+        
+        $data = \DB::table('orders')
+        ->select('orders.id','orders._token','orders.name','user_home.id as uid','user_home.name as names','orders.linkman','orders.phone','orders.address','orders.invoice','orders.create_id','orders.total','orders.remarks','orders.payors','orders.addtime','orders.status')
+        ->join('user_home','orders.uid','=','user_home.id')
+        ->get()->toArray();
+        
+        $cellData = $this->orders_dump_array($data);
+
+        $data = date('Y-m-d',time());
+        \Excel::create(iconv('UTF-8', 'GBK', '全部订单'.$data),function($excel) use ($cellData){
+            $excel->sheet('score', function($sheet) use ($cellData){
+                $sheet->rows($cellData);
+            });
+        })->export('xls');
+    
+    }
+
+    function diy_dump_current(Request $request)
+    {
+        $page = $request->input('page',1);
+        $key = $request->input('key',1);
+        $status = $request->input('status','A');
+        $offset = $page * 12 -12;
+        $limit = $page * 12;
+        if($status === 'A')
+        {   
+            
+            $data = \DB::table('orders_diy')
+            ->select('id','ors','phone','name','contract','_token','room','total','addtime','remarks','status','create_id','payors')
+            ->where('_token','like','%'.$key.'%')
+            ->orderBy('addtime','desc')
+            ->offset($offset)
+            ->limit($limit)
+            ->get()->toArray();
+
+        }else
+        {   
+            
+            $data = \DB::table('orders_diy')
+            ->select('id','ors','phone','name','contract','_token','room','total','addtime','remarks','status','create_id','payors')
+            ->where('_token','like','%'.$key.'%')
+            ->where('status','=',$status)
+            ->orderBy('addtime','desc')
+            ->offset($offset)
+            ->limit($limit)
+            ->get()->toArray();
+        }
+        $cellData = $this->diy_orders_dump_array($data);
+        $data = date('Y-m-d',time());
+        \Excel::create(iconv('UTF-8', 'GBK', '当前订单'.$data),function($excel) use ($cellData){
+            $excel->sheet('score', function($sheet) use ($cellData){
+                $sheet->rows($cellData);
+            });
+        })->export('xls');
+    }
+
+    function dump_current(Request $request)
+    {
+        $page = $request->input('page',1);
+        $key = $request->input('key','');
+        $offset = $page * 12 - 12;
+        $limit = $page * 12; 
+        $data = \DB::table('orders')
+        ->select('orders.id','orders._token','orders.name','user_home.id as uid','user_home.name as names','orders.linkman','orders.phone','orders.address','orders.invoice','orders.create_id','orders.total','orders.remarks','orders.payors','orders.addtime','orders.status')
+        ->join('user_home','orders.uid','=','user_home.id')
+        ->where('orders._token','like','%'.$key.'%')
+        ->offset($offset)
+        ->limit($limit)
+        ->get()->toArray();
+        
+        $cellData = $this->orders_dump_array($data);
+        
+        $data = date('Y-m-d',time());
+        \Excel::create(iconv('UTF-8', 'GBK', '当前订单'.$data),function($excel) use ($cellData){
+            $excel->sheet('score', function($sheet) use ($cellData){
+                $sheet->rows($cellData);
+            });
+        })->export('xls');
+    }
+
+    function diy_dump_all()
+    {   
+
+        $data = \DB::table('orders_diy')
+            ->select('id','ors','phone','name','contract','_token','room','total','addtime','remarks','status','create_id','payors')
+            ->orderBy('addtime','desc')
+            ->paginate(12);
+        $cellData = $this->diy_orders_dump_array($data);
+        $data = date('Y-m-d',time());
+        \Excel::create(iconv('UTF-8', 'GBK', '全部订单'.$data),function($excel) use ($cellData){
+            $excel->sheet('score', function($sheet) use ($cellData){
+                $sheet->rows($cellData);
+            });
+        })->export('xls');
+        
+    }
+    function diy_orders_dump_array($data)
+    {
+        $cellData[0] = ['ID','姓名','电话','楼盘','合同号','房号','备注','金额','订单号','支付方式','订单生成时间','订单支付时间','第三方订单号','支付状态']; 
+        
+        foreach($data as $k => $v)
+        {   
+            $v->addtime = explode(',',$v->addtime);
+            if(!isset($v->addtime[1]))
+            {
+                $v->addtime[1] = NULL;
+            }
+            if($v->status == 0)
+            {
+                $v->status = '未支付';
+            }else if($v->status == 1)
+            {
+                $v->status = '已支付';
+            }
+            $cellData[$k+1] = [$v->id,$v->name,$v->phone,$v->ors,$v->contract,$v->room,$v->remarks,$v->total,$v->_token,$v->payors,date('Y-m-d H:i:s',$v->addtime[0]),$v->addtime[1]?date('Y-m-d H:i:s',$v->addtime[1]):$v->addtime[1],$v->create_id,$v->status];
+        }
+
+        return $cellData;
+    }
+    function orders_dump_array($data)
+    {
+        $cellData[0] = ['ID','订单号','属性','UID','创建人','姓名','电话','收货人信息','发票','平台订单号','金额','备注','支付方式','创建时间','支付时间','支付状态']; 
+        
+        foreach($data as $k => $v)
+        {   
+            $v->addtime = explode(',',$v->addtime);
+            if(!isset($v->addtime[1]))
+            {
+                $v->addtime[1] = NULL;
+            }
+            if($v->status == 0)
+            {
+                $v->status = '未支付';
+            }else if($v->status == 1)
+            {
+                $v->status = '已支付';
+            }
+            $cellData[$k+1] = [$v->id,$v->_token,$v->name,$v->uid,$v->names,$v->linkman,$v->phone,$v->address,$v->invoice,$v->create_id,$v->total,$v->remarks,$v->payors,date('Y-m-d H:i:s',$v->addtime[0]),$v->addtime[1]?date('Y-m-d H:i:s',$v->addtime[1]):$v->addtime[1],$v->status];
+        }
+
+        return $cellData;
     }
 }

@@ -31,27 +31,36 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-      <form action="{{ url('admin/paymentdiy/diyindex') }}" method="get">
-        <div class="row">
       
-        <div class="col-md-5 col-md-offset-7">
+        <div class="row">
+        
+        <div class="col-md-2 col-md-offset-5"> 
+          <button id="dump_current" target="blank" class="btn btn-info">导出当前页</button>
+          &nbsp;&nbsp;&nbsp;
+          <!-- <a href="{{ url('/jslmadmin/payment/index/dump_all') }}" target="blank" class="btn btn-info">导出所有</a> -->
+          <button id="dump_all" class="btn btn-info">导出所有</button>
+        </div>
+        
+        <div class="col-md-5">
+        <form action="{{ url('admin/paymentdiy/diyindex') }}" method="get">
         <div class="form-group col-md-4" >
                   <select name="status" class="form-control">
                     <option value="A" @if(isset($request['status']) && $request['status']  == 'A' ) selected="selected" @endif >所有订单</option>
                     <option value="1" @if(isset($request['status']) && $request['status']  == '1' ) selected="selected" @endif >已支付</option>
                     <option value="0" @if(isset($request['status']) && $request['status']  == '0' ) selected="selected" @endif>未支付</option>
                   </select>
-                </div>
+        </div>
           <div class="input-group input-group-sm">
-            <input type="text" name="key" value="{{ $request['key'] or '' }}" class="form-control" placeholder="订单号搜索">
+            <input type="text" id="input" name="key" page="{{ $request['page'] or 1 }}" key="{{ $request['key'] or '' }}" status="{{ $request['status'] or 'A' }}" value="{{ $request['key'] or '' }}" class="form-control" placeholder="订单号搜索">
                <span class="input-group-btn">
                  <button type="submit" class="btn btn-info btn-flat">Go!</button>
                </span>
           </div>
+        </form>
         </div>
         </div>
         <br>
-      </form>
+      
               <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
               <div class="row"><div class="col-sm-12"><table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
                 <thead>
@@ -112,7 +121,47 @@
           </div>
   </section>
 @endsection('content')
+
 @section('js')
+<script>
+  
+  $('#dump_all').on('click',function(){  
+            // url = '/jslmadmin/payment/index/dump_all';
+            // window.open(url);
+            // return false;
+
+            var $eleForm = $("<form class='dump' method='get'></form>");  
+  
+            $eleForm.attr("action","/jslmadmin/payment/diyindex/diy_dump_all");  
+  
+            $(document.body).append($eleForm);  
+  
+            //提交表单，实现下载  
+            $('.dump').submit();  
+            // $("form[name='dump']").submit();  
+
+        });  
+
+        $('#dump_current').on('click',function(){
+          var page = $('#input').attr('page');
+          var key = $('#input').attr('key');
+          var status = $('#input').attr('status');
+
+          var $eleForm = $("<form method='get'> <input type='text' name='page' value='"+page+"' > <input type='text' name='status' value='"+status+"' > <input type='text' name='key' value='"+key+"' > </form>");  
+  
+            $eleForm.attr("action","/jslmadmin/payment/diyindex/diy_dump_current");  
+  
+            $(document.body).append($eleForm);  
+  
+            //提交表单，实现下载  
+            $eleForm.submit();
+
+        })
+        </script>
+
+</script>
+
+
 <script>
   $('.del').on('click',function(){
     var tr = $(this).parents('tr');

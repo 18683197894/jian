@@ -248,6 +248,12 @@ Route::post('admin/properties/hfnewsadds','Admin\PropertiesController@hfnewsadds
 Route::get('jslmadmin/payment/index','Admin\PayController@index');
 Route::get('jslmadmin/payment/index/shopping/{id}','Admin\PayController@shopping');
 Route::get('/jslmadmin/userhome/orders/{id}','Admin\PayController@userhome_orders');
+
+Route::get('/jslmadmin/payment/index/dump_all','Admin\PayController@dump_all');
+Route::get('/jslmadmin/payment/index/dump_current','Admin\PayController@dump_current');
+
+Route::get('/jslmadmin/payment/diyindex/diy_dump_all','Admin\PayController@diy_dump_all');
+Route::get('/jslmadmin/payment/diyindex/diy_dump_current','Admin\PayController@diy_dump_current');
 });
 //调查问卷
 Route::get('admin/question/zhijin/index','Admin\QuestionController@zhijinindex');
