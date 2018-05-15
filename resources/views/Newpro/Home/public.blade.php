@@ -105,14 +105,17 @@
             <div class="title">建商项目</div>
             <i></i>
             <a href="{{ url('/newpro/smarthome') }}" class="about_loop">智能家居</a>
-            <a href="{{ url('/newpro/ressmartunity') }}" class="about_loop">住宅智慧社区</a>
-            <a href="{{ url('/newpro/businsmart') }}" class="about_loop">商业智慧商圈</a>
+            <a href="{{ url('/newpro/package/jizhuang') }}" class="about_loop">建商家装</a>
+            <!-- <a href="{{ url('/newpro/ressmartunity') }}" class="about_loop">住宅智慧社区</a> -->
+            <!-- <a href="{{ url('/newpro/businsmart') }}" class="about_loop">商业智慧商圈</a> -->
         </div>
         <div class="about">
             <div class="title">建商服务</div>
             <i></i>
             <a href="{{ url('/newpro/case/index') }}" class="about_loop">工程案例</a>
-            <a href="{{ url('/newpro/package/jizhuang') }}" class="about_loop">建商家装</a>
+            <a href="{{ url('/newpro/product') }}" class="about_loop">产品展示</a>
+            <a href="{{ url('/newpro/newslist?pid=常见问答') }}" class="about_loop">常见问答</a>
+            
         </div>
         <div class="contact">
             <div class="title">联系我们</div>

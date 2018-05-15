@@ -92,21 +92,24 @@
             <div class="title">建商项目</div>
             <i></i>
             <a href="{{ url('/newpro/smarthome') }}" class="about_loop">智能家居</a>
-            <a href="{{ url('/newpro/ressmartunity') }}" class="about_loop">住宅智慧社区</a>
-            <a href="{{ url('/newpro/businsmart') }}" class="about_loop">商业智慧商圈</a>
+            <a href="{{ url('/newpro/package/jizhuang') }}" class="about_loop">建商家装</a>
+            <!-- <a href="{{ url('/newpro/ressmartunity') }}" class="about_loop">住宅智慧社区</a> -->
+            <!-- <a href="{{ url('/newpro/businsmart') }}" class="about_loop">商业智慧商圈</a> -->
         </div>
         <div class="about">
             <div class="title">建商服务</div>
             <i></i>
             <a href="{{ url('/newpro/case/index') }}" class="about_loop">工程案例</a>
-            <a href="{{ url('/newpro/package/jizhuang') }}" class="about_loop">建商家装</a>
+            <a href="{{ url('/newpro/product') }}" class="about_loop">产品展示</a>
+            <a href="{{ url('/newpro/newslist?pid=常见问答') }}" class="about_loop">常见问答</a>
+            
         </div>
         <div class="contact">
             <div class="title">联系我们</div>
             <i></i>
             <a href="javascript:;" class="about_loop">服务热线：0831-8888598</a>
             <a href="javascript:;" class="about_loop">电子邮箱：market@jianshanglianmeng.com</a>
-            <a href="javascript:;" class="about_loop">总部地址：宜宾市临港经济开发区西南互联网基地522室</a>
+            <a href="javascript:;" class="about_loop">总部地址：宜宾市临港经济开发区西南互联网基地522</a>
         </div>
         <div class="code">
             <div class="title">关注我们</div>
@@ -115,7 +118,7 @@
                 <img src="{{ asset('/new/home/public/img/QR1.png') }}" alt=""/>
                 <span>建商官网订阅号</span>
             </div>
-           <!--  <div class="QR">
+            <!-- <div class="QR">
                 <img src="{{ asset('/new/home/public/img/QR2.png') }}" alt=""/>
                 <span>建商官网服务号</span>
             </div> -->
