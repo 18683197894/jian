@@ -61,11 +61,50 @@ function debounce(func, wait, immediate) {
         var pid = tr.attr('pid');
         var index = tr.attr('index');
     	var init = tr.attr('init');
+
         console.log(init);
         if(init == 'false')
         {
             return false;
         }
+        if(pid == 'inter')
+        {   
+            $.ajax('/newpro/newslistget',{
+            type:'post',
+            data:{pid:pid,index:index,_token:$('meta[name="csrf-token"]').attr('content')},
+            success:function(data)
+            {   
+
+                if(data != false)
+                {
+                    tr.attr('index',data[0].index);
+                    if(data[0].init == false)
+                    {   
+                        tr.attr('init','false');
+                        tr.find('.more').css('display','block');
+                    }
+                    var str = "";
+                    $.each(data,function(i,n){
+                        var a = tr.find('.wenda').eq(0).clone(true);
+                    
+                        a.find('.wen').html(n.title+"<span class='add'>+</span>");
+                        a.find('.da').html(n.content);
+                        str += a[0].outerHTML;
+                    })
+                    tr.find('.more').before(str);
+                    
+                }
+            },
+            error:function(data)
+            {
+                alert('加载失败！');
+            },
+            'dataType':'json'
+        })
+            
+            return false;
+        }
+
         $.ajax('/newpro/newslistget',{
             type:'post',
             data:{pid:pid,index:index,_token:$('meta[name="csrf-token"]').attr('content')},
@@ -101,6 +140,23 @@ function debounce(func, wait, immediate) {
             'dataType':'json'
         })
     }
+
+
+
+    $(".xuanx .wenda .wen").live('click',function(){
+    var $this = $(this).next();
+    if(!$this.attr('clicked') || $this.attr('clicked') === "no") { // 未点击
+        $(this).parent().addClass("avtive");
+        $this.attr('clicked', "yes"); // 重置属性
+        $(this).find("span").html("-");
+        $(this).next().addClass("avtive")
+    } else if($this.attr('clicked') === "yes"){ // 被点击过
+        $(this).parent().removeClass("avtive");
+        $this.attr('clicked', "no");  // 重置属性
+        $(this).find("span").html("+");
+        $(this).next().removeClass("avtive")
+    }
+});
 
 // $(function(){
 // 	var curr = 0;

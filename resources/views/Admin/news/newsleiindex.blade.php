@@ -53,7 +53,7 @@
     @endforeach($data as $k => $v)
 @else
                 <tr>
-                  <td style="text-align: center;vertical-align: middle" colspan="5">未找到工艺</td>
+                  <td style="text-align: center;vertical-align: middle" colspan="5">未找到新闻板块</td>
                 </tr>
 @endif
 

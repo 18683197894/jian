@@ -84,12 +84,12 @@ body{
  .title .auto{
             display: block;
             width: 820px;
-            margin: auto;
         }
         .title .auto a{
             display: block;
             width: 150px;
             float: left;
+            margin-left: 35px;
         }
         .title .auto a.avtive{
             color: #E12E32;
@@ -184,6 +184,57 @@ body{
     overflow: hidden;
     margin-bottom: 30px;
 }
+
+.xuanx .wen{
+        width: 100%;
+        overflow: hidden;
+        cursor: pointer;
+        color: #fff;
+        font-size: 15px;
+        line-height: 25px;
+        background-color: #00A2CA;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .xuanx .wen span{
+        width: 60px;
+        font-size: 30px;
+        color: #ffffff;
+        text-align: center;
+        display: block;
+        float: right;
+    }
+    .xuanx .wen span.avtive{
+        font-size: 40px;
+    }
+    .xuanx .wenda{
+        margin-top: 20px;
+        width: 100%;
+        overflow: hidden;
+    }
+    .xuanx .da{
+        width: 100%;
+        overflow: hidden;
+        text-indent: 20px;
+        line-height:25px;
+        color: #666;
+        font-size: 15px;
+        display: none;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border: 1px solid #A7DFEF;
+        background-color: #EFFAFF;
+        box-sizing: border-box;
+    }
+    .xuanx .wenda.avtive .da{
+        display: block;
+    }
 .data .loop{
     width: 100%;
     overflow: hidden;
@@ -496,7 +547,7 @@ body{
         text-align: center;
     }
     .information .title{
-        display: none;
+        width: 100%;
     }
     .inf_a a.avtive{
         color: #00AF62;
@@ -520,6 +571,10 @@ body{
     }
      .title .auto{
         width: 100%;
+     }
+     .title .auto a{
+        width: 50%;
+        margin-left: 0;
      }
 }
 

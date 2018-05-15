@@ -238,7 +238,7 @@ class="active"
         </li>
 
         <li class="
-@if($title == "添加板块" || $title == "板块管理")
+@if($title == "添加板块" || $title == "板块管理" || $title == "常见问答")
 active
 @endif
          treeview">
@@ -253,13 +253,26 @@ active
 @if($title == "添加板块")
 class="active"
 @endif
-            ><a href="{{ url('/jslmadmin/newsleiadd') }}"><i class="fa fa-circle-o"></i>添加板块</a></li>
+            >
+            <a href="{{ url('/jslmadmin/newsleiadd') }}"><i class="fa fa-circle-o"></i>添加板块</a>
+            </li>
+            
             <li 
 @if($title == "板块管理")
 class="active"
 @endif
-            ><a href="{{ url('jslmadmin/newsleiindex') }}"><i class="fa fa-circle-o"></i>板块管理</a></li>
+            >
+            <a href="{{ url('jslmadmin/newsleiindex') }}"><i class="fa fa-circle-o"></i>板块管理</a>
+            </li>
+            
+            <li 
+@if($title == "常见问答")
+class="active"
+@endif
+            ><a href="{{ url('jslmadmin/newslei/interlocution/interindex') }}"><i class="fa fa-circle-o"></i>常见问答</a>
+            </li>
           </ul>
+        
         </li>
 
         <li class="

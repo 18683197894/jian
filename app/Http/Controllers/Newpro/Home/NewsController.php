@@ -16,21 +16,52 @@ class NewsController extends Controller
             $lei_s[$k] = $v->title; 
             $v->news = \DB::table('news')->select('id','pid','title','titleimg','leicon','time','click')->where('pid',$v->id)->orderBy('time','desc')->offset(0)->limit(12)->get();
         }
+        array_push($lei_s,'常见问答');
         $hot = \DB::table('news')->select('id','pid','title','titleimg','leicon','time','click')->orderBy('click','desc')->offset(0)->limit(10)->get();
         $avtive = $request->input('pid',false);
 
+        $inter = \DB::table('interlocution')
+                ->select('id','title','content','time','click')
+                ->orderBy('time','desc')
+                ->offset(0)
+                ->limit(20)
+                ->get();
         if(!in_array($avtive,$lei_s))
         {   
             $avtive = $lei_s[0];
         }
 
-        return view('Newpro.Home.News.newslistall',['title'=>$title,'lei'=>$lei,'hot'=>$hot,'avtive'=>$avtive]);
+        return view('Newpro.Home.News.newslistall',['title'=>$title,'lei'=>$lei,'hot'=>$hot,'avtive'=>$avtive,'inter'=>$inter]);
     }
 
     function newslistget(Request $request)
     {   
         $pid = $request->pid;
         $index = $request->index;
+        
+        if($pid == 'inter')
+        {
+            $data = \DB::table('interlocution')->select('id','title','content','time','click')->orderBy('time','desc')->offset($index)->limit(20)->get();
+            if($data)
+            {
+                $data[0]->count = count($data);
+                if($data[0]->count < 20)
+                {
+                    $data[0]->init = false;
+                }
+                $data[0]->index = $data[0]->count +$index ;
+                foreach($data as $k => $v)
+                {
+                    $v->date = date('Y-m-d',$v->time);
+                }
+                return response()->json($data);
+
+            }else
+            {
+                return response()->json(false);
+            }
+        }
+
         $data = \DB::table('news')->select('id','pid','title','titleimg','leicon','time','click')->where('pid',$pid)->orderBy('time','desc')->offset($index)->limit(12)->get();
         if($data)
         {

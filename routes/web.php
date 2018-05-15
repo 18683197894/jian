@@ -189,7 +189,13 @@ Route::post('/jslmadmin/newslei/newszhiindex/zhidel','Admin\NewsController@zhide
 Route::post('jslmadmin/newslei/newsszhiindex/szhiadd','Admin\NewsController@szhiadd');
 Route::get('jslmadmin/newslei/newsszhiindex/index','Admin\NewsController@szhiindex');
 
-
+//常见问答
+Route::get('jslmadmin/newslei/interlocution/interindex','Admin\InterlocutionController@interindex');
+Route::get('jslmadmin/newslei/interlocution/interadd','Admin\InterlocutionController@interadd');
+Route::post('jslmadmin/newslei/interlocution/interadds','Admin\InterlocutionController@interadds');
+Route::get('/jslmadmin/newslei/interlocution/interedit/{id}','Admin\InterlocutionController@interedit');
+Route::post('/jslmadmin/newslei/interlocution/interedits','Admin\InterlocutionController@interedits');
+Route::post('/jslmadmin/newslei/interlocution/interdel','Admin\InterlocutionController@interdel');
 
 //案例管理
 Route::get('admin/case/index','Admin\CaseController@index');

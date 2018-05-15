@@ -16,6 +16,7 @@
         @foreach($lei as $k => $v)
             <a href="javascript:" @if($avtive == $v->title) class="avtive" @endif>{{ $v->title }}</a>
         @endforeach
+        <a href="javascript:" @if($avtive == '常见问答') class="avtive" @endif>常见问答</a>
         </div>
     </div>
 
@@ -47,12 +48,25 @@
 
                 </div>
                 @endforeach
+                <div class="xuanx @if($avtive == '常见问答') avtive @endif " pid="inter" index="{{ count($inter) }}" @if(count($inter) < 20) init="false" @else init="true" @endif>
+                    @foreach($inter as $k => $v)
+                    
+                        <div class="wenda">
+                            <div class="wen">
+                                {{ $v->title }}
+                                <span class="add">+</span>
+                            </div>
+                            <div class="da">
+                                {{ $v->content }}
+                            </div>
+                        </div>
+                    
+                    @endforeach
+                    <div class="more" @if(count($inter) < 20) style="display:block" @else style="display:none" @endif>暂无更多</div>
 
+                </div>
             </div>
-
         </div>
-
-
         <!--右边-->
        <div class="Hotspot">
                 <div class="Hotspot_name">热点点击</div>
