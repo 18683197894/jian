@@ -7,6 +7,9 @@ body{
     background-color: #ffffff;
     font-family: '微软雅黑',Helvetica,sans-serif!important;
 }
+.banner > ul > li > a img{
+    width: 100%;
+}
 .max_more{
     display: block;
     width:100px;

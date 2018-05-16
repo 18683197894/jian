@@ -86,6 +86,7 @@
                     <option  value="法式" @if($data->fengge =='法式') selected="selected" @endif>法式</option>
                     <option  value="工业风" @if($data->fengge =='工业风') selected="selected" @endif>工业风</option>
                     <option  value="新中式" @if($data->fengge =='新中式') selected="selected" @endif>新中式</option>
+                    <option  value="清水房" @if($data->fengge =='清水房') selected="selected" @endif>清水房</option>
                     <option  value="其他" @if($data->fengge =='其他') selected="selected" @endif>其他</option>
                   </select>
                 </div>
@@ -93,12 +94,15 @@
                 <div class="form-group">
                   <label id="lei">预算选择</label>
                   <select name="yusuan" class="form-control">
-                    <option value="5万以下"    @if($data->yusuan =='5万以下')   selected="selected" @endif>5万以下</option>
-                    <option  value="5万-8万"   @if($data->yusuan =='5万-8万')   selected="selected" @endif>5万-8万</option>
-                    <option  value="8万-12万"  @if($data->yusuan =='8万-12万')  selected="selected" @endif>8万-12万</option>
-                    <option  value="12万-18万" @if($data->yusuan =='12万-18万') selected="selected" @endif>12万-18万</option>
-                    <option  value="18万-30万" @if($data->yusuan =='18万-30万') selected="selected" @endif>18万-30万</option>
-                    <option  value="30万-50万" @if($data->yusuan =='30万-50万') selected="selected" @endif>30万-50万</option>
+                    <option value="5万-10万"   @if($data->yusuan =='5万-10万')  selected="selected" @endif>5万-10万</option>
+                    <option  value="10万-15万" @if($data->yusuan =='10万-15万')   selected="selected" @endif>10万-15万</option>
+                    <option  value="15万-20万"  @if($data->yusuan =='15万-20万')  selected="selected" @endif>15万-20万</option>
+                    <option  value="20万-25万" @if($data->yusuan =='20万-25万') selected="selected" @endif>20万-25万</option>
+                    <option  value="25万-30万" @if($data->yusuan =='25万-30万') selected="selected" @endif>25万-30万</option>
+                    <option  value="30万-35万" @if($data->yusuan =='30万-35万') selected="selected" @endif>30万-35万</option>
+                    <option  value="35万-40万" @if($data->yusuan =='35万-40万') selected="selected" @endif>35万-40万</option>
+                    <option  value="40万-45万" @if($data->yusuan =='40万-45万') selected="selected" @endif>40万-45万</option>
+                    <option  value="45万-50万" @if($data->yusuan =='45万-50万') selected="selected" @endif>45万-50万</option>
                     <option  value="50万以上"  @if($data->yusuan =='50万以上')  selected="selected" @endif>50万以上</option>
                     <option  value="其他"      @if($data->yusuan =='其他')      selected="selected" @endif>其他</option>
                     

@@ -36,7 +36,8 @@ class CaseController extends Controller
             'description.max'=>'网页内容描述最大255位'
 		]); 
 
-		$data['time'] = time();
+        $data['time'] = time();
+		$data['uptime'] = $data['time'];
 		$data['or'] = 0;
 		$data['ors'] = '-> 准备开工';
 		$res = \DB::table('case')->insert($data);

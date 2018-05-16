@@ -97,7 +97,7 @@
             <i></i>
             <a href="{{ url('/newpro/about?ors=about') }}" class="about_loop">建商简介</a>
             <a href="{{ url('/newpro/about?ors=team') }}" class="about_loop">运营团队</a>
-            <a href="{{ url('/newpro/about?ors=strategy') }}" class="about_loop">发展战略</a>
+            <!-- <a href="{{ url('/newpro/about?ors=strategy') }}" class="about_loop">发展战略</a> -->
             <a href="{{ url('/newpro/about?ors=framework') }}" class="about_loop">组织构架</a>
             <a href="{{ url('/newpro/about?ors=contact') }}" class="about_loop">联系我们</a>
         </div>
