@@ -52,7 +52,7 @@
                     @foreach($inter as $k => $v)
                     
                         <div class="wenda">
-                            <div class="wen">
+                            <div class="wen" id="{{ $v->id }}">
                                 {{ $v->title }}
                                 <span class="add">+</span>
                             </div>

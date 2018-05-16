@@ -32,7 +32,7 @@ Route::get('/newpro/about','Newpro\Home\UsedController@about');
 //新闻列表
 Route::get('/newpro/newslist','Newpro\Home\NewsController@newslistall');
 Route::post('/newpro/newslistget','Newpro\Home\NewsController@newslistget');
-// Route::get('/newpro/newslist/{id}','Newpro\Home\NewsController@newslist');
+Route::get('/newpro/newslist/interlocution/interclick_set','Newpro\Home\NewsController@interclick_set');
 Route::get('/newpro/newslist/play/{id}','Newpro\Home\NewsController@newsplay');
 
 Route::get('/newpro/home/sou','Newpro\Home\NewsController@sou');

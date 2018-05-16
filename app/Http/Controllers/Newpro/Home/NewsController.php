@@ -83,7 +83,18 @@ class NewsController extends Controller
         }
     }
 
-   
+   public function interclick_set(Request $request)
+   {
+        $id = $request->id;
+        if(!$id)
+        {
+            return false;
+        }
+        $click = 1;
+        $click += \DB::table('interlocution')->select('id','click')->where('id',$id)->first()->click;
+        $res = \DB::table('interlocution')->where('id',$id)->update(['click'=>$click]);
+        return response()->json($res);
+    }
 
     public function newsplay($id)
     {

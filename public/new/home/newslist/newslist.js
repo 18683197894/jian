@@ -88,6 +88,7 @@ function debounce(func, wait, immediate) {
                         var a = tr.find('.wenda').eq(0).clone(true);
                     
                         a.find('.wen').html(n.title+"<span class='add'>+</span>");
+                        a.find('.wen').attr('id',n.id);
                         a.find('.da').html(n.content);
                         str += a[0].outerHTML;
                     })
@@ -145,11 +146,13 @@ function debounce(func, wait, immediate) {
 
     $(".xuanx .wenda .wen").live('click',function(){
     var $this = $(this).next();
+    var id = $(this).attr('id');
     if(!$this.attr('clicked') || $this.attr('clicked') === "no") { // 未点击
         $(this).parent().addClass("avtive");
         $this.attr('clicked', "yes"); // 重置属性
         $(this).find("span").html("-");
         $(this).next().addClass("avtive")
+        click_set(id);
     } else if($this.attr('clicked') === "yes"){ // 被点击过
         $(this).parent().removeClass("avtive");
         $this.attr('clicked', "no");  // 重置属性
@@ -157,7 +160,18 @@ function debounce(func, wait, immediate) {
         $(this).next().removeClass("avtive")
     }
 });
+function click_set(id)
+{
+    if(!id)
+    {
+        return false;
+    }
 
+    $.ajax('/newpro/newslist/interlocution/interclick_set',{
+        type:'get',
+        data:{id:id}
+    })
+}
 // $(function(){
 // 	var curr = 0;
 // 	$("#jsNav a.trigger").each(function(i){
