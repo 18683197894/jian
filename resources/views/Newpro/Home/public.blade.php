@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <!--网站SEO关键词优化-->
+    <title>{{ $title['title'] or '建商联盟' }}</title>
     <meta name="keywords" content="{{ $title['keyworlds'] or '建商联盟' }}">
     <meta name="description" content="{{ $title['description'] or '建商联盟' }}">
     <!--禁止手机自动缩放-->
@@ -23,7 +24,6 @@
 @yield('css')
     <!--尾部样式-->
     <link rel="stylesheet" href="{{ asset('/new/home/public/footer.css') }}"/>
-    <title>{{ $title['title'] or '建商联盟' }}</title>
 </head>
 <body>
 <!--头部-->

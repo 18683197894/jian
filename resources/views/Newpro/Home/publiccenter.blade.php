@@ -3,6 +3,8 @@
 <head lang="en">
     <meta charset="UTF-8">
     <!--网站SEO关键词优化-->
+    <title>{{ $title['title'] or '建商联盟' }}</title>
+    
     <meta name="keywords" content="{{ $title['keyworlds'] or '建商联盟' }}">
     <meta name="description" content="{{ $title['description'] or '建商联盟' }}">
     <!--禁止手机自动缩放-->
@@ -20,7 +22,6 @@
     <link rel="stylesheet" href="{{ asset('/new/home/public/footer.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/new/home/publiccenter/publiccenter.css') }}" />
     <script src="{{ asset('/js/jquery-1.8.3.min.js') }}"></script>
-    <title>{{ $title['title'] or '建商联盟' }}</title>
     @yield('css')
 </head>
 <body>
