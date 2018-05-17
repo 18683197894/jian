@@ -19,4 +19,9 @@ class UsedController extends Controller
     	return 	view('Newpro.Home.Used.about',['title'=>$title,'ors'=>$ors]);
     }
      
+    public function business(Request $request)
+    {
+        $title = getwebpage($request->path());
+        return view('Newpro.Home.Used.business',['title'=>$title]);
+    }
 }

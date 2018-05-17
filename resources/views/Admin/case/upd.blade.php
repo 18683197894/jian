@@ -13,7 +13,7 @@
 
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{ url('/admin/case/index') }}"><i class="fa fa-dashboard"></i>案例列表</a></li>
+        <li><a href="{{ url('/admin/case/index?page=') }}{{ $page }}"><i class="fa fa-dashboard"></i>案例列表</a></li>
         <li class="active">进度更新</li>
       </ol>
     </section>
@@ -39,71 +39,33 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
+            <div class="form-group inp_add" index="1" style="display:none">
+                  <label for="exampleInputEmail1">效果图1</label>
+                  <input type="text"  name="custom_title1" value="{{ old('title') }}" class="form-control" id="exampleInputEmail1" placeholder="标题">
+                  <label for="exampleInputFile">效果图1</label>
+                  <input type="file" name="custom_img1" id="exampleInputFile">
+              </div>
             <form role="form" action="{{ url('admin/case/upds') }}" method="post" enctype="multipart/form-data">
 				{{ csrf_field() }}
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputFile">展示效果图（可选 &nbsp;默认客厅效果图）</label>
+                  <label for="exampleInputFile">展示效果图（可选 默认效果图1）</label>
                   <input type="file" name="suoimg" id="exampleInputFile">
                 </div>
                 <br>
-                <div class="form-group">
-                  <label for="exampleInputFile">客厅效果图（必选）</label>
-                  <input type="file" name="keting" id="exampleInputFile">
-                </div>
-                 <div class="form-group">
-                  <label for="exampleInputFile">卧室效果图（必选）</label>
-                  <input type="file" name="woshi" id="exampleInputFile">
-                </div>
-                 <div class="form-group">
-                  <label for="exampleInputFile">厨房/餐厅效果图（必选）</label>
-                  <input type="file" name="cufang" id="exampleInputFile">
-                </div>
-                 <div class="form-group">
-                  <label for="exampleInputFile">洗手间效果图（必选）</label>
-                  <input type="file" name="xishou" id="exampleInputFile">
-                </div>
-                <br>
-                <div class="form-group">
-                  <label for="exampleInputFile">次卧效果图（可选）</label>
-                  <input type="file" name="ciwo" id="exampleInputFile">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputFile">阳台效果图（可选）</label>
-                  <input type="file" name="yangtai" id="exampleInputFile">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputFile">书房效果图（可选）</label>
-                  <input type="file" name="shufang" id="exampleInputFile">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputFile">儿童房效果图（可选）</label>
-                  <input type="file" name="ertong" id="exampleInputFile">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputFile">老人房效果图（可选）</label>
-                  <input type="file" name="laor" id="exampleInputFile">
-                </div>
-                  
-                  <br>
-                  
-                  <div class="form-group">
-                  <label for="exampleInputEmail1">自定义效果图1（可选）</label>
-                  <input type="text"  name="custom_title1" value="{{ old('title') }}" class="form-control" id="exampleInputEmail1" placeholder="标题">
-                  <label for="exampleInputFile">效果图1</label>
-                  <input type="file" name="custom_img1" id="exampleInputFile">
-                  </div>
-
-                  <div class="form-group">
-                  <label for="exampleInputEmail1">自定义效果图2（可选）</label>
-                  <input type="text"  name="custom_title2" value="{{ old('title') }}" class="form-control" id="exampleInputEmail1" placeholder="标题">
-                  <label for="exampleInputFile">效果图2</label>
-                  <input type="file" name="custom_img2" id="exampleInputFile">
-                  </div>
-      
-
                  <input type="hidden" name="id" value="{{ $data->id }}">
                  <input type="hidden" name="or" value="{{ $data->or }}">
+                 <input type="hidden" name="page" value="{{ $page }}">
+                
+              <div class="form-group">
+                  <label for="exampleInputEmail1">效果图1（必选）</label>
+                  <input type="text"  name="custom_title1" value="{{ old('title') }}" class="form-control" id="exampleInputEmail1" placeholder="标题">
+                  <label for="exampleInputFile">效果图1（必选）</label>
+                  <input type="file" name="custom_img1" id="exampleInputFile">
+              </div>
+              <br>
+              <div class="form-group add"><label for="exampleInputFile"><button Onclick="return false">+</button></label></div>
+
 
               </div>
               <!-- /.box-body -->
@@ -118,5 +80,25 @@
 
 @endsection('content')
 @section('js')
-                 
+       <script>
+          $('.add').click(function(){
+            var inp = $('.inp_add').clone();
+            var index = inp.attr('index');
+            index = Number(index) + 1;
+            if(index == 9)
+            {
+              return false;
+            }
+
+            inp.css('display','block');
+            inp.removeClass('inp_add');
+            inp.find('label').eq(0).html('效果图'+index);
+            inp.find('label').eq(1).html('效果图'+index);
+            inp.find('input').eq(0).attr('name','custom_title'+index)
+            inp.find('input').eq(1).attr('name','custom_img'+index)
+            $('.inp_add').attr('index',index);
+            $(this).before("<br>");
+            $(this).before(inp);
+          })
+       </script>
 @endsection('js')

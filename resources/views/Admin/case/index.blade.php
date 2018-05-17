@@ -85,7 +85,7 @@
                   <td style="text-align: center;vertical-align: middle">
                     @if($v->or != 5)
                     <a href="{{ url('admin/case/edit') }}/{{ $v->id }}">更新进度</a>&nbsp;&nbsp;
-                    <a href="{{ url('admin/case/tedit') }}/{{ $v->id }}">跳过更新</a>
+                    <a href="{{ url('admin/case/tedit') }}/{{ $v->id }}?page={{ $page }}">跳过更新</a>
                     @endif
                     
                     @if( $v->or >=1 & $v->or < 5 )

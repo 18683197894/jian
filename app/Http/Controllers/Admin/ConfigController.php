@@ -15,7 +15,7 @@ class ConfigController extends Controller
     {
         $data = $request->except('_token');
         $this->validate($request,[
-            'titles' => 'required|min:2|max:30',
+            'titles' => 'required|min:2|max:120',
             'keyworlds' => 'required|min:6|max:255',
             'description' => 'required|min:10|max:255',
             'url' => 'required|min:1|max:255',
@@ -23,7 +23,7 @@ class ConfigController extends Controller
         ],[
             'titles.required'=>'网页标题不能为空',
             'titles.min'=>'网页标题最少2位',
-            'titles.max'=>'网页标题最少2位最大30位',
+            'titles.max'=>'网页标题最少2位最大120位',
             'keyworlds.required'=>'网页关键字不能为空',
             'keyworlds.min'=>'网页关键字最少6位',
             'keyworlds.max'=>'网页关键字最大255位',
@@ -68,7 +68,7 @@ class ConfigController extends Controller
     {
     	$data = $request->except('_token','page');
     	$this->validate($request,[
-            'titles' => 'required|min:2|max:30',
+            'titles' => 'required|min:2|max:120',
             'keyworlds' => 'required|min:6|max:255',
             'description' => 'required|min:10|max:255',
             'url' => 'required|min:1|max:255',
@@ -76,7 +76,7 @@ class ConfigController extends Controller
  		],[
             'titles.required'=>'网页标题不能为空',
             'titles.min'=>'网页标题最少2位',
-            'titles.max'=>'网页标题最少2位最大30位',
+            'titles.max'=>'网页标题最少2位最大120位',
             'keyworlds.required'=>'网页关键字不能为空',
             'keyworlds.min'=>'网页关键字最少6位',
             'keyworlds.max'=>'网页关键字最大255位',

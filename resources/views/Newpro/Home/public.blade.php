@@ -70,7 +70,6 @@
             ->orderBy('status')
             ->get();
             
-
        ?>
         <div class="nav">
             @foreach($navs as $k => $v)
@@ -115,6 +114,7 @@
             <a href="{{ url('/newpro/case/index') }}" class="about_loop">工程案例</a>
             <a href="{{ url('/newpro/product') }}" class="about_loop">产品展示</a>
             <a href="{{ url('/newpro/newslist?pid=常见问答') }}" class="about_loop">常见问答</a>
+            <a href="{{ url('/newpro/used/business') }}" class="about_loop">商务合作</a>
             
         </div>
         <div class="contact">

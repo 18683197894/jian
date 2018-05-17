@@ -29,6 +29,9 @@ Route::get('/newpro/product/play/{id}','Newpro\Home\ProductController@productpla
 
 //关于我们
 Route::get('/newpro/about','Newpro\Home\UsedController@about');
+//商务合作
+Route::get('/newpro/used/business','Newpro\Home\UsedController@business');
+
 //新闻列表
 Route::get('/newpro/newslist','Newpro\Home\NewsController@newslistall');
 Route::post('/newpro/newslistget','Newpro\Home\NewsController@newslistget');
