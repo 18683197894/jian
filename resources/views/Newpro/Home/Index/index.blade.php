@@ -10,7 +10,7 @@
 <!--banner图 轮播-->
 <div class="banner Pc">
     <ul class="">
-        <li><a href="{{ url('/newpro/package/jizhuang') }}"><img src="{{ asset('/new/home/index/img/banner1.jpg') }}" alt=""></a></li>
+        <li><a href="{{ url('/newpro/package/jizhuang') }}"><img src="{{ asset('/new/home/index/img/ban_1.png') }}" alt=""></a></li>
         <li><a href="{{ url('/newpro/smarthome') }}"><img src="{{ asset('/new/home/index/img/ban_2.png') }}" alt=""></a></li>
         <li><a href="{{ url('/newpro/used/business') }}"><img src="{{ asset('/new/home/index/img/ban_3.png') }}" alt=""></a></li>
     </ul>
@@ -21,7 +21,7 @@
 <!--banner图 轮播-->
 <div class="banner Mo">
     <ul class="">
-        <li><a href="{{ url('/newpro/package/jizhuang') }}"><img src="{{ asset('/new/home/index/img/banner_mo.jpg') }}" alt=""></a></li>
+        <li><a href="{{ url('/newpro/package/jizhuang') }}"><img src="{{ asset('/new/home/index/img/ban_1_mo.jpg') }}" alt=""></a></li>
         <li><a href="{{ url('/newpro/smarthome') }}"><img src="{{ asset('/new/home/index/img/ban_2_mo.png') }}" alt=""></a></li>
         <li><a href="{{ url('/newpro/used/business') }}"><img src="{{ asset('/new/home/index/img/ban_3_mo.png') }}" alt=""></a></li>
     </ul>
