@@ -49,7 +49,7 @@
             	@foreach($wan as $k => $v)
                 <a href="{{ url('/newpro/case/play/') }}/{{ $v->id }}">
                     <div class="show_auto">
-                        <img src="{{ asset('/uploads/case/img/') }}/{{ $v->img }}" alt=""/>
+                        <img src="{{ asset('/uploads/case/img/') }}/{{ $v->img }}" alt="{{ $v->title }}"/>
                         <div class="show_name">
                             <div class="name">{{ $v->title }}</div>
                             <div class="norms"><span>{{ $v->huxing }}</span><span>{{ $v->fengge }}</span><span>{{ $v->yusuan }}</span></div>
@@ -100,7 +100,7 @@
             @foreach($zai as $k => $v)
                 <a href="{{ url('/newpro/case/zaiplay/') }}/{{ $v->id }}">
                     <div class="show_auto">
-                        <img src="{{ asset('/uploads/case/img/') }}/{{ $v->img }}" alt=""/>
+                        <img src="{{ asset('/uploads/case/img/') }}/{{ $v->img }}" alt="{{ $v->title }}"/>
                         <div class="show_name">
                             <div class="show_name_title">{{ $v->title }}</div>
                             <div class="con_span">

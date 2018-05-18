@@ -9,7 +9,7 @@
     <div class="current">当前位置：<a href="{{ url('/') }}">首页</a> > <a href="{{ url('/newpro/case/playindex?a=2') }}">在建案例</a> > <a href="#">在建案例详情</a></div>
     <div class="contact">
         <div class="case3con">
-            <img src="{{ asset('/uploads/case/img') }}/{{ $data->img }}" alt="" class="case3con_img"/>
+            <img src="{{ asset('/uploads/case/img') }}/{{ $data->img }}" alt="{{ $data->title }}" class="case3con_img"/>
             <div class="conright">
                 <title>{{ $data->title }}</title>
                 <div class="con_span">
@@ -53,7 +53,7 @@
                     <div class="loop_img">
                     	@foreach($data->img1 as $k => $v)
                         <a target="_blank" href="{{ url('/uploads/case/img') }}/{{ $v }}">
-                            <img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt=""/>
+                            <img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt="{{ $data->title }}"/>
                         </a>
                         @endforeach
                     </div>
@@ -65,7 +65,7 @@
                     <div class="loop_img">
 						@foreach($data->img2 as $k => $v)
                         <a target="_blank" href="{{ url('/uploads/case/img') }}/{{ $v }}">
-                            <img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt=""/>
+                            <img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt="{{ $data->title }}"/>
                         </a>
                         @endforeach
                     </div>
@@ -77,7 +77,7 @@
                     <div class="loop_img">
                         @foreach($data->img3 as $k => $v)
                         <a target="_blank" href="{{ url('/uploads/case/img') }}/{{ $v }}">
-                            <img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt=""/>
+                            <img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt="{{ $data->title }}"/>
                         </a>
                         @endforeach
                     </div>
@@ -89,7 +89,7 @@
                     <div class="loop_img">
                         @foreach($data->img4 as $k => $v)
                         <a target="_blank" href="{{ url('/uploads/case/img') }}/{{ $v }}">
-                            <img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt=""/>
+                            <img src="{{ asset('/uploads/case/img') }}/{{ $v }}" alt="{{ $data->title }}"/>
                         </a>
                         @endforeach
                     </div>

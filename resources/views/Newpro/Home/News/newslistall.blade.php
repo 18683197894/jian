@@ -30,7 +30,7 @@
                 <div pid="{{ $v->id }}" @if(count($v->news) < 12) init="false" @else init="true"@endif index="{{ count($v->news) }}" class="xuanx @if($avtive == $v->title) avtive @endif">
                     @foreach($v->news as $kk => $vv)
                     <a href="{{ url('/newpro/newslist/play') }}/{{ $vv->id }}" class="loop">
-                        <img src="{{ asset('/uploads/news/titleimg/') }}/{{  $vv->titleimg }}" alt=""/>
+                        <img src="{{ asset('/uploads/news/titleimg/') }}/{{  $vv->titleimg }}" alt="{{ $vv->title }}"/>
                         <div class="loop_right">
                             <div class="name">{{ $vv->title }}</div>
                             <div class="content">

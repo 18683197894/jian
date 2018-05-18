@@ -8,7 +8,7 @@
 @section('content')
 <!--banner图-->
 <div class="Furnishing_banner">
-    <img src="{{ asset('new/home/smart/smarthome/img/Furnishing_banner.png') }}" alt=""/>
+    <img src="{{ asset('new/home/smart/smarthome/img/Furnishing_banner.png') }}" alt="建商智能家居"/>
 </div>
 <div class="ship">
     <!-- <video src="{{ asset('http://121.43.168.49/index.php?share/fileProxy&path=%7BuserShare%7D%3A100%2Fzhineng.mp4') }}"  controls="controls"> -->
@@ -31,7 +31,7 @@
                     劳累了一天之后回到家门口，只需要通过指纹扫描打开智能指纹锁，玄关的灯光会自动打开。背景音乐会随之响起，空调、电视、窗帘缓缓打开，让家的温馨围绕着您。
                 </div>
             </div>
-            <img src="{{ asset('new/home/smart/smarthome/img/Pattern1.png') }}" alt="" class="fl"/>
+            <img src="{{ asset('new/home/smart/smarthome/img/Pattern1.png') }}" alt="智能家居回家模式" class="fl"/>
         </div>
         <div class="Loop">
             <div class="text2">
@@ -41,7 +41,7 @@
                     当没人在家的时候，布防模式正在运行，玄关、窗户、走廊处的门窗磁传感器和人体传感器一旦触发，智能摄像机将立即录像，并拨打报警电话提醒你，全方位守护家庭安全。
                 </div>
             </div>
-            <img src="{{ asset('new/home/smart/smarthome/img/Pattern2.png') }}" alt="" class="fl"/>
+            <img src="{{ asset('new/home/smart/smarthome/img/Pattern2.png') }}" alt="智能家居离家模式" class="fl"/>
         </div>
         <div class="Loop">
             <div class="text">
@@ -51,7 +51,7 @@
                     出差在外，总惦记着家里？只要打开APP，就可随时随地查看家中动态，还可以通过APP远程控制检查门窗、燃气、水电等设备的状态。
                 </div>
             </div>
-            <img src="{{ asset('new/home/smart/smarthome/img/Pattern3.png') }}" alt="" class="fl"/>
+            <img src="{{ asset('new/home/smart/smarthome/img/Pattern3.png') }}" alt="智能家居安防模式" class="fl"/>
         </div>
     </div>
 </div>
@@ -61,16 +61,16 @@
     <div class="Brief">遥控一按 智能畅所欲</div>
     <div class="Show">
         <a href=" ">
-            <img src="{{ asset('new/home/smart/smarthome/img/Remote1.png') }}" alt=""/>
+            <img src="{{ asset('new/home/smart/smarthome/img/Remote1.png') }}" alt="智能遥控全新体验"/>
         </a>
         <a href="javascript:;">
-            <img src="{{ asset('new/home/smart/smarthome/img/Remote2.png') }}" alt=""/>
+            <img src="{{ asset('new/home/smart/smarthome/img/Remote2.png') }}" alt="智能联动对话家电"/>
         </a>
         <a href="javascript:;">
-            <img src="{{ asset('new/home/smart/smarthome/img/Remote3.png') }}" alt=""/>
+            <img src="{{ asset('new/home/smart/smarthome/img/Remote3.png') }}" alt="定时遥控合理规划"/>
         </a>
         <a href="javascript:;">
-            <img src="{{ asset('new/home/smart/smarthome/img/Remote4.png') }}" alt=""/>
+            <img src="{{ asset('new/home/smart/smarthome/img/Remote4.png') }}" alt="场景模式一键掌控"/>
         </a>
     </div>
 </div>
@@ -100,7 +100,7 @@
                 </p>
             </div>
             <div class="layout">
-                <img src="{{ asset('new/home/smart/smarthome/img/Choice1.jpg') }}" alt=""/>
+                <img src="{{ asset('new/home/smart/smarthome/img/Choice1.jpg') }}" alt="简单易操作的家庭娱乐空间"/>
                 <div class="layout_div">
                     <div class="layout_bt">简单易操作的家庭娱乐空间</div>
                     <p>
@@ -111,7 +111,7 @@
                 </div>
             </div>
             <div class="layout">
-                <img src="{{ asset('new/home/smart/smarthome/img/Choice2.jpg') }}" alt="" class="Choice_img"/>
+                <img src="{{ asset('new/home/smart/smarthome/img/Choice2.jpg') }}" alt="从单个房间到整个住宅" class="Choice_img"/>
                 <div class="layout_div">
                     <div class="layout_bot">从单个房间到整个住宅</div>
                     <p class="la_p">
@@ -131,7 +131,7 @@
                 </p>
             </div>
             <div class="layout">
-                <img src="{{ asset('new/home/smart/smarthome/img/Choice3.jpg') }}" alt=""/>
+                <img src="{{ asset('new/home/smart/smarthome/img/Choice3.jpg') }}" alt="建商智能家居远程控制"/>
                 <div class="layout_div">
                     <div class="layout_bt">远程控制</div>
                     <p>
@@ -140,7 +140,7 @@
                 </div>
             </div>
             <div class="layout">
-                <img src="{{ asset('new/home/smart/smarthome/img/Choice4.jpg') }}" alt="" class="Choice_img"/>
+                <img src="{{ asset('new/home/smart/smarthome/img/Choice4.jpg') }}" alt="建商智能家居无线照明" class="Choice_img"/>
                 <div class="layout_div">
                     <div class="layout_bot">无线照明</div>
                     <p class="la_p">
@@ -149,7 +149,7 @@
                 </div>
             </div>
             <div class="layout">
-                <img src="{{ asset('new/home/smart/smarthome/img/Choice5.jpg') }}" alt=""/>
+                <img src="{{ asset('new/home/smart/smarthome/img/Choice5.jpg') }}" alt="建商智能家居场景设置"/>
                 <div class="layout_div">
                     <div class="layout_bt">场景设置</div>
                     <p>
@@ -167,7 +167,7 @@
                 </p>
             </div>
             <div class="layout">
-                <img src="{{ asset('new/home/smart/smarthome/img/Choice6.jpg') }}" alt=""/>
+                <img src="{{ asset('new/home/smart/smarthome/img/Choice6.jpg') }}" alt="建商智能家居温度控制"/>
                 <div class="layout_div">
                     <div class="layout_bt">温度控制</div>
                     <p>
@@ -176,7 +176,7 @@
                 </div>
             </div>
             <div class="layout">
-                <img src="{{ asset('new/home/smart/smarthome/img/Choice7.jpg') }}" alt="" class="Choice_img"/>
+                <img src="{{ asset('new/home/smart/smarthome/img/Choice7.jpg') }}" alt="建商智能家居可视对讲" class="Choice_img"/>
                 <div class="layout_div">
                     <div class="layout_bot">可视对讲</div>
                     <p class="la_p">
@@ -185,7 +185,7 @@
                 </div>
             </div>
             <div class="layout">
-                <img src="{{ asset('new/home/smart/smarthome/img/Choice8.jpg') }}" alt=""/>
+                <img src="{{ asset('new/home/smart/smarthome/img/Choice8.jpg') }}" alt="建商智能家居室外控制"/>
                 <div class="layout_div">
                     <div class="layout_bt">室外控制</div>
                     <p>
@@ -203,7 +203,7 @@
                 </p>
             </div>
             <div class="layout">
-                <img src="{{ asset('new/home/smart/smarthome/img/Choice9.jpg') }}" alt=""/>
+                <img src="{{ asset('new/home/smart/smarthome/img/Choice9.jpg') }}" alt="建商智能家居解锁和锁闭"/>
                 <div class="layout_div">
                     <div class="layout_bt">解锁和锁闭</div>
                     <p>
@@ -212,7 +212,7 @@
                 </div>
             </div>
             <div class="layout">
-                <img src="{{ asset('new/home/smart/smarthome/img/Choice10.jpg') }}" alt="" class="Choice_img"/>
+                <img src="{{ asset('new/home/smart/smarthome/img/Choice10.jpg') }}" alt="建商智能家居门锁和提醒" class="Choice_img"/>
                 <div class="layout_div">
                     <div class="layout_bot">门锁和提醒</div>
                     <p class="la_p">
@@ -222,7 +222,7 @@
                 </div>
             </div>
             <div class="layout">
-                <img src="{{ asset('new/home/smart/smarthome/img/Choice11.jpg') }}" alt=""/>
+                <img src="{{ asset('new/home/smart/smarthome/img/Choice11.jpg') }}" alt="建商智能家居视频监控"/>
                 <div class="layout_div">
                     <div class="layout_bt">视频监控</div>
                     <p>
@@ -251,7 +251,7 @@
 </div>
 <div class="Bus">
     <div class="about">
-        <img src="{{ asset('new/home/smart/smarthome/img/Bus1.png') }}" alt=""/>
+        <img src="{{ asset('new/home/smart/smarthome/img/Bus1.png') }}" alt="建商智能家居H-BUS总线技术"/>
         <div class="Bus_fr">
             <div class="biaoti">H-BUS总线技术</div>
             <div class="Core_p">
@@ -278,22 +278,22 @@
     <span class="xiaobt">为您提供可靠的技术保障，让您无忧畅想智慧生活</span>
     <div class="jieshao">
         <a href="javascript:;">
-            <img src="{{ asset('new/home/smart/smarthome/img/Advantage1.png') }}" alt=""/>
+            <img src="{{ asset('new/home/smart/smarthome/img/Advantage1.png') }}" alt="建商智能家居32项品控管理方法"/>
             <div class="jieshao_bt">32项品控管理方法</div>
             <p>严格执行32项细致品控管理，施工规范细致</p>
         </a>
         <a href="javascript:;">
-            <img src="{{ asset('new/home/smart/smarthome/img/Advantage2.png') }}" alt=""/>
+            <img src="{{ asset('new/home/smart/smarthome/img/Advantage2.png') }}" alt="建商智能家居15年资深设计团队"/>
             <div class="jieshao_bt">15年资深设计团队</div>
             <p>拥有从业15年的资深智能家居设计师团队</p>
         </a>
         <a href="javascript:;">
-            <img src="{{ asset('new/home/smart/smarthome/img/Advantage3.png') }}" alt=""/>
+            <img src="{{ asset('new/home/smart/smarthome/img/Advantage3.png') }}" alt="建商智能家居1000+成功项目"/>
             <div class="jieshao_bt">1000+成功项目</div>
             <p>超过1000个项目，每一个系统都经过精密的编程与调试</p>
         </a>
         <a href="javascript:;">
-            <img src="{{ asset('new/home/smart/smarthome/img/Advantage4.png') }}" alt=""/>
+            <img src="{{ asset('new/home/smart/smarthome/img/Advantage4.png') }}" alt="建商智能家居360度无忧售后服务"/>
             <div class="jieshao_bt">360度无忧售后服务</div>
             <p>1小时极速响应，1个工作日内提供解决方案</p>
         </a>

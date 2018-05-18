@@ -8,24 +8,24 @@
 @section('content')
 <!--banner-->
 <div class="banner PC">
-    <img src="{{ asset('/new/home/package/jizhuang/img/Basic_banner.jpg')}}" alt=""/>
+    <img src="{{ asset('/new/home/package/jizhuang/img/Basic_banner.jpg')}}" alt="建商家装基装包"/>
 </div>
 <div class="banner MO">
-    <img src="{{ asset('/new/home/package/jizhuang/img/Basic_banner1.jpg')}}" alt=""/>
+    <img src="{{ asset('/new/home/package/jizhuang/img/Basic_banner1.jpg')}}" alt="建商家装基装包"/>
 </div>
 <div class="Basic_bag">
     <div class="juzhong">
     <a href="{{ url('/newpro/package/jizhuang') }}" class="Bas avtive">
-        <img src="{{ asset('/new/home/package/jizhuang/img/Basic_bag.png')}}" alt="" class="No"/>
-        <img src="{{ asset('/new/home/package/jizhuang/img/Basic_baga.png')}}" alt="" class="av"/>
+        <img src="{{ asset('/new/home/package/jizhuang/img/Basic_bag.png')}}" alt="基装包" class="No"/>
+        <img src="{{ asset('/new/home/package/jizhuang/img/Basic_baga.png')}}" alt="基装包" class="av"/>
     </a>
     <a href="{{ url('/newpro/package/ruanzhuang') }}" class="Sof">
-        <img src="{{ asset('/new/home/package/jizhuang/img/Soft_bag.png')}}" alt="" class="No"/>
-        <img src="{{ asset('/new/home/package/jizhuang/img/Soft_baga.png')}}" alt="" class="av"/>
+        <img src="{{ asset('/new/home/package/jizhuang/img/Soft_bag.png')}}" alt="软装包" class="No"/>
+        <img src="{{ asset('/new/home/package/jizhuang/img/Soft_baga.png')}}" alt="软装包" class="av"/>
     </a>
     <a href="{{ url('/newpro/package/zhineng') }}">
-        <img src="{{ asset('/new/home/package/jizhuang/img/Intelligence_bag.png')}}" alt="" class="No"/>
-        <img src="{{ asset('/new/home/package/jizhuang/img/Intelligence_baga.png')}}" alt="" class="av"/>
+        <img src="{{ asset('/new/home/package/jizhuang/img/Intelligence_bag.png')}}" alt="智能家居包" class="No"/>
+        <img src="{{ asset('/new/home/package/jizhuang/img/Intelligence_baga.png')}}" alt="智能家居包" class="av"/>
     </a>
     </div>
 </div>
@@ -34,7 +34,7 @@
     <div class="Title">严苛进行基装　严选主材品牌</div>
     <div class="Show">
         <a href="#">
-            <img src="{{ asset('/new/home/package/jizhuang/img/Brand1.png')}}" alt=""/>
+            <img src="{{ asset('/new/home/package/jizhuang/img/Brand1.png')}}" alt="建商家装汇聚全国一线设计师"/>
             <div class="text">
                 <span class="name">汇聚全国一线设计师</span>
                 <span>遵循人体工学原理</span>
@@ -42,7 +42,7 @@
             </div>
         </a>
         <a href="#">
-            <img src="{{ asset('/new/home/package/jizhuang/img/Brand2.png')}}" alt=""/>
+            <img src="{{ asset('/new/home/package/jizhuang/img/Brand2.png')}}" alt="建商家装坚持原材料和产地可追溯"/>
             <div class="text">
                 <span class="name">坚持原材料和产地可追溯</span>
                 <span>经验丰富的产品设计，采购，研发</span>
@@ -50,7 +50,7 @@
             </div>
         </a>
         <a href="#">
-            <img src="{{ asset('/new/home/package/jizhuang/img/Brand3.png')}}" alt=""/>
+            <img src="{{ asset('/new/home/package/jizhuang/img/Brand3.png')}}" alt="建商家装严苛的生产工艺"/>
             <div class="text">
                 <span class="name">严苛的生产工艺</span>
                 <span>层层监督，严格把控。</span>
@@ -58,7 +58,7 @@
             </div>
         </a>
         <a href="#">
-            <img src="{{ asset('/new/home/package/jizhuang/img/Brand4.png')}}" alt=""/>
+            <img src="{{ asset('/new/home/package/jizhuang/img/Brand4.png')}}" alt="建商家装整合全球一线供应商"/>
             <div class="text">
                 <span class="name">整合全球一线供应商</span>
                 <span>F2C直采，省去中间环节</span>
@@ -70,7 +70,7 @@
 <!--基装主材项目-->
 <div class="Project">
     <div class="Title">基装主材项目</div>
-    <img src="{{ asset('/new/home/package/jizhuang/img/Project.jpg') }}" alt="" class="Project_img"/>
+    <img src="{{ asset('/new/home/package/jizhuang/img/Project.jpg') }}" alt="基装主材项目" class="Project_img"/>
 </div>
 <!--基装做好才是好-->
 <div class="Good">
@@ -78,13 +78,13 @@
     <div class="Show">
         <div class="Left">
             <a href="javascript:;" class="Top">
-                <img src="{{ asset('/new/home/package/jizhuang/img/Good1.png') }}" alt=""/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Good1.png') }}" alt="顶面、墙面基层及阴阳角找平找直处理"/>
                 <div class="text">
                     顶面、墙面基层及阴阳角找平找直处理
                 </div>
             </a>
             <a href="javascript:;" class="Bottom">
-                <img src="{{ asset('/new/home/package/jizhuang/img/Good2.png') }}" alt=""/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Good2.png') }}" alt="乳胶漆（立邦净味120二合一）"/>
                 <div class="text">
                     乳胶漆（立邦净味120二合一）
                 </div>
@@ -93,21 +93,21 @@
         <div class="Right">
             <div class="Top">
                 <a href="javascript:;" class="Top_l">
-                    <img src="{{ asset('/new/home/package/jizhuang/img/Good3.png') }}" alt=""/>
+                    <img src="{{ asset('/new/home/package/jizhuang/img/Good3.png') }}" alt="建商家装严苛门槛石铺贴"/>
                     <div class="text">严苛门槛石铺贴</div>
                 </a>
                 <a href="javascript:;" class="Top_r">
-                    <img src="{{ asset('/new/home/package/jizhuang/img/Good4.png') }}" alt=""/>
+                    <img src="{{ asset('/new/home/package/jizhuang/img/Good4.png') }}" alt="建商家装轻钢龙骨纸面石膏板平顶"/>
                     <div class="text">轻钢龙骨纸面石膏板平顶</div>
                 </a>
             </div>
             <div class="bottom">
                 <a href="javascript:;" class="Top_l">
-                    <img src="{{ asset('/new/home/package/jizhuang/img/Good5.png') }}" alt=""/>
+                    <img src="{{ asset('/new/home/package/jizhuang/img/Good5.png') }}" alt="建商家装专注家装十五年，寻找对生活有品质的你"/>
                     <div class="text">专注家装十五年，寻找对生活有品质的你</div>
                 </a>
                 <a href="javascript:;" class="Top_r">
-                    <img src="{{ asset('/new/home/package/jizhuang/img/Good6.png') }}" alt=""/>
+                    <img src="{{ asset('/new/home/package/jizhuang/img/Good6.png') }}" alt="建商家装以家为核心，实力见证  匠心品质"/>
                     <div class="text">以家为核心，实力见证  匠心品质</div>
                 </a>
             </div>
@@ -172,51 +172,51 @@
     <div class="Show">
         <div class="Loop">
             <a href="javascript:;" class="avtive">
-                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Package1.png') }}" alt="" class="P_img"/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Package1.png') }}" alt="建商家装基装主材包" class="P_img"/>
                 <div class="Contact">
                     <div class="Basic_name">Package A</div>
                     <i></i>
                     <div class="Basic_Class">基装主材包</div>
                     <div class="Price">￥<span class="Num">958</span><span class="danwei">元/㎡</span></div>
                 </div>
-                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Selected.png') }}" alt="" class="Basic_Selected"/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Selected.png') }}" alt="建商家装基装主材包" class="Basic_Selected"/>
             </a>
         </div>
         <div class="Loop Se">
             <a href="javascript:;" class="">
-                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Package2.png') }}" alt="" class="P_img"/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Package2.png') }}" alt="建商家装软装包" class="P_img"/>
                 <div class="Contact">
                     <div class="Basic_name">Package B</div>
                     <i></i>
                     <div class="Basic_Class">软装包</div>
                     <div class="Price">￥<span class="Num">296</span><span class="danwei">元/㎡</span></div>
                 </div>
-                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Selected.png') }}" alt="" class="Basic_Selected"/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Selected.png') }}" alt="建商家装软装包" class="Basic_Selected"/>
             </a>
         </div>
         <div class="Loop zhi">
             <a href="javascript:;" class="">
-                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Package3.png') }}" alt="" class="P_img"/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Package3.png') }}" alt="建商家装智能家居包" class="P_img"/>
                 <div class="Contact">
                     <div class="Basic_name">Package C</div>
                     <i></i>
                     <div class="Basic_Class">智能家居包</div>
                     <div class="Price">￥<span class="Num">25880</span></div>
                 </div>
-                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Selected.png') }}" alt="" class="Basic_Selected"/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Selected.png') }}" alt="建商家装智能家居包" class="Basic_Selected"/>
             </a>
         </div>
     </div>
     <div class="jizhuang avtive">
         <div class="Style_top">
-            <img src="{{ asset('/new/home/package/jizhuang/img/jizhuang1.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/package/jizhuang/img/jizhuang1.png') }}" alt="建商家装基装主材包"/>
             <div class="Style_Bot">
             	@foreach($data as $k => $v)
             	@if($v->ors == '基装')
                 <a href="javascript:;" class="jz" index="{{ $v->id }}">
                     <div class="feng">{{ $v->name }}</div>
                     <div class="jiner">￥<span class="Num">{{ $v->money }}</span><span class="danwei">元/㎡</span></div>
-                    <img src="{{ asset('/new/home/package/jizhuang/img/Basic_gou.png') }}" alt="" class="Basic_gou"/>
+                    <img src="{{ asset('/new/home/package/jizhuang/img/Basic_gou.png') }}" alt="建商家装基装主材包" class="Basic_gou"/>
                 </a>
                 @endif
                 @endforeach
@@ -225,14 +225,14 @@
     </div>
     <div class="Style">
         <div class="Style_top">
-            <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Style.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Style.png') }}" alt="建商家装软装包"/>
             <div class="Style_Bot">
             	@foreach($data as $k => $v)
             	@if($v->ors == '软装')
                 <a href="javascript:;" class="fg" index="{{ $v->id }}">
                     <div class="feng">{{ $v->name }}</div>
                     <div class="jiner">￥<span class="Num">{{ $v->money }}</span><span class="danwei">元/㎡</span></div>
-                    <img src="{{ asset('/new/home/package/jizhuang/img/Basic_gou.png') }}" alt="" class="Basic_gou"/>
+                    <img src="{{ asset('/new/home/package/jizhuang/img/Basic_gou.png') }}" alt="建商家装软装包" class="Basic_gou"/>
                 </a>
                @endif
                @endforeach
@@ -241,14 +241,14 @@
     </div>
     <div class="Ai">
         <div class="Style_top">
-            <img src="{{ asset('/new/home/package/jizhuang/img/AI.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/package/jizhuang/img/AI.png') }}" alt="建商家装智能家居包"/>
             <div class="Style_Bot">
             	@foreach($data as $k => $v)
             	@if($v->ors == '智能')
                 <a href="javascript:;" class="zhin"index="{{ $v->id }}" >
                     <div class="feng">{{ $v->name }}</div>
                     <div class="jiner">￥<span class="danwei">{{ $v->money }}</span></div>
-                    <img src="{{ asset('/new/home/package/jizhuang/img/Basic_gou.png') }}" alt="" class="Basic_gou"/>
+                    <img src="{{ asset('/new/home/package/jizhuang/img/Basic_gou.png') }}" alt="建商家装智能家居包" class="Basic_gou"/>
                 </a>
                 @endif
                 @endforeach

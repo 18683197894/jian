@@ -124,6 +124,7 @@ function debounce(func, wait, immediate) {
                         var a = tr.find('.loop').eq(0).clone(true);
                         a.attr('href','/newpro/newslist/play/'+n.id);
                         a.find('img').attr('src','/uploads/news/titleimg/'+n.titleimg);
+                        a.find('img').attr('alt',n.title);
                         a.find('.name').html(n.title);
                         a.find('.content').html(n.leicon);
                         a.find('.time > span').eq(0).html('浏览数：'+n.click);

@@ -7,10 +7,10 @@
 
 @section('content')
 <div class="Banner PC">
-    <img src="{{ asset('/new/home/package/zhineng/img/Intelligence_Banner.jpg') }}" alt=""/>
+    <img src="{{ asset('/new/home/package/zhineng/img/Intelligence_Banner.jpg') }}" alt="建商软装智能家居包"/>
 </div>
 <div class="Banner MO">
-    <img src="{{ asset('/new/home/package/zhineng/img/Intelligence_Banner1.jpg') }}" alt=""/>
+    <img src="{{ asset('/new/home/package/zhineng/img/Intelligence_Banner1.jpg') }}" alt="建商软装智能家居包"/>
 </div>
 
 <div class="Basic_bag">
@@ -32,7 +32,7 @@
 <!--智能生活场景呈现-->
 <div class="Scene">
     <div class="Title">智能生活场景呈现</div>
-    <img src="{{ asset('/new/home/package/zhineng/img/Intelligence_Scene.jpg') }}" alt="" class="Scene_bg"/>
+    <img src="{{ asset('/new/home/package/zhineng/img/Intelligence_Scene.jpg') }}" alt="智能生活场景呈现" class="Scene_bg"/>
 </div>
 <!--模式-->
 <div class="Pattern">
@@ -45,7 +45,7 @@
                     劳累了一天之后回到家门口，只需要通过指纹扫描打开智能指纹锁，玄关的灯光会自动打开。背景音乐会随之响起，空调、电视、窗帘缓缓打开，让家的温馨围绕着您。
                 </div>
             </div>
-            <img src="{{ asset('/new/home/package/zhineng/img/Pattern1.png') }}" alt="" class="fl"/>
+            <img src="{{ asset('/new/home/package/zhineng/img/Pattern1.png') }}" alt="回家模式" class="fl"/>
         </div>
         <div class="Loop">
             <div class="text2">
@@ -55,7 +55,7 @@
                     当没人在家的时候，布防模式正在运行，玄关、窗户、走廊处的门窗磁传感器和人体传感器一旦触发，智能摄像机将立即录像，并拨打报警电话提醒你，全方位守护家庭安全。
                 </div>
             </div>
-            <img src="{{ asset('/new/home/package/zhineng/img/Pattern2.png') }}" alt="" class="fl"/>
+            <img src="{{ asset('/new/home/package/zhineng/img/Pattern2.png') }}" alt="离家模式" class="fl"/>
         </div>
         <div class="Loop">
             <div class="text">
@@ -65,7 +65,7 @@
                     出差在外，总惦记着家里？只要打开APP，就可随时随地查看家中动态，还可以通过APP远程控制检查门窗、燃气、水电等设备的状态。
                 </div>
             </div>
-            <img src="{{ asset('/new/home/package/zhineng/img/Pattern3.png') }}" alt="" class="fl"/>
+            <img src="{{ asset('/new/home/package/zhineng/img/Pattern3.png') }}" alt="安防模式" class="fl"/>
         </div>
     </div>
 </div>
@@ -95,51 +95,51 @@
     <div class="Show">
         <div class="Loop">
             <a href="javascript:;" class="">
-                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Package1.png') }}" alt="" class="P_img"/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Package1.png') }}" alt="基装主材包" class="P_img"/>
                 <div class="Contact">
                     <div class="Basic_name">Package A</div>
                     <i></i>
                     <div class="Basic_Class">基装主材包</div>
                     <div class="Price">￥<span class="Num">958</span><span class="danwei">元/㎡</span></div>
                 </div>
-                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Selected.png') }}" alt="" class="Basic_Selected"/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Selected.png') }}" alt="基装主材包" class="Basic_Selected"/>
             </a>
         </div>
         <div class="Loop Se">
             <a href="javascript:;" class="">
-                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Package2.png') }}" alt="" class="P_img"/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Package2.png') }}" alt="软装包" class="P_img"/>
                 <div class="Contact">
                     <div class="Basic_name">Package B</div>
                     <i></i>
                     <div class="Basic_Class">软装包</div>
                     <div class="Price">￥<span class="Num">296</span><span class="danwei">元/㎡</span></div>
                 </div>
-                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Selected.png') }}" alt="" class="Basic_Selected"/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Selected.png') }}" alt="软装包" class="Basic_Selected"/>
             </a>
         </div>
         <div class="Loop zhi">
             <a href="javascript:;" class="avtive">
-                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Package3.png') }}" alt="" class="P_img"/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Package3.png') }}" alt="智能家居包" class="P_img"/>
                 <div class="Contact">
                     <div class="Basic_name">Package C</div>
                     <i></i>
                     <div class="Basic_Class">智能家居包</div>
                     <div class="Price">￥<span class="Num">21124.6</span></div>
                 </div>
-                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Selected.png') }}" alt="" class="Basic_Selected"/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Selected.png') }}" alt="智能家居包" class="Basic_Selected"/>
             </a>
         </div>
     </div>
     <div class="jizhuang">
         <div class="Style_top">
-            <img src="{{ asset('/new/home/package/jizhuang/img/jizhuang1.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/package/jizhuang/img/jizhuang1.png') }}" alt="基装主材包"/>
             <div class="Style_Bot">
                 @foreach($data as $k => $v)
             	@if($v->ors == '基装')
                 <a href="javascript:;" class="jz" index="{{ $v->id }}">
                     <div class="feng">{{ $v->name }}</div>
                     <div class="jiner">￥<span class="Num">{{ $v->money }}</span><span class="danwei">元/㎡</span></div>
-                    <img src="{{ asset('/new/home/package/jizhuang/img/Basic_gou.png') }}" alt="" class="Basic_gou"/>
+                    <img src="{{ asset('/new/home/package/jizhuang/img/Basic_gou.png') }}" alt="基装主材包" class="Basic_gou"/>
                 </a>
                 @endif
                 @endforeach
@@ -148,14 +148,14 @@
     </div>
     <div class="Style">
         <div class="Style_top">
-            <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Style.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Style.png') }}" alt="软装包"/>
             <div class="Style_Bot">
                 @foreach($data as $k => $v)
             	@if($v->ors == '软装')
                 <a href="javascript:;" class="fg" index="{{ $v->id }}">
                     <div class="feng">{{ $v->name }}</div>
                     <div class="jiner">￥<span class="Num">{{ $v->money }}</span><span class="danwei">元/㎡</span></div>
-                    <img src="{{ asset('/new/home/package/jizhuang/img/Basic_gou.png') }}" alt="" class="Basic_gou"/>
+                    <img src="{{ asset('/new/home/package/jizhuang/img/Basic_gou.png') }}" alt="软装包" class="Basic_gou"/>
                 </a>
                @endif
                @endforeach
@@ -164,14 +164,14 @@
     </div>
     <div class="Ai avtive">
         <div class="Style_top">
-            <img src="{{ asset('/new/home/package/jizhuang/img/AI.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/package/jizhuang/img/AI.png') }}" alt="智能家居包"/>
             <div class="Style_Bot">
                 @foreach($data as $k => $v)
             	@if($v->ors == '智能')
                 <a href="javascript:;" class="zhin"index="{{ $v->id }}" >
                     <div class="feng">{{ $v->name }}</div>
                     <div class="jiner">￥<span class="danwei">{{ $v->money }}</span></div>
-                    <img src="{{ asset('/new/home/package/jizhuang/img/Basic_gou.png') }}" alt="" class="Basic_gou"/>
+                    <img src="{{ asset('/new/home/package/jizhuang/img/Basic_gou.png') }}" alt="智能家居包" class="Basic_gou"/>
                 </a>
                 @endif
                 @endforeach

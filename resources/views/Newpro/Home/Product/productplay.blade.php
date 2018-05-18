@@ -18,8 +18,8 @@
         
         @foreach($product as $k => $v)
         <a href="{{ url('/newpro/product?pid=') }}{{ $v->title }}" @if( $goods->pid == $v->id ) class="avtive" @endif>
-            <img src="{{ asset('/uploads/product/img') }}/{{ $v->imgs[0] }}" alt="" class="default"/>
-            <img src="{{ asset('/uploads/product/img') }}/{{ $v->imgs[1] }}" alt="" class="hove"/>
+            <img src="{{ asset('/uploads/product/img') }}/{{ $v->imgs[0] }}" alt="建商产品展示" class="default"/>
+            <img src="{{ asset('/uploads/product/img') }}/{{ $v->imgs[1] }}" alt="建商产品展示" class="hove"/>
             <span class="name">{{ $v->title }}</span>
         </a>
       	@endforeach
@@ -29,7 +29,7 @@
         <div class="tupian">
             <div class="bg_left">
                 <div class="show">
-                        <img src="{{ asset('/uploads/product/img/') }}/{{ $goods->imgs[0] }}" alt="">
+                        <img src="{{ asset('/uploads/product/img/') }}/{{ $goods->imgs[0] }}" alt="{{ $goods->title }}">
                     <div class="mask"></div>
                 </div>
                 <div class="smallshow">
@@ -37,7 +37,7 @@
                     <div class="middle_box">
                         <ul class="middle">
                         @foreach($goods->imgs as $k => $v)
-                            <li><img src="{{ asset('/uploads/product/img/') }}/{{ $v }}" alt=""></li>
+                            <li><img src="{{ asset('/uploads/product/img/') }}/{{ $v }}" alt="{{ $goods->title }}"></li>
                         @endforeach
                         </ul>
                     </div>
@@ -47,7 +47,7 @@
             <div class="bg_right">
                 <div class="bigshow">
                     <div class="bigitem">
-                        <img src="{{ asset('/uploads/product/img/') }}/{{ $goods->imgs[0] }}" alt="">
+                        <img src="{{ asset('/uploads/product/img/') }}/{{ $goods->imgs[0] }}" alt="{{ $goods->title }}">
                     </div>
                 </div>
             </div>

@@ -10,9 +10,9 @@
 <!--banner图 轮播-->
 <div class="banner Pc">
     <ul class="">
-        <li><a href="{{ url('/newpro/package/jizhuang') }}"><img src="{{ asset('/new/home/index/img/ban_1.png') }}" alt=""></a></li>
-        <li><a href="{{ url('/newpro/smarthome') }}"><img src="{{ asset('/new/home/index/img/ban_2.png') }}" alt=""></a></li>
-        <li><a href="{{ url('/newpro/used/business') }}"><img src="{{ asset('/new/home/index/img/ban_3.png') }}" alt=""></a></li>
+        <li><a href="{{ url('/newpro/package/jizhuang') }}"><img src="{{ asset('/new/home/index/img/ban_1.png') }}" alt="基装包,软装包,智能包,建商家装"></a></li>
+        <li><a href="{{ url('/newpro/smarthome') }}"><img src="{{ asset('/new/home/index/img/ban_2.png') }}" alt="建商智能家居,宜宾智能家居,智能系统"></a></li>
+        <li><a href="{{ url('/newpro/used/business') }}"><img src="{{ asset('/new/home/index/img/ban_3.png') }}" alt="建商商务合作"></a></li>
     </ul>
     <div class="left-btn"></div>
     <div class="right-btn"></div>
@@ -21,9 +21,9 @@
 <!--banner图 轮播-->
 <div class="banner Mo">
     <ul class="">
-        <li><a href="{{ url('/newpro/package/jizhuang') }}"><img src="{{ asset('/new/home/index/img/ban_1_mo.jpg') }}" alt=""></a></li>
-        <li><a href="{{ url('/newpro/smarthome') }}"><img src="{{ asset('/new/home/index/img/ban_2_mo.png') }}" alt=""></a></li>
-        <li><a href="{{ url('/newpro/used/business') }}"><img src="{{ asset('/new/home/index/img/ban_3_mo.png') }}" alt=""></a></li>
+        <li><a href="{{ url('/newpro/package/jizhuang') }}"><img src="{{ asset('/new/home/index/img/ban_1_mo.jpg') }}" alt="基装包,软装包,智能包,建商家装"></a></li>
+        <li><a href="{{ url('/newpro/smarthome') }}"><img src="{{ asset('/new/home/index/img/ban_2_mo.png') }}" alt="建商智能家居,宜宾智能家居,智能系统"></a></li>
+        <li><a href="{{ url('/newpro/used/business') }}"><img src="{{ asset('/new/home/index/img/ban_3_mo.png') }}" alt="建商商务合作"></a></li>
     </ul>
     <div class="left-btn"></div>
     <div class="right-btn"></div>
@@ -75,7 +75,7 @@
     </div>
     <div class="Show">
         <a href="{{ url('/newpro/estate/zheshang') }}">
-            <img src="{{ asset('/new/home/index/img/Project1.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/index/img/Project1.png') }}" alt="浙商临港新天地,宜宾临港精装房"/>
             <span>浙商.临港新天地</span>
             <div class="hide">
                 <div class="Center">
@@ -84,7 +84,7 @@
             </div>
         </a>
         <a href="{{ url('/newpro/estate/defu') }}">
-            <img src="{{ asset('/new/home/index/img/Project2.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/index/img/Project2.png') }}" alt="宜宾县德福公元,宜宾县德福公元精装修"/>
             <span>德福公元</span>
             <div class="hide">
                 <div class="Center">
@@ -93,7 +93,7 @@
             </div>
         </a>
         <a href="{{ url('/newpro/estate/zhijin') }}">
-            <img src="{{ asset('/new/home/index/img/Project3.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/index/img/Project3.png') }}" alt="织金万都铭城,贵州织金县万都铭城精装修"/>
             <span>织金.万都铭城</span>
             <div class="hide">
                 <div class="Center">
@@ -102,7 +102,7 @@
             </div>
         </a>
         <a href="#">
-            <img src="{{ asset('/new/home/index/img/Project4.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/index/img/Project4.png') }}" alt="临港.会展中心"/>
             <span>临港.会展中心</span>
             <div class="hide">
                 <div class="Center">
@@ -123,22 +123,22 @@
     <div class="huxintu">
 
         <a href="https://yun.kujiale.com/design/3FO4L73CL22I/show" class="loop" target="_blank">
-            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_1.jpg')}}" alt=""/>
+            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_1.jpg')}}" alt="浙商52平米-现代"/>
             <i>点击360度预览</i>
             <span>浙商52平米-现代</span>
         </a>
         <a href="https://yun.kujiale.com/design/3FO4L6XPFOG6/show" class="loop" target="_blank">
-            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_4.jpg')}}" alt=""/>
+            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_4.jpg')}}" alt="浙商54平米-港式"/>
             <i>点击360度预览</i>
             <span>浙商54平米-港式</span>
         </a>
         <a href="https://yun.kujiale.com/design/3FO4L6SOOABG/show" class="loop" target="_blank">
-            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_9.jpg')}}" alt=""/>
+            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_9.jpg')}}" alt="浙商64平米-三居港式"/>
             <i>点击360度预览</i>
             <span>浙商64平米-三居港式</span>
         </a>
         <a href="https://yun.kujiale.com/design/3FO4L7VBMHKN/show" class="loop" target="_blank">
-            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_12.jpg')}}" alt=""/>
+            <img src="{{ asset('/new/home/estate/zheshang/img/zheshang_12.jpg')}}" alt="浙商109平米-北欧"/>
             <i>点击360度预览</i>
             <span>浙商109平米-北欧</span>
         </a>
@@ -161,37 +161,37 @@
         <a href="#">
             <div class="name">在线预约</div>
             <span></span>
-            <img src="{{ asset('/new/home/index/img/flow1.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/index/img/flow1.png') }}" alt="在线预约"/>
         </a>
         <a href="#">
             <div class="name">实景体验</div>
             <span></span>
-            <img src="{{ asset('/new/home/index/img/flow2.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/index/img/flow2.png') }}" alt="实景体验"/>
         </a>
         <a href="#">
             <div class="name">签约下订</div>
             <span></span>
-            <img src="{{ asset('/new/home/index/img/flow3.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/index/img/flow3.png') }}" alt="签约下订"/>
         </a>
         <a href="#">
             <div class="name">确认方案</div>
             <span></span>
-            <img src="{{ asset('/new/home/index/img/flow4.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/index/img/flow4.png') }}" alt="确认方案"/>
         </a>
         <a href="#">
             <div class="name">标准化施工</div>
             <span></span>
-            <img src="{{ asset('/new/home/index/img/flow5.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/index/img/flow5.png') }}" alt="标准化施工"/>
         </a>
         <a href="#">
             <div class="name">五星质检验收</div>
             <span></span>
-            <img src="{{ asset('/new/home/index/img/flow6.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/index/img/flow6.png') }}" alt="五星质检验收"/>
         </a>
         <a href="#">
             <div class="name">金牌质保 售后无忧</div>
             <span></span>
-            <img src="{{ asset('/new/home/index/img/flow7.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/index/img/flow7.png') }}" alt="金牌质保 售后无忧"/>
         </a>
 
     </div>
@@ -209,19 +209,19 @@
     </div>
     <div class="Show">
         <a href="{{ url('newpro/package/jizhuang') }}" class="Show_One">
-            <img src="{{ asset('/new/home/index/img/Package1.png') }}" alt="" class="Package_D"/>
+            <img src="{{ asset('/new/home/index/img/Package1.png') }}" alt="基装主材包" class="Package_D"/>
             <div class="text">
                 <span>基装主材包</span>
             </div>
         </a>
         <a href="{{ url('/newpro/package/ruanzhuang') }}" class="Show_Two">
-            <img src="{{ asset('/new/home/index/img/Package2.png') }}" alt="" class="Package_D"/>
+            <img src="{{ asset('/new/home/index/img/Package2.png') }}" alt="精致软装包" class="Package_D"/>
             <div class="text">
                 <span>精致软装包</span>
             </div>
         </a>
         <a href="{{ url('/newpro/package/zhineng') }}" class="Show_Three">
-            <img src="{{ asset('/new/home/index/img/Package3.png') }}" alt="" class="Package_D"/>
+            <img src="{{ asset('/new/home/index/img/Package3.png') }}" alt="智能家居包" class="Package_D"/>
             <div class="text">
                 <span>智能家居包</span>
             </div>
@@ -244,7 +244,7 @@
     @foreach($case as $k => $v)
         <div class="Show_a">
             <a href="{{ url('/newpro/case/play/') }}/{{ $v->id }}" class="top">
-                <img src="{{ asset('uploads/case/img') }}/{{ $v->keting }}" alt=""/>
+                <img src="{{ asset('uploads/case/img') }}/{{ $v->keting }}" alt="{{ $v->title }}"/>
                 <div class="text">
                     <div class="name">{{ $v->title }}</div>
                     <div class="Label">
@@ -257,7 +257,7 @@
             <div class="Loop">
             @foreach($v->eff as $kk => $vv)
                 <a href="{{ url('/newpro/case/play/') }}/{{ $v->id }}?a={{ $kk }}&b={{ $vv }}">
-                    <img src="{{ asset('uploads/case/img') }}/{{ $vv }}" alt=""/>
+                    <img src="{{ asset('uploads/case/img') }}/{{ $vv }}" alt="{{ $v->title }}"/>
                     <span>{{ $kk }}</span>
                 </a>
             @endforeach
@@ -333,7 +333,7 @@
     @foreach($plate as $k => $v)
         <div class="Loop">
             <a href="{{ url('/newpro/newslist?pid=') }}{{ $v->title }}" class="Loop_img">
-                <img src="{{ asset('uploads/news/img/')}}/{{ $v->img }}" alt=""/>
+                <img src="{{ asset('uploads/news/img/')}}/{{ $v->img }}" alt="{{ $v->title }}"/>
             </a>
             <div class="text">
             @foreach($v->news as $kk => $vv)

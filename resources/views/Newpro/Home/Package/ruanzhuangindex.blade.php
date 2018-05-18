@@ -9,10 +9,10 @@
 @section('content')
 <!--banner-->
 <div class="Banner PC">
-    <img src="{{ asset('/new/home/package/ruanzhuang/img/Soft_Banner.jpg') }}" alt=""/>
+    <img src="{{ asset('/new/home/package/ruanzhuang/img/Soft_Banner.jpg') }}" alt="建商家装软装包"/>
 </div>
 <div class="Banner MO">
-    <img src="{{ asset('/new/home/package/ruanzhuang/img/Soft_Banner1.jpg') }}" alt=""/>
+    <img src="{{ asset('/new/home/package/ruanzhuang/img/Soft_Banner1.jpg') }}" alt="建商家装软装包"/>
 </div>
 
 <div class="Basic_bag">
@@ -33,16 +33,16 @@
 </div>
 <div class="Propaganda">
     <div class="Propaganda_l">
-        <img src="{{ asset('/new/home/package/ruanzhuang/img/Propaganda1.png') }}" alt=""/>
+        <img src="{{ asset('/new/home/package/ruanzhuang/img/Propaganda1.png') }}" alt="建商家装软装包,现代北欧宜居宜家"/>
     </div>
     <div class="Propaganda_r">
         <div class="Propaganda_Top">
-            <img src="{{ asset('/new/home/package/ruanzhuang/img/Propaganda2.png') }}" alt=""/>
-            <img src="{{ asset('/new/home/package/ruanzhuang/img/Propaganda3.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/package/ruanzhuang/img/Propaganda2.png') }}" alt="建商家装软装包,个性化软装方案"/>
+            <img src="{{ asset('/new/home/package/ruanzhuang/img/Propaganda3.png') }}" alt="建商家装软装包,个性化软装方案"/>
         </div>
         <div class="Propaganda_Top">
-            <img src="{{ asset('/new/home/package/ruanzhuang/img/Propaganda4.png') }}" alt=""/>
-            <img src="{{ asset('/new/home/package/ruanzhuang/img/Propaganda5.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/package/ruanzhuang/img/Propaganda4.png') }}" alt="建商家装软装包,围绕几何,色彩,灯光,为你构造空间美学"/>
+            <img src="{{ asset('/new/home/package/ruanzhuang/img/Propaganda5.png') }}" alt="建商家装软装包,围绕几何,色彩,灯光,为你构造空间美学"/>
         </div>
     </div>
 </div>
@@ -59,9 +59,9 @@
     <!--软装方案图 轮播-->
     <div class="banner Pc">
         <ul class="">
-            <li><a href="javascript:;"><img src="{{ asset('/new/home/package/ruanzhuang/img/Plan_banner1.jpg') }}" alt=""></a></li>
-            <li><a href="javascript:;"><img src="{{ asset('/new/home/package/ruanzhuang/img/Plan_banner2.jpg') }}" alt=""></a></li>
-            <li><a href="javascript:;"><img src="{{ asset('/new/home/package/ruanzhuang/img/Plan_banner3.jpg') }}" alt=""></a></li>
+            <li><a href="javascript:;"><img src="{{ asset('/new/home/package/ruanzhuang/img/Plan_banner1.jpg') }}" alt="建商家装软装包,美式风格"></a></li>
+            <li><a href="javascript:;"><img src="{{ asset('/new/home/package/ruanzhuang/img/Plan_banner2.jpg') }}" alt="建商家装软装包,现代风格"></a></li>
+            <li><a href="javascript:;"><img src="{{ asset('/new/home/package/ruanzhuang/img/Plan_banner3.jpg') }}" alt="建商家装软装包,北欧风格"></a></li>
         </ul>
         <div class="left-btn"></div>
         <div class="right-btn"></div>
@@ -69,9 +69,9 @@
     </div>
     <div class="banner Mo">
     <ul class="">
-        <li><a href=" "><img src="{{ asset('/new/home/package/ruanzhuang/img/Plan_mo1.jpg') }}" alt=""></a></li>
-        <li><a href="javascript:;"><img src="{{ asset('/new/home/package/ruanzhuang/img/Plan_mo2.jpg') }}" alt=""></a></li>
-        <li><a href="javascript:;"><img src="{{ asset('/new/home/package/ruanzhuang/img/Plan_mo3.jpg') }}" alt=""></a></li>
+        <li><a href=" "><img src="{{ asset('/new/home/package/ruanzhuang/img/Plan_mo1.jpg') }}" alt="建商家装软装包,美式风格"></a></li>
+        <li><a href="javascript:;"><img src="{{ asset('/new/home/package/ruanzhuang/img/Plan_mo2.jpg') }}" alt="建商家装软装包,现代风格"></a></li>
+        <li><a href="javascript:;"><img src="{{ asset('/new/home/package/ruanzhuang/img/Plan_mo3.jpg') }}" alt="建商家装软装包,北欧风格"></a></li>
     </ul>
     <div class="left-btn"></div>
     <div class="right-btn"></div>
@@ -83,7 +83,7 @@
     <div class="Title">优选品牌　经久耐用</div>
     <div class="Show">
         <a href="#">
-            <img src="{{ asset('/new/home/package/ruanzhuang/img/Soft_Brand1.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/package/ruanzhuang/img/Soft_Brand1.png') }}" alt="建商家装,E1级环保中纤板"/>
             <div class="text">
                 <span class="name">E1级环保中纤板</span>
                 <span>植物纤维为原料，品质安全放心</span>
@@ -91,7 +91,7 @@
             </div>
         </a>
         <a href="#">
-            <img src="{{ asset('/new/home/package/ruanzhuang/img/Soft_Brand2.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/package/ruanzhuang/img/Soft_Brand2.png') }}" alt="建商家装,涂料绿色安全 不含甲醛"/>
             <div class="text">
                 <span class="name">涂料绿色安全 不含甲醛</span>
                 <span>材料绿色安全，安心入住</span>
@@ -99,7 +99,7 @@
             </div>
         </a>
         <a href="#">
-            <img src="{{ asset('/new/home/package/ruanzhuang/img/Soft_Brand3.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/package/ruanzhuang/img/Soft_Brand3.png') }}" alt="建商家装,稳定的结构"/>
             <div class="text">
                 <span class="name">稳定的结构</span>
                 <span>科学的结构设计</span>
@@ -107,7 +107,7 @@
             </div>
         </a>
         <a href="#">
-            <img src="{{ asset('/new/home/package/ruanzhuang/img/Soft_Brand4.png') }}" alt=""/>
+            <img src="{{ asset('/new/home/package/ruanzhuang/img/Soft_Brand4.png') }}" alt="建商家装,抗曲性 承重性强"/>
             <div class="text">
                 <span class="name">抗曲性 承重性强</span>
                 <span>一二线品牌专线定制</span>
@@ -123,38 +123,38 @@
     <div class="Show">
         <div class="Loop">
             <a href="javascript:;" class="">
-                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Package1.png') }}" alt="" class="P_img"/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Package1.png') }}" alt="基装主材包" class="P_img"/>
                 <div class="Contact">
                     <div class="Basic_name">Package A</div>
                     <i></i>
                     <div class="Basic_Class">基装主材包</div>
                     <div class="Price">￥<span class="Num">958</span><span class="danwei">元/㎡</span></div>
                 </div>
-                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Selected.png') }}" alt="" class="Basic_Selected"/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Selected.png') }}" alt="基装主材包" class="Basic_Selected"/>
             </a>
         </div>
         <div class="Loop Se">
             <a href="javascript:;" class="avtive">
-                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Package2.png') }}" alt="" class="P_img"/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Package2.png') }}" alt="软装包" class="P_img"/>
                 <div class="Contact">
                     <div class="Basic_name">Package B</div>
                     <i></i>
                     <div class="Basic_Class">软装包</div>
                     <div class="Price">￥<span class="Num">296</span><span class="danwei">元/㎡</span></div>
                 </div>
-                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Selected.png') }}" alt="" class="Basic_Selected"/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Selected.png') }}" alt="软装包" class="Basic_Selected"/>
             </a>
         </div>
         <div class="Loop zhi">
             <a href="javascript:;" class="">
-                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Package3.png') }}" alt="" class="P_img"/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Package3.png') }}" alt="智能家居包" class="P_img"/>
                 <div class="Contact">
                     <div class="Basic_name">Package C</div>
                     <i></i>
                     <div class="Basic_Class">智能家居包</div>
                     <div class="Price">￥<span class="Num">21124.6</span></div>
                 </div>
-                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Selected.png') }}" alt="" class="Basic_Selected"/>
+                <img src="{{ asset('/new/home/package/jizhuang/img/Basic_Selected.png') }}" alt="智能家居包" class="Basic_Selected"/>
             </a>
         </div>
     </div>

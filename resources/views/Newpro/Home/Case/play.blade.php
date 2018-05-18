@@ -19,11 +19,11 @@
                 <div class="box">
                     @if($a == null)
                     @foreach($data->eff as $k => $v)
-                    <div @if($loop->first) style="left:0" class="num1" @endif  index="{{ $loop->index }}"><img  src="{{ asset('/uploads/case/img/') }}/{{ $v }}" style="display: inline;"></div>
+                    <div @if($loop->first) style="left:0" class="num1" @endif  index="{{ $loop->index }}"><img  src="{{ asset('/uploads/case/img/') }}/{{ $v }}" alt="{{ $data->title }}" style="display: inline;"></div>
                     @endforeach
                     @else
                     @foreach($data->eff as $k => $v)
-                    <div @if($b == $v) style="left:0" class="num1" @endif index="{{ $loop->index }}"><img  src="{{ asset('/uploads/case/img/') }}/{{ $v }}" style="display: inline;"></div>
+                    <div @if($b == $v) style="left:0" class="num1" @endif index="{{ $loop->index }}"><img  src="{{ asset('/uploads/case/img/') }}/{{ $v }}" alt="{{ $data->title }}" style="display: inline;"></div>
                     @endforeach
                     @endif
                 </div>

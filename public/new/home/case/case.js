@@ -98,7 +98,8 @@ color5.click(function(){
 						zai.find('.con_span > span').eq(0).html(n['huxing']);
 						zai.find('.con_span > span').eq(1).html(n['fengge']);
 						zai.find('.con_span > span').eq(2).html(n['yusuan']);
-						zai.find('.show_auto > img').attr('src','/uploads/case/img/'+n['img'])
+						zai.find('.show_auto > img').attr('src','/uploads/case/img/'+n['img']);
+						zai.find('.show_auto > img').attr('alt',n['title']);
 						zai.attr('href','/newpro/case/zaiplay/'+n['id']);
 						str +=zai[0].outerHTML;
 					})
@@ -163,7 +164,8 @@ function wanajax(th)
 						zai.find('.norms > span').eq(0).html(n['huxing']);
 						zai.find('.norms > span').eq(1).html(n['fengge']);
 						zai.find('.norms > span').eq(2).html(n['yusuan']);
-						zai.find('.show_auto > img').attr('src','/uploads/case/img/'+n['img'])
+						zai.find('.show_auto > img').attr('src','/uploads/case/img/'+n['img']);
+						zai.find('.show_auto > img').attr('alt',n['title']);
 						zai.attr('href','/newpro/case/play/'+n['id']);
 
 						str +=zai[0].outerHTML;
@@ -240,7 +242,8 @@ $(document).on("click",'.pagination > li > a',function(){
 							wan.find('.norms > span').eq(0).html(n['huxing']);
 							wan.find('.norms > span').eq(1).html(n['fengge']);
 							wan.find('.norms > span').eq(2).html(n['yusuan']);
-							wan.find('.show_auto > img').attr('src','/uploads/case/img/'+n['img'])
+							wan.find('.show_auto > img').attr('src','/uploads/case/img/'+n['img']);
+							wan.find('.show_auto > img').attr('alt','/uploads/case/img/'+n['title']);
 							wan.attr('href','/newpro/case/play/'+n['id']);
 
 						str += wan[0].outerHTML;
@@ -295,7 +298,8 @@ $('.dian > .button1').on('click',function(){
 						zai.find('.con_span > span').eq(0).html(n['huxing']);
 						zai.find('.con_span > span').eq(1).html(n['fengge']);
 						zai.find('.con_span > span').eq(2).html(n['yusuan']);
-						zai.find('.show_auto > img').attr('src','/uploads/case/img/'+n['img'])
+						zai.find('.show_auto > img').attr('src','/uploads/case/img/'+n['img']);
+						zai.find('.show_auto > img').attr('alt','/uploads/case/img/'+n['title']);
 						zai.attr('href','/newpro/case/zaiplay/'+n['id']);
 
 						str +=zai[0].outerHTML;

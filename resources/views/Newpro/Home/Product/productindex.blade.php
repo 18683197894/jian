@@ -18,8 +18,8 @@
     <div class="Sort">
       	@foreach($product as $k => $v)
         <a href="javascript:;" @if( $avtive == $v->title ) class="avtive" @endif>
-            <img src="{{ asset('/uploads/product/img') }}/{{ $v->imgs[0] }}" alt="" class="default"/>
-            <img src="{{ asset('/uploads/product/img') }}/{{ $v->imgs[1] }}" alt="" class="hove"/>
+            <img src="{{ asset('/uploads/product/img') }}/{{ $v->imgs[0] }}" alt="建商产品展示" class="default"/>
+            <img src="{{ asset('/uploads/product/img') }}/{{ $v->imgs[1] }}" alt="建商产品展示" class="hove"/>
             <span class="name">{{ $v->title }}</span>
         </a>
       	@endforeach
@@ -32,7 +32,7 @@
            @if(count($v->goods) > 0)
             @foreach($v->goods as $kk => $vv)
             <a href="{{ url('/newpro/product/play') }}/{{ $vv->id }}">
-                <img src="{{ asset('/uploads/product/img/') }}/{{ $vv->img }}" alt=""/>
+                <img src="{{ asset('/uploads/product/img/') }}/{{ $vv->img }}" alt="{{ $vv->title }}"/>
                 <div class="word">
                     <div class="name">{{ $vv->title }}</div>
                     <div class="msg">
