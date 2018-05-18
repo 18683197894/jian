@@ -34,8 +34,8 @@
                   <th style="text-align:center;">网页</th>
                   <th style="text-align:center;">URL</th>
                   <th style="text-align:center;">网页标题</th>
-                  <th style="width:25%;text-align:center;">网页关键字</th>
-                  <th style="width:25%;text-align:center;">网页内容描述</th>
+                  <th style="width:30%;text-align:center;">网页关键字</th>
+                  <th style="width:30%;text-align:center;">网页内容描述</th>
                   <th style="width:8%;text-align:center;">操作</th>
                 </tr>
                 </thead>
