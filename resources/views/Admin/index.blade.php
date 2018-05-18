@@ -556,7 +556,7 @@ class="active"
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="height:100%">
     <!-- Content Header (Page header) -->
 
 

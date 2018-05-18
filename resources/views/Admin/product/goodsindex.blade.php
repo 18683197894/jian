@@ -56,7 +56,7 @@
 @foreach($data as $k => $v)     
                 <tr role="row" class="odd" index="{{$v->id}}">
 
-                  <td style="text-align: center;vertical-align: middle">{{ $v->id }}</td>
+                  <td style="text-align: center;vertical-align: middle;@if( session('edit_id') == $v->id ) color:red @endif">{{ $v->id }}</td>
                   <td style="width:18%;text-align: left;vertical-align: middle">{{ $v->title }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->brand }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->model }}</td>

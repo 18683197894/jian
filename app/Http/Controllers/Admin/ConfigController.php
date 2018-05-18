@@ -95,7 +95,7 @@ class ConfigController extends Controller
 
 		if($res)
 		{
-			return redirect('/admin/config/webpage?page='.$request->page)->with('info','更新成功');
+			return redirect('/admin/config/webpage?page='.$request->page)->with(['info'=>'更新成功','edit_id'=>$data['id']]);
 		}else
 		{
 			return back()->with('info','更新失败');

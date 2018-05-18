@@ -533,7 +533,7 @@ class ProductController extends Controller
     				@unlink('./uploads/product/img/'.$img1);
     			}
     		}
-    		return redirect('/newpro/index/package/product/goodsindex/'.$data['pid'].'?page='.$request->input('page',1))->with('info','更新成功！');
+    		return redirect('/newpro/index/package/product/goodsindex/'.$data['pid'].'?page='.$request->input('page',1))->with(['info'=>'更新成功！','edit_id'=>$data['id']]);
     	}else
     	{
     		if($init !== false)

@@ -36,7 +36,7 @@ class CaseController extends Controller
             'description.max'=>'网页内容描述最大255位'
 		]); 
 
-        $data['time'] = time();
+    $data['time'] = time();
 		$data['uptime'] = $data['time'];
 		$data['or'] = 0;
 		$data['ors'] = '-> 准备开工';
@@ -100,7 +100,7 @@ class CaseController extends Controller
         $res = \DB::table('case')->where('id',$data['id'])->update($data);
         if($res)
         {
-            return redirect('/admin/case/index?page='.$request->input('page',1))->with('info','修改成功！');
+            return redirect('/admin/case/index?page='.$request->input('page',1))->with(['info'=>'修改成功！','edit_id'=>$data['id']]);
         }else
         {
             return back()->with('info','修改失败！');
@@ -127,7 +127,7 @@ class CaseController extends Controller
 		    'img2'=>'image|file',
 		    'img3'=>'image|file',
 		    'img4'=>'image|file',
-            'img5'=>'image|file',
+        'img5'=>'image|file',
 		    'img6'=>'image|file'
  		],[
 			'img1.required'=>'未上传图片(效果图1)',
@@ -141,7 +141,7 @@ class CaseController extends Controller
 			'img2.file'=>'上传失败（效果图2）',
 			'img3.file'=>'上传失败（效果图3）',
 			'img4.file'=>'上传失败（效果图4）',
-            'img5.file'=>'上传失败（效果图5）',
+      'img5.file'=>'上传失败（效果图5）',
 			'img6.file'=>'上传失败（效果图5）'
             
 		]); 

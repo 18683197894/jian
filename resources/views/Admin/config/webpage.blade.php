@@ -43,7 +43,7 @@
 @if(isset($data) and count($data) > 0 )
 	@foreach($data as $k => $v)
                 <tr>
-                  <td class="id" style="text-align: center;vertical-align: middle">{{ $v->id }}</td>
+                  <td class="id" style="text-align: center;vertical-align: middle;@if( session('edit_id') == $v->id ) color:red @endif">{{ $v->id }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->title }}</td>
                   <td style="text-align: center;vertical-align: middle"><a href="{{ url( $v->url ) }}" target="_blank">{{ $v->url }}</a></td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->titles }}</td>

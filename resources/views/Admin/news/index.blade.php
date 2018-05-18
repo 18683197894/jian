@@ -72,7 +72,7 @@
 @if( isset($data) and count($data) > 0)                
 @foreach($data as $k => $v)     
                 <tr role="row" class="odd">
-                  <td style="text-align: center;vertical-align: middle">{{ $v->id }}</td>
+                  <td style="text-align: center;vertical-align: middle;@if( session('edit_id') == $v->id ) color:red @endif">{{ $v->id }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->title }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->yuan }}</td>
                   <td style="text-align: center;vertical-align: middle"><a href="{{ url('/uploads/news/titleimg/') }}/{{$v->titleimg }}"><img src="{{ asset('/uploads/news/titleimg/') }}/{{$v->titleimg }}" width="170px" height="70px" alt=""></a></td>

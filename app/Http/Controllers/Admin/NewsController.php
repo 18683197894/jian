@@ -332,7 +332,7 @@ class NewsController extends Controller
     	$res = \DB::table('news')->where('id',$request->id)->update($data);
 
     	if($res){
-    		return redirect('jslmadmin/newslei/newsindex/'.$data['pid'].'?page='.$request->input('page',1))->with('info','更新成功');
+    		return redirect('jslmadmin/newslei/newsindex/'.$data['pid'].'?page='.$request->input('page',1))->with(['info'=>'更新成功','edit_id'=>$request->id]);
     	}else{
     		return back()->with('info','更新失败 内容未更改！');
     	}
