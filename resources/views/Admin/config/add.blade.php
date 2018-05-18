@@ -55,16 +55,18 @@
                   <label for="exampleInputEmail1">网页标题</label>
                   <input type="text"  name="titles" value="{{ old('titles') }}" class="form-control" id="exampleInputEmail1" placeholder="网页标题">
                 </div>
-                
-                 <div class="form-group">
-                  <label for="exampleInputEmail1">网页关键字</label>
-                  <input type="text"  name="keyworlds" value="{{ old('keyworlds') }}" class="form-control" id="exampleInputEmail1" placeholder="网页关键字">
+
+                <div class="form-group">
+                  <label>网页关键字</label>
+                  <textarea class="form-control" name="keyworlds" rows="2" placeholder="网页关键字 ...">{{ old('keyworlds') }}</textarea>
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputEmail1">网页内容描述</label>
-                  <input type="text"  name="description" value="{{ old('description') }}" class="form-control" id="exampleInputEmail1" placeholder="网页内容描述">
+                  <label>网页内容描述</label>
+                  <textarea class="form-control" name="description" rows="2" placeholder="网页内容描述 ...">{{ old('description') }}</textarea>
                 </div>
+
+                 
                  
 
               </div>
