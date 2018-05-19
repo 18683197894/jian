@@ -70,6 +70,12 @@ Route::get('/newpro/estate/defu/details','Newpro\Home\EstateController@defudetai
 Route::get('/newpro/estate/zheshang','Newpro\Home\EstateController@zheshang');
 Route::get('/newpro/estate/zheshang/details','Newpro\Home\EstateController@zheshangdetails');
 
+Route::get('/propertieshfhx',function(){
+	return redirect('/newpro/estate/zhijin');
+});
+Route::get('/home/case/index/play/{id}/{ids?}',function(){
+	return redirect('/newpro/case/index');
+});
 Route::get('/newpro/estate/zhijin','Newpro\Home\EstateController@zhijin');
 Route::get('/newpro/estate/zhijin/details','Newpro\Home\EstateController@zhijindetails');
 Route::get('/newpro/estate/zhijin/inter/{id}','Newpro\Home\EstateController@zhijininter');

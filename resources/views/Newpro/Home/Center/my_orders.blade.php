@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="contact_right">
-        <div class="title">我的订单</div>
+        <div class="title">我的订单a</div>
         <div class="My_order">
             <a href="javascript:;" @if($orss == 'pay_s') class="avtive" @endif>全部订单</a>
             <a href="javascript:;" @if($orss == 'pay_y') class="avtive" @endif>已支付</a>
@@ -143,8 +143,10 @@
             </div>
         </div>
     </div>
+
 @endsection('content')
 
 @section('js')
 <script src="{{ asset('/new/home/center/my_orders.js') }}"></script>
+
 @endsection('js')
