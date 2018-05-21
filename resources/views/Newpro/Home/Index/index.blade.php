@@ -21,7 +21,7 @@
 <!--banner图 轮播-->
 <div class="banner Mo">
     <ul class="">
-        <li><a href="{{ url('/newpro/package/jizhuang') }}"><img src="{{ asset('/new/home/index/img/ban_1_mo.jpg') }}" alt="基装包,软装包,智能包,建商家装"></a></li>
+        <li><a href="{{ url('/newpro/package/jizhuang') }}"><img src="{{ asset('/new/home/index/img/ban_1_mo.png') }}" alt="基装包,软装包,智能包,建商家装"></a></li>
         <li><a href="{{ url('/newpro/smarthome') }}"><img src="{{ asset('/new/home/index/img/ban_2_mo.png') }}" alt="建商智能家居,宜宾智能家居,智能系统"></a></li>
         <li><a href="{{ url('/newpro/used/business') }}"><img src="{{ asset('/new/home/index/img/ban_3_mo.png') }}" alt="建商商务合作"></a></li>
     </ul>
