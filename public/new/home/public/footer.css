@@ -12,7 +12,7 @@
     margin-top: 60px;
 }
 .footer .auto .about{
-    width: 130px;
+    width: 195px;
     height: 235px;
     overflow: hidden;
     float: left;
@@ -48,7 +48,7 @@
     overflow: hidden;
     float: left;
     border-right: 1px solid #383838;
-    margin-right: 35px;
+    margin-right: 40px;
     padding-right: 15px;
 }
 .footer .auto .contact .title{
@@ -64,7 +64,7 @@
     margin-bottom: 25px;
 }
 .footer .auto .code{
-    width: 340px;
+    width: 155px;
     float: left;
 }
 .footer .auto .code .title{
