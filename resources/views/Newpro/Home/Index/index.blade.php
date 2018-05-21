@@ -158,37 +158,37 @@
     </div>
     <div class="Show">
         <div class="xian"></div>
-        <a href="#">
+        <a href="javascript:;">
             <div class="name">在线预约</div>
             <span></span>
             <img src="{{ asset('/new/home/index/img/flow1.png') }}" alt="在线预约"/>
         </a>
-        <a href="#">
+        <a href="javascript:;">
             <div class="name">实景体验</div>
             <span></span>
             <img src="{{ asset('/new/home/index/img/flow2.png') }}" alt="实景体验"/>
         </a>
-        <a href="#">
+        <a href="javascript:;">
             <div class="name">签约下订</div>
             <span></span>
             <img src="{{ asset('/new/home/index/img/flow3.png') }}" alt="签约下订"/>
         </a>
-        <a href="#">
+        <a href="javascript:;">
             <div class="name">确认方案</div>
             <span></span>
             <img src="{{ asset('/new/home/index/img/flow4.png') }}" alt="确认方案"/>
         </a>
-        <a href="#">
+        <a href="javascript:;">
             <div class="name">标准化施工</div>
             <span></span>
             <img src="{{ asset('/new/home/index/img/flow5.png') }}" alt="标准化施工"/>
         </a>
-        <a href="#">
+        <a href="javascript:;">
             <div class="name">五星质检验收</div>
             <span></span>
             <img src="{{ asset('/new/home/index/img/flow6.png') }}" alt="五星质检验收"/>
         </a>
-        <a href="#">
+        <a href="javascript:;">
             <div class="name">金牌质保 售后无忧</div>
             <span></span>
             <img src="{{ asset('/new/home/index/img/flow7.png') }}" alt="金牌质保 售后无忧"/>

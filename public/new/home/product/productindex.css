@@ -22,6 +22,7 @@ body{
     overflow: hidden;
     padding-top: 30px;
     margin: auto;
+    padding-bottom: 20px;
 }
 .Product_Show .Title{
     width: 100%;
