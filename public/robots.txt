@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /jslmadmin/index/
 Disallow: /uploads/
 Disallow: /new/
 Disallow: /laravel-u-editor/

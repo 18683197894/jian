@@ -280,13 +280,6 @@ Route::get('admin/paymentdiy/diyindex','Admin\PayController@diyindex');
 Route::post('admin/paymentdiy/diyindexdel','Admin\PayController@diyindexdel');
 });
 
-//web支付微信
-Route::get('webpro/webpay_wechat','Pay\WebpayController@webpay_wechat');
-Route::post('webpro/webpay_wechats','Pay\WebpayController@webpay_wechats');
-Route::any('/webpro/weixinweb_hui','Pay\WebpayController@weixinweb_hui');
-Route::any('/webpro/weixinweb/wechat_notify','Pay\WebpayController@wechat_notify');
-
-Route::get('webpro/webpay_alipay','Pay\WebpayController@webpay_alipay');
 
 //后台登入
 Route::get('/jslmadmin/login','Admin\LoginController@login');
