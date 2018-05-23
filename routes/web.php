@@ -164,7 +164,6 @@ Route::post('/newpro/index/package/product/goodsdel','Admin\ProductController@go
 Route::get('/jslmadmin/userhome/index','Admin\HomeController@index');
 //用户的购物车
 Route::get('/jslmadmin/userhome/playgou/{id}','Admin\HomeController@playgou');
-
 Route::post('/jslmadmin/userhome/index/statusajax','Admin\HomeController@statusajax');
 
 
