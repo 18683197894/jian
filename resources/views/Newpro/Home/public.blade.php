@@ -146,8 +146,9 @@
 <script type="text/javascript"> var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " https://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1273388296'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1273388296%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 
 </div>
-
+</body>
 @yield('js')
 <script src="{{ asset('/new/home/public/header.js') }}"></script>
-</body>
+<script src="{{ asset('/new/home/public/wes.js') }}"></script>
+
 </html>
