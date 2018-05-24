@@ -139,5 +139,4 @@
 
 </body>
 @yield('js')
-<script src="{{ asset('/new/home/public/wes.js') }}"></script>
 </html>
