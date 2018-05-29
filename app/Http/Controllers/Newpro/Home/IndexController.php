@@ -73,8 +73,7 @@ class IndexController extends Controller
     public function cs()
     {   
     
-     $a = 9;
-     print_r("${a}");
+     return view('Newpro.cs');
       
     }
 
