@@ -338,8 +338,7 @@
             <div class="text">
             @foreach($v->news as $kk => $vv)
                 <a href="{{ url('/newpro/newslist/play/') }}/{{ $vv->id }}">
-                <span>@if(mb_strlen($vv->title,'utf8') < 24  ) {{ $vv->title }} @else {{ mb_substr($vv->title,0,20,'utf8') }}... @endif</span>
-                @if(time() - $vv->time < 259200) &nbsp;&nbsp;<img src="{{ asset('/new/home/index/img/new.png') }}" alt="" class="new">@endif
+                <span>@if(mb_strlen($vv->title,'utf8') < 22  ) {{ $vv->title }} @else {{ mb_substr($vv->title,0,21,'utf8') }}... @endif</span>@if(time() - $vv->time < 259200)<i></i><img src="{{ asset('/new/home/index/img/new.png') }}" alt="" class="new">@endif
                 </a>
             @endforeach
             </div>
