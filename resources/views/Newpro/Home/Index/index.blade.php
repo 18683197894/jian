@@ -10,7 +10,7 @@
 <!--banner图 轮播-->
 <div class="banner Pc">
     <ul class="">
-        <li><a href="javascript:;"><img src="{{ asset('/new/home/index/img/banner_jzf.jpg') }}" alt="基装包,软装包,智能包,建商家装"></a></li>
+        <li><a href="javascript:;"><img src="{{ asset('/new/home/index/img/banner_jzf.jpg') }}" alt="精装房，建商精装房，宜宾精装房"></a></li>
     </ul>
     <div class="left-btn"></div>
     <div class="right-btn"></div>
@@ -19,7 +19,7 @@
 <!--banner图 轮播-->
 <div class="banner Mo">
     <ul class="">
-        <li><a href="javascript:;"><img src="{{ asset('/new/home/index/img/banner_jzf_m.jpg') }}" alt="基装包,软装包,智能包,建商家装"></a></li>
+        <li><a href="javascript:;"><img src="{{ asset('/new/home/index/img/banner_jzf_m.jpg') }}" alt="精装房，建商精装房，宜宾精装房"></a></li>
     </ul>
     <div class="left-btn"></div>
     <div class="right-btn"></div>
