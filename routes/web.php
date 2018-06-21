@@ -205,6 +205,9 @@ Route::get('/jslmadmin/newslei/interlocution/interedit/{id}','Admin\Interlocutio
 Route::post('/jslmadmin/newslei/interlocution/interedits','Admin\InterlocutionController@interedits');
 Route::post('/jslmadmin/newslei/interlocution/interdel','Admin\InterlocutionController@interdel');
 
+Route::post('/reptilian/copynews_tx','Admin\ReptilianController@copynews_tx');
+Route::get('/reptilian/copynewsindex','Admin\ReptilianController@copynewsindex');
+
 //案例管理
 Route::get('admin/case/index','Admin\CaseController@index');
 Route::get('admin/case/add','Admin\CaseController@add');

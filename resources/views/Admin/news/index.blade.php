@@ -37,8 +37,9 @@
            
             <div class="box-header">
            
-              <h3 class="box-title" style="width:400px;"><a href="{{ url('/jslmadmin/newslei/newsadd/') }}/{{ $pid }}">添加文章</a>
-              &nbsp;&nbsp;&nbsp;&nbsp;
+              <h3 class="box-title" style="width:450px;"><a href="{{ url('/jslmadmin/newslei/newsadd/') }}/{{ $pid }}">添加文章</a>
+              &nbsp;&nbsp;
+              <a href="{{ url('/reptilian/copynewsindex') }}/">爬取文章</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <a href="{{ url('/jslmadmin/newslei/newszhiindex/') }}/{{ $pid }}">管理列表置顶</a>&nbsp;&nbsp;
               <a href="{{ url('/jslmadmin/newslei/newsszhiindex/index?path=') }}{{ $path }}">管理首页置顶</a></h3>
             </div>
@@ -75,7 +76,7 @@
                   <td style="text-align: center;vertical-align: middle;@if( session('edit_id') == $v->id ) color:red @endif">{{ $v->id }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->title }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->yuan }}</td>
-                  <td style="text-align: center;vertical-align: middle"><a href="{{ url('/uploads/news/titleimg/') }}/{{$v->titleimg }}"><img src="{{ asset('/uploads/news/titleimg/') }}/{{$v->titleimg }}" width="170px" height="100px" alt=""></a></td>
+                  <td style="text-align: center;vertical-align: middle"><a href="{{ url('/uploads/news/titleimg/') }}/{{$v->titleimg }}"><img src="@if($v->titleimg[0] == 'h') {{ $v->titleimg }} @else {{ asset('/uploads/news/titleimg/') }}/{{$v->titleimg }} @endif" width="170px" height="100px" alt=""></a></td>
                   <td style="text-align: center;vertical-align: middle">{{ date("Y-m-d H:i:s",$v->time) }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->click }}</td>
                   <td style="text-align: center;vertical-align: middle"><a href="{{ url('/jslmadmin/newslei/newsedit') }}/{{ $v->id }}?page={{ $page }}">编辑

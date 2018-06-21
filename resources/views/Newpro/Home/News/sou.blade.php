@@ -25,7 +25,7 @@
                 @if(count($data) > 0)
                 @foreach($data as $k => $v)
                 <a href="{{ url('/newpro/newslist/play') }}/{{ $v->id }}" class="loop">
-                    <img src="{{ asset('/uploads/news/titleimg/') }}/{{  $v->titleimg }}" alt=""/>
+                    <img src="@if($v->titleimg[0] == 'h') {{ $v->titleimg }} @else {{ asset('/uploads/news/titleimg/'.$v->titleimg) }} @endif" alt=""/>
                     <div class="loop_right">
                         <div class="name">@php echo $v->title @endphp</div>
                         <div class="content">

@@ -1035,10 +1035,10 @@ body{
         width: 100%;
     }
     .Project .bar_l{
-        width: 39%;
+        width: 38%;
     }
     .Project .bar_r{
-        width: 39%;
+        width: 38%;
     }
     .Project .Show a{
         width: 100%;
@@ -1055,10 +1055,10 @@ body{
         width: 100%;
     }
     .Package .bar_l{
-        width: 39%;
+        width: 37%;
     }
     .Package .bar_r{
-        width: 39%;
+        width: 37%;
     }
     .Package .Show a{
         width: 100%;
@@ -1067,10 +1067,10 @@ body{
         width: 100%;
     }
     .Case .bar_l{
-        width: 39%;
+        width: 37%;
     }
     .Case .bar_r{
-        width: 39%;
+        width: 37%;
     }
     .Case .Show .Show_a{
         width: 100%;
@@ -1079,10 +1079,10 @@ body{
         width: 100%;
     }
     .Craf .bar_l{
-        width: 39%;
+        width: 37%;
     }
     .Craf .bar_r{
-        width: 39%;
+        width: 37%;
     }
     .Craf .Show .left{
         width: 100%;
@@ -1163,6 +1163,38 @@ body{
     }
     .D_max{
         width: 100%;
+    }
+    .left-btn, .right-btn{
+        width: 31px;
+        height: 31px;
+        background-size: 100% 100%;
+    }
+    .Show_One .text{
+        background: none;
+    }
+    .Show_Two .text{
+        background: none;
+    }
+    .Show_Three .text{
+        background: none;
+    }
+    .Package .Show a .text span{
+        text-indent:0;
+    }
+    .Package .Show .Show_One:hover .text{
+        color: #E12E32;
+        background: none;
+        background-color: #F5F5F5;
+    }
+    .Package .Show .Show_Two:hover .text{
+        color: #E12E32;
+        background: none;
+        background-color: #F5F5F5;
+    }
+    .Package .Show .Show_Three:hover .text{
+        color: #E12E32;
+        background: none;
+        background-color: #F5F5F5;
     }
 
 }

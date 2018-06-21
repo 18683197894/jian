@@ -121,251 +121,244 @@ body{
 }
 
 .Choice{
-        width:100%;
-        overflow: hidden;
-        padding-top: 50px;
-    }
-    .Choice .top{
-        width: 1200px;
-        margin: auto;
-        height: 60px;
-    }
-    .Choice .top span{
-        width: 25%;
-        display: block;
-        float: left;
-    }
-    .Choice .top span a{
-        display: block;
-        width: 90px;
-        height: 60px;
-        margin: auto;
-        text-align: center;
-        line-height: 60px;
-        color: #000000;
-    }
-    .Choice .top span.avtive a{
-        border-bottom: 2px solid #e50012;
-        box-sizing: border-box;
-    }
-    .Choice .tabpanel{
-        width: 100%;
-        overflow: hidden;
-    }
-    .Choice .tabpanel .Loop{
-        width: 100%;
-        overflow: hidden;
-        display: none;
-    }
-    .Choice .tabpanel .Loop.avtive{
-        display: block;
-    }
-    .Choice .pleasure{
-        width: 1200px;
-        margin: auto;
-        padding-bottom: 50px;
-    }
-    .layout{
-        width: 100%;
-        overflow: hidden;
-        height: 475px;
-    }
-    .layout img{
-        display: block;
-        width: 50%;
-        float: left;
-        height: 100%;
-    }
-    .layout .Choice_img{
-        float: right;
-    }
-    .layout .layout_div{
-        float: left;
-        width: 50%;
-        background-color: #F2F2F2;
-        height: 100%;
-    }
-    .layout_bt{
-        width: 600px;
-        font-size: 34px;
-        height: 40px;
-        font-weight: normal;
-        margin: 140px 0 20px 0;
-        color: #333;
-        padding-left: 50px;
-    }
-    .layout_bot{
-        width: 600px;
-        font-size: 34px;
-        height: 40px;
-        font-weight: normal;
-        margin: 140px 0 20px 0;
-        color: #333;
-        float: right;
-    }
-    .layout_div .la_p{
-        float: right;
-        width: 600px;
-        font-size: 18px;
-        line-height: 35px;
-        padding-left: 0;
-        padding-right: 35px;
-    }
-    .layout_div p{
-        padding-left: 50px;
-        width: 600px;
-        font-size: 18px;
-        line-height: 35px;
-    }
-    .Choice .pleasure .name{
-        font-size: 55px;
-        font-weight: normal;
-        color: #333;
-        padding: 0 30px;
-        margin: 150px 0 60px 0;
-    }
-    .Choice .pleasure p{
-        padding: 0 30px;
-        font-size: 24px;
-        color: #000;
-        line-height: 50px;
-    }
-    .Core{
-        width: 100%;
-        height: 700px;
-        overflow: hidden;
-        background: url("/new/home/smart/smarthome/img/Intelligence_bg1.jpg");
-        background-size: 100% 100%;
-        margin-top: 50px;
-    }
-   .biaoti{
-        width: 100%;
-        overflow: hidden;
-        font-size: 38px;
-        color: #fff;
-        height: 60px;
-        line-height: 60px;
-        text-align: center;
-        margin-top: 100px;
-        font-weight: normal;
-    }
-    .Core_p{
-        width: 100%;
-        overflow: hidden;
-        text-align: center;
-        color: #fff;
-        font-size: 20px;
-        margin-top: 60px;
-        line-height: 40px;
-    }
-    .Core_p p{
-        color: #ffffff;
-        line-height: 35px;
-    }
-    .Passive{
-        width: 100%;
-        height: 700px;
-        overflow: hidden;
-        background: url("/new/home/smart/smarthome/img/Intelligence_bg2.jpg");
-        background-size: 100% 100%;
-        margin-top: 10px;
-    }
-    .Bus{
-        width: 100%;
-        height: 700px;
-        overflow: hidden;
-        background: url("/new/home/smart/smarthome/img//Intelligence_bg3.jpg");
-        background-size: 100% 100%;
-        margin-top: 10px;
-    }
-    .Bus .about{
-        width: 1200px;
-        overflow: hidden;
-        margin: auto;
-    }
-    .Bus .about img{
-        width: 530px;
-        float: left;
-        margin-top: 70px;
-    }
-    .Bus_fr{
-        width: 630px;
-        float: right;
-    }
-    .Bus_fr .biaoti{
-        text-align: left;
-    }
-    .Bus_fr .Core_p{
-        text-align: left;
-    }
-    .Experience{
-        width: 100%;
-        height: 700px;
-        overflow: hidden;
-        background: url("/new/home/smart/smarthome/img/Intelligence_bg4.jpg");
-        background-size: 100% 100%;
-        margin-top: 10px;
-    }
-    .Advantage{
-        width: 1200px;
-        overflow: hidden;
-        margin: auto;
-        padding-top: 90px;
-        padding-bottom: 50px;
-    }
-    .Advantage .baioti{
-        text-align: center;
-        font-size: 42px;
-        line-height: 42px;
-        color: #333;
-        font-weight: normal;
-    }
-    .Advantage .xian{
-        display: block;
-        width: 107px;
-        height: 1px;
-        background: #e50012;
-        margin: 10px auto 25px auto;
-    }
-    .xiaobt{
-        text-align: center;
-        color: #666;
-        font-size: 20px;
-        display: block;
-        padding-bottom: 10px;
-    }
-    .jieshao{
-        width: 100%;
-        overflow: hidden;
-        margin-top: 90px;
-    }
-    .jieshao a{
-        display: block;
-        float: left;
-        width: 25%;
-        overflow: hidden;
-    }
-    .jieshao a img{
-        display: block;
-        margin: auto;
-    }
-    .jieshao_bt{
-        font-size: 26px;
-        color: #333;
-        font-weight: normal;
-        margin: 50px 0;
-        width: 100%;
-        text-align: center;
-    }
-    .jieshao a p{
-        font-size: 18px;
-        color: #666;
-        line-height: 30px;
-        width: 90%;
-        margin: auto;
-        text-align: center;
-    }
-    .Remote{
+    width:100%;
+    overflow: hidden;
+    padding-top: 50px;
+}
+.Choice .top{
+    width: 1200px;
+    margin: auto;
+    height: 60px;
+}
+.Choice .top span{
+    width: 25%;
+    display: block;
+    float: left;
+}
+.Choice .top span a{
+    display: block;
+    width: 90px;
+    height: 60px;
+    margin: auto;
+    text-align: center;
+    line-height: 60px;
+    color: #000000;
+}
+.Choice .top span.avtive a{
+    border-bottom: 2px solid #e50012;
+    box-sizing: border-box;
+}
+.Choice .tabpanel{
+    width: 100%;
+    overflow: hidden;
+}
+.Choice .tabpanel .Loop{
+    width: 100%;
+    overflow: hidden;
+    display: none;
+}
+.Choice .tabpanel .Loop.avtive{
+    display: block;
+}
+.Choice .pleasure{
+    width: 1200px;
+    margin: auto;
+    padding-bottom: 50px;
+}
+.layout{
+    width: 100%;
+    overflow: hidden;
+}
+.layout img{
+    display: block;
+    width: 50%;
+    float: left;
+}
+.layout .Choice_img{
+    float: right;
+}
+.layout .layout_div{
+    float: left;
+    width: 50%;
+    background-color: #F2F2F2;
+}
+.layout_bt{
+    width: 600px;
+    font-size: 34px;
+    height: 40px;
+    font-weight: normal;
+    margin: 140px 0 20px 0;
+    color: #333;
+    padding-left: 50px;
+}
+.layout_bot{
+    width: 600px;
+    font-size: 34px;
+    height: 40px;
+    font-weight: normal;
+    margin: 140px 0 20px 0;
+    color: #333;
+    float: right;
+}
+.layout_div .la_p{
+    float: right;
+    width: 600px;
+    font-size: 18px;
+    line-height: 35px;
+    padding-left: 0;
+    padding-right: 35px;
+}
+.layout_div p{
+    padding-left: 50px;
+    width: 600px;
+    font-size: 18px;
+    line-height: 35px;
+}
+.Choice .pleasure .name{
+    font-size: 55px;
+    font-weight: normal;
+    color: #333;
+    padding: 0 30px;
+    margin: 150px 0 60px 0;
+}
+.Choice .pleasure p{
+    padding: 0 30px;
+    font-size: 24px;
+    color: #000;
+    line-height: 50px;
+}
+.Core{
+    width: 100%;
+    overflow: hidden;
+    background: url("/new/home/smart/smarthome/img/Intelligence_bg1.jpg");
+    background-size: 100% 100%;
+    margin-top: 50px;
+}
+.biaoti{
+    width: 100%;
+    overflow: hidden;
+    font-size: 38px;
+    color: #fff;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    margin-top: 100px;
+    font-weight: normal;
+}
+.Core_p{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 60px;
+    line-height: 40px;
+}
+.Core_p p{
+    color: #ffffff;
+    line-height: 35px;
+}
+.Passive{
+    width: 100%;
+    overflow: hidden;
+    background: url("/new/home/smart/smarthome/img/Intelligence_bg2.jpg");
+    background-size: 100% 100%;
+    margin-top: 10px;
+}
+.Bus{
+    width: 100%;
+    overflow: hidden;
+    background: url("/new/home/smart/smarthome/img//Intelligence_bg3.jpg");
+    background-size: 100% 100%;
+    margin-top: 10px;
+}
+.Bus .about{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+}
+.Bus .about img{
+    width: 530px;
+    float: left;
+    margin-top: 70px;
+}
+.Bus_fr{
+    width: 630px;
+    float: right;
+}
+.Bus_fr .biaoti{
+    text-align: left;
+}
+.Bus_fr .Core_p{
+    text-align: left;
+}
+.Experience{
+    width: 100%;
+    overflow: hidden;
+    background: url("/new/home/smart/smarthome/img/Intelligence_bg4.jpg");
+    background-size: 100% 100%;
+    margin-top: 10px;
+}
+.Advantage{
+    width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    padding-top: 90px;
+    padding-bottom: 50px;
+}
+.Advantage .baioti{
+    text-align: center;
+    font-size: 42px;
+    line-height: 42px;
+    color: #333;
+    font-weight: normal;
+}
+.Advantage .xian{
+    display: block;
+    width: 107px;
+    height: 1px;
+    background: #e50012;
+    margin: 10px auto 25px auto;
+}
+.xiaobt{
+    text-align: center;
+    color: #666;
+    font-size: 20px;
+    display: block;
+    padding-bottom: 10px;
+}
+.jieshao{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 90px;
+}
+.jieshao a{
+    display: block;
+    float: left;
+    width: 25%;
+    overflow: hidden;
+}
+.jieshao a img{
+    display: block;
+    margin: auto;
+}
+.jieshao_bt{
+    font-size: 26px;
+    color: #333;
+    font-weight: normal;
+    margin: 50px 0;
+    width: 100%;
+    text-align: center;
+}
+.jieshao a p{
+    font-size: 18px;
+    color: #666;
+    line-height: 30px;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+.Remote{
     width: 1200px;
     overflow: hidden;
     margin: auto;
@@ -395,6 +388,50 @@ body{
 }
 .F_Life_img1{
     display: none;
+}
+@media screen and (min-width: 1199px){
+    .layout {
+        width: 100%;
+        overflow: hidden;
+        height: 475px;
+    }
+    .layout .layout_div{
+        float: left;
+        width: 50%;
+        background-color: #F2F2F2;
+        height: 100%;
+    }
+    .Core{
+        width: 100%;
+        overflow: hidden;
+        background: url("/new/home/smart/smarthome/img/Intelligence_bg1.jpg");
+        background-size: 100% 100%;
+        margin-top: 50px;
+    }
+    .Passive {
+        width: 100%;
+        height: 700px;
+        overflow: hidden;
+        background: url(/new/home/smart/smarthome/img/Intelligence_bg2.jpg);
+        background-size: 100% 100%;
+        margin-top: 10px;
+    }
+    .Bus {
+        width: 100%;
+        height: 700px;
+        overflow: hidden;
+        background: url(/new/home/smart/smarthome/img//Intelligence_bg3.jpg);
+        background-size: 100% 100%;
+        margin-top: 10px;
+    }
+    .Experience {
+        width: 100%;
+        height: 700px;
+        overflow: hidden;
+        background: url(/new/home/smart/smarthome/img/Intelligence_bg4.jpg);
+        background-size: 100% 100%;
+        margin-top: 10px;
+    }
 }
 @media screen and (max-width: 1200px){
     .F_Life {
@@ -469,5 +506,117 @@ body{
     .F_Life_img{
         display: none;
     }
-
+    .ship{
+        width: 100%;
+    }
+    .Pattern .Auto .Loop .text{
+        width: 100%;
+    }
+    .Pattern .Auto{
+        width: 100%;
+    }
+    .Pattern .Auto .Loop .fl{
+        width: 100%;
+    }
+    .Pattern .Auto .Loop .text2{
+        width: 100%;
+    }
+    .Remote{
+        width: 100%;
+    }
+    .Remote .Show a{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .Choice .top{
+        width: 100%;
+    }
+    .Choice .top span{
+        width: 50%;
+    }
+    .Choice .pleasure{
+        width: 100%;
+    }
+    .Choice .pleasure .name{
+        font-size: 40px;
+        margin: 100px 0 60px 0;
+    }
+    .Choice .pleasure p{
+        font-size: 20px;
+    }
+    .layout img{
+        width: 100%;
+        overflow: hidden;
+    }
+    .layout .layout_div{
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    .layout_bt{
+        width: 100%;
+        padding-left: 0;
+        font-size: 28px;
+        text-align: center;
+        margin: 80px 0 20px 0;
+    }
+    .layout_div p{
+        width: 90%;
+        margin: auto;
+        padding: 0;
+    }
+    .layout_bot{
+        width: 100%;
+        text-align: center;
+        font-size: 28px;
+        margin: 80px 0 20px 0;
+    }
+    .layout_div .la_p{
+        width: 90%;
+        padding: 0;
+        margin-right:5%;
+    }
+    .Core{
+        margin-top:0;
+    }
+    .biaoti{
+        margin-top: 30px;
+    }
+    .Core_p{
+        margin-top: 20px;
+        padding-bottom: 30px;
+    }
+    .Core_p p{
+        width: 95%;
+        margin: auto;
+    }
+    .Bus .about{
+        width: 100%;
+    }
+    .Bus .about img{
+        width: 100%;
+        display: none;
+    }
+    .Bus_fr{
+        width: 100%;
+    }
+    .Bus_fr .biaoti{
+        text-align: center;
+    }
+    .Advantage{
+        width: 100%;
+    }
+    .xiaobt{
+        font-size: 16px;
+    }
+    .jieshao a{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    .jieshao_bt{
+        line-height: 30px;
+        margin: 20px 0;
+    }
+    .jieshao{
+        margin-top: 50px;
+    }
 }

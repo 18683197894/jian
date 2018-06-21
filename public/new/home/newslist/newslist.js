@@ -123,7 +123,13 @@ function debounce(func, wait, immediate) {
                     $.each(data,function(i,n){
                         var a = tr.find('.loop').eq(0).clone(true);
                         a.attr('href','/newpro/newslist/play/'+n.id);
-                        a.find('img').attr('src','/uploads/news/titleimg/'+n.titleimg);
+                        if(n.titleimg[0] == 'h')
+                        {
+                            a.find('img').attr('src',n.titleimg);
+                        }else
+                        {
+                            a.find('img').attr('src','/uploads/news/titleimg/'+n.titleimg);
+                        }
                         a.find('img').attr('alt',n.title);
                         a.find('.name').html(n.title);
                         a.find('.content').html(n.leicon);
