@@ -73,6 +73,7 @@ class ReptilianController extends Controller
     		return response()->json(['status'=>'no','error'=>"共爬取".$max."篇文章,数据库过滤".($max-$mymax)."篇,关键字过滤".$keymax."篇"]);
     	}
     	$result = [];
+    	
     	foreach($res as $k => $v)
     	{	
     		$v['titleimg'] = json_decode($v['smeta'],True)['thumb'][0];
@@ -108,7 +109,8 @@ class ReptilianController extends Controller
     }
 
     public function sendhttp($url,$data,$init)
-    {
+    {	
+    	
     	// 拼接参数
     	$urlData = '';
     	if($data)
@@ -119,10 +121,14 @@ class ReptilianController extends Controller
     		}
     		$urlData = preg_replace('/&/','?',$urlData,1);
     	}
-    	  
+    	$ip = $this->Rand_IP();
+    	$header = array('CLIENT-IP:'.$ip,'X-FORWARDED-FOR:'.$ip,);
+	    
 	    $curlobj = curl_init();
 	    //设置访问的url
 	    curl_setopt($curlobj, CURLOPT_URL, $url.$urlData ); 
+	    curl_setopt($curlobj, CURLOPT_HTTPHEADER, $header);
+		curl_setopt($curlobj, CURLOPT_REFERER, $this->Rand_Url());
 	    //执行后不直接打印出
 	    curl_setopt($curlobj, CURLOPT_RETURNTRANSFER, true);  
 	 
@@ -135,5 +141,20 @@ class ReptilianController extends Controller
 	    return $output;
     }
 
-  
+  	public function Rand_IP(){
+
+	    $ip2id= round(rand(600000, 2550000) / 10000); //第一种方法，直接生成
+	    $ip3id= round(rand(600000, 2550000) / 10000);
+	    $ip4id= round(rand(600000, 2550000) / 10000);
+	    //下面是第二种方法，在以下数据中随机抽取
+	    $arr_1 = array("218","218","66","66","218","218","60","60","202","204","66","66","66","59","61","60","222","221","66","59","60","60","66","218","218","62","63","64","66","66","122","211");
+	    $randarr= mt_rand(0,count($arr_1)-1);
+	    $ip1id = $arr_1[$randarr];
+	    return $ip1id.".".$ip2id.".".$ip3id.".".$ip4id;
+	}
+	public function Rand_Url()
+	{
+		$url = array('http://www.csdn.net/','http://www.baidu.com','https://www.so.com/','https://www.google.com','http://www.sogou.com','http://www.bing.com');
+		return array_rand($url);
+	}
 }

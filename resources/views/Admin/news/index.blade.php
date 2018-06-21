@@ -76,7 +76,7 @@
                   <td style="text-align: center;vertical-align: middle;@if( session('edit_id') == $v->id ) color:red @endif">{{ $v->id }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->title }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->yuan }}</td>
-                  <td style="text-align: center;vertical-align: middle"><a href="{{ url('/uploads/news/titleimg/') }}/{{$v->titleimg }}"><img src="@if($v->titleimg[0] == 'h') {{ $v->titleimg }} @else {{ asset('/uploads/news/titleimg/') }}/{{$v->titleimg }} @endif" width="170px" height="100px" alt=""></a></td>
+                  <td style="text-align: center;vertical-align: middle"><a href="@if($v->titleimg[0] == 'h') {{ $v->titleimg }} @else {{ url('/uploads/news/titleimg/') }}/{{$v->titleimg }} @endif" target="_blank"><img src="@if($v->titleimg[0] == 'h') {{ $v->titleimg }} @else {{ asset('/uploads/news/titleimg/') }}/{{$v->titleimg }} @endif" width="170px" height="100px" alt=""></a></td>
                   <td style="text-align: center;vertical-align: middle">{{ date("Y-m-d H:i:s",$v->time) }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->click }}</td>
                   <td style="text-align: center;vertical-align: middle"><a href="{{ url('/jslmadmin/newslei/newsedit') }}/{{ $v->id }}?page={{ $page }}">编辑
