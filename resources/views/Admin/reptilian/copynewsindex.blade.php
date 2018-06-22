@@ -47,6 +47,7 @@
                   <label>目标地址</label>
                   <select name="url" class="form-control">
                     <option  index="0" value="http://www.jia360.com/index/getNews" selected="selected">腾讯家居</option>
+                    <option  index="1" value="http://news.jiaju.sina.com.cn/">新浪家居</option>
                   </select>
                 </div>
 
@@ -85,7 +86,35 @@
                 </div>
 
 				</div>
-				
+				<div class="lei">
+
+					<div class="form-group">
+	                  <label>分类</label>
+	                  <select name='cid' class="form-control">
+	                    <option   value="p-">首页</option>
+	                    <option   value="list-jiaju-a40o1p">看点</option>
+	                    <option   value="list-jiaju-a41o1p">观点</option>
+	                    <option   value="list-jiaju-a42o1p">企业</option>
+	                    <option   value="list-jiaju-a43o1p">真言2018</option>
+                  	  </select>
+                	</div>
+					
+					 <div class="form-group">
+                  		<label for="exampleInputEmail1">开始页 &nbsp;默认0为最新</label>
+                  		<input type="text" name="start" class="form-control" value="0" id="exampleInputEmail1" >
+                	</div>
+                	
+                	<div class="form-group">
+	                  <label>页数</label>
+	                  <select name="page" class="form-control">
+	                    <option   value="1">1</option>
+	                    <option   value="2">2</option>
+	                    <option   value="3">3</option>
+	                  </select>
+	                </div>
+
+				</div>
+
 				<div class="form-group">
                   <label>版本</label>
                   <select name="pid" class="form-control">
@@ -120,10 +149,10 @@
 @section('js')
 <script>
 
-	// $(function(){
-	// 	var a = $('select[name="url"] option:selected').val()
-	// 	selected()
-	// })
+	$(function(){
+		var a = $('select[name="url"] option:selected').val()
+		selected()
+	})
 	
 	$('select[name="url"] option').on('click',function(){
 		selected()
@@ -136,7 +165,7 @@
 	}
 
 	$('.ajax').one('click',function(){
-		getnews()
+			getnews()
 	})
 
 	function getnews()
@@ -145,6 +174,7 @@
 
 		var url = $('select[name="url"] option:selected').val();
 		var data = getform(url)
+		
 		if(data == 'false')
 		{	
 			$('.ajax').one('click',getnews);
@@ -156,20 +186,24 @@
 		$('.ajax').html('<i class="fa fa-spin fa-refresh "></i>&nbsp; 正在爬取');
 		$('.pace-inactive').css('display','block');
 
-		$.ajax('/reptilian/copynews_tx',{
+		$.ajax(data.urls,{
 			type : 'POST',
-			data : {url:data.url,cid:data.cid,start:data.start,pid:data.pid,page:data.page,key:data.key,_token:$("meta[name='csrf-token']").attr('content')},
+			data : data,
 			ansyc : false,
 			success : function(data)
 			{
 				if(data.status == 'no')
 				{
-				restore(data.error);
+					restore(data.error);
 				}else if(data.status == 'ok')
 				{
 					alert(data.info);
 					window.location.href = data.redirect;
+				}else
+				{
+					restore('爬取失败!');
 				}
+				
 				
 
 			},
@@ -201,23 +235,35 @@
 
 	function getform(url)
 	{	
-		var data = []
+		var data = {};
 		if(url == 'http://www.jia360.com/index/getNews')
+		{	
+			var urls = '/reptilian/copynews_tx';
+		}else if(url == "http://news.jiaju.sina.com.cn/")
 		{
-			data['url'] = url;
-			data['cid'] = $('.avtion > div > select[name="cid"] option:selected').val();
-			data['start'] = $('.avtion > div > input[name="start"]').val();
-			data['page'] = $('.avtion > div > select[name="page"] option:selected').val();
-			data['pid'] = $('select[name="pid"] option:selected').val();
-			data['key'] = $('input[name="key"]').val();
-			if(!/^[0-9]+$/.test(data.start)){
-        		alert("开始页请输入请输入数字!");
-        		return 'false';
-    		}
-    		
-			return data;
-    	
+			var urls = '/reptilian/copynews_xl';
+		}else
+		{
+			return 'false';
 		}
+		data = 
+		{	
+			url:url,
+			cid:$('.avtion > div > select[name="cid"] option:selected').val(),
+			start:$('.avtion > div > input[name="start"]').val(),
+			pid:$('select[name="pid"] option:selected').val(),
+			page:$('.avtion > div > select[name="page"] option:selected').val(),
+			key:$('input[name="key"]').val(),
+			_token:$("meta[name='csrf-token']").attr('content'),
+			urls:urls
+		}
+
+		if(!/^[0-9]+$/.test(data.start)){
+    		alert("开始页请输入请输入数字!");
+    		return 'false';
+		}
+		return data;
+		
 	}
 </script>
 @endsection('js')
