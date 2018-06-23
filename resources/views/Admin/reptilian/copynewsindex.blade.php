@@ -43,9 +43,9 @@
                 .lei{display:none;}
 				.avtion{display:block;}
                 </style>
-                <div class="form-group">
+                <div  class="form-group">
                   <label>目标地址</label>
-                  <select name="url" class="form-control">
+                  <select name="url" class="form-control" onchange="return selected()">
                     <option  index="0" value="http://www.jia360.com/index/getNews" selected="selected">腾讯家居</option>
                     <option  index="1" value="http://news.jiaju.sina.com.cn/">新浪家居</option>
                   </select>
@@ -148,15 +148,16 @@
 
 @section('js')
 <script>
-
 	$(function(){
-		var a = $('select[name="url"] option:selected').val()
 		selected()
 	})
 	
-	$('select[name="url"] option').on('click',function(){
-		selected()
-	})
+	// $('select[name="url"] > option').('onchange',function()
+	// {	
+	// 	alert(1);
+	// 	selected()
+	// })
+	
 	function selected()
 	{
 		var index = $('select[name="url"] option:selected').attr('index');
@@ -180,6 +181,7 @@
 			$('.ajax').one('click',getnews);
 			return false;
 		}
+		
 		$('.form-group > input').attr('disabled','disabled');
 		$('.form-group > select').attr('disabled','disabled');
 		// $('.ajax i').addClass('fa-refresh')
