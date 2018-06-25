@@ -97,7 +97,54 @@ class NewsController extends Controller
     }
 
     public function newsplay($id)
-    {
+    {   
+        // function putContent($fileUrl,$id)
+        // {
+        //     $data = \DB::table('news')
+        //         ->select('id','title','yuan','time','titleimg','content','click','pid','leicon','keyworlds','description','titles')
+        //         ->where('id',$id)
+        //         ->first();
+        //     if(!$data)
+        //     {
+        //         return back()->with(['info'=>'数据不存在']);
+        //     }
+
+        //     \DB::table('news')->where('id',$data->id)->update(['click'=>$data->click + 1]);
+        //     $title = [
+        //     'title'=> $data->titles,
+        //     'keyworlds'=> $data->keyworlds,
+        //     'description'=> $data->description,
+        //     ];
+        //     $ban = \DB::table('newslei')->select('id','title','img')->get();
+        //     $pid = \DB::table('newslei')->select('id','title')->where('id',$data->pid)->first();
+        //     $click = \DB::table('news')->select('titleimg','id','click','title')->orderBy('click','desc')->offset(0)->limit(10)->get();
+        //     $content =  view('Newpro.Home.News.newsplay',['data'=>$data,'title'=>$title,'pid'=>$pid,'ban'=>$ban,'click'=>$click])->__toString();
+            
+        //     file_put_contents($fileUrl, $content);
+        //     echo $content;exit;
+        // }
+
+        // $fileUrl = "../storage/cache/news/news_".$id.".html";
+        // $time_init   = 3600 * 24;
+
+        // if(file_exists($fileUrl))
+        // {   
+        //     $time_kai = filemtime($fileUrl);
+        //     if(($time_kai+$time_init) < time())
+        //     {   
+        //         @unlink($fileUrl);
+        //         putContent($fileUrl,$id);
+        //     }else
+        //     {
+        //         $content = file_get_contents($fileUrl);
+        //         echo $content;exit;
+        //     }
+            
+        // }else
+        // {   
+        //     putContent($fileUrl,$id);
+        // }
+
         $data = \DB::table('news')
                 ->select('id','title','yuan','time','titleimg','content','click','pid','leicon','keyworlds','description','titles')
                 ->where('id',$id)

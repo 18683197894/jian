@@ -18,7 +18,7 @@
             <div class="title">{{ $data->title }}</div>
             <div class="time">
                 来源：{{ $data->yuan }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日期：{{ date('Y年m月d日',$data->time) }}
-                <span>{{ $data->click }}</span>
+                <!-- <span>{{ $data->click }}</span> -->
             </div>
             <div class="detail" style="font-size:16px">
                 @php     echo $data->content     @endphp

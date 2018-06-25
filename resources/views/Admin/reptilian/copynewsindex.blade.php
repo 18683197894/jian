@@ -152,11 +152,6 @@
 		selected()
 	})
 	
-	// $('select[name="url"] > option').('onchange',function()
-	// {	
-	// 	alert(1);
-	// 	selected()
-	// })
 	
 	function selected()
 	{
