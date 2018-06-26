@@ -219,7 +219,7 @@
             success:function(data){
               if(data ==1 ){
               alert('删除成功!');
-               tr.empty();
+               tr.css('display','none');
               }
               if(data ==2){
                 alert('删除失败！');

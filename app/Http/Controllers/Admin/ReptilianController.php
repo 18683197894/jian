@@ -92,20 +92,33 @@ class ReptilianController extends Controller
     		$content = (string) $this->sendhttp("http://www.jia360.com/new/".$v['id'].'.html',null,'GET');
     		
     		preg_match('/<div class="newsD_contend">(.*?)<\/div>/', $content,$contents);
-    		$result[$k]['content'] = $contents[1].'<br>';
+    		if(!isset($contents[1]) or strlen($contents[1]) >65500 )
+            {   
+                $mymax += 1;
+                unset($result[$k]);
+                continue;
+            }
 
+            $result[$k]['content'] = $contents[1].'<br>';
     		preg_match('/<span class="source fr" style="margin-top: 12px;">来源：(.*?) <\/span>/', $content,$yuans);
     		$result[$k]['yuan'] = $yuans[1];
     	}
-    	
-    	$dbres = \DB::table('news')->insert($result);
-    	if($dbres)
-    	{
-    		return response()->json(['status'=>'ok','redirect'=>"/jslmadmin/newslei/newsindex/{$request->pid}",'info'=>"共爬取".$max."篇文章,数据库过滤".($max-$mymax)."篇,关键字过滤".$keymax."篇"]);
-    	}else
-    	{
-    		return response()->json(['status'=>'no','error'=>'数据库写入失败!']);
-    	}
+
+        foreach ($result as $key => $value) {
+            # code...
+            sleep(0.1);
+            \DB::table('news')->insert($value);
+        }
+        return response()->json(['status'=>'ok','redirect'=>"/jslmadmin/newslei/newsindex/{$request->pid}",'info'=>"共爬取".$max."篇文章,数据库过滤".($max-$mymax)."篇,关键字过滤".$keymax."篇"]);
+
+    	// $dbres = \DB::table('news')->insert($result);
+    	// if($dbres)
+    	// {
+    	// 	return response()->json(['status'=>'ok','redirect'=>"/jslmadmin/newslei/newsindex/{$request->pid}",'info'=>"共爬取".$max."篇文章,数据库过滤".($max-$mymax)."篇,关键字过滤".$keymax."篇"]);
+    	// }else
+    	// {
+    	// 	return response()->json(['status'=>'no','error'=>'数据库写入失败!']);
+    	// }
     }
 
     public function copynews_xl(Request $request)
@@ -156,7 +169,8 @@ class ReptilianController extends Controller
     	foreach($res as $k => $v)
     	{
     		foreach($titles as $kk => $vv)
-    		{
+    		{ 
+
     			if(trim($v['title']) == trim($vv->title))
     			{
     				unset($res[$k]);
@@ -200,6 +214,13 @@ class ReptilianController extends Controller
 
 			preg_match('/<div id="b09" class="articleTextad"><\/div>(.*?)<\/div>/s', $content,$contents);
 			
+            if(!isset($contents[1]) or strlen($contents[1]) >65500 )
+            {   
+                $mymax += 1;
+                unset($res[$k]);
+                continue;
+            }
+
 			$res[$k]['content'] = $contents[1].'<br>';
 			preg_match('/（来源：(.*?)）/', $content,$yuans);
 			if(isset($yuans[1]) && !empty($yuans[1]))
@@ -210,17 +231,23 @@ class ReptilianController extends Controller
 				$res[$k]['yuan'] = '新浪家居';
 			}
     	}
-
-    	$dbres = \DB::table('news')->insert($res);
-    	if($dbres)
-    	{
-    		return response()->json(['status'=>'ok','redirect'=>"/jslmadmin/newslei/newsindex/{$request->pid}",'info'=>"共爬取".$max."篇文章,数据库过滤".($max-$mymax)."篇,关键字过滤".$keymax."篇"]);
-    	}else
-    	{
-    		return response()->json(['status'=>'no','error'=>'数据库写入失败!']);
-    	}
+        
+        foreach ($res as $key => $value) {
+            # code...
+            sleep(0.1);
+            \DB::table('news')->insert($value);
+        }
+        return response()->json(['status'=>'ok','redirect'=>"/jslmadmin/newslei/newsindex/{$request->pid}",'info'=>"共爬取".$max."篇文章,数据库过滤".($max-$mymax)."篇,关键字过滤".$keymax."篇"]);
+        
+        //$dbres = \DB::table('news')->insert($res);
+    	// if($dbres)
+    	// {
+    	// 	return response()->json(['status'=>'ok','redirect'=>"/jslmadmin/newslei/newsindex/{$request->pid}",'info'=>"共爬取".$max."篇文章,数据库过滤".($max-$mymax)."篇,关键字过滤".$keymax."篇"]);
+    	// }else
+    	// {
+    	// 	return response()->json(['status'=>'no','error'=>'数据库写入失败!']);
+    	// }
     	
-
     }
 
     public function sendhttp($url,$data,$init)
