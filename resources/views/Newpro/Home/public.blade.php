@@ -8,6 +8,7 @@
     <meta name="description" content="{{ $title['description'] or '建商联盟' }}">
     <meta name="360-site-verification" content="f034206a9b383d23528ae77b7eff60f6" />
     <meta name="baidu-site-verification" content="qdxy3UDlEZ" />
+    <meta name="referrer" content="no-referrer"/>
     <!--禁止手机自动缩放-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!--让IE的文档模式永远都是最新的-->

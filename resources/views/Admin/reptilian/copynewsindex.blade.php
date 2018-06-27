@@ -48,9 +48,11 @@
                   <select name="url" class="form-control" onchange="return selected()">
                     <option  index="0" value="http://www.jia360.com/index/getNews" selected="selected">腾讯家居</option>
                     <option  index="1" value="http://news.jiaju.sina.com.cn/">新浪家居</option>
+                    <option  index="2" value="http://news.to8to.com/">土巴兔</option>
                   </select>
                 </div>
-
+				
+				<!-- 腾讯 -->
 				<div class="lei avtion">
                 <div class="form-group">
                   <label>分类</label>
@@ -86,6 +88,7 @@
                 </div>
 
 				</div>
+				<!-- 新浪 -->
 				<div class="lei">
 
 					<div class="form-group">
@@ -110,6 +113,41 @@
 	                    <option   value="1">1</option>
 	                    <option   value="2">2</option>
 	                    <option   value="3">3</option>
+	                  </select>
+	                </div>
+
+				</div>
+				
+				<!-- 土巴士 -->
+				<div class="lei">
+
+					<div class="form-group">
+	                  <label>分类</label>
+	                  <select name='cid' class="form-control">
+	                    <option   value="xinwen/m">新闻首页</option>
+	                    <option   value="hangye/m">看点</option>
+	                    <option   value="shichang/m">趋势解读</option>
+	                    <option   value="zhiliang/m">投诉曝光</option>
+	                    <option   value="pinpai/m">品牌风向</option>
+	                    <option   value="shijian/m">大事件</option>
+	                    <option   value="shijian/m">大事件</option>
+	                    <option   value="weiyi/m">冷平热议</option>
+                  	  </select>
+                	</div>
+					
+					 <div class="form-group">
+                  		<label for="exampleInputEmail1">开始页 &nbsp;默认0为最新</label>
+                  		<input type="text" name="start" class="form-control" value="0" id="exampleInputEmail1" >
+                	</div>
+                	
+                	<div class="form-group">
+	                  <label>页数</label>
+	                  <select name="page" class="form-control">
+	                    <option   value="1">1</option>
+	                    <option   value="2">2</option>
+	                    <option   value="3">3</option>
+	                    <option   value="4">4</option>
+	                    <option   value="5">5</option>
 	                  </select>
 	                </div>
 
@@ -143,7 +181,6 @@
       
 
     </section>
-
 @endsection('content')
 
 @section('js')
@@ -170,7 +207,7 @@
 
 		var url = $('select[name="url"] option:selected').val();
 		var data = getform(url)
-		
+
 		if(data == 'false')
 		{	
 			$('.ajax').one('click',getnews);
@@ -239,6 +276,9 @@
 		}else if(url == "http://news.jiaju.sina.com.cn/")
 		{
 			var urls = '/reptilian/copynews_xl';
+		}else if(url == 'http://news.to8to.com/')
+		{
+			var urls = '/reptilian/copynews_tbt'
 		}else
 		{
 			return 'false';

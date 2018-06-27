@@ -207,6 +207,7 @@ Route::post('/jslmadmin/newslei/interlocution/interdel','Admin\InterlocutionCont
 
 Route::post('/reptilian/copynews_tx','Admin\ReptilianController@copynews_tx');
 Route::post('/reptilian/copynews_xl','Admin\ReptilianController@copynews_xl');
+Route::post('/reptilian/copynews_tbt','Admin\ReptilianController@copynews_tbt');
 Route::get('/reptilian/copynewsindex','Admin\ReptilianController@copynewsindex');
 
 //案例管理

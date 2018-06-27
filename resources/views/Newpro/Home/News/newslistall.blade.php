@@ -85,5 +85,6 @@
 @endsection('content')
 
 @section('js')
+
 <script src="{{ asset('/new/home/newslist/newslist.js') }}"></script>
 @endsection('js')

@@ -104,10 +104,10 @@ class ReptilianController extends Controller
     		$result[$k]['yuan'] = $yuans[1];
     	}
 
-        foreach ($result as $key => $value) {
-            # code...
-            sleep(0.1);
-            \DB::table('news')->insert($value);
+        foreach ($result as $k => $v) 
+        {   
+                $sql = "INSERT INTO news (id,title,content,titleimg,time,click,pid,leicon,zhi,szhi,keyworlds,description,titles,yuan) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                \DB::insert($sql,[NULL,$v['title'],$v['content'],$v['titleimg'],$v['time'],$v['click'],$v['pid'],$v['leicon'],$v['zhi'],$v['szhi'],$v['keyworlds'],$v['description'],$v['titles'],$v['yuan']]);
         }
         return response()->json(['status'=>'ok','redirect'=>"/jslmadmin/newslei/newsindex/{$request->pid}",'info'=>"共爬取".$max."篇文章,数据库过滤".($max-$mymax)."篇,关键字过滤".$keymax."篇"]);
 
@@ -225,19 +225,19 @@ class ReptilianController extends Controller
 			preg_match('/（来源：(.*?)）/', $content,$yuans);
 			if(isset($yuans[1]) && !empty($yuans[1]))
 			{
-				$res[$k]['yuan'] = '建商联盟';
+				$res[$k]['yuan'] = $yuans[1];
 			}else
 			{
 				$res[$k]['yuan'] = '新浪家居';
 			}
     	}
-        
-        foreach ($res as $key => $value) {
-            # code...
-            sleep(0.1);
-            \DB::table('news')->insert($value);
+        foreach ($res as $k => $v) 
+        {   
+                $sql = "INSERT INTO news (id,title,content,titleimg,time,click,pid,leicon,zhi,szhi,keyworlds,description,titles,yuan) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                \DB::insert($sql,[NULL,$v['title'],$v['content'],$v['titleimg'],$v['time'],$v['click'],$v['pid'],$v['leicon'],$v['zhi'],$v['szhi'],$v['keyworlds'],$v['description'],$v['titles'],$v['yuan']]);
         }
         return response()->json(['status'=>'ok','redirect'=>"/jslmadmin/newslei/newsindex/{$request->pid}",'info'=>"共爬取".$max."篇文章,数据库过滤".($max-$mymax)."篇,关键字过滤".$keymax."篇"]);
+        
         
         //$dbres = \DB::table('news')->insert($res);
     	// if($dbres)
@@ -248,6 +248,122 @@ class ReptilianController extends Controller
     	// 	return response()->json(['status'=>'no','error'=>'数据库写入失败!']);
     	// }
     	
+    }
+
+    public function copynews_tbt(Request $request)
+    {   
+        $res = [];
+        for($i=1;$i<=$request->page;$i++)
+        {   
+            $res_tmp = $this->sendhttp($request->url.$request->cid.($request->start+$i),null,'GET');
+            if($res_tmp)
+            {   
+
+                $ads = [];
+                $list = [];
+                preg_match('/<div class="news_list">.*?<div class="mod_pages">/s', $res_tmp,$lists);
+                preg_match_all('/<li>.*?<\/li>/s', $lists[0],$list);
+                
+                foreach($list[0] as $k => $v)
+                {   
+                    preg_match('/<a title="(.*?)" target="_blank" href="(.*?)" class="news_img"><img src="(.*?)" alt="(.*?)" width="140" height="102"><\/a>/', $v,$title);
+                    $ads[$k]['title'] = $title[1];
+                    $ads[$k]['content'] = $request->url.$title[2];
+                    $ads[$k]['titleimg'] = $title[3];
+                    $ads[$k]['time'] = time();
+                    $ads[$k]['click'] = 0;
+                    $ads[$k]['pid'] = $request->pid;
+                    preg_match('/<div class="news_cont">(.*?)<a target="_blank"/s', $v,$leicon);
+                    $ads[$k]['leicon'] = $leicon[1];
+                    $ads[$k]['zhi'] = 0;
+                    $ads[$k]['szhi'] = 0;
+                    $ads[$k]['keyworlds'] = $ads[$k]['title'].'建商联盟，建商新闻动态，宜宾装修新闻，宜宾家居新闻';
+                    $ads[$k]['description'] = $ads[$k]['leicon'];
+                    $ads[$k]['titles'] = $ads[$k]['title'];
+                }
+            }
+
+            $res = array_merge($res,$ads);
+        }
+
+        $max = count($res);
+        if($max <= 0)
+        {
+            return response()->json(['status'=>'no','error'=>'没有爬取到文章!']);
+        }
+
+        $titles = \DB::table('news')->select('title')->get();
+        foreach($res as $k => $v)
+        {
+            foreach($titles as $kk => $vv)
+            { 
+
+                if(trim($v['title']) == trim($vv->title))
+                {
+                    unset($res[$k]);
+                }
+            }
+        }
+
+        $mymax = count($res);
+        if($mymax <= 0)
+        {
+            return response()->json(['status'=>'no','error'=>'数据库已过滤全部文章!']);
+        }
+
+        $keymax = 0;
+        if($request->key)
+        {
+            $keys = explode('-',$request->key);
+            foreach($res as $k => $v)
+            {   
+                foreach($keys as $kk => $vv)
+                {   
+                    trim($vv);
+                    $preg = "/{$vv}/";
+                    if(preg_match($preg, trim($v['title'])))
+                    {
+                        unset($res[$k]);
+                        $keymax += 1;
+                    }
+                }
+            }
+        }
+
+        if(count($res) <= 0 )
+        {
+            return response()->json(['status'=>'no','error'=>"共爬取".$max."篇文章,数据库过滤".($max-$mymax)."篇,关键字过滤".$keymax."篇"]);
+        }
+
+        foreach ($res as $k => $v) 
+        {
+            $content = (string) $this->sendhttp($v['content'],null,'GET');
+
+            preg_match('/<div class="news_detail_txt">(.*?)<\/div>/s', $content,$contents);
+            
+            if(!isset($contents[1]) or strlen($contents[1]) >65500 )
+            {   
+                $mymax += 1;
+                unset($res[$k]);
+                continue;
+            }
+
+            $res[$k]['content'] = $contents[1].'<br>';
+            preg_match('/&emsp;&emsp;来源：(.*?)        <\/div>/', $content,$yuans);
+            if(isset($yuans[1]) && !empty($yuans[1]) && $yuans[1] != '企业供稿')
+            {
+                $res[$k]['yuan'] = $yuans[1];
+            }else
+            {
+                $res[$k]['yuan'] = '土巴兔';
+            }
+        }
+        foreach ($res as $k => $v) 
+        {   
+                $sql = "INSERT INTO news (id,title,content,titleimg,time,click,pid,leicon,zhi,szhi,keyworlds,description,titles,yuan) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                \DB::insert($sql,[NULL,$v['title'],$v['content'],$v['titleimg'],$v['time'],$v['click'],$v['pid'],$v['leicon'],$v['zhi'],$v['szhi'],$v['keyworlds'],$v['description'],$v['titles'],$v['yuan']]);
+        }
+        return response()->json(['status'=>'ok','redirect'=>"/jslmadmin/newslei/newsindex/{$request->pid}",'info'=>"共爬取".$max."篇文章,数据库过滤".($max-$mymax)."篇,关键字过滤".$keymax."篇"]);
     }
 
     public function sendhttp($url,$data,$init)
