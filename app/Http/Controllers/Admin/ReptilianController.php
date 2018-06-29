@@ -223,9 +223,17 @@ class ReptilianController extends Controller
 
 			$res[$k]['content'] = $contents[1].'<br>';
 			preg_match('/（来源：(.*?)）/', $content,$yuans);
+                
 			if(isset($yuans[1]) && !empty($yuans[1]))
-			{
-				$res[$k]['yuan'] = $yuans[1];
+			{   
+                if(strlen($yuans[1]) > 20)
+                {
+                    preg_match('/<span style="font-family: 宋体, SimSun; font-size: 16px;">(.*?)<\/span>/',$yuans[1],$yuans_s);
+                    $res[$k]['yuan'] = $yuans_s[1];
+                }else
+                {
+                    $res[$k]['yuan'] = $yuans[1];
+                }
 			}else
 			{
 				$res[$k]['yuan'] = '新浪家居';
@@ -346,9 +354,11 @@ class ReptilianController extends Controller
                 $mymax += 1;
                 unset($res[$k]);
                 continue;
-            }
+            }                                 
 
-            $res[$k]['content'] = $contents[1].'<br>';
+            $res[$k]['content'] = str_replace('<span style="font-size:14px;">','<span style="font-size:16px;">',$contents[1]).'<br>';
+            $res[$k]['content'] = str_replace('<span style="font-size:14px">','<span style="font-size:16px;">',$res[$k]['content']).'<br>';
+
             preg_match('/&emsp;&emsp;来源：(.*?)        <\/div>/', $content,$yuans);
             if(isset($yuans[1]) && !empty($yuans[1]) && $yuans[1] != '企业供稿')
             {

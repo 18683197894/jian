@@ -80,6 +80,7 @@ body{
     overflow: hidden;
     font-size: 12px;
 }
+
 .NewS_Left .detail .name{
     font-size: 14px;
     text-align: center;
@@ -88,7 +89,7 @@ body{
 }
 .NewS_Left .detail p{
     margin-top: 10px;
-    line-height: 20px;
+    line-height: 1.75em;
 }
 .NewS_Right{
     width: 450px;

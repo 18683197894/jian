@@ -130,7 +130,6 @@
 	                    <option   value="zhiliang/m">投诉曝光</option>
 	                    <option   value="pinpai/m">品牌风向</option>
 	                    <option   value="shijian/m">大事件</option>
-	                    <option   value="shijian/m">大事件</option>
 	                    <option   value="weiyi/m">冷平热议</option>
                   	  </select>
                 	</div>
