@@ -79,7 +79,7 @@
                   <td style="text-align: center;vertical-align: middle"><a href="@if($v->titleimg[0] == 'h') {{ $v->titleimg }} @else {{ url('/uploads/news/titleimg/') }}/{{$v->titleimg }} @endif" target="_blank"><img src="@if($v->titleimg[0] == 'h') {{ $v->titleimg }} @else {{ asset('/uploads/news/titleimg/') }}/{{$v->titleimg }} @endif" width="170px" height="100px" alt=""></a></td>
                   <td style="text-align: center;vertical-align: middle">{{ date("Y-m-d H:i:s",$v->time) }}</td>
                   <td style="text-align: center;vertical-align: middle">{{ $v->click }}</td>
-                  <td style="text-align: center;vertical-align: middle"><a href="{{ url('/jslmadmin/newslei/newsedit') }}/{{ $v->id }}?page={{ $page }}">编辑
+                  <td style="text-align: center;vertical-align: middle"> <a href="{{ url('/newpro/newslist/play/').'/'.$v->id }}" target="_blank" >预览</a> &nbsp;&nbsp; <a href="{{ url('/jslmadmin/newslei/newsedit') }}/{{ $v->id }}?page={{ $page }}">编辑
                   </a>&nbsp;&nbsp;<a class="shan" href="#" onclick="return false;">删除&nbsp;</a>&nbsp;&nbsp;
                   @if($v->zhi == 0)<a href="javascript:;" index="{{ $v->pid }}" class="zhi">移入列表置顶</a>@else <a href="javascript:;" index="{{ $v->pid }}" >已置顶 @endif&nbsp;&nbsp;
                   @if($v->szhi == 0)<a href="javascript:;" szhi="0" index="{{ $v->id }}" class="szhi">移入首页置顶</a>@else <a href="javascript:;" index="{{ $v->id }}" szhi="1" class="szhi"  >移出首页置顶 @endif

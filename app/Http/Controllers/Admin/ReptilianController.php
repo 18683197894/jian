@@ -99,9 +99,21 @@ class ReptilianController extends Controller
                 continue;
             }
 
-            $result[$k]['content'] = $contents[1].'<br>';
-    		preg_match('/<span class="source fr" style="margin-top: 12px;">来源：(.*?) <\/span>/', $content,$yuans);
-    		$result[$k]['yuan'] = $yuans[1];
+
+            $result[$k]['yuan'] = '建商联盟';
+            // （来源：九正建材网）
+            preg_match('/（来源：(.*?)）/', $content,$yuan1);
+            if(isset($yuan1[1]) && !empty($yuan1[1]))
+            {
+                $result[$k]['content'] = $contents[1].'<br>';
+                continue;
+            }else
+            {
+                preg_match('/<span class="source fr" style="margin-top: 12px;">来源：(.*?) <\/span>/', $content,$yuan2);
+                $yuan3 = '<p style="margin-bottom: 15px; line-height: 1.75em; text-indent: 2em;">（来源：'.$yuan2[1].'）</p><br>';
+                $result[$k]['content'] = $contents[1].$yuan3.'<br>';
+                continue;
+            }
     	}
 
         foreach ($result as $k => $v) 
@@ -111,14 +123,6 @@ class ReptilianController extends Controller
         }
         return response()->json(['status'=>'ok','redirect'=>"/jslmadmin/newslei/newsindex/{$request->pid}",'info'=>"共爬取".$max."篇文章,数据库过滤".($max-$mymax)."篇,关键字过滤".$keymax."篇"]);
 
-    	// $dbres = \DB::table('news')->insert($result);
-    	// if($dbres)
-    	// {
-    	// 	return response()->json(['status'=>'ok','redirect'=>"/jslmadmin/newslei/newsindex/{$request->pid}",'info'=>"共爬取".$max."篇文章,数据库过滤".($max-$mymax)."篇,关键字过滤".$keymax."篇"]);
-    	// }else
-    	// {
-    	// 	return response()->json(['status'=>'no','error'=>'数据库写入失败!']);
-    	// }
     }
 
     public function copynews_xl(Request $request)
@@ -220,41 +224,36 @@ class ReptilianController extends Controller
                 unset($res[$k]);
                 continue;
             }
-
-			$res[$k]['content'] = $contents[1].'<br>';
-			preg_match('/（来源：(.*?)）/', $content,$yuans);
-                
-			if(isset($yuans[1]) && !empty($yuans[1]))
-			{   
-                if(strlen($yuans[1]) > 20)
-                {
-                    preg_match('/<span style="font-family: 宋体, SimSun; font-size: 16px;">(.*?)<\/span>/',$yuans[1],$yuans_s);
-                    $res[$k]['yuan'] = $yuans_s[1];
+            $res[$k]['yuan'] = '建商联盟';
+			// $res[$k]['content'] = $contents[1].'<br>';
+			preg_match('/（来源：(.*?)）/s', $content,$yuan1);
+            if(isset($yuan1[1]) && !empty($yuan1[1]))
+            {   
+                if(strlen($yuan1[1]) < 20)
+                {   
+                    $res[$k]['content'] = str_replace($yuan1[0],'',$contents[1]).'<p style="margin-bottom: 15px; line-height: 1.75em; text-indent: 2em;">（来源：'.$yuan1[1].'）</p><br>';
+                    continue;
+                    
                 }else
                 {
-                    $res[$k]['yuan'] = $yuans[1];
+                    preg_match('/<span style="font-family: 宋体, SimSun; font-size: 16px;">(.*?)<\/span>/',$yuan1[1],$yuan2);
+                    $res[$k]['content'] = str_replace($yuan2[0],'',$contents[1]).'<p style="margin-bottom: 15px; line-height: 1.75em; text-indent: 2em;">（来源：'.$yuan2[1].'）</p><br>';
+                    continue;
                 }
-			}else
-			{
-				$res[$k]['yuan'] = '新浪家居';
-			}
+                
+            }else
+            {
+                $res[$k]['content'] = $contents[1].'<p style="margin-bottom: 15px; line-height: 1.75em; text-indent: 2em;">（来源：新浪家居）</p><br>';
+            }
     	}
         foreach ($res as $k => $v) 
         {   
                 $sql = "INSERT INTO news (id,title,content,titleimg,time,click,pid,leicon,zhi,szhi,keyworlds,description,titles,yuan) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                $v['content'] = str_replace('font-size: 14px;','font-size: 16px;',$v['content']);
+                $v['content'] = str_replace('font-size: 12px;','font-size: 14px;',$v['content']);
                 \DB::insert($sql,[NULL,$v['title'],$v['content'],$v['titleimg'],$v['time'],$v['click'],$v['pid'],$v['leicon'],$v['zhi'],$v['szhi'],$v['keyworlds'],$v['description'],$v['titles'],$v['yuan']]);
         }
         return response()->json(['status'=>'ok','redirect'=>"/jslmadmin/newslei/newsindex/{$request->pid}",'info'=>"共爬取".$max."篇文章,数据库过滤".($max-$mymax)."篇,关键字过滤".$keymax."篇"]);
-        
-        
-        //$dbres = \DB::table('news')->insert($res);
-    	// if($dbres)
-    	// {
-    	// 	return response()->json(['status'=>'ok','redirect'=>"/jslmadmin/newslei/newsindex/{$request->pid}",'info'=>"共爬取".$max."篇文章,数据库过滤".($max-$mymax)."篇,关键字过滤".$keymax."篇"]);
-    	// }else
-    	// {
-    	// 	return response()->json(['status'=>'no','error'=>'数据库写入失败!']);
-    	// }
     	
     }
 
@@ -356,16 +355,18 @@ class ReptilianController extends Controller
                 continue;
             }                                 
 
-            $res[$k]['content'] = str_replace('<span style="font-size:14px;">','<span style="font-size:16px;">',$contents[1]).'<br>';
-            $res[$k]['content'] = str_replace('<span style="font-size:14px">','<span style="font-size:16px;">',$res[$k]['content']).'<br>';
-
+            $res[$k]['yuan'] = '建商联盟';
+            $str_content = str_replace('<span style="font-size:14px">','<span style="font-size:16px">',$contents[1]);
+            $str_content = str_replace('<span style="font-size:14px;">','<span style="font-size:16px;">',$str_content);
             preg_match('/&emsp;&emsp;来源：(.*?)        <\/div>/', $content,$yuans);
+
             if(isset($yuans[1]) && !empty($yuans[1]) && $yuans[1] != '企业供稿')
             {
-                $res[$k]['yuan'] = $yuans[1];
+                $res[$k]['content'] = $str_content.'<p style="margin-bottom: 15px; line-height: 1.75em; text-indent: 2em;">（来源：'.$yuans[1].'）</p><br>';
+                
             }else
             {
-                $res[$k]['yuan'] = '土巴兔';
+                $res[$k]['content'] = $str_content.'<p style="margin-bottom: 15px; line-height: 1.75em; text-indent: 2em;">（来源：土巴兔）</p><br>';
             }
         }
         foreach ($res as $k => $v) 

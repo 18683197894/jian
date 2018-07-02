@@ -7,8 +7,8 @@
 	.pace-inactive{display:none;}
 	.pace .pace-progress-inner{position:absolute;right:0;width:100px;height:100%;box-shadow:0 0 10px #fff,0 0 5px #fff;opacity:1;-webkit-transform:rotate(3deg) translate(0px,-4px);-moz-transform:rotate(3deg) translate(0px,-4px);-ms-transform:rotate(3deg) translate(0px,-4px);-o-transform:rotate(3deg) translate(0px,-4px);transform:rotate(3deg) translate(0px,-4px)}
 	.pace .pace-activity{position:fixed;z-index:2000;top:15px;right:42.5%;width:14px;height:14px;border:solid 2px transparent;border-top-color:#fff;border-left-color:#fff;border-radius:10px;-webkit-animation:pace-spinner 400ms linear infinite;-moz-animation:pace-spinner 400ms linear infinite;-ms-animation:pace-spinner 400ms linear infinite;-o-animation:pace-spinner 400ms linear infinite;animation:pace-spinner 400ms linear infinite}@media (max-width: 767px){.pace .pace-activity{top:15px;right:15px;width:14px;height:14px}}@-webkit-keyframes pace-spinner{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-moz-keyframes pace-spinner{0%{-moz-transform:rotate(0deg);transform:rotate(0deg)}100%{-moz-transform:rotate(360deg);transform:rotate(360deg)}}@-o-keyframes pace-spinner{0%{-o-transform:rotate(0deg);transform:rotate(0deg)}100%{-o-transform:rotate(360deg);transform:rotate(360deg)}}@-ms-keyframes pace-spinner{0%{-ms-transform:rotate(0deg);transform:rotate(0deg)}100%{-ms-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes pace-spinner{0%{transform:rotate(0deg);transform:rotate(0deg)}100%{transform:rotate(360deg);transform:rotate(360deg)}}
-	.pace-none{display:none;}
-	.pace-block{display:block;}
+	.lei{display:none;}
+	.avtion{display:block;}
 </style>
 @endsection('css')
 
@@ -39,10 +39,7 @@
             <!-- /.box-header -->
             <div class="box-body">
               <form role="form">
-                <style>
-                .lei{display:none;}
-				.avtion{display:block;}
-                </style>
+               
                 <div  class="form-group">
                   <label>目标地址</label>
                   <select name="url" class="form-control" onchange="return selected()">
